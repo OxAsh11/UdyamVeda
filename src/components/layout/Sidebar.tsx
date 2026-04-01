@@ -89,8 +89,8 @@ export default function Sidebar({ userName, setupSchemes, gtmPlatform }: Sidebar
 
         {/* User */}
         <div className="nav-item mt-1">
-          <div className="w-6 h-6 rounded-full bg-[rgba(79,142,247,0.3)] flex items-center justify-center shrink-0">
-            <User size={12} className="text-[#4F8EF7]" />
+          <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+            <User size={12} className="text-white/60" />
           </div>
           <span className="truncate text-white/70 text-xs">{userName}</span>
         </div>

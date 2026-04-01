@@ -137,11 +137,11 @@ export default function OnboardingPage() {
                   onClick={() => set('stage', s.value)}
                   className={`p-3 rounded-xl border text-left transition-all ${
                     form.stage === s.value
-                      ? 'border-[#4F8EF7] bg-[rgba(79,142,247,0.15)]'
+                      ? 'border-white/40 bg-white/08'
                       : 'border-white/10 bg-white/5 hover:border-white/20'
                   }`}
                 >
-                  <div className={`text-sm font-medium ${form.stage === s.value ? 'text-[#4F8EF7]' : 'text-white/80'}`}>
+                  <div className={`text-sm font-medium ${form.stage === s.value ? 'text-white/90' : 'text-white/80'}`}>
                     {s.label}
                   </div>
                   <div className="text-white/40 text-xs mt-0.5">{s.desc}</div>

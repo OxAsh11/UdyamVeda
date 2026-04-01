@@ -36,8 +36,8 @@ export default async function DashboardPage() {
           <div className="glass p-6">
             <div className="flex items-center justify-between mb-5">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-[rgba(79,142,247,0.15)] flex items-center justify-center">
-                  <Building2 size={18} className="text-[#4F8EF7]" />
+                <div className="w-9 h-9 rounded-xl bg-[rgba(255,255,255,0.08)] flex items-center justify-center">
+                  <Building2 size={18} className="text-white/70" />
                 </div>
                 <div>
                   <div className="text-white font-semibold text-sm">Setup & Schemes</div>
@@ -83,8 +83,8 @@ export default async function DashboardPage() {
           <div className="glass p-6">
             <div className="flex items-center justify-between mb-5">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-[rgba(52,211,153,0.15)] flex items-center justify-center">
-                  <Lightbulb size={18} className="text-[#34D399]" />
+                <div className="w-9 h-9 rounded-xl bg-[rgba(255,255,255,0.08)] flex items-center justify-center">
+                  <Lightbulb size={18} className="text-white/70" />
                 </div>
                 <div>
                   <div className="text-white font-semibold text-sm">GTM Platform</div>
