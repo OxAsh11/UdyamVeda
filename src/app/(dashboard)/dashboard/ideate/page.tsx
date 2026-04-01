@@ -83,11 +83,11 @@ export default function IdeatePage() {
         }),
       })
       const json = await res.json()
-      if (json.error) throw new Error(json.error)
+      if (json.error) throw new Error(json.detail ?? json.error)
       setStrategy(json.strategy)
       toast.success('Strategy generated!')
-    } catch {
-      toast.error('Failed to generate strategy. Please try again.')
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : 'Failed to generate strategy. Please try again.')
     } finally {
       setLoading(false)
     }

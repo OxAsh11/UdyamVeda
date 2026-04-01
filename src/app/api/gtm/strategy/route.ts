@@ -96,9 +96,10 @@ Include exactly 3 channels and 2 case studies.
     })
 
     return NextResponse.json({ strategy })
-  } catch (err) {
-    console.error('Strategy generation error:', err)
-    return NextResponse.json({ error: 'Failed to generate strategy' }, { status: 500 })
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : String(err)
+    console.error('Strategy generation error:', message)
+    return NextResponse.json({ error: 'Failed to generate strategy', detail: message }, { status: 500 })
   }
 }
 
