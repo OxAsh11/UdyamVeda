@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
-import { Loader2, RefreshCw, ArrowRight, Users, Target, Megaphone, BookOpen, BarChart2, Calendar, Zap } from 'lucide-react'
+import { Loader2, RefreshCw, ArrowRight, Users, Target, Megaphone, BookOpen, BarChart2, Calendar, Zap, FlaskConical } from 'lucide-react'
 import { toast } from 'sonner'
 
 const BUDGETS = ['Under ₹5,000/mo', '₹5K–₹15K/mo', '₹15K–₹50K/mo', '₹50K–₹1L/mo', 'Above ₹1L/mo']
@@ -37,6 +37,7 @@ export default function IdeatePage() {
   const [form, setForm] = useState({ product: '', targetCustomer: '', geography: '', budget: '', challenge: '' })
   const [strategy, setStrategy] = useState<Strategy | null>(null)
   const [loading, setLoading] = useState(false)
+  const [seedLoading, setSeedLoading] = useState(false)
   const [loadingExisting, setLoadingExisting] = useState(true)
 
   function set(key: string, value: string) { setForm(f => ({ ...f, [key]: value })) }
@@ -61,6 +62,21 @@ export default function IdeatePage() {
     }
     load()
   }, [])
+
+  async function loadDemoData() {
+    setSeedLoading(true)
+    try {
+      const res = await fetch('/api/seed', { method: 'POST' })
+      const json = await res.json()
+      if (!json.ok) throw new Error(json.error ?? 'Seed failed')
+      toast.success('Demo data loaded! Refreshing...')
+      window.location.reload()
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : 'Failed to load demo data')
+    } finally {
+      setSeedLoading(false)
+    }
+  }
 
   async function generateStrategy(e: React.FormEvent) {
     e.preventDefault()
@@ -181,14 +197,21 @@ export default function IdeatePage() {
           </div>
 
           <div className="flex items-center gap-3 mt-6">
-            <button type="submit" disabled={loading}
+            <button type="submit" disabled={loading || seedLoading}
               className="btn-accent flex items-center gap-2 px-6 py-2.5 text-sm disabled:opacity-40">
               {loading ? <><Loader2 size={14} className="animate-spin" /> Generating strategy...</> : <>Generate my GTM strategy <ArrowRight size={14} /></>}
             </button>
             {strategy && (
-              <button type="submit" disabled={loading}
+              <button type="submit" disabled={loading || seedLoading}
                 className="flex items-center gap-2 px-4 py-2.5 text-sm rounded-xl border border-neutral-200 text-neutral-500 hover:text-neutral-600 hover:border-neutral-300 transition-all">
                 <RefreshCw size={13} /> Regenerate
+              </button>
+            )}
+            {!strategy && (
+              <button type="button" onClick={loadDemoData} disabled={loading || seedLoading}
+                className="flex items-center gap-2 px-4 py-2.5 text-sm rounded-xl border border-neutral-200 text-neutral-500 hover:text-neutral-600 hover:border-neutral-300 transition-all disabled:opacity-40">
+                {seedLoading ? <Loader2 size={13} className="animate-spin" /> : <FlaskConical size={13} />}
+                Load demo data
               </button>
             )}
           </div>
