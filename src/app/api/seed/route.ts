@@ -408,29 +408,35 @@ export async function POST() {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
-  // Clear existing data for this user
-  await Promise.all([
-    supabase.from('gtm_strategies').delete().eq('user_id', user.id),
-    supabase.from('drawing_boards').delete().eq('user_id', user.id),
-    supabase.from('campaigns').delete().eq('user_id', user.id),
-    supabase.from('metrics').delete().eq('user_id', user.id),
-  ])
+  const tableErrors: Record<string, string> = {}
 
-  // Insert all mock data
-  const [stratResult, boardResult, campaignResult, metricsResult] = await Promise.all([
-    supabase.from('gtm_strategies').insert({ user_id: user.id, context: MOCK_CONTEXT, strategy: MOCK_STRATEGY }),
-    supabase.from('drawing_boards').insert({ user_id: user.id, nodes: MOCK_NODES, edges: MOCK_EDGES }),
-    supabase.from('campaigns').insert(MOCK_CAMPAIGNS.map(c => ({ ...c, user_id: user.id }))),
-    supabase.from('metrics').insert(MOCK_METRICS.map(m => ({ ...m, user_id: user.id }))),
-  ])
+  // Clear existing data (ignore errors on missing tables)
+  await supabase.from('gtm_strategies').delete().eq('user_id', user.id)
+  await supabase.from('drawing_boards').delete().eq('user_id', user.id)
+  await supabase.from('campaigns').delete().eq('user_id', user.id)
+  await supabase.from('metrics').delete().eq('user_id', user.id)
 
-  const errors = [stratResult, boardResult, campaignResult, metricsResult]
-    .map(r => r.error?.message)
-    .filter(Boolean)
+  // Insert sequentially so partial success is possible
+  const strat = await supabase.from('gtm_strategies').insert({ user_id: user.id, context: MOCK_CONTEXT, strategy: MOCK_STRATEGY })
+  if (strat.error) tableErrors['gtm_strategies'] = strat.error.message
 
-  if (errors.length) {
-    return NextResponse.json({ error: 'Partial failure', details: errors }, { status: 500 })
-  }
+  const board = await supabase.from('drawing_boards').insert({ user_id: user.id, nodes: MOCK_NODES, edges: MOCK_EDGES })
+  if (board.error) tableErrors['drawing_boards'] = board.error.message
 
-  return NextResponse.json({ ok: true, message: 'Demo data loaded successfully' })
+  const campaigns = await supabase.from('campaigns').insert(MOCK_CAMPAIGNS.map(c => ({ ...c, user_id: user.id })))
+  if (campaigns.error) tableErrors['campaigns'] = campaigns.error.message
+
+  const metrics = await supabase.from('metrics').insert(MOCK_METRICS.map(m => ({ ...m, user_id: user.id })))
+  if (metrics.error) tableErrors['metrics'] = metrics.error.message
+
+  const hasErrors = Object.keys(tableErrors).length > 0
+  const stratOk = !tableErrors['gtm_strategies'] && !tableErrors['campaigns']
+
+  return NextResponse.json({
+    ok: stratOk,
+    tableErrors: hasErrors ? tableErrors : undefined,
+    message: hasErrors
+      ? `Loaded with issues. Missing tables: ${Object.keys(tableErrors).join(', ')}. Run the SQL in Supabase to fix.`
+      : 'Demo data loaded successfully',
+  }, { status: stratOk ? 200 : 500 })
 }

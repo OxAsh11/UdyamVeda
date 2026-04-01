@@ -68,9 +68,16 @@ export default function IdeatePage() {
     try {
       const res = await fetch('/api/seed', { method: 'POST' })
       const json = await res.json()
-      if (!json.ok) throw new Error(json.error ?? 'Seed failed')
-      toast.success('Demo data loaded! Refreshing...')
-      window.location.reload()
+      if (json.ok) {
+        if (json.tableErrors) {
+          toast.warning(`Strategy loaded. Some tables missing: ${Object.keys(json.tableErrors).join(', ')} — run the Supabase SQL to fix.`)
+        } else {
+          toast.success('Demo data loaded!')
+        }
+        window.location.reload()
+      } else {
+        throw new Error(json.message ?? json.error ?? 'Seed failed')
+      }
     } catch (err) {
       toast.error(err instanceof Error ? err.message : 'Failed to load demo data')
     } finally {
