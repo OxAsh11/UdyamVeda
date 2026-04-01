@@ -84,7 +84,7 @@ Layout rules:
 - Total of ~12-15 nodes maximum
 `
 
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' })
+    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash-exp' })
     const result = await model.generateContent(prompt)
     const text = result.response.text()
     const cleaned = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim()
