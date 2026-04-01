@@ -67,7 +67,7 @@ Distribute across months: weeks 1-4 (month 1), weeks 5-8 (month 2), weeks 9-12 (
 Make content drafts specific, actionable, and India-market appropriate.
 `
 
-  const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' })
+  const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' })
   const result = await model.generateContent(prompt)
   const text = result.response.text()
   const cleaned = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim()
