@@ -62,7 +62,7 @@ export default function DrawingBoardPage() {
   const onConnect = useCallback((connection: Connection) => {
     setEdges(eds => addEdge({
       ...connection,
-      style: { stroke: 'rgba(255,255,255,0.20)', strokeWidth: 1.5 },
+      style: { stroke: 'rgba(0,0,0,0.15)', strokeWidth: 1.5 },
       animated: false,
     }, eds))
     scheduleSave()
@@ -111,7 +111,7 @@ export default function DrawingBoardPage() {
       })))
       setEdges(data.edges.map((e: Edge) => ({
         ...e,
-        style: { stroke: 'rgba(255,255,255,0.18)', strokeWidth: 1.5 },
+        style: { stroke: 'rgba(0,0,0,0.12)', strokeWidth: 1.5 },
       })))
       toast.success('Drawing board generated from your strategy')
     } else {
@@ -151,7 +151,7 @@ export default function DrawingBoardPage() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-full min-h-[60vh]">
-        <div className="text-white/40 text-sm">Loading your board...</div>
+        <div className="text-neutral-400 text-sm">Loading your board...</div>
       </div>
     )
   }
@@ -159,24 +159,24 @@ export default function DrawingBoardPage() {
   return (
     <div className="flex flex-col h-screen">
       {/* Toolbar */}
-      <div className="flex items-center justify-between px-6 py-3 border-b border-white/07 glass-sidebar shrink-0">
+      <div className="flex items-center justify-between px-6 py-3 border-b border-neutral-200 glass-sidebar shrink-0">
         <div>
-          <h1 className="text-white/85 font-semibold text-sm">Drawing Board</h1>
-          <p className="text-white/35 text-xs">Double-click any node to edit · Drag to connect</p>
+          <h1 className="text-neutral-800 font-semibold text-sm">Drawing Board</h1>
+          <p className="text-neutral-400 text-xs">Double-click any node to edit · Drag to connect</p>
         </div>
 
         <div className="flex items-center gap-2">
           {/* Auto-save indicator */}
           <div className="flex items-center gap-1.5 text-xs mr-2">
-            {saving && <><Loader2 size={11} className="animate-spin text-white/30" /><span className="text-white/30">Saving...</span></>}
-            {saved && !saving && <><CheckCircle2 size={11} className="text-white/30" /><span className="text-white/30">Saved</span></>}
+            {saving && <><Loader2 size={11} className="animate-spin text-neutral-400" /><span className="text-neutral-400">Saving...</span></>}
+            {saved && !saving && <><CheckCircle2 size={11} className="text-neutral-400" /><span className="text-neutral-400">Saved</span></>}
           </div>
 
           {/* Generate from strategy */}
           <button
             onClick={generateBoard}
             disabled={generating}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-white/10 text-white/50 text-xs hover:text-white/80 hover:border-white/20 transition-all disabled:opacity-40"
+            className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-neutral-200 text-neutral-500 text-xs hover:text-neutral-700 hover:border-neutral-300 transition-all disabled:opacity-40"
           >
             {generating ? <Loader2 size={12} className="animate-spin" /> : <Wand2 size={12} />}
             {generating ? 'Generating...' : 'Generate from strategy'}
@@ -186,7 +186,7 @@ export default function DrawingBoardPage() {
           <div className="relative">
             <button
               onClick={() => setAddingType(v => !v)}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-white/10 text-white/50 text-xs hover:text-white/80 hover:border-white/20 transition-all"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-neutral-200 text-neutral-500 text-xs hover:text-neutral-700 hover:border-neutral-300 transition-all"
             >
               <Plus size={12} /> Add node
             </button>
@@ -196,7 +196,7 @@ export default function DrawingBoardPage() {
                   <button
                     key={type}
                     onClick={() => addNode(type)}
-                    className="w-full text-left px-4 py-2.5 text-xs text-white/60 hover:text-white/90 hover:bg-white/06 transition-all capitalize"
+                    className="w-full text-left px-4 py-2.5 text-xs text-neutral-500 hover:text-neutral-800 hover:bg-black/6 transition-all capitalize"
                   >
                     {type}
                   </button>
@@ -208,7 +208,7 @@ export default function DrawingBoardPage() {
           {/* Save */}
           <button
             onClick={() => saveBoard(true)}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-white/10 text-white/50 text-xs hover:text-white/80 hover:border-white/20 transition-all"
+            className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-neutral-200 text-neutral-500 text-xs hover:text-neutral-700 hover:border-neutral-300 transition-all"
           >
             <Save size={12} /> Save
           </button>
@@ -227,9 +227,9 @@ export default function DrawingBoardPage() {
       {nodes.length === 0 && !generating && (
         <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none" style={{ top: 60 }}>
           <div className="glass p-8 text-center max-w-sm pointer-events-auto">
-            <div className="text-white/20 text-4xl mb-4">⬡</div>
-            <div className="text-white/60 font-medium text-sm mb-1">Your canvas is empty</div>
-            <p className="text-white/35 text-xs mb-5">
+            <div className="text-neutral-300 text-4xl mb-4">⬡</div>
+            <div className="text-neutral-500 font-medium text-sm mb-1">Your canvas is empty</div>
+            <p className="text-neutral-400 text-xs mb-5">
               Generate a board from your GTM strategy, or add nodes manually to build your campaign map.
             </p>
             <div className="flex gap-2 justify-center">
@@ -241,7 +241,7 @@ export default function DrawingBoardPage() {
               </button>
               <button
                 onClick={() => addNode('root')}
-                className="flex items-center gap-2 px-4 py-2 text-sm rounded-xl border border-white/10 text-white/50 hover:text-white/80 transition-all"
+                className="flex items-center gap-2 px-4 py-2 text-sm rounded-xl border border-neutral-200 text-neutral-500 hover:text-neutral-700 transition-all"
               >
                 <Plus size={13} /> Start from scratch
               </button>
@@ -254,15 +254,15 @@ export default function DrawingBoardPage() {
       {generating && (
         <div className="absolute inset-0 flex items-center justify-center z-10 bg-black/30 backdrop-blur-sm" style={{ top: 60 }}>
           <div className="glass p-8 text-center">
-            <Loader2 size={28} className="animate-spin text-white/40 mx-auto mb-3" />
-            <div className="text-white/50 text-sm">Building your campaign map...</div>
-            <div className="text-white/30 text-xs mt-1">10–15 seconds</div>
+            <Loader2 size={28} className="animate-spin text-neutral-400 mx-auto mb-3" />
+            <div className="text-neutral-500 text-sm">Building your campaign map...</div>
+            <div className="text-neutral-400 text-xs mt-1">10–15 seconds</div>
           </div>
         </div>
       )}
 
       {/* React Flow Canvas */}
-      <div className="flex-1" style={{ background: '#0C0C0C' }}>
+      <div className="flex-1" style={{ background: '#F5F5F7' }}>
         <ReactFlow
           nodes={nodes}
           edges={edges}
@@ -274,30 +274,30 @@ export default function DrawingBoardPage() {
           fitView
           fitViewOptions={{ padding: 0.2 }}
           defaultEdgeOptions={{
-            style: { stroke: 'rgba(255,255,255,0.18)', strokeWidth: 1.5 },
+            style: { stroke: 'rgba(0,0,0,0.12)', strokeWidth: 1.5 },
           }}
           proOptions={{ hideAttribution: true }}
         >
           <Background
             variant={BackgroundVariant.Dots}
-            color="rgba(255,255,255,0.06)"
+            color="rgba(0,0,0,0.10)"
             gap={24}
             size={1}
           />
           <Controls
             style={{
-              background: 'rgba(255,255,255,0.05)',
-              border: '1px solid rgba(255,255,255,0.10)',
+              background: 'rgba(255,255,255,0.80)',
+              border: '1px solid rgba(0,0,0,0.10)',
               borderRadius: 10,
             }}
           />
           <MiniMap
             style={{
-              background: 'rgba(255,255,255,0.03)',
-              border: '1px solid rgba(255,255,255,0.08)',
+              background: 'rgba(255,255,255,0.70)',
+              border: '1px solid rgba(0,0,0,0.08)',
               borderRadius: 10,
             }}
-            nodeColor="rgba(255,255,255,0.15)"
+            nodeColor="rgba(0,0,0,0.15)"
           />
         </ReactFlow>
       </div>

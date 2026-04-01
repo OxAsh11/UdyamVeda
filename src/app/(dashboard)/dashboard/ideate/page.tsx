@@ -26,9 +26,9 @@ interface Strategy {
 }
 
 const EFFORT_COLOR: Record<string, string> = {
-  low: 'text-white/60',
-  medium: 'text-white/60',
-  high: 'text-white/60',
+  low: 'text-neutral-500',
+  medium: 'text-neutral-500',
+  high: 'text-neutral-500',
 }
 
 export default function IdeatePage() {
@@ -96,7 +96,7 @@ export default function IdeatePage() {
   if (loadingExisting) {
     return (
       <div className="p-8 flex items-center justify-center min-h-[60vh]">
-        <div className="text-white/40 text-sm">Loading...</div>
+        <div className="text-neutral-400 text-sm">Loading...</div>
       </div>
     )
   }
@@ -105,18 +105,18 @@ export default function IdeatePage() {
     <div className="p-8 max-w-4xl">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-2xl font-semibold text-white mb-1">Ideate</h1>
-        <p className="text-white/40 text-sm">Tell us about your business and we'll generate your GTM strategy</p>
+        <h1 className="text-2xl font-semibold text-neutral-900 mb-1">Ideate</h1>
+        <p className="text-neutral-400 text-sm">Tell us about your business and we'll generate your GTM strategy</p>
       </div>
 
       {/* Context Form */}
       <form onSubmit={generateStrategy}>
         <div className="glass p-6 mb-6">
-          <div className="text-white/40 text-xs font-semibold uppercase tracking-wide mb-5">Your business context</div>
+          <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide mb-5">Your business context</div>
 
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-1.5">
-              <label className="text-white/50 text-xs font-medium uppercase tracking-wide">What do you sell?</label>
+              <label className="text-neutral-500 text-xs font-medium uppercase tracking-wide">What do you sell?</label>
               <input
                 value={form.product}
                 onChange={e => set('product', e.target.value)}
@@ -126,7 +126,7 @@ export default function IdeatePage() {
             </div>
 
             <div className="flex flex-col gap-1.5">
-              <label className="text-white/50 text-xs font-medium uppercase tracking-wide">Who is your target customer?</label>
+              <label className="text-neutral-500 text-xs font-medium uppercase tracking-wide">Who is your target customer?</label>
               <input
                 value={form.targetCustomer}
                 onChange={e => set('targetCustomer', e.target.value)}
@@ -137,12 +137,12 @@ export default function IdeatePage() {
 
             <div className="grid grid-cols-2 gap-3">
               <div className="flex flex-col gap-1.5">
-                <label className="text-white/50 text-xs font-medium uppercase tracking-wide">Geography</label>
+                <label className="text-neutral-500 text-xs font-medium uppercase tracking-wide">Geography</label>
                 <div className="flex flex-col gap-1.5">
                   {GEOGRAPHIES.map(g => (
                     <button key={g} type="button" onClick={() => set('geography', g)}
                       className={`px-3 py-2 rounded-lg border text-sm text-left transition-all ${
-                        form.geography === g ? 'border-white/30 bg-white/08 text-white/90' : 'border-white/08 text-white/40 hover:border-white/15 hover:text-white/65'
+                        form.geography === g ? 'border-neutral-300 bg-black/7 text-neutral-800' : 'border-neutral-200 text-neutral-400 hover:border-neutral-300 hover:text-neutral-600'
                       }`}>
                       {g}
                     </button>
@@ -151,12 +151,12 @@ export default function IdeatePage() {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-white/50 text-xs font-medium uppercase tracking-wide">Monthly Budget</label>
+                <label className="text-neutral-500 text-xs font-medium uppercase tracking-wide">Monthly Budget</label>
                 <div className="flex flex-col gap-1.5">
                   {BUDGETS.map(b => (
                     <button key={b} type="button" onClick={() => set('budget', b)}
                       className={`px-3 py-2 rounded-lg border text-sm text-left transition-all ${
-                        form.budget === b ? 'border-white/30 bg-white/08 text-white/90' : 'border-white/08 text-white/40 hover:border-white/15 hover:text-white/65'
+                        form.budget === b ? 'border-neutral-300 bg-black/7 text-neutral-800' : 'border-neutral-200 text-neutral-400 hover:border-neutral-300 hover:text-neutral-600'
                       }`}>
                       {b}
                     </button>
@@ -166,12 +166,12 @@ export default function IdeatePage() {
             </div>
 
             <div className="flex flex-col gap-2">
-              <label className="text-white/50 text-xs font-medium uppercase tracking-wide">Biggest challenge right now</label>
+              <label className="text-neutral-500 text-xs font-medium uppercase tracking-wide">Biggest challenge right now</label>
               <div className="grid grid-cols-2 gap-2">
                 {CHALLENGES.map(c => (
                   <button key={c.value} type="button" onClick={() => set('challenge', c.value)}
                     className={`px-4 py-3 rounded-xl border text-sm text-left transition-all ${
-                      form.challenge === c.value ? 'border-white/30 bg-white/08 text-white/90' : 'border-white/08 text-white/40 hover:border-white/15 hover:text-white/65'
+                      form.challenge === c.value ? 'border-neutral-300 bg-black/7 text-neutral-800' : 'border-neutral-200 text-neutral-400 hover:border-neutral-300 hover:text-neutral-600'
                     }`}>
                     {c.label}
                   </button>
@@ -187,7 +187,7 @@ export default function IdeatePage() {
             </button>
             {strategy && (
               <button type="submit" disabled={loading}
-                className="flex items-center gap-2 px-4 py-2.5 text-sm rounded-xl border border-white/10 text-white/45 hover:text-white/70 hover:border-white/20 transition-all">
+                className="flex items-center gap-2 px-4 py-2.5 text-sm rounded-xl border border-neutral-200 text-neutral-500 hover:text-neutral-600 hover:border-neutral-300 transition-all">
                 <RefreshCw size={13} /> Regenerate
               </button>
             )}
@@ -198,10 +198,10 @@ export default function IdeatePage() {
       {/* Loading state */}
       {loading && (
         <div className="glass p-10 flex flex-col items-center gap-4 mb-6">
-          <Loader2 size={28} className="animate-spin text-white/40" />
-          <div className="text-white/50 text-sm text-center">
+          <Loader2 size={28} className="animate-spin text-neutral-400" />
+          <div className="text-neutral-500 text-sm text-center">
             Analysing your business and generating strategy...<br />
-            <span className="text-white/30 text-xs">This takes 10–20 seconds</span>
+            <span className="text-neutral-400 text-xs">This takes 10–20 seconds</span>
           </div>
         </div>
       )}
@@ -213,14 +213,14 @@ export default function IdeatePage() {
           {/* Quick Wins */}
           <div className="glass p-6">
             <div className="flex items-center gap-2 mb-4">
-              <Zap size={15} className="text-white/50" />
-              <div className="text-white/40 text-xs font-semibold uppercase tracking-wide">Do this week</div>
+              <Zap size={15} className="text-neutral-500" />
+              <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide">Do this week</div>
             </div>
             <div className="flex flex-col gap-2">
               {strategy.quickWins?.map((win, i) => (
-                <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-white/[0.03] border border-white/07">
-                  <span className="w-5 h-5 rounded-full bg-white/08 text-white/50 text-xs flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
-                  <p className="text-white/70 text-sm">{win}</p>
+                <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-black/4 border border-neutral-200">
+                  <span className="w-5 h-5 rounded-full bg-black/7 text-neutral-500 text-xs flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
+                  <p className="text-neutral-600 text-sm">{win}</p>
                 </div>
               ))}
             </div>
@@ -229,37 +229,37 @@ export default function IdeatePage() {
           {/* ICP */}
           <div className="glass p-6">
             <div className="flex items-center gap-2 mb-4">
-              <Users size={15} className="text-white/50" />
-              <div className="text-white/40 text-xs font-semibold uppercase tracking-wide">Ideal Customer Profile</div>
+              <Users size={15} className="text-neutral-500" />
+              <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide">Ideal Customer Profile</div>
             </div>
-            <p className="text-white/70 text-sm mb-4 leading-relaxed">{strategy.icp.profile}</p>
+            <p className="text-neutral-600 text-sm mb-4 leading-relaxed">{strategy.icp.profile}</p>
             <div className="grid grid-cols-2 gap-4 mb-4">
               <div>
-                <div className="text-white/35 text-xs mb-1.5 uppercase tracking-wide">Demographics</div>
-                <p className="text-white/60 text-sm">{strategy.icp.demographics}</p>
+                <div className="text-neutral-400 text-xs mb-1.5 uppercase tracking-wide">Demographics</div>
+                <p className="text-neutral-500 text-sm">{strategy.icp.demographics}</p>
               </div>
               <div>
-                <div className="text-white/35 text-xs mb-1.5 uppercase tracking-wide">Mindset</div>
-                <p className="text-white/60 text-sm">{strategy.icp.psychographics}</p>
+                <div className="text-neutral-400 text-xs mb-1.5 uppercase tracking-wide">Mindset</div>
+                <p className="text-neutral-500 text-sm">{strategy.icp.psychographics}</p>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <div className="text-white/35 text-xs mb-2 uppercase tracking-wide">Pain points</div>
+                <div className="text-neutral-400 text-xs mb-2 uppercase tracking-wide">Pain points</div>
                 <ul className="flex flex-col gap-1.5">
                   {strategy.icp.painPoints?.map((p, i) => (
-                    <li key={i} className="text-white/55 text-sm flex items-start gap-2">
-                      <span className="text-white/25 mt-1">·</span>{p}
+                    <li key={i} className="text-neutral-500 text-sm flex items-start gap-2">
+                      <span className="text-neutral-400 mt-1">·</span>{p}
                     </li>
                   ))}
                 </ul>
               </div>
               <div>
-                <div className="text-white/35 text-xs mb-2 uppercase tracking-wide">Where to find them</div>
+                <div className="text-neutral-400 text-xs mb-2 uppercase tracking-wide">Where to find them</div>
                 <ul className="flex flex-col gap-1.5">
                   {strategy.icp.whereToFindThem?.map((p, i) => (
-                    <li key={i} className="text-white/55 text-sm flex items-start gap-2">
-                      <span className="text-white/25 mt-1">·</span>{p}
+                    <li key={i} className="text-neutral-500 text-sm flex items-start gap-2">
+                      <span className="text-neutral-400 mt-1">·</span>{p}
                     </li>
                   ))}
                 </ul>
@@ -270,27 +270,27 @@ export default function IdeatePage() {
           {/* Positioning */}
           <div className="glass p-6">
             <div className="flex items-center gap-2 mb-4">
-              <Target size={15} className="text-white/50" />
-              <div className="text-white/40 text-xs font-semibold uppercase tracking-wide">Positioning</div>
+              <Target size={15} className="text-neutral-500" />
+              <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide">Positioning</div>
             </div>
-            <div className="bg-white/[0.04] border border-white/08 rounded-xl p-4 mb-4">
-              <div className="text-white/35 text-xs mb-2 uppercase tracking-wide">Value Proposition</div>
-              <p className="text-white/80 text-sm leading-relaxed italic">"{strategy.positioning.valueProposition}"</p>
+            <div className="bg-black/4 border border-neutral-200 rounded-xl p-4 mb-4">
+              <div className="text-neutral-400 text-xs mb-2 uppercase tracking-wide">Value Proposition</div>
+              <p className="text-neutral-700 text-sm leading-relaxed italic">"{strategy.positioning.valueProposition}"</p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <div className="text-white/35 text-xs mb-2 uppercase tracking-wide">Messaging pillars</div>
+                <div className="text-neutral-400 text-xs mb-2 uppercase tracking-wide">Messaging pillars</div>
                 <ul className="flex flex-col gap-1.5">
                   {strategy.positioning.messagingPillars?.map((p, i) => (
-                    <li key={i} className="text-white/55 text-sm flex items-start gap-2">
-                      <span className="text-white/25 mt-1">·</span>{p}
+                    <li key={i} className="text-neutral-500 text-sm flex items-start gap-2">
+                      <span className="text-neutral-400 mt-1">·</span>{p}
                     </li>
                   ))}
                 </ul>
               </div>
               <div>
-                <div className="text-white/35 text-xs mb-2 uppercase tracking-wide">Tone of voice</div>
-                <p className="text-white/55 text-sm">{strategy.positioning.toneOfVoice}</p>
+                <div className="text-neutral-400 text-xs mb-2 uppercase tracking-wide">Tone of voice</div>
+                <p className="text-neutral-500 text-sm">{strategy.positioning.toneOfVoice}</p>
               </div>
             </div>
           </div>
@@ -298,25 +298,25 @@ export default function IdeatePage() {
           {/* Channels */}
           <div className="glass p-6">
             <div className="flex items-center gap-2 mb-4">
-              <Megaphone size={15} className="text-white/50" />
-              <div className="text-white/40 text-xs font-semibold uppercase tracking-wide">Recommended Channels</div>
+              <Megaphone size={15} className="text-neutral-500" />
+              <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide">Recommended Channels</div>
             </div>
             <div className="flex flex-col gap-3">
               {strategy.channels?.map((ch, i) => (
-                <div key={i} className="p-4 rounded-xl bg-white/[0.03] border border-white/07">
+                <div key={i} className="p-4 rounded-xl bg-black/4 border border-neutral-200">
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
-                      <span className="w-5 h-5 rounded-full bg-white/10 text-white/50 text-xs flex items-center justify-center">{i + 1}</span>
-                      <span className="text-white/85 font-medium text-sm">{ch.name}</span>
-                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/06 text-white/40 capitalize">{ch.priority}</span>
+                      <span className="w-5 h-5 rounded-full bg-black/10 text-neutral-500 text-xs flex items-center justify-center">{i + 1}</span>
+                      <span className="text-neutral-800 font-medium text-sm">{ch.name}</span>
+                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-black/6 text-neutral-400 capitalize">{ch.priority}</span>
                     </div>
-                    <div className="flex items-center gap-3 text-xs text-white/35">
+                    <div className="flex items-center gap-3 text-xs text-neutral-400">
                       <span>CAC: {ch.estimatedCAC}</span>
                       <span>·</span>
                       <span>{ch.timeToResults}</span>
                     </div>
                   </div>
-                  <p className="text-white/50 text-sm mb-2">{ch.reasoning}</p>
+                  <p className="text-neutral-500 text-sm mb-2">{ch.reasoning}</p>
                   <div className="flex flex-wrap gap-1.5">
                     {ch.tactics?.map((t, j) => (
                       <span key={j} className="chip text-xs py-0.5 px-2.5">{t}</span>
@@ -330,8 +330,8 @@ export default function IdeatePage() {
           {/* Benchmarks */}
           <div className="glass p-6">
             <div className="flex items-center gap-2 mb-4">
-              <BarChart2 size={15} className="text-white/50" />
-              <div className="text-white/40 text-xs font-semibold uppercase tracking-wide">Industry Benchmarks — Your Category</div>
+              <BarChart2 size={15} className="text-neutral-500" />
+              <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide">Industry Benchmarks — Your Category</div>
             </div>
             <div className="grid grid-cols-3 gap-3">
               {[
@@ -341,9 +341,9 @@ export default function IdeatePage() {
                 { label: 'Best Channel', value: strategy.benchmarks?.bestChannel },
                 { label: 'Content Frequency', value: strategy.benchmarks?.contentFrequency },
               ].map(b => (
-                <div key={b.label} className="bg-white/[0.03] border border-white/07 rounded-xl p-3">
-                  <div className="text-white/35 text-xs mb-1.5">{b.label}</div>
-                  <div className="text-white/80 text-sm font-medium">{b.value}</div>
+                <div key={b.label} className="bg-black/4 border border-neutral-200 rounded-xl p-3">
+                  <div className="text-neutral-400 text-xs mb-1.5">{b.label}</div>
+                  <div className="text-neutral-700 text-sm font-medium">{b.value}</div>
                 </div>
               ))}
             </div>
@@ -352,22 +352,22 @@ export default function IdeatePage() {
           {/* Case Studies */}
           <div className="glass p-6">
             <div className="flex items-center gap-2 mb-4">
-              <BookOpen size={15} className="text-white/50" />
-              <div className="text-white/40 text-xs font-semibold uppercase tracking-wide">Case Studies — Apply to your business</div>
+              <BookOpen size={15} className="text-neutral-500" />
+              <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide">Case Studies — Apply to your business</div>
             </div>
             <div className="flex flex-col gap-4">
               {strategy.caseStudies?.map((cs, i) => (
-                <div key={i} className="p-4 rounded-xl bg-white/[0.03] border border-white/07">
+                <div key={i} className="p-4 rounded-xl bg-black/4 border border-neutral-200">
                   <div className="flex items-center gap-2 mb-2">
-                    <span className="text-white/80 font-semibold text-sm">{cs.brand}</span>
-                    <span className="text-white/30 text-xs">·</span>
-                    <span className="text-white/40 text-xs">{cs.sector}</span>
+                    <span className="text-neutral-700 font-semibold text-sm">{cs.brand}</span>
+                    <span className="text-neutral-400 text-xs">·</span>
+                    <span className="text-neutral-400 text-xs">{cs.sector}</span>
                   </div>
-                  <p className="text-white/55 text-sm mb-1.5"><span className="text-white/30">What they did:</span> {cs.strategy}</p>
-                  <p className="text-white/55 text-sm mb-2"><span className="text-white/30">Result:</span> {cs.result}</p>
-                  <div className="bg-white/[0.04] border border-white/08 rounded-lg px-3 py-2">
-                    <span className="text-white/30 text-xs">Apply this: </span>
-                    <span className="text-white/65 text-sm">{cs.lessonForYou}</span>
+                  <p className="text-neutral-500 text-sm mb-1.5"><span className="text-neutral-400">What they did:</span> {cs.strategy}</p>
+                  <p className="text-neutral-500 text-sm mb-2"><span className="text-neutral-400">Result:</span> {cs.result}</p>
+                  <div className="bg-black/4 border border-neutral-200 rounded-lg px-3 py-2">
+                    <span className="text-neutral-400 text-xs">Apply this: </span>
+                    <span className="text-neutral-600 text-sm">{cs.lessonForYou}</span>
                   </div>
                 </div>
               ))}
@@ -377,8 +377,8 @@ export default function IdeatePage() {
           {/* 90-Day Plan */}
           <div className="glass p-6">
             <div className="flex items-center gap-2 mb-4">
-              <Calendar size={15} className="text-white/50" />
-              <div className="text-white/40 text-xs font-semibold uppercase tracking-wide">90-Day Focus Plan</div>
+              <Calendar size={15} className="text-neutral-500" />
+              <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide">90-Day Focus Plan</div>
             </div>
             <div className="flex flex-col gap-3">
               {[
@@ -386,11 +386,11 @@ export default function IdeatePage() {
                 { label: 'Month 2 — Days 31–60', value: strategy.ninetyDayPlan?.days31to60 },
                 { label: 'Month 3 — Days 61–90', value: strategy.ninetyDayPlan?.days61to90 },
               ].map((phase, i) => (
-                <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-white/[0.03] border border-white/07">
-                  <span className="w-6 h-6 rounded-full bg-white/08 text-white/40 text-xs flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
+                <div key={i} className="flex items-start gap-3 p-4 rounded-xl bg-black/4 border border-neutral-200">
+                  <span className="w-6 h-6 rounded-full bg-black/7 text-neutral-400 text-xs flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
                   <div>
-                    <div className="text-white/40 text-xs mb-1">{phase.label}</div>
-                    <p className="text-white/65 text-sm">{phase.value}</p>
+                    <div className="text-neutral-400 text-xs mb-1">{phase.label}</div>
+                    <p className="text-neutral-600 text-sm">{phase.value}</p>
                   </div>
                 </div>
               ))}
@@ -400,8 +400,8 @@ export default function IdeatePage() {
           {/* CTA to Drawing Board */}
           <div className="glass p-5 flex items-center justify-between">
             <div>
-              <div className="text-white/80 font-medium text-sm">Strategy looks good?</div>
-              <div className="text-white/35 text-xs mt-0.5">Build your visual campaign map on the Drawing Board</div>
+              <div className="text-neutral-700 font-medium text-sm">Strategy looks good?</div>
+              <div className="text-neutral-400 text-xs mt-0.5">Build your visual campaign map on the Drawing Board</div>
             </div>
             <button onClick={() => router.push('/dashboard/drawing-board')}
               className="btn-accent flex items-center gap-2 px-5 py-2.5 text-sm">

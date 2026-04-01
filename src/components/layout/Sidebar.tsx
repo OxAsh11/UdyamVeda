@@ -52,8 +52,8 @@ export default function Sidebar({ userName, setupSchemes, gtmPlatform }: Sidebar
     <aside className="glass-sidebar w-56 flex flex-col min-h-screen py-5 px-3 shrink-0">
       {/* Logo */}
       <div className="px-3 mb-6">
-        <div className="text-lg font-bold text-white tracking-tight">Center</div>
-        <div className="text-white/30 text-xs mt-0.5">Your business OS</div>
+        <div className="text-lg font-bold text-neutral-900 tracking-tight">Center</div>
+        <div className="text-neutral-400 text-xs mt-0.5">Your business OS</div>
       </div>
 
       {/* Main nav */}
@@ -84,18 +84,18 @@ export default function Sidebar({ userName, setupSchemes, gtmPlatform }: Sidebar
 
       {/* Bottom */}
       <div className="mt-auto flex flex-col gap-0.5">
-        <div className="border-t border-white/10 mb-3" />
+        <div className="border-t border-neutral-200 mb-3" />
         <NavItem href="/dashboard/settings" icon={Settings} label="Settings" />
 
         {/* User */}
         <div className="nav-item mt-1">
-          <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-            <User size={12} className="text-white/60" />
+          <div className="w-6 h-6 rounded-full bg-black/10 flex items-center justify-center shrink-0">
+            <User size={12} className="text-neutral-500" />
           </div>
-          <span className="truncate text-white/70 text-xs">{userName}</span>
+          <span className="truncate text-neutral-600 text-xs">{userName}</span>
         </div>
 
-        <button onClick={handleSignOut} className="nav-item text-white/40 hover:text-red-400">
+        <button onClick={handleSignOut} className="nav-item text-neutral-400 hover:text-red-400">
           <LogOut size={16} />
           <span>Sign out</span>
         </button>

@@ -3,12 +3,12 @@
 import { Handle, Position, NodeProps } from 'reactflow'
 
 const TYPE_STYLES: Record<string, { border: string; bg: string; labelColor: string; dot: string }> = {
-  root:    { border: 'rgba(255,255,255,0.30)', bg: 'rgba(255,255,255,0.10)', labelColor: 'rgba(255,255,255,0.95)', dot: '#fff' },
-  icp:     { border: 'rgba(255,255,255,0.18)', bg: 'rgba(255,255,255,0.06)', labelColor: 'rgba(255,255,255,0.85)', dot: 'rgba(255,255,255,0.6)' },
-  channel: { border: 'rgba(255,255,255,0.18)', bg: 'rgba(255,255,255,0.06)', labelColor: 'rgba(255,255,255,0.85)', dot: 'rgba(255,255,255,0.5)' },
-  tactic:  { border: 'rgba(255,255,255,0.10)', bg: 'rgba(255,255,255,0.03)', labelColor: 'rgba(255,255,255,0.65)', dot: 'rgba(255,255,255,0.3)' },
-  content: { border: 'rgba(255,255,255,0.10)', bg: 'rgba(255,255,255,0.03)', labelColor: 'rgba(255,255,255,0.65)', dot: 'rgba(255,255,255,0.3)' },
-  goal:    { border: 'rgba(255,255,255,0.25)', bg: 'rgba(255,255,255,0.08)', labelColor: 'rgba(255,255,255,0.90)', dot: 'rgba(255,255,255,0.7)' },
+  root:    { border: 'rgba(0,0,0,0.25)', bg: 'rgba(255,255,255,0.85)', labelColor: 'rgba(0,0,0,0.90)', dot: '#0C0C0C' },
+  icp:     { border: 'rgba(0,0,0,0.15)', bg: 'rgba(255,255,255,0.75)', labelColor: 'rgba(0,0,0,0.80)', dot: 'rgba(0,0,0,0.5)' },
+  channel: { border: 'rgba(0,0,0,0.15)', bg: 'rgba(255,255,255,0.75)', labelColor: 'rgba(0,0,0,0.80)', dot: 'rgba(0,0,0,0.4)' },
+  tactic:  { border: 'rgba(0,0,0,0.10)', bg: 'rgba(255,255,255,0.65)', labelColor: 'rgba(0,0,0,0.60)', dot: 'rgba(0,0,0,0.25)' },
+  content: { border: 'rgba(0,0,0,0.10)', bg: 'rgba(255,255,255,0.65)', labelColor: 'rgba(0,0,0,0.60)', dot: 'rgba(0,0,0,0.25)' },
+  goal:    { border: 'rgba(0,0,0,0.20)', bg: 'rgba(255,255,255,0.80)', labelColor: 'rgba(0,0,0,0.85)', dot: 'rgba(0,0,0,0.6)' },
 }
 
 const TYPE_BADGE: Record<string, string> = {
@@ -23,7 +23,7 @@ function BaseNode({ data, type, selected }: NodeProps & { type: string }) {
     <div
       style={{
         background: style.bg,
-        border: `1px solid ${selected ? 'rgba(255,255,255,0.45)' : style.border}`,
+        border: `1px solid ${selected ? 'rgba(0,0,0,0.45)' : style.border}`,
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
         borderRadius: 14,
@@ -31,7 +31,7 @@ function BaseNode({ data, type, selected }: NodeProps & { type: string }) {
         minWidth: 180,
         maxWidth: 240,
         boxShadow: selected
-          ? '0 0 0 2px rgba(255,255,255,0.15), 0 8px 32px rgba(0,0,0,0.4)'
+          ? '0 0 0 2px rgba(0,0,0,0.15), 0 8px 32px rgba(0,0,0,0.10)'
           : '0 4px 24px rgba(0,0,0,0.35)',
         transition: 'all 0.15s ease',
         cursor: 'grab',
@@ -43,7 +43,7 @@ function BaseNode({ data, type, selected }: NodeProps & { type: string }) {
       {/* Badge */}
       <div style={{
         fontSize: 9, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em',
-        color: 'rgba(255,255,255,0.30)', marginBottom: 6,
+        color: 'rgba(0,0,0,0.35)', marginBottom: 6,
       }}>
         {TYPE_BADGE[type] ?? type}
       </div>
@@ -55,7 +55,7 @@ function BaseNode({ data, type, selected }: NodeProps & { type: string }) {
 
       {/* Subtitle */}
       {data.subtitle && (
-        <div style={{ color: 'rgba(255,255,255,0.35)', fontSize: 11, lineHeight: 1.4 }}>
+        <div style={{ color: 'rgba(0,0,0,0.40)', fontSize: 11, lineHeight: 1.4 }}>
           {data.subtitle}
         </div>
       )}

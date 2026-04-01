@@ -47,20 +47,20 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 
-  /* Center Design Tokens — Matte Grey System */
-  --glass-bg: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-bg-hover: rgba(255, 255, 255, 0.08);
-  --accent-primary: #FFFFFF;
-  --accent-green: #34D399;
-  --accent-amber: #FBBF24;
-  --accent-red: #F87171;
-  --grey-100: rgba(255, 255, 255, 0.90);
-  --grey-200: rgba(255, 255, 255, 0.70);
-  --grey-300: rgba(255, 255, 255, 0.45);
-  --grey-400: rgba(255, 255, 255, 0.25);
-  --grey-500: rgba(255, 255, 255, 0.10);
-  --grey-600: rgba(255, 255, 255, 0.05);
+  /* Center Design Tokens — Light Glass System */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-bg-hover: rgba(255, 255, 255, 0.82);
+  --accent-primary: #0C0C0C;
+  --accent-green: #10B981;
+  --accent-amber: #D97706;
+  --accent-red: #EF4444;
+  --grey-100: rgba(0, 0, 0, 0.85);
+  --grey-200: rgba(0, 0, 0, 0.65);
+  --grey-300: rgba(0, 0, 0, 0.45);
+  --grey-400: rgba(0, 0, 0, 0.30);
+  --grey-500: rgba(0, 0, 0, 0.10);
+  --grey-600: rgba(0, 0, 0, 0.05);
 }
 
 :root {
@@ -98,44 +98,44 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
-/* Center always uses dark glass theme */
+/* Center light glass theme */
 html {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
-  background: #0C0C0C;
+  background: #F5F5F7;
   min-height: 100vh;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(0, 0, 0, 0.80);
   font-family: 'Inter', system-ui, sans-serif;
 }
 
 /* Glass card utility */
 .glass {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 16px;
-  box-shadow: 0 1px 0 rgba(255,255,255,0.06) inset, 0 8px 32px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.9) inset, 0 4px 24px rgba(0, 0, 0, 0.07);
 }
 
 .glass:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.11);
+  background: rgba(255, 255, 255, 0.82);
+  border-color: rgba(0, 0, 0, 0.11);
 }
 
 .glass-sidebar {
-  background: rgba(255, 255, 255, 0.025);
+  background: rgba(255, 255, 255, 0.60);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border-right: 1px solid rgba(255, 255, 255, 0.07);
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-/* Primary button — white on dark */
+/* Primary button — dark on light */
 .btn-accent {
-  background: #FFFFFF;
-  color: #0C0C0C;
+  background: #0C0C0C;
+  color: #FFFFFF;
   border-radius: 10px;
   font-weight: 600;
   transition: all 0.2s ease;
@@ -145,9 +145,9 @@ body {
 }
 
 .btn-accent:hover {
-  background: rgba(255, 255, 255, 0.88);
+  background: #1f1f1f;
   transform: translateY(-1px);
-  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
 }
 
 .btn-accent:disabled {
@@ -158,27 +158,27 @@ body {
 
 /* Input fields in glass context */
 .glass-input {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.80);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   border-radius: 10px;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(0, 0, 0, 0.80);
   transition: all 0.2s ease;
 }
 
 .glass-input:focus {
-  border-color: rgba(255, 255, 255, 0.35);
+  border-color: rgba(0, 0, 0, 0.35);
   outline: none;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.06);
-  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .glass-input::placeholder {
-  color: rgba(255, 255, 255, 0.25);
+  color: rgba(0, 0, 0, 0.30);
 }
 
 select.glass-input option {
-  background: #1a1a1a;
-  color: rgba(255, 255, 255, 0.88);
+  background: #ffffff;
+  color: rgba(0, 0, 0, 0.80);
 }
 
 /* Sidebar nav item */
@@ -188,7 +188,7 @@ select.glass-input option {
   gap: 10px;
   padding: 9px 12px;
   border-radius: 9px;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(0, 0, 0, 0.45);
   font-size: 0.8125rem;
   font-weight: 500;
   transition: all 0.15s ease;
@@ -197,13 +197,13 @@ select.glass-input option {
 }
 
 .nav-item:hover {
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.85);
+  background: rgba(0, 0, 0, 0.06);
+  color: rgba(0, 0, 0, 0.80);
 }
 
 .nav-item.active {
-  background: rgba(255, 255, 255, 0.09);
-  color: rgba(255, 255, 255, 0.95);
+  background: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.90);
 }
 
 /* Section label */
@@ -212,7 +212,7 @@ select.glass-input option {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(0, 0, 0, 0.35);
   padding: 0 14px;
   margin: 16px 0 6px;
 }
@@ -223,9 +223,9 @@ select.glass-input option {
   align-items: center;
   padding: 6px 14px;
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  background: rgba(255, 255, 255, 0.04);
-  color: rgba(255, 255, 255, 0.50);
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  background: rgba(0, 0, 0, 0.04);
+  color: rgba(0, 0, 0, 0.50);
   font-size: 0.8125rem;
   cursor: pointer;
   transition: all 0.15s ease;
@@ -233,15 +233,15 @@ select.glass-input option {
 }
 
 .chip:hover {
-  border-color: rgba(255, 255, 255, 0.22);
-  color: rgba(255, 255, 255, 0.85);
-  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(0, 0, 0, 0.22);
+  color: rgba(0, 0, 0, 0.80);
+  background: rgba(0, 0, 0, 0.07);
 }
 
 .chip.selected {
-  border-color: rgba(255, 255, 255, 0.45);
-  background: rgba(255, 255, 255, 0.10);
-  color: rgba(255, 255, 255, 0.95);
+  border-color: rgba(0, 0, 0, 0.40);
+  background: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.90);
 }
 
 /* Scrollbar */
@@ -252,7 +252,7 @@ select.glass-input option {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.15);
   border-radius: 3px;
 }
 

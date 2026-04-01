@@ -81,15 +81,15 @@ export default function SettingsPage() {
 
   if (loading) return (
     <div className="p-8 flex items-center justify-center min-h-[60vh]">
-      <div className="text-white/40 text-sm">Loading settings...</div>
+      <div className="text-neutral-400 text-sm">Loading settings...</div>
     </div>
   )
 
   return (
     <div className="p-8 max-w-3xl">
       <div className="mb-8">
-        <h1 className="text-2xl font-semibold text-white mb-1">Settings</h1>
-        <p className="text-white/40 text-sm">Manage your profile, modules, and integrations</p>
+        <h1 className="text-2xl font-semibold text-neutral-900 mb-1">Settings</h1>
+        <p className="text-neutral-400 text-sm">Manage your profile, modules, and integrations</p>
       </div>
 
       {/* Tab nav */}
@@ -97,7 +97,7 @@ export default function SettingsPage() {
         {TABS.map(t => (
           <button key={t.id} onClick={() => setTab(t.id)}
             className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-              tab === t.id ? 'bg-white/10 text-white/90' : 'text-white/40 hover:text-white/65'
+              tab === t.id ? 'bg-black/10 text-neutral-800' : 'text-neutral-400 hover:text-neutral-600'
             }`}>
             <t.icon size={14} />
             {t.label}
@@ -108,41 +108,41 @@ export default function SettingsPage() {
       {/* Profile tab */}
       {tab === 'profile' && (
         <div className="glass p-6 flex flex-col gap-5">
-          <div className="text-white/40 text-xs font-semibold uppercase tracking-wide">Your details</div>
+          <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide">Your details</div>
 
           <div className="flex flex-col gap-1.5">
-            <label className="text-white/50 text-xs uppercase tracking-wide">Full Name</label>
+            <label className="text-neutral-500 text-xs uppercase tracking-wide">Full Name</label>
             <input value={profile.full_name} onChange={e => setProfile(p => ({ ...p, full_name: e.target.value }))}
               className="glass-input w-full px-4 py-2.5 text-sm" placeholder="Your name" />
           </div>
 
-          <div className="border-t border-white/08 pt-5">
-            <div className="text-white/40 text-xs font-semibold uppercase tracking-wide mb-4">Business details</div>
+          <div className="border-t border-neutral-200 pt-5">
+            <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide mb-4">Business details</div>
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-1.5">
-                <label className="text-white/50 text-xs uppercase tracking-wide">Business Name</label>
+                <label className="text-neutral-500 text-xs uppercase tracking-wide">Business Name</label>
                 <input value={business.business_name} onChange={e => setBusiness(b => ({ ...b, business_name: e.target.value }))}
                   className="glass-input w-full px-4 py-2.5 text-sm" placeholder="Your business name" />
               </div>
 
               <div className="grid grid-cols-2 gap-3">
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-white/50 text-xs uppercase tracking-wide">Sector</label>
+                  <label className="text-neutral-500 text-xs uppercase tracking-wide">Sector</label>
                   <input value={business.sector} onChange={e => setBusiness(b => ({ ...b, sector: e.target.value }))}
                     className="glass-input w-full px-4 py-2.5 text-sm" />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-white/50 text-xs uppercase tracking-wide">Stage</label>
+                  <label className="text-neutral-500 text-xs uppercase tracking-wide">Stage</label>
                   <input value={business.stage} onChange={e => setBusiness(b => ({ ...b, stage: e.target.value }))}
                     className="glass-input w-full px-4 py-2.5 text-sm" />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-white/50 text-xs uppercase tracking-wide">State</label>
+                  <label className="text-neutral-500 text-xs uppercase tracking-wide">State</label>
                   <input value={business.state} onChange={e => setBusiness(b => ({ ...b, state: e.target.value }))}
                     className="glass-input w-full px-4 py-2.5 text-sm" />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-white/50 text-xs uppercase tracking-wide">District</label>
+                  <label className="text-neutral-500 text-xs uppercase tracking-wide">District</label>
                   <input value={business.district} onChange={e => setBusiness(b => ({ ...b, district: e.target.value }))}
                     className="glass-input w-full px-4 py-2.5 text-sm" />
                 </div>
@@ -162,23 +162,23 @@ export default function SettingsPage() {
       {tab === 'modules' && (
         <div className="flex flex-col gap-4">
           <div className="glass p-6">
-            <div className="text-white/40 text-xs font-semibold uppercase tracking-wide mb-5">Active modules</div>
+            <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide mb-5">Active modules</div>
             <div className="flex flex-col gap-3">
               {[
                 { key: 'setup_schemes' as keyof Modules, label: 'Setup & Schemes', desc: 'Registration guidance + Government scheme discovery' },
                 { key: 'gtm_platform' as keyof Modules, label: 'GTM Platform', desc: 'Strategy, campaigns, distribution, and tracking' },
               ].map(mod => (
                 <div key={mod.key} className={`flex items-center justify-between p-4 rounded-xl border transition-all ${
-                  modules[mod.key] ? 'border-white/15 bg-white/[0.05]' : 'border-white/07 bg-white/[0.02]'
+                  modules[mod.key] ? 'border-neutral-300 bg-black/5' : 'border-neutral-200 bg-black/3'
                 }`}>
                   <div>
-                    <div className={`font-medium text-sm ${modules[mod.key] ? 'text-white/85' : 'text-white/45'}`}>{mod.label}</div>
-                    <div className="text-white/35 text-xs mt-0.5">{mod.desc}</div>
+                    <div className={`font-medium text-sm ${modules[mod.key] ? 'text-neutral-800' : 'text-neutral-500'}`}>{mod.label}</div>
+                    <div className="text-neutral-400 text-xs mt-0.5">{mod.desc}</div>
                   </div>
                   {/* Toggle */}
                   <button
                     onClick={() => setModules(m => ({ ...m, [mod.key]: !m[mod.key] }))}
-                    className={`relative w-10 h-5.5 rounded-full transition-all shrink-0 ${modules[mod.key] ? 'bg-white/30' : 'bg-white/10'}`}
+                    className={`relative w-10 h-5.5 rounded-full transition-all shrink-0 ${modules[mod.key] ? 'bg-black/20' : 'bg-black/10'}`}
                     style={{ height: 22, width: 40 }}
                   >
                     <span className={`absolute top-0.5 w-4.5 h-4.5 rounded-full bg-white transition-all ${modules[mod.key] ? 'left-5' : 'left-0.5'}`}
@@ -196,8 +196,8 @@ export default function SettingsPage() {
           </div>
 
           <div className="glass p-4 flex items-start gap-3">
-            <div className="text-white/25 text-xs mt-0.5">ℹ</div>
-            <p className="text-white/35 text-xs leading-relaxed">
+            <div className="text-neutral-400 text-xs mt-0.5">ℹ</div>
+            <p className="text-neutral-400 text-xs leading-relaxed">
               Turning off a module hides it from your sidebar but does not delete your data. You can re-enable it anytime.
             </p>
           </div>
@@ -209,19 +209,19 @@ export default function SettingsPage() {
         <div className="flex flex-col gap-4">
           {['Analytics', 'Distribution'].map(category => (
             <div key={category} className="glass p-6">
-              <div className="text-white/40 text-xs font-semibold uppercase tracking-wide mb-4">{category}</div>
+              <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide mb-4">{category}</div>
               <div className="flex flex-col gap-3">
                 {INTEGRATIONS.filter(i => i.category === category).map(integration => (
-                  <div key={integration.id} className="flex items-center justify-between p-4 rounded-xl bg-white/[0.03] border border-white/07">
+                  <div key={integration.id} className="flex items-center justify-between p-4 rounded-xl bg-black/4 border border-neutral-200">
                     <div className="flex items-center gap-3">
                       <span className="text-xl">{integration.icon}</span>
                       <div>
-                        <div className="text-white/75 font-medium text-sm">{integration.name}</div>
-                        <div className="text-white/35 text-xs mt-0.5">{integration.purpose}</div>
+                        <div className="text-neutral-700 font-medium text-sm">{integration.name}</div>
+                        <div className="text-neutral-400 text-xs mt-0.5">{integration.purpose}</div>
                       </div>
                     </div>
                     <a href={integration.url} target="_blank" rel="noopener noreferrer"
-                      className="flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-lg border border-white/10 text-white/45 hover:text-white/80 hover:border-white/20 transition-all shrink-0">
+                      className="flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-lg border border-neutral-200 text-neutral-500 hover:text-neutral-700 hover:border-neutral-300 transition-all shrink-0">
                       Open <ExternalLink size={10} />
                     </a>
                   </div>
@@ -231,8 +231,8 @@ export default function SettingsPage() {
           ))}
 
           <div className="glass p-4 flex items-start gap-3">
-            <div className="text-white/25 text-xs mt-0.5">ℹ</div>
-            <p className="text-white/35 text-xs leading-relaxed">
+            <div className="text-neutral-400 text-xs mt-0.5">ℹ</div>
+            <p className="text-neutral-400 text-xs leading-relaxed">
               Direct one-click integrations are on the roadmap. For now, open these tools directly and enter your metrics manually in Track.
             </p>
           </div>

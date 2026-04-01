@@ -72,7 +72,7 @@ export default function RegistrationPage() {
   if (!primaryType) {
     return (
       <div className="p-8 flex items-center justify-center min-h-[60vh]">
-        <div className="text-white/40 text-sm">Loading your recommendation...</div>
+        <div className="text-neutral-400 text-sm">Loading your recommendation...</div>
       </div>
     )
   }
@@ -81,28 +81,28 @@ export default function RegistrationPage() {
     <div className="p-8 max-w-4xl">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-2xl font-semibold text-white mb-1">Registration Guide</h1>
-        <p className="text-white/40 text-sm">
+        <h1 className="text-2xl font-semibold text-neutral-900 mb-1">Registration Guide</h1>
+        <p className="text-neutral-400 text-sm">
           Based on your business profile — {business?.sector}, {business?.stage?.replace('-', ' ')}
         </p>
       </div>
 
       {/* Recommendation Banner */}
-      <div className="glass p-6 mb-5 border-white/12">
+      <div className="glass p-6 mb-5 border-neutral-200">
         <div className="flex items-start justify-between gap-4 mb-4">
           <div>
-            <div className="text-white/40 text-xs font-semibold uppercase tracking-wide mb-1">Recommended for you</div>
-            <h2 className="text-xl font-semibold text-white">{primaryType.name}</h2>
-            <p className="text-white/50 text-sm mt-0.5">{primaryType.tagline}</p>
+            <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide mb-1">Recommended for you</div>
+            <h2 className="text-xl font-semibold text-neutral-900">{primaryType.name}</h2>
+            <p className="text-neutral-500 text-sm mt-0.5">{primaryType.tagline}</p>
           </div>
-          <div className="glass px-4 py-2 text-white/80 text-sm font-medium shrink-0">
+          <div className="glass px-4 py-2 text-neutral-700 text-sm font-medium shrink-0">
             {primaryType.shortName}
           </div>
         </div>
 
         {/* Reasoning */}
-        <div className="bg-white/[0.04] border border-white/08 rounded-xl p-4 mb-5">
-          <p className="text-white/60 text-sm leading-relaxed">{reasoning}</p>
+        <div className="bg-black/4 border border-neutral-200 rounded-xl p-4 mb-5">
+          <p className="text-neutral-500 text-sm leading-relaxed">{reasoning}</p>
         </div>
 
         {/* Key stats */}
@@ -112,41 +112,41 @@ export default function RegistrationPage() {
             { icon: <Clock size={14} />, label: 'Timeline', value: primaryType.timeline },
             { icon: <FileText size={14} />, label: 'Govt Fees', value: primaryType.govtFees },
           ].map(stat => (
-            <div key={stat.label} className="bg-white/[0.04] border border-white/08 rounded-xl p-3">
-              <div className="flex items-center gap-1.5 text-white/40 text-xs mb-1.5">
+            <div key={stat.label} className="bg-black/4 border border-neutral-200 rounded-xl p-3">
+              <div className="flex items-center gap-1.5 text-neutral-400 text-xs mb-1.5">
                 {stat.icon}
                 {stat.label}
               </div>
-              <div className="text-white/85 text-sm font-medium">{stat.value}</div>
+              <div className="text-neutral-800 text-sm font-medium">{stat.value}</div>
             </div>
           ))}
         </div>
 
         {/* Tax highlight */}
-        <div className="bg-white/[0.04] border border-white/08 rounded-xl px-4 py-3 mb-5 flex items-center gap-2">
-          <span className="text-white/40 text-xs">Tax:</span>
-          <span className="text-white/70 text-sm">{primaryType.taxHighlight}</span>
+        <div className="bg-black/4 border border-neutral-200 rounded-xl px-4 py-3 mb-5 flex items-center gap-2">
+          <span className="text-neutral-400 text-xs">Tax:</span>
+          <span className="text-neutral-600 text-sm">{primaryType.taxHighlight}</span>
         </div>
 
         {/* Pros & Cons */}
         <div className="grid grid-cols-2 gap-3 mb-5">
           <div>
-            <div className="text-white/40 text-xs font-semibold uppercase tracking-wide mb-2">Advantages</div>
+            <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide mb-2">Advantages</div>
             <ul className="flex flex-col gap-2">
               {primaryType.pros.map(p => (
-                <li key={p} className="flex items-start gap-2 text-sm text-white/65">
-                  <CheckCircle2 size={14} className="text-white/40 mt-0.5 shrink-0" />
+                <li key={p} className="flex items-start gap-2 text-sm text-neutral-600">
+                  <CheckCircle2 size={14} className="text-neutral-400 mt-0.5 shrink-0" />
                   {p}
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <div className="text-white/40 text-xs font-semibold uppercase tracking-wide mb-2">Limitations</div>
+            <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide mb-2">Limitations</div>
             <ul className="flex flex-col gap-2">
               {primaryType.cons.map(c => (
-                <li key={c} className="flex items-start gap-2 text-sm text-white/65">
-                  <XCircle size={14} className="text-white/30 mt-0.5 shrink-0" />
+                <li key={c} className="flex items-start gap-2 text-sm text-neutral-600">
+                  <XCircle size={14} className="text-neutral-400 mt-0.5 shrink-0" />
                   {c}
                 </li>
               ))}
@@ -157,7 +157,7 @@ export default function RegistrationPage() {
         {/* Documents required — collapsible */}
         <button
           onClick={() => setExpandedDocs(d => !d)}
-          className="flex items-center gap-2 text-white/40 text-sm hover:text-white/70 transition-colors"
+          className="flex items-center gap-2 text-neutral-400 text-sm hover:text-neutral-600 transition-colors"
         >
           {expandedDocs ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
           Documents required ({primaryType.documents.length})
@@ -165,7 +165,7 @@ export default function RegistrationPage() {
         {expandedDocs && (
           <ul className="mt-3 grid grid-cols-2 gap-2">
             {primaryType.documents.map(doc => (
-              <li key={doc} className="flex items-center gap-2 text-sm text-white/55">
+              <li key={doc} className="flex items-center gap-2 text-sm text-neutral-500">
                 <div className="w-1.5 h-1.5 rounded-full bg-white/25 shrink-0" />
                 {doc}
               </li>
@@ -177,25 +177,25 @@ export default function RegistrationPage() {
       {/* Alternatives */}
       {alternatives.length > 0 && (
         <div className="mb-8">
-          <div className="text-white/40 text-xs font-semibold uppercase tracking-wide mb-3">Also consider</div>
+          <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide mb-3">Also consider</div>
           <div className="grid grid-cols-2 gap-3">
             {alternatives.map(alt => (
               <button
                 key={alt.id}
                 onClick={() => setSelectedType(alt)}
                 className={`glass text-left p-4 transition-all ${
-                  selectedType?.id === alt.id ? 'border-white/25 bg-white/[0.07]' : ''
+                  selectedType?.id === alt.id ? 'border-neutral-300 bg-black/6' : ''
                 }`}
               >
                 <div className="flex items-center justify-between mb-2">
-                  <div className="text-white/80 text-sm font-medium">{alt.name}</div>
-                  <div className="text-white/35 text-xs">{alt.shortName}</div>
+                  <div className="text-neutral-700 text-sm font-medium">{alt.name}</div>
+                  <div className="text-neutral-400 text-xs">{alt.shortName}</div>
                 </div>
-                <p className="text-white/45 text-xs leading-relaxed">{alt.tagline}</p>
+                <p className="text-neutral-500 text-xs leading-relaxed">{alt.tagline}</p>
                 <div className="flex gap-3 mt-3">
-                  <span className="text-white/35 text-xs">{alt.costRange}</span>
-                  <span className="text-white/20 text-xs">·</span>
-                  <span className="text-white/35 text-xs">{alt.timeline}</span>
+                  <span className="text-neutral-400 text-xs">{alt.costRange}</span>
+                  <span className="text-neutral-300 text-xs">·</span>
+                  <span className="text-neutral-400 text-xs">{alt.timeline}</span>
                 </div>
               </button>
             ))}
@@ -205,15 +205,15 @@ export default function RegistrationPage() {
 
       {/* All 5 types quick reference */}
       <div className="mb-8">
-        <div className="text-white/40 text-xs font-semibold uppercase tracking-wide mb-3">All registration types</div>
+        <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide mb-3">All registration types</div>
         <div className="glass overflow-hidden">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-white/08">
-                <th className="text-left text-white/35 text-xs font-semibold p-4 uppercase tracking-wide">Type</th>
-                <th className="text-left text-white/35 text-xs font-semibold p-4 uppercase tracking-wide">Cost</th>
-                <th className="text-left text-white/35 text-xs font-semibold p-4 uppercase tracking-wide">Timeline</th>
-                <th className="text-left text-white/35 text-xs font-semibold p-4 uppercase tracking-wide">Founders</th>
+              <tr className="border-b border-neutral-200">
+                <th className="text-left text-neutral-400 text-xs font-semibold p-4 uppercase tracking-wide">Type</th>
+                <th className="text-left text-neutral-400 text-xs font-semibold p-4 uppercase tracking-wide">Cost</th>
+                <th className="text-left text-neutral-400 text-xs font-semibold p-4 uppercase tracking-wide">Timeline</th>
+                <th className="text-left text-neutral-400 text-xs font-semibold p-4 uppercase tracking-wide">Founders</th>
               </tr>
             </thead>
             <tbody>
@@ -221,23 +221,23 @@ export default function RegistrationPage() {
                 <tr
                   key={type.id}
                   onClick={() => setSelectedType(type)}
-                  className={`border-b border-white/05 last:border-0 cursor-pointer transition-all hover:bg-white/[0.03] ${
-                    selectedType?.id === type.id ? 'bg-white/[0.05]' : ''
+                  className={`border-b border-neutral-100 last:border-0 cursor-pointer transition-all hover:bg-black/4 ${
+                    selectedType?.id === type.id ? 'bg-black/5' : ''
                   }`}
                 >
                   <td className="p-4">
-                    <div className={`font-medium ${selectedType?.id === type.id ? 'text-white' : 'text-white/70'}`}>
+                    <div className={`font-medium ${selectedType?.id === type.id ? 'text-neutral-900' : 'text-neutral-600'}`}>
                       {type.shortName}
                     </div>
                     {type.id === primaryType?.id && (
-                      <span className="text-[10px] text-white/40 bg-white/08 px-1.5 py-0.5 rounded-full ml-0 mt-1 inline-block">
+                      <span className="text-[10px] text-neutral-400 bg-black/7 px-1.5 py-0.5 rounded-full ml-0 mt-1 inline-block">
                         Recommended
                       </span>
                     )}
                   </td>
-                  <td className="p-4 text-white/55">{type.costRange}</td>
-                  <td className="p-4 text-white/55">{type.timeline}</td>
-                  <td className="p-4 text-white/55">
+                  <td className="p-4 text-neutral-500">{type.costRange}</td>
+                  <td className="p-4 text-neutral-500">{type.timeline}</td>
+                  <td className="p-4 text-neutral-500">
                     {type.minFounders}–{type.maxFounders ?? '∞'}
                   </td>
                 </tr>
@@ -251,8 +251,8 @@ export default function RegistrationPage() {
       <div>
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h3 className="text-white/85 font-semibold">Where to register</h3>
-            <p className="text-white/40 text-xs mt-0.5">Compare 20 platforms — pick what works for you</p>
+            <h3 className="text-neutral-800 font-semibold">Where to register</h3>
+            <p className="text-neutral-400 text-xs mt-0.5">Compare 20 platforms — pick what works for you</p>
           </div>
         </div>
 
@@ -264,8 +264,8 @@ export default function RegistrationPage() {
               onClick={() => setActiveTab(tab.key)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                 activeTab === tab.key
-                  ? 'bg-white/10 text-white/90 border border-white/15'
-                  : 'text-white/40 hover:text-white/65 hover:bg-white/05'
+                  ? 'bg-black/10 text-neutral-800 border border-neutral-300'
+                  : 'text-neutral-400 hover:text-neutral-600 hover:bg-white/05'
               }`}
             >
               {tab.label}
@@ -278,28 +278,28 @@ export default function RegistrationPage() {
           {getTabPlatforms().map(platform => (
             <div key={platform.id} className="glass p-4 flex items-center gap-4">
               {/* Logo placeholder */}
-              <div className="w-10 h-10 rounded-xl bg-white/08 flex items-center justify-center text-lg shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-black/7 flex items-center justify-center text-lg shrink-0">
                 {platform.logo}
               </div>
 
               {/* Info */}
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-0.5">
-                  <span className="text-white/85 font-medium text-sm">{platform.name}</span>
-                  <span className="text-white/30 text-xs">★ {platform.rating}</span>
-                  <span className="text-white/20 text-xs">({platform.reviewCount} reviews)</span>
+                  <span className="text-neutral-800 font-medium text-sm">{platform.name}</span>
+                  <span className="text-neutral-400 text-xs">★ {platform.rating}</span>
+                  <span className="text-neutral-300 text-xs">({platform.reviewCount} reviews)</span>
                 </div>
                 <div className="flex flex-wrap gap-x-3 gap-y-0.5">
                   {platform.highlights.map(h => (
-                    <span key={h} className="text-white/40 text-xs">{h}</span>
+                    <span key={h} className="text-neutral-400 text-xs">{h}</span>
                   ))}
                 </div>
               </div>
 
               {/* Right side */}
               <div className="flex flex-col items-end gap-2 shrink-0">
-                <div className="text-white/85 font-semibold text-sm">{platform.costDisplay}</div>
-                <div className="text-white/35 text-xs">{platform.processingDays}</div>
+                <div className="text-neutral-800 font-semibold text-sm">{platform.costDisplay}</div>
+                <div className="text-neutral-400 text-xs">{platform.processingDays}</div>
                 <button
                   onClick={() => handlePlatformClick(platform)}
                   className="flex items-center gap-1.5 btn-accent px-3 py-1.5 text-xs"
@@ -314,8 +314,8 @@ export default function RegistrationPage() {
         {/* Skip CTA */}
         <div className="mt-6 flex items-center justify-between glass p-4">
           <div>
-            <div className="text-white/70 text-sm font-medium">Already registered or want to skip?</div>
-            <div className="text-white/35 text-xs mt-0.5">You can proceed directly to finding government schemes.</div>
+            <div className="text-neutral-600 text-sm font-medium">Already registered or want to skip?</div>
+            <div className="text-neutral-400 text-xs mt-0.5">You can proceed directly to finding government schemes.</div>
           </div>
           <a href="/dashboard/schemes" className="btn-accent px-4 py-2 text-sm">
             Go to Schemes →

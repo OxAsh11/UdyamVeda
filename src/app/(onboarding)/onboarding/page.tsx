@@ -92,17 +92,17 @@ export default function OnboardingPage() {
       <div className="glass p-10 w-full max-w-xl">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
-          <div className="text-xl font-bold text-white tracking-tight">Center</div>
-          <div className="text-white/40 text-xs font-medium">Step 1 of 2</div>
+          <div className="text-xl font-bold text-neutral-900 tracking-tight">Center</div>
+          <div className="text-neutral-400 text-xs font-medium">Step 1 of 2</div>
         </div>
 
-        <h1 className="text-2xl font-semibold text-white mb-1">Tell us about your business</h1>
-        <p className="text-white/50 text-sm mb-8">We&apos;ll personalise everything based on this.</p>
+        <h1 className="text-2xl font-semibold text-neutral-900 mb-1">Tell us about your business</h1>
+        <p className="text-neutral-500 text-sm mb-8">We&apos;ll personalise everything based on this.</p>
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
           {/* Business Name */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-white/60 text-xs font-medium uppercase tracking-wide">Business Name</label>
+            <label className="text-neutral-500 text-xs font-medium uppercase tracking-wide">Business Name</label>
             <input
               type="text"
               placeholder="e.g. Sunrise Traders"
@@ -114,7 +114,7 @@ export default function OnboardingPage() {
 
           {/* Sector */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-white/60 text-xs font-medium uppercase tracking-wide">Sector</label>
+            <label className="text-neutral-500 text-xs font-medium uppercase tracking-wide">Sector</label>
             <select
               required
               value={form.sector}
@@ -128,7 +128,7 @@ export default function OnboardingPage() {
 
           {/* Business Stage */}
           <div className="flex flex-col gap-2">
-            <label className="text-white/60 text-xs font-medium uppercase tracking-wide">Business Stage</label>
+            <label className="text-neutral-500 text-xs font-medium uppercase tracking-wide">Business Stage</label>
             <div className="grid grid-cols-2 gap-2">
               {STAGES.map(s => (
                 <button
@@ -137,14 +137,14 @@ export default function OnboardingPage() {
                   onClick={() => set('stage', s.value)}
                   className={`p-3 rounded-xl border text-left transition-all ${
                     form.stage === s.value
-                      ? 'border-white/40 bg-white/08'
-                      : 'border-white/10 bg-white/5 hover:border-white/20'
+                      ? 'border-neutral-400 bg-black/7'
+                      : 'border-neutral-200 bg-black/5 hover:border-neutral-300'
                   }`}
                 >
-                  <div className={`text-sm font-medium ${form.stage === s.value ? 'text-white/90' : 'text-white/80'}`}>
+                  <div className={`text-sm font-medium ${form.stage === s.value ? 'text-neutral-800' : 'text-neutral-700'}`}>
                     {s.label}
                   </div>
-                  <div className="text-white/40 text-xs mt-0.5">{s.desc}</div>
+                  <div className="text-neutral-400 text-xs mt-0.5">{s.desc}</div>
                 </button>
               ))}
             </div>
@@ -153,7 +153,7 @@ export default function OnboardingPage() {
           {/* State + District */}
           <div className="grid grid-cols-2 gap-3">
             <div className="flex flex-col gap-1.5">
-              <label className="text-white/60 text-xs font-medium uppercase tracking-wide">State</label>
+              <label className="text-neutral-500 text-xs font-medium uppercase tracking-wide">State</label>
               <select
                 required
                 value={form.state}
@@ -165,7 +165,7 @@ export default function OnboardingPage() {
               </select>
             </div>
             <div className="flex flex-col gap-1.5">
-              <label className="text-white/60 text-xs font-medium uppercase tracking-wide">District</label>
+              <label className="text-neutral-500 text-xs font-medium uppercase tracking-wide">District</label>
               <input
                 type="text"
                 placeholder="e.g. Pune"
@@ -178,7 +178,7 @@ export default function OnboardingPage() {
 
           {/* Founder Type */}
           <div className="flex flex-col gap-2">
-            <label className="text-white/60 text-xs font-medium uppercase tracking-wide">Founder Type</label>
+            <label className="text-neutral-500 text-xs font-medium uppercase tracking-wide">Founder Type</label>
             <div className="flex flex-wrap gap-2">
               {FOUNDER_TYPES.map(f => (
                 <button
@@ -195,7 +195,7 @@ export default function OnboardingPage() {
 
           {/* Initial Capital */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-white/60 text-xs font-medium uppercase tracking-wide">Initial Capital</label>
+            <label className="text-neutral-500 text-xs font-medium uppercase tracking-wide">Initial Capital</label>
             <select
               required
               value={form.initial_capital}

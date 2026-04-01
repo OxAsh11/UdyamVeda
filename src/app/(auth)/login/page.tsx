@@ -35,16 +35,16 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="glass p-10 w-full max-w-md">
         <div className="mb-8">
-          <div className="text-2xl font-bold text-white tracking-tight">Center</div>
-          <p className="text-white/50 text-sm mt-1">From idea to first customer</p>
+          <div className="text-2xl font-bold text-neutral-900 tracking-tight">Center</div>
+          <p className="text-neutral-500 text-sm mt-1">From idea to first customer</p>
         </div>
 
-        <h1 className="text-xl font-semibold text-white mb-1">Welcome back</h1>
-        <p className="text-white/50 text-sm mb-8">Sign in to your account</p>
+        <h1 className="text-xl font-semibold text-neutral-900 mb-1">Welcome back</h1>
+        <p className="text-neutral-500 text-sm mb-8">Sign in to your account</p>
 
         <form onSubmit={handleLogin} className="flex flex-col gap-4">
           <div className="flex flex-col gap-1.5">
-            <label className="text-white/60 text-xs font-medium uppercase tracking-wide">Email</label>
+            <label className="text-neutral-500 text-xs font-medium uppercase tracking-wide">Email</label>
             <input
               type="email"
               placeholder="you@company.com"
@@ -56,7 +56,7 @@ export default function LoginPage() {
           </div>
 
           <div className="flex flex-col gap-1.5">
-            <label className="text-white/60 text-xs font-medium uppercase tracking-wide">Password</label>
+            <label className="text-neutral-500 text-xs font-medium uppercase tracking-wide">Password</label>
             <input
               type="password"
               placeholder="Your password"
@@ -76,9 +76,9 @@ export default function LoginPage() {
           </button>
         </form>
 
-        <p className="text-white/40 text-sm text-center mt-6">
+        <p className="text-neutral-400 text-sm text-center mt-6">
           Don&apos;t have an account?{' '}
-          <Link href="/signup" className="text-white/80 underline hover:underline">Get started free</Link>
+          <Link href="/signup" className="text-neutral-700 underline hover:underline">Get started free</Link>
         </p>
       </div>
     </div>

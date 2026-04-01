@@ -18,11 +18,11 @@ interface Campaign {
 
 const CHANNEL_ICON: Record<string, string> = { Instagram: '📸', WhatsApp: '💬', Email: '📧' }
 const STATUS_STYLES: Record<string, string> = {
-  draft: 'bg-white/06 text-white/40',
-  approved: 'bg-white/10 text-white/70',
-  scheduled: 'bg-white/10 text-white/70',
-  live: 'bg-white/12 text-white/80',
-  completed: 'bg-white/08 text-white/50',
+  draft: 'bg-black/6 text-neutral-400',
+  approved: 'bg-black/10 text-neutral-600',
+  scheduled: 'bg-black/10 text-neutral-600',
+  live: 'bg-black/10 text-neutral-700',
+  completed: 'bg-black/7 text-neutral-500',
 }
 
 const MONTHS = [
@@ -87,7 +87,7 @@ export default function CampaignsPage() {
 
   if (loading) return (
     <div className="p-8 flex items-center justify-center min-h-[60vh]">
-      <div className="text-white/40 text-sm">Loading campaigns...</div>
+      <div className="text-neutral-400 text-sm">Loading campaigns...</div>
     </div>
   )
 
@@ -96,12 +96,12 @@ export default function CampaignsPage() {
       {/* Header */}
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h1 className="text-2xl font-semibold text-white mb-1">Campaigns</h1>
-          <p className="text-white/40 text-sm">Your 90-day campaign plan with ready-to-use content</p>
+          <h1 className="text-2xl font-semibold text-neutral-900 mb-1">Campaigns</h1>
+          <p className="text-neutral-400 text-sm">Your 90-day campaign plan with ready-to-use content</p>
         </div>
         <div className="flex items-center gap-2">
           <button onClick={generate} disabled={generating}
-            className="flex items-center gap-2 px-4 py-2 text-sm rounded-xl border border-white/10 text-white/50 hover:text-white/80 hover:border-white/20 transition-all disabled:opacity-40">
+            className="flex items-center gap-2 px-4 py-2 text-sm rounded-xl border border-neutral-200 text-neutral-500 hover:text-neutral-700 hover:border-neutral-300 transition-all disabled:opacity-40">
             {generating ? <Loader2 size={13} className="animate-spin" /> : <Wand2 size={13} />}
             {generating ? 'Generating...' : campaigns.length ? 'Regenerate' : 'Generate campaigns'}
           </button>
@@ -117,10 +117,10 @@ export default function CampaignsPage() {
       {/* Generating overlay */}
       {generating && (
         <div className="glass p-10 flex flex-col items-center gap-3 mb-6">
-          <Loader2 size={24} className="animate-spin text-white/40" />
-          <div className="text-white/50 text-sm text-center">
+          <Loader2 size={24} className="animate-spin text-neutral-400" />
+          <div className="text-neutral-500 text-sm text-center">
             Building your 9-campaign plan...<br />
-            <span className="text-white/30 text-xs">15–20 seconds</span>
+            <span className="text-neutral-400 text-xs">15–20 seconds</span>
           </div>
         </div>
       )}
@@ -128,9 +128,9 @@ export default function CampaignsPage() {
       {/* Empty state */}
       {!generating && campaigns.length === 0 && (
         <div className="glass p-10 text-center">
-          <div className="text-white/20 text-4xl mb-4">📋</div>
-          <div className="text-white/60 font-medium text-sm mb-1">No campaigns yet</div>
-          <p className="text-white/35 text-xs mb-5">Generate your GTM strategy first, then come back to build your campaign plan.</p>
+          <div className="text-neutral-300 text-4xl mb-4">📋</div>
+          <div className="text-neutral-500 font-medium text-sm mb-1">No campaigns yet</div>
+          <p className="text-neutral-400 text-xs mb-5">Generate your GTM strategy first, then come back to build your campaign plan.</p>
           <button onClick={generate} className="btn-accent flex items-center gap-2 px-5 py-2.5 text-sm mx-auto">
             <Wand2 size={13} /> Generate campaigns
           </button>
@@ -147,8 +147,8 @@ export default function CampaignsPage() {
             { label: 'Completed', value: campaigns.filter(c => c.status === 'completed').length },
           ].map(s => (
             <div key={s.label} className="glass p-4">
-              <div className="text-xl font-semibold text-white">{s.value}</div>
-              <div className="text-white/35 text-xs mt-0.5">{s.label}</div>
+              <div className="text-xl font-semibold text-neutral-900">{s.value}</div>
+              <div className="text-neutral-400 text-xs mt-0.5">{s.label}</div>
             </div>
           ))}
         </div>
@@ -161,26 +161,26 @@ export default function CampaignsPage() {
 
         return (
           <div key={month.label} className="mb-6">
-            <div className="text-white/40 text-xs font-semibold uppercase tracking-wide mb-3">{month.label}</div>
+            <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide mb-3">{month.label}</div>
             <div className="flex flex-col gap-3">
               {monthCampaigns.map(campaign => {
                 const isExpanded = expanded === campaign.id
                 const isEditing = editing === campaign.id
 
                 return (
-                  <div key={campaign.id} className={`glass transition-all ${isExpanded ? 'border-white/15' : ''}`}>
+                  <div key={campaign.id} className={`glass transition-all ${isExpanded ? 'border-neutral-300' : ''}`}>
                     {/* Card header */}
                     <div className="p-4 flex items-center gap-3 cursor-pointer"
                       onClick={() => setExpanded(isExpanded ? null : campaign.id)}>
                       <div className="text-xl shrink-0">{CHANNEL_ICON[campaign.channel] ?? '📢'}</div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-0.5">
-                          <span className="text-white/80 font-medium text-sm">{campaign.name}</span>
+                          <span className="text-neutral-700 font-medium text-sm">{campaign.name}</span>
                           <span className={`text-[10px] px-2 py-0.5 rounded-full capitalize font-medium ${STATUS_STYLES[campaign.status]}`}>
                             {campaign.status}
                           </span>
                         </div>
-                        <div className="flex items-center gap-2 text-white/35 text-xs">
+                        <div className="flex items-center gap-2 text-neutral-400 text-xs">
                           <span>{campaign.channel}</span>
                           <span>·</span>
                           <span>Week {campaign.week_number}</span>
@@ -188,31 +188,31 @@ export default function CampaignsPage() {
                           <span>{campaign.goal}</span>
                         </div>
                       </div>
-                      <div className="text-white/25 shrink-0">
+                      <div className="text-neutral-400 shrink-0">
                         {isExpanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
                       </div>
                     </div>
 
                     {/* Expanded */}
                     {isExpanded && (
-                      <div className="border-t border-white/07 px-4 pb-4">
+                      <div className="border-t border-neutral-200 px-4 pb-4">
                         {/* Brief */}
                         <div className="mt-4 mb-4">
-                          <div className="text-white/35 text-xs uppercase tracking-wide mb-2">Campaign Brief</div>
-                          <p className="text-white/60 text-sm leading-relaxed">{campaign.brief}</p>
+                          <div className="text-neutral-400 text-xs uppercase tracking-wide mb-2">Campaign Brief</div>
+                          <p className="text-neutral-500 text-sm leading-relaxed">{campaign.brief}</p>
                         </div>
 
                         {/* Content draft */}
                         <div className="mb-4">
                           <div className="flex items-center justify-between mb-2">
-                            <div className="text-white/35 text-xs uppercase tracking-wide">Content Draft</div>
+                            <div className="text-neutral-400 text-xs uppercase tracking-wide">Content Draft</div>
                             <div className="flex items-center gap-2">
                               <button onClick={() => { setEditing(campaign.id); setEditContent(campaign.content_draft) }}
-                                className="flex items-center gap-1.5 text-xs text-white/35 hover:text-white/65 transition-colors">
+                                className="flex items-center gap-1.5 text-xs text-neutral-400 hover:text-neutral-600 transition-colors">
                                 <Edit3 size={11} /> Edit
                               </button>
                               <button onClick={() => copyContent(campaign.id, campaign.content_draft)}
-                                className="flex items-center gap-1.5 text-xs text-white/35 hover:text-white/65 transition-colors">
+                                className="flex items-center gap-1.5 text-xs text-neutral-400 hover:text-neutral-600 transition-colors">
                                 {copied === campaign.id ? <CheckCircle2 size={11} /> : <Copy size={11} />}
                                 {copied === campaign.id ? 'Copied' : 'Copy'}
                               </button>
@@ -231,12 +231,12 @@ export default function CampaignsPage() {
                                 <button onClick={() => saveContentEdit(campaign.id)}
                                   className="btn-accent px-4 py-1.5 text-xs">Save</button>
                                 <button onClick={() => setEditing(null)}
-                                  className="px-4 py-1.5 text-xs rounded-lg border border-white/10 text-white/40 hover:text-white/70 transition-all">Cancel</button>
+                                  className="px-4 py-1.5 text-xs rounded-lg border border-neutral-200 text-neutral-400 hover:text-neutral-600 transition-all">Cancel</button>
                               </div>
                             </div>
                           ) : (
-                            <div className="bg-white/[0.03] border border-white/07 rounded-xl p-3">
-                              <p className="text-white/65 text-sm leading-relaxed whitespace-pre-wrap">{campaign.content_draft}</p>
+                            <div className="bg-black/4 border border-neutral-200 rounded-xl p-3">
+                              <p className="text-neutral-600 text-sm leading-relaxed whitespace-pre-wrap">{campaign.content_draft}</p>
                             </div>
                           )}
                         </div>
@@ -257,7 +257,7 @@ export default function CampaignsPage() {
                           )}
                           {campaign.status === 'live' && (
                             <button onClick={() => updateStatus(campaign.id, 'completed')}
-                              className="flex items-center gap-1.5 px-4 py-2 text-xs rounded-xl border border-white/10 text-white/50 hover:text-white/80 transition-all">
+                              className="flex items-center gap-1.5 px-4 py-2 text-xs rounded-xl border border-neutral-200 text-neutral-500 hover:text-neutral-700 transition-all">
                               <CheckCircle2 size={12} /> Mark completed
                             </button>
                           )}

@@ -36,17 +36,17 @@ export default function SignupPage() {
       <div className="glass p-10 w-full max-w-md">
         {/* Logo */}
         <div className="mb-8">
-          <div className="text-2xl font-bold text-white tracking-tight">Center</div>
-          <p className="text-white/50 text-sm mt-1">From idea to first customer</p>
+          <div className="text-2xl font-bold text-neutral-900 tracking-tight">Center</div>
+          <p className="text-neutral-500 text-sm mt-1">From idea to first customer</p>
         </div>
 
-        <h1 className="text-xl font-semibold text-white mb-1">Create your account</h1>
-        <p className="text-white/50 text-sm mb-8">Free to start. No credit card needed.</p>
+        <h1 className="text-xl font-semibold text-neutral-900 mb-1">Create your account</h1>
+        <p className="text-neutral-500 text-sm mb-8">Free to start. No credit card needed.</p>
 
         <form onSubmit={handleSignup} className="flex flex-col gap-4">
           {/* Name */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-white/60 text-xs font-medium uppercase tracking-wide">Full Name</label>
+            <label className="text-neutral-500 text-xs font-medium uppercase tracking-wide">Full Name</label>
             <input
               type="text"
               placeholder="Rahul Sharma"
@@ -59,7 +59,7 @@ export default function SignupPage() {
 
           {/* Email */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-white/60 text-xs font-medium uppercase tracking-wide">Email</label>
+            <label className="text-neutral-500 text-xs font-medium uppercase tracking-wide">Email</label>
             <input
               type="email"
               placeholder="you@company.com"
@@ -72,7 +72,7 @@ export default function SignupPage() {
 
           {/* Password */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-white/60 text-xs font-medium uppercase tracking-wide">Password</label>
+            <label className="text-neutral-500 text-xs font-medium uppercase tracking-wide">Password</label>
             <input
               type="password"
               placeholder="Min. 8 characters"
@@ -93,9 +93,9 @@ export default function SignupPage() {
           </button>
         </form>
 
-        <p className="text-white/40 text-sm text-center mt-6">
+        <p className="text-neutral-400 text-sm text-center mt-6">
           Already have an account?{' '}
-          <Link href="/login" className="text-white/80 underline hover:underline">Sign in</Link>
+          <Link href="/login" className="text-neutral-700 underline hover:underline">Sign in</Link>
         </p>
       </div>
     </div>

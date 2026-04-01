@@ -31,15 +31,15 @@ export default function EditNodeModal({ node, onClose, onSave, onDelete }: Props
         onClick={e => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-5">
-          <div className="text-white/70 text-sm font-semibold">Edit node</div>
-          <button onClick={onClose} className="text-white/30 hover:text-white/70 transition-colors">
+          <div className="text-neutral-600 text-sm font-semibold">Edit node</div>
+          <button onClick={onClose} className="text-neutral-400 hover:text-neutral-600 transition-colors">
             <X size={16} />
           </button>
         </div>
 
         <div className="flex flex-col gap-3 mb-5">
           <div className="flex flex-col gap-1.5">
-            <label className="text-white/40 text-xs uppercase tracking-wide">Label</label>
+            <label className="text-neutral-400 text-xs uppercase tracking-wide">Label</label>
             <input
               value={label}
               onChange={e => setLabel(e.target.value)}
@@ -48,7 +48,7 @@ export default function EditNodeModal({ node, onClose, onSave, onDelete }: Props
             />
           </div>
           <div className="flex flex-col gap-1.5">
-            <label className="text-white/40 text-xs uppercase tracking-wide">Description</label>
+            <label className="text-neutral-400 text-xs uppercase tracking-wide">Description</label>
             <input
               value={subtitle}
               onChange={e => setSubtitle(e.target.value)}
@@ -67,7 +67,7 @@ export default function EditNodeModal({ node, onClose, onSave, onDelete }: Props
           </button>
           <button
             onClick={() => { onDelete(node.id); onClose() }}
-            className="px-4 py-2 text-sm rounded-xl border border-white/10 text-white/40 hover:text-red-400 hover:border-red-400/30 transition-all"
+            className="px-4 py-2 text-sm rounded-xl border border-neutral-200 text-neutral-400 hover:text-red-400 hover:border-red-400/30 transition-all"
           >
             Delete
           </button>

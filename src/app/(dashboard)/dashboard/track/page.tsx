@@ -112,7 +112,7 @@ export default function TrackPage() {
 
   if (loading) return (
     <div className="p-8 flex items-center justify-center min-h-[60vh]">
-      <div className="text-white/40 text-sm">Loading...</div>
+      <div className="text-neutral-400 text-sm">Loading...</div>
     </div>
   )
 
@@ -120,31 +120,31 @@ export default function TrackPage() {
     <div className="p-8 max-w-4xl">
       {/* Header */}
       <div className="mb-8">
-        <h1 className="text-2xl font-semibold text-white mb-1">Track</h1>
-        <p className="text-white/40 text-sm">Monitor your campaign performance and compare against benchmarks</p>
+        <h1 className="text-2xl font-semibold text-neutral-900 mb-1">Track</h1>
+        <p className="text-neutral-400 text-sm">Monitor your campaign performance and compare against benchmarks</p>
       </div>
 
       {/* Connect analytics — contextual prompt */}
       <div className="glass p-5 mb-6">
-        <div className="text-white/40 text-xs font-semibold uppercase tracking-wide mb-4">Connect your analytics tools</div>
+        <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide mb-4">Connect your analytics tools</div>
         <div className="grid grid-cols-2 gap-3">
           {INTEGRATIONS.map(tool => (
-            <div key={tool.name} className="flex items-center justify-between p-3 rounded-xl bg-white/[0.03] border border-white/07">
+            <div key={tool.name} className="flex items-center justify-between p-3 rounded-xl bg-black/4 border border-neutral-200">
               <div className="flex items-center gap-3">
                 <span className="text-xl">{tool.icon}</span>
                 <div>
-                  <div className="text-white/70 text-sm font-medium">{tool.name}</div>
-                  <div className="text-white/35 text-xs">{tool.purpose}</div>
+                  <div className="text-neutral-600 text-sm font-medium">{tool.name}</div>
+                  <div className="text-neutral-400 text-xs">{tool.purpose}</div>
                 </div>
               </div>
               <a href={tool.url} target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-lg border border-white/10 text-white/40 hover:text-white/70 hover:border-white/20 transition-all shrink-0">
+                className="flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-lg border border-neutral-200 text-neutral-400 hover:text-neutral-600 hover:border-neutral-300 transition-all shrink-0">
                 Open <ExternalLink size={10} />
               </a>
             </div>
           ))}
         </div>
-        <p className="text-white/25 text-xs mt-3">Enter metrics manually below. Direct API integration coming in a future update.</p>
+        <p className="text-neutral-400 text-xs mt-3">Enter metrics manually below. Direct API integration coming in a future update.</p>
       </div>
 
       {/* KPI cards */}
@@ -157,8 +157,8 @@ export default function TrackPage() {
           { label: 'CAC', value: cac > 0 ? `₹${cac}` : '—' },
         ].map(kpi => (
           <div key={kpi.label} className="glass p-4">
-            <div className="text-lg font-semibold text-white">{kpi.value}</div>
-            <div className="text-white/35 text-xs mt-0.5">{kpi.label}</div>
+            <div className="text-lg font-semibold text-neutral-900">{kpi.value}</div>
+            <div className="text-neutral-400 text-xs mt-0.5">{kpi.label}</div>
           </div>
         ))}
       </div>
@@ -166,7 +166,7 @@ export default function TrackPage() {
       {/* Benchmarks */}
       {benchmarks && (
         <div className="glass p-5 mb-6">
-          <div className="text-white/40 text-xs font-semibold uppercase tracking-wide mb-4">Your Category Benchmarks</div>
+          <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide mb-4">Your Category Benchmarks</div>
           <div className="grid grid-cols-3 gap-3">
             {[
               { label: 'Avg CAC', benchmark: benchmarks.avgCAC, yours: cac > 0 ? `₹${cac}` : null },
@@ -175,13 +175,13 @@ export default function TrackPage() {
               { label: 'LTV', benchmark: benchmarks.ltv, yours: null },
               { label: 'Content Frequency', benchmark: benchmarks.contentFrequency, yours: null },
             ].map(b => (
-              <div key={b.label} className="bg-white/[0.03] border border-white/07 rounded-xl p-3">
-                <div className="text-white/30 text-xs mb-1">{b.label}</div>
-                <div className="text-white/70 text-sm font-medium">{b.benchmark}</div>
+              <div key={b.label} className="bg-black/4 border border-neutral-200 rounded-xl p-3">
+                <div className="text-neutral-400 text-xs mb-1">{b.label}</div>
+                <div className="text-neutral-600 text-sm font-medium">{b.benchmark}</div>
                 {b.yours && (
                   <div className="flex items-center gap-1 mt-1.5">
-                    <span className="text-white/30 text-xs">You:</span>
-                    <span className="text-white/60 text-xs font-medium">{b.yours}</span>
+                    <span className="text-neutral-400 text-xs">You:</span>
+                    <span className="text-neutral-500 text-xs font-medium">{b.yours}</span>
                   </div>
                 )}
               </div>
@@ -193,12 +193,12 @@ export default function TrackPage() {
       {/* AI Insights */}
       {insights.length > 0 && (
         <div className="glass p-5 mb-6">
-          <div className="text-white/40 text-xs font-semibold uppercase tracking-wide mb-3">Insights</div>
+          <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide mb-3">Insights</div>
           <div className="flex flex-col gap-2">
             {insights.map((ins, i) => (
-              <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-white/[0.03] border border-white/07">
-                <TrendingUp size={13} className="text-white/30 mt-0.5 shrink-0" />
-                <p className="text-white/60 text-sm">{ins}</p>
+              <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-black/4 border border-neutral-200">
+                <TrendingUp size={13} className="text-neutral-400 mt-0.5 shrink-0" />
+                <p className="text-neutral-500 text-sm">{ins}</p>
               </div>
             ))}
           </div>
@@ -208,9 +208,9 @@ export default function TrackPage() {
       {/* Metrics table */}
       <div>
         <div className="flex items-center justify-between mb-3">
-          <div className="text-white/40 text-xs font-semibold uppercase tracking-wide">Weekly Metrics</div>
+          <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide">Weekly Metrics</div>
           <button onClick={() => setAddingRow(true)}
-            className="flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-lg border border-white/10 text-white/45 hover:text-white/75 hover:border-white/20 transition-all">
+            className="flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-lg border border-neutral-200 text-neutral-500 hover:text-neutral-700 hover:border-neutral-300 transition-all">
             <Plus size={11} /> Add week
           </button>
         </div>
@@ -218,27 +218,27 @@ export default function TrackPage() {
         <div className="glass overflow-hidden">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-white/08">
+              <tr className="border-b border-neutral-200">
                 {['Week', 'Channel', 'Reach', 'Clicks', 'Conversions', 'Spend'].map(h => (
-                  <th key={h} className="text-left text-white/30 text-xs font-semibold p-4 uppercase tracking-wide">{h}</th>
+                  <th key={h} className="text-left text-neutral-400 text-xs font-semibold p-4 uppercase tracking-wide">{h}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {metrics.map((row, i) => (
-                <tr key={row.id ?? i} className="border-b border-white/05 last:border-0">
-                  <td className="p-4 text-white/65 text-sm">{row.week}</td>
-                  <td className="p-4 text-white/65 text-sm">{row.channel}</td>
-                  <td className="p-4 text-white/65 text-sm">{Number(row.reach).toLocaleString()}</td>
-                  <td className="p-4 text-white/65 text-sm">{Number(row.clicks).toLocaleString()}</td>
-                  <td className="p-4 text-white/65 text-sm">{row.conversions}</td>
-                  <td className="p-4 text-white/65 text-sm">₹{Number(row.spend).toLocaleString()}</td>
+                <tr key={row.id ?? i} className="border-b border-neutral-100 last:border-0">
+                  <td className="p-4 text-neutral-600 text-sm">{row.week}</td>
+                  <td className="p-4 text-neutral-600 text-sm">{row.channel}</td>
+                  <td className="p-4 text-neutral-600 text-sm">{Number(row.reach).toLocaleString()}</td>
+                  <td className="p-4 text-neutral-600 text-sm">{Number(row.clicks).toLocaleString()}</td>
+                  <td className="p-4 text-neutral-600 text-sm">{row.conversions}</td>
+                  <td className="p-4 text-neutral-600 text-sm">₹{Number(row.spend).toLocaleString()}</td>
                 </tr>
               ))}
 
               {metrics.length === 0 && !addingRow && (
                 <tr>
-                  <td colSpan={6} className="p-8 text-center text-white/30 text-sm">
+                  <td colSpan={6} className="p-8 text-center text-neutral-400 text-sm">
                     No metrics yet — add your first week's data above
                   </td>
                 </tr>
@@ -246,7 +246,7 @@ export default function TrackPage() {
 
               {/* Add row inline */}
               {addingRow && (
-                <tr className="border-t border-white/08 bg-white/[0.02]">
+                <tr className="border-t border-neutral-200 bg-black/3">
                   <td className="p-3">
                     <input value={newRow.week} onChange={e => setNewRow(r => ({ ...r, week: e.target.value }))}
                       placeholder="Week 1" className="glass-input w-full px-2 py-1.5 text-xs" />
@@ -266,7 +266,7 @@ export default function TrackPage() {
                   <td className="p-3">
                     <div className="flex gap-1">
                       <button onClick={addMetric} className="btn-accent p-1.5 rounded-lg"><Save size={12} /></button>
-                      <button onClick={() => setAddingRow(false)} className="p-1.5 rounded-lg border border-white/10 text-white/40 hover:text-white/70 transition-all">✕</button>
+                      <button onClick={() => setAddingRow(false)} className="p-1.5 rounded-lg border border-neutral-200 text-neutral-400 hover:text-neutral-600 transition-all">✕</button>
                     </div>
                   </td>
                 </tr>

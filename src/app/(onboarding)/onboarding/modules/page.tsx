@@ -85,12 +85,12 @@ export default function ModuleSelectionPage() {
       <div className="w-full max-w-2xl">
         {/* Header */}
         <div className="flex items-center justify-between mb-10">
-          <div className="text-xl font-bold text-white tracking-tight">Center</div>
-          <div className="text-white/40 text-xs font-medium">Step 2 of 2</div>
+          <div className="text-xl font-bold text-neutral-900 tracking-tight">Center</div>
+          <div className="text-neutral-400 text-xs font-medium">Step 2 of 2</div>
         </div>
 
-        <h1 className="text-2xl font-semibold text-white mb-1">What do you need help with?</h1>
-        <p className="text-white/50 text-sm mb-8">You can change or hide modules anytime from Settings.</p>
+        <h1 className="text-2xl font-semibold text-neutral-900 mb-1">What do you need help with?</h1>
+        <p className="text-neutral-500 text-sm mb-8">You can change or hide modules anytime from Settings.</p>
 
         {/* Module Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
@@ -103,46 +103,46 @@ export default function ModuleSelectionPage() {
                 onClick={() => toggleModule(mod.id)}
                 className={`glass text-left p-6 transition-all duration-200 ${
                   isSelected
-                    ? 'border-white/30 bg-white/[0.07] shadow-[0_0_30px_rgba(255,255,255,0.05)]'
-                    : 'hover:bg-white/[0.08]'
+                    ? 'border-neutral-300 bg-black/6 shadow-[0_0_30px_rgba(0,0,0,0.06)]'
+                    : 'hover:bg-black/7'
                 }`}
               >
                 {/* Icon + Title */}
                 <div className="flex items-center gap-3 mb-4">
-                  <div className={`text-2xl ${isSelected ? 'text-white/90' : 'text-white/60'}`}>
+                  <div className={`text-2xl ${isSelected ? 'text-neutral-800' : 'text-neutral-500'}`}>
                     {mod.icon}
                   </div>
                   <div>
-                    <div className={`font-semibold text-base ${isSelected ? 'text-white' : 'text-white/80'}`}>
+                    <div className={`font-semibold text-base ${isSelected ? 'text-neutral-900' : 'text-neutral-700'}`}>
                       {mod.title}
                     </div>
-                    <div className="text-white/40 text-xs">{mod.tagline}</div>
+                    <div className="text-neutral-400 text-xs">{mod.tagline}</div>
                   </div>
                 </div>
 
                 {/* Divider */}
-                <div className="border-t border-white/10 mb-4" />
+                <div className="border-t border-neutral-200 mb-4" />
 
                 {/* Features */}
                 <ul className="flex flex-col gap-2 mb-5">
                   {mod.features.map(f => (
-                    <li key={f} className="flex items-start gap-2 text-sm text-white/60">
-                      <span className={`mt-0.5 text-xs ${isSelected ? 'text-white/70' : 'text-white/30'}`}>✓</span>
+                    <li key={f} className="flex items-start gap-2 text-sm text-neutral-500">
+                      <span className={`mt-0.5 text-xs ${isSelected ? 'text-neutral-600' : 'text-neutral-400'}`}>✓</span>
                       {f}
                     </li>
                   ))}
                 </ul>
 
                 {/* Best for */}
-                <div className={`text-xs px-3 py-2 rounded-lg ${isSelected ? 'bg-white/[0.08] text-white/80' : 'bg-white/5 text-white/40'}`}>
+                <div className={`text-xs px-3 py-2 rounded-lg ${isSelected ? 'bg-black/7 text-neutral-700' : 'bg-black/5 text-neutral-400'}`}>
                   Best for: {mod.bestFor}
                 </div>
 
                 {/* Selection indicator */}
                 {isSelected && (
-                  <div className="mt-4 flex items-center gap-2 text-white/90 text-xs font-medium">
-                    <div className="w-4 h-4 rounded-full bg-white/20 flex items-center justify-center">
-                      <span className="text-white text-[10px]">✓</span>
+                  <div className="mt-4 flex items-center gap-2 text-neutral-800 text-xs font-medium">
+                    <div className="w-4 h-4 rounded-full bg-black/15 flex items-center justify-center">
+                      <span className="text-neutral-900 text-[10px]">✓</span>
                     </div>
                     Selected
                   </div>
@@ -156,7 +156,7 @@ export default function ModuleSelectionPage() {
         <button
           type="button"
           onClick={selectBoth}
-          className="w-full py-3 rounded-xl border border-white/15 bg-white/5 text-white/70 text-sm font-medium hover:bg-white/10 hover:text-white transition-all mb-4"
+          className="w-full py-3 rounded-xl border border-neutral-300 bg-black/5 text-neutral-600 text-sm font-medium hover:bg-black/10 hover:text-neutral-900 transition-all mb-4"
         >
           Select Both — Recommended
         </button>
