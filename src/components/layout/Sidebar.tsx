@@ -7,6 +7,7 @@ import {
   LayoutDashboard,
   Building2,
   Landmark,
+  ShieldCheck,
   Lightbulb,
   PenTool,
   Megaphone,
@@ -66,6 +67,7 @@ export default function Sidebar({ userName, setupSchemes, gtmPlatform }: Sidebar
             <div className="section-label mt-3">Setup & Schemes</div>
             <NavItem href="/dashboard/registration" icon={Building2} label="Registration" />
             <NavItem href="/dashboard/schemes" icon={Landmark} label="Schemes" />
+            <NavItem href="/dashboard/compliance" icon={ShieldCheck} label="Compliance" />
           </>
         )}
 

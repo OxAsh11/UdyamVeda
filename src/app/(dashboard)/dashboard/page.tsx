@@ -1,18 +1,26 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import Link from 'next/link'
-import { Building2, Landmark, Lightbulb, BarChart2, ArrowRight } from 'lucide-react'
+import { Building2, Landmark, ShieldCheck, Lightbulb, BarChart2, ArrowRight } from 'lucide-react'
+import { COMPLIANCE_ITEMS, filterCompliance, calculateHealthScore } from '@/lib/data/compliance-roadmap'
 
 export default async function DashboardPage() {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) redirect('/login')
 
-  const [{ data: profile }, { data: business }, { data: modules }] = await Promise.all([
+  const [{ data: profile }, { data: business }, { data: modules }, { data: complianceRows }] = await Promise.all([
     supabase.from('profiles').select('full_name').eq('id', user.id).single(),
     supabase.from('business_profiles').select('*').eq('user_id', user.id).single(),
     supabase.from('module_selections').select('*').eq('user_id', user.id).single(),
+    supabase.from('compliance_progress').select('item_id, completed').eq('user_id', user.id),
   ])
+
+  const applicable = business
+    ? filterCompliance(COMPLIANCE_ITEMS, { sector: business.sector ?? '', stage: business.stage ?? '' })
+    : COMPLIANCE_ITEMS
+  const completedIds = (complianceRows ?? []).filter(r => r.completed).map(r => r.item_id)
+  const { score, completed: complianceDone, total: complianceTotal } = calculateHealthScore(applicable, completedIds)
 
   const firstName = profile?.full_name?.split(' ')[0] ?? 'there'
 
@@ -70,10 +78,35 @@ export default async function DashboardPage() {
                 </div>
                 <ArrowRight size={14} className="text-neutral-400 group-hover:text-neutral-500 transition-colors" />
               </Link>
+
+              <Link href="/dashboard/compliance" className="flex items-center justify-between p-3 rounded-xl bg-black/5 hover:bg-black/10 transition-all group">
+                <div className="flex items-center gap-2.5">
+                  <ShieldCheck size={15} className="text-neutral-500" />
+                  <div>
+                    <div className="text-neutral-700 text-sm font-medium">Compliance Centre</div>
+                    <div className="text-neutral-400 text-xs">
+                      {complianceTotal > 0
+                        ? `${complianceDone}/${complianceTotal} items done · Score ${score}/100`
+                        : 'Track all compliance items'}
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="relative w-8 h-8">
+                    <svg viewBox="0 0 32 32" className="w-8 h-8 -rotate-90">
+                      <circle cx="16" cy="16" r="13" fill="none" stroke="#e5e7eb" strokeWidth="3" />
+                      <circle cx="16" cy="16" r="13" fill="none" stroke="#404040" strokeWidth="3"
+                        strokeDasharray={`${(score / 100) * 81.7} 81.7`} strokeLinecap="round" />
+                    </svg>
+                    <span className="absolute inset-0 flex items-center justify-center text-[9px] font-bold text-neutral-700">{score}</span>
+                  </div>
+                  <ArrowRight size={14} className="text-neutral-400 group-hover:text-neutral-500 transition-colors" />
+                </div>
+              </Link>
             </div>
 
-            <Link href="/dashboard/schemes" className="btn-accent inline-flex items-center gap-2 px-4 py-2 text-sm">
-              Find my schemes <ArrowRight size={14} />
+            <Link href="/dashboard/compliance" className="btn-accent inline-flex items-center gap-2 px-4 py-2 text-sm">
+              View compliance <ArrowRight size={14} />
             </Link>
           </div>
         )}
@@ -137,6 +170,9 @@ export default async function DashboardPage() {
               </Link>
               <Link href="/dashboard/schemes" className="chip hover:border-neutral-300 hover:text-neutral-800">
                 → Find schemes
+              </Link>
+              <Link href="/dashboard/compliance" className="chip hover:border-neutral-300 hover:text-neutral-800">
+                → Compliance centre
               </Link>
             </>
           )}

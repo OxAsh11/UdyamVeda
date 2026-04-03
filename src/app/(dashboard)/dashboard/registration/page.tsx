@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { REGISTRATION_TYPES, recommendRegistrationType, type RegType } from '@/lib/data/registration-types'
 import { getSegmentedPlatforms, type Platform } from '@/lib/data/registration-platforms'
-import { CheckCircle2, XCircle, Clock, FileText, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react'
+import { CheckCircle2, XCircle, Clock, FileText, ExternalLink, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react'
+import { COMPLIANCE_ITEMS, CATEGORY_LABELS as COMPLIANCE_CATEGORY_LABELS, filterCompliance } from '@/lib/data/compliance-roadmap'
 
 type TabKey = 'most-used' | 'lowest-price' | 'top-rated'
 
@@ -322,6 +323,69 @@ export default function RegistrationPage() {
           </a>
         </div>
       </div>
+
+      {/* Sector compliance checklist */}
+      {business && (() => {
+        const sectorItems = filterCompliance(COMPLIANCE_ITEMS, {
+          sector: business.sector ?? '',
+          stage: business.stage ?? '',
+        })
+        const criticalItems = sectorItems.filter(i => i.priority === 'critical' || i.priority === 'high')
+
+        return (
+          <div className="mt-10">
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <h3 className="text-neutral-800 font-semibold">Your compliance checklist</h3>
+                <p className="text-neutral-400 text-xs mt-0.5">
+                  {criticalItems.length} critical compliance items for a {business.sector} business in {business.stage?.replace(/-/g, ' ')} stage
+                </p>
+              </div>
+              <a href="/dashboard/compliance" className="flex items-center gap-1.5 text-sm text-neutral-500 hover:text-neutral-700 transition-colors">
+                Track progress <ArrowRight size={13} />
+              </a>
+            </div>
+
+            <div className="flex flex-col gap-2">
+              {criticalItems.slice(0, 8).map(item => (
+                <div key={item.id} className="glass p-4 flex items-start justify-between gap-4">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2 mb-0.5 flex-wrap">
+                      <span className="text-neutral-700 font-medium text-sm">{item.name}</span>
+                      <span className={`text-[10px] px-2 py-0.5 rounded-full font-semibold uppercase tracking-wide ${
+                        item.priority === 'critical' ? 'bg-black/10 text-neutral-600' : 'bg-black/6 text-neutral-400'
+                      }`}>
+                        {item.priority === 'critical' ? 'Critical' : 'Important'}
+                      </span>
+                    </div>
+                    <p className="text-neutral-400 text-xs leading-relaxed">{item.description.slice(0, 100)}...</p>
+                    <div className="flex gap-3 mt-1.5 text-xs text-neutral-400">
+                      <span>Cost: {item.cost}</span>
+                      <span>·</span>
+                      <span>{item.timeline}</span>
+                    </div>
+                  </div>
+                  <a
+                    href={item.officialUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="shrink-0 flex items-center gap-1.5 text-xs text-neutral-400 hover:text-neutral-700 border border-neutral-200 hover:border-neutral-300 px-3 py-1.5 rounded-lg transition-all"
+                  >
+                    Portal <ExternalLink size={10} />
+                  </a>
+                </div>
+              ))}
+            </div>
+
+            {criticalItems.length > 8 && (
+              <a href="/dashboard/compliance"
+                className="mt-3 flex items-center justify-center gap-2 text-sm text-neutral-500 hover:text-neutral-700 transition-colors py-3">
+                View all {criticalItems.length} compliance items <ArrowRight size={13} />
+              </a>
+            )}
+          </div>
+        )
+      })()}
     </div>
   )
 }
