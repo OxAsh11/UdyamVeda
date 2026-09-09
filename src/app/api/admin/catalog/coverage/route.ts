@@ -24,7 +24,7 @@ export async function GET(request: NextRequest) {
   if (requestUrl.searchParams.get('format') === 'csv') {
     const { data, error } = await context.supabase
       .from('authority_coverage')
-      .select('id, source_registry_id, authority_level, authority_name, authority_url, business_relevance, assessment_status, exclusion_reason, assessment_note, assessment_evidence_url, assessment_evidence_anchor, assessed_at, source_registry:source_registry(name, url, expected_item_count)')
+      .select('id, source_registry_id, authority_level, authority_name, authority_url, business_relevance, assessment_status, exclusion_reason, assessment_note, assessment_evidence_url, assessment_evidence_anchor, assessed_at, source_registry:source_registry!authority_coverage_source_registry_id_fkey(name, url, expected_item_count)')
       .order('assessment_status', { ascending: true })
       .order('authority_name', { ascending: true })
     if (error) return errorResponse('Unable to load the authority coverage matrix.', 500)
@@ -67,7 +67,7 @@ export async function GET(request: NextRequest) {
     : 25
   const from = (page - 1) * pageSize
   const to = from + pageSize - 1
-  const selectColumns = 'id, source_registry_id, authority_level, authority_name, authority_url, business_relevance, assessment_status, exclusion_reason, assessment_note, assessment_evidence_url, assessment_evidence_anchor, assessed_at, source_registry:source_registry(name, url, expected_item_count)'
+  const selectColumns = 'id, source_registry_id, authority_level, authority_name, authority_url, business_relevance, assessment_status, exclusion_reason, assessment_note, assessment_evidence_url, assessment_evidence_anchor, assessed_at, source_registry:source_registry!authority_coverage_source_registry_id_fkey(name, url, expected_item_count)'
   let coverageQuery = context.supabase
     .from('authority_coverage')
     .select(selectColumns, { count: 'exact' })

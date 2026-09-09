@@ -43,7 +43,7 @@ export async function GET() {
 
   const { data, error } = await context.supabase
     .from('opportunities')
-    .select('id, slug, name, opportunity_type, status, current_version_id, updated_at, current_version:opportunity_versions(id, version_number, title, review_status, completeness, last_verified_at)')
+    .select('id, slug, name, opportunity_type, status, current_version_id, updated_at, current_version:opportunity_versions!opportunities_current_version_fk(id, version_number, title, review_status, completeness, last_verified_at)')
     .order('updated_at', { ascending: false })
     .limit(200)
   if (error) return errorResponse('Unable to load catalog records.', 500)

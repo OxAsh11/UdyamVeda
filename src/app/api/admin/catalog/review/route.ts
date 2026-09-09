@@ -11,6 +11,15 @@ type ReviewCheckStatus = 'pending' | 'passed' | 'failed' | 'not_applicable'
 
 const reviewCheckTypes: ReviewCheckType[] = ['source', 'eligibility', 'benefit', 'application', 'window', 'fine_print', 'amendment']
 
+type ReviewCheckRow = {
+  check_type: ReviewCheckType
+  status: ReviewCheckStatus
+  evidence: unknown
+  reviewer_note: string | null
+  reviewed_by: string | null
+  reviewed_at: string | null
+}
+
 type ReviewTaskRow = {
   id: string
   task_type: string
@@ -59,7 +68,7 @@ type ReviewTaskRow = {
     requirements: Array<{ requirement_type: string; name: string; required: boolean }>
     steps: Array<{ step_number: number; title: string; official_url: string | null }>
     windows: Array<{ window_type: string; opens_at: string | null; closes_at: string | null }>
-    checks: Array<{ check_type: ReviewCheckType; status: ReviewCheckStatus; evidence: unknown; reviewer_note: string | null; reviewed_by: string | null; reviewed_at: string | null }>
+    checks: ReviewCheckRow[]
   } | null
 }
 
@@ -185,7 +194,7 @@ export async function GET(request: NextRequest) {
   let reviewQuery = reviewReadClient
     .from('review_tasks')
     .select(
-      'id, task_type, status, reviewer_notes, created_at, opportunity_version:opportunity_versions(id, version_number, title, summary, objective, legal_basis, eligibility, application, fine_print, benefit_summary, effective_from, effective_to, completeness, confidence, last_verified_at, review_status, opportunity:opportunities(id, slug, name, status, opportunity_type, current_version_id), sources:opportunity_sources(source_registry_id, source_url, source_kind, source_title, source_anchor, page_number, section, paragraph, document_anchor, is_primary), benefits:opportunity_benefits(benefit_type, label, amount_min, amount_max, percentage), requirements:opportunity_requirements(requirement_type, name, required), steps:opportunity_steps(step_number, title, official_url), windows:opportunity_windows(window_type, opens_at, closes_at), rules:eligibility_rule_sets(reviewed), checks:catalog_review_checks(check_type, status, evidence, reviewer_note, reviewed_by, reviewed_at))',
+      'id, task_type, status, reviewer_notes, created_at, checks:catalog_review_checks(check_type, status, evidence, reviewer_note, reviewed_by, reviewed_at), opportunity_version:opportunity_versions(id, version_number, title, summary, objective, legal_basis, eligibility, application, fine_print, benefit_summary, effective_from, effective_to, completeness, confidence, last_verified_at, review_status, opportunity:opportunities!opportunity_versions_opportunity_id_fkey(id, slug, name, status, opportunity_type, current_version_id), sources:opportunity_sources(source_registry_id, source_url, source_kind, source_title, source_anchor, page_number, section, paragraph, document_anchor, is_primary), benefits:opportunity_benefits(benefit_type, label, amount_min, amount_max, percentage), requirements:opportunity_requirements(requirement_type, name, required), steps:opportunity_steps(step_number, title, official_url), windows:opportunity_windows(window_type, opens_at, closes_at), rules:eligibility_rule_sets(reviewed))',
       { count: 'exact' },
     )
     .in('status', ['open', 'in_review'])
@@ -195,8 +204,17 @@ export async function GET(request: NextRequest) {
 
   if (error) return reviewerError('Unable to load the catalog review queue.', 500)
 
+  const normalizedData = (data ?? []).map(row => {
+    const raw = row as unknown as { opportunity_version: ReviewTaskRow['opportunity_version'] | ReviewTaskRow['opportunity_version'][]; checks?: ReviewCheckRow[] }
+    const version = Array.isArray(raw.opportunity_version) ? raw.opportunity_version[0] : raw.opportunity_version
+    return {
+      ...row,
+      opportunity_version: version ? { ...version, checks: raw.checks ?? [] } : null,
+    }
+  }) as unknown as ReviewTaskRow[]
+
   return NextResponse.json({
-    data: (data ?? []) as unknown as ReviewTaskRow[],
+    data: normalizedData,
     pagination: {
       page,
       pageSize,
@@ -232,7 +250,7 @@ export async function POST(request: NextRequest) {
 
   const { data: task, error: taskError } = await supabase
     .from('review_tasks')
-    .select('id, status, opportunity_version_id, opportunity_version:opportunity_versions(id, title, objective, legal_basis, eligibility, application, fine_print, benefit_summary, completeness, review_status, last_verified_at, opportunity_id, opportunity:opportunities(id, slug, status, current_version_id), benefits:opportunity_benefits(benefit_type, label, amount_min, amount_max, percentage), requirements:opportunity_requirements(requirement_type, name, required), steps:opportunity_steps(step_number, title, official_url), windows:opportunity_windows(window_type, opens_at, closes_at), sources:opportunity_sources(source_registry_id, source_url, source_kind, source_anchor, page_number, section, paragraph, document_anchor, is_primary), rules:eligibility_rule_sets(reviewed, rules), checks:catalog_review_checks(check_type, status, evidence, reviewer_note, reviewed_by, reviewed_at))')
+    .select('id, status, opportunity_version_id, checks:catalog_review_checks(check_type, status, evidence, reviewer_note, reviewed_by, reviewed_at), opportunity_version:opportunity_versions(id, title, objective, legal_basis, eligibility, application, fine_print, benefit_summary, completeness, review_status, last_verified_at, opportunity_id, opportunity:opportunities!opportunity_versions_opportunity_id_fkey(id, slug, status, current_version_id), benefits:opportunity_benefits(benefit_type, label, amount_min, amount_max, percentage), requirements:opportunity_requirements(requirement_type, name, required), steps:opportunity_steps(step_number, title, official_url), windows:opportunity_windows(window_type, opens_at, closes_at), sources:opportunity_sources(source_registry_id, source_url, source_kind, source_anchor, page_number, section, paragraph, document_anchor, is_primary), rules:eligibility_rule_sets(reviewed, rules))')
     .eq('id', taskId)
     .maybeSingle()
 
@@ -242,9 +260,11 @@ export async function POST(request: NextRequest) {
     return reviewerError('This review task has already been completed.', 409)
   }
 
-  const version = Array.isArray(task.opportunity_version)
-    ? task.opportunity_version[0]
-    : task.opportunity_version
+  const rawTask = task as typeof task & { checks?: ReviewCheckRow[] }
+  const rawVersion = Array.isArray(rawTask.opportunity_version)
+    ? rawTask.opportunity_version[0]
+    : rawTask.opportunity_version
+  const version = rawVersion ? { ...rawVersion, checks: rawTask.checks ?? [] } : null
   if (!version) return reviewerError('The review task has no opportunity version.', 422)
 
   if (action === 'record_check') {
