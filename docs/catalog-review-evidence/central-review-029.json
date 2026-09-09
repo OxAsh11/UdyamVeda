@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-029",
+  "authority": "Ministry of Corporate Affairs (MCA) / Income Tax Department",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "MCA is the controlling source for company incorporation and SPICe+ filing behavior. The Income Tax Department is the controlling source for PAN/TAN administration and tax-identity handoff. Older MCA FAQ and instruction-kit terms are retained as evidence but current V3 behavior, forms, fees and notices must be reconciled before publication.",
+  "records": [
+    {
+      "slug": "company-incorporation-spice-plus",
+      "sourceUrl": "https://www.mca.gov.in/content/dam/mca/pdf/SPICEplus-and-linked-filings-FAQs-V3-20230122.pdf",
+      "supportingSources": [
+        {
+          "url": "https://www.mca.gov.in/",
+          "anchor": "Current MCA portal, last updated 3 September 2026: V3 boundary, current V3 notices, current SPICe+ linked-filing FAQ entry and current company-incorporation activity"
+        },
+        {
+          "url": "https://www.mca.gov.in/Ministry/pdf/SPICe%2B_help.pdf",
+          "anchor": "SPICe+ instruction kit: Part A name reservation, Part B incorporation, separate or combined submission, SRN approval dependency and field-level instructions"
+        }
+      ],
+      "sourceKind": "official_mca_v3_portal_faq_and_instruction_kit",
+      "sourceAnchor": "MCA SPICe+ Part A and Part B, linked services, V3 portal boundary and official incorporation route",
+      "observations": [
+        "The current MCA portal confirms that company-incorporation work is handled in the V3 environment and continues to publish V3 SPICe+ and linked-filing guidance. UdyamVeda must not route users to legacy V2 filing instructions.",
+        "The official instruction kit distinguishes SPICe+ Part A for name reservation from Part B for incorporation details. Part A may be submitted separately for name reservation or together with Part B; Part B and linked forms become available after an approved Part A SRN when name reservation is filed separately.",
+        "The official FAQ describes Part B as covering company registration/CIN, Section 8 licensing where applicable, DIN allotment, PAN/TAN allocation and optional GSTIN application. The exact current linked-service sequence and scope must be rechecked against the live V3 form before publication.",
+        "The FAQ also describes AGILE-PRO-S and linked services such as bank-account opening, EPFO, ESIC and selected state services. These are preparation dependencies, not proof that every service applies to every company or that later statutory compliance thresholds are satisfied.",
+        "UdyamVeda may collect a preparation checklist and validate completeness, but the applicant or authorised professional must use the applicant's own MCA account, business-user role, DSC and declarations. UdyamVeda must not impersonate the applicant or retain signing credentials.",
+        "This record is a registration workflow, not a grant or financial benefit. Any filing fee, state stamp duty, name-reservation validity, resubmission condition or processing expectation must be versioned from current MCA evidence rather than inferred from the older FAQ."
+      ],
+      "reviewFollowUps": [
+        "Confirm the live V3 form version, current linked-form sequence and portal behavior through an authenticated or reviewer-observed MCA route.",
+        "Reconcile current subscriber/director, registered-office, DSC, constitutional-document and foreign-subscriber requirements with the live form and current rules.",
+        "Verify current filing fees, state stamp duty, name-reservation validity, resubmission terms and processing expectations from current official notices or form outputs.",
+        "Confirm each AGILE-PRO-S linked service and distinguish incorporation-time registration from later threshold-based EPFO, ESIC, GST and state compliance.",
+        "Have a reviewer approve the official handoff and applicant-controlled credential boundary before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "pan-tan-allocation-readiness",
+      "sourceUrl": "https://www.mca.gov.in/content/dam/mca/pdf/SPICEplus-and-linked-filings-FAQs-V3-20230122.pdf",
+      "supportingSources": [
+        {
+          "url": "https://www.mca.gov.in/",
+          "anchor": "Current MCA V3 portal and SPICe+ linked-filing guidance for incorporation-time PAN/TAN allocation"
+        },
+        {
+          "url": "https://www.incometax.gov.in/iec/foportal/",
+          "anchor": "Current Income Tax e-Filing portal: official tax-identity handoff and PAN/TAN support boundary"
+        },
+        {
+          "url": "https://www.incometax.gov.in/iec/foportal/central-state-government-approved-undertaking-agency",
+          "anchor": "Income Tax Department PAN/TAN verification and service documentation, including official support contacts and verification boundaries"
+        },
+        {
+          "url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/objective-and-scope-new-act",
+          "anchor": "Income Tax Department transition guidance for the Income Tax Act, 2025 and current PAN/TAN administration"
+        }
+      ],
+      "sourceKind": "official_mca_and_income_tax_current_portals_plus_linked_service_faq",
+      "sourceAnchor": "SPICe+ Part B PAN/TAN allocation, Income Tax Department tax-identity handoff, current portal verification and 2026 legal-transition boundary",
+      "observations": [
+        "The MCA SPICe+ FAQ places PAN/TAN allocation within the incorporation-time linked service route for eligible company applications. This does not mean every entity or every applicant should use the same route.",
+        "The current Income Tax portal remains the authoritative tax-identity handoff and provides PAN/TAN service and verification boundaries. UdyamVeda should guide users to the official route when incorporation-time allocation is unavailable, incomplete or requires a separate application.",
+        "The Income Tax Department's 2026 transition guidance must be used to distinguish existing PAN/TAN continuity from fresh applications and to confirm the applicable current forms. The record must not hard-code historical forms, fees or processing times without current evidence.",
+        "PAN, TAN, OTPs, DSCs and identity credentials remain applicant-controlled sensitive data. UdyamVeda may validate document presence and explain the next step, but must not request OTPs, impersonate the taxpayer or store identity numbers unless a separately approved workflow requires it.",
+        "PAN/TAN allocation is an administrative identity outcome, not a subsidy, grant or guaranteed processing result. The recommendation and application model must show the official handoff and unresolved status separately."
+      ],
+      "reviewFollowUps": [
+        "Confirm the current TAN-specific form, fee, eligibility, signing and correction route separately from PAN.",
+        "Confirm live SPICe+ and Income Tax handoff behavior for each supported entity type and for failed or delayed TAN allocation.",
+        "Reconcile document and identity requirements against current Income Tax forms and 2026 notifications.",
+        "Verify that the product's consent, masking, deletion and credential-handling controls satisfy the privacy boundary before enabling document extraction."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "MCA and Income Tax official portals confirm the current V3 and tax-identity boundaries, but exact live form behavior, current fees, route-specific requirements, 2026 transition details and credential/privacy controls require human reconciliation before publication."
+  }
+}

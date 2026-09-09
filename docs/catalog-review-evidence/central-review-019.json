@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-019",
+  "authority": "Department of Posts",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "Department of Posts current India Post pages and official Franchise Scheme document only; third-party claims are excluded.",
+  "records": [
+    {
+      "slug": "india-post-franchise-outlet",
+      "sourceUrl": "https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+      "supportingSources": [
+        {
+          "url": "https://www.indiapost.gov.in/vacancies/franchise",
+          "anchor": "Current India Post franchise page: counter services, current service description, prescribed application and Department agreement"
+        },
+        {
+          "url": "https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+          "anchor": "Sections 2.1-2.12: counter services, local eligibility, premises, business plan, security, selection, commission, monitoring and training"
+        },
+        {
+          "url": "https://www.indiapost.gov.in/business-services/otherservices",
+          "anchor": "Current India Post business-services navigation includes Get India Post Franchise"
+        }
+      ],
+      "sourceKind": "official_current_page_and_scheme_document",
+      "sourceAnchor": "Current franchise page plus Franchise Scheme PDF sections 2.1-2.12",
+      "observations": [
+        "The current India Post page confirms that counter services are franchised while delivery and transmission remain with the Department. Listed services include stamps and stationery, registered and Speed Post articles, money orders, PLI agency subject to criteria, retail payments and e-governance services.",
+        "The detailed official scheme document describes individuals, shops, institutions and other eligible entities, with location and local-demand considerations. Individual applicants are above 18 and at least 8th-class pass under that document; suitable premises, operating details, investment, business plan and local reference are required.",
+        "Selection is by the concerned Postal Division/Divisional Head. The minimum security deposit is described as INR 5,000 in NSC form, with the actual amount based on possible daily transactions and subject to the Department terms.",
+        "Remuneration or commission is set by the Department's agreement schedule and can change. The route provides no guaranteed income, selection, or nationwide opening at every location.",
+        "The current page does not state a single nationwide closing date. This should be modeled as a rolling local route whose availability must be confirmed with the concerned Postal Division, including local exclusions and current forms."
+      ],
+      "reviewFollowUps": [
+        "Confirm the current application form, local divisional availability, PSSK exclusion and current security calculation.",
+        "Verify the live agreement schedule, commission/remuneration, monitoring, training, renewal and termination terms against the concerned Division.",
+        "Keep the benefit type as market access/operating route, not grant, loan or guaranteed income."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "india-post-postal-agent",
+      "sourceUrl": "https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+      "supportingSources": [
+        {
+          "url": "https://www.indiapost.gov.in/vacancies/franchise",
+          "anchor": "Current India Post franchise page linking the Franchise Scheme route"
+        },
+        {
+          "url": "https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+          "anchor": "Sections 3.1-3.5: postal-agent services, eligible individuals/entities, no security deposit, cash purchase, 5% commission and licence terms"
+        },
+        {
+          "url": "https://www.indiapost.gov.in/business-services/otherservices",
+          "anchor": "Current India Post business-services navigation includes Get India Post Franchise"
+        }
+      ],
+      "sourceKind": "official_current_page_and_scheme_document",
+      "sourceAnchor": "Current franchise page plus Franchise Scheme PDF sections 3.1-3.5",
+      "observations": [
+        "The postal-agent route is narrower than a franchise outlet: it covers counter sale of postal stamps and stationery, including philatelic items, rather than the broader counter-service set.",
+        "The official scheme document allows eligible individuals, shops, institutions and organisations in urban and rural areas. Individual applicants are above 18; no prescribed educational qualification is stated for postal agents.",
+        "The document states that postal agents do not sign a Memorandum of Agreement and do not provide a security deposit under the scheme, but suitable premises, stock, signage, local selection and identification remain required.",
+        "The document describes cash purchases from the Link Post Office subject to availability and a minimum INR 300 transaction, with a 5% commission/deduction. This is not a guaranteed income figure and must not be presented as a subsidy.",
+        "The licence is initially for one year and later continuation is subject to satisfactory work and conduct. The current page does not provide a single nationwide deadline, so local availability remains unknown until confirmed."
+      ],
+      "reviewFollowUps": [
+        "Confirm the current application form, concerned Postal Division, stock availability and live commission wording.",
+        "Verify the current licence, continuation, termination and service-boundary terms locally.",
+        "Do not extend the route beyond stamp/stationery sales or represent 5% as guaranteed earnings."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment"
+    ],
+    "reason": "The current India Post page confirms the route, but the detailed scheme document is older and local divisional availability, forms, terms and service conditions remain operationally material. Both records require human review before publication or actionable recommendations."
+  }
+}

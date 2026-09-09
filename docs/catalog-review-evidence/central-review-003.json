@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-003",
+  "authority": "Candidate: Department of Commerce (DoC)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve an authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "Official Special Economic Zones portal and Department of Commerce sources only; third-party claims are excluded.",
+  "records": [
+    {
+      "slug": "commerce-special-economic-zone-unit-approval-and-authorized-operations",
+      "sourceUrl": "https://sezindia.gov.in/facilities-and-incentives",
+      "supportingSources": [
+        {
+          "url": "https://sezindia.gov.in/how-to-apply",
+          "anchor": "Application in Form-A, State Government and Board of Approval route, Development Commissioner inspection and notification process"
+        },
+        {
+          "url": "https://sezindia.gov.in/sez-rules-and-amendments",
+          "anchor": "Current SEZ Rules and Amendments page, including 2026 amendments"
+        },
+        {
+          "url": "https://sezindia.gov.in/instructions",
+          "anchor": "2026 instructions and current SEZ-Online/user-charge and compliance notices"
+        }
+      ],
+      "sourceKind": "official_department_portal_and_rules_index",
+      "sourceAnchor": "Unit facilities, duty-free import/domestic procurement, zero-rated supplies and single-window clearance; Section 10AA sunset note",
+      "observations": [
+        "The official SEZ portal describes duty-free import/domestic procurement for development, operation and maintenance of SEZ units and single-window clearance for Central and State approvals.",
+        "The official facilities page states that supplies to SEZs are zero-rated under the IGST Act, 2017, while the historic Section 10AA income-tax benefit is subject to a sunset clause and must not be presented as a current universal tax entitlement.",
+        "The official application route is a regulatory approval and unit-operation process involving Form-A, the concerned State Government, the Board of Approval, and the Development Commissioner; it is not a generic grant application.",
+        "The official rules and instructions pages show continuing amendments and operational instructions, so the record needs change detection and current amendment review before publication."
+      ],
+      "reviewFollowUps": [
+        "Separate unit approval, authorized operations, developer benefits, tax treatment and GST treatment into distinct benefit and requirement records.",
+        "Verify the current unit eligibility, positive Net Foreign Exchange, Letter of Approval, authorized-operations and monitoring obligations from the applicable SEZ Act/Rules and current instructions.",
+        "Reconcile the Section 10AA sunset language and withdrawn MAT/CST/service-tax statements so historical benefits cannot appear current.",
+        "Confirm the current Form-A, SEZ-Online charges, State/Development Commissioner route, documents and any 2026 amendment affecting the unit workflow."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment"
+    ],
+    "reason": "External source cross-check is not a substitute for the persisted reviewer checklist, complete evidence capture, and authorized publication decision."
+  }
+}

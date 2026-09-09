@@ -1,27 +1,16 @@
-import { redirect } from 'next/navigation'
-import { createClient } from '@/lib/supabase/server'
+import Link from 'next/link'
+import { ArrowRight, ArrowUpRight, BarChart3, Building2, CheckCircle2, Compass, FileCheck2, Landmark, Sparkles, Waves } from 'lucide-react'
+import { ResourceCard, SignalCard } from '@/components/marketing/resource-card'
+import { SectionEyebrow, SiteShell } from '@/components/marketing/site-shell'
+import { BLOGS, GOVERNMENT_RESOURCES, INSIGHTS, NEWS } from '@/lib/marketing/resources'
 
-export default async function Home() {
-  const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-
-  if (!user) redirect('/signup')
-
-  const { data: business } = await supabase
-    .from('business_profiles')
-    .select('id')
-    .eq('user_id', user.id)
-    .single()
-
-  if (!business) redirect('/onboarding')
-
-  const { data: modules } = await supabase
-    .from('module_selections')
-    .select('id')
-    .eq('user_id', user.id)
-    .single()
-
-  if (!modules) redirect('/onboarding/modules')
-
-  redirect('/dashboard')
+export default function Home() {
+  return <SiteShell>
+    <section className="vv-home-hero"><div className="vv-container vv-hero-grid-layout"><div className="vv-hero-copy"><SectionEyebrow>India’s business resource layer</SectionEyebrow><h1>Make the next business move with <span>better context.</span></h1><p>Vidyam Veda brings government support, practical business knowledge, and sector signals into one clearer place.</p><div className="vv-hero-actions"><Link className="vv-button vv-button-primary" href="/resources">Explore resources <ArrowRight size={17} /></Link><Link className="vv-text-link" href="/methodology">How we build trust <ArrowUpRight size={16} /></Link></div><div className="vv-hero-proof"><span><CheckCircle2 size={15} /> Source-linked</span><span><CheckCircle2 size={15} /> Plain-language</span><span><CheckCircle2 size={15} /> Built for action</span></div></div><div className="vv-hero-board" aria-label="Vidyam Veda resource preview"><div className="vv-board-top"><span className="vv-board-kicker">Your resource compass</span><span className="vv-live-pill"><i /> Updated today</span></div><div className="vv-board-greeting"><p>Good morning, founder</p><h2>What are you working on?</h2></div><div className="vv-board-objectives"><Link href="/government"><Landmark size={19} /><span>Find government support</span><ArrowUpRight size={15} /></Link><Link href="/blogs"><FileCheck2 size={19} /><span>Get the process right</span><ArrowUpRight size={15} /></Link><Link href="/insights"><BarChart3 size={19} /><span>Read the market signal</span><ArrowUpRight size={15} /></Link></div><div className="vv-board-footer"><span><Sparkles size={15} /> Personalised pathways are coming next</span><span className="vv-board-count">08</span></div></div></div></section>
+    <section className="vv-section vv-section-tight"><div className="vv-container"><div className="vv-section-heading"><div><SectionEyebrow icon={Compass}>Start with your objective</SectionEyebrow><h2>One place to find your next step.</h2></div><Link className="vv-text-link" href="/resources">See all resources <ArrowUpRight size={16} /></Link></div><div className="vv-objective-grid"><Link href="/government" className="vv-objective-card vv-objective-orange"><Landmark size={23} /><strong>Find support</strong><span>Government schemes, portals, and programmes</span><ArrowUpRight size={17} /></Link><Link href="/blogs" className="vv-objective-card vv-objective-blue"><FileCheck2 size={23} /><strong>Get compliant</strong><span>Guides for registrations, licences, and filings</span><ArrowUpRight size={17} /></Link><Link href="/insights" className="vv-objective-card vv-objective-teal"><BarChart3 size={23} /><strong>Read the signal</strong><span>Market intelligence with source and date</span><ArrowUpRight size={17} /></Link><Link href="/sectors/fisheries" className="vv-objective-card vv-objective-violet"><Waves size={23} /><strong>Explore a sector</strong><span>Relevant pathways for real business contexts</span><ArrowUpRight size={17} /></Link></div></div></section>
+    <section className="vv-section vv-tint-section"><div className="vv-container"><div className="vv-section-heading"><div><SectionEyebrow icon={Landmark}>Government, made easier to navigate</SectionEyebrow><h2>Start from the official doorway.</h2></div><Link className="vv-text-link" href="/government">Browse government resources <ArrowUpRight size={16} /></Link></div><div className="vv-featured-grid">{GOVERNMENT_RESOURCES.slice(0, 3).map(resource => <ResourceCard key={resource.slug} resource={resource} />)}</div></div></section>
+    <section className="vv-section"><div className="vv-container"><div className="vv-section-heading"><div><SectionEyebrow icon={Sparkles}>Fresh context</SectionEyebrow><h2>Signals worth a closer look.</h2></div><Link className="vv-text-link" href="/news">See the latest <ArrowUpRight size={16} /></Link></div><div className="vv-signal-grid">{[...NEWS, ...INSIGHTS].map(resource => <SignalCard key={resource.slug} resource={resource} />)}</div></div></section>
+    <section className="vv-section vv-editorial-section"><div className="vv-container vv-editorial-layout"><div className="vv-editorial-intro"><SectionEyebrow icon={Building2}>The useful read</SectionEyebrow><h2>Good information should help you do something.</h2><p>Our guides explain the decision behind the form, the authority behind the programme, and the action that comes next.</p><Link className="vv-button vv-button-dark" href="/blogs">Read blogs & guides <ArrowRight size={17} /></Link></div><div className="vv-editorial-list">{BLOGS.map((resource, index) => <Link href={`/resources/${resource.slug}`} key={resource.slug}><span>0{index + 1}</span><div><strong>{resource.title}</strong><small>{resource.audience} · {resource.updated}</small></div><ArrowUpRight size={17} /></Link>)}</div></div></section>
+    <section className="vv-closing"><div className="vv-container vv-closing-inner"><div><SectionEyebrow>Build your own resource map</SectionEyebrow><h2>Start with a question. Leave with a path.</h2></div><Link className="vv-button vv-button-light" href="/resources">Explore Vidyam Veda <ArrowRight size={17} /></Link></div></section>
+  </SiteShell>
 }

@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-009",
+  "authority": "Department for Promotion of Industry and Internal Trade (DPIIT)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "DPIIT, Startup India, NSWS and SISFS official pages, notifications, guidelines, FAQs and portal notices only; third-party claims are excluded.",
+  "records": [
+    {
+      "slug": "dpiit-startup-recognition",
+      "sourceUrl": "https://www.startupindia.gov.in/content/sih/en/startupgov/startup_recognition_page.html",
+      "supportingSources": [
+        {
+          "url": "https://www.startupindia.gov.in/content/sih/en/startupgov/startup_recognition_page.html",
+          "anchor": "Last updated 20 August 2026; eligibility criteria, NSWS application route and applicant/fee disclaimer"
+        },
+        {
+          "url": "https://www.nsws.gov.in/",
+          "anchor": "National Single Window System route for adding Registration as a Startup under Central Approvals"
+        }
+      ],
+      "sourceKind": "current_official_recognition_guidance_and_application_route",
+      "sourceAnchor": "DPIIT Startup Recognition page: eligible entity types, age and turnover limits, innovation/scalability test, exclusions, NSWS route and self-application disclaimer",
+      "observations": [
+        "The current Startup India page describes DPIIT recognition for a private limited company, registered partnership, LLP or cooperative society that is within the applicable age and turnover limits, demonstrates innovation or improvement with employment/wealth-creation potential, and is not formed by splitting up or reconstructing an existing business.",
+        "The ordinary branch currently states incorporation age up to 10 years and turnover below INR 200 crore in any prior financial year; the page separately describes a DeepTech branch with up to 20 years and INR 300 crore. These branches must remain explicit in the rule model and must not be silently collapsed into one threshold.",
+        "The official route is through NSWS: create or use an account, add Registration as a Startup under Central Approvals, and submit the recognition application. Recognition is an official status/prerequisite and access enabler, not itself a grant or guaranteed tax benefit.",
+        "DPIIT states that the applicant must apply using its own mobile number and email, that there is no appointed agency/representative/franchise for filing, and that no fee is charged. UdyamVeda may prepare and validate information but must not impersonate the applicant or present itself as the filing portal.",
+        "The current page is suitable for a reviewed registration journey, but the governing notification, exact document set, form fields, recognition-versus-benefit boundaries and any current processing commitment still require document-level review before publication."
+      ],
+      "reviewFollowUps": [
+        "Locate and verify the current governing notification or Gazette basis and record the effective date for the ordinary and DeepTech branches.",
+        "Extract the exact incorporation, turnover, ownership/control, excluded-business and innovation/scalability rules with unknown handling and source anchors.",
+        "Verify the current NSWS form, required incorporation and explanation documents, declarations, file constraints, correction route and grievance contacts.",
+        "Separate recognition eligibility from downstream tax, procurement, intellectual-property, funding and compliance benefits; each downstream benefit needs its own current source and conditions.",
+        "Verify whether the current entity-form list and age/turnover thresholds apply uniformly across all recognition cases or have sector-specific exceptions."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "startup-india-fund-of-funds-2",
+      "sourceUrl": "https://www.dpiit.gov.in/static/uploads/2026/04/8949d8e0dabf11cb9291b00ec1d1f727.pdf",
+      "supportingSources": [
+        {
+          "url": "https://www.dpiit.gov.in/static/uploads/2026/04/3382625ffc31ea32ecc33ea68365172d.pdf",
+          "anchor": "DPIIT notification dated 13 April 2026 notifying Startup India Fund of Funds 2.0 and implementation-agency provisions"
+        }
+      ],
+      "sourceKind": "official_scheme_guidelines_and_notification",
+      "sourceAnchor": "Startup India Fund of Funds 2.0 guidelines pages 1-5: corpus, purpose, implementing agency, AIF investment route, operating provisions and AIF selection parameters",
+      "observations": [
+        "The guidelines describe a INR 10,000 crore Startup India Fund of Funds 2.0 corpus with commitments across the 16th and 17th Finance Commission cycles.",
+        "The scheme is implemented through SIDBI, with provision for selection of another domestic implementing agency. The implementing agency invests in eligible SEBI-registered Category I and Category II Alternative Investment Funds, subject to the scheme's selection and operating conditions.",
+        "The Fund of Funds does not invest directly in startups. Startup access is indirect through selected AIFs that may invest in startups using equity, equity-linked or debt instruments. UdyamVeda must not describe the corpus as a direct startup grant, loan ceiling or guaranteed amount, and should not imply that a startup applies to DPIIT for a direct ticket under this scheme.",
+        "The guidelines contain AIF eligibility, selection, investment, reporting, operating-expense and restriction provisions that affect the intermediary route. Those provisions must be modelled separately from any startup-facing opportunity and should not be converted into startup eligibility rules without evidence.",
+        "A public record may be useful as an indirect capital-access explainer, but the current selected-AIF route, startup visibility, application path and any direct founder action remain unresolved."
+      ],
+      "reviewFollowUps": [
+        "Verify the notification and guideline revision history, effective dates and whether any later amendment changes the corpus or implementing-agency route.",
+        "Identify the official route for selected AIF announcements and whether founders have a searchable or application-facing path; otherwise classify this as indirect ecosystem access rather than a direct opportunity.",
+        "Extract the AIF selection, commitment, investment, disclosure, reporting, conflict and restriction provisions with exact page/section anchors.",
+        "Keep corpus, commitments and intermediary fund capacity separate from any individual startup benefit; no startup amount should be inferred from the scheme corpus.",
+        "Confirm whether DPIIT, SIDBI or another official channel publishes selected AIFs and founder-facing guidance before adding application steps."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "startup-india-seed-fund-scheme",
+      "sourceUrl": "https://seedfund.startupindia.gov.in/faq",
+      "supportingSources": [
+        {
+          "url": "https://seedfund.startupindia.gov.in/",
+          "anchor": "Official portal notice: Final Notice (Extended), startup applications through 31 May 2026 and incubator selection by 30 June 2026; year-round-call feature text also appears on the portal"
+        },
+        {
+          "url": "https://seedfund.startupindia.gov.in/startup",
+          "anchor": "Startup route, DPIIT-recognition and incorporation-age conditions, three-incubator preference and application access"
+        }
+      ],
+      "sourceKind": "official_faq_and_current_portal_window_notice",
+      "sourceAnchor": "SISFS FAQ: eligibility, funding limits, terms and conditions; official home/startup pages: current deadline and incubator route",
+      "observations": [
+        "The official FAQ describes SISFS support for proof of concept, prototype development, product trials, market entry and commercialisation. A startup must be DPIIT-recognized and incorporated not more than two years before applying, subject to the scheme's other conditions.",
+        "The FAQ describes up to INR 20 lakh as a grant for proof of concept, prototype development or product trials, and up to INR 50 lakh as investment for market entry, commercialisation or scaling through convertible debentures, debt or debt-linked instruments. These are separate benefit routes and must not be added into one total eligible value.",
+        "The FAQ describes unsecured support, no application fee, grant and debt each only once, an interest rate not above the prevailing repo rate for the debt route, tenure up to 60 months and a moratorium up to 12 months. The exact operative guideline, recovery, milestone, reporting and incubator-selection conditions still need review.",
+        "The route is through eligible incubators: the startup applies online, may apply to any three incubators, and physical incubation is not mandatory according to the FAQ. UdyamVeda should guide and prepare the application but must hand off to the official portal.",
+        "The official portal displays a final extended deadline of 31 May 2026 for startup applications and 30 June 2026 for incubators to complete selection. On 8 September 2026 this makes the opportunity presumptively closed unless an official reopening or later extension is found. Generic year-round-call wording on the portal conflicts with the explicit deadline and must be versioned rather than treated as proof that applications are open."
+      ],
+      "reviewFollowUps": [
+        "Confirm the current window after 31 May 2026, including any official reopening, extension, replacement notice or portal closure, before classifying the record as closed rather than paused or superseded.",
+        "Locate and version the canonical scheme guidelines and extract milestone, incubator, disbursement, recovery, reporting, conflict and clawback conditions.",
+        "Verify the complete startup document checklist, file formats/limits, declarations, DPIIT-recognition evidence and the official three-incubator application flow.",
+        "Capture the eligible-incubator list, selection criteria, grievance/contact route and any state or sector-specific implementation differences.",
+        "Keep the INR 20 lakh grant and INR 50 lakh debt/convertible routes separate in benefit records, with distinct eligibility, repayment and risk language."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment"
+    ],
+    "reason": "DPIIT recognition, Fund of Funds 2.0 and SISFS represent three different user-facing concepts: a self-applied recognition journey, indirect AIF-mediated capital access and a date-sensitive incubator seed-funding route. Their exact governing instruments, current windows, application evidence and benefit boundaries require human review before publication."
+  }
+}

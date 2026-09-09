@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-049",
+  "authority": "Bureau of Indian Standards - Compulsory Registration Scheme",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party BIS CRS observations for reviewer use. It does not approve the authority, product coverage, eligibility rule, fee, licence, or publication status.",
+  "sourcePolicy": "The BIS CRS portal and BIS product-certification pages are primary. MeitY and other ministry notifications control product-specific scope; the current notified product list, Indian Standard, laboratory route, fee schedule and circulars must be checked before an actionable recommendation. UdyamVeda explains and prepares a checklist but does not issue a BIS registration, certify a product or submit as the applicant.",
+  "records": [
+    {
+      "slug": "bis-crs-electronics-it-registration",
+      "sourceUrl": "https://www.crsbis.in/BIS/about-crs.do",
+      "supportingSources": [
+        {"url":"https://www.crsbis.in/BIS/registration-page.do","anchor":"CRS registration steps: login, test request, recognized laboratory, test-report verification, application within 90 days and checklist documents"},
+        {"url":"https://www.crsbis.in/BIS/bis_lab.do","anchor":"BIS recognized laboratories and Indian Standard mapping for CRS testing"},
+        {"url":"https://www.crsbis.in/BIS/inclusion_renewal.do","anchor":"CRS inclusion, sample submission within 60 days, renewal and certificate route"},
+        {"url":"https://www.crsbis.in/BIS/app_srv/tdc/gl/docs/Revised_Fee_Structure.pdf","anchor":"Published CRS fee schedule, including application, licence, processing, inclusion and renewal fees; fee currency/date require review"},
+        {"url":"https://www.bis.gov.in/fmcs/fmcs-overview/?lang=en","anchor":"BIS distinction between FMCS and CRS for MeitY-notified Electronics and IT goods"}
+      ],
+      "sourceKind": "official_bis_crs_portal_and_registration_process",
+      "sourceAnchor": "CRS scope, manufacturer eligibility, Standard Mark requirement, recognized-lab testing, application timing and renewal route",
+      "observations": [
+        "The CRS portal states that ministries including MeitY, MNRE, Chemicals and Fertilizers, and Textiles notify product categories under compulsory-registration orders. Product coverage is therefore notification-specific and cannot be inferred from a broad electronics label.",
+        "For covered goods, the portal states that manufacture or storage for sale, import, sale or distribution is not permitted unless the goods conform to the specified Indian Standard and bear the BIS Standard Mark with the unique registration number.",
+        "The portal identifies the manufacturer or factory owner of a product covered by a notified Compulsory Registration Order as the CRS applicant. It is not a general importer or startup subsidy route.",
+        "The CRS registration page requires login, a test request, testing at a BIS-recognized laboratory, verification of the issued test report and online application using the verified report. It states that the application should be made within 90 days of test-report issue, and samples/test requests should be sent to the laboratory within 60 days of test-request generation.",
+        "The recognized-laboratory page lists Indian Standard mappings, including current-looking standards such as IS 18112:2025; the exact model, standard revision, test scope and approved laboratory must be checked for each product.",
+        "The portal exposes inclusion, renewal, forms, circulars and fee routes. The published fee PDF is labelled effective from 04 June 2018, so its values and MSME/startup concessions must not be displayed as current without confirming the live fee schedule or later circular.",
+        "BIS separately identifies CRS for Electronics and IT goods notified by MeitY from FMCS for foreign manufacturers. The route boundary must be resolved before matching a foreign manufacturer or a product that sits near both regimes."
+      ],
+      "reviewFollowUps": [
+        "Verify the current ministry notification and exact product category, model, Indian Standard, revision and enforcement date before determining applicability.",
+        "Confirm the current recognized-lab list, test scope, test-report validity, sample requirements, 60-day and 90-day timing rules and any circular-based exceptions.",
+        "Reconcile the published 2018 fee schedule with the current portal and later amendments; keep application, testing, licence, renewal and inclusion fees separate.",
+        "Verify manufacturer/factory-owner status, overseas-manufacturer or representative requirements, Standard Mark and labelling rules, renewal, surveillance and change requests.",
+        "Record amendment or supersession evidence and obtain a reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source","eligibility","benefit","application","window","fine_print","amendment","current_terms","reviewer_decision"],
+    "reason": "The official CRS portal supports the registration flow and core boundaries, but product-specific notification, current standards, laboratory, fee, marking, validity and amendment checks remain unresolved."
+  }
+}

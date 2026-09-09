@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-058",
+  "authority": "Directorate General of Foreign Trade - EPCG",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party DGFT EPCG observations for reviewer use. It does not promise duty savings, authorisation, export-obligation relief, EODC, or approval for a particular applicant.",
+  "sourcePolicy": "The current DGFT Foreign Trade Policy Chapter 5 and Handbook of Procedures Chapter 5 are primary. The official EPCG FAQ, ANF 5A, current policy circulars and DGFT application route are supporting sources. FTP/HBP, applicable customs and Department of Revenue notifications, and the live DGFT route prevail where older FAQ text or a portal display differs. UdyamVeda prepares evidence and checklists but is not DGFT, Customs, or an authorised filing agent.",
+  "records": [
+    {
+      "slug": "dgft-export-promotion-capital-goods-epcg",
+      "sourceUrl": "https://content.dgft.gov.in/Website/dgftprod/62a8184d-a7c6-42c5-8711-f7964ab7b2ba/FTP2023_Chapter05.pdf",
+      "supportingSources": [
+        {
+          "url": "https://content.dgft.gov.in/Website/dgftprod/d539da8e-57a9-47b1-9d2f-4fd5b3453cd5/HBP%20Chapter%205.pdf",
+          "anchor": "Paras 5.02-5.04 and 5.08-5.17: ANF 5A, nexus certificate, installation certificate, indigenous sourcing, third-party exports, export proceeds, annual-average rules, blocks and discharge"
+        },
+        {
+          "url": "https://content.dgft.gov.in/Website/DGFT_FAQs-Export_Promotion_Capital_Goods%28EPCG%29v1.0.pdf",
+          "anchor": "Official FAQ: application prerequisites, documents and operational context; older validity wording must be reconciled against current FTP/HBP"
+        },
+        {
+          "url": "https://content.dgft.gov.in/Website/dgftprod/413a800f-f35b-436c-b255-cd781f015731/ANF%205A.pdf",
+          "anchor": "Official ANF 5A applicant guidance: online digital-signature filing, GST/MSME/IEM/LOI/IL or RCMC evidence, Appendix 5A/5B certificates, restricted-item route and CSP approval"
+        },
+        {
+          "url": "https://content.dgft.gov.in/Website/dgftprod/6626fbc5-754f-434a-8a3c-fb4faf305c33/Policy%20Circular%20No.%2010%20%282025-26%29.pdf",
+          "anchor": "Policy Circular No. 10/2025-26 dated 26 February 2026: proportionate annual-average EO relief for qualifying sector/product groups whose 2024-25 exports declined by more than 5%; not a universal reduction"
+        },
+        {
+          "url": "https://www.dgft.gov.in/CP/",
+          "anchor": "Official DGFT service and application handoff; current EPCG route, fee, account and portal availability require live confirmation"
+        }
+      ],
+      "sourceKind": "official_dgft_ftp_hbp_faq_anf_policy_circular_cross_check",
+      "sourceAnchor": "FTP Chapter 5 paras 5.00-5.04, 5.07-5.12; HBP Chapter 5 paras 5.02-5.17; current application documents and current average-EO relief circular",
+      "observations": [
+        "The EPCG Scheme facilitates import of qualifying capital goods for pre-production, production and post-production at zero customs duty, subject to the negative list, applicable notifications and all authorisation conditions. Capital goods include specified computer systems/software, spares, moulds, dies, jigs, fixtures, tools, refractories and initial/subsequent catalyst charges where covered by the current policy.",
+        "For the standard route, specific export obligation is six times the duties, taxes and cess saved on the capital goods and must be fulfilled within six years from authorisation issue. Average Export Obligation is separate and may apply every financial year; it must not be folded into the six-times calculation.",
+        "The current FTP states that the authorisation is valid for import for 24 months from issue and that revalidation is not permitted. The older official FAQ contains an 18-month import-validity statement. This conflict is preserved for reviewer reconciliation; the current FTP/HBP and live DGFT instruction must control publication.",
+        "Coverage includes manufacturer exporters with or without supporting manufacturers, merchant exporters tied to supporting manufacturers, service providers and eligible DGFT-certified Common Service Providers. Supporting manufacturers must be endorsed before installation where applicable; CSPs carry additional location, user-export, bank-guarantee and installation conditions.",
+        "Imported capital goods remain subject to the Actual User condition until export obligation is completed and the Export Obligation Discharge Certificate is granted. Restricted imports or exports require the prescribed Exim Facilitation Committee/DGFT route.",
+        "Indigenous sourcing can use the prescribed invalidation letter or Advance Release Order route. The FTP sets specific EO at 25% less for indigenous sourcing without changing any average EO. Green Technology Products have specific EO at 75% of the standard EO, and specified manufacturing units in the North-East, Jammu and Kashmir and Ladakh have specific EO at 25%; each is conditional and not a general entitlement.",
+        "The FTP separately exempts listed sectors such as handicrafts, handlooms, KVIC industries, agriculture, aquaculture/fisheries, animal husbandry/dairying, floriculture/horticulture, poultry, viticulture, sericulture, carpets, coir and jute from maintaining average EO, subject to exclusions including fishing trawlers, boats, ships and similar items and the applicable transfer restriction.",
+        "The HBP requires application in ANF 5A to the concerned Regional Authority and a nexus certificate from an independent Chartered Engineer in Appendix 5A. Installation evidence is generally due within six months after import completion, with the specified one-time extension and composition fee; spares have a separate three-year installation-certificate rule.",
+        "The application and discharge file can require IEC-linked business details, GST or MSME/IEM/LOI/IL evidence as applicable, RCMC, Appendix 5A Chartered Engineer certification, Appendix 5B CA/Cost Accountant/Company Secretary certification, supporting-manufacturer and third-party export evidence, installation records, export-realisation evidence and current declarations. The exact live attachment list and fee remain a reviewer check.",
+        "Export obligation may be met through eligible direct or third-party exports, specified deemed exports, eligible supplies and certain service receipts, subject to the FTP/HBP evidence and realisation rules. The applicant-specific product, capital-goods nexus, duty-saved amount, average-EO history and evidence route must be verified before any calculation.",
+        "The official Policy Circular No. 10/2025-26 addresses proportionate annual-average EO relief for qualifying sector/product groups with more than five percent export decline in 2024-25 compared with 2023-24. It must not be applied automatically to every EPCG authorisation or treated as a reduction of the standard six-times specific EO.",
+        "EPCG is a conditional authorisation/duty-relief route, not a grant or fixed rupee subsidy. The benefit, duty treatment, related tax treatment and any early-fulfilment or relief route depend on the approved authorisation, current policy, customs/Department of Revenue notifications, applicant facts and subsequent compliance."
+      ],
+      "reviewFollowUps": [
+        "Reconcile the current FTP/HBP versions with the older FAQ's 18-month validity statement and record the controlling source/version before publication.",
+        "Confirm the applicant's exporter/service-provider category, active IEC, RCMC/GST or other required registration evidence, ownership/supporting-manufacturer structure and any CSP, EOU/SEZ, agri or special-region route.",
+        "Verify the capital-goods classification, negative-list status, product nexus, restricted-item approvals, applicable customs/Department of Revenue notifications and the actual duty/tax/cess-saved calculation.",
+        "Model specific EO, any average EO, the six-year period, annual/block evidence, early-fulfilment route, extensions and any qualifying category-specific reduction without combining separate benefit buckets.",
+        "Confirm the current DGFT portal route, ANF 5A/Appendix 5A/5B forms, fees, digital-signature requirements, installation deadlines, customs port, EODC process and current attachment limits.",
+        "Check current amendments, corrigenda, notifications and supersession evidence, including whether Policy Circular No. 10/2025-26 applies to the applicant's sector/product group and year.",
+        "Obtain a human reviewer decision before any public recommendation, amount calculation or official-portal handoff."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "Official DGFT materials support the EPCG route and its principal conditions, but applicant-specific capital-goods classification, duty-saved calculation, export-obligation modelling, current portal attachments, customs treatment, amendments and the FTP/FAQ validity conflict remain review items."
+  }
+}

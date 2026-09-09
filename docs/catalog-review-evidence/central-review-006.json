@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-006",
+  "authority": "Candidate: Ministry of Coal",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "Ministry of Coal official RFPs, timeline notices and official scheme pages only; third-party claims are excluded.",
+  "records": [
+    {
+      "slug": "ministry-of-coal-surface-coal-lignite-gasification",
+      "sourceUrl": "https://coal.gov.in/sites/default/files/2026-07/07-07-2026-rpf.pdf",
+      "supportingSources": [
+        {
+          "url": "https://www.coal.gov.in/major-statistics/national-coal-gasification-mission",
+          "anchor": "Official Coal Gasification page: RFP list, 2026 timeline, query responses and amendment trail"
+        },
+        {
+          "url": "https://coal.gov.in/sites/default/files/2026-06/04-06-2026b-wn%20.pdf",
+          "anchor": "Draft RFP sections 1.1-1.3 and 1.10: scheme outlay, financial incentive, project scale, eligibility and milestone disbursement"
+        }
+      ],
+      "sourceKind": "current_rfp_and_official_timeline",
+      "sourceAnchor": "RFP pages 1, 10-20 and 26-29; 7 July 2026 Round-1 timeline notice; sections 1.1-1.3, 1.10 and 2.1-2.3",
+      "observations": [
+        "The Ministry of Coal’s 7 July 2026 RFP invites eligible applicants to set up new surface coal/lignite gasification projects in India under a ₹37,500 crore scheme. The RFP describes a financial incentive of up to 20% of eligible plant and machinery cost, disbursed in four milestone-linked instalments, subject to project and scheme caps.",
+        "This is a large-project selection and financial-incentive route, not a general MSME or startup grant. Eligible applicant forms include a PSU, private company, JV or consortium of up to three companies; a new project must have at least 0.5 MTPA clean-syngas capacity and the applicant must satisfy a net-worth condition exceeding 20% of project cost, along with corporate, insolvency, blacklisting, promoter and legal-compliance declarations.",
+        "The RFP separates eligible syngas/downstream products from further-processed or formulated products, requires an independently identifiable project with statutory approvals and financial viability, and reserves product-qualification decisions to the Ministry. Applicant responsibility includes coal/raw-material arrangements and product offtake.",
+        "The Round-1 timeline notice set 7 September 2026 as the application due date and 8 September 2026 for opening applications, with tentative selection and award dates later in 2026. The RFP says rounds normally remain open for two months and subsequent rounds are limited by residual financial outlay, so the current record must not present Round 1 as open on 8 September without a verified extension or subsequent-round notice.",
+        "The application requires portal and physical submission, cannot be modified, substituted or withdrawn after submission, and carries security, project-agreement, dedicated-account, milestone, guarantee and audit obligations. Non-compliance can cause rejection, forfeiture, withdrawal, recovery with interest and future debarment.",
+        "The RFP permits corrigenda, addenda and timeline changes through official channels. The record therefore needs a versioned window and an amendment trail, and must not advertise the maximum ₹5,000 crore project cap, ₹9,000 crore product cap or ₹12,000 crore applicant/group cap as an amount any applicant will receive."
+      ],
+      "reviewFollowUps": [
+        "Verify whether the 7 September 2026 Round-1 deadline was extended, whether applications opened as scheduled, and whether a formal notice has opened Round 2 or another residual-outlay round.",
+        "Reconcile the 7 July approved RFP with all official query responses, corrigenda, addenda and the 7 August pre-application responses before fixing the canonical version.",
+        "Capture the complete product list, qualification rules, project-cost exclusions, net-worth computation, consortium conditions, application security and required portal/physical documents.",
+        "Model the benefit as a project financial incentive with four milestones, guarantees and possible recovery; do not merge it with grants, loans, subsidies or founder-level support.",
+        "Confirm the actual application portal and designated Ministry contact route; the RFP indicates that the designated website/e-portal details and notices control the live process.",
+        "Classify Round 1 as closed/under evaluation on the observed date unless an official extension or later round is verified; keep future rounds as separate window versions."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment"
+    ],
+    "reason": "Round 1 has a date-sensitive RFP boundary and the source expressly permits amendments, extensions and subsequent residual-outlay rounds. Current window, canonical RFP version, portal, project-scale conditions and security/recovery obligations require human review before publication."
+  }
+}

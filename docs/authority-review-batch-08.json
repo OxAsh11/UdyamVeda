@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-09-08",
+  "sourceBaseline": "docs/igod-coverage-baseline.json",
+  "purpose": "Evidence pack for the eighth bounded manual review batch. These authorities have official portal evidence but no specific opportunity evidence in the current seed corpus; each remains explicitly unclear pending a bounded crawl and human review.",
+  "reviewStatus": "pending_human_approval",
+  "terminalAssessmentWritesAllowed": false,
+  "rows": [
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Development of North Eastern Region (MDONER)",
+      "authorityUrl": "https://mdoner.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://mdoner.gov.in/",
+      "evidenceAnchor": "Official ministry portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The ministry must be crawled for regional infrastructure, entrepreneurship, market-access and business-support routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Earth Sciences (MoES)",
+      "authorityUrl": "https://moes.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://moes.gov.in/",
+      "evidenceAnchor": "Official ministry portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The ministry must be crawled for research commercialization, innovation, procurement, ocean/earth-science services and relevant project-support routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of External Affairs (MEA)",
+      "authorityUrl": "https://www.mea.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://www.mea.gov.in/",
+      "evidenceAnchor": "Official ministry portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The ministry must be crawled for export-promotion, overseas-market access, diaspora entrepreneurship, procurement and international cooperation routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Home Affairs (MHA)",
+      "authorityUrl": "https://mha.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://mha.gov.in/",
+      "evidenceAnchor": "Official ministry portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The ministry must be crawled for security-sector procurement, border-area development, licensing, compliance and specialized enterprise routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Information and Broadcasting (MIB)",
+      "authorityUrl": "https://www.mib.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://www.mib.gov.in/",
+      "evidenceAnchor": "Official ministry portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The ministry must be crawled for film, media, broadcasting, creative-industry, production and market-access routes relevant to eligible businesses before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Jal Shakti (MoJS)",
+      "authorityUrl": "https://jalshakti.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://jalshakti.gov.in/",
+      "evidenceAnchor": "Official ministry portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The ministry must be crawled for water, sanitation, infrastructure, technology, procurement and implementation-partner routes relevant to businesses before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Law and Justice (MoLJ)",
+      "authorityUrl": "https://lawmin.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://lawmin.gov.in/",
+      "evidenceAnchor": "Official ministry portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The ministry must be crawled for legal-services, legal-technology, procurement, access-to-justice and institutional-support routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Mines (MoM)",
+      "authorityUrl": "https://mines.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://mines.gov.in/",
+      "evidenceAnchor": "Official ministry portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The ministry must be crawled for exploration, mining, mineral processing, technology, auctions, compliance and industrial-participation routes before relevance or exclusion can be decided."
+    }
+  ]
+}

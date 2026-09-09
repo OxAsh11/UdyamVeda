@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { X } from 'lucide-react'
 
 interface Props {
@@ -11,15 +11,8 @@ interface Props {
 }
 
 export default function EditNodeModal({ node, onClose, onSave, onDelete }: Props) {
-  const [label, setLabel] = useState('')
-  const [subtitle, setSubtitle] = useState('')
-
-  useEffect(() => {
-    if (node) {
-      setLabel(node.data.label ?? '')
-      setSubtitle(node.data.subtitle ?? '')
-    }
-  }, [node])
+  const [label, setLabel] = useState(() => node?.data.label ?? '')
+  const [subtitle, setSubtitle] = useState(() => node?.data.subtitle ?? '')
 
   if (!node) return null
 

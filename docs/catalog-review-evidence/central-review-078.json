@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-078",
+  "authority": "National Minorities Development and Finance Corporation - Virasat Scheme",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party NMDFC Virasat observations for reviewer use. It does not guarantee a grant, free toolkit, loan sanction, disbursement, rate, contribution, SCA availability or repayment outcome.",
+  "sourcePolicy": "The current NMDFC schemes page is the primary current summary. The official Virasat page, Credit Line 1 and Credit Line 2 routes, FAQ, lending-policy route and scheme landing page are supporting sources. The Virasat page is image-led and does not itself expose the full fine print as text; current artisan definitions, forms, appraisal, security, contribution and amendments require human confirmation before publication.",
+  "records": [
+    {
+      "slug": "nmdfc-virasat-artisan-credit",
+      "sourceUrl": "https://www.nmdfc.org/nmdfcschemes",
+      "supportingSources": [
+        { "url": "https://nmdfc.org/virasat_a_credit_scheme_for_craftpersons", "anchor": "Official Virasat a Credit Scheme for Craftpersons route; the page is image-led and requires human review of linked/current fine print" },
+        { "url": "https://nmdfc.org/credit-1", "anchor": "Credit Line 1 route for income line, project-cost and beneficiary-contribution context" },
+        { "url": "https://nmdfc.org/credit-2", "anchor": "Credit Line 2 route for income line and beneficiary terms" },
+        { "url": "https://nmdfc.org/faq", "anchor": "Current FAQ and channel-partner route" },
+        { "url": "https://nmdfc.org/lendingpolicy", "anchor": "Official lending-policy route; current policy and amendments control appraisal and financing" },
+        { "url": "https://www.nmdfc.org/home/nmdfc_schemes", "anchor": "Current scheme landing page and document navigation" }
+      ],
+      "sourceKind": "official_nmdfc_virasat_current_scheme_cross_check",
+      "sourceAnchor": "Virasat as part of Term Loan, minority craftperson route, working/fixed capital purpose, current ceiling, rates, women concession, moratorium and repayment",
+      "observations": [
+        "The current NMDFC schemes page identifies Virasat as part of the Term Loan framework for working capital and fixed capital to purchase equipment, tools, machinery and raw material.",
+        "The current NMDFC page defines the broader target group as notified minority communities: Muslims, Christians, Sikhs, Buddhists, Parsis and Jains. Credit Line 1 uses annual family income up to INR 3 lakh and Credit Line 2 up to INR 8 lakh.",
+        "The current summary states maximum Virasat credit up to INR 10 lakh under Credit Lines 1 and 2, with 5% p.a. under Credit Line 1, 6% p.a. for male artisans under Credit Line 2 and a stated 1% concession for female artisans under both credit lines.",
+        "The same current NMDFC page contains an internally inconsistent comparison table that shows different female rates from the narrative summary. This conflict must remain visible to the reviewer and must not be silently resolved in a public recommendation.",
+        "The current table states a six-month moratorium and five-year repayment period for Virasat. The relevant SCA/partner agreement, lending policy, artisan definition, project appraisal, contribution, security, monitoring and current forms still control the applicant case.",
+        "This is concessional credit, not a universal grant or free toolkit programme. Marketing or exhibition support must remain a separate promotional-support bucket and must not be combined with the loan ceiling.",
+        "UdyamVeda may prepare and explain the artisan-credit checklist, but it must not impersonate the applicant, collect OTPs, submit in the applicant's place or present INR 10 lakh as an automatic entitlement or guaranteed sanction."
+      ],
+      "reviewFollowUps": [
+        "Resolve the current-page conflict between the Virasat narrative female concession and the comparison-table female rates before publication.",
+        "Verify the controlling artisan/craftperson definition, eligible activities, minority evidence, income line, project cost, contribution and current SCA or banking-partner availability.",
+        "Confirm whether the six-month moratorium and five-year repayment apply identically to the current Virasat route and record the controlling policy or agreement anchor.",
+        "Confirm current rates, security, insurance, processing charges, documents, quotations, appraisal, disbursement, monitoring, grievance route and amendments.",
+        "Keep loan credit, marketing assistance and other non-financial support in separate benefit buckets.",
+        "Obtain human reviewer approval for source, eligibility, benefit, application, window, fine print, amendment, current terms and factual accuracy before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source", "eligibility", "benefit", "application", "window", "fine_print", "amendment", "current_terms", "reviewer_decision"],
+    "reason": "The current NMDFC page confirms the Virasat route and broad terms, but its female-rate conflict, image-led dedicated page, artisan definition, project/contribution conditions and current SCA/policy terms require human review before publication."
+  }
+}

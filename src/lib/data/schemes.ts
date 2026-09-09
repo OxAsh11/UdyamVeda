@@ -4,7 +4,7 @@ export interface Scheme {
   shortName: string
   ministry: string
   category: 'startup' | 'msme' | 'credit' | 'women' | 'sc-st' | 'sector' | 'state' | 'skill'
-  benefitType: 'financial' | 'tax' | 'recognition' | 'credit' | 'training' | 'subsidy'
+  benefitType: 'financial' | 'tax' | 'recognition' | 'credit' | 'training' | 'subsidy' | 'equity'
   benefitHeadline: string
   benefitEstimate: string        // human readable
   benefitValue: number           // for sorting (in INR)
@@ -1078,6 +1078,7 @@ export const CATEGORY_LABELS: Record<string, string> = {
 
 export const BENEFIT_TYPE_LABELS: Record<string, string> = {
   financial: 'Grant / Fund',
+  equity: 'Equity investment',
   tax: 'Tax benefit',
   recognition: 'Recognition',
   credit: 'Loan / Credit',

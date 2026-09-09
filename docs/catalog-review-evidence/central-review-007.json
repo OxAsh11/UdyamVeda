@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-007",
+  "authority": "Candidate: Ministry of Food Processing Industries (MoFPI)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "MoFPI and PMFME official scheme pages, guidelines, portal notices and official parliamentary answers only; third-party claims are excluded.",
+  "records": [
+    {
+      "slug": "pm-formalisation-micro-food-processing-enterprises",
+      "sourceUrl": "https://www.pmfme.mofpi.gov.in/newsletters/docs/SchemeGuidelines.pdf",
+      "supportingSources": [
+        {
+          "url": "https://mofpi.gov.in/en/pmfme/shgs-fpos-co-operatives-individual-micro-food-enterprise",
+          "anchor": "Official MoFPI individual-unit page: 35% credit-linked capital subsidy, ₹10 lakh ceiling, 10% beneficiary contribution and training support"
+        },
+        {
+          "url": "https://pmfme.mofpi.gov.in/massets/documents/advertisement-doc/PMFME_Guidelines_Modification.pdf",
+          "anchor": "18 May 2022 modification: existing/new individual units, ODOP preference, excluded activities and component-level changes"
+        },
+        {
+          "url": "https://pmfme.mofpi.gov.in/?trk=public_post_reshare-text",
+          "anchor": "Official PMFME portal: component summary, current notices, application counts, maintenance notice and 30 December 2025 primary-processing clarification"
+        },
+        {
+          "url": "https://www.mofpi.gov.in/sites/default/files/1585.pdf",
+          "anchor": "Official Lok Sabha answer dated 13 February 2025: PMFME operational period stated as up to 2025-26 and ₹10,000 crore outlay"
+        }
+      ],
+      "sourceKind": "scheme_guideline_with_official_modification_portal_and_status_evidence",
+      "sourceAnchor": "Original guideline sections 4.1-4.2 for individual micro enterprises; official MoFPI individual-unit page; 18 May 2022 modification; portal notices and component summaries",
+      "observations": [
+        "PMFME is a centrally sponsored package with distinct component routes. It must not be represented as one universal subsidy: individual micro units, FPOs/FPCs, SHGs and cooperatives, common infrastructure, SHG seed capital, branding/marketing and capacity building have different beneficiaries, application paths and benefit structures.",
+        "For the individual-unit route, the official MoFPI page describes a credit-linked capital subsidy of 35% of eligible project cost, capped at ₹10 lakh per unit, with minimum 10% beneficiary contribution and the balance financed through a bank loan. Training support is linked to supported capital-investment units and to other existing district units processing ODOP products.",
+        "The 18 May 2022 official modification says both existing and new micro food processing enterprises may be considered for expansion/upgradation or setting up a new unit; ODOP products receive preference, but other micro enterprises may also be considered. The modification also points to an Annexure-I list of food-processing activities that are not eligible, so unknown activity classification must not be treated as eligible.",
+        "The official portal separately describes common-infrastructure support, SHG seed capital, 50% branding/marketing support for eligible groups or an SPV, ODOP alignment and capacity building. These values and beneficiary groups must remain separate from the individual ₹10 lakh credit-linked subsidy and must not be added into one total eligible value.",
+        "Official status material is time-sensitive. Earlier scheme material described a five-year period beginning 2020-21, while an official February 2025 parliamentary answer states operation up to FY 2025-26. The portal currently shows a maintenance notice and a 30 December 2025 clarification, but the reviewed sources do not yet establish a post-FY2025-26 extension or a currently open national application window.",
+        "Application access is mediated through the PMFME portal and, for group routes, State/District Nodal Agencies. A user-facing record must show the state/district route, bank-credit dependency, ODOP preference, required project and identity evidence, and the difference between recommendation/sanction/disbursement; it must not promise approval or treat portal statistics as an applicant entitlement."
+      ],
+      "reviewFollowUps": [
+        "Confirm the canonical current guideline and all later modifications, including the 30 December 2025 primary-processing clarification, and determine whether any official extension beyond FY2025-26 exists.",
+        "Verify whether individual applications are currently accepted, paused or closed while the portal is under maintenance; record any state-specific windows and do not infer a national deadline from historical portal pages.",
+        "Extract and version Annexure-I excluded activities, ODOP lists, state/district nodal contacts, bank route, application forms, document checklists and the exact project-cost rules for individual applicants.",
+        "Keep individual, group, common-infrastructure, SHG seed-capital, branding/marketing and training records separate, with distinct eligibility rules, benefits, documents and application steps.",
+        "Validate existing/new-unit treatment, legal-form eligibility, beneficiary contribution, bank-loan conditions, technical civil-work limits, subsidy release/recovery conditions and any state-level implementation variations.",
+        "Classify the opportunity as active, paused, closed or historical only after the post-FY2025-26 status and live portal route are confirmed by a reviewer."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment"
+    ],
+    "reason": "PMFME has multiple component routes and conflicting/aging period evidence. The post-FY2025-26 status, current portal availability, 2025 clarification, excluded activities, state route and component-specific fine print require human review before publication."
+  }
+}

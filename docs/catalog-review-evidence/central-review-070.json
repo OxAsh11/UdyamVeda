@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-070",
+  "authority": "Ministry of Micro, Small and Medium Enterprises - Assistance to Training Institutions",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party ATI portal, Ministry guideline and MyMSME observations for reviewer use. It does not approve the opportunity, establish a current funding window, or guarantee a training seat, grant, programme approval or enterprise outcome.",
+  "sourcePolicy": "The current ATI portal, the 25 April 2025 revised ATI guideline circular, the official ATI trainee/programme surfaces and the Ministry's MyMSME description are primary discovery and operating evidence. Older guideline versions are retained only to explain historical terms and must not be used as current entitlement without reconciliation.",
+  "records": [
+    {
+      "slug": "assistance-to-training-institutions-ati",
+      "sourceUrl": "https://ati.msme.gov.in/ATI/home.aspx",
+      "supportingSources": [
+        {
+          "url": "https://ati.msme.gov.in/",
+          "anchor": "Current official ATI portal: scheme objective, institution-led infrastructure and entrepreneurship/skill-development support, apex organisations and programme metrics"
+        },
+        {
+          "url": "https://ati.msme.gov.in/Index2.aspx",
+          "anchor": "Official ATI information surface: apex organisations, partner institutions, approved programmes, trainee registration and revised guideline navigation"
+        },
+        {
+          "url": "https://msme.gov.in/sites/default/files/ATIguidelinesEnglish.pdf",
+          "anchor": "25 April 2025 Ministry circular circulating revised ATI guidelines and expanding the infrastructure route to existing State-level EDIs and specified State Government training institutions/DICs in the Eastern Region and NER"
+        },
+        {
+          "url": "https://my.msme.gov.in/MyMsmeMob/MsmeScheme/Pages/0_3_1.html",
+          "anchor": "Official MyMSME description: historical infrastructure and programme-support terms, institution eligibility, EDI enrolment route and application distinction"
+        },
+        {
+          "url": "https://ati.msme.gov.in/potentialtrainees/TraineesRegistration.aspx",
+          "anchor": "Official trainee registration and expression-of-interest route for approved or forthcoming MSME training programmes"
+        },
+        {
+          "url": "https://ati.msme.gov.in/PotentialTrainees/ViewApprovedProgramme.aspx",
+          "anchor": "Official approved-programme search route by State, District and module/course"
+        },
+        {
+          "url": "https://ati.msme.gov.in/ModuleHome.aspx",
+          "anchor": "Official course/module catalogue with module type, course name and duration context"
+        }
+      ],
+      "sourceKind": "official_msme_ati_portal_2025_guideline_mymsme_cross_check",
+      "sourceAnchor": "ATI scheme overview, revised 2025 institutional boundary, current trainee/programme discovery routes and historical assistance terms reconciled for review",
+      "observations": [
+        "ATI is primarily an institution-led capacity-building route. The official portal describes capital support for creating or strengthening training infrastructure and programme support for entrepreneurship and skill-development activities.",
+        "The 25 April 2025 Ministry circular says the revised guideline widens infrastructure assistance to existing State-level EDIs owned, controlled or promoted by a State Government/UT, and to State Government-owned training institutions including DICs in the Eastern Region and NER for MSME training infrastructure and programmes.",
+        "The official ATI portal separately exposes apex organisations, partner institutions, approved programmes, course modules, trainee registration and programme search. A founder or self-employed person should normally be matched to an available training programme, not to a direct personal grant or the institution's capital grant.",
+        "The MyMSME description gives historical headline terms of up to INR 150 lakh on matching basis and up to 50 percent of project cost, with higher regional terms, plus per-trainee-per-hour programme support. Because the 2025 revised guideline changes the institutional boundary and the current operative terms were not fully reconciled in the sources checked, those figures must remain historical/review-gated and must not be shown as a current applicant entitlement.",
+        "The portal displays cumulative and current-financial-year trainee/programme counts. These are programme reporting metrics, not a grant ceiling, guaranteed seat, or business benefit.",
+        "UdyamVeda may explain the institutional route, help a founder find an approved or forthcoming programme, and prepare a document checklist. The institution or trainee must use the official account, declarations, contact details and submission route."
+      ],
+      "reviewFollowUps": [
+        "Confirm the operative ATI guideline after the 25 April 2025 circular, current assistance ceilings, eligible cost heads, matching/contribution rules and implementing agencies.",
+        "Verify whether the current portal is accepting infrastructure proposals, which institution categories are open, the proposal form, documents, deadline, selection process and sanction/reporting conditions.",
+        "Verify the current approved-programme calendar, seat availability, State/District/module filters, trainee eligibility, fees, attendance, certification and grievance route.",
+        "Keep institution-level capital support, programme-level assistance and individual trainee access as separate opportunity outcomes and value buckets.",
+        "Obtain human reviewer approval for source, eligibility, benefit, application, window, fine print, amendment, current terms and factual accuracy before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "The official sources confirm the ATI institution and trainee/programme routes, but the current post-2025 financial terms, live institutional proposal window, programme availability and role-specific conditions require human reconciliation before publication."
+  }
+}

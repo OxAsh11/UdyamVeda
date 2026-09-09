@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-027",
+  "authority": "Ministry of Consumer Affairs, Food and Public Distribution (MoCAFP)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "The Department of Consumer Affairs Legal Metrology Division and its official portals are the controlling sources. The Legal Metrology Act, applicable rules, current amendments and state enforcement rules must be reconciled for each business route before publication.",
+  "records": [
+    {
+      "slug": "legal-metrology-importer-registration-weights-measures-section-19",
+      "sourceUrl": "https://consumeraffairs.gov.in/pages/weight-and-measures",
+      "supportingSources": [
+        {
+          "url": "https://lm.doca.gov.in/index.aspx",
+          "anchor": "Official Legal Metrology portal: Section 19 importer application route, importer certificate link, model-approval route, Rule 27 route and grievance contact"
+        },
+        {
+          "url": "https://lm.doca.gov.in/oregis/Certificates.aspx",
+          "anchor": "Current official importer-certificate list showing 2026 issuances, IEC numbers, equipment scope, certificate numbers and validity dates"
+        },
+        {
+          "url": "https://lm.doca.gov.in/OREGIS/uploads/14862/14862_10-03-2026_1.pdf",
+          "anchor": "Official 2026 importer certificate example for certificate fields and conditions"
+        },
+        {
+          "url": "https://consumeraffairs.gov.in/index.php/pages/legal-metrology-act",
+          "anchor": "Department of Consumer Affairs legislation and current Legal Metrology rules/amendment index"
+        }
+      ],
+      "sourceKind": "official_dca_legal_metrology_portal_and_rules_index",
+      "sourceAnchor": "Legal Metrology portal Section 19 route and Department of Consumer Affairs weight-and-measures page: importer registration, applicable instrument rules and state enforcement boundary",
+      "observations": [
+        "Section 19 is the importer-of-weights-and-measures route. The official portal exposes an importer application/certificate route separately from Section 22 model approval and Rule 27 packaged-commodities registration.",
+        "The current importer-certificate index shows active 2026 certificates with IEC numbers, instrument/equipment scope, certificate numbers, issue dates and validity dates. This confirms a live operational route, but a certificate for one importer and equipment scope is not evidence that every instrument or importer qualifies.",
+        "A business importing weighing or measuring instruments must identify the exact equipment scope and reconcile Section 19 with any Section 22 model approval, Section 23/24 restrictions, Legal Metrology General Rules, OIML or other applicable technical requirements before import, sale or use.",
+        "The Department’s overview says instrument specifications are prescribed under the Legal Metrology (General) Rules, 2011 and that state officers periodically verify instruments used in trade. State enforcement registration, verification/stamping and local obligations are separate downstream requirements and must not be silently treated as covered by the central importer certificate.",
+        "This is a compliance/permission journey, not a grant or financial benefit. The public result should show the official handoff, required business/product facts and downstream state checks rather than a monetary eligibility value."
+      ],
+      "reviewFollowUps": [
+        "Extract the current Section 19 application form, fee, document list, processing time, certificate validity/renewal, amendment and cancellation conditions from the live OREGIS route.",
+        "Verify whether each product category needs Section 22 model approval before import/sale/use and capture the exact sequencing dependency.",
+        "Capture import-specific restrictions, non-standard-unit conditions, OIML/technical-document requirements and sample-certificate conditions.",
+        "Add state/UT enforcement, verification and stamping journeys only from reviewed state source packs.",
+        "Keep IEC identity, importer certificate, model approval and state verification as separate entities and tasks."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "legal-metrology-model-approval-weights-measures-section-22",
+      "sourceUrl": "https://lm.doca.gov.in/index.aspx",
+      "supportingSources": [
+        {
+          "url": "https://www.nsws.gov.in/",
+          "anchor": "Official NSWS central-approval platform: KYA guidance, application route, document repository, status tracking and renewal features"
+        },
+        {
+          "url": "https://consumeraffairs.gov.in/pages/legal-metrology-overview",
+          "anchor": "Department overview: prescribed instrument specifications and statement that manufacturers/importers of prescribed weighing and measuring equipment require Central Government model approval before manufacturing/import"
+        },
+        {
+          "url": "https://lm.doca.gov.in/modelapproval/Certificates.aspx",
+          "anchor": "Current official model-approval certificate index showing 2026 approvals and instrument categories"
+        },
+        {
+          "url": "https://lm.doca.gov.in/ModelApproval/Certificates/2026/20.pdf",
+          "anchor": "Official 2026 model-approval certificate example with model, manufacturer, approval mark and technical-data fields"
+        }
+      ],
+      "sourceKind": "official_dca_model_approval_portal_nsws_and_certificates",
+      "sourceAnchor": "Legal Metrology portal Section 22 route, NSWS handoff and current model-approval certificate examples",
+      "observations": [
+        "Section 22 model approval is a product/model-level regulatory approval for prescribed weights and measures and weighing/measuring instruments. It is distinct from an importer registration and does not by itself authorize every importer, dealer, installation or state verification activity.",
+        "The official Legal Metrology portal directs Section 22 applications to NSWS. NSWS describes KYA guidance, central approvals, document reuse, status tracking and renewal capabilities, but the current public route does not expose a complete product-specific checklist without entering the applicant workflow.",
+        "The Department’s overview states that manufacturers/importers of prescribed weighing and measuring equipment must obtain Government of India model approval before manufacturing or import. Current certificate indexes show approvals in 2026 for categories such as non-automatic weighing instruments, flow meters, water meters, clinical thermometers and other instruments.",
+        "A model approval certificate contains model identity, manufacturer, brand, approval mark and technical data such as accuracy class, capacity, scale interval, display, power supply, software version and checksum. The exact technical dossier, testing laboratory/report, sample and modification/change-control requirements remain product-specific review items.",
+        "This is a compliance permission with no financial benefit. A recommendation must depend on instrument type, manufacturer/importer role, model changes, intended use, import timing and any required state verification; unknown technical facts must produce ‘more information required’."
+      ],
+      "reviewFollowUps": [
+        "Extract the operative Section 22 application form, fee, testing authority/laboratory requirements, technical dossier, sample, processing time, validity, renewal, modification and appeal conditions.",
+        "Build a product taxonomy from the current General Rules and map each instrument class to model-approval, verification and state-enforcement requirements.",
+        "Verify the pre-manufacture/pre-import boundary and how an already approved model is affected by software, hardware, brand, capacity or component changes.",
+        "Link Section 22 to Section 19 importer registration and downstream Section 23/24 obligations without treating one approval as a substitute for another.",
+        "Keep approval mark, certificate, model version and technical evidence versioned for future amendments and audits."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "legal-metrology-packaged-commodities-registration-rule-27",
+      "sourceUrl": "https://lm.doca.gov.in/index.aspx",
+      "supportingSources": [
+        {
+          "url": "https://www.nsws.gov.in/",
+          "anchor": "Official NSWS central-approval platform used by the Legal Metrology portal for Rule 27 registration applications"
+        },
+        {
+          "url": "https://consumeraffairs.gov.in/public/upload/admin/cmsfiles/whatsnews/FAQs_on_Packaged_Commodities%2C%20Rules_2011_whatsnews.pdf",
+          "anchor": "Official packaged-commodities FAQ: Rule 27 manufacturer/packer/importer registration within 90 days of commencing pre-packing and e-commerce declaration guidance"
+        },
+        {
+          "url": "https://consumeraffairs.gov.in/public/upload/admin/cmsfiles/whatsnews/Book_on_Legal_Metrology_Packaged_Commodities_Rules%2C2011_with_all_amendments_whatsnews.pdf",
+          "anchor": "Official consolidated packaged-commodities rules book: Rule 27 registration process, incomplete-application return, registration certificate and amendment fee"
+        },
+        {
+          "url": "https://lm.doca.gov.in/pcr/certificates",
+          "anchor": "Current official packaged-commodities certificate list showing 2026 registrations and certificate numbers"
+        },
+        {
+          "url": "https://consumeraffairs.gov.in/public/upload/files/2026.02.13%20PCR%201st%20COO%20Filter%20on%20e-commerce%20websites_1771231030.pdf",
+          "anchor": "Official 2026 amendment: imported-product country-of-origin filter on e-commerce listings effective 1 July 2026"
+        }
+      ],
+      "sourceKind": "official_dca_packaged_commodities_rules_nsws_and_certificate_portal",
+      "sourceAnchor": "Rule 27 registration route, 90-day timing, mandatory package declarations, current certificate list and 2026 amendment evidence",
+      "observations": [
+        "Rule 27 covers registration of manufacturers, packers and importers of pre-packaged commodities. It is separate from Section 19 importer registration for weighing/measuring instruments and Section 22 model approval.",
+        "The official FAQ states that Rule 27 registration is required within 90 days from the date the manufacturer, packer or importer commences pre-packing. The Legal Metrology portal directs Rule 27 applications to NSWS, and the current certificate index shows 2026 registrations.",
+        "The Department’s overview identifies package declarations including manufacturer/packer/importer name and address, country of origin for imported products, generic name, net quantity, manufacture month/year, best-before/use-by where applicable, MRP inclusive of taxes, consumer-care details, dimensions where relevant and unit sale price.",
+        "The consolidated rules material describes the registering-authority process: incomplete applications may be returned within seven working days, while complete applications can be registered and issued a certificate. Any amendment fee and alteration process must be represented separately from initial registration.",
+        "The rules are actively changing. The February 2026 amendment requires e-commerce entities selling imported products to provide a searchable and sortable country-of-origin filter from 1 July 2026; later amendments may alter the commencement date or wording. The catalog must version these obligations rather than embedding them as timeless label advice.",
+        "The record is a compliance registration with no financial benefit. A business may trigger Rule 27 based on its role and pre-packaged product activity even if it has no manufacturing facility; importer, packer, marketplace and product-label responsibilities must be evaluated separately."
+      ],
+      "reviewFollowUps": [
+        "Extract the current Rule 27 form, documents, fee, registering authority, processing time, certificate validity/renewal, amendment and cancellation conditions from NSWS and the applicable central/state route.",
+        "Model manufacturer, packer, importer, brand owner, e-commerce entity and marketplace responsibilities separately, including private-label and imported-product cases.",
+        "Version all 2025-2026 amendments and identify whether later amendments change Rule 27, label declarations, e-commerce filters, exemptions or effective dates.",
+        "Add a label-readiness checklist with product-specific conditional fields and evidence, while clearly distinguishing central Rule 27 registration from state enforcement inspections and penalties.",
+        "Keep Rule 27 registration, package label declarations, e-commerce listing controls and state enforcement tasks as separate application/compliance tasks."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "state_boundary",
+      "reviewer_decision"
+    ],
+    "reason": "Official sources support three distinct live compliance routes with current 2026 activity, but exact forms, fees, technical documents, product-specific dependencies, state enforcement obligations and amendment reconciliation still require human review before publication."
+  }
+}

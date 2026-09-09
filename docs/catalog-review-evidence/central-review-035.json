@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-035",
+  "authority": "Ministry of Labour and Employment / Employees' Provident Fund Organisation",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "The PMVBRY guideline, official EPFO portal and Ministry of Labour/PIB releases are the primary sources. Part A and Part B remain separate records because they have different beneficiaries, conditions, payment rails and calculations. UdyamVeda prepares and explains evidence but does not create UANs, handle OTPs or file EPFO records.",
+  "records": [
+    {
+      "slug": "pm-viksit-bharat-rozgar-yojana-part-a-first-timers",
+      "sourceUrl": "https://pmvbry.epfindia.gov.in/wp-content/themes/epfo-child/assets/images/PMVBRY-Final.pdf",
+      "supportingSources": [
+        {
+          "url": "https://pmvbry.epfindia.gov.in/",
+          "anchor": "Official PMVBRY/EPFO registration and operational portal"
+        },
+        {
+          "url": "https://www.labour.gov.in/static/uploads/2025/09/353e2fe2cb47ec3385be85ff44afda63.pdf",
+          "anchor": "18 August 2025 Ministry/PIB release: portal live, Part A/Part B distinction, payment routes and scheme period"
+        },
+        {
+          "url": "https://labour.gov.in/sites/default/files/pib2209767.pdf",
+          "anchor": "Ministry/PIB scheme summary: first-time employee one-month wage up to Rs 15,000, employer incentive separation and 1 August 2025 to 31 July 2027 employment period"
+        }
+      ],
+      "sourceKind": "official_pmvbry_guideline_epfo_portal_and_labour_release_cross_check",
+      "sourceAnchor": "Part A first-time employee eligibility, EPFO/ECR continuity, UAN face authentication, two instalments, financial literacy and employee DBT",
+      "observations": [
+        "The official guideline defines a registration period from 1 August 2025 to 31 July 2027 and states that employees joining during that period are considered for threshold, additionality and incentive calculations.",
+        "Part A is for a qualifying first-time employee, not the employer. The record must verify no prior contributing EPFO or eligible exempted-trust membership, joining date, gross wage at joining, establishment coverage, ECR contributions and UAN face authentication through UMANG.",
+        "The guideline structures the benefit as one completed month of EPF wage up to Rs 15,000 in two instalments, with the second instalment depending on the prescribed twelve-month ECR and financial-literacy conditions. The amount must not be shown without those conditions.",
+        "The Ministry release states that Part A payments use Aadhaar Bridge Payment System DBT. Bank seeding, identity authentication, payment status and any operational portal instructions remain sensitive workflow details requiring current verification.",
+        "Re-joiners or employees with prior contributory EPFO membership must not be silently treated as first timers. Unknown employment history must return more information required, not automatic ineligibility.",
+        "UdyamVeda may prepare an evidence checklist and official handoff, but must not create/authenticate a UAN, handle OTPs, submit an employee claim or represent itself as EPFO."
+      ],
+      "reviewFollowUps": [
+        "Verify current PMVBRY portal operation, employee/establishment forms, identity/authentication steps, payment status and grievance route.",
+        "Confirm first-time status against prior EPFO or eligible exempted-trust membership, joining date and gross wage at joining.",
+        "Reconcile ECR contribution receipt, six-month and twelve-month conditions, seasonal-establishment treatment and financial-literacy completion.",
+        "Verify Aadhaar Bridge Payment System, Aadhaar-seeded bank-account conditions, suspended-payment handling and privacy/security boundaries.",
+        "Check amendments, implementation circulars and any changes to the registration period or operational calculation rules.",
+        "Obtain a human reviewer decision; keep the employee record separate from Part B and review-gated before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "pm-viksit-bharat-rozgar-yojana-part-b-employer-incentive",
+      "sourceUrl": "https://pmvbry.epfindia.gov.in/wp-content/themes/epfo-child/assets/images/PMVBRY-Final.pdf",
+      "supportingSources": [
+        {
+          "url": "https://pmvbry.epfindia.gov.in/",
+          "anchor": "Official PMVBRY/EPFO registration and employer operational portal"
+        },
+        {
+          "url": "https://www.labour.gov.in/static/uploads/2025/09/353e2fe2cb47ec3385be85ff44afda63.pdf",
+          "anchor": "18 August 2025 Ministry/PIB release: employer Part B payment to PAN-linked accounts and scheme period"
+        },
+        {
+          "url": "https://pmvbry.epfindia.gov.in/wp-content/themes/epfo-child/assets/images/PMVBRY-Final.pdf",
+          "anchor": "Guideline sections 4.1-5.2 and 6.2.1-6.4: baseline, additionality, wage slabs, ECR, duration and employer conditions"
+        }
+      ],
+      "sourceKind": "official_pmvbry_guideline_epfo_portal_and_labour_release_cross_check",
+      "sourceAnchor": "Part B employer baseline/additionality, wage slabs, ECR continuity, rolling averages, manufacturing extension and PAN-linked payment",
+      "observations": [
+        "Part B is an employer/establishment incentive, not an employee benefit. The benefit calculation must remain separate from Part A and must use the establishment's prescribed baseline and rolling additional-employment tests.",
+        "The guideline requires EPFO coverage or eligible exempted-establishment status, regular ECR contributions, qualifying employment during the registration period, wage limits, six-month continuity and the applicable additional-employment threshold.",
+        "The draft benefit slabs are up to Rs 1,000, Rs 2,000 or Rs 3,000 per additional employment per month based on the prescribed EPF-wage bands, normally for two years and potentially four years for manufacturing. Headline slabs are not guaranteed value because baseline, rolling-average, ECR and other conditions control payment.",
+        "The Ministry release states that Part B payments go directly to the employer's PAN-linked account. Establishment onboarding, PAN/GSTN, bank, ECR, inquiry/fraud and grievance conditions require current portal verification.",
+        "The scheme outlay is a programme limit and cannot be divided across employees as a guaranteed business value. Months that fail the applicable threshold or contain disqualifying irregularities must not be ranked as certain benefits.",
+        "UdyamVeda can prepare an ECR/workforce-baseline checklist, but must not file ECRs, access EPFO credentials, handle OTPs or claim to be an EPFO filing agent."
+      ],
+      "reviewFollowUps": [
+        "Verify current employer registration, establishment-code, PAN/GSTN, PAN-linked-bank and portal workflow requirements.",
+        "Recalculate the prescribed baseline and additional-employment threshold for the particular establishment, including the new-establishment baseline rule.",
+        "Verify rolling-average tests, ECR contribution receipt, six-month continuity, wage slabs, re-joiner treatment and employment dates.",
+        "Confirm manufacturing classification and the third/fourth-year extension conditions; do not assume every MSME receives four years.",
+        "Check pending EPFO inquiries, fraud FIR/irregularity exclusions, payment timing, amendments, detailed calculation SOPs and grievance routes.",
+        "Obtain a human reviewer decision; keep Part B separate from the employee record and review-gated before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "Official PMVBRY sources confirm the two beneficiary tracks and registration period, but current portal operations, calculation/SOP details, authentication/payment handling, amendments and applicant-specific evidence remain unresolved. Both records stay human-review pending."
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-028",
+  "authority": "Ministry of Cooperation / National Cooperative Development Corporation (NCDC)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "NCDC is the implementing financial institution and controlling operational source for these cooperative-credit products. Historical scheme documents are retained as evidence, while current NCDC pages and application routes are used for currentness checks; no historical term is treated as current until reconciled with an operative NCDC circular.",
+  "records": [
+    {
+      "slug": "nandini-sahakar-women-cooperative-enterprise-support",
+      "sourceUrl": "https://ncdc.in/documents/other/Nandini-Sahakar-Scheme-Eng-01.11.2021.pdf",
+      "supportingSources": [
+        {
+          "url": "https://www.ncdc.in/",
+          "anchor": "Current NCDC website, last updated 3 September 2026, lists Nandini Sahakar among NCDC-funded activities"
+        },
+        {
+          "url": "https://www.ncdc.in/documents/booklet/2609240524English-Compendium-as-on-22.05.2024.pdf",
+          "anchor": "NCDC compendium: current-seed reference for Nandini objectives, women-cooperative eligibility, operation-age bands, project-cost caps, loan period, interest subvention and funding pattern"
+        },
+        {
+          "url": "https://www.ncdc.in/index.jsp?page=common-application",
+          "anchor": "Current NCDC common loan application route: select activity/purpose and loan type, download form and submit with supporting documents"
+        },
+        {
+          "url": "https://www.ncdc.in/documents/annual-report/0016261222Annual-Report_2021-22-English.pdf",
+          "anchor": "Supporting NCDC annual-report evidence: direct/state funding patterns, security forms and subsidy/convergence boundary"
+        }
+      ],
+      "sourceKind": "official_ncdc_current_portal_compendium_scheme_document_and_application_route",
+      "sourceAnchor": "Nandini Sahakar summary and compendium: women-cooperative eligibility, operation-age bands, project-cost caps, loan period, interest subvention, funding pattern and NCDC/state route",
+      "observations": [
+        "Nandini Sahakar is a women-focused NCDC credit and handholding framework for cooperative societies, covering business-plan activities in NCDC’s mandate except urban housing. It is not a direct grant; assistance is credit linkage that may converge with subsidy or interest subvention from other government or agency schemes.",
+        "The detailed scheme document states that eligible applicants include women cooperative societies registered under a State or Multi-State Cooperative Societies Act and cooperatives with at least 50% women members at the primary level. For new or innovative activities, a women cooperative operating for at least three months is described as eligible subject to applicable NCDC guidelines.",
+        "The NCDC compendium records project-cost bands linked to operating age: up to INR 1 crore for more than three months and less than one year, up to INR 3 crore for more than one year and less than three years, and no stated cap for societies operating more than three years where the proposal is viable. These are historical/compendium terms and require current circular confirmation.",
+        "The compendium describes loan periods of 5–8 years including 1–2 years’ principal moratorium, and interest subvention of 2% for new/innovative activities or 1% for other activities on the term-loan portion where timely repayment conditions are met. Funding may be routed through State Government/UT Administration or directly by NCDC, with different loan/share-contribution patterns.",
+        "NCDC’s current website and common application page show that Nandini remains a current NCDC activity/application category, but the public route does not itself prove the exact current cap, interest rate, security, processing time, application window or state-specific channel. The record must therefore be rolling-but-review-gated.",
+        "The recommendation must distinguish underlying NCDC loan principal, investor/society contribution, interest subvention, any converged subsidy, security and repayment obligations. They must not be summed into one ‘benefit value’."
+      ],
+      "reviewFollowUps": [
+        "Obtain and bind the latest NCDC circular, interest-rate schedule, security norms and application checklist to the current version.",
+        "Confirm whether the compendium caps and loan periods remain operative in 2026 and whether any activity, state, cooperative-type or sector exclusions apply.",
+        "Extract the current common-application form, DPR/business-plan requirements, audited accounts, registration proof, member composition evidence, net-worth/repayment conditions, fees and processing route.",
+        "Model direct NCDC funding versus State Government/UT route as separate application branches, with state coverage marked only after source-pack review.",
+        "Keep subsidy/convergence as a dependency on the other scheme or agency; never imply that Nandini itself guarantees a subsidy or loan sanction."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "yuva-sahakar-cooperative-enterprise-support-innovation",
+      "sourceUrl": "https://www.ncdc.in/documents/faq/2010210223Pattern-of-Assistance-2021-22.pdf",
+      "supportingSources": [
+        {
+          "url": "https://www.ncdc.in/",
+          "anchor": "Current NCDC website, last updated 3 September 2026, lists Yuva Sahakar among NCDC-funded activities"
+        },
+        {
+          "url": "https://www.ncdc.in/documents/booklet/2609240524English-Compendium-as-on-22.05.2024.pdf",
+          "anchor": "NCDC compendium: Yuva Sahakar is listed as a focused cooperative-enterprise support product for newly formed cooperatives with new or innovative ideas"
+        },
+        {
+          "url": "https://www.ncdc.in/index.jsp?page=common-application",
+          "anchor": "Current NCDC common loan application route for selecting activity/purpose and loan type and submitting supporting documents"
+        },
+        {
+          "url": "https://www.ncdc.in/documents/other/4822131219Activities-Assisted-and-Pattern-of-Assistance.pdf",
+          "anchor": "NCDC scheme booklet: Yuva Sahakar objective, eligibility, project-cost limits, working-capital boundary, loan period, interest incentive and security conditions"
+        }
+      ],
+      "sourceKind": "official_ncdc_current_portal_compendium_scheme_document_and_application_route",
+      "sourceAnchor": "Yuva Sahakar scheme and pattern-of-assistance documents: cooperative-startup eligibility, project-cost limits, working-capital boundary, loan period, interest incentive, security and subsidy-convergence rules",
+      "observations": [
+        "Yuva Sahakar is a cooperative-enterprise credit product intended to enable start-ups in the cooperative sector with new, innovative or value-chain-enhancement projects. It is not an equity grant or universal startup loan for ordinary companies.",
+        "The detailed scheme document requires a cooperative society with an innovative/value-chain project, at least three months’ operation, positive net worth and no applicable cash-loss history. A society operating more than three months but less than one year is subject to a project-cost ceiling of INR 1 crore; a society operating at least one year is subject to a ceiling of INR 3 crore under the historical terms.",
+        "Working capital may be included as part of the project but is capped at 20% of total project cost under the historical pattern. Loan period may be up to five years including up to two years’ principal moratorium, with the actual moratorium dependent on project type and revenue generation.",
+        "NCDC describes a 2% reduction from its applicable rate of interest on the term-loan portion as an incentive, valid only for timely repayments. Security may include project assets, FDRs, credible cooperative or government guarantees, eligible institutional guarantees or other NCDC-accepted security; the exact current security package must be confirmed.",
+        "The scheme document allows subsidy/convergence only where the proposed activity is eligible under the relevant government or agency scheme. That dependency must not be represented as Yuva Sahakar’s own grant. The current NCDC website and common application route indicate ongoing NCDC activity, but do not by themselves confirm the historical caps, rate reduction or current intake status.",
+        "The record should match only cooperative societies and should return ‘not eligible’ or ‘more information required’ based on legal form, operating age, net worth, cash-loss history, innovation/value-chain evidence and project cost—not merely founder age or startup branding."
+      ],
+      "reviewFollowUps": [
+        "Confirm the current operative Yuva Sahakar circular/version, project caps, working-capital cap, loan tenure, interest incentive, security, fees and current application intake.",
+        "Extract the current proposal/DPR, audited accounts, registration, net-worth, loss-history, board resolution, project milestone and repayment-document requirements.",
+        "Separate direct NCDC funding from State Government/UT or other channel routes and bind each to its current authority and application link.",
+        "Model subsidy/convergence as an external prerequisite and retain the underlying debt, repayment and security risk separately from any subsidy.",
+        "Verify whether the current NCDC common application supports Yuva Sahakar as a selectable activity and record any offline/hybrid submission requirement."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "NCDC’s current site and common application route support ongoing cooperative-credit activity, but the detailed Nandini and Yuva terms are primarily documented in older scheme documents/compendia. Current caps, rates, security, application intake and route-specific conditions require human reconciliation before publication."
+  }
+}

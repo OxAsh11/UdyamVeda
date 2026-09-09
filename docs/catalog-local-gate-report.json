@@ -1,0 +1,78 @@
+{
+  "generatedAt": "2026-09-09T10:22:30.136Z",
+  "status": "central_beta_blocked",
+  "centralBetaReady": false,
+  "interpretation": "This is a local release-gate explanation. It does not substitute for remote database checks, live source snapshots, or human review.",
+  "summary": {
+    "opportunityRecords": 174,
+    "structuredRecords": 174,
+    "editorialFieldsComplete": 174,
+    "publicationReady": 0,
+    "authorities": 103,
+    "authoritiesPending": 103,
+    "unresolvedOpportunityRecords": 73,
+    "authoritiesWithoutExplicitSeedEvidence": 61,
+    "capturedSnapshots": 174,
+    "integrityPassingSnapshots": 174,
+    "snapshotFailures": 0
+  },
+  "remoteStatus": {
+    "checkedAt": "2026-09-09T10:22:30.127Z",
+    "state": "unreachable",
+    "interpretation": "The configured project could not be reached from this environment.",
+    "tables": [
+      {
+        "table": "opportunities",
+        "status": null,
+        "state": "unreachable",
+        "visibleRows": null,
+        "detail": "fetch failed"
+      },
+      {
+        "table": "source_registry",
+        "status": null,
+        "state": "unreachable",
+        "visibleRows": null,
+        "detail": "fetch failed"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "id": "remote_schema",
+      "passed": false,
+      "value": "unreachable",
+      "blocker": "Apply the ordered migrations and seeds to the configured Supabase project."
+    },
+    {
+      "id": "opportunity_approval",
+      "passed": false,
+      "value": "0 publishable / 174 human-review pending",
+      "blocker": "Every opportunity requires a source, eligibility, window and amendment review decision."
+    },
+    {
+      "id": "authority_assessment",
+      "passed": false,
+      "value": "0/103 assessed",
+      "blocker": "Assess every IGOD ministry and department for business relevance or documented exclusion."
+    },
+    {
+      "id": "authority_crosswalk",
+      "passed": false,
+      "value": "73 unresolved records / 61 authorities without explicit seed evidence",
+      "blocker": "Crawl authority sources and map or explicitly exclude discovered business-relevant opportunities."
+    },
+    {
+      "id": "live_source_snapshots",
+      "passed": true,
+      "value": "174/174 current records have integrity-passing snapshots; 0 missing or failed",
+      "blocker": "Capture current official-source snapshots through the provisioned ingestion workflow."
+    },
+    {
+      "id": "factual_accuracy",
+      "passed": false,
+      "value": "not_recorded",
+      "blocker": "Complete a representative factual audit of at least 20 approved records and reach 98% accuracy."
+    }
+  ]
+}

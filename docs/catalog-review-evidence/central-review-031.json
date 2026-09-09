@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-031",
+  "authority": "Ministry of Electronics and Information Technology (MeitY) / MeitY Startup Hub",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "MeitY, MeitY Startup Hub and the notified PLI 2.0 Gazette/guidelines are the primary sources. Startup India is used only for discovery and cross-checking. GENESIS and TIDE support are component- or centre-specific; PLI 2.0 is a performance-based manufacturing incentive. No scheme budget, incubator allocation or portal summary is treated as an individual applicant entitlement.",
+  "records": [
+    {
+      "slug": "meity-genesis-gen-next-support-for-innovative-startups",
+      "sourceUrl": "https://www.meity.gov.in/offerings/schemes-and-services/details/gen-next-support-for-innovative-startups-genesis-gN5AjNtQWa",
+      "supportingSources": [
+        {
+          "url": "https://msh.meity.gov.in/schemes/genesis",
+          "anchor": "MeitY Startup Hub GENESIS route, component and selected-implementing-agency context"
+        },
+        {
+          "url": "https://www.meity.gov.in/whats-new",
+          "anchor": "Current MeitY Schemes and Services listing includes GEN-NEXT Support for Innovative Startups (GENESIS)"
+        },
+        {
+          "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf",
+          "anchor": "Startup India June 2026 playbook cross-check for GENESIS discovery and component-specific support; not sole publication authority"
+        }
+      ],
+      "sourceKind": "official_meity_scheme_page_msh_route_and_discovery_cross_check",
+      "sourceAnchor": "GENESIS introduction, Rs. 490 crore five-year outlay, Tier-II/III focus, eligible ecosystem entities, components and detailed documents",
+      "observations": [
+        "The current MeitY scheme page describes GENESIS as an umbrella scheme with a Rs. 490 crore budgetary outlay over five years and a focus on nurturing and scaling the startup ecosystem in Tier-II and Tier-III cities.",
+        "The page lists eligible categories including Section 8 entities, incubators, accelerators, educational institutions and other startup ecosystem entities, with component-specific pilot, investment, incubator and community support. It is not a universal direct grant for every startup.",
+        "The current route depends on the applicable GENESIS component and selected implementing agency. A startup may need to apply through that agency's call, diligence and milestone process rather than through a single MeitY application.",
+        "Historical brochure ceilings for early-stage, pilot, deep-tech or investment support must remain separate component values and must not be inferred from the overall scheme outlay or displayed as guaranteed funding.",
+        "The recommendation should evaluate geography, component fit, stage, technology, agency route, selection and diligence evidence, returning more information required when the active component or call is unknown."
+      ],
+      "reviewFollowUps": [
+        "Confirm the current GENESIS component, selected agency, active call, geography, startup stage, support instrument and application deadline.",
+        "Reconcile current component ceilings, matching or co-investment terms, pilot milestones, diligence documents and reporting obligations.",
+        "Verify whether a startup applies directly, through an incubator/accelerator or through another implementing agency for each component.",
+        "Keep the Rs. 490 crore scheme outlay separate from per-applicant benefit values and do not combine pilot, investment and grant buckets."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "meity-tide-2-incubation-centres",
+      "sourceUrl": "https://www.startupindia.gov.in/content/sih/en/incubator-schemes.html",
+      "supportingSources": [
+        {
+          "url": "https://msh.meity.gov.in/schemes/tide",
+          "anchor": "Current MeitY Startup Hub TIDE 2.0 page: 51 incubation centres, approximately 2,000 startup handholding target, themes and G1C/G2C/G3C centre structure"
+        },
+        {
+          "url": "https://www.meity.gov.in/offerings/schemes-and-services/details/technology-incubation-and-development-of-entrepreneurs-QMwEjNtQWa",
+          "anchor": "Official MeitY TIDE 2.0 operational-guidance route"
+        }
+      ],
+      "sourceKind": "official_msh_meity_and_startup_india_incubator_cross_check",
+      "sourceAnchor": "TIDE 2.0 incubation-centre support: G1C, G2C and G3C categories, host eligibility, incubation role and startup ecosystem support",
+      "observations": [
+        "The current MeitY Startup Hub page describes TIDE 2.0 as financial and technical support to incubators supporting ICT startups using emerging technologies such as IoT, AI, blockchain and robotics in selected societal areas.",
+        "The page describes implementation through 51 incubators and handholding of approximately 2,000 tech startups over five years, with G1C, G2C and G3C centre roles. These programme-level targets are not an applicant benefit or a guaranteed startup allocation.",
+        "The Startup India incubator page separates TIDE 2.0 as an incubator-centre route. The record should therefore match eligible host institutions or incubation centres, not ordinary startups applying directly for the centre support.",
+        "Any grant amount, centre category, proposal window, host experience requirement, milestones and reporting terms must be taken from the current MeitY call or operational document. Discovery-page amounts must not be normalized as a per-centre ceiling without that reconciliation."
+      ],
+      "reviewFollowUps": [
+        "Confirm the current TIDE 2.0 call status, eligible host legal forms, category criteria, proposal route and deadline.",
+        "Verify G1C/G2C/G3C support terms, funding instrument, tranche, milestones, centre obligations and reporting.",
+        "Separate this incubator-host record from the startup-facing TIDE access record and link startup recommendations only to verified supported centres.",
+        "Build a current supported-centre directory only from an official MSH source with verification date and centre status."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "technology-incubation-and-development-of-entrepreneurs-tide-2",
+      "sourceUrl": "https://www.meity.gov.in/offerings/schemes-and-services/details/technology-incubation-and-development-of-entrepreneurs-QMwEjNtQWa",
+      "supportingSources": [
+        {
+          "url": "https://msh.meity.gov.in/schemes/tide",
+          "anchor": "Current MSH startup-facing TIDE ecosystem route, supported-centre list and startup handholding context"
+        },
+        {
+          "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf",
+          "anchor": "Startup India June 2026 playbook: startup-facing TIDE discovery, support categories and MSH/incubator application direction"
+        },
+        {
+          "url": "https://www.startupindia.gov.in/content/sih/en/incubator-schemes.html",
+          "anchor": "Startup India incubator scheme cross-check for TIDE 2.0 centre categories and ecosystem route"
+        }
+      ],
+      "sourceKind": "official_meity_msh_and_startup_india_startup_access_cross_check",
+      "sourceAnchor": "TIDE 2.0 startup access through supported incubators, emerging-technology themes, mentorship and component-specific funding",
+      "observations": [
+        "The startup-facing TIDE route is mediated by TIDE-supported incubators and MeitY Startup Hub; it is not the same opportunity as funding a TIDE incubation centre.",
+        "The current MSH page states that TIDE 2.0 supports technology entrepreneurship through incubators in selected societal areas and maintains a supported-centre and startup ecosystem route.",
+        "The June 2026 Startup India playbook is useful for discovery and describes early-stage support categories, but those displayed amounts require direct current MeitY or centre-level reconciliation before becoming recommendation values.",
+        "A startup recommendation must use the verified supported-centre list, technology/theme fit, stage, incubator intake and current centre call. Unknown centre availability must result in more information required, not automatic ineligibility.",
+        "Any fellowship, grant or investment must remain in separate benefit buckets and be labelled as centre-dependent, competitive and non-guaranteed."
+      ],
+      "reviewFollowUps": [
+        "Confirm the current supported-centre directory, each centre's intake status, sector/theme focus, geography and application route.",
+        "Reconcile startup stage, DPIIT recognition, founder/technology criteria, support amount, instrument, milestones and centre-specific terms.",
+        "Do not present TIDE centre support as a direct MeitY cash entitlement or merge it with GENESIS or other startup funding.",
+        "Add the official centre-level application and grievance route before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "production-linked-incentive-2-it-hardware",
+      "sourceUrl": "https://www.meity.gov.in/static/uploads/2024/03/Guidelines_PLI-Scheme-ITHW-min.pdf",
+      "supportingSources": [
+        {
+          "url": "https://www.meity.gov.in/writereaddata/files/Production%20Linked%20Scheme%202.0%20for%20IT%20Hardware%20notification_0.pdf",
+          "anchor": "29 May 2023 Gazette notification: objective, target segments, company eligibility, one-application rule, thresholds and PLI 2.0 structure"
+        },
+        {
+          "url": "https://www.meity.gov.in/offerings?persona=Business-owner",
+          "anchor": "Current MeitY business-owner schemes listing includes PLI 2.0 for IT Hardware and describes manufacturing, investment and localization objectives"
+        },
+        {
+          "url": "https://www.pliwg.dpiit.gov.in/",
+          "anchor": "Official PLI Working Group route for current notices, application status and implementation handoff; live window requires review"
+        }
+      ],
+      "sourceKind": "official_meity_guideline_gazette_current_listing_and_pli_route",
+      "sourceAnchor": "PLI 2.0 IT Hardware: India-registered company, laptops/tablets/AIO PCs/servers/USFF, incremental investment and sales, localization, claims and application route",
+      "observations": [
+        "The Gazette and MeitY guidelines define PLI 2.0 for eligible companies registered in India that manufacture target-segment IT hardware in India. Target segments include laptops, tablets, all-in-one PCs, servers and ultra-small form-factor devices.",
+        "The incentive is performance-based and tied to notified investment, net incremental sales, localization and claim conditions. It is not a flat subsidy, startup grant or guaranteed percentage of turnover.",
+        "The Gazette and guidelines distinguish global, hybrid and domestic applicant categories, investment and sales thresholds, contract-manufacturing treatment, migration rules and performance shortfall consequences. These must be evaluated against the applicant's current approved/selected status and applicable version.",
+        "MeitY's current business-owner listing confirms the scheme remains part of the official scheme catalogue, but catalogue presence does not establish that a new application window is open. The PLI Working Group route and current notice must control window status.",
+        "The recommendation must keep incentive estimates, eligible investment, sales, localization, audit and claim effort separate, and should return not eligible or more information required where current qualification or window status is unknown."
+      ],
+      "reviewFollowUps": [
+        "Confirm whether PLI 2.0 is accepting new applications, handling approved-applicant claims, or only publishing implementation notices in the current period.",
+        "Reconcile the current application fee, PMA route, company category, target products, base year, investment/sales thresholds, localization schedule and claim period.",
+        "Verify amendments, migration from PLI 1.0, contract-manufacturing rules, annual caps, audit evidence and performance shortfall treatment.",
+        "Never use the approximate average percentage or total scheme outlay as an applicant-specific benefit."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "design-linked-incentive-semiconductor-design",
+      "sourceUrl": "https://www.meity.gov.in/static/uploads/2024/02/Notification-Design-Linked-Incentive-Scheme.pdf",
+      "supportingSources": [
+        {
+          "url": "https://chips-dli.gov.in/DLI/Faq",
+          "anchor": "Current DLI FAQ: domestic companies, startups and MSMEs; Product Design reimbursement, Deployment Linked Incentive, INR 10,000 registration fee and C-DAC verification"
+        },
+        {
+          "url": "https://chips-dli.gov.in/DLI/applyforDLI",
+          "anchor": "DLI application procedure: registration, detailed project report, fee and fiscal-support route"
+        },
+        {
+          "url": "https://www.meity.gov.in/writereaddata/files/Guidelines%20for%20Design%20Linked%20Incentive%20%28DLI%29%20Scheme%20-%2030.12.2022.pdf",
+          "anchor": "MeitY operational guideline: eligible expenditure, application, appraisal, approval, milestones and disbursement"
+        },
+        {
+          "url": "https://chips-dli.gov.in/DLI/DownLoads",
+          "anchor": "Official DLI downloads index for notification, guidelines, FAQ, thresholds and proposal templates"
+        }
+      ],
+      "sourceKind": "official_meity_gazette_and_dli_portal",
+      "sourceAnchor": "Pages 6-8, paragraphs 2-11: objectives, eligibility, tenure, Product Design Linked Incentive, Deployment Linked Incentive, design infrastructure, C-DAC implementation and disbursement",
+      "observations": [
+        "The MeitY notification defines the DLI Scheme as financial incentives and design-infrastructure support for eligible domestic companies, startups and MSMEs engaged in semiconductor design.",
+        "The Product Design Linked Incentive is up to 50 percent of eligible expenditure subject to INR 15 crore per application, while the Deployment Linked Incentive is 4-6 percent of net sales turnover over five years subject to INR 30 crore per application.",
+        "Product-design reimbursement, deployment-linked incentive and C-DAC design-infrastructure access are separate benefit buckets and must not be combined into one eligible value.",
+        "C-DAC is the nodal implementing agency and support is approval, milestone and verification based. Registration or portal access does not guarantee approval or payment.",
+        "The Gazette initially opened applications for three years from 1 January 2022, while the current DLI portal displays application and infrastructure routes. The current component intake, extension, amendment and live claim status still require reviewer confirmation."
+      ],
+      "reviewFollowUps": [
+        "Confirm current Product Design and Deployment intake, current call status, extension and amendment history.",
+        "Reconcile current fee, eligible expenditure, net-sales methodology, component milestones, claim documents and C-DAC approval conditions.",
+        "Verify domestic ownership, startup/MSME definitions, semiconductor-design scope, current portal behavior and grievance route.",
+        "Keep the INR 15 crore and INR 30 crore component ceilings separate and never present infrastructure access as cash support."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "chips-to-startup-c2s",
+      "sourceUrl": "https://c2s.gov.in/callforproposals.jsp",
+      "supportingSources": [
+        {
+          "url": "https://c2s.gov.in/",
+          "anchor": "Official MeitY C2S portal: programme, resources, financial-support, call and ChipIN routes"
+        },
+        {
+          "url": "https://c2s.gov.in/guidelines.jsp",
+          "anchor": "Official guidelines: technical scope, TRL, EDA/fabrication support, collaboration, milestones, PFMS, IP and reporting"
+        },
+        {
+          "url": "https://c2s.gov.in/eligibility.jsp",
+          "anchor": "Official eligibility page: academic/R&D organization conditions and startup/MSME definition boundary"
+        },
+        {
+          "url": "https://c2s.gov.in/call_for_proposal.jsp",
+          "anchor": "Official BLDC Motor Controller ASIC call: startup/MSME route currently marked closed"
+        },
+        {
+          "url": "https://c2s.gov.in/call_for_proposal_RSCs.jsp",
+          "anchor": "Official Regional Support Centre call: institution-led route with 22 July 2026 submission deadline"
+        },
+        {
+          "url": "https://c2s.gov.in/request_for_EDA_Tool.jsp",
+          "anchor": "Official ChipIN EDA access route: institutional programme and infrastructure requirements"
+        }
+      ],
+      "sourceKind": "official_meity_c2s_programme_guideline_eligibility_and_call_cross_check",
+      "sourceAnchor": "C2S programme call, guidelines, eligibility and component call pages reconciled for applicant boundary, benefit buckets, milestones and current-window status",
+      "observations": [
+        "C2S is an umbrella MeitY programme spanning academic/R&D, startup/MSME, industry-academia, Grand Challenge/Hackathon/RFP and semiconductor-design infrastructure routes.",
+        "Startups and MSMEs can participate in notified project categories, but the umbrella page does not establish one universal startup grant, generic ceiling or current open application window.",
+        "The guidelines require proposal-specific technical scope, novelty, targeted TRL, deliverables, EDA/fabrication/testing plan, commercialization or technology-transfer roadmap, roles, contribution and timelines as applicable.",
+        "EDA access, fabrication support, training, project financial support and institutional infrastructure are separate benefit buckets and must not be combined into a single eligible amount.",
+        "The BLDC call page is currently marked closed and the RSC call page records a 22 July 2026 deadline. These route-specific states do not prove that every C2S route is permanently closed or that a current general call is open.",
+        "A startup recommendation must identify the current C2S category or component and its applicant route; unknown call status must return more information required rather than automatic ineligibility."
+      ],
+      "reviewFollowUps": [
+        "Verify a current startup/MSME or institution-facing C2S call, route, deadline and applicable proposal category.",
+        "Reconcile the controlling category's benefit ceiling, contribution, milestones, evaluation, fund release, PFMS, IP, utilization and reporting terms.",
+        "Keep historical BLDC terms and institution-led RSC terms separate from the generic C2S record.",
+        "Confirm current portal submission behavior, support contact and grievance route.",
+        "Obtain human reviewer approval for source, eligibility, benefit, application, window, fine print, amendment and factual accuracy before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "Current MeitY, MSH, DLI and C2S sources confirm the six routes and their distinct applicant boundaries, but active calls, centre availability, component terms, amendments, application windows and applicant-specific qualification remain unresolved. All records stay human-review pending."
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-09-08",
+  "sourceBaseline": "docs/igod-coverage-baseline.json",
+  "purpose": "Evidence pack for the third bounded manual review batch. These are proposed relevance decisions only and do not alter the terminal IGOD assessment state or authorize publication.",
+  "reviewStatus": "pending_human_approval",
+  "terminalAssessmentWritesAllowed": false,
+  "rows": [
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Commerce (DoC)",
+      "authorityUrl": "https://commerce.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://apps.commerce.gov.in/schemes/schemereport",
+      "evidenceAnchor": "Department of Commerce scheme claims monitor: Market Access Initiative and Trade Infrastructure for Export Scheme activity",
+      "rationale": "The department publishes export promotion, trade infrastructure, market-access, SEZ, and exporter-support routes that affect Indian businesses."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Heavy Industries (MoHI)",
+      "authorityUrl": "https://heavyindustries.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://pmedrive.heavyindustries.gov.in/",
+      "evidenceAnchor": "PM E-DRIVE official portal: policy, notifications, guidelines, public-charging and eligible-manufacturer or operator routes",
+      "rationale": "The ministry publishes electric-mobility, automotive manufacturing, public-charging, and production-support programmes relevant to businesses and institutional operators."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Textiles (MoT)",
+      "authorityUrl": "https://texmin.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://pli.texmin.gov.in/Scheme-Notifications",
+      "evidenceAnchor": "PLI Textiles scheme notifications and guidelines index: MMF apparel, MMF fabrics, technical textiles, amendments, applicant notices and claims",
+      "rationale": "The ministry publishes production, investment, product, export, technology, and claim-support routes for textile manufacturers and technical-textile businesses."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Consumer Affairs (DoCA)",
+      "authorityUrl": "https://doca.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://lm.doca.gov.in/index.aspx",
+      "evidenceAnchor": "Legal Metrology official portal: packaged-commodities registration, importer registration, and model-approval routes",
+      "rationale": "The department controls product and importer compliance journeys that businesses must complete before manufacturing, importing, packing, or selling covered goods."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Housing and Urban Affairs (MoHUA)",
+      "authorityUrl": "https://mohua.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://pm-ebus-sewa.mohua.gov.in/wp-content/uploads/2025/08/PM-eBus-Sewa-Guidelines-Part-I-1.pdf",
+      "evidenceAnchor": "PM-eBus Sewa guidelines: city challenge, State/UT and PTA proposal route, CESL tendering, concession, and implementation conditions",
+      "rationale": "MoHUA publishes urban infrastructure and mobility programmes where private businesses participate through tenders, concessions, OEM, operator, or consortium routes."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Fisheries (DoF)",
+      "authorityUrl": "https://dof.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://www.dof.gov.in/static/uploads/2025/09/db9e0987df6461b69304fe4115aceec9.pdf",
+      "evidenceAnchor": "PM-MKSSY framework: fisheries micro and small enterprise scope, NFDP registration, credit access, insurance incentives, performance grants, and post-verification",
+      "rationale": "The department publishes fisheries formalisation, finance, insurance, value-chain, and enterprise-support routes for fisheries businesses and workers."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Fisheries, Animal Husbandry and Dairying (MoFAHD)",
+      "authorityUrl": "https://minfahd.gov.in",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://pmmsy.dof.gov.in/",
+      "evidenceAnchor": "Department of Fisheries PMMSY/PM-MKSSY portal and fisheries enterprise context under the ministry portfolio",
+      "rationale": "The ministry portfolio includes fisheries, livestock, poultry, and dairy enterprise-support programmes with direct business and producer-organisation relevance."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Chemicals and Fertilizers (MoCF)",
+      "authorityUrl": "https://mocf.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://pharma-dept.gov.in/schemes/scheme-promotion-research-and-innovation-pharma-medtech-sector-prip",
+      "evidenceAnchor": "Department of Pharmaceuticals PRIP scheme page within the ministry portfolio: pharma/medtech research, innovation, CoE, and startup/MSME routes",
+      "rationale": "The ministry portfolio includes chemicals, fertilizers, and pharmaceuticals, with business-facing R&D, production, infrastructure, and compliance routes."
+    }
+  ]
+}

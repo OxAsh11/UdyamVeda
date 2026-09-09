@@ -1,8 +1,9 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { TrendingUp, TrendingDown, ExternalLink, Plus, Save } from 'lucide-react'
+import { useCallback, useEffect, useState } from 'react'
+import { TrendingUp, ExternalLink, Plus, Save } from 'lucide-react'
 import { toast } from 'sonner'
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 
 interface MetricRow {
   id?: string
@@ -29,6 +30,8 @@ const INTEGRATIONS = [
   { name: 'Google Search Console', icon: '🔍', purpose: 'SEO & keyword performance', url: 'https://search.google.com/search-console', badge: 'SEO' },
 ]
 
+const CHART_COLORS = { reach: '#9ca3af', clicks: '#6b7280', conversions: '#374151' }
+
 export default function TrackPage() {
   const [metrics, setMetrics] = useState<MetricRow[]>([])
   const [benchmarks, setBenchmarks] = useState<Benchmark | null>(null)
@@ -36,28 +39,9 @@ export default function TrackPage() {
   const [newRow, setNewRow] = useState<MetricRow>({ week: '', channel: 'Instagram', reach: 0, clicks: 0, conversions: 0, spend: 0 })
   const [loading, setLoading] = useState(true)
   const [insights, setInsights] = useState<string[]>([])
+  const [chartMetric, setChartMetric] = useState<'reach' | 'clicks' | 'conversions'>('reach')
 
-  useEffect(() => {
-    async function load() {
-      // Load metrics
-      const res = await fetch('/api/gtm/metrics')
-      const data = await res.json()
-      setMetrics(data.metrics ?? [])
-
-      // Load benchmarks from strategy
-      const stratRes = await fetch('/api/gtm/strategy')
-      const stratData = await stratRes.json()
-      if (stratData.strategy?.benchmarks) {
-        setBenchmarks(stratData.strategy.benchmarks)
-        generateInsights(data.metrics ?? [], stratData.strategy.benchmarks)
-      }
-
-      setLoading(false)
-    }
-    load()
-  }, [])
-
-  function generateInsights(m: MetricRow[], bench: Benchmark) {
+  const generateInsights = useCallback((m: MetricRow[], bench: Benchmark) => {
     const ins: string[] = []
     if (m.length === 0) {
       ins.push('Add your first week\'s metrics to start seeing insights.')
@@ -85,7 +69,25 @@ export default function TrackPage() {
     if (byChannel[0].conv > 0) ins.push(`${byChannel[0].ch} is your best performing channel with ${byChannel[0].conv} conversions. Double down here.`)
 
     setInsights(ins)
-  }
+  }, [])
+
+  useEffect(() => {
+    async function load() {
+      const res = await fetch('/api/gtm/metrics')
+      const data = await res.json()
+      setMetrics(data.metrics ?? [])
+
+      const stratRes = await fetch('/api/gtm/strategy')
+      const stratData = await stratRes.json()
+      if (stratData.strategy?.benchmarks) {
+        setBenchmarks(stratData.strategy.benchmarks)
+        generateInsights(data.metrics ?? [], stratData.strategy.benchmarks)
+      }
+
+      setLoading(false)
+    }
+    load()
+  }, [generateInsights])
 
   async function addMetric() {
     if (!newRow.week || !newRow.channel) { toast.error('Fill in week and channel'); return }
@@ -103,7 +105,18 @@ export default function TrackPage() {
     toast.success('Metrics added')
   }
 
-  // Totals
+  // Aggregate per week for chart (sum across channels)
+  const chartData = Array.from(
+    metrics.reduce((map, row) => {
+      const existing = map.get(row.week) ?? { week: row.week, reach: 0, clicks: 0, conversions: 0 }
+      existing.reach += Number(row.reach)
+      existing.clicks += Number(row.clicks)
+      existing.conversions += Number(row.conversions)
+      map.set(row.week, existing)
+      return map
+    }, new Map<string, { week: string; reach: number; clicks: number; conversions: number }>())
+  ).map(([, v]) => v)
+
   const totalReach = metrics.reduce((s, r) => s + Number(r.reach), 0)
   const totalClicks = metrics.reduce((s, r) => s + Number(r.clicks), 0)
   const totalConversions = metrics.reduce((s, r) => s + Number(r.conversions), 0)
@@ -124,29 +137,6 @@ export default function TrackPage() {
         <p className="text-neutral-400 text-sm">Monitor your campaign performance and compare against benchmarks</p>
       </div>
 
-      {/* Connect analytics — contextual prompt */}
-      <div className="glass p-5 mb-6">
-        <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide mb-4">Connect your analytics tools</div>
-        <div className="grid grid-cols-2 gap-3">
-          {INTEGRATIONS.map(tool => (
-            <div key={tool.name} className="flex items-center justify-between p-3 rounded-xl bg-black/4 border border-neutral-200">
-              <div className="flex items-center gap-3">
-                <span className="text-xl">{tool.icon}</span>
-                <div>
-                  <div className="text-neutral-600 text-sm font-medium">{tool.name}</div>
-                  <div className="text-neutral-400 text-xs">{tool.purpose}</div>
-                </div>
-              </div>
-              <a href={tool.url} target="_blank" rel="noopener noreferrer"
-                className="flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-lg border border-neutral-200 text-neutral-400 hover:text-neutral-600 hover:border-neutral-300 transition-all shrink-0">
-                Open <ExternalLink size={10} />
-              </a>
-            </div>
-          ))}
-        </div>
-        <p className="text-neutral-400 text-xs mt-3">Enter metrics manually below. Direct API integration coming in a future update.</p>
-      </div>
-
       {/* KPI cards */}
       <div className="grid grid-cols-5 gap-3 mb-6">
         {[
@@ -162,6 +152,44 @@ export default function TrackPage() {
           </div>
         ))}
       </div>
+
+      {/* Chart */}
+      {chartData.length > 1 && (
+        <div className="glass p-5 mb-6">
+          <div className="flex items-center justify-between mb-4">
+            <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide">Performance over time</div>
+            <div className="flex gap-1 p-1 bg-neutral-100 rounded-lg">
+              {(['reach', 'clicks', 'conversions'] as const).map(m => (
+                <button key={m} onClick={() => setChartMetric(m)}
+                  className={`px-3 py-1 rounded-md text-xs font-medium transition-all capitalize ${
+                    chartMetric === m ? 'bg-white text-neutral-900 shadow-sm' : 'text-neutral-500 hover:text-neutral-700'
+                  }`}>
+                  {m}
+                </button>
+              ))}
+            </div>
+          </div>
+          <ResponsiveContainer width="100%" height={200}>
+            <LineChart data={chartData} margin={{ top: 0, right: 4, left: -20, bottom: 0 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="#f3f4f6" />
+              <XAxis dataKey="week" tick={{ fontSize: 11, fill: '#9ca3af' }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fontSize: 11, fill: '#9ca3af' }} axisLine={false} tickLine={false} />
+              <Tooltip
+                contentStyle={{ background: 'white', border: '1px solid #e5e7eb', borderRadius: '8px', fontSize: '12px' }}
+                labelStyle={{ color: '#374151', fontWeight: 600, marginBottom: 4 }}
+              />
+              <Line
+                type="monotone"
+                dataKey={chartMetric}
+                stroke={CHART_COLORS[chartMetric]}
+                strokeWidth={2}
+                dot={{ fill: CHART_COLORS[chartMetric], r: 3 }}
+                activeDot={{ r: 5 }}
+              />
+            </LineChart>
+          </ResponsiveContainer>
+        </div>
+      )}
 
       {/* Benchmarks */}
       {benchmarks && (
@@ -205,6 +233,29 @@ export default function TrackPage() {
         </div>
       )}
 
+      {/* Connect analytics */}
+      <div className="glass p-5 mb-6">
+        <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide mb-4">Connect your analytics tools</div>
+        <div className="grid grid-cols-2 gap-3">
+          {INTEGRATIONS.map(tool => (
+            <div key={tool.name} className="flex items-center justify-between p-3 rounded-xl bg-black/4 border border-neutral-200">
+              <div className="flex items-center gap-3">
+                <span className="text-xl">{tool.icon}</span>
+                <div>
+                  <div className="text-neutral-600 text-sm font-medium">{tool.name}</div>
+                  <div className="text-neutral-400 text-xs">{tool.purpose}</div>
+                </div>
+              </div>
+              <a href={tool.url} target="_blank" rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-3 py-1.5 text-xs rounded-lg border border-neutral-200 text-neutral-400 hover:text-neutral-600 hover:border-neutral-300 transition-all shrink-0">
+                Open <ExternalLink size={10} />
+              </a>
+            </div>
+          ))}
+        </div>
+        <p className="text-neutral-400 text-xs mt-3">Enter metrics manually below. Direct API integration coming in a future update.</p>
+      </div>
+
       {/* Metrics table */}
       <div>
         <div className="flex items-center justify-between mb-3">
@@ -239,12 +290,11 @@ export default function TrackPage() {
               {metrics.length === 0 && !addingRow && (
                 <tr>
                   <td colSpan={6} className="p-8 text-center text-neutral-400 text-sm">
-                    No metrics yet — add your first week's data above
+                    No metrics yet — add your first week&apos;s data above
                   </td>
                 </tr>
               )}
 
-              {/* Add row inline */}
               {addingRow && (
                 <tr className="border-t border-neutral-200 bg-black/3">
                   <td className="p-3">

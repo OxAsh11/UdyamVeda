@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-068",
+  "authority": "MeitY Startup Hub / Ministry of Electronics and Information Technology",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party SAMRIDH scheme, current MeitY Startup Hub page, second-cohort result and official Startup India playbook observations for reviewer use. It does not guarantee accelerator selection, investment, matching capital, equity terms, cohort admission, valuation, market access or startup outcomes, and it does not authorize UdyamVeda to apply, negotiate securities or handle credentials and OTPs.",
+  "sourcePolicy": "The current MeitY Startup Hub page and official SAMRIDH scheme document are primary. The official second-cohort memorandum establishes partner-selection context. The Startup India June 2026 playbook is an official discovery and cross-check source, not a substitute for the governing scheme document, current cohort notice or accelerator-specific terms.",
+  "records": [
+    {
+      "slug": "startup-accelerator-meity-samridh",
+      "sourceUrl": "https://msh.meity.gov.in/schemes/samridh",
+      "supportingSources": [
+        {
+          "url": "https://msh.meity.gov.in/schemes/samridh",
+          "anchor": "Current MeitY Startup Hub page, last updated 06-09-2026: programme objective, 300-tech-startup/three-year target, 5-10 startup cohort size, first-cohort accelerator context and current Result of SAMRIDH Cohort 2 surface"
+        },
+        {
+          "url": "https://msh.meity.gov.in/assets/Scheme-Report.pdf",
+          "anchor": "Official SAMRIDH scheme document: selected-accelerator model, six-month cohorts, up to INR 40 lakh government investment, equal private matching investment, equity/SAFE/promissory-note mechanics, accelerator qualification and startup cohort/service conditions"
+        },
+        {
+          "url": "https://msh.meity.gov.in/assets/samridh2ndcohrot/SAMRIDH%202nd%20Cohort%20OM%20Final.pdf",
+          "anchor": "Official 03-03-2025 memorandum: selection of enabling partners for the second cohort; partner application window and final partner-selection context, not proof of an open startup application window"
+        },
+        {
+          "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf",
+          "anchor": "Pages 49-50: official discovery summary of SAMRIDH, eligible accelerator/startup route, investment and equal private matching investment, accelerator service budget and MSH access route"
+        }
+      ],
+      "sourceKind": "official_meity_startup_hub_scheme_cross_check",
+      "sourceAnchor": "Current MeitY Startup Hub SAMRIDH page, official scheme document and second-cohort memorandum",
+      "observations": [
+        "SAMRIDH is an accelerator-led MeitY programme for IT or software-product startups; the startup route is mediated by selected or participating accelerators rather than a universal direct government grant form.",
+        "The official scheme document describes up to INR 40 lakh of government investment per startup, with an equal matching investment by the accelerator or investor up to INR 40 lakh, based on valuation and growth stage. These are investment/equity-linked amounts, not a guaranteed grant or subsidy.",
+        "The scheme document describes MSH government contribution and accelerator investment using the same investment vehicle, including SAFE/promissory-note or other appropriate equity/debt financing mixes. The exact instrument, valuation, dilution, rights and current legal documents must be reviewed for each route.",
+        "The official current MSH page says the programme targets about 300 tech startups over three years with cohorts of 5-10 startups and currently displays the result of SAMRIDH Cohort 2. This is evidence of a current programme surface, not proof that a startup application window is open.",
+        "The second-cohort memorandum concerns selection of enabling partners; partner selection and startup selection are separate stages. A startup should be shown an accelerator-specific intake only when a current participating accelerator notice or route is verified.",
+        "The scheme document describes six-month accelerator programmes and services including customer connect, investor connect, internationalisation, product enhancement, mentoring, legal support and demo-day or investment connections.",
+        "Accelerator qualification in the scheme document includes India operations, incubation or cohort experience, infrastructure and capabilities for market immersion, investor networks, mentors and software-product acceleration; current partner eligibility and list require review against the latest cohort notice.",
+        "The official Startup India playbook identifies Section 8 companies or societies as accelerator applicants and IT-based startups as startup beneficiaries, but its summary cannot override the governing scheme document or current accelerator-specific terms.",
+        "UdyamVeda may explain the accelerator route and prepare a product, traction, market, funding and diligence checklist, but the startup must use its own application, investment, securities and accelerator documents."
+      ],
+      "reviewFollowUps": [
+        "Capture and reconcile the latest current SAMRIDH scheme amendment, cohort notice, enabling-partner list and accelerator-specific startup application links; do not treat the Cohort 2 result page as an open call.",
+        "Verify whether the current startup investment is government equity, SAFE, promissory note, debt or another instrument, and capture valuation, dilution, rights, milestone, disbursement, reporting, exit and repayment or conversion terms.",
+        "Verify the current beneficiary startup definition, incorporation and technology requirements, stage, geography, founder/ownership conditions, prior-investment rules and any accelerator-specific eligibility.",
+        "Verify accelerator service obligations, duration, cohort size, permissible service budget, investment matching evidence, selection stages, fees, equity limits and grievance route.",
+        "Separate government investment, private matching investment, accelerator service budget and non-financial support in all benefit displays and calculations.",
+        "Obtain human reviewer approval for source, eligibility, benefit, application, window, fine print, amendment and factual accuracy before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "The official sources establish an accelerator-mediated investment route and current cohort context, but the current startup intake, investment instrument, partner list, cohort window, beneficiary terms and securities conditions require human reconciliation before publication."
+  }
+}

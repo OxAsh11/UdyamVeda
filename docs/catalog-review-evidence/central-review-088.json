@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-088",
+  "authority": "Technology Development Board, Department of Science and Technology",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records current first-party observations for reviewer use. It does not guarantee TDB finance, grant, equity, eligibility, sanction, disbursement or application success, and it does not authorize UdyamVeda to submit applications or handle credentials and OTPs.",
+  "sourcePolicy": "The current TDB portal, Core Funding modes page, current FAQ PDF, Downloads page and statutory page are used for the reconciliation. The newer RDIF/SLFM route is recorded as a related but separate route and is not merged into the Core Funding record.",
+  "records": [
+    {
+      "slug": "technology-development-board-technology-commercialisation-finance",
+      "sourceUrl": "https://tdb.gov.in/sites/default/files/2024-12/f_q.pdf",
+      "supportingSources": [
+        { "url": "https://www.tdb.gov.in/", "anchor": "Current TDB portal: separate TDB Core Funding and RDI/RDIF routes, current active-call panel, Core Funding handoff and last-updated date." },
+        { "url": "https://www.tdb.gov.in/modes-funding", "anchor": "Current Core Funding modes: loan, equity and exceptional grant; 5% simple interest, up to 50% of unincurred project cost, up to 25% equity and no processing, administrative or commitment charges." },
+        { "url": "https://tdb.gov.in/sites/default/files/2024-12/f_q.pdf", "anchor": "Current FAQ PDF: eligible projects, TRL, evaluation, project timeline, repayment, security, earnest fee, year-round applications, evaluation duration and startup exception wording." },
+        { "url": "https://www.tdb.gov.in/node/1946", "anchor": "Current Downloads page: revised Project Funding Guidelines/FAQs, Loan Application Form-A/Checklist and Return Submission Form; page last updated in August 2026." },
+        { "url": "https://tdb.gov.in/acts-and-rules", "anchor": "Technology Development Board Act, 1995 statutory basis and Section 6 financial-assistance powers." },
+        { "url": "https://tdb.gov.in/rdi_slfm", "anchor": "Separate RDIF/SLFM route: TRL 4 onward, different 3%-4% rate and 12-15 year terms, up to 50% financing, no grants; not merged into this Core Funding record." }
+      ],
+      "sourceKind": "official_tdb_current_core_funding_and_related_route_cross_check",
+      "sourceAnchor": "Current FAQ PDF pages 2-9; Modes of Funding page; Downloads page; current portal funding navigation",
+      "observations": [
+        "The current TDB portal distinguishes TDB Core Funding from the newer RDI/RDIF route and shows current calls. This record is scoped to Core Funding; RDIF/SLFM must be cataloged separately after its own review.",
+        "The Core Funding page describes separate loan, equity and exceptional-grant modes. UdyamVeda must keep these value buckets separate and must not present their percentages as one combined entitlement.",
+        "The current FAQ describes a general loan of up to 50% at 5% simple annual interest and also contains a committee exception up to 70% with a project ceiling of INR 5 crore. The FAQ separately describes a DPIIT-registered startup exception for Companies Act entities with projects up to INR 5 crore. These conditions require human reconciliation before publication.",
+        "The current FAQ states that applications can be submitted throughout the year, evaluation typically takes 3-4 months, and the applicant submits the online prescribed form with a detailed project proposal and supporting documents.",
+        "The FAQ describes a one-year post-completion moratorium, nine half-yearly instalments, royalty and collateral/guarantee obligations. The Modes of Funding page uses different wording for the instalment cadence, so the controlling current agreement and guideline must be confirmed.",
+        "The Board states that it does not levy processing, administrative or commitment charges, while the FAQ separately states that a 1% earnest fee may be deposited and forfeited if the loan agreement is not signed after the letter of intent. These are distinct fee conditions and must not be collapsed into free financing.",
+        "The current Downloads page exposes revised guidelines/FAQs, Loan Application Form-A/Checklist and progress-report forms. The exact current online submission route and any active-call-specific instructions remain applicant responsibilities.",
+        "The TDB Act page confirms the statutory basis and financial-assistance powers. Approval-authority bands, if shown, are governance thresholds and not applicant benefit ceilings."
+      ],
+      "reviewFollowUps": [
+        "Capture and hash the current exact URLs when Firecrawl credits are restored, including the current FAQ PDF and Downloads page.",
+        "Resolve the general 50% rule, the committee 70%/INR 5 crore wording and the startup-specific exception against the controlling guideline, current application form and sanction terms.",
+        "Reconcile the Modes of Funding instalment wording with the FAQ's nine half-yearly instalments and confirm the current repayment, royalty, collateral, guarantee and earnest-fee conditions.",
+        "Review the current Core Funding online handoff and active calls separately from RDIF/SLFM, international programmes and call-specific routes.",
+        "Confirm entity legal-form boundaries, DPIIT-startup requirements, project cost definitions, TRL/technology stage and remaining-funding evidence with page or form anchors.",
+        "Obtain human reviewer approval for source, eligibility, benefit, application, window, fine print, amendment, current terms and factual accuracy before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source", "eligibility", "benefit", "application", "window", "fine_print", "amendment", "current_terms", "reviewer_decision"],
+    "reason": "Current official sources support a structured Core Funding draft, but the core/RDIF boundary, startup exception, fee/repayment wording, active route and current form terms still require human reconciliation."
+  }
+}

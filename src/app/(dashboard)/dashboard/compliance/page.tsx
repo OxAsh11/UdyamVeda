@@ -1,13 +1,12 @@
 'use client'
 
 import { useEffect, useState, useCallback } from 'react'
-import { createClient } from '@/lib/supabase/client'
 import {
   COMPLIANCE_ITEMS, CATEGORY_LABELS, PRIORITY_LABELS,
   filterCompliance, calculateHealthScore, getUpcomingDeadlines,
   type ComplianceItem, type ComplianceCategory,
 } from '@/lib/data/compliance-roadmap'
-import { CheckCircle2, Circle, ChevronDown, ChevronUp, ExternalLink, Calendar, ClipboardList, AlertTriangle, Info } from 'lucide-react'
+import { CheckCircle2, Circle, ChevronDown, ChevronUp, ExternalLink, Calendar, ClipboardList, AlertTriangle, Info, ShieldCheck, Sparkles } from 'lucide-react'
 import { toast } from 'sonner'
 
 type Tab = 'checklist' | 'calendar'
@@ -22,6 +21,16 @@ const CATEGORY_ICONS: Record<ComplianceCategory, string> = {
   trade: '⟳',
   hr: '◉',
   corporate: '▣',
+}
+
+const CATEGORY_COLORS: Record<ComplianceCategory, { accent: string; tint: string; text: string }> = {
+  foundation: { accent: '#059669', tint: '#ECFDF5', text: '#065F46' },
+  tax: { accent: '#D99A00', tint: '#FFFBEB', text: '#92400E' },
+  license: { accent: '#FF8A34', tint: '#FFF7ED', text: '#9A3412' },
+  ip: { accent: '#7C3AED', tint: '#F5F3FF', text: '#5B21B6' },
+  trade: { accent: '#0891B2', tint: '#ECFEFF', text: '#155E75' },
+  hr: { accent: '#E95454', tint: '#FEF2F2', text: '#991B1B' },
+  corporate: { accent: '#3F46E8', tint: '#EEF2FF', text: '#3730A3' },
 }
 
 export default function CompliancePage() {
@@ -42,16 +51,12 @@ export default function CompliancePage() {
 
   useEffect(() => {
     async function load() {
-      const supabase = createClient()
-      const { data: { user } } = await supabase.auth.getUser()
-      if (!user) return
-
-      const [{ data: biz }, res] = await Promise.all([
-        supabase.from('business_profiles').select('*').eq('user_id', user.id).single(),
+      const [businessResponse, res] = await Promise.all([
+        fetch('/api/businesses/current', { cache: 'no-store' }),
         fetch('/api/compliance'),
       ])
-
-      if (biz) setBusiness(biz)
+      const businessPayload = await businessResponse.json() as { data?: { business?: { district?: string | null }; profile?: Record<string, unknown> } }
+      if (businessPayload.data?.profile) setBusiness({ ...businessPayload.data.profile, district: businessPayload.data.business?.district ?? '' } as Record<string, string>)
 
       const json = await res.json()
       if (json.progress) {
@@ -98,49 +103,61 @@ export default function CompliancePage() {
 
   if (loading) {
     return (
-      <div className="p-8 flex items-center justify-center min-h-[60vh]">
-        <div className="text-neutral-400 text-sm">Loading your compliance profile...</div>
+      <div className="min-h-[60vh] bg-[#f8f7f3] p-8 flex items-center justify-center">
+        <div className="rounded-2xl border border-indigo-100 bg-white px-5 py-4 text-sm text-slate-500 shadow-sm">Loading your preparation profile...</div>
       </div>
     )
   }
 
   return (
-    <div className="p-8 max-w-4xl">
+    <main className="min-h-full bg-[#f8f7f3] p-5 text-slate-900 md:p-8">
+      <div className="mx-auto max-w-5xl">
       {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-2xl font-semibold text-neutral-900 mb-1">Compliance Centre</h1>
-        <p className="text-neutral-400 text-sm">
-          {business?.business_name ? `${business.business_name} · ` : ''}Track every registration, filing, and license your business needs
+      <section className="relative mb-8 overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-indigo-700 via-indigo-600 to-violet-600 p-6 text-white shadow-xl shadow-indigo-100 md:p-8">
+        <div className="absolute -right-16 -top-24 h-64 w-64 rounded-full bg-orange-300/25 blur-3xl" />
+        <div className="relative">
+        <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1.5 text-xs font-semibold text-indigo-100"><Sparkles size={13} /> Start &amp; Operate · preparation workspace</div>
+        <h1 className="mb-2 text-3xl font-black tracking-tight md:text-4xl">Make your business ready.</h1>
+        <p className="max-w-2xl text-sm leading-6 text-indigo-100">
+          {business?.business_name ? `${business.business_name} · ` : ''}Organise the registrations, filings, and licences your business may need
         </p>
+        </div>
+      </section>
+
+      <div className="mb-6 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-950">
+        <p className="font-bold">Review-gated preparation tracker</p>
+        <p className="mt-1 leading-6">These checklist items are planning guidance, not a legal determination that your business is compliant. Applicability, thresholds, deadlines, fees, and local requirements must be confirmed against the current official source before you act.</p>
+        <a href="/dashboard/registration" className="mt-2 inline-flex font-bold text-amber-800 underline underline-offset-2">Open the registration preparation map</a>
       </div>
 
-      {/* Health Score */}
-      <div className="glass p-6 mb-6">
+      {/* Preparation progress */}
+      <section className="mb-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
         <div className="flex items-center gap-8">
           {/* Ring */}
           <div className="relative shrink-0">
             <div
               className="w-28 h-28 rounded-full flex items-center justify-center"
               style={{
-                background: `conic-gradient(#0C0C0C ${score}%, #e5e7eb ${score}%)`,
+                background: `conic-gradient(#3F46E8 ${score}%, #E0E7FF ${score}%)`,
               }}
             >
               <div className="w-20 h-20 rounded-full bg-white flex flex-col items-center justify-center">
-                <span className="text-2xl font-bold text-neutral-900">{score}</span>
-                <span className="text-xs text-neutral-400">/ 100</span>
+                <span className="text-2xl font-black text-slate-900">{score}</span>
+                <span className="text-xs text-slate-400">/ 100</span>
               </div>
             </div>
           </div>
 
-          {/* Score breakdown */}
+          {/* Preparation breakdown */}
           <div className="flex-1">
             <div className="flex items-baseline gap-2 mb-1">
-              <div className="text-neutral-800 font-semibold text-base">
-                {score < 30 ? 'Just getting started' : score < 60 ? 'Making progress' : score < 85 ? 'Mostly compliant' : 'Fully compliant'}
+              <div className="flex items-center gap-2 text-base font-bold text-slate-800">
+                <ShieldCheck size={17} className="text-emerald-500" />
+                {score < 30 ? 'Just getting started' : score < 60 ? 'Preparation underway' : score < 85 ? 'Preparation well underway' : 'Preparation checklist complete'}
               </div>
             </div>
-            <p className="text-neutral-400 text-sm mb-4">
-              {completed} of {total} compliance items done
+            <p className="mb-4 text-sm text-slate-500">
+              {completed} of {total} preparation items done
               {score < 100 && ` · ${total - completed} remaining`}
             </p>
 
@@ -150,13 +167,13 @@ export default function CompliancePage() {
                 const b = byCategory[cat] ?? { completed: 0, total: 0 }
                 const pct = b.total > 0 ? Math.round((b.completed / b.total) * 100) : 0
                 return (
-                  <div key={cat} className="bg-black/4 border border-neutral-200 rounded-xl p-2.5">
+                  <div key={cat} className="rounded-xl border border-slate-200 p-2.5" style={{ backgroundColor: CATEGORY_COLORS[cat].tint }}>
                     <div className="flex items-center justify-between mb-1.5">
-                      <span className="text-neutral-500 text-xs">{CATEGORY_ICONS[cat]} {CATEGORY_LABELS[cat]}</span>
-                      <span className="text-neutral-400 text-xs">{b.completed}/{b.total}</span>
+                      <span className="text-xs font-semibold" style={{ color: CATEGORY_COLORS[cat].text }}>{CATEGORY_ICONS[cat]} {CATEGORY_LABELS[cat]}</span>
+                      <span className="text-xs text-slate-500">{b.completed}/{b.total}</span>
                     </div>
-                    <div className="w-full h-1 bg-neutral-200 rounded-full overflow-hidden">
-                      <div className="h-full bg-neutral-700 rounded-full transition-all" style={{ width: `${pct}%` }} />
+                    <div className="h-1 w-full overflow-hidden rounded-full bg-white/70">
+                      <div className="h-full rounded-full transition-all" style={{ width: `${pct}%`, backgroundColor: CATEGORY_COLORS[cat].accent }} />
                     </div>
                   </div>
                 )
@@ -164,7 +181,7 @@ export default function CompliancePage() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* Tabs */}
       <div className="flex gap-2 mb-6">
@@ -174,7 +191,7 @@ export default function CompliancePage() {
         ]).map(t => (
           <button key={t.key} onClick={() => setTab(t.key)}
             className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all ${
-              tab === t.key ? 'bg-black/10 text-neutral-900 border border-neutral-300' : 'text-neutral-400 hover:text-neutral-600 hover:bg-black/5'
+              tab === t.key ? 'border border-indigo-200 bg-indigo-600 text-white shadow-sm' : 'border border-slate-200 bg-white text-slate-500 hover:border-indigo-200 hover:text-indigo-700'
             }`}>
             {t.icon}{t.label}
           </button>
@@ -315,14 +332,14 @@ export default function CompliancePage() {
 
                             {/* Actions */}
                             <div className="flex items-center gap-3">
-                              <a
+                              {item.officialUrl ? <a
                                 href={item.officialUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn-accent flex items-center gap-2 px-4 py-2 text-sm"
                               >
-                                Open official portal <ExternalLink size={13} />
-                              </a>
+                                View official source <ExternalLink size={13} />
+                              </a> : <span className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-2 text-sm text-amber-800">State source pack pending review</span>}
                               <button
                                 onClick={() => toggleItem(item)}
                                 disabled={isToggling}
@@ -397,46 +414,14 @@ export default function CompliancePage() {
           )}
 
           {/* GST Quick Reference */}
-          <div className="glass p-5 mt-2">
-            <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide mb-4">Monthly GST Calendar</div>
-            <div className="grid grid-cols-2 gap-3">
-              {[
-                { date: '11th', label: 'GSTR-1', desc: 'Outward supplies return' },
-                { date: '20th', label: 'GSTR-3B', desc: 'Summary return + tax payment' },
-              ].map(item => (
-                <div key={item.label} className="bg-black/4 border border-neutral-200 rounded-xl p-4">
-                  <div className="text-neutral-400 text-xs mb-1">Every month</div>
-                  <div className="text-2xl font-bold text-neutral-800 mb-1">{item.date}</div>
-                  <div className="text-neutral-700 text-sm font-medium">{item.label}</div>
-                  <div className="text-neutral-400 text-xs mt-0.5">{item.desc}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Annual compliance */}
-          <div className="glass p-5">
-            <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide mb-4">Key Annual Deadlines</div>
-            <div className="flex flex-col gap-2">
-              {[
-                { date: '31st July', label: 'ITR Filing (Proprietors / Individuals)', note: '31st Oct for audited businesses' },
-                { date: '30th Sept', label: 'Company AGM + Director KYC (DIR-3)', note: 'MGT-7A due by 29th Nov' },
-                { date: '29th Nov', label: 'ROC Annual Return (MGT-7A)', note: 'For companies with March 31 year-end' },
-                { date: '31st May', label: 'FSSAI Annual Return (Form D1)', note: 'For State & Central license holders' },
-                { date: '15th June/Sept/Dec/Mar', label: 'Advance Tax Installments', note: '15%, 45%, 75%, 100% of estimated tax' },
-              ].map(row => (
-                <div key={row.label} className="flex items-start gap-4 p-3 rounded-xl bg-black/4 border border-neutral-200">
-                  <div className="w-28 shrink-0 text-neutral-700 text-sm font-semibold">{row.date}</div>
-                  <div>
-                    <div className="text-neutral-600 text-sm">{row.label}</div>
-                    <div className="text-neutral-400 text-xs mt-0.5">{row.note}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
+          <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-6 text-amber-950">
+            <p className="font-bold">No verified filing deadlines are shown yet.</p>
+            <p className="mt-1">Deadlines will appear only after the relevant official opportunity or compliance record has a reviewed current window. This prevents a generic calendar from being mistaken for a legal deadline for your business.</p>
+            <a href="/dashboard/registration" className="mt-3 inline-flex font-bold text-amber-800 underline underline-offset-2">Open the registration preparation map</a>
           </div>
         </div>
       )}
-    </div>
+      </div>
+    </main>
   )
 }

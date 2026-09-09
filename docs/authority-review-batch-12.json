@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-09-08",
+  "sourceBaseline": "docs/igod-coverage-baseline.json",
+  "purpose": "Evidence pack for the twelfth bounded manual review batch. These authorities have official portal evidence but no specific opportunity evidence in the current seed corpus; each remains explicitly unclear pending a bounded crawl and human review.",
+  "reviewStatus": "pending_human_approval",
+  "terminalAssessmentWritesAllowed": false,
+  "rows": [
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Justice (DoJ)",
+      "authorityUrl": "https://www.doj.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://www.doj.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for legal services, digital justice, procurement, implementation and technology-partner routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Land Resources (DLR)",
+      "authorityUrl": "https://dolr.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://dolr.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for land records, surveying, geospatial technology, digitisation, procurement and implementation-partner routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Legal Affairs (DoLA)",
+      "authorityUrl": "https://legalaffairs.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://legalaffairs.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for legal-technology, legal services, procurement, institutional support and public-service routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Military Affairs (DMA)",
+      "authorityUrl": "https://dmamod.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://dmamod.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for procurement, technology, logistics, infrastructure and industry-participation routes, with boundaries distinguished from Defence Production and DRDO."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Official Language (DoOL)",
+      "authorityUrl": "https://rajbhasha.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://rajbhasha.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for translation, language technology, procurement, training and service-provider routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Pension & Pensioner's Welfare (DoPPW)",
+      "authorityUrl": "https://www.doppw.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://www.doppw.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for digital services, technology procurement, pension-service delivery and implementation-partner routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Personnel and Training (DoPT)",
+      "authorityUrl": "https://dopt.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://dopt.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for training, public-sector innovation, procurement, digital services and implementation-partner routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Public Enterprises (DPE)",
+      "authorityUrl": "https://dpe.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://dpe.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for public-enterprise procurement, vendor development, performance programmes and business-partner routes before relevance or exclusion can be decided."
+    }
+  ]
+}

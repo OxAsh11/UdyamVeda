@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-077",
+  "authority": "National Minorities Development and Finance Corporation - Term Loan Scheme",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party NMDFC Term Loan observations for reviewer use. It does not guarantee project viability, sanction, disbursement, interest rate, SCA availability, contribution, collateral or repayment terms.",
+  "sourcePolicy": "The current NMDFC schemes page, FAQ, Credit Line 1 and Credit Line 2 detail pages, lending-policy route and official term-loan navigation are primary cross-check sources. Current SCA agreements, forms, project appraisal, lending policy and amendments require human confirmation before publication.",
+  "records": [
+    {
+      "slug": "nmdfc-term-loan-employment-venture",
+      "sourceUrl": "https://www.nmdfc.org/nmdfcschemes",
+      "supportingSources": [
+        {
+          "url": "https://nmdfc.org/faq",
+          "anchor": "Current FAQ: term-loan project ceilings, rates, moratorium, beneficiary repayment, utilization period and NMDFC:SCA:beneficiary 90:5:5 financing pattern"
+        },
+        {
+          "url": "https://nmdfc.org/credit-1",
+          "anchor": "Credit Line 1 detail: viable/technically feasible venture, up to INR 20 lakh project cost, 90% NMDFC financing subject to INR 18 lakh cap, 5% beneficiary contribution, 6% rate, six-month moratorium, five-year beneficiary repayment"
+        },
+        {
+          "url": "https://nmdfc.org/credit-2",
+          "anchor": "Credit Line 2 detail: viable/technically feasible venture, up to INR 30 lakh project cost, 90% NMDFC financing subject to INR 27 lakh cap, 5% beneficiary contribution and gender-specific interest terms"
+        },
+        {
+          "url": "https://nmdfc.org/lendingpolicy",
+          "anchor": "Official NMDFC lending-policy navigation; current policy and amendments control project appraisal and financing"
+        },
+        {
+          "url": "https://nmdfc.org/termloan",
+          "anchor": "Official term-loan route under the NMDFC site; current page confirms the scheme handoff but requires the linked controlling documents"
+        },
+        {
+          "url": "https://www.nmdfc.org/home/nmdfc_schemes",
+          "anchor": "Current scheme landing page and document navigation"
+        }
+      ],
+      "sourceKind": "official_nmdfc_term_loan_current_scheme_and_credit_line_cross_check",
+      "sourceAnchor": "Minority eligibility, income credit lines, viable venture requirement, headline ceilings, project-cost/funding share, rates, moratorium, repayment and SCA route",
+      "observations": [
+        "The current NMDFC scheme page identifies the notified minority communities as Muslims, Christians, Sikhs, Buddhists, Parsis and Jains, and states that NMDFC implementation occurs through State Channelizing Agencies and banking partners.",
+        "The Term Loan Scheme is for individual beneficiaries and economically viable income-generating ventures. The current materials classify activities across agriculture and allied work, technical trades, small business, artisan/traditional occupations, transport and services; viability and technical feasibility are not inferred from minority status alone.",
+        "The current public summary states up to INR 20 lakh under Credit Line 1 and up to INR 30 lakh under Credit Line 2, with annual family-income lines up to INR 3 lakh and INR 8 lakh respectively. Credit Line 2 states 8% for male beneficiaries and 6% for women beneficiaries; Credit Line 1 states 6%.",
+        "The Credit Line detail pages additionally describe financing of up to 90% of project cost, subject to an NMDFC share cap of INR 18 lakh under Credit Line 1 and INR 27 lakh under Credit Line 2, with at least 5% beneficiary contribution and the balance through the SCA structure. These values must remain distinct from the headline project/credit ceilings until a reviewer reconciles the presentation.",
+        "The current FAQ states a six-month moratorium and five-year beneficiary repayment period, an eight-year SCA repayment period, a three-month utilization period, and an NMDFC:SCA:beneficiary financing pattern of 90:5:5. The live SCA agreement and current policy control the case.",
+        "UdyamVeda may prepare minority, income, KYC, project-cost, viability, contribution, SCA and repayment checklists. It must not approve or disburse the loan, impersonate the beneficiary or SCA, or show the headline ceiling as a guaranteed benefit."
+      ],
+      "reviewFollowUps": [
+        "Reconcile the current scheme-summary ceiling (INR 20 lakh/INR 30 lakh) with the Credit Line detail's 90% project-cost and INR 18 lakh/INR 27 lakh NMDFC-share caps; record the controlling interpretation before publication.",
+        "Verify the current income-line rule, notified minority status, viable and technically feasible project, sector classification, project cost, beneficiary contribution and SCA/banking-partner availability.",
+        "Confirm current rates, women concession, moratorium, utilization, beneficiary/SCA repayment periods, security, insurance, processing charges and any current lending-policy amendment.",
+        "Confirm application forms, channel partner, appraisal, disbursement, monitoring, grievance and post-disbursement obligations.",
+        "Obtain human reviewer approval for source, eligibility, benefit, application, window, fine print, amendment, current terms and factual accuracy before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "Official NMDFC sources confirm a term-loan route and headline ceilings, but project-cost share, current policy, contribution, SCA terms and the ceiling-versus-share presentation require human review before publication."
+  }
+}

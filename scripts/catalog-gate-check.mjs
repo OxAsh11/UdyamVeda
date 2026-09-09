@@ -1,0 +1,45 @@
+import fs from 'node:fs'
+import path from 'node:path'
+
+const root = process.cwd()
+const route = fs.readFileSync(path.join(root, 'src/app/api/admin/catalog/gate/route.ts'), 'utf8')
+const page = fs.readFileSync(path.join(root, 'src/app/admin/catalog/gate/page.tsx'), 'utf8')
+const releaseChecks = fs.readFileSync(path.join(root, 'supabase/tests/catalog_release_checks.sql'), 'utf8')
+const auditMigration = fs.readFileSync(path.join(root, 'supabase/migrations/20260907180000_catalog_audit_quality_invariants.sql'), 'utf8')
+const auditSampleMigration = fs.readFileSync(path.join(root, 'supabase/migrations/20260907190000_catalog_audit_sample_items.sql'), 'utf8')
+
+function assert(condition, message) {
+  if (!condition) throw new Error(`catalog gate check failed: ${message}`)
+}
+
+assert(route.includes('ministryRows.length === ministriesExpected'), 'gate must require the exact ministry inventory')
+assert(route.includes('departmentRows.length === departmentsExpected'), 'gate must require the exact department inventory')
+assert(route.includes('assessment_evidence_source_registry_id'), 'gate must evaluate authority assessment source linkage')
+assert(route.includes('invalidAuthorityEvidence'), 'gate must fail closed on invalid authority assessment provenance')
+assert(route.includes("version.review_status !== 'approved'"), 'gate must reject unapproved current versions')
+assert(route.includes('missingCurrentVersion'), 'gate must reject active/upcoming opportunities without current versions')
+assert(route.includes('source.source_registry_id'), 'gate must require registered provenance')
+assert(route.includes('windowsError') && route.includes('sourceRowsError'), 'gate must fail closed on supporting-query errors')
+assert(route.includes('sampleVersionIds.length < 20'), 'factual accuracy API must reject trivial samples')
+assert(route.includes('Sampling notes are required'), 'factual accuracy API must require sampling notes')
+assert(route.includes('record_catalog_accuracy_audit'), 'factual accuracy API must use the transactional sample-ledger RPC')
+assert(route.includes('auditCandidates'), 'factual accuracy API must expose publishable audit candidates')
+assert(route.includes('opportunity_authority_reviews'), 'beta gate must evaluate persisted authority crosswalk decisions')
+assert(route.includes('unresolvedCrosswalks'), 'beta gate must fail closed on unresolved authority crosswalks')
+assert(!page.includes('window.alert'), 'beta gate UI must show validation errors inline')
+assert(page.includes('formError'), 'beta gate UI must expose audit form errors inline')
+assert(auditMigration.includes('sample_size >= 20'), 'database must reject factual audits below the minimum sample size')
+assert(auditMigration.includes("nullif(trim(notes), '') is not null"), 'database must require factual audit sampling notes')
+assert(auditSampleMigration.includes("opportunity.status not in ('active', 'upcoming')"), 'database must reject samples outside publishable opportunity statuses')
+assert(auditSampleMigration.includes('on public.catalog_audit_items for select'), 'sample evidence must not grant reviewer updates or deletes')
+assert(auditSampleMigration.includes('reviewers can create catalog audit items'), 'database must allow reviewer creation of sample evidence')
+assert(releaseChecks.includes('factual_accuracy_below_98'), 'release SQL must require a latest factual accuracy audit at 98%')
+assert(releaseChecks.includes('catalog_audit_items'), 'release SQL must include auditable factual sample items')
+assert(releaseChecks.includes('does not reconcile to its sampled records'), 'release SQL must reconcile audit aggregates to sampled records')
+assert(releaseChecks.includes("s.source_registry_id is not null"), 'release SQL must require registered provenance')
+assert(releaseChecks.includes("o.status in ('active', 'upcoming')"), 'release SQL must protect active/upcoming version status')
+assert(releaseChecks.includes('greatest(coalesce(expected_item_count, 0) - discovered_count, 0) + unassessed_count'), 'release SQL must count missing and undiscovered authorities instead of treating an empty matrix as complete')
+assert(releaseChecks.includes("'authority_relationships'"), 'release SQL must include the authority relationship review table')
+assert(releaseChecks.includes('unresolved_opportunity_authority_crosswalk'), 'release SQL must report unresolved opportunity authority crosswalks')
+
+console.log('catalog gate check passed: exact authority inventory, approved versions, registered provenance, and fail-closed query handling')

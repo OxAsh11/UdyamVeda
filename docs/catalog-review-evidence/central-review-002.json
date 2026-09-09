@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-002",
+  "authority": "Candidate: Department of Agriculture and Farmers Welfare (DoAFW)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve an authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "Official Department of Agriculture and Farmers Welfare or AIF portal sources only; third-party claims are excluded.",
+  "records": [
+    {
+      "slug": "agriculture-infrastructure-fund",
+      "sourceUrl": "https://agriinfra.dac.gov.in/Documents/Circular/91EE46A50D3941908F192725717E431B.pdf",
+      "supportingSources": [
+        {
+          "url": "https://agriinfra.dac.gov.in/Documents/Circular/BB3379A9D79A4DF09414E3F1DAE59AFD.pdf",
+          "anchor": "Page 1: scheme overview, eligible entities/projects, 3% interest subvention and credit guarantee up to ₹2 crore"
+        },
+        {
+          "url": "https://agriinfra.dac.gov.in/Content/DocAttachment/FINALSchemeGuidelinesAIF.pdf",
+          "anchor": "Scheme guidelines and output framework for the financing facility"
+        }
+      ],
+      "sourceKind": "official_scheme_guideline_and_sop",
+      "sourceAnchor": "Eligible entities, project purpose and financing facility",
+      "observations": [
+        "The official AIF material describes a Central Sector financing facility for post-harvest management infrastructure and community farming assets.",
+        "The official SOP describes 3% annual interest subvention and credit-guarantee support up to ₹2 crore on qualifying loans through lending institutions; this is loan-linked support, not a direct grant.",
+        "The official scheme material identifies lender-mediated subsidy adjustment and requires the eligible project and entity route to be checked before treating support as available.",
+        "Official AIF material records location/LGD-code, project-count, project-type, contribution, repayment and scheme-period conditions that must remain visible in the fine print."
+      ],
+      "reviewFollowUps": [
+        "Reconcile the cited guideline with the latest official amendment or operational circular before publication.",
+        "Verify each entity type, eligible project category, project-count rule, separate-location/LGD requirement and the boundary for standalone secondary processing.",
+        "Verify lender, State/PMU, guarantee, promoter-contribution, moratorium, disbursement and monitoring conditions from the complete current guideline.",
+        "Confirm that the official portal and lender route are operational and record the current application/window state rather than assuming a rolling route."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment"
+    ],
+    "reason": "External source cross-check is not a substitute for the persisted reviewer checklist, complete evidence capture, and authorized publication decision."
+  }
+}

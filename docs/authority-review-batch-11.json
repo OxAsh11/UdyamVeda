@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-09-08",
+  "sourceBaseline": "docs/igod-coverage-baseline.json",
+  "purpose": "Evidence pack for the eleventh bounded manual review batch. These authorities have official portal evidence but no specific opportunity evidence in the current seed corpus; each remains explicitly unclear pending a bounded crawl and human review.",
+  "reviewStatus": "pending_human_approval",
+  "terminalAssessmentWritesAllowed": false,
+  "rows": [
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Expenditure (DoE)",
+      "authorityUrl": "https://doe.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://doe.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for procurement, public-finance, expenditure-policy, implementation and vendor-relevant routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Fertilizers (DoFz)",
+      "authorityUrl": "https://fert.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://fert.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for fertilizer-sector manufacturing, distribution, subsidy, procurement and technology routes relevant to businesses before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Food and Public Distribution (DFPD)",
+      "authorityUrl": "https://dfpd.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://dfpd.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for food-grain procurement, storage, logistics, distribution, technology and implementation-partner routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Health Research (DHR)",
+      "authorityUrl": "https://dhr.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://dhr.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for biomedical research, innovation, translational grants, clinical research and commercialization routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Health and Family Welfare (DoHFW)",
+      "authorityUrl": "https://www.mohfw-dohfw.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://www.mohfw-dohfw.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for healthcare procurement, licensing, facility support, public-health implementation and technology routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Higher Education (DoHE)",
+      "authorityUrl": "https://www.dohe-education.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://www.dohe-education.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for research commercialization, incubation, innovation, procurement and institutional-partner routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Home (DoH)",
+      "authorityUrl": "https://mha.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://mha.gov.in/",
+      "evidenceAnchor": "Official Ministry of Home Affairs portal boundary associated with the IGOD department row; no specific DoH business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department-level relationship and any security, licensing, procurement or implementation routes require explicit organizational and source review."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Investment and Public Asset Management (DIPAM)",
+      "authorityUrl": "https://dipam.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://dipam.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for disinvestment, public-enterprise transactions, advisory, procurement and investor routes before relevance or exclusion can be decided."
+    }
+  ]
+}

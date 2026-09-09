@@ -26,8 +26,33 @@ export default function DrawingBoardPage() {
   const [saved, setSaved] = useState(false)
   const [editNode, setEditNode] = useState<Node | null>(null)
   const [addingType, setAddingType] = useState(false)
-  const [hasStrategy, setHasStrategy] = useState(false)
   const saveTimer = useRef<NodeJS.Timeout | null>(null)
+  const nodesRef = useRef<Node[]>([])
+  const edgesRef = useRef<Edge[]>([])
+  const nextNodeId = useRef(0)
+
+  useEffect(() => {
+    nodesRef.current = nodes
+    edgesRef.current = edges
+  }, [nodes, edges])
+
+  const saveBoard = useCallback(async (explicit = false) => {
+    setSaving(true)
+    await fetch('/api/gtm/board', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ action: 'save', nodes: nodesRef.current, edges: edgesRef.current }),
+    })
+    setSaving(false)
+    setSaved(true)
+    if (explicit) toast.success('Board saved')
+  }, [])
+
+  const scheduleSave = useCallback(() => {
+    if (saveTimer.current) clearTimeout(saveTimer.current)
+    setSaved(false)
+    saveTimer.current = setTimeout(() => void saveBoard(), 2000)
+  }, [saveBoard])
 
   useEffect(() => {
     async function load() {
@@ -39,11 +64,6 @@ export default function DrawingBoardPage() {
         setEdges(boardData.edges)
       }
 
-      // Check if strategy exists
-      const stratRes = await fetch('/api/gtm/strategy')
-      const stratData = await stratRes.json()
-      setHasStrategy(!!stratData.strategy)
-
       setLoading(false)
     }
     load()
@@ -52,12 +72,12 @@ export default function DrawingBoardPage() {
   const onNodesChange = useCallback((changes: NodeChange[]) => {
     setNodes(nds => applyNodeChanges(changes, nds))
     scheduleSave()
-  }, [])
+  }, [scheduleSave])
 
   const onEdgesChange = useCallback((changes: EdgeChange[]) => {
     setEdges(eds => applyEdgeChanges(changes, eds))
     scheduleSave()
-  }, [])
+  }, [scheduleSave])
 
   const onConnect = useCallback((connection: Connection) => {
     setEdges(eds => addEdge({
@@ -66,25 +86,7 @@ export default function DrawingBoardPage() {
       animated: false,
     }, eds))
     scheduleSave()
-  }, [])
-
-  function scheduleSave() {
-    if (saveTimer.current) clearTimeout(saveTimer.current)
-    setSaved(false)
-    saveTimer.current = setTimeout(() => saveBoard(), 2000)
-  }
-
-  async function saveBoard(explicit = false) {
-    setSaving(true)
-    await fetch('/api/gtm/board', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ action: 'save', nodes, edges }),
-    })
-    setSaving(false)
-    setSaved(true)
-    if (explicit) toast.success('Board saved')
-  }
+  }, [scheduleSave])
 
   async function generateBoard() {
     setGenerating(true)
@@ -121,14 +123,17 @@ export default function DrawingBoardPage() {
   }
 
   function addNode(type: string) {
-    const id = `node-${Date.now()}`
-    const newNode: Node = {
-      id,
-      type,
-      position: { x: 300 + Math.random() * 200, y: 200 + Math.random() * 150 },
-      data: { label: `New ${type}`, subtitle: 'Double-click to edit' },
-    }
-    setNodes(nds => [...nds, newNode])
+    const id = `node-${nextNodeId.current++}`
+    setNodes(nds => {
+      const index = nds.length
+      const newNode: Node = {
+        id,
+        type,
+        position: { x: 300 + (index % 5) * 45, y: 200 + Math.floor(index / 5) * 45 },
+        data: { label: `New ${type}`, subtitle: 'Double-click to edit' },
+      }
+      return [...nds, newNode]
+    })
     setAddingType(false)
     scheduleSave()
   }
@@ -304,6 +309,7 @@ export default function DrawingBoardPage() {
 
       {/* Edit node modal */}
       <EditNodeModal
+        key={editNode?.id ?? 'empty'}
         node={editNode}
         onClose={() => setEditNode(null)}
         onSave={handleSaveNode}

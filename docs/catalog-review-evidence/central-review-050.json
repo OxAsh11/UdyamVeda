@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-050",
+  "authority": "Bureau of Indian Standards - Foreign Manufacturers Certification Scheme",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party BIS FMCS observations for reviewer use. It does not approve a product, manufacturer, licence, fee, timeline, or publication status.",
+  "sourcePolicy": "BIS FMCS pages, forms and fee routes are primary. The applicable Indian Standard, product list, Quality Control Order, testing evidence and current portal rules must be verified for each foreign factory. UdyamVeda explains and prepares a checklist but does not act as BIS, nominate an AIR, submit the application or promise a licence.",
+  "records": [
+    {
+      "slug": "bis-fmcs-foreign-manufacturer-licence",
+      "sourceUrl": "https://www.bis.gov.in/fmcs/fmcs-overview/?lang=en",
+      "supportingSources": [
+        {"url":"https://www.bis.gov.in/fmcs/certification-process/how-to-apply/?lang=en","anchor":"FMCS application documentation, AIR nomination, fees, online-only transition from 1 June 2026 and application deficiencies"},
+        {"url":"https://www.bis.gov.in/fmcs/certification-process/nomination-of-air/?lang=en","anchor":"Authorized Indian Representative residency, consent, conflict and responsibility conditions"},
+        {"url":"https://www.bis.gov.in/fmcs/certification-process/grant-of-licence/?lang=en","anchor":"Factory visit, sample testing, licence fee, marking fee, agreement, USD 10,000 performance bank guarantee and licence validity"},
+        {"url":"https://www.bis.gov.in/fmcs/forms-and-formats/?lang=en","anchor":"Current FMCS forms, checklist, AIR nomination, agreement, indemnity bond, bank guarantee, machinery and test-equipment records"},
+        {"url":"https://www.bis.gov.in/fmcs/fmcs-fee/?lang=en","anchor":"FMCS fee route last updated November 2025"},
+        {"url":"https://www.crsbis.in/BIS/about-crs.do","anchor":"CRS boundary for Electronics and IT goods notified by relevant ministries"}
+      ],
+      "sourceKind": "official_bis_fmcs_current_pages_and_forms",
+      "sourceAnchor": "Foreign manufacturer route, Indian Standard conformity, AIR, factory/testing evidence, online submission and licence operation",
+      "observations": [
+        "BIS states that FMCS grants a foreign manufacturer a licence to use the Standard Mark for a product conforming to an Indian Standard. BIS separately excludes Electronics and IT goods notified by MeitY from FMCS and points those products to CRS.",
+        "The current FMCS application page requires the prescribed application, supporting documents, an Authorized Indian Representative (AIR), a complete checklist and applicable fees. It states that hard-copy applications were accepted only until 31 May 2026 and that online submission is required from 1 June 2026.",
+        "The AIR must be an Indian resident, consent to responsibility for compliance with the BIS Act, rules, licence and agreements, and meet the stated conflict, appointment and qualification conditions. AIR nomination is a substantive compliance dependency, not a contact-only field.",
+        "BIS describes factory verification, infrastructure review, sample drawal, independent testing and satisfactory inspection/test reports before licence grant. The applicant bears sample-safety and testing-charge responsibilities.",
+        "The grant page records a licence fee, advance minimum marking fee, agreement and indemnity-bond requirements, plus a performance bank guarantee of USD 10,000 from a bank with an RBI-approved branch in India. It describes initial licence validity of one to two years, renewable up to five years, and periodic production/dispatch reporting.",
+        "The grant page says average licence time is generally six months after complete recording but is dated 14 January 2021. This is a historical service-time indication, not a current SLA; current processing and portal status require review.",
+        "The FMCS forms page, last updated November 2025, lists application, checklist, AIR, agreement, indemnity, bank-guarantee, machinery, test-equipment, test-report, change-scope and self-compliance forms. Exact form versions and product-specific documents must be captured before application guidance is published."
+      ],
+      "reviewFollowUps": [
+        "Verify the current product/Indian Standard list, applicable QCO or voluntary/compulsory status, factory scope and whether CRS or another route applies.",
+        "Confirm current online-only submission, AIR appointment, testing laboratory, inspection, sampling, fees, marking fees, bank guarantee, validity, renewal and surveillance requirements.",
+        "Reconcile the 2021 average-processing-time statement with current BIS service information; never present six months as a guaranteed deadline.",
+        "Validate forms, test-equipment and manufacturing records, contract/indemnity terms and report/marking obligations for the specific product.",
+        "Record amendment or supersession evidence and obtain a reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source","eligibility","benefit","application","window","fine_print","amendment","current_terms","reviewer_decision"],
+    "reason": "Official BIS pages support the FMCS route and core obligations, but product-specific applicability, current fees, portal rules, testing, timelines, amendments and human approval remain unresolved."
+  }
+}

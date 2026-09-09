@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
 import { Loader2, RefreshCw, ArrowRight, Users, Target, Megaphone, BookOpen, BarChart2, Calendar, Zap, FlaskConical } from 'lucide-react'
 import { toast } from 'sonner'
@@ -25,12 +24,6 @@ interface Strategy {
   quickWins: string[]
 }
 
-const EFFORT_COLOR: Record<string, string> = {
-  low: 'text-neutral-500',
-  medium: 'text-neutral-500',
-  high: 'text-neutral-500',
-}
-
 export default function IdeatePage() {
   const router = useRouter()
   const [business, setBusiness] = useState<Record<string, string> | null>(null)
@@ -44,15 +37,14 @@ export default function IdeatePage() {
 
   useEffect(() => {
     async function load() {
-      const supabase = createClient()
-      const { data: { user } } = await supabase.auth.getUser()
-      if (!user) return
-
-      const { data: biz } = await supabase.from('business_profiles').select('*').eq('user_id', user.id).single()
-      if (biz) setBusiness(biz)
+      const [businessResponse, res] = await Promise.all([
+        fetch('/api/businesses/current', { cache: 'no-store' }),
+        fetch('/api/gtm/strategy'),
+      ])
+      const businessPayload = await businessResponse.json() as { data?: { profile?: Record<string, unknown> } }
+      if (businessPayload.data?.profile) setBusiness(businessPayload.data.profile as Record<string, string>)
 
       // Load existing strategy if any
-      const res = await fetch('/api/gtm/strategy')
       const json = await res.json()
       if (json.strategy) {
         setStrategy(json.strategy)
@@ -129,7 +121,7 @@ export default function IdeatePage() {
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-2xl font-semibold text-neutral-900 mb-1">Ideate</h1>
-        <p className="text-neutral-400 text-sm">Tell us about your business and we'll generate your GTM strategy</p>
+        <p className="text-neutral-400 text-sm">Tell us about your business and we&apos;ll generate your GTM strategy</p>
       </div>
 
       {/* Context Form */}
@@ -305,7 +297,7 @@ export default function IdeatePage() {
             </div>
             <div className="bg-black/4 border border-neutral-200 rounded-xl p-4 mb-4">
               <div className="text-neutral-400 text-xs mb-2 uppercase tracking-wide">Value Proposition</div>
-              <p className="text-neutral-700 text-sm leading-relaxed italic">"{strategy.positioning.valueProposition}"</p>
+              <p className="text-neutral-700 text-sm leading-relaxed italic">&quot;{strategy.positioning.valueProposition}&quot;</p>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div>

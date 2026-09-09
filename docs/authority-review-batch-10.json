@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-09-08",
+  "sourceBaseline": "docs/igod-coverage-baseline.json",
+  "purpose": "Evidence pack for the tenth bounded manual review batch. These authorities have official portal evidence but no specific opportunity evidence in the current seed corpus; each remains explicitly unclear pending a bounded crawl and human review.",
+  "reviewStatus": "pending_human_approval",
+  "terminalAssessmentWritesAllowed": false,
+  "rows": [
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Youth Affairs and Sports (MoYAS)",
+      "authorityUrl": "https://yas.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://yas.gov.in/",
+      "evidenceAnchor": "Official ministry portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The ministry must be crawled for sports infrastructure, events, equipment, training, procurement and implementation-partner routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Administrative Reforms and Public Grievances (DARPG)",
+      "authorityUrl": "https://darpg.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://darpg.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for public-sector innovation, digital-governance, procurement, challenge and service-delivery routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Border Management (DoBM)",
+      "authorityUrl": "https://mha.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://mha.gov.in/",
+      "evidenceAnchor": "Official Ministry of Home Affairs portal boundary associated with the IGOD department row; no specific DoBM business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department-level relationship and any border-area infrastructure, procurement or implementation-partner opportunities require explicit organizational and source review."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Defence (DoD)",
+      "authorityUrl": "https://www.mod.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://www.mod.gov.in/",
+      "evidenceAnchor": "Official Ministry of Defence portal boundary associated with the IGOD department row; no specific DoD business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department-level relationship must be confirmed separately from DRDO and Defence Production, and procurement or industry routes must be mapped before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Drinking Water and Sanitation (DDWS)",
+      "authorityUrl": "https://www.jalshakti-ddws.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://www.jalshakti-ddws.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for sanitation, water infrastructure, technology, procurement and implementation-partner routes relevant to businesses before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Economic Affairs (DEA)",
+      "authorityUrl": "https://dea.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://dea.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for investment, infrastructure, financial-market, public-private partnership and policy routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Empowerment of Persons with Disabilities (DEPWD)",
+      "authorityUrl": "https://depwd.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://depwd.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for accessible-technology, assistive-device, employment, entrepreneurship, procurement and implementation-partner routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Ex-Servicemen Welfare (DESW)",
+      "authorityUrl": "https://www.desw.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://www.desw.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for ex-servicemen entrepreneurship, livelihood, procurement and service-provider routes before relevance or exclusion can be decided."
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-065",
+  "authority": "Government e-Marketplace (GeM)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party GeM Startup Runway and public-procurement observations for reviewer use. It does not guarantee seller approval, catalogue acceptance, tender eligibility, procurement award or revenue, and it does not authorize UdyamVeda to create accounts, submit bids or handle credentials and OTPs.",
+  "sourcePolicy": "The official GeM Startup Runway page, current GeM seller route, Startup India public-procurement guidance, the June 2026 Startup Schemes Playbook and PIB change-detection notices are primary or official supporting sources. Relaxations must be evaluated against the applicable Central procurement rule, tender and buyer conditions; State procurement policy is a separate route. Third-party procurement summaries are not publishing authority.",
+  "records": [
+    {
+      "slug": "gem-startup-runway-public-procurement",
+      "sourceUrl": "https://www.startupindia.gov.in/content/sih/en/public_procurement.html",
+      "supportingSources": [
+        {
+          "url": "https://gem.gov.in/Startup_Runway",
+          "anchor": "Official GeM Startup Runway page: seller sign-up, innovative product/service categories, government-buyer marketplace and GeM ownership context"
+        },
+        {
+          "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf",
+          "anchor": "Page 37: GeM Startup Runway objective, applicant categories, market-access benefit, conditional relaxations and official route"
+        },
+        {
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2296546&lang=1&reg=6",
+          "anchor": "Current GeM Startup Runway 2.0 and GeM Suvidha Kendra change-detection context"
+        }
+      ],
+      "sourceKind": "official_gem_startup_india_playbook_pib_cross_check",
+      "sourceAnchor": "GeM seller registration, Startup Runway innovative-product/service marketplace, conditional public-procurement relaxations and current Startup Runway 2.0 context",
+      "observations": [
+        "GeM Startup Runway is a government-buyer market-access route for innovative products and services. Listing, seller registration or visibility does not guarantee a tender award, contract, order, grant, subsidy, loan or revenue.",
+        "The official GeM page shows Startup Runway categories for innovative products and solutions, seller sign-up and a direct government-marketplace handoff. The applicant must satisfy the live seller, catalogue, category, quality and buyer requirements.",
+        "Startup India guidance identifies GeM seller access for MSMEs, DPIIT-recognised startups and other private companies, and describes a Startup India badge and conditional relaxations from prior experience, prior turnover and EMD requirements for eligible recognised startups.",
+        "The June 2026 Startup Schemes Playbook describes DPIIT-recognised startups registered as GeM sellers/service providers, innovative products/services and other innovative entities, while also describing an all-startup listing context. This wording must not be converted into one universal eligibility rule without reconciling the current GeM seller route, category rules and tender conditions.",
+        "Prior-experience, prior-turnover and EMD relaxations are conditional procurement benefits, not blanket exemptions from quality, technical, capability, security, performance, category or buyer requirements. Central Ministries, Departments and CPSE conditions must remain distinct from State procurement rules.",
+        "The current PIB update records Startup Runway 2.0 and GeM Suvidha Kendra handholding for seller registration, vendor assessment, catalogue creation, capacity building and grievance redressal. This is operational context and does not replace the live GeM seller rules or a tender notice.",
+        "UdyamVeda may explain the route, prepare the seller-readiness and tender checklist and link the applicant to GeM, but the applicant must use its own account, credentials, OTPs, declarations, catalogue submissions and bids."
+      ],
+      "reviewFollowUps": [
+        "Resolve the current DPIIT-recognition versus broader-startup-listing distinction using the live GeM seller registration, Startup Runway and category rules; document whether each route is available to DPIIT-recognised startups, other startups, MSMEs and other innovative entities.",
+        "Verify the current seller-verification fields, PAN/entity/mobile requirements, bank and tax evidence, catalogue and service-category rules, quality/testing certificates, fees and onboarding/approval steps.",
+        "Map prior-experience, prior-turnover and EMD relaxations to the applicable GFR, procurement manual, tender type, product/service category, buyer and Central/State/CPSE scope; do not show them as unconditional benefits.",
+        "Verify current Startup Runway 2.0 amendments, dedicated categories, non-standard product listing route, bid and contract lifecycle, performance security, delivery, invoicing, ratings, suspension and grievance processes.",
+        "Confirm the official source revision dates and obtain human reviewer approval before publication; keep market-access benefits separate from grants, loans, subsidies and tax benefits."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "Official GeM, Startup India, Playbook and PIB evidence supports the market-access route and conditional procurement-relaxation model, but the current seller/category route, DPIIT linkage, tender exceptions and Startup Runway 2.0 wording require reconciliation before publication."
+  }
+}

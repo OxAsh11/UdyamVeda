@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-09-08",
+  "sourceBaseline": "docs/igod-coverage-baseline.json",
+  "purpose": "Evidence pack for the second bounded manual review batch. These are proposed relevance decisions only and do not alter the terminal IGOD assessment state or authorize publication.",
+  "reviewStatus": "pending_human_approval",
+  "terminalAssessmentWritesAllowed": false,
+  "rows": [
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Agriculture and Farmers Welfare (DoAFW)",
+      "authorityUrl": "https://agriwelfare.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://agriinfra.dac.gov.in/Documents/Circular/91EE46A50D3941908F192725717E431B.pdf",
+      "evidenceAnchor": "Agriculture Infrastructure Fund guideline: eligible post-harvest and community-farming-asset projects, lender route, interest subvention, and project conditions",
+      "rationale": "The department publishes agriculture infrastructure finance and implementation routes relevant to agri-entrepreneurs, startups, farmer groups, and infrastructure businesses."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Animal Husbandry and Dairying (DoAHD)",
+      "authorityUrl": "https://dahd.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://dahd.gov.in/sites/default/files/2026-02/RevisedNLMGuidelines.pdf",
+      "evidenceAnchor": "Revised National Livestock Mission guideline: component-specific capital subsidy, eligible entities, State Implementing Agency route, and project verification",
+      "rationale": "The department publishes livestock, poultry, sheep/goat, feed, and entrepreneurship-support routes that directly affect eligible businesses and project operators."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Biotechnology (DBT)",
+      "authorityUrl": "https://dbt.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://birac.nic.in/sbiri.php",
+      "evidenceAnchor": "BIRAC SBIRI: biotech company/LLP proposal route, recurring calls, technical evaluation, and milestone-linked grant support",
+      "rationale": "DBT-linked BIRAC programmes provide biotech R&D, incubation, proof-of-concept, and commercialisation routes for science-led companies and institutions."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Science and Technology (DST)",
+      "authorityUrl": "https://dst.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://nidhi.dst.gov.in/schemes-programmes/",
+      "evidenceAnchor": "NIDHI schemes and programmes index, including Seed Support, Entrepreneur-in-Residence, PRAYAS, and incubation routes",
+      "rationale": "DST publishes entrepreneurship, incubation, prototype, seed-support, and technology-commercialisation programmes for innovators and startups."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Pharmaceuticals (DoPs)",
+      "authorityUrl": "https://pharma-dept.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://pharma-dept.gov.in/schemes/scheme-promotion-research-and-innovation-pharma-medtech-sector-prip",
+      "evidenceAnchor": "PRIP scheme page: pharma/medtech research, innovation, priority areas, CoE and startup/MSME routes",
+      "rationale": "The department publishes pharmaceutical and medical-device R&D, innovation, manufacturing, and infrastructure-support routes for businesses and institutions."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Telecommunications (DoT)",
+      "authorityUrl": "https://www.dot.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://dcis.dot.gov.in/page/faq",
+      "evidenceAnchor": "DCIS FAQ and linked DoT route for telecom startups/MSMEs, testing/certification reimbursement, and application conditions",
+      "rationale": "DoT publishes telecom testing, certification, innovation, production, and startup/MSME support routes relevant to communications businesses."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Defence Production (DDP)",
+      "authorityUrl": "https://ddpmod.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://www.ddpmod.gov.in/en/scheme_for_promotion_of_msmes_in_defence_0",
+      "evidenceAnchor": "Scheme for Promotion of MSMEs in Defence: defence supply-chain market access, conclaves, workshops, and eligible event-agency sponsorship route",
+      "rationale": "DDP publishes defence-industrial participation, MSME supply-chain, innovation, procurement, and event-support routes."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Environment, Forest and Climate Change (MoEFCC)",
+      "authorityUrl": "https://moef.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://moef.gov.in/index.php/environmental-impact-assessment-eia",
+      "evidenceAnchor": "Environmental Impact Assessment overview: online application, appraisal, clearance workflow, and project-level compliance conditions",
+      "rationale": "MoEFCC controls environmental-clearance and compliance workflows that businesses must understand before starting or expanding regulated projects."
+    }
+  ]
+}

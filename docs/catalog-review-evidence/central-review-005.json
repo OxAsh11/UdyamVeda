@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-005",
+  "authority": "Candidate: Department of Science and Technology (DST)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "DST and NIDHI official programme pages and the March 2026 NIDHI PRAYAS 2.0 guideline only; third-party claims are excluded.",
+  "records": [
+    {
+      "slug": "nidhi-prayas-2-0",
+      "sourceUrl": "https://nidhi.dst.gov.in/document/nidhi-prayas-2-0-program-guidelines/",
+      "supportingSources": [
+        {
+          "url": "https://cdnbbsr.s3waas.gov.in/s312b1e42dc0746f22cf361267de07073f/uploads/2026/05/20260520803129779.pdf",
+          "anchor": "March 2026 guideline, sections 5.1, 5.4 and 5.4.1-5.4.2; PC/APC support, beneficiary eligibility, exclusions, funding and project term"
+        },
+        {
+          "url": "https://nidhi.dst.gov.in/prayas2-0/",
+          "anchor": "Programme overview, PRAYAS Centre and Advance PRAYAS Centre descriptions, support model and PMU"
+        }
+      ],
+      "sourceKind": "official_programme_page_and_current_guideline",
+      "sourceAnchor": "Guideline pages 3-15 (PDF pages 3-15): PC/APC routes, grant ceilings, eligibility, exclusions, funding-use restrictions, project duration and monitoring; official programme page key features",
+      "observations": [
+        "The March 2026 guideline positions NIDHI PRAYAS 2.0 as a pre-incubation prototype programme implemented through selected PRAYAS Centres (PCs) and Advance PRAYAS Centres (APCs), with SINE, IIT Bombay as the national PMU. This is a centre-mediated route, not a direct universal grant portal.",
+        "The guideline sets a maximum of ₹20 lakh per innovator/startup at a PC and ₹40 lakh at an APC, with the final amount decided through the applicable local monitoring process. The project term is 15 months, with a possible six-month extension subject to approval; the programme page independently describes the PC/APC support model.",
+        "An applicant may be an individual without a registered startup or an early-stage startup, must show ownership or licensed rights to the relevant IP, be at least 18 and an Indian citizen, and may use the programme only once. A startup must be incorporated in India for no more than five years, have at least 51% Indian-citizen ownership and turnover not exceeding ₹1 crore in any financial year since incorporation.",
+        "The fine print excludes pure software, e-commerce, service and app-based solutions, and excludes parallel NIDHI-EIR support for the same or similar idea. The guideline also imposes prior-funding disclosure, cumulative government-support limits, prototype-stage restrictions, milestone/full-time commitments, possible recovery of unused funds, and restrictions on use of funds.",
+        "The official page and March 2026 guideline do not establish a currently open applicant deadline for every innovator. The public record must therefore distinguish programme existence from a currently open PC/APC call and must route users to a verified designated centre or current call before presenting an actionable application.",
+        "The record must not combine PC/APC centre-level allocations with the individual innovator ceiling, and must not advertise the ₹20 lakh/₹40 lakh ceilings as guaranteed awards. It must also distinguish the beneficiary route from the separate DST call for incubators seeking to establish or operate a PC/APC."
+      ],
+      "reviewFollowUps": [
+        "Confirm the live status of the NIDHI PRAYAS portal, the current list of designated PCs/APCs and any centre-specific open calls before assigning an active or upcoming application window.",
+        "Validate the canonical PDF revision, effective date, any corrigenda or successor guideline, and whether the March 2026 document supersedes the older NIDHI PRAYAS record already in the catalog.",
+        "Model PC and APC as separate routes and preserve centre-mediated application steps, screening authority, project term, milestone/reporting obligations and fund-recovery conditions.",
+        "Verify document requirements and safe handling for age/citizenship proof, IP ownership or licence, incorporation and turnover evidence, NOC, prior-funding undertaking, team agreement and any centre-specific forms.",
+        "Confirm current priority areas and whether the listed focus areas are eligibility requirements, preference criteria or only programme-level priorities; do not use them as hard rules without source evidence.",
+        "Determine whether this should be published as an active opportunity, a current programme with no national window, a centre-specific opportunity, or a historical/superseded version."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment"
+    ],
+    "reason": "The March 2026 guideline is current first-party evidence, but the user-facing route depends on designated PC/APC availability and a verified live call; the current programme-versus-window distinction and supersession review must be completed before publication."
+  }
+}

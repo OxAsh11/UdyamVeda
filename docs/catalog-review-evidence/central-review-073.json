@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-073",
+  "authority": "Ministry of Micro, Small and Medium Enterprises - SFURTI",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party SFURTI portal, dashboard, proposal-list and guideline observations for reviewer use. It does not approve a cluster, establish a current call, guarantee a grant, or divide project-level funding into an individual artisan entitlement.",
+  "sourcePolicy": "The official SFURTI portal, Ministry dashboard, proposal/status surfaces and 9 September 2022 revised guideline are primary. Dashboard counters are retained with their source and scope; they must not be merged when calculating coverage, pipeline or applicant benefit.",
+  "records": [
+    {
+      "slug": "scheme-for-fund-for-regeneration-of-traditional-industries-sfurti",
+      "sourceUrl": "https://sfurti.msme.gov.in/WriteReadData/Circular/SFURTI_NEW.pdf",
+      "supportingSources": [
+        {
+          "url": "https://sfurti.msme.gov.in/SFURTI/Home.aspx",
+          "anchor": "Current official portal: SignUp for New Proposal, Nodal Agency List, DFO jurisdiction, notices, guideline link and homepage dashboard"
+        },
+        {
+          "url": "https://sfurti.msme.gov.in/MinistryDashboard.aspx",
+          "anchor": "Official Ministry dashboard: approved/functional/in-progress clusters, grant reporting and proposal-stage counters"
+        },
+        {
+          "url": "https://sfurti.msme.gov.in/SFURTI/Applicant/Ministry/Total_Proposals_Approved_By_SSC.aspx",
+          "anchor": "Official approved-proposals listing with cluster, State/district, applicant organization, potential artisans and nodal agency"
+        },
+        {
+          "url": "https://sfurti.msme.gov.in/SFURTI/Applicant/Ministry/AllPendingProposals.aspx",
+          "anchor": "Official pending-proposals listing with nodal agency, State/district, receipt date, proposed artisans and status fields"
+        },
+        {
+          "url": "https://dashboard.msme.gov.in/sfurti.aspx",
+          "anchor": "Official MSME performance smartboard with dated cluster and online-proposal context"
+        }
+      ],
+      "sourceKind": "official_msme_sfurti_portal_dashboard_guideline_cross_check",
+      "sourceAnchor": "Cluster/institution-led route, 2022 funding pattern, proposal pipeline and source-specific dashboard metrics reconciled for review",
+      "observations": [
+        "SFURTI is a cluster-led route for traditional industries and artisan/producer collectives. The official portal exposes SignUp for New Proposal, nodal-agency information, DFO jurisdiction, approved proposals and pending proposals; an individual artisan or founder should be matched to a qualifying cluster or implementing agency rather than shown a direct personal grant application.",
+        "The official revised guideline allows clusters with fewer artisans/workers to be proposed, but states that the number should not be less than 100, or 50 for NER and hilly areas; proportionate grant-in-aid may be considered by the SSC. This is a cluster-composition condition, not a personal beneficiary threshold.",
+        "The revised guideline separates soft interventions, hard interventions/Common Facility Centres and training centres, technical-agency costs, and implementing-agency/SPV costs. Hard intervention generally carries a 90 percent scheme share and 10 percent cash contribution, with a 95:5 pattern for NER/J&K/hilly states as stated in the guideline; land cost is excluded and must be brought by the implementing agency.",
+        "The SFURTI homepage snapshot reports 513 approved clusters, 376 functional clusters and 0 proposals under consideration at SSC level. The Ministry dashboard separately reports 513 approved, 376 functional, 137 in-progress, 147 total proposals, 80 at nodal-agency evaluation, 67 at Ministry evaluation and 0 at SSC evaluation, plus grant reporting. These are different dashboard scopes and must not be combined into one count or presented as applicant entitlement.",
+        "Approved-cluster listings contain cluster-level applicant organizations, nodal agencies, locations and potential artisan counts. A listing proves programme context or proposal status, not that a new applicant is eligible, that funds remain available, or that an individual business receives the displayed project amount.",
+        "UdyamVeda may help identify a relevant cluster, nodal agency, DFO and proposal checklist. It must not submit a proposal, represent an agency, or convert cluster project funding into an individual benefit calculation."
+      ],
+      "reviewFollowUps": [
+        "Confirm the current SFURTI guideline version, amendments, eligible traditional-industry categories, cluster composition, nodal agencies and implementing-agency roles.",
+        "Verify the current proposal window, live SignUp route, DPR/template, documents, technical-agency process, appraisal/SSC selection and State/DFO contacts.",
+        "Reconcile dashboard counters by named source, timestamp and scope; do not publish conflicting counters as one metric.",
+        "Verify the applicable intervention, project ceiling, scheme share, cash contribution, land exclusion, milestones, procurement, utilization and reporting duties for a specific proposal.",
+        "Obtain human reviewer approval for source, eligibility, benefit, application, window, fine print, amendment, current terms and factual accuracy before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "The official sources confirm a cluster/institution-led route and current proposal surfaces, but live call status, nodal route, project-specific funding, dashboard scope, current amendments and applicant role require human review before publication."
+  }
+}

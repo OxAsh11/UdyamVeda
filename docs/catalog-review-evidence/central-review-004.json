@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-004",
+  "authority": "Candidate: Department of Pharmaceuticals (DoPs)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve an authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "Department of Pharmaceuticals Gazette notifications, guidelines and official reports only; third-party claims are excluded.",
+  "records": [
+    {
+      "slug": "production-linked-incentive-bulk-drugs-ksm-di-api",
+      "sourceUrl": "https://pharmaceuticals.gov.in/sites/default/files/Gazettee%20notification%20of%20bulk%20drug%20schemes_0.pdf",
+      "supportingSources": [
+        {
+          "url": "https://pharmaceuticals.gov.in/sites/default/files/Guidelines%20for%20the%20Production%20Linked%20Incentive%20%28PLI%29%20Scheme%20for%20promotion%20of_0.pdf",
+          "anchor": "Appendix A: 41 eligible KSM/DI/API products"
+        }
+      ],
+      "sourceKind": "gazette_notification_and_guideline",
+      "sourceAnchor": "Sections 2-13 and Annexures B-C: objective, 41 products, incentive rates, greenfield condition, thresholds, tenure and application route",
+      "observations": [
+        "The Gazette describes a PLI scheme for 41 identified KSM/DI/API products covering 53 APIs, applicable only to greenfield projects and Indian-registered manufacturers.",
+        "The Gazette records product-specific incentive rates and a six-year sales-based incentive period, with a scheme tenure of FY 2020-21 to FY 2029-30 and a 120-day application window.",
+        "The record must separate the selected-manufacturer incentive from any general startup/MSME grant or loan and must not imply that an open application window still exists."
+      ],
+      "reviewFollowUps": [
+        "Confirm whether any amendment, extension, selected-participant clarification or claim/disbursement notice changes the historical window or current status.",
+        "Validate all 41 product mappings, threshold-investment values, sales calculations, statutory-auditor evidence and disbursement conditions.",
+        "Mark the opportunity as historical/closed if the current official source set confirms that no new applications are open."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "production-linked-incentive-pharmaceuticals",
+      "sourceUrl": "https://pharmaceuticals.gov.in/sites/default/files/Gazette%20Notification%20of%20PLI%20scheme%20for%20Pharmaceuticals_0_0.pdf",
+      "supportingSources": [
+        {
+          "url": "https://www.pharmaceuticals.gov.in/sites/default/files/Details%20of%20Applications%20approved%20under%20Production%20Linked%20Incentive.pdf",
+          "anchor": "Official list of approved PLI Pharmaceuticals applications by Group A, B and C"
+        }
+      ],
+      "sourceKind": "gazette_notification_and_official_approval_list",
+      "sourceAnchor": "Sections 2, 3.1 and 3.2; objective, target groups and scheme outlay",
+      "observations": [
+        "The Gazette defines Group A, B and C applicant bands using FY 2019-20 global manufacturing revenue of pharmaceutical goods, with a separate MSME sub-group within Group C.",
+        "The Gazette describes a ₹15,000 crore total scheme allocation and an incentive model for selected manufacturers of specified pharmaceutical goods; this is not a universal benefit for every pharma business.",
+        "The official approved-applications document demonstrates that selection is participant-specific and must not be represented as automatic eligibility."
+      ],
+      "reviewFollowUps": [
+        "Reconcile the Gazette with the 1 June 2021 guidelines and any later amendments, approved-participant notices, claim periods or scheme closure notices.",
+        "Verify target product categories, group thresholds, investment/sales requirements, applicant obligations and disbursement conditions from the complete current guideline.",
+        "Determine whether the user-facing record should be an historical selected-participant opportunity, a closed scheme reference, or a current route with a verified open window."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "production-linked-incentive-medical-devices",
+      "sourceUrl": "https://pharmaceuticals.gov.in/sites/default/files/Revised%20Guidelines%20of%20PLI%20-%20MD%20dated%2025.02.2023.pdf",
+      "supportingSources": [
+        {
+          "url": "https://pharmaceuticals.gov.in/sites/default/files/Final%20Boosting%20of%20Medical%20Devices%20Industry%20-%20Report%20-%202023.pdf",
+          "anchor": "Section 5.17.1: PLI Medical Devices, revised guidelines, target segments, incentive rate and approved applicants"
+        }
+      ],
+      "sourceKind": "revised_guideline_and_official_report",
+      "sourceAnchor": "Pages 1-10 and target-segment/claim provisions: applicant, greenfield project, four target segments, incentive calculation and disbursement",
+      "observations": [
+        "Official DoP material describes four target segments: cancer care/radiotherapy; radiology, imaging and nuclear imaging; anaesthetics/cardio-respiratory and renal care; and implants including implantable electronic devices.",
+        "The official report describes a 5% incremental-sales incentive for selected applicants, with Category A and Category B applicant caps and a scheme tenure through FY 2027-28.",
+        "The record must distinguish selected-participant claims from an open application opportunity and preserve the revised guideline version history."
+      ],
+      "reviewFollowUps": [
+        "Confirm that the cited February 2023 document is the current operative guideline and reconcile it with the August 2022 revision and any later notices.",
+        "Validate applicant categories, investment thresholds, product list, incremental-sales calculation, claims, caps and disbursement conditions.",
+        "Confirm whether new applications are closed and expose the historical/selected-participant status if no current window exists."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "promotion-of-medical-device-parks",
+      "sourceUrl": "https://pharmaceuticals.gov.in/sites/default/files/Guidelines%20of%20the%20Scheme%20Promotion%20of%20Medical%20Devices%20Parks_1.pdf",
+      "supportingSources": [
+        {
+          "url": "https://www.pharmaceuticals.gov.in/sites/default/files/Guidelines%20of%20the%20Scheme%20Promotion%20of%20Medical%20Devices%20Parks.pdf",
+          "anchor": "Sections 1-4: objective, common infrastructure, State proposer, four parks, ₹400 crore outlay and ₹100 crore per park limit"
+        }
+      ],
+      "sourceKind": "scheme_guideline",
+      "sourceAnchor": "Pages 1-8, Sections 3-8: park definition, State proposer, scope, grant limits, selection and implementation",
+      "observations": [
+        "The guideline describes a Central Sector infrastructure scheme in which a State Government is the proposer and common infrastructure facilities are created for medical-device parks.",
+        "The guideline states a ₹400 crore total outlay, support for four parks, and a maximum ₹100 crore grant-in-aid per park.",
+        "The guideline states a FY 2020-21 to FY 2024-25 duration, so this record is presumptively historical/closed unless a later official extension or successor route is found."
+      ],
+      "reviewFollowUps": [
+        "Confirm whether any official extension, successor scheme, final sanction or closure notice changes the FY 2024-25 boundary.",
+        "Keep State proposer, selected-park and common-infrastructure benefits separate from direct founder/manufacturer assistance.",
+        "Record the four supported State/park outcomes and current access route only if supported by current official evidence; otherwise archive as historical reference."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment"
+    ],
+    "reason": "The batch contains historical and selected-participant schemes; current status and amendment review must be completed before any public classification or publication."
+  }
+}

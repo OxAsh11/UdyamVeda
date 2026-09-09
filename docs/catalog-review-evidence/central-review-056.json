@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-056",
+  "authority": "Defence Innovation Organisation - ADITI",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party iDEX ADITI observations for reviewer use. It does not determine whether a particular edition is currently open, guarantee selection or grant release, or authorize publication.",
+  "sourcePolicy": "Current iDEX challenge pages, iDEX FAQ/financial FAQ, the ADITI guideline and current notices are primary. Edition, problem statement, deadline, applicant category, matching contribution, Product Development Budget, milestone agreement, testing, procurement and successor/supersession status must be verified for the specific challenge. UdyamVeda can prepare evidence but is not iDEX or a defence-procurement authority.",
+  "records": [
+    {
+      "slug": "idex-aditi-critical-technologies",
+      "sourceUrl": "https://idex.gov.in/disc-category/26",
+      "supportingSources": [
+        {"url":"https://www.idex.gov.in/disc-category/44","anchor":"Current ADITI 4 page: 25 problem statements, up to ₹25 crore, technical-query date and displayed timeline"},
+        {"url":"https://idex.gov.in/disc-category/34","anchor":"ADITI 2 Re Open page and displayed edition timeline"},
+        {"url":"https://idex.gov.in/disc-category/35","anchor":"ADITI 2 Re Open 2 page and displayed edition timeline"},
+        {"url":"https://idex.gov.in/faq","anchor":"Current iDEX FAQ: SPARK mechanism, milestone releases, applicant categories, matching contribution and separate procurement decision"},
+        {"url":"https://www.idex.gov.in/financial-faq","anchor":"Current financial FAQ: matching contribution, grant ceiling and eligible/non-eligible Product Development Budget expenditure"},
+        {"url":"https://www.idex.gov.in/uploads/page/aditi_scheeme.pdf","anchor":"ADITI guideline: up to 50% Product Development Budget, maximum ₹25 crore and FY 2023-24 to FY 2025-26 scheme support"},
+        {"url":"https://www.idex.gov.in/notices","anchor":"Official iDEX notices and application-submission guidance"}
+      ],
+      "sourceKind": "official_idex_aditi_current_edition_and_guideline_cross_check",
+      "sourceAnchor": "ADITI critical-technology objective, applicant categories, grant ceiling, current edition/version conflict, SPARK milestones, matching contribution and procurement separation",
+      "observations": [
+        "The historical ADITI 1 page remains available and, although last updated 7 September 2026, displays a 19 April 2024 timeline and 'No Challenge Found'. It cannot by itself establish current availability.",
+        "The current iDEX challenge pages show later ADITI editions. ADITI 4 displays 25 problem statements, a displayed last date for technical queries of 21 April 2026, a 4 May 2026 5:00 PM timeline, and a grant ceiling up to ₹25 crore. ADITI 2 Re Open and ADITI 2 Re Open 2 pages also remain visible with their own edition timelines.",
+        "Because the current pages expose multiple historical/reopened editions and do not provide one unambiguous current submission state for the record, the edition, problem statement, application deadline and supersession state require human review before any recommendation.",
+        "The ADITI guideline describes support for critical and strategic defence technologies and up to 50% of the Product Development Budget, with a maximum grant of ₹25 crore. The guideline's budget period and each challenge's current terms must not be treated as a perpetual funding window.",
+        "Eligible routes include DPIIT-recognized startups, Indian companies primarily operating as MSMEs, and individual innovators; individual innovators must register as a startup/MSME after selection under the guideline. Current iDEX FAQ material separately states that joint ventures or consortia of companies cannot apply to iDEX challenges.",
+        "Current iDEX FAQ material describes SPARK as the grant mechanism, milestone-based release as 10%, 20%, 20%, 20%, 20% and 10% of the sanctioned grant, and matching contribution of at least 50% of total project cost under the SPARK agreement.",
+        "Selection, Product Development Budget approval, grant agreement, milestone validation, user acceptance and any procurement or minimum pilot order are separate decisions. iDEX does not guarantee procurement merely because an applicant is selected.",
+        "ADITI is distinct from the standard DISC and Open Challenge routes. Their grant ceilings, challenge structures, timelines and problem-statement sources must not be merged into one opportunity or one combined benefit amount."
+      ],
+      "reviewFollowUps": [
+        "Identify the latest live or closed ADITI edition, exact problem statement, application deadline, technical-query date and official submission state; reconcile ADITI 1, ADITI 2 re-open pages and ADITI 4.",
+        "Verify applicant category, Indian incorporation/control, DPIIT/MSME or innovator evidence, one-challenge/multiple-application rules and any partner-incubator condition.",
+        "Confirm Product Development Budget, matching contribution, milestone agreement, eligible expenditure, testing, IP, security, user acceptance and any procurement terms.",
+        "Keep the ₹25 crore ceiling and 50% reference separate from current availability, selection probability and procurement value.",
+        "Record amendment or supersession evidence and obtain a reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source","eligibility","benefit","application","window","fine_print","amendment","current_terms","reviewer_decision"],
+    "reason": "Official iDEX sources confirm the ADITI route and grant boundaries but show multiple editions and historical/reopened timelines; current application state, edition, deadline, terms and human approval remain unresolved."
+  }
+}

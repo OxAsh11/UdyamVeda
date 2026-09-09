@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-022",
+  "authority": "Department of Social Justice and Empowerment (DoSJE)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "The Department of Social Justice and Empowerment and IFCI CEGSSC portal are the controlling official sources for this record. Historical operational guidelines and modification letters are retained as supporting evidence and require reconciliation with the current portal terms.",
+  "records": [
+    {
+      "slug": "credit-enhancement-guarantee-sc",
+      "sourceUrl": "https://www.ifcicegssc.in/",
+      "supportingSources": [
+        {
+          "url": "https://socialjustice.gov.in/schemes/32",
+          "anchor": "Current Ministry scheme page: CEGSSC objective, national social-sector scope, entrepreneurship purpose, implementing portal and operational-guideline references; page last updated 29 June 2026"
+        },
+        {
+          "url": "https://www.ifcicegssc.in/Home/FAQ",
+          "anchor": "CEGSSC FAQ: eligible borrower forms, more-than-51-percent SC ownership/control for six months, participating MLI requirement, covered facilities, no collateral/third-party guarantee statement, guarantee range, interest boundary and tenure"
+        },
+        {
+          "url": "https://socialjustice.gov.in/writereaddata/UploadFile/creditguide09082019.pdf",
+          "anchor": "Official CEGSSC operational guidelines: scheme definitions, eligible borrower, lender/MLI route, credit facilities and guarantee mechanics"
+        },
+        {
+          "url": "https://socialjustice.gov.in/writereaddata/UploadFile/CreditEnhancementGuaranteeSchemeSCs.pdf",
+          "anchor": "Official Ministry eligibility modification letter dated 9 May 2016: historical ownership/control modification requiring reconciliation with current portal language"
+        },
+        {
+          "url": "https://www.ifcicegssc.in/DownloadForms",
+          "anchor": "Official IFCI portal download index: operational guidelines, MLI list, sample guarantee process, appraisal forms, eligibility and guarantee documents"
+        }
+      ],
+      "sourceKind": "official_ministry_ifci_portal_faq_and_guidelines",
+      "sourceAnchor": "IFCI CEGSSC portal highlights and FAQ: guarantee range, SC ownership/control, lender route and tenure",
+      "observations": [
+        "CEGSSC provides a credit-enhancement guarantee to participating banks and financial institutions for facilities granted to eligible Scheduled Caste entrepreneurs. It is not a direct grant, direct loan, subsidy or guaranteed loan sanction to the applicant.",
+        "The current IFCI portal states a guarantee-cover range of INR 0.15 crore to INR 5 crore and a maximum guarantee tenure of 7 years or the repayment period, whichever is earlier. These figures describe guarantee cover, not the applicant's total eligible loan or cash benefit.",
+        "The current portal and FAQ describe registered companies, societies, registered partnership firms, sole proprietorship firms and individual SC entrepreneurs with more than 51% SC ownership/shareholding and management control for the past 6 months. The exact ownership and control test must be reconciled with the controlling guideline and applicant constitution.",
+        "The FAQ says only banks that have signed the scheme undertaking as Member Lending Institutions (MLIs) can use the scheme for borrowers. The lender performs credit appraisal and sanction; UdyamVeda must not imply that eligibility guarantees approval.",
+        "The FAQ identifies working-capital, term-loan and composite-term-loan facilities as covered and states that no collateral security or third-party guarantee is required for the covered loan, but current lender, guarantee-fee, primary-security, restricted-category and claim conditions still require document-level review.",
+        "The Ministry page describes CEGSSC as a national economic-empowerment route and links the implementing portal. The Ministry and IFCI materials are historical/currently maintained sources rather than evidence of a single nationwide closing deadline; the record can remain rolling only after the reviewer confirms the current portal and MLI route are operational."
+      ],
+      "reviewFollowUps": [
+        "Confirm the current operative operational-guideline version, the effective ownership/control test and any amendments against the Ministry page, IFCI downloads and current portal terms.",
+        "Verify the current MLI list and whether the named lender is participating before showing an actionable application route to a business.",
+        "Extract guarantee fee, renewal, claim, default, recovery, restricted-category, primary-security, documentation and reporting conditions from the controlling scheme documents.",
+        "Keep guarantee cover, underlying loan amount, lender sanction and repayment obligation as separate benefit and risk fields; do not rank this as a direct INR 5 crore grant or loan.",
+        "Confirm current applicant-facing forms, portal access, fees and contact routes, and record any portal downtime or scheme suspension as a change event."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment"
+    ],
+    "reason": "Official sources support a structured credit-guarantee draft, but current operational terms, MLI availability, guarantee fees/claims and the relationship between guarantee cover and the underlying loan require human reconciliation before publication."
+  }
+}

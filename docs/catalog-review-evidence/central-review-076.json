@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-076",
+  "authority": "National Minorities Development and Finance Corporation - Micro-Finance Scheme",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party NMDFC micro-finance observations for reviewer use. It does not guarantee SHG formation, loan sanction, member or group credit, interest concession, SCA availability or repayment terms.",
+  "sourcePolicy": "The current NMDFC schemes page, micro-finance guideline landing page, FAQ, Credit Line 1 detail and Ministry/NMDFC reference material are primary cross-check sources. Current SCA agreements, forms, lending policy, group composition and amendments require human confirmation before publication.",
+  "records": [
+    {
+      "slug": "nmdfc-micro-finance-shg",
+      "sourceUrl": "https://www.nmdfc.org/nmdfcschemes",
+      "supportingSources": [
+        {
+          "url": "https://www.nmdfc.org/guidelines_for_micro_financing_schemes",
+          "anchor": "Official NMDFC micro-finance guideline route; current group, SCA and implementation terms require document-level confirmation"
+        },
+        {
+          "url": "https://www.nmdfc.org/faq",
+          "anchor": "NMDFC FAQ: micro-finance is for minority SHG members, with thrift/credit discipline and SCA/NGO implementation context"
+        },
+        {
+          "url": "https://www.nmdfc.org/credit-1",
+          "anchor": "Official Credit Line 1 detail used to cross-check current micro-finance route and income-line distinctions"
+        },
+        {
+          "url": "https://www.nmdfc.org/home/nmdfc_schemes",
+          "anchor": "Current NMDFC scheme landing page and document navigation"
+        },
+        {
+          "url": "https://minorityaffairs.gov.in/WriteReadData/RTF1984/1953017398.pdf",
+          "anchor": "Ministry/NMDFC reference booklet: historical micro-finance implementation through SCAs/NGOs, SHG prerequisite and repayment context"
+        }
+      ],
+      "sourceKind": "official_nmdfc_microfinance_current_scheme_and_guideline_cross_check",
+      "sourceAnchor": "SHG eligibility, minority-women focus, current Credit Line 1/2 member and group ceilings, rates, moratorium, repayment and SCA route",
+      "observations": [
+        "NMDFC is a Government company under the administrative control of the Ministry of Minority Affairs. Its current schemes page identifies Muslims, Christians, Sikhs, Buddhists, Parsis and Jains as the notified minority communities and states that implementation occurs through State Channelizing Agencies and banking partners.",
+        "The Micro-Finance Scheme is for members of Self Help Groups, with a predominant focus on minority women in remote villages and urban slums. It is not a direct individual checkout or a general business loan for every minority-owned company.",
+        "The current NMDFC page separates Credit Line 1 at annual family income up to INR 3 lakh and Credit Line 2 at up to INR 8 lakh. It states up to INR 1 lakh per member under Credit Line 1 and up to INR 1.5 lakh per member under Credit Line 2, with stated beneficiary rates of 7% and 10% and a 2 percentage-point concession for women beneficiaries under Credit Line 2.",
+        "The same current page presents an SHG of up to 20 members, with group maximums of INR 20 lakh under Credit Line 1 and INR 30 lakh under Credit Line 2. These are separate member and group values and must never be added into a personal eligible amount.",
+        "The current summary states a three-month moratorium and three-year repayment period for Micro Credit. The underlying guideline, SCA agreement and current product terms must be checked before treating those values as actionable.",
+        "Historical Ministry/NMDFC material contains older micro-finance figures, including a INR 25,000 per-beneficiary description. The current NMDFC scheme page is the stronger current cross-check, but the historical conflict must remain visible to a reviewer rather than silently overwritten.",
+        "UdyamVeda may explain the SHG route and prepare member/group documentation, thrift, income, minority, KYC and activity checklists. It must not form or impersonate an SHG, submit as the applicant, promise sanction, or represent itself as NMDFC, an SCA or a bank."
+      ],
+      "reviewFollowUps": [
+        "Confirm the current micro-finance guideline document, Credit Line 1/2 income rules, SHG composition/maximum size, member and group ceilings, rates, women concession, moratorium and repayment terms.",
+        "Verify notified minority status, family-income evidence, SHG formation, minority composition, thrift/credit history, eligible activity and current State Channelizing Agency/partner availability.",
+        "Reconcile current NMDFC values against the older Ministry/NMDFC booklet and record which source version controls each published field.",
+        "Confirm current application forms, SCA/NGO/banking-partner route, fees or charges, documentation, monitoring, disbursement, grievance and amendment process.",
+        "Obtain human reviewer approval for source, eligibility, benefit, application, window, fine print, amendment, current terms and factual accuracy before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "The current NMDFC page confirms the SHG micro-finance structure and current summary values, but group composition, SCA route, forms, current guideline, historical conflicts and live terms require human review before publication."
+  }
+}

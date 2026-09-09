@@ -1,0 +1,2338 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-07T12:16:56.908Z",
+  "status": "local_extraction_queue",
+  "interpretation": "AI output is a draft for human editorial review. Exact source evidence is required, and no extracted record is publishable automatically.",
+  "summary": {
+    "requestedBatches": 1,
+    "draftBatches": 15,
+    "structuredRecords": 24,
+    "failed": 0,
+    "publicationReady": 0
+  },
+  "drafts": [
+    {
+      "slug": "animal-husbandry-infrastructure-development-fund-ahidf",
+      "sourceUrl": "https://www.dahd.gov.in/sites/default/files/2023-11/ImplementationGuidelinesAHIDF.pdf",
+      "sourceSnapshotHash": "282e96edda0bb2bfb5a5b39f89d9328ba7d8d4833282df43c2e12ac5e211ceef",
+      "extractionModel": "gpt-5.6-luna",
+      "reasoningEffort": "high",
+      "extractedAt": "2026-09-07T12:09:02.275Z",
+      "payloadHash": "1a08853274ecf96b35e5905e52db64bb3c68f27a7be115b9489ed20c4b2a1b0b",
+      "status": "needs_review",
+      "publicationStatus": "blocked",
+      "validation": {
+        "exactSourceEvidence": true,
+        "humanReviewRequired": true
+      },
+      "records": [
+        {
+          "name": "Animal Husbandry Infrastructure Development Fund (AHIDF)",
+          "opportunity_type": "Government-backed loan with interest subvention and, for qualifying MSME projects, credit guarantee",
+          "objective": [
+            "Increase milk and meat processing capacity and product diversification, providing greater access for unorganized rural milk and meat producers to organized markets.",
+            "Provide increased price realization for producers.",
+            "Make quality milk and meat products available to domestic consumers.",
+            "Support protein-enriched quality food requirements and help prevent malnutrition.",
+            "Develop entrepreneurship and generate employment.",
+            "Promote exports and increase export contribution in the milk and meat sector.",
+            "Make quality concentrated animal feed available to cattle, buffalo, sheep, goat, pig and poultry at affordable prices."
+          ],
+          "legal_basis": "Implementation Guidelines for Animal Husbandry Infrastructure Development Fund (AHIDF)",
+          "authority": {
+            "name": "Department of Animal Husbandry and Dairying, Ministry of Fisheries, Animal Husbandry and Dairying, Government of India",
+            "role": "Implementing agency"
+          },
+          "eligibility": {
+            "eligible_entities": [
+              "Farmer Producer Organizations (FPOs)",
+              "Private companies",
+              "Individual entrepreneurs",
+              "Section 8 companies",
+              "Micro, Small and Medium Enterprises (MSMEs)"
+            ],
+            "eligible_activities": {
+              "dairy_processing": [
+                "Establishment of new dairy processing units.",
+                "Strengthening of existing dairy processing units with quality and hygienic milk processing facilities, packaging facilities or other activities related to dairy processing."
+              ],
+              "value_added_dairy_product_manufacturing": [
+                "Ice cream units.",
+                "Cheese manufacturing units.",
+                "Ultra High Temperature (UHT) milk processing units with tetra packaging facilities.",
+                "Flavoured milk manufacturing units.",
+                "Milk powder manufacturing units.",
+                "Whey powder manufacturing units.",
+                "Other milk products and value-addition manufacturing units."
+              ],
+              "meat_processing_and_value_addition": [
+                "Establishment of new meat processing units and strengthening of existing meat processing facilities for sheep, goat, poultry, pig and buffalo in rural, semi-urban and urban areas.",
+                "Large-scale integrated meat processing facilities, plants or units.",
+                "New or strengthened value-addition facilities for sausage, nuggets, ham, salami, bacon or other meat products, either integral to meat processing units or as standalone meat value-addition units."
+              ],
+              "animal_feed": [
+                "Mini, medium and large animal feed plants.",
+                "Total Mixed Ration block-making units.",
+                "By-pass protein units.",
+                "Mineral mixture plants.",
+                "Enriched silage-making units.",
+                "Animal feed testing laboratories attached to medium-to-large feed plants or established in existing feed plants to ensure quality feed."
+              ]
+            },
+            "project_conditions": [
+              "Meat processing plant project cost must compulsorily include an Effluent Treatment Plant (ETP), meat microbiological testing laboratory, residue testing laboratory, cold storage for holding offals, skin/hide processing areas and preservation and refrigeration facilities for holding chilled products and value-added products for a minimum of 24 hours."
+            ],
+            "loan_condition": "Loan eligibility is based on submission of viable projects by eligible beneficiaries to a Scheduled Bank."
+          },
+          "benefit_summary": "Eligible projects may receive a loan of up to 90% of estimated or actual project cost from a Scheduled Bank, with beneficiary contribution requirements varying by enterprise category. All Eligible Entities may receive 3% interest subvention, subject to the stated conditions. Viable projects covered under MSME-defined ceilings may also receive credit guarantee coverage of up to 25% of the credit facility available to the borrower.",
+          "benefits": [
+            {
+              "benefit_type": "Loan",
+              "amount_or_rate": "Up to 90% of the estimated or actual project cost",
+              "conditions": "Loan is provided by a Scheduled Bank based on submission of a viable project by an eligible beneficiary."
+            },
+            {
+              "benefit_type": "Beneficiary contribution",
+              "amount_or_rate": "10% for Micro and Small units as per MSME-defined ceiling; up to 15% for Medium Enterprises as per MSME-defined ceiling; up to 25% for other categories of enterprises",
+              "conditions": "Contribution levels are stated in section 7.1."
+            },
+            {
+              "benefit_type": "Interest subvention",
+              "amount_or_rate": "3%",
+              "conditions": "Available for all Eligible Entities, subject to the guidelines. It is not allowed for loans sanctioned for procurement of land, working capital, old machinery or vehicles for personal use, and is unavailable if the Eligible Entity defaults on loan repayment in any given year."
+            },
+            {
+              "benefit_type": "Credit guarantee",
+              "amount_or_rate": "Up to 25% of the credit facility available to the borrower",
+              "conditions": "Available only for viable projects covered under MSME-defined ceilings. The guidelines state that the guarantee will not be provided to beneficiaries outside MSME norms, although those Eligible Entities remain eligible for interest subvention. The Credit Guarantee Fund is stated as Rs. 750 cr. and will be managed by NABARD."
+            },
+            {
+              "benefit_type": "Repayment terms",
+              "amount_or_rate": "Maximum repayment period stated as 8 years inclusive of a 2-year moratorium on principal",
+              "conditions": "The guidelines also state that the Scheduled Bank shall ensure that the maximum repayment period does not exceed 10 years from the date of first disbursement, inclusive of a 2-year moratorium on principal. The Financing Bank may curtail the period at its discretion."
+            }
+          ],
+          "application": {
+            "submission_route": "Submit the proposal with the complete Detailed Project Report through the Udyami Mitra Portal developed by the Small Industries Development Bank of India (SIDBI).",
+            "bank_process": "The Scheduled Bank appraises and sanctions the project, subject to approval of interest subvention under AHIDF, and forwards the application or project to the Department of Animal Husbandry and Dairying through an online mechanism.",
+            "interest_subvention_form": "Application for interest subvention is to be submitted using the form attached at Annexure II.",
+            "application_deadline": null
+          },
+          "fine_print": [
+            "Loan under AHIDF cannot be used for acquisition of land by purchase, transfer, lease, accession or addition.",
+            "If the Eligible Entity does not already have the required land, it must acquire it at its own cost and complete associated land-acquisition processes before submitting the finance proposal.",
+            "Projects with land on a long-term lease of at least 30 years may be considered. The lease must have sufficient duration to secure the loan, and a No Objection Certificate from the competent authority for mortgage to the Bank may be required.",
+            "Documentary evidence of availability of land and applicable statutory clearances must be included in the Detailed Project Report or self-contained proposal. The Eligible Entity must provide evidence or a certificate that the land is free from encroachment and encumbrances.",
+            "Applicants must obtain all necessary clearances, permits and licences, and bear any related expenditure.",
+            "The State Animal Husbandry Department is to establish a single window to facilitate statutory clearances and handhold Eligible Entities.",
+            "Cost escalation caused by genuine reasons may be considered for enhancement of the loan amount within a reasonable time, but not more than two years from approval of the particular project.",
+            "For MSME-defined-ceiling projects, the Scheduled Bank's lending rate should not exceed 200 basis points plus the External Bench Mark Based Lending Rate (EBLR). Other projects may be charged a commercial interest rate determined by the Bank.",
+            "The Department of Animal Husbandry and Dairying pays interest subvention directly to the Scheduled Bank. First-year subvention is initially paid in advance based on the Bank's request; from the second year onward, it is released based on the entitlement claimed annually in advance for non-NPA borrowers.",
+            "A project is considered non-starter if no drawals are made within six months from the Scheduled Bank's sanction date. The sanction lapses if the Eligible Entity fails to ground the project within 12 months from sanction, although the lending Bank may decide on a case-by-case basis.",
+            "The Scheduled Bank may stop further disbursements until amounts in default are paid in full.",
+            "The Project Approval Committee approves projects costing up to Rs. 50 cr. for interest subvention. Projects above Rs. 50 cr. are recommended to the Project Sanctioning Committee after screening and evaluation.",
+            "The source states that the entire AHIDF amount of Rs. 15000 cr. is to be disbursed by Scheduled Banks within a period of 3 years starting from 2020-21.",
+            "Operational and credit-related decisions, including repayment process, penal interest, security and extent of finance, are decided by the Scheduled Bank subject to AHIDF provisions."
+          ],
+          "requirements": [
+            "Prepare a Detailed Viable Project Report and self-contained proposal seeking an AHIDF loan.",
+            "Include a proposal for a quality management unit for milk, meat and animal feed, a packaging unit and product promotion.",
+            "Include future market generation, employment opportunity, raw-material procurement and other project-related information.",
+            "For dairy processing, meat processing, value addition and animal feed plant infrastructure, address suitable-site identification, engineering and socio-economic investigations and surveys, facility planning and design, and model studies wherever required.",
+            "Provide documentary evidence of land availability and applicable statutory clearances.",
+            "Obtain required permits, licences and clearances, including those applicable from local authorities, land authorities, State Pollution Control Boards, food-safety authorities and other relevant authorities.",
+            "Where applicable, provide MSME registration, company registration and labour or Employees' Provident Fund registration.",
+            "Application-form attachments include a detailed project with component-wise cost break-up, total cost, recurring cost, net income and project viability; proof of address; PAN/TIN/Aadhaar copy; MSME certificate if applicable; proof of land holding or ownership or lease and conversion; education and training certificates; income proof; and a bank statement for the last six months relevant to the project.",
+            "Provide the site plan, machinery and equipment list, and civil and machinery layout plan certified by a registered architect.",
+            "Provide statutory clearances required for the project, including local administration clearances, trade licences, Consent to Establish, Consent to Operate from the State Pollution Control Board and the required FSSAI licence.",
+            "Provide a roadmap for product quality management, product promotion and market development."
+          ],
+          "steps": [
+            "Confirm that the applicant is one of the listed Eligible Entities and that the proposed activity falls within an eligible dairy processing, value-added dairy, meat processing, meat value-addition or animal-feed category.",
+            "Arrange the required land at the applicant's own cost and obtain documentary evidence of land availability and applicable statutory clearances before submitting the finance proposal.",
+            "Prepare the Detailed Viable Project Report and self-contained proposal with the required technical, financial, market, employment, quality-management, packaging and promotion information.",
+            "Submit the complete proposal through the SIDBI-developed Udyami Mitra Portal.",
+            "The Scheduled Bank conducts appraisal and sanctions the project, subject to AHIDF interest-subvention approval.",
+            "The Scheduled Bank forwards the sanctioned application or project to the Department of Animal Husbandry and Dairying online for interest-subvention approval, using the Annexure II form.",
+            "The Project Management Agency scrutinizes and appraises the Bank-sanctioned proposal for approval of interest subvention by the Project Approval Committee or Project Sanctioning Committee.",
+            "Projects up to Rs. 50 cr. are considered by the Project Approval Committee; projects above Rs. 50 cr. are recommended to the Project Sanctioning Committee after screening and evaluation.",
+            "After sanction and approval, comply with the Bank's disbursement, repayment, security, monitoring and project-grounding requirements."
+          ],
+          "sources": [
+            {
+              "url": "https://www.dahd.gov.in/sites/default/files/2023-11/ImplementationGuidelinesAHIDF.pdf",
+              "anchor": "Sections 2-5: Area of Operation, Objectives, Eligible Entities and Implementing Agency"
+            },
+            {
+              "url": "https://www.dahd.gov.in/sites/default/files/2023-11/ImplementationGuidelinesAHIDF.pdf",
+              "anchor": "Sections 6.1-6.4: Activities Eligible for Availing Benefits Under AHIDF"
+            },
+            {
+              "url": "https://www.dahd.gov.in/sites/default/files/2023-11/ImplementationGuidelinesAHIDF.pdf",
+              "anchor": "Section 7, heading 'Quantum of Loan and Margin Money / Beneficiary Contribution', paragraphs 7.1-7.3"
+            },
+            {
+              "url": "https://www.dahd.gov.in/sites/default/files/2023-11/ImplementationGuidelinesAHIDF.pdf",
+              "anchor": "Sections 8.1-8.4: Interest Subvention and Lending Rate of Interest"
+            },
+            {
+              "url": "https://www.dahd.gov.in/sites/default/files/2023-11/ImplementationGuidelinesAHIDF.pdf",
+              "anchor": "Sections 9.1-9.1.4: Credit Guarantee Fund"
+            },
+            {
+              "url": "https://www.dahd.gov.in/sites/default/files/2023-11/ImplementationGuidelinesAHIDF.pdf",
+              "anchor": "Sections 10-12: Funding Mechanism, Loan Disbursement and Repayment"
+            },
+            {
+              "url": "https://www.dahd.gov.in/sites/default/files/2023-11/ImplementationGuidelinesAHIDF.pdf",
+              "anchor": "Sections 13-15 and Annexure I: Land, Statutory Clearances and Detailed Project Report"
+            },
+            {
+              "url": "https://www.dahd.gov.in/sites/default/files/2023-11/ImplementationGuidelinesAHIDF.pdf",
+              "anchor": "Sections 16.1-16.3 and Annexure II: Submission of Project Proposal and Online Application Form"
+            },
+            {
+              "url": "https://www.dahd.gov.in/sites/default/files/2023-11/ImplementationGuidelinesAHIDF.pdf",
+              "anchor": "Sections 17.1-17.6: Project Evaluation and Sanction"
+            }
+          ],
+          "effective_dates": [
+            {
+              "window_type": "fixed",
+              "opens_at": null,
+              "closes_at": null,
+              "window_label": "Disbursement starting from 2020-21 for a period of 3 years",
+              "window_evidence": "Sections 10.1 and 11.1 state that the AHIDF amount of Rs. 15000 cr. is to be disbursed by Scheduled Banks starting from 2020-21 and within a period of 3 years. The source does not state specific application opening or closing dates."
+            }
+          ],
+          "geography": "All States and Union Territories"
+        }
+      ]
+    },
+    {
+      "slug": "chemicals-promotion-development-scheme",
+      "sourceUrl": "https://chemicals.gov.in/chemicals-promotion-development-scheme",
+      "sourceSnapshotHash": "4f7a63f5817a560cf81125b62391f06dc49fbf22ba2c49bdaccc917734d03494",
+      "extractionModel": "gpt-5.6-luna",
+      "reasoningEffort": "high",
+      "extractedAt": "2026-09-07T12:09:18.798Z",
+      "payloadHash": "463dced1784737beef3d62b88fcacc789a580c54cda9f6b52b09c969b9804324",
+      "status": "needs_review",
+      "publicationStatus": "blocked",
+      "validation": {
+        "exactSourceEvidence": true,
+        "humanReviewRequired": true
+      },
+      "records": [
+        {
+          "name": "Chemicals Promotion Development Scheme",
+          "opportunity_type": "Grant-in-aid scheme",
+          "objective": "Processing of requests from eligible industry associations, etc. under CPDS for release of Grants-in-aid.",
+          "legal_basis": {
+            "document": "Guidelines for Chemicals Promotion and Development Scheme",
+            "published_date": "19/12/2019"
+          },
+          "authority": "Department of Chemicals and Petrochemicals, Ministry of Chemicals and Fertilizers, Government of India",
+          "eligibility": "Eligible industry associations, etc.",
+          "benefit_summary": "Release of Grants-in-aid under the Chemicals Promotion Development Scheme.",
+          "benefits": [
+            "Grants-in-aid"
+          ],
+          "application": {
+            "route": "Web-based application",
+            "portal_url": "http://cpds.chemicals.gov.in/",
+            "instruction": "Registration/Login",
+            "context": "The source describes a web-based application for processing requests from eligible industry associations, etc. under CPDS for release of Grants-in-aid."
+          },
+          "fine_print": [
+            "The source page links to the CPDS guidelines but does not state the grant amount, funding percentage, expenditure categories, thresholds, selection criteria, or disbursement conditions.",
+            "The source page does not state an application opening date or closing date.",
+            "The page lists a calendar of events under CPDS for 2018-19, but no current event calendar is provided."
+          ],
+          "requirements": [],
+          "steps": [
+            "Access the CPDS Registration/Login portal.",
+            "Use the web-based application route for requests under CPDS."
+          ],
+          "sources": [
+            {
+              "url": "https://chemicals.gov.in/chemicals-promotion-development-scheme",
+              "anchor": "Heading: Chemicals Promotion Development Scheme; Registration/Login"
+            },
+            {
+              "url": "https://chemicals.gov.in/chemicals-promotion-development-scheme",
+              "anchor": "Table row: Launching of web based application for processing of the requests from eligible industry associations, etc. under CPDS for release of Grants-in-aid"
+            },
+            {
+              "url": "https://chemicals.gov.in/chemicals-promotion-development-scheme",
+              "anchor": "Table row: Guidelines for Chemicals Promotion and Development Scheme"
+            }
+          ],
+          "effective_dates": {
+            "window_type": "call_for_applications",
+            "opens_at": null,
+            "closes_at": null,
+            "window_label": "No application window dates stated",
+            "window_evidence": "The source provides a registration/login and web-based application route but does not state opening or closing dates."
+          },
+          "geography": null
+        }
+      ]
+    },
+    {
+      "slug": "dpiit-startup-recognition",
+      "sourceUrl": "https://www.startupindia.gov.in/content/sih/en/startupgov/startup_recognition_page.html",
+      "sourceSnapshotHash": "50ebe0173670c9ff241bded80f8bb5ca9b7a06834cb5352c46971eb1f86162ad",
+      "extractionModel": "gpt-5.6-luna",
+      "reasoningEffort": "high",
+      "extractedAt": "2026-09-07T12:09:55.931Z",
+      "payloadHash": "bcb5c5d7b716c55fed3eb626d53ebbfda857125da1283220df505af6bb88797d",
+      "status": "needs_review",
+      "publicationStatus": "blocked",
+      "validation": {
+        "exactSourceEvidence": true,
+        "humanReviewRequired": true
+      },
+      "records": [
+        {
+          "name": "DPIIT Startup Recognition",
+          "opportunity_type": "government startup recognition",
+          "objective": "Recognition under the Startup India Action Plan for startups meeting the definition prescribed under G.S.R. notification 108(E).",
+          "legal_basis": [
+            "Startup India Action Plan",
+            "G.S.R. notification 108(E)"
+          ],
+          "authority": "Department for Promotion of Industry and Internal Trade (DPIIT), Ministry of Commerce and Industry",
+          "eligibility": [
+            "The startup should be incorporated as a Private Limited Company or registered as a Partnership Firm, Limited Liability Partnership, or Cooperative Society.",
+            "Turnover should be less than INR 200 Crores, or INR 300 Crores for DeepTech startups, in any of the previous financial years.",
+            "An entity shall be considered a startup for up to 10 years, or 20 years for DeepTech startups, from the date of its incorporation.",
+            "The startup should be working towards innovation or improvement of existing products, services, and processes, and should have the potential to generate employment or create wealth.",
+            "An entity formed by splitting up or reconstruction of an existing business shall not be considered a Startup."
+          ],
+          "benefit_summary": "Eligible startups may apply for DPIIT recognition under the Startup India Action Plan.",
+          "benefits": [
+            "DPIIT Certificate of Recognition."
+          ],
+          "application": {
+            "channel": "National Single Window System (NSWS)",
+            "portal": "https://www.nsws.gov.in/",
+            "form": "Registration as a Startup",
+            "instructions": "Create an account on NSWS and add the form “Registration as a Startup”.",
+            "support_documents": "Support documents must be provided at the time of application.",
+            "fee": "The Ministry of Commerce and Industry does not charge any fee for the DPIIT Certificate of Recognition or Certificate of Eligibility.",
+            "quick_guide": "https://www.startupindia.gov.in/content/dam/invest-india/NSWS%20Startup%20Application%20Guide.pdf"
+          },
+          "fine_print": [
+            "The startup must file the application on its own using its own details, mobile number, and email.",
+            "DPIIT has not appointed any Agency, Representative, or Franchise for the DPIIT Certificate of Recognition or Certificate of Eligibility.",
+            "The source does not state an application opening date, closing date, or deadline."
+          ],
+          "requirements": [
+            "Eligibility under G.S.R. notification 108(E).",
+            "Support documents at the time of application.",
+            "An NSWS account and the “Registration as a Startup” form."
+          ],
+          "steps": [
+            "Create an account on NSWS.",
+            "Add the form “Registration as a Startup”.",
+            "Submit the application using the startup’s own details, mobile number, and email, along with support documents."
+          ],
+          "sources": [
+            {
+              "url": "https://www.startupindia.gov.in/content/sih/en/startupgov/startup_recognition_page.html",
+              "anchor": "DPIIT Startup Recognition; Eligibility Criteria for Startup Recognition; Apply through National Single Window System; Disclaimer",
+              "evidence": "The page states the eligibility criteria, NSWS application process, support-document requirement, and applicant and fee disclaimer."
+            }
+          ],
+          "effective_dates": {
+            "window_type": null,
+            "opens_at": null,
+            "closes_at": null,
+            "window_label": null,
+            "window_evidence": "The source does not state an opening or closing date for applications."
+          },
+          "geography": null
+        },
+        {
+          "name": "Startup India: 80 IAC Tax exemption",
+          "opportunity_type": "tax exemption",
+          "objective": "Allow a recognised Startup to apply for tax exemption under section 80 IAC of the Income Tax Act.",
+          "legal_basis": "Section 80 IAC of the Income Tax Act",
+          "authority": null,
+          "eligibility": [
+            "The entity should be a recognised Startup.",
+            "Only a Private Limited Company or a Limited Liability Partnership is eligible for tax exemption under Section 80IAC.",
+            "The Startup should have been incorporated after 1st April, 2016."
+          ],
+          "benefit_summary": "After clearance for tax exemption, the Startup can avail a tax holiday for 3 consecutive financial years out of its first ten years since incorporation.",
+          "benefits": [
+            "Tax holiday for 3 consecutive financial years out of the Startup’s first ten years since incorporation, after getting clearance for tax exemption."
+          ],
+          "application": {
+            "prerequisite": "The Startup must first obtain its DPIIT Certificate of Recognition.",
+            "application_link": "https://www.startupindia.gov.in/content/sih/en/form80iac.html",
+            "status_link": "https://www.startupindia.gov.in/content/sih/en/recognition-application-detail.html",
+            "fee": null
+          },
+          "fine_print": [
+            "The exemption is not stated to be automatic; the source says the Startup may apply and can avail the tax holiday after getting clearance for tax exemption.",
+            "The source does not state an application opening date, closing date, or deadline."
+          ],
+          "requirements": [
+            "DPIIT-recognised Startup status.",
+            "Private Limited Company or Limited Liability Partnership status.",
+            "Incorporation after 1st April, 2016.",
+            "DPIIT Certificate of Recognition before applying."
+          ],
+          "steps": [
+            "Obtain the DPIIT Certificate of Recognition.",
+            "Apply for Income Tax Exemption under Section 80 IAC using the stated application link.",
+            "Obtain clearance for tax exemption.",
+            "Avail the tax holiday for 3 consecutive financial years out of the first ten years since incorporation."
+          ],
+          "sources": [
+            {
+              "url": "https://www.startupindia.gov.in/content/sih/en/startupgov/startup_recognition_page.html",
+              "anchor": "Startup India: 80 IAC Tax exemption; Eligibility Criteria for applying to Income Tax exemption (80IAC); Apply for Income Tax Exemption",
+              "evidence": "The page states the eligibility criteria, post-recognition application prerequisite, application link, and tax-holiday duration."
+            }
+          ],
+          "effective_dates": {
+            "window_type": null,
+            "opens_at": null,
+            "closes_at": null,
+            "window_label": null,
+            "window_evidence": "The source does not state an application opening or closing date. It states that the tax holiday covers 3 consecutive financial years out of the first ten years since incorporation after clearance."
+          },
+          "geography": null
+        },
+        {
+          "name": "Exemption under Section 56 of the Income Tax Act (Angel Tax)",
+          "opportunity_type": "tax exemption",
+          "objective": "Enable Startups to apply for exemption under Section 56 of the Income Tax Act (Angel Tax).",
+          "legal_basis": "Section 56 of the Income Tax Act (Angel Tax)",
+          "authority": null,
+          "eligibility": [
+            "The source states that, after getting the DPIIT Certificate, Startups can apply for exemption under Section 56 of the Income Tax Act (Angel Tax)."
+          ],
+          "benefit_summary": "Exemption under Section 56 of the Income Tax Act (Angel Tax).",
+          "benefits": [
+            "Exemption under Section 56 of the Income Tax Act (Angel Tax)."
+          ],
+          "application": {
+            "prerequisite": "The Startup must first obtain its DPIIT Certificate.",
+            "application_link": null,
+            "instructions": "The source states that Startups can apply using the links provided below the introductory note, but the supplied content does not provide a Section 56-specific application link.",
+            "fee": null
+          },
+          "fine_print": [
+            "The supplied content does not state additional eligibility criteria, exemption duration, application fee, application deadline, or a Section 56-specific application link."
+          ],
+          "requirements": [
+            "DPIIT Certificate, as a prerequisite stated in the source."
+          ],
+          "steps": [
+            "Obtain the DPIIT Certificate.",
+            "Apply for exemption under Section 56 using the applicable link; no Section 56-specific link is provided in the supplied content."
+          ],
+          "sources": [
+            {
+              "url": "https://www.startupindia.gov.in/content/sih/en/startupgov/startup_recognition_page.html",
+              "anchor": "Introductory note immediately before “Startup India: 80 IAC Tax exemption” mentioning “Exemption under Section 56 of the Income Tax Act (Angel Tax)”",
+              "evidence": "The page states that after getting the DPIIT Certificate, Startups can apply for 80 IAC Tax Exemption and Exemption under Section 56 of the Income Tax Act (Angel Tax)."
+            }
+          ],
+          "effective_dates": {
+            "window_type": null,
+            "opens_at": null,
+            "closes_at": null,
+            "window_label": null,
+            "window_evidence": "The source does not state an application opening or closing date."
+          },
+          "geography": null
+        }
+      ]
+    },
+    {
+      "slug": "india-post-franchise-outlet",
+      "sourceUrl": "https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+      "sourceSnapshotHash": "745378fb43c040a37cbfd08802fa8152ac8f939df71ca1e38f3b15b8c8cc43d5",
+      "extractionModel": "gpt-5.6-luna",
+      "reasoningEffort": "high",
+      "extractedAt": "2026-09-07T12:10:33.034Z",
+      "payloadHash": "a337c4fc298aa10074f606f6b2568e7436d172e430513958cdf93276744e96c9",
+      "status": "needs_review",
+      "publicationStatus": "blocked",
+      "validation": {
+        "exactSourceEvidence": true,
+        "humanReviewRequired": true
+      },
+      "records": [
+        {
+          "name": "India Post Franchise Outlet Scheme",
+          "opportunity_type": "Government franchise opportunity",
+          "objective": "Provide increased access to postal services in urban and rural areas through counter-service franchise outlets where there is demand for postal services but a post office cannot be opened.",
+          "legal_basis": "The Memorandum of Agreement references the relevant provisions of the Indian Post Office Act, 1898, and other relevant statutes, rules and regulations.",
+          "authority": {
+            "department": "Department of Posts, Government of India",
+            "ministry": "Ministry of Communications and Information Technology",
+            "competent_authority": "The Sr./Superintendent of Post Offices of the concerned Postal Divisional Office is stated to be the competent authority for grant of the licence under the Scheme.",
+            "selection_and_agreement": "The selected franchise signs a Memorandum of Agreement with the Department of Posts."
+          },
+          "eligibility": {
+            "applicants": "Individuals, institutions, organizations and other entities such as corner shops, paanwalas, kiranawalas, stationery shops and small shopkeepers in urban and rural areas, including new upcoming urban townships, special economic zones, major highway projects, upcoming new industrial centres, colleges, polytechnics, universities and professional colleges.",
+            "age": "Above 18 years; no upper age limit.",
+            "education": "8th class pass from a recognized school.",
+            "exclusions": [
+              "Members of the family of serving postal employees are not eligible in the same Division in which the postal employee is working.",
+              "For this exclusion, family includes the spouse, except a separated spouse or one living separately while judicial separation proceedings are on; children and stepchildren, except where custody has been legally taken away from the serving postal employee; and other persons such as wards who are dependent on and normally live with the serving postal employee."
+            ],
+            "preferences": [
+              "Postal pensioners.",
+              "Applicants able to provide computer facilities."
+            ]
+          },
+          "benefit_summary": "Right to operate a permitted India Post franchise outlet providing specified counter services and to earn commission or remuneration for services provided, according to the Schedule to the Memorandum of Agreement. Delivery and transmission continue through the Department of Posts.",
+          "benefits": [
+            {
+              "type": "permitted_services",
+              "details": [
+                "Sale of stamps and stationery, including philatelic items.",
+                "Booking registered articles, including registered parcels; speed post articles, including speed post parcels; money orders on the EDBO model; e-post; and other stated counter services.",
+                "Bulk booking of registered and speed post articles, including registered parcels and speed post parcels, is allowed without any limit, subject to stated restrictions.",
+                "Functioning as a direct agent for PLI and providing related aftersales service, including collection of premia, subject to fulfilment of criteria for PLI agents.",
+                "Marketing products for which the Department has a corporate agency or tie-up and providing related follow-up services, subject to agreement with the other organizations involved.",
+                "Providing retail services, including sale of revenue stamps and CRF stamps.",
+                "Facilitating e-governance and citizen-centric services, subject to agreement with the other organizations involved.",
+                "Any other service introduced by the Department in future through its outlets that is considered amenable to the franchise model, subject to agreement with the other organizations involved."
+              ]
+            },
+            {
+              "type": "commission",
+              "details": [
+                {
+                  "service": "Booking of Registered Articles",
+                  "commission": "Rs.3.00 per transaction"
+                },
+                {
+                  "service": "Booking of Speed Post Articles",
+                  "commission": "Rs.5.00 per transaction"
+                },
+                {
+                  "service": "Booking of Money Orders with value of Rs.100/- to Rs.200/-",
+                  "commission": "Rs.3.50 per transaction"
+                },
+                {
+                  "service": "Booking of Money Orders with value above Rs.200/-",
+                  "commission": "Rs.5.00 per transaction"
+                },
+                {
+                  "service": "Booking of Registered Articles and Speed Post Articles beyond 1000 articles, total of all two categories per month",
+                  "commission": "20% additional commission for respective articles, i.e. Registered or Speed Post."
+                },
+                {
+                  "service": "Sale of postage stamps and postal stationery, including philatelic items",
+                  "commission": "5% of sale amount"
+                },
+                {
+                  "service": "Retail services, including sale of revenue stamps, central recruitment fee stamps, etc.",
+                  "commission": "40% of commission earned by DoP, rounded off in rupees to be 40% or less"
+                },
+                {
+                  "service": "Monthly business from Speed Post Parcel, separately",
+                  "commission": "Up to Rs 5,00,000/-: 10%; Rs 5,00,001/- to 25,00,000/-: 15%; Rs 25,00,001/- to 1,00,00,000/-: 20%; Rs 1,00,00,001/- to 5,00,00,000/-: 25%; Above Rs 500,00,000/-: 30%"
+                },
+                {
+                  "service": "Monthly business from Registered Parcel, separately",
+                  "commission": "Up to Rs 5,00,000/-: 7%; Rs 5,00,001/- to 25,00,000/-: 10%; Rs 25,00,001/- to 1,00,00,000/-: 13%; Rs 1,00,00,001/- to 5,00,00,000/-: 16%; Above Rs 500,00,000/-: 20%"
+                }
+              ]
+            },
+            {
+              "type": "payment_timing",
+              "details": "The Memorandum of Agreement states that commission on revenues generated and a fee for related services are paid by the Department of Posts monthly."
+            }
+          ],
+          "application": {
+            "form": "Application in prescribed proforma, Annex-I, followed by the Memorandum of Agreement in Annex-II for the selected franchise.",
+            "submission": "The duly filled Application Form and other documents are to be submitted to the Sr./Superintendent of Post Offices of the concerned Postal Divisional Office.",
+            "application_contents": [
+              "Applicant identity, nationality and age proof.",
+              "Department of Posts pensioner status, if applicable, with copy of PPO.",
+              "Income Tax PAN/GIR number, or Form 60 declaration if PAN/GIR is not provided.",
+              "Present and permanent addresses.",
+              "Location, ownership or rental/lease details of premises, validity of rental/lease agreement if applicable, and distance from the nearest Post Office.",
+              "Proposed business timings.",
+              "Previous retailing experience, computer knowledge and whether a computer will be used.",
+              "Reference from a respectable person of the locality.",
+              "Business plan, if enclosed.",
+              "Details of security required."
+            ],
+            "stated_processing_points": [
+              "The office-use form states that authorization of the franchise is to be completed within 7 days from the date of receipt of the NSC.",
+              "The source also contains the text: “report from the ASP /SDI within 14 days from date of receipt of application.” The surrounding source text is incomplete."
+            ]
+          },
+          "fine_print": [
+            "Only counter services are franchised; delivery and transmission continue through the Department of Posts.",
+            "The franchise must provide service across the counter for a minimum defined time schedule, with flexibility to work round the clock.",
+            "A franchise outlet will not book any money order for a value less than Rs.100/-.",
+            "Franchisees must not do bulk booking from BNPL customers. Restrictions imposed by the Department on outsourcing agents for bulk booking also apply to franchisees. No rebate for bulk booking of speed post articles is admissible over and above the commission payable to franchisees as applicable from time to time.",
+            "Continuation is subject to a first review 6 months after opening and a final decision 6 months thereafter, i.e. one year after opening.",
+            "The range of counter services may vary by outlet according to location and capacity to generate revenues.",
+            "The expected minimum revenue depends on the range of services, location, potential revenue, investments proposed by the franchise, cost likely to be incurred by the Department in providing support facilities and other stated factors; no fixed income is stated.",
+            "The Department may modify commission rates and the terms and conditions of the licence, including the amount of security deposit.",
+            "The franchise is independent and must not represent itself as an agent or partner of the Department of Posts or as entitled to pledge the Department's credit.",
+            "The franchise is not transferable. The franchisee remains responsible for breaches by the franchisee or employees.",
+            "Services must be provided at Department-specified tariffs or rates; breach may result in termination.",
+            "The franchise must remit actual revenue collected daily to the prescribed office without deducting commission, subject to the stated treatment of commission on postage stamps and postal stationery purchased on cash-down basis.",
+            "A minimum monthly guaranteed revenue to the Department may be prescribed from time to time, irrespective of the franchise's revenue level.",
+            "The franchise must provide linking arrangements between the outlet and designated Department offices and finance daily transactions where required.",
+            "The franchise must maintain accounts and records, permit inspection without notice, safeguard mail, documents and cash, and bear losses to the Department caused by failure to do so.",
+            "The franchise must obtain prior written consent from the Department for equipment purchases and prior approval for modification of layout or shifting premises.",
+            "The franchise must maintain insurance against loss or damage arising from fire, explosion, impart, burglary and other stated risks.",
+            "The Department may unilaterally terminate the agreement for stated defaults, false or misleading information, non-payment or non-submission, suspected disclosure of confidential information, or conduct not protecting the exclusivity of the marks. Remedial periods stated are 48 hours for a remediable service-quality default and one week for other remediable defaults; persistent default means more than three occurrences in any period of 12 consecutive months.",
+            "A franchisee wishing to terminate must give at least three months' notice, without being relieved of outstanding or subsequently due payments.",
+            "The source contains an incomplete text fragment referring to franchises being “granted in such Gram Panchayats where Panchayat Sanchar Sewa Kendras (PSSKs) are functioning under the Panchayat Sanchar Sewa Yojana Scheme.” The source does not provide the complete context or condition."
+          ],
+          "requirements": {
+            "premises": "Properly located, accessible and appropriately maintained premises with suitable display of approved signages.",
+            "investment_and_plan": "The applicant must be willing to make necessary investments and provide details of how the premises will be run, opening hours, proposed investments, market conditions, product-marketing proposals, awareness of the customer base and role in the local community.",
+            "reference": "One reference from a respectable person of the locality where the franchise is proposed is required to establish character and antecedents.",
+            "business_plan": "A business plan is to be prepared taking into account the anticipated minimum level of business or revenue worked out by the Divisional Head for the specific franchise.",
+            "security_deposit": {
+              "form": "National Savings Certificate (NSC).",
+              "minimum": "Rs.5,000/-.",
+              "basis": "The maximum possible level of financial transactions likely to be undertaken by the franchise in a day; the deposit is to be increased on the basis of average daily revenue.",
+              "agreement_conditions": "The NSC security is to be irrevocable, non-negotiable, without recourse to the drawee and encashable merely on the instruction of the Department of Posts. The Department may increase the deposit, and whole or part of it may be forfeited for infringement at the Department's discretion."
+            },
+            "technology": "The franchise is required to be able to transact postal business on computers; ability to provide computer facilities is a stated preference.",
+            "training": "Induction and other training are provided by the Department. Travel and stay costs of the franchisee or nominee during training, where necessary, are to be borne by the franchisee."
+          },
+          "steps": [
+            "Obtain the application form from the concerned Postal Divisional Office or use the prescribed Annex-I form.",
+            "Submit the completed form and other documents to the Sr./Superintendent of Post Offices of the concerned Postal Divisional Office, including the stated applicant, premises, reference, business-plan and security information.",
+            "Undergo the Department's selection process and, if selected, sign the Memorandum of Agreement in Annex-II.",
+            "Provide the required NSC security deposit; the office-use form states that authorization is to be completed within 7 days from receipt of the NSC.",
+            "Arrange the premises, approved signage, linking arrangements, staffing or nominee, computer capability and required training.",
+            "Operate the counter services at prescribed tariffs and hours, maintain records and remit revenue as required.",
+            "Remain subject to monitoring and the six-month and one-year continuation reviews."
+          ],
+          "sources": [
+            {
+              "url": "https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+              "anchor": "Sections 2.1-2.5, Basic features of the Franchise Outlet Scheme, Products and services, Implementation Strategy and Viability"
+            },
+            {
+              "url": "https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+              "anchor": "Section 2.6, Criteria for Selection of Franchise Outlets, paragraphs (i)-(ix)"
+            },
+            {
+              "url": "https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+              "anchor": "Application cum Franchise Outlet Agreement Form, Part-A and Part-B; Department of Posts Acknowledgement"
+            },
+            {
+              "url": "https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+              "anchor": "Memorandum of Agreement, Clauses 1-8, 12-14 and 19-22"
+            },
+            {
+              "url": "https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+              "anchor": "Schedule of Memorandum of Agreement, Commission per transaction and Monthly Business"
+            }
+          ],
+          "effective_dates": [
+            {
+              "window_type": "fixed",
+              "opens_at": null,
+              "closes_at": null,
+              "window_label": "Initial Franchise Agreement term",
+              "window_evidence": "The Agreement subsists for an initial period of one year from the date on which the Department accepts the signed copy."
+            },
+            {
+              "window_type": "fixed",
+              "opens_at": null,
+              "closes_at": null,
+              "window_label": "Renewal terms",
+              "window_evidence": "The second term is 3 years; further continuance after completion of four years is for 3 years at each subsequent time, subject to satisfactory work and conduct and the Department's discretion to renew."
+            }
+          ],
+          "geography": "India; the scheme is intended for urban and rural areas and the source states that the Department provides postal facilities throughout the country."
+        },
+        {
+          "name": "India Post Postal Agent Scheme",
+          "opportunity_type": "Government postal agency opportunity",
+          "objective": "Provide public access to postal stamps and stationery, including philatelic items, through postal agents in urban and rural areas.",
+          "legal_basis": "The Memorandum of Agreement for the Franchise Scheme references the relevant provisions of the Indian Post Office Act, 1898; the Postal Agent section itself does not state a separate legal basis.",
+          "authority": {
+            "department": "Department of Posts, Government of India",
+            "ministry": "Ministry of Communications and Information Technology",
+            "selection_authority": "The concerned Divisional Head selects the postal agent on receipt of the application.",
+            "licensing_authority": "The concerned Divisional Head issues the Photo Identity Card and the Department of Posts grants the licence under the Scheme."
+          },
+          "eligibility": {
+            "applicants": "Individuals, institutions, organizations and other entities such as corner shops, paanwalas, kiranawalas, stationery shops and small shopkeepers in urban and rural areas.",
+            "age": "Above 18 years; no upper age limit.",
+            "education": "No prescribed educational qualification.",
+            "exclusions": [
+              "Members of the family of serving postal employees are not eligible to take up postal agency in the same Division in which the postal employee is working.",
+              "For this exclusion, family includes the spouse, except a separated spouse or one living separately while judicial separation proceedings are on; children and stepchildren, except where custody has been legally taken away from the serving postal employee; and other persons such as wards who are dependent on and normally live with the serving postal employee."
+            ]
+          },
+          "benefit_summary": "Right to sell postal stamps and stationery, including philatelic items, through an approved postal agency and receive the stated 5% commission.",
+          "benefits": [
+            {
+              "type": "permitted_service",
+              "details": "Sale of postal stamps and stationery, including philatelic items."
+            },
+            {
+              "type": "commission",
+              "details": "The source states that postal agents get 5% commission in connection with purchase and sale of stamps and stationery, including philatelic items."
+            },
+            {
+              "type": "operational_support",
+              "details": "The In-charge of the Link Post Office ensures availability of stamps and stationery when postal agents come to the post office for purchase. Approved signages are provided by the Postal Divisional Office or Link Sub-Post Office."
+            }
+          ],
+          "application": {
+            "form": "Application in prescribed proforma, Annex-III. Postal Circles are to ensure availability of the form in the concerned regional language or Hindi as required.",
+            "submission": "The duly filled Application Form and other documents are to be submitted to the Sr./Superintendent of Post Offices of the concerned Postal Divisional Office.",
+            "application_contents": [
+              "Applicant name, nationality and date of birth with proof.",
+              "Identification mark.",
+              "Department of Posts pensioner status, if applicable, with copy of PPO.",
+              "Present and permanent address.",
+              "Location and premises or shop from which business will be conducted.",
+              "Proposed timings and distance from the nearest Post Office.",
+              "Previous experience, if any, in retailing services."
+            ],
+            "stated_processing_points": [
+              "The concerned Divisional Head is to issue a Photo Identity Card based on the application within a week's time from receipt of the application.",
+              "The application form's office-use section states that authorization of the Postal Agent is to be completed within 7 days from the date of receipt of the application."
+            ]
+          },
+          "fine_print": [
+            "Only counter services for postal stamps and stationery, including philatelic items, are franchised through Postal Agents.",
+            "Postal Agents must provide service across the counter for a minimum defined time schedule, with flexibility to work round the clock.",
+            "Postal Agents are not required to sign a Memorandum of Agreement with the Department and are not required to provide any security deposit for taking the agency.",
+            "Stamps and stationery are purchased from the Link Post Office by cash only, subject to the conditions stated in the source, and on production of the Photo Identity Card.",
+            "The source text around the cash-only and commission provision is fragmented; it states that postal agents purchase from their Link Post Office by cash only and get 5% commission.",
+            "A simple record of sales of stamps and stationery to postal agents is maintained separately for each agent by the Link Post Office.",
+            "The licence may be unilaterally terminated or cancelled by the Department of Posts on a valid ground or reason.",
+            "Disputes are to be resolved amicably through the concerned Head of the Postal Division or Circle; in exceptional cases, the dispute may be decided by the Member (Banking) or Secretary (Posts), whose decision is stated to bind the parties finally and conclusively."
+          ],
+          "requirements": {
+            "premises": "A proper premise, shop or outlet must be available, with adequate postal stamps and stationery made available at the franchise premises. The premises must be properly maintained and display approved signages.",
+            "identity": "The postal agent must use the Photo Identity Card issued by the concerned Divisional Head for the stated transactions.",
+            "security_deposit": "No security deposit is required.",
+            "memorandum": "No Memorandum of Agreement with the Department is required for Postal Agents.",
+            "operating_hours": "The agent must provide counter service for the minimum defined time schedule, with flexibility to work round the clock."
+          },
+          "steps": [
+            "Obtain the prescribed Annex-III application form from the concerned Postal Divisional Office or Postal Circle.",
+            "Submit the completed application and other documents to the Sr./Superintendent of Post Offices of the concerned Postal Divisional Office.",
+            "The concerned Divisional Head conducts selection on receipt of the application.",
+            "Obtain the Photo Identity Card; the source states issuance within a week from receipt of the application and states authorization within 7 days from receipt of the application.",
+            "Arrange the premises, approved signage and adequate postal stamps and stationery.",
+            "Purchase stamps and stationery from the Link Post Office on the stated cash-only basis and sell them through the approved outlet while maintaining the required operating schedule."
+          ],
+          "sources": [
+            {
+              "url": "https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+              "anchor": "Sections 3.1-3.3, Basic features of the Postal Agents Scheme"
+            },
+            {
+              "url": "https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+              "anchor": "Section 3.4, Criteria for Selection of Postal Agents, paragraphs (i)-(xii)"
+            },
+            {
+              "url": "https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+              "anchor": "Application cum Postal Agent Agreement Form, Part-A and Part-B; Department of Posts Acknowledgement"
+            },
+            {
+              "url": "https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+              "anchor": "Department of Posts Postal Agent Identity Card section"
+            }
+          ],
+          "effective_dates": [
+            {
+              "window_type": "fixed",
+              "opens_at": null,
+              "closes_at": null,
+              "window_label": "Initial Postal Agent licence term",
+              "window_evidence": "The Postal Agent licence is granted initially for one year from the date of issue of the licence by the Department of Posts."
+            },
+            {
+              "window_type": "fixed",
+              "opens_at": null,
+              "closes_at": null,
+              "window_label": "Subsequent Postal Agent licence terms",
+              "window_evidence": "Further continuance after completion of one year is for 3 years at each subsequent time, subject to satisfactory work and conduct."
+            }
+          ],
+          "geography": "Urban and rural areas in India."
+        }
+      ]
+    },
+    {
+      "slug": "india-post-postal-agent",
+      "sourceUrl": "https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+      "sourceSnapshotHash": "89538fb6d35304205a01fa6850883d807490cd05ce23320b9e736de0a54e0167",
+      "extractionModel": "gpt-5.6-luna",
+      "reasoningEffort": "high",
+      "extractedAt": "2026-09-07T12:11:12.112Z",
+      "payloadHash": "d9ce9b2d695a13a15a8a58ee43d683abacb7e63dd87c12a2e2d56b44be81dc60",
+      "status": "needs_review",
+      "publicationStatus": "blocked",
+      "validation": {
+        "exactSourceEvidence": true,
+        "humanReviewRequired": true
+      },
+      "records": [
+        {
+          "name": "Franchise Outlet Scheme",
+          "opportunity_type": "Government postal franchise opportunity",
+          "objective": "Provide increased access to postal services through counter-service franchise outlets in areas where there is demand for postal services but a post office cannot be opened.",
+          "legal_basis": "The Memorandum of Agreement recital refers to the relevant provisions of the Indian Post Office Act, 1898.",
+          "authority": "Department of Posts, Government of India; selection and licensing by the concerned Divisional Head, with applications submitted to the Sr./Superintendent of Post Offices of the concerned Postal Divisional Office.",
+          "eligibility": [
+            "Individuals, institutions, organizations and other entities, including corner shops, paanwalas, kiranawalas, stationery shops and small shopkeepers, in urban and rural areas and specified locations such as new urban townships, special economic zones, major highway projects, upcoming industrial centres, colleges, polytechnics, universities and professional colleges.",
+            "Members of the family of serving postal employees are not eligible in the same Division in which the postal employee works. The stated family members include the spouse, children and stepchildren subject to the stated custody and separation exclusions, and dependent wards who normally live with the employee.",
+            "Age: Above 18 years; no upper age limit. The application form separately states that the applicant should be 18 years or above on the date of application.",
+            "Educational qualification: 8th class pass from a recognized school.",
+            "Preference is given to postal pensioners and applicants able to provide computer facilities."
+          ],
+          "benefit_summary": "Right to operate a selected counter-service postal franchise outlet and earn commissions or remuneration for specified postal, retail and related services, subject to the scheme, agreement and Department of Posts requirements.",
+          "benefits": [
+            "Counter services may include sale of stamps and stationery, including philatelic items; booking registered and Speed Post articles and parcels; money orders under the EDBO model; e-post; direct-agent and related after-sales services for PLI subject to PLI-agent criteria; marketing products covered by Department corporate agency or tie-up agreements; retail services including revenue stamps and CRF stamps; e-governance and citizen-centric services subject to agreements; and other future services considered suitable for the franchise model.",
+            "Delivery and transmission continue to be handled by the Department of Posts; linking arrangements for the franchised outlet are to be provided by the franchise.",
+            "Commission schedule stated in the source includes: Rs.3.00 per booking of registered articles; Rs.5.00 per booking of Speed Post articles; Rs.3.50 for money orders valued at Rs.100/- to Rs.200/-; Rs.5.00 for money orders above Rs.200/-; 20% additional commission for registered or Speed Post articles beyond 1000 articles total per month; 5% of sale amount for postage stamps and postal stationery, including philatelic items; and 40% of commission earned by DoP for retail services including revenue stamps and central recruitment fee stamps.",
+            "For monthly business from Speed Post Parcels and Registered Parcels, the schedule states: up to Rs 5,00,000/- — 10% and 7%, respectively; Rs 5,00,001/- to 25,00,000/- — 15% and 10%; Rs 25,00,001/- to 1,00,00,000/- — 20% and 13%; Rs 1,00,00,001/- to 5,00,00,000/- — 25% and 16%; above Rs 500,00,000/- — 30% and 20%."
+          ],
+          "application": {
+            "form": "Prescribed application proforma in Annex-I; the selected franchise signs a Memorandum of Agreement in Annex-II.",
+            "submission": "The completed application form and other documents are to be submitted to the Sr./Superintendent of Post Offices of the concerned Postal Divisional Office, identified as the competent authority for grant of the licence under the scheme.",
+            "processing": "The application form states that the franchise is to be authorized within 7 days from the date of receipt of the NSC.",
+            "application_window": "No opening date, closing date or application deadline is stated."
+          },
+          "fine_print": [
+            "A properly located, accessible and maintained premises with approved signage is required.",
+            "The applicant must be willing to make necessary investments and provide details of operation, opening hours, proposed investments, market conditions, marketing proposals, customer base, local-community role and one reference from a respectable person of the locality to establish character and antecedents.",
+            "A business plan is to be prepared using the anticipated minimum level of business or revenue worked out by the Divisional Head for the specific franchise.",
+            "Security must be provided in the form of an NSC. The minimum security deposit is Rs.5,000/-, based on the maximum possible level of daily financial transactions and subject to increase based on average daily revenue or later Department determination.",
+            "Continuation is reviewed 6 months after opening and the final decision on continuation is taken 6 months thereafter, one year after opening.",
+            "The initial agreement term is one year from acceptance by DOP; subsequent terms are 3 years, subject to satisfactory work and conduct and DOP's discretion to renew.",
+            "The franchise is not transferable, must operate on business days and within the minimum hours specified by DOP, must use Department tariffs, maintain records and permit inspections.",
+            "DOP may unilaterally terminate the agreement under the stated default, false-information, non-payment, confidentiality, marks and other grounds. Remediable service defaults generally have 48 hours after written notice, other remediable defaults generally have one week, and persistent defaults occurring more than thrice in any 12 consecutive months have no grace period.",
+            "The franchise bears stated taxes and insurance obligations and must provide linking arrangements, safeguard articles, documents and cash, and return Department materials and marks on termination."
+          ],
+          "requirements": [
+            "Appropriately located and accessible premises, properly maintained, with approved signage.",
+            "Necessary investment for conducting the business and proposed operating hours.",
+            "Business plan and information on anticipated business or revenue, market conditions, marketing and customer base.",
+            "One respectable local reference for character and antecedents.",
+            "Computer capability is preferred; the franchise must be able to transact postal business on computers.",
+            "NSC security deposit of at least Rs.5,000/- and any increased amount prescribed by DOP.",
+            "Compliance with the Indian Post Office Act, 1898, applicable rules, DOP requirements, tariffs, operating manuals and agreement terms."
+          ],
+          "steps": [
+            "Obtain and submit the prescribed Annex-I application and supporting documents to the concerned Postal Divisional Office.",
+            "Undergo selection by the competent Department of Posts authority based on the stated eligibility, premises, business plan and other criteria.",
+            "If selected, sign the Memorandum of Agreement in Annex-II and furnish the required NSC security.",
+            "Receive authorization after the stated form-processing step and complete induction training and operating requirements.",
+            "Operate the counter-service outlet, maintain the required records and premises, and undergo Department monitoring and review."
+          ],
+          "sources": [
+            {
+              "url": "https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+              "anchor": "Sections 1, 2.1-2.9, 2.6-2.7; Basic features of the Franchise Outlet Scheme; Criteria for Selection of Franchise Outlets; Remuneration to Franchisees"
+            },
+            {
+              "url": "https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+              "anchor": "Application cum Franchise Outlet Agreement Form, Part-A and Part-B; Department of Posts acknowledgement note"
+            },
+            {
+              "url": "https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+              "anchor": "Memorandum of Agreement, Clauses 2, 5, 8, 13 and 14; Schedule table of commissions"
+            }
+          ],
+          "effective_dates": [],
+          "geography": "Urban and rural areas in India, including locations identified in the scheme such as new urban townships, special economic zones, major highway projects, upcoming industrial centres and educational institutions."
+        },
+        {
+          "name": "Postal Agents Scheme",
+          "opportunity_type": "Government postal agency opportunity",
+          "objective": "Make postal stamps and stationery, including philatelic items, available to the public through postal agents in urban and rural areas.",
+          "legal_basis": null,
+          "authority": "Department of Posts, Government of India; selection by the concerned Divisional Head and licensing through the concerned Postal Divisional Office.",
+          "eligibility": [
+            "Individuals, institutions, organizations and other entities such as corner shops, paanwalas, kiranawalas, stationery shops and small shopkeepers in urban and rural areas.",
+            "Members of the family of serving postal employees are not eligible to take up a postal agency in the same Division in which the postal employee works. The stated family members include the spouse, children and stepchildren subject to the stated custody and separation exclusions, and dependent wards who normally live with the employee.",
+            "Age: Above 18 years; no upper age limit. The application form separately states that the applicant should be 18 years or above on the date of application.",
+            "No prescribed educational qualification."
+          ],
+          "benefit_summary": "Permission to sell postal stamps and stationery, including philatelic items, through an approved postal-agent premises and receive 5% commission on the sale amount.",
+          "benefits": [
+            "Postal agents may provide only counter services for the sale of postal stamps and stationery, including philatelic items.",
+            "The source states that postal agents receive 5% commission on the sale amount.",
+            "The Link Post Office is to ensure availability of stamps and stationery to postal agents when they visit to purchase stock."
+          ],
+          "application": {
+            "form": "Prescribed application proforma in Annex-III; the Postal Circles are to ensure availability of the form in the concerned regional language or Hindi as required.",
+            "submission": "The duly filled application form and other documents are to be submitted to the Sr./Superintendent of Post Offices of the concerned Postal Divisional Office, identified as the competent authority for grant of the licence under the scheme.",
+            "selection": "The concerned Divisional Head selects the postal agent on receipt of the application.",
+            "processing": "The selected postal agent is to be issued a Photo Identity Card by the concerned Divisional Head within a week from receipt of the application. The application form states authorization within 7 days from receipt of the application.",
+            "application_window": "No opening date, closing date or application deadline is stated."
+          },
+          "fine_print": [
+            "Postal agents are not required to sign a Memorandum of Agreement with the Department and are not required to provide any security deposit for taking the agency.",
+            "Postal agents purchase stamps and stationery from their Link Post Office by cash only, on production of the Photo Identity Card. The source text also states that this is subject to a minimum transaction condition, but does not state the amount or threshold in the supplied text.",
+            "The initial licence period is one year from the date of issue by DOP. Further continuance after one year is for 3 years at each subsequent time, subject to satisfactory work and conduct.",
+            "DOP has the right to unilaterally terminate or cancel the licence on valid ground or reason.",
+            "The premises must be properly maintained, have adequate postal stamps and stationery available, and display approved signage. Signage is provided by the Postal Divisional Office or Link Sub-Post Office.",
+            "For an individual, the Photo Identity Card is issued in the individual's name. For an organization, institution or shop, it is issued in the name of the head or nominated person.",
+            "The scheme only covers sale of postal stamps and stationery, including philatelic items; it does not state authorization for the broader counter services listed for franchise outlets."
+          ],
+          "requirements": [
+            "Proper premises, shop or outlet from which the agency will operate.",
+            "Adequate postal stamps and stationery to be made available at the premises.",
+            "Proper maintenance of the premises and display of approved signage.",
+            "Submission of the prescribed Annex-III application and other required documents.",
+            "Production of the Photo Identity Card when purchasing stamps and stationery from the Link Post Office.",
+            "Cash payment for purchases from the Link Post Office; the source states a minimum transaction condition without specifying its amount or threshold."
+          ],
+          "steps": [
+            "Obtain and submit the prescribed Annex-III application and other documents to the concerned Postal Divisional Office.",
+            "Await selection by the concerned Divisional Head.",
+            "After selection, receive the Photo Identity Card within a week from receipt of the application, as stated in Section 3.4.",
+            "Purchase stamps and stationery from the Link Post Office by cash against the Photo Identity Card and sell them from the approved premises.",
+            "Operate under the initial one-year licence and seek subsequent 3-year continuance subject to satisfactory work and conduct."
+          ],
+          "sources": [
+            {
+              "url": "https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+              "anchor": "Section 3, Basic features of the Postal Agents Scheme; Sections 3.1-3.3"
+            },
+            {
+              "url": "https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+              "anchor": "Section 3.4, Criteria for Selection of Postal Agents, paragraphs (i)-(xii), including eligibility, premises, no Memorandum of Agreement, no security deposit, stock purchase and licence terms"
+            },
+            {
+              "url": "https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+              "anchor": "Application cum Postal Agent Agreement Form, Part-A and Part-B; Department of Posts acknowledgement note"
+            },
+            {
+              "url": "https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+              "anchor": "Section 3.4, paragraph (viii), 5% commission on sale of stamps and stationery"
+            }
+          ],
+          "effective_dates": [],
+          "geography": "Urban and rural areas in India."
+        }
+      ]
+    },
+    {
+      "slug": "pradhan-mantri-matsya-kisan-samridhi-sah-yojana",
+      "sourceUrl": "https://www.dof.gov.in/static/uploads/2025/09/db9e0987df6461b69304fe4115aceec9.pdf",
+      "sourceSnapshotHash": "0de41bc3bc3f688332d15b2a6726a2ef3a3aacd0cb0938e7815cc5bd7e76c691",
+      "extractionModel": "gpt-5.6-luna",
+      "reasoningEffort": "high",
+      "extractedAt": "2026-09-07T12:16:42.061Z",
+      "payloadHash": "c68c87aa5715c8bf03d20ccd2ebab6b1bdc5315d05a94d214cd2ba76ba6bde1a",
+      "status": "needs_review",
+      "publicationStatus": "blocked",
+      "validation": {
+        "exactSourceEvidence": true,
+        "humanReviewRequired": true
+      },
+      "records": [
+        {
+          "name": "PM-MKSSY Component 1-A — NFDP formalisation and working-capital loan facilitation",
+          "opportunity_type": "Digital registration, institutional-credit facilitation and financial support",
+          "objective": "Gradually formalize the unorganized fisheries sector through work-based digital identities and facilitate greater access to institutional finance, including working capital, so fish farmers, fishers and micro and small enterprises can reduce their cost of capital and expand operations.",
+          "legal_basis": "Pradhan Mantri Matsya Kisan Samriddhi Sah-Yojana (PM-MKSSY), a Central Sector Sub-Scheme under the ongoing Pradhan Mantri Matsya Sampada Yojana (PMMSY), approved by the Government of India in February 2024.",
+          "authority": "Department of Fisheries, Ministry of Fisheries, Animal Husbandry and Dairying, Government of India; beneficiaries apply through the National Fisheries Digital Platform (NFDP).",
+          "eligibility": [
+            "Individuals and organizations involved in fisheries and aquaculture are mobilized to register on NFDP.",
+            "The registry covers fish producers and supporting actors such as fish workers, vendors and processors, including micro and small enterprises working in the sector.",
+            "Financial support is available for successful approval of a bankable loan proposal."
+          ],
+          "benefit_summary": "NFDP registration and related support can facilitate institutional credit and working-capital access. Financial support of up to ₹ 5,000 is available under this component for successful approval of a bankable loan proposal.",
+          "benefits": [
+            "Self-registration or assisted registration through Common Service Centres (CSCs).",
+            "Work-based digital identities with gender-disaggregated verification.",
+            "Credit facilitation, training and extension support, financial literacy, project preparation and documentation support.",
+            "Interfaces for digital payment and financial access, including interfaces with State/Union Territory platforms for social safety-net and benefit transfers.",
+            "Financial support upto ₹ 5,000 for successful approval of a bankable loan proposal."
+          ],
+          "application": {
+            "description": "Register on NFDP through self-registration or assisted registration through a CSC. Loan proponents can select a bank and branch and apply for a loan through the portal; requests are converted into leads shared with banks."
+          },
+          "fine_print": [
+            "The source does not state any loan amount, interest rate, collateral terms or guarantee of loan approval.",
+            "The source states that projects/proposals under the sub-scheme are supported after post verification and that no upfront subsidies will be given.",
+            "The ESMF states that prior infrastructure on project requirements will be excluded and that legal labour as permitted under Indian Labour Law is to be used.",
+            "The ESMF states that no project activities will be located in or around conservation areas or wetlands and refers to the negative list in Section 4.3.2 for excluded activities."
+          ],
+          "requirements": [
+            "NFDP registration, self-reporting and verification of gender-disaggregated work-based identity are part of the formalization process.",
+            "For the stated financial support, the bankable loan proposal must receive successful approval.",
+            "The component provides for training and extension support, financial literacy, project preparation and documentation."
+          ],
+          "steps": [
+            "Register on NFDP independently or through assisted registration at a CSC.",
+            "Complete self-reporting and verification of the work-based identity as required by the platform.",
+            "Select a bank and branch and submit the loan request through NFDP.",
+            "The request is shared with the selected bank as a lead for consideration.",
+            "After successful approval of a bankable loan proposal, financial support of up to ₹ 5,000 is available under the component."
+          ],
+          "sources": [
+            {
+              "url": "https://www.dof.gov.in/static/uploads/2025/09/db9e0987df6461b69304fe4115aceec9.pdf",
+              "anchor": "PDF page 4, section 1.2.1, “Component 1-A: Formalization of fisheries sector and facilitating access of fisheries microenterprises to Government of India programs for working capital financing”"
+            },
+            {
+              "url": "https://www.dof.gov.in/static/uploads/2025/09/db9e0987df6461b69304fe4115aceec9.pdf",
+              "anchor": "PDF page 3, section 1.1, “Objectives”"
+            },
+            {
+              "url": "https://www.dof.gov.in/static/uploads/2025/09/db9e0987df6461b69304fe4115aceec9.pdf",
+              "anchor": "PDF page 7, section 1.3, “Project Implementation Arrangement”"
+            }
+          ],
+          "effective_dates": {
+            "window_type": "fixed",
+            "opens_at": null,
+            "closes_at": null,
+            "window_label": "PM-MKSSY project period: 2023-24 to 2026-2027",
+            "window_evidence": "The Executive Summary states that PM-MKSSY was approved in February 2024 for four years, 2023-24 to 2026-2027."
+          },
+          "geography": {
+            "country": "India",
+            "scope": "national"
+          }
+        },
+        {
+          "name": "PM-MKSSY Component 1-A — Formalization and strengthening of 5,500 fisheries cooperatives as FFPOs",
+          "opportunity_type": "Cooperative formalization, capacity building and financial support",
+          "objective": "Formalize and strengthen fisheries cooperatives so that they operate as Fish Farmers Producer Organizations (FFPOs) and participate more effectively in fisheries production, productivity and value chains.",
+          "legal_basis": "Pradhan Mantri Matsya Kisan Samriddhi Sah-Yojana (PM-MKSSY), a Central Sector Sub-Scheme under the ongoing PMMSY, approved by the Government of India in February 2024.",
+          "authority": "Department of Fisheries, Ministry of Fisheries, Animal Husbandry and Dairying, Government of India.",
+          "eligibility": [
+            "Fisheries cooperatives are the stated target group.",
+            "The component provides for formalization and strengthening of 5,500 fisheries cooperatives to operate as FFPOs."
+          ],
+          "benefit_summary": "Up to 5,500 fisheries cooperatives can receive mentoring, capacity building and need based financial support for operation as FFPOs.",
+          "benefits": [
+            "Mentoring.",
+            "Capacity building.",
+            "Need based financial support.",
+            "Formalization and strengthening to operate as FFPOs."
+          ],
+          "application": null,
+          "fine_print": [
+            "The source does not state a separate application procedure, funding amount, selection criteria or deadline for this cooperative support.",
+            "The source states that projects/proposals under the sub-scheme are supported after post verification and that no upfront subsidies will be given.",
+            "The ESMF states that prior infrastructure on project requirements will be excluded and that legal labour as permitted under Indian Labour Law is to be used.",
+            "The ESMF states that no project activities will be located in or around conservation areas or wetlands and refers to the negative list in Section 4.3.2 for excluded activities."
+          ],
+          "requirements": null,
+          "steps": null,
+          "sources": [
+            {
+              "url": "https://www.dof.gov.in/static/uploads/2025/09/db9e0987df6461b69304fe4115aceec9.pdf",
+              "anchor": "PDF page 4, section 1.2.1, paragraph beginning “This component also includes provision of formalization and strengthening of 5,500 fisheries cooperatives”"
+            },
+            {
+              "url": "https://www.dof.gov.in/static/uploads/2025/09/db9e0987df6461b69304fe4115aceec9.pdf",
+              "anchor": "PDF page 3, section 1.1, “Objectives”"
+            }
+          ],
+          "effective_dates": {
+            "window_type": "fixed",
+            "opens_at": null,
+            "closes_at": null,
+            "window_label": "PM-MKSSY project period: 2023-24 to 2026-2027",
+            "window_evidence": "The Executive Summary states that PM-MKSSY was approved in February 2024 for four years, 2023-24 to 2026-2027."
+          },
+          "geography": {
+            "country": "India",
+            "scope": "national"
+          }
+        },
+        {
+          "name": "PM-MKSSY Component 1-B — One-time aquaculture insurance incentive",
+          "opportunity_type": "Aquaculture insurance premium incentive",
+          "objective": "Facilitate adoption of aquaculture insurance by fish farmers and support development of appropriate aquaculture insurance products in the market.",
+          "legal_basis": "Pradhan Mantri Matsya Kisan Samriddhi Sah-Yojana (PM-MKSSY), a Central Sector Sub-Scheme under the ongoing PMMSY, approved by the Government of India in February 2024.",
+          "authority": "Department of Fisheries, Ministry of Fisheries, Animal Husbandry and Dairying, Government of India; execution responsibility for Component 1-B is delegated to the National Fisheries Development Board (NFDB).",
+          "eligibility": [
+            "Fish farmers who purchase an aquaculture insurance product.",
+            "For farm aquaculture, the incentive is subject to a maximum of 4 Ha Water Spread Area (WSA) per farmer.",
+            "For more intensive forms of aquaculture other than farms, including cage culture, Recirculatory Aquaculture Systems (RAS), bio-floc and raceways, the maximum eligible unit size is 1800 m3.",
+            "SC, ST and Women beneficiaries are eligible for the stated additional incentive."
+          ],
+          "benefit_summary": "A one-time incentive for one crop cycle is available after purchase of aquaculture insurance: 40% of the premium, subject to ₹25,000 per hectare of WSA and a maximum of 4 Ha WSA per farmer for farm aquaculture; for specified intensive systems, 40% of premium up to ₹1 lakh, with a maximum eligible unit size of 1800 m3. SC, ST and Women beneficiaries receive an additional incentive @ 10% of the incentive payable for General Categories.",
+          "benefits": [
+            "One-time incentive for one crop cycle on purchase of aquaculture insurance.",
+            "For aquaculture farms: 40% of the cost of premium subject to a limit of ₹25,000 per hectare of WSA and a maximum of 4 Ha WSA per farmer.",
+            "The provision covers approximately 1 lakh Ha WSA.",
+            "For cage culture, RAS, bio-floc, raceways and other stated intensive forms of aquaculture other than farms: 40% of premium, with a maximum incentive of ₹1 lakh and maximum eligible unit size of 1800 m3.",
+            "SC, ST and Women beneficiaries receive an additional incentive @ 10% of the incentive payable for General Categories."
+          ],
+          "application": {
+            "description": "First purchase the aquaculture insurance product online or offline. If purchased offline, upload the documents on NFDP. After completion of the process, the beneficiary receives the one-time incentive against the purchase of aquaculture insurance."
+          },
+          "fine_print": [
+            "The beneficiary must purchase the aquaculture insurance product before availing the incentive.",
+            "The farm-aquaculture incentive is subject to ₹25,000 per hectare of WSA and a maximum of 4 Ha WSA per farmer.",
+            "For intensive aquaculture systems other than farms, the maximum incentive is ₹1 lakh and the maximum eligible unit size is 1800 m3.",
+            "The source states that purchasing insurance requires commitments to meet the product requirements, including adopting better management practices while considering social and environmental aspects and creation and maintenance of jobs with special focus on jobs for women.",
+            "The ESMF states that no project activities will be located in or around conservation areas or wetlands and refers to the negative list in Section 4.3.2 for excluded activities."
+          ],
+          "requirements": [
+            "Purchase an eligible aquaculture insurance product.",
+            "Upload documents on NFDP where the insurance was purchased offline.",
+            "Meet the insurance product requirements, including the stated better-management-practice commitments."
+          ],
+          "steps": [
+            "Select and purchase an aquaculture insurance product online or offline.",
+            "If purchased offline, upload the required documents on NFDP.",
+            "Complete the process specified for the insurance purchase and incentive claim.",
+            "Receive the one-time incentive after completion of the process."
+          ],
+          "sources": [
+            {
+              "url": "https://www.dof.gov.in/static/uploads/2025/09/db9e0987df6461b69304fe4115aceec9.pdf",
+              "anchor": "PDF page 5, section 1.2.2, “Component 1-B: Facilitating adoption of aquaculture insurance”"
+            },
+            {
+              "url": "https://www.dof.gov.in/static/uploads/2025/09/db9e0987df6461b69304fe4115aceec9.pdf",
+              "anchor": "PDF page 7, section 1.3, paragraph stating that DoF delegated execution responsibilities for Sub-component 1-B to NFDB"
+            }
+          ],
+          "effective_dates": {
+            "window_type": "fixed",
+            "opens_at": null,
+            "closes_at": null,
+            "window_label": "PM-MKSSY project period: 2023-24 to 2026-2027",
+            "window_evidence": "The Executive Summary states that PM-MKSSY was approved in February 2024 for four years, 2023-24 to 2026-2027."
+          },
+          "geography": {
+            "country": "India",
+            "scope": "national"
+          }
+        },
+        {
+          "name": "PM-MKSSY Component 2 — Performance grants for fisheries-sector microenterprises to improve value-chain efficiency",
+          "opportunity_type": "Post-investment performance grant",
+          "objective": "Support fisheries-sector microenterprises in protecting profit margins by enhancing productivity and reducing inefficiencies and fragmentation in fisheries value chains.",
+          "legal_basis": "Pradhan Mantri Matsya Kisan Samriddhi Sah-Yojana (PM-MKSSY), a Central Sector Sub-Scheme under the ongoing PMMSY, approved by the Government of India in February 2024.",
+          "authority": "Department of Fisheries, Ministry of Fisheries, Animal Husbandry and Dairying, Government of India.",
+          "eligibility": [
+            "Fisheries-sector microenterprises.",
+            "The source does not state a grant amount, percentage, minimum investment or additional eligibility threshold."
+          ],
+          "benefit_summary": "Eligible fisheries-sector microenterprises can make the necessary investment first and then claim a performance grant under the sub-scheme guidelines after verification and monitoring.",
+          "benefits": [
+            "Support for enhanced productivity and reduced inefficiencies and fragmentation.",
+            "Performance grants evaluated based on environmental best practices, supporting carbon credits, reduction in greenhouse-gas emissions and increased energy efficiency.",
+            "Support for improved energy efficiency, use of renewables, enhanced climate resilience, improved hygiene and waste/pollution management.",
+            "Outreach promoting good construction practices and access to benefits by socially excluded groups."
+          ],
+          "application": {
+            "description": "The applicant or proponent must make the necessary investment first and then claim the performance grant according to the sub-scheme guidelines, following the process and verification-cum-monitoring."
+          },
+          "fine_print": [
+            "No upfront subsidies will be given; the source states that projects/proposals are supported after post verification.",
+            "Approval and payment occur after the prescribed process and verification-cum-monitoring.",
+            "The provisions of the ESMF apply to the project.",
+            "The ESMF states that prior infrastructure on project requirements will be excluded and that legal labour as permitted under Indian Labour Law is to be used.",
+            "No project activities will be located in or around conservation areas or wetlands; the negative list in Section 4.3.2 defines excluded activities.",
+            "The ESMF will guide applicants not to use hazardous substance at any point of operation."
+          ],
+          "requirements": [
+            "Make the necessary investment before claiming the performance grant.",
+            "Follow the sub-scheme guidelines and the verification-cum-monitoring process.",
+            "Performance-grant evaluation includes the stated environmental best practices, carbon-credit support, greenhouse-gas reduction and energy-efficiency considerations."
+          ],
+          "steps": [
+            "Make the necessary project investment.",
+            "Claim the performance grant under the sub-scheme guidelines.",
+            "Undergo the stated verification-cum-monitoring process.",
+            "After the project is approved following verification, payment is made accordingly."
+          ],
+          "sources": [
+            {
+              "url": "https://www.dof.gov.in/static/uploads/2025/09/db9e0987df6461b69304fe4115aceec9.pdf",
+              "anchor": "PDF page 5, section 1.2.3, “Component-2: Supporting Microenterprises to Improve Fisheries Sector Value Chains efficiencies”"
+            },
+            {
+              "url": "https://www.dof.gov.in/static/uploads/2025/09/db9e0987df6461b69304fe4115aceec9.pdf",
+              "anchor": "PDF page 4, section 1.1, paragraph stating that projects/proposals are supported after post verification and no upfront subsidies will be given"
+            },
+            {
+              "url": "https://www.dof.gov.in/static/uploads/2025/09/db9e0987df6461b69304fe4115aceec9.pdf",
+              "anchor": "PDF page 5, section 1.2.3, paragraph beginning “To avail the benefits of the sub scheme”"
+            }
+          ],
+          "effective_dates": {
+            "window_type": "fixed",
+            "opens_at": null,
+            "closes_at": null,
+            "window_label": "PM-MKSSY project period: 2023-24 to 2026-2027",
+            "window_evidence": "The Executive Summary states that PM-MKSSY was approved in February 2024 for four years, 2023-24 to 2026-2027."
+          },
+          "geography": {
+            "country": "India",
+            "scope": "national"
+          }
+        },
+        {
+          "name": "PM-MKSSY Component 3 — Performance grants for fish and fishery product safety and quality assurance",
+          "opportunity_type": "Post-investment performance grant",
+          "objective": "Support fisheries micro and small enterprises in adopting fish and fishery product safety and quality assurance systems, supplying safe fish products to domestic consumers and creating and maintaining jobs, especially for women.",
+          "legal_basis": "Pradhan Mantri Matsya Kisan Samriddhi Sah-Yojana (PM-MKSSY), a Central Sector Sub-Scheme under the ongoing PMMSY, approved by the Government of India in February 2024.",
+          "authority": "Department of Fisheries, Ministry of Fisheries, Animal Husbandry and Dairying, Government of India.",
+          "eligibility": [
+            "Fisheries Micro and Small Enterprises.",
+            "The component gives specific emphasis to women-owned enterprises.",
+            "The source does not state a grant amount, percentage, minimum investment or additional eligibility threshold."
+          ],
+          "benefit_summary": "Fisheries micro and small enterprises can receive a performance grant against investments made toward product safety and quality assurance systems, creation and maintenance of jobs, and related performance targets, subject to the stated process and verification.",
+          "benefits": [
+            "Performance grant against investments made toward adoption of product safety and quality assurance systems.",
+            "Support for supplying safe fish products to domestic consumers, including consumers in smaller cities with low supply of fish products.",
+            "Support for creation and maintenance of jobs, with special focus on jobs for women.",
+            "Support for an IT-enabled traceability and labelling system to track fish and fishery products throughout the supply chain.",
+            "Promotion of occupational health and safety and solid- and liquid-waste management."
+          ],
+          "application": {
+            "description": "The source states that the performance grant is against investments made toward adoption of product safety and quality assurance systems, but does not state a separate application portal or deadline for Component 3."
+          },
+          "fine_print": [
+            "No upfront subsidies will be given; the source states that projects/proposals are supported after post verification.",
+            "The component uses specific performance targets relevant to good environmental practices, supplying safe fish products, job creation, especially for women, and adoption of requisite quality assurance systems.",
+            "The ESMF applies to handling of instruments and equipment, hazardous substances and pollution-related issues.",
+            "The ESMF states that prior infrastructure on project requirements will be excluded and that legal labour as permitted under Indian Labour Law is to be used.",
+            "No project activities will be located in or around conservation areas or wetlands; the negative list in Section 4.3.2 defines excluded activities.",
+            "The source states that beneficiaries of performance grants need to establish a separate washroom and changing-cum-feeding room for women."
+          ],
+          "requirements": [
+            "Make investments toward adoption of product safety and quality assurance systems before claiming the performance grant.",
+            "Meet the relevant performance targets for good environmental practices, supplying safe fish products, job creation and adoption of requisite quality assurance systems.",
+            "Apply the stated occupational-health-and-safety and waste-management practices.",
+            "Establish a separate washroom and changing-cum-feeding room for women, as stated for performance-grant beneficiaries."
+          ],
+          "steps": [
+            "Make the investment in the relevant safety and quality assurance systems and associated eligible activities.",
+            "Implement the relevant performance targets and practices.",
+            "Follow the sub-scheme process and undergo verification and monitoring.",
+            "After post verification and approval, receive payment of the performance grant."
+          ],
+          "sources": [
+            {
+              "url": "https://www.dof.gov.in/static/uploads/2025/09/db9e0987df6461b69304fe4115aceec9.pdf",
+              "anchor": "PDF page 6, section 1.2.4, “Component 3: Adoption and expansion of fish and fishery product safety and quality assurance systems”"
+            },
+            {
+              "url": "https://www.dof.gov.in/static/uploads/2025/09/db9e0987df6461b69304fe4115aceec9.pdf",
+              "anchor": "PDF page 6, section 1.2.4, paragraph beginning “Under this component, Fisheries Micro and Small Enterprises will be provided with performance grant”"
+            },
+            {
+              "url": "https://www.dof.gov.in/static/uploads/2025/09/db9e0987df6461b69304fe4115aceec9.pdf",
+              "anchor": "PDF page 5, section 4.2, paragraph beginning “The potential social benefits projects include”"
+            }
+          ],
+          "effective_dates": {
+            "window_type": "fixed",
+            "opens_at": null,
+            "closes_at": null,
+            "window_label": "PM-MKSSY project period: 2023-24 to 2026-2027",
+            "window_evidence": "The Executive Summary states that PM-MKSSY was approved in February 2024 for four years, 2023-24 to 2026-2027."
+          },
+          "geography": {
+            "country": "India",
+            "scope": "national"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "pradhan-mantri-mudra-yojana",
+      "sourceUrl": "https://financialservices.gov.in/pradhan-mantri-mudra-yojana-pmmy",
+      "sourceSnapshotHash": "d35abc7be8b27b29f8da451ad73fb760e5db51e2870583a4c51235d4bb951dd7",
+      "extractionModel": "gpt-5.6-luna",
+      "reasoningEffort": "high",
+      "extractedAt": "2026-09-07T12:16:56.907Z",
+      "payloadHash": "70a171ee14094f22a8068dc93a9588fcfd7235f8de6168147362a352641594c4",
+      "status": "needs_review",
+      "publicationStatus": "blocked",
+      "validation": {
+        "exactSourceEvidence": true,
+        "humanReviewRequired": true
+      },
+      "records": [
+        {
+          "name": "Pradhan Mantri MUDRA Yojana (PMMY)",
+          "opportunity_type": "Government credit scheme",
+          "objective": "Providing access to institutional collateral free credit to micro enterprises.",
+          "legal_basis": null,
+          "authority": null,
+          "eligibility": "The source states that PMMY covers micro enterprises and non-agricultural purposes, including activities allied to agriculture such as poultry, dairy, and beekeeping. Tarun Plus is for entrepreneurs who have availed and successfully repaid previous loans under the Tarun Category w.e.f. 24.10.2024.",
+          "benefit_summary": "Institutional collateral-free credit for eligible non-agricultural micro-enterprise activities, including term loan and working capital requirements, through listed Member Lending Institutions.",
+          "benefits": [
+            {
+              "type": "credit_access",
+              "description": "Access to institutional collateral free credit."
+            },
+            {
+              "type": "loan_purpose",
+              "description": "Term loan and working capital requirements can both be met."
+            },
+            {
+              "type": "loan_category",
+              "category": "Shishu",
+              "amount": "upto Rs.50,000"
+            },
+            {
+              "type": "loan_category",
+              "category": "Kishore",
+              "amount": "Above Rs.50,000 and upto Rs.5 lakh"
+            },
+            {
+              "type": "loan_category",
+              "category": "Tarun",
+              "amount": "Above Rs.5 lakh and upto Rs.10 lakh"
+            },
+            {
+              "type": "loan_category",
+              "category": "Tarun Plus",
+              "amount": "Above Rs.10 lakh and upto Rs.20 lakh",
+              "condition": "For those entrepreneurs who have availed and successfully repaid previous loans under the ‘Tarun’ Category w.e.f. 24.10.2024."
+            },
+            {
+              "type": "collateral",
+              "description": "Collateral not required."
+            }
+          ],
+          "application": {
+            "description": "The source identifies Public Sector Banks (PSBs), Private Sector Banks, Foreign Banks, Regional Rural Banks, Small Finance Banks, Non-Banking Financial Companies (NBFCs), Micro Finance Institutions (MFIs), and NBFC-MFIs as Member Lending Institutions (MLIs). It also provides a “View Website” link to https://www.mudra.org.in/. No application procedure is stated."
+          },
+          "fine_print": [
+            "Purposes are non-agricultural, including activities allied to agriculture such as poultry, dairy, beekeeping etc.",
+            "Tarun Plus is limited to entrepreneurs who have availed and successfully repaid previous loans under the ‘Tarun’ Category w.e.f. 24.10.2024.",
+            "Progress under MUDRA is reported as on 28.02.2025 since launch: Total accounts sanctioned: 52.07 crore; Total Sanctioned Amount: Rs. 33.19 lakh crore; Total Disbursed Amount: Rs. 32.40 lakh crore."
+          ],
+          "requirements": [
+            "The source states that the activity purpose must be non-agricultural, including activities allied to agriculture such as poultry, dairy, or beekeeping.",
+            "For Tarun Plus, the entrepreneur must have availed and successfully repaid previous loans under the ‘Tarun’ Category w.e.f. 24.10.2024."
+          ],
+          "steps": [
+            "Approach a listed Member Lending Institution (MLI).",
+            "The source provides a “View Website” link to https://www.mudra.org.in/.",
+            "No further application steps are stated in the source."
+          ],
+          "sources": [
+            {
+              "url": "https://financialservices.gov.in/pradhan-mantri-mudra-yojana-pmmy",
+              "locator": "Page heading: Pradhan Mantri MUDRA Yojana (PMMY); introductory paragraph stating launch on 08.04.2015 and objective of providing institutional collateral free credit to micro enterprises.",
+              "anchor": "Page heading: Pradhan Mantri MUDRA Yojana (PMMY); introductory paragraph stating launch on 08.04.2015 and objective of providing institutional collateral free credit to micro enterprises."
+            },
+            {
+              "url": "https://financialservices.gov.in/pradhan-mantri-mudra-yojana-pmmy",
+              "locator": "Features section — purposes, categories, Member Lending Institutions (MLIs), and collateral not required.",
+              "anchor": "Features section — purposes, categories, Member Lending Institutions (MLIs), and collateral not required."
+            },
+            {
+              "url": "https://financialservices.gov.in/pradhan-mantri-mudra-yojana-pmmy",
+              "locator": "Progress under MUDRA section — figures stated as on 28.02.2025 since launch of scheme.",
+              "anchor": "Progress under MUDRA section — figures stated as on 28.02.2025 since launch of scheme."
+            }
+          ],
+          "effective_dates": [
+            {
+              "window_type": "fixed",
+              "opens_at": "08.04.2015",
+              "closes_at": null,
+              "window_label": "Scheme launch",
+              "window_evidence": "The source states: “Pradhan Mantri MUDRA Yojana (PMMY) was launched on 08.04.2015.”"
+            },
+            {
+              "window_type": "fixed",
+              "opens_at": "24.10.2024",
+              "closes_at": null,
+              "window_label": "Tarun Plus effective date",
+              "window_evidence": "The source states that Tarun Plus applies to qualifying entrepreneurs w.e.f. 24.10.2024."
+            }
+          ],
+          "geography": null
+        }
+      ]
+    },
+    {
+      "slug": "remission-of-duties-and-taxes-on-exported-products-rodtep",
+      "sourceUrl": "https://www.commerce.gov.in/ministryofcommerce/node/856",
+      "sourceSnapshotHash": "9790ad4be1d1b4868d0d5cd979dc25ad015a51670f41e4e722befbddae86a780",
+      "extractionModel": "gpt-5.6-luna",
+      "reasoningEffort": "high",
+      "extractedAt": "2026-09-07T12:12:28.401Z",
+      "payloadHash": "ef882be58a27fbd490cc7e834b489d5918da2e4f4f667cd327775e00344425ca",
+      "status": "needs_review",
+      "publicationStatus": "blocked",
+      "validation": {
+        "exactSourceEvidence": true,
+        "humanReviewRequired": true
+      },
+      "records": [
+        {
+          "name": "Remission of Duties and Taxes on Exported Products (RoDTEP) Scheme",
+          "opportunity_type": "Export incentive and remission scheme",
+          "objective": "To refund currently un-refunded duties, taxes and levies at the Central, State and local level borne on exported products, including prior-stage cumulative indirect taxes on goods and services used in production and indirect duties, taxes and levies related to distribution of exported products; the scheme is intended to boost Indian exports and competitiveness.",
+          "legal_basis": "RoDTEP Scheme Guidelines and Rates notified by the Centre. The source links Notification No. 19 (English) as the RoDTEP Notification.",
+          "authority": [
+            "Centre, which notified the RoDTEP Scheme Guidelines and Rates",
+            "Customs, through which the scheme is implemented",
+            "Central Board of Indirect Taxes & Customs (CBIC), which maintains the electronic ledger for e-scrips"
+          ],
+          "eligibility": "The source states that RoDTEP support is available to eligible exporters. It does not provide further eligibility criteria.",
+          "benefit_summary": "Eligible exporters receive RoDTEP support at a notified rate as a percentage of Freight On Board (FOB) value, with rebate for certain products subject to a value cap per unit, issued as a transferable duty credit or electronic scrip.",
+          "benefits": [
+            "Remission of currently un-refunded duties, taxes and levies borne on exported products, including specified prior-stage and distribution-related indirect duties, taxes and levies.",
+            "Support at a notified rate expressed as a percentage of FOB value.",
+            "For certain export products, rebate subject to a value cap per unit of the exported product.",
+            "Transferable duty credit or electronic scrip maintained in an electronic ledger by CBIC.",
+            "Rates cover 8,555 tariff lines."
+          ],
+          "application": {
+            "channel": "Customs simplified IT System",
+            "mechanism": "The source states that the scheme is implemented by Customs through a simplified IT System. The rebate is issued as a transferable duty credit or electronic scrip maintained in an electronic ledger by CBIC.",
+            "application_deadline": null,
+            "application_process_stated": false
+          },
+          "fine_print": [
+            "Rebate is not available for duties and taxes that have already been exempted, remitted or credited.",
+            "Rebate on certain export products is subject to a value cap per unit of the exported product.",
+            "The source does not state the notified rate for any particular product or tariff line.",
+            "The source does not state an application deadline or detailed filing procedure.",
+            "Apparel and made-ups exports also receive similar support under the RoSCTL scheme of the Ministry of Textiles."
+          ],
+          "requirements": [
+            "The exporter must be an eligible exporter; the source does not define this term further.",
+            "The exported product must fall within the covered notified tariff lines or otherwise be a product for which RoDTEP support is available.",
+            "Applicable value caps and the exclusion for duties and taxes already exempted, remitted or credited must be observed."
+          ],
+          "steps": [],
+          "sources": [
+            {
+              "url": "https://www.commerce.gov.in/ministryofcommerce/node/856",
+              "anchor": "Heading “Centre Notifies RoDTEP Scheme Guidelines and Rates”; paragraphs beginning “RoDTEP support will be available to eligible exporters at a notified rate...” and “Scheme is to be implemented by Customs through a simplified IT System...”"
+            }
+          ],
+          "effective_dates": {
+            "window_type": "fixed",
+            "opens_at": "2021-08-17",
+            "closes_at": null,
+            "window_label": "RoDTEP Scheme Guidelines and Rates notification date",
+            "window_evidence": "The source states: “New Delhi: 17th August 2021” and “Centre has today notified RoDTEP Scheme Guidelines and Rates.” The source also lists the press release date as 2021-08-18, but does not state an application window or closing date."
+          },
+          "geography": "Indian exports; the source identifies coverage for sectors including Marine, Agriculture, Leather, Gems & Jewellery, Automobile, Plastics, Electrical / Electronics, Machinery and the textile value chain."
+        }
+      ]
+    },
+    {
+      "slug": "smdi-capacity-building-skill-development-medical-devices",
+      "sourceUrl": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+      "sourceSnapshotHash": "684539bb2eecda6a30d8c7aa84703bc315591a48ae881175f2c22f38bbfb7eb8",
+      "extractionModel": "gpt-5.6-luna",
+      "reasoningEffort": "high",
+      "extractedAt": "2026-09-07T12:12:54.718Z",
+      "payloadHash": "f1897e4d3cd7392b5a771637631a6923e2b481e0decfe1693db7fb9ba3ea9e9b",
+      "status": "needs_review",
+      "publicationStatus": "blocked",
+      "validation": {
+        "exactSourceEvidence": true,
+        "humanReviewRequired": true
+      },
+      "records": [
+        {
+          "name": "Capacity Building and Skill Development in Medical Device Sector",
+          "opportunity_type": "Central Sector Scheme component",
+          "objective": "To fill the gap existing in education and research in the medical devices sector; ensure quality teaching, training and nurturing excellence in Medical Technology education; generate a critical mass of trained human resources for rapidly innovating multidisciplinary areas of Medical Technology; and create an R&D ecosystem for the sector.",
+          "legal_basis": "Operational Guidelines for the Scheme “Strengthening of Medical Device Industry”, Department of Pharmaceuticals, Ministry of Chemicals and Fertilizers, Government of India, dated 08 November 2024; Central Sector Scheme under the Department of Pharmaceuticals.",
+          "authority": "Department of Pharmaceuticals, Ministry of Chemicals and Fertilizers, Government of India. Proposals under the scheme are considered for approval by the Scheme Steering Committee, and the Project Management Agency receives and appraises applications, verifies eligibility and examines disbursement claims.",
+          "eligibility": null,
+          "benefit_summary": "The component has an outlay of Rs. 100 crore for 2024-2025 to 2026-2027 and is intended to strengthen education, training, research and human-resource development in the medical devices sector.",
+          "benefits": [
+            {
+              "type": "intended_outcome",
+              "description": "Filling gaps in education and research in the medical devices sector."
+            },
+            {
+              "type": "intended_outcome",
+              "description": "Quality teaching, training and nurturing excellence in Medical Technology education."
+            },
+            {
+              "type": "intended_outcome",
+              "description": "Generation of a critical mass of trained human resources for multidisciplinary areas of Medical Technology."
+            },
+            {
+              "type": "intended_outcome",
+              "description": "Creation of an R&D ecosystem for the medical devices sector."
+            },
+            {
+              "type": "component_outlay",
+              "amount": "Rs. 100 crore",
+              "period": "2024-2025 to 2026-2027"
+            }
+          ],
+          "application": {
+            "description": "Applications are to be submitted to the Project Management Agency in the prescribed application form with requisite information, supporting documents and an application fee. The application window is opened based on a notice issued by the Department from time to time. The PMA invites project proposals through newspaper or website notices and sets a cut-off date for receiving applications."
+          },
+          "fine_print": [
+            "The supplied source content does not state the eligible institution categories or specific provisions for Masters, diploma or short-term courses under this component.",
+            "The supplied source content does not state a per-applicant assistance amount, funding percentage, application-fee amount or component-specific deadline.",
+            "The PMA is to be selected through open tender or nomination basis, and the Scheme Steering Committee evaluates and approves proposals."
+          ],
+          "requirements": [
+            "Submission of the prescribed application form.",
+            "Supporting documents required with the application.",
+            "Payment of the application fee; the amount is not stated in the supplied source."
+          ],
+          "steps": [
+            "Monitor Departmental notices and PMA invitations for the application window and cut-off date.",
+            "Prepare and submit the project proposal/application to the PMA in the prescribed format with supporting documents and application fee.",
+            "Undergo PMA preliminary examination, appraisal and eligibility verification.",
+            "The PMA places its evaluation report and recommendations before the Scheme Steering Committee.",
+            "The Scheme Steering Committee considers proposals for approval."
+          ],
+          "sources": [
+            {
+              "url": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+              "anchor": "Chapter I, section 1.3, Objective (III): Capacity Building and Skill Development in Medical Device Sector"
+            },
+            {
+              "url": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+              "anchor": "Chapter I, section 1.4, Financial Outlay; component table listing Capacity Building and Skill Development for Medical Devices with an outlay of Rs. 100 crore for 2024-2025 to 2026-2027"
+            },
+            {
+              "url": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+              "anchor": "Chapter I, section 1.2, definitions (iv) Application and (v) Application Window"
+            },
+            {
+              "url": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+              "anchor": "Chapter I, section 1.8, Project Management Agency, paragraphs 1.8.1 and 1.8.2"
+            },
+            {
+              "url": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+              "anchor": "Chapter IV, Capacity Building and Skill Development in Medical Device Sector, as listed in the contents"
+            }
+          ],
+          "effective_dates": [
+            {
+              "window_type": "fixed",
+              "opens_at": "2024-04-01",
+              "closes_at": "2027-03-31",
+              "window_label": "Performance years FY 2024-25 to FY 2026-27",
+              "window_evidence": "The scheme tenure and performance period are stated as FY 2024-25 to FY 2026-27. The guidelines define a Financial Year as beginning on 1 April and ending on 31 March of the following year."
+            },
+            {
+              "window_type": "call_for_applications",
+              "opens_at": null,
+              "closes_at": null,
+              "window_label": "Application window notified by the Department from time to time",
+              "window_evidence": "The guidelines state that the application window shall be opened based on notice issued by the Department from time to time, and that the PMA will set a cut-off date for receiving applications."
+            }
+          ],
+          "geography": "India"
+        }
+      ]
+    },
+    {
+      "slug": "smdi-common-facilities-medical-device-clusters",
+      "sourceUrl": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+      "sourceSnapshotHash": "f26a00434c9dc86faa7dd324fa7fdd78668a9fba3bba78584c1f86aabe64447a",
+      "extractionModel": "gpt-5.6-luna",
+      "reasoningEffort": "high",
+      "extractedAt": "2026-09-07T12:13:26.977Z",
+      "payloadHash": "ebc59bd087d7d48b97ce364ed9a3aad07e4d0856e53da9ed9a161177e0510ca9",
+      "status": "needs_review",
+      "publicationStatus": "blocked",
+      "validation": {
+        "exactSourceEvidence": true,
+        "humanReviewRequired": true
+      },
+      "records": [
+        {
+          "name": "Assistance for Common Facilities for Medical Device Clusters",
+          "opportunity_type": "Grant-in-aid / financial assistance",
+          "objective": "To strengthen the Medical Device clusters’ capacity for their sustained growth by creating “Common Infrastructure Facilities”.",
+          "legal_basis": "Operational Guidelines for the Scheme “Strengthening of Medical Device Industry”, a Central Sector Scheme under the Department of Pharmaceuticals, dated 08th November, 2024; Chapter II, Assistance for Common Facilities.",
+          "authority": {
+            "department": "Department of Pharmaceuticals",
+            "ministry": "Ministry of Chemicals and Fertilizers",
+            "government": "Government of India",
+            "approval_authority": "Scheme Steering Committee (SSC)"
+          },
+          "eligibility": {
+            "intended_beneficiaries": [
+              "Medical Devices manufacturing units in a cluster that have come together to form a Special Purpose Vehicle (SPV) to execute the project of developing common facility; there shall be a minimum of 5 Medical Device manufacturing units as members of the SPV.",
+              "Medical Devices clusters promoted by State Governments through a Project Implementing Agency that is a legal entity under Indian law with the foresight of the State Governments. Such a cluster may be exempted from formation of an SPV and will be deemed to be an SPV for this Scheme, provided separate accounts are maintained for project funds and an Executive Committee is set up for project implementation."
+            ],
+            "spv_criteria": [
+              "The SPV or Executive Committee must have representatives from cluster members, financial institutions, State and Central Government, and an R&D organization.",
+              "An individual manufacturing unit cannot hold more than 50% in the SPV.",
+              "Medical Devices enterprises must hold at least 51% equity of the SPV.",
+              "The combined net worth of SPV members must be equivalent to the total grant amount applied for, and each SPV member must have a net worth of at least 1.5 times its proposed equity contribution.",
+              "SPV members must be legally independent entities without any related-party relationship with each other as described under Accounting Standard (AS) 18 of the Companies (Accounting Standard) Rules, 2006."
+            ]
+          },
+          "benefit_summary": "Grant-in-aid for setting up Common Facilitation Centres in Medical Devices clusters: Rs. 20 Crore or 70% of the total cost of purchase of equipment and machinery, for Central / State Government funded entities (50% in respect of private entities), whichever is less.",
+          "benefits": {
+            "grant_in_aid": "Rs. 20 Crore or 70% of the total cost of purchase of equipment and machinery, for Central / State Government funded entities (50% in respect of private entities), whichever is less.",
+            "eligible_use": "Setting up Common Facilities in Medical Devices clusters.",
+            "physical_and_financial_outlay": {
+              "Year 1": {
+                "physical_target": "0 Common Facilities",
+                "financial_outlay": "Rs. 0 crore"
+              },
+              "Year 2": {
+                "physical_target": "1-5 Common Facilities",
+                "financial_outlay": "Rs. 40 crore"
+              },
+              "Year 3": {
+                "physical_target": "6-10 Common Facilities",
+                "financial_outlay": "Rs. 40 crore"
+              },
+              "Total": {
+                "physical_target": "5-10 Common Facilities",
+                "financial_outlay": "Rs. 80 crore",
+                "total_grant_in_aid_for_common_facilities_and_testing_labs": "Rs. 110 crore"
+              }
+            },
+            "expected_benefits": [
+              "Improvement in quality standards of medical devices.",
+              "Improvement in regulatory compliance specified for medical device.",
+              "Increased availability of trained personnel for Medical Devices clusters.",
+              "Increased competitiveness of Medical Devices units in the cluster.",
+              "Reduction in the manufacturing cost of Medical Devices."
+            ]
+          },
+          "application": {
+            "applicant_submission": "Applicants must submit a complete project proposal in the prescribed format to the Project Management Agency (PMA).",
+            "invitation_process": "The PMA will invite project proposals through newspaper / website and set a cut-off date for receiving applications.",
+            "application_window": "The application window is opened based on a notice issued by the Department from time to time.",
+            "application_recipient": "Project Management Agency (PMA)"
+          },
+          "fine_print": [
+            "Grant-in-Aid from the Department of Pharmaceuticals will not be utilized towards the land component of the project or construction of a rest house, administrative buildings or any other building that, in the opinion of the SSC, may be categorized as non-essential construction for the technical requirements of the project.",
+            "The minimum contribution is stated as: “Minimum of 30% or 50% of the approved project cost has to be contributed by the entity or SPV, as the case may be respectively” for the project.",
+            "There will be no duplication of funding for the same component/intervention. SPVs may dovetail funds from other sources, provided there is no duplication; resources raised through such dovetailing are in addition to the 50% contribution of the SPV.",
+            "Assistance for administrative and other management support of the SPV during project implementation must not exceed 5% of the Grant-in-aid.",
+            "The proportionate contribution by the SPV or beneficiaries’ share must be made upfront. Necessary infrastructure such as land, access road, water and power supply must be in place or substantial progress must have been made before Department assistance is released. Where bank finance is involved, written commitment of the bank to release proportionate funds is necessary.",
+            "Project cost escalation above the sanctioned amount will be borne by the SPV. The Central Government will not accept financial liability arising from operation of a Common Facility.",
+            "The Project Implementing Agency / SPV is responsible for obtaining all necessary statutory clearances in a timely manner.",
+            "Grants-in-Aid are not available to individual production units owned by a member of the SPV.",
+            "The Common Facility may be used by SPV members and other Medical Device units on a user-charges basis decided by the SPV. Average user charges must be lower than prevailing market prices, with reasonable preference for SPV members.",
+            "Projects must be completed in 2 years. The SSC may grant an extension of 1 year for delays due to reasons not within the control of the SPV.",
+            "In-principle approval is valid for 6 months from the date of approval and automatically lapses if final approval is not accorded within 6 months, unless specifically extended by the SSC.",
+            "Assets acquired from Government assistance may not be disposed of, encumbered, or used for purposes other than those for which funds were released. If the SPV is liquidated, the Government of India has the first right to recover grant funds; grant-funded assets and unutilized funds vest with the Central Government."
+          ],
+          "requirements": {
+            "project_proposal": [
+              "Technical recommendation from a competent technical body.",
+              "Business Plan including cluster-unit manufacturing processes, gap analysis, and proposed Common Facility operations covering technology, marketing, quality control, testing, purchase and outsourcing.",
+              "Final projections and financial viability report.",
+              "Identification of impediments and bottlenecks.",
+              "Action Plan for enhancing competitiveness of cluster units and placing the cluster on a self-sustaining trajectory of growth, with direct linkages between identified impediments/bottlenecks and recommended measures.",
+              "Implementation schedule containing activity-wise time schedule, payment milestones, expected commissioning date, delay and expected risk, and monitorable quantified targets for reporting outcomes."
+            ],
+            "technical_recommendation_examples": [
+              "For an ETP, the State Pollution Control Board may be the competent body.",
+              "For Research Labs and Testing Centres, NIPERs, IITs, CDL, Sree Chitra Tirunal Institute for Medical Sciences and Technology, NIITs, IISc, or Certified Medical Device Testing Laboratories notified by CDSCO (MD-40) may be competent authorities."
+            ],
+            "final_approval_conditions": [
+              "Establishment of a project-specific SPV.",
+              "Execution of a shareholders’ agreement and other related agreements between the SPV and its members.",
+              "Preparation of the Project Proposal by the SPV and its appraisal by the PMA.",
+              "Procurement of requisite land by the SPV.",
+              "Establishment of a project-specific account with Scheduled Commercial Banks by the SPV; the Department of Pharmaceuticals would credit funds into this account.",
+              "Tying up sources of funds for the balance amount."
+            ]
+          },
+          "steps": [
+            "PMA invites project proposals through newspaper / website and sets a cut-off date.",
+            "Applicant submits a complete project proposal in the prescribed format to the PMA.",
+            "PMA scrutinizes the proposal and submits its appraisal report with recommendations to the SSC within one month of the last day for receipt of applications for consideration of in-principle approval.",
+            "SSC grants in-principle approval to applicants submitting a complete project proposal with technical recommendation and having availability of land.",
+            "Applicant fulfills the conditions under the guidelines within 6 months of first-stage approval, with guidance from the PMA where applicable.",
+            "SSC grants final approval after the project-specific SPV, agreements, appraised proposal, requisite land, project-specific bank account, and balance funding sources are in place.",
+            "Project is implemented within 2 years from approval, subject to any SSC-approved 1-year extension for delays outside the SPV’s control.",
+            "Funds are released in four 25% instalments: first instalment upon raising and depositing at least 25% of the SPV contribution and signing the Indemnity Bond; second against bills, 75% utilization of the first instalment and proportionate SPV expenditure; third against bills, 100% utilization of the first instalment, 75% utilization of the second instalment and proportionate SPV expenditure; fourth after 100% utilization of the second and third instalments and mobilization and expenditure of the SPV’s 100% share in proportion to the first three grants.",
+            "SPV submits the prescribed Utilization Certificate generated through the PFMS portal, certified by a Chartered Accountant and countersigned by the Head of the SPV; expenditure details must be uploaded in the CNA module of PFMS before subsequent instalments are processed."
+          ],
+          "sources": [
+            {
+              "url": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+              "anchor": "Chapter II, Section 2.1.4, “Incentive under the scheme”"
+            },
+            {
+              "url": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+              "anchor": "Chapter II, Section 2.1.5, “Physical and Financial Outlay”"
+            },
+            {
+              "url": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+              "anchor": "Chapter II, Sections 2.1.2-2.1.3, “Intended Beneficiaries” and “Eligibility Criterion for SPV”"
+            },
+            {
+              "url": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+              "anchor": "Chapter II, Sections 2.1.6-2.1.11, “Modalities for utilization of incentive”, “Eligible Activities”, “Project Proposal and its components”, “Implementation Process & Timelines”, and “Schedule for release of Grant”"
+            }
+          ],
+          "effective_dates": [
+            {
+              "window_type": "annual",
+              "opens_at": null,
+              "closes_at": null,
+              "window_label": "Financial Year 2024-25 to Financial Year 2026-27",
+              "window_evidence": "The scheme tenure and performance year are stated as FY 2024-25 to FY 2026-27; the physical and financial outlay is specified for Year 1, Year 2 and Year 3."
+            },
+            {
+              "window_type": "call_for_applications",
+              "opens_at": null,
+              "closes_at": null,
+              "window_label": "As notified by the Department / PMA",
+              "window_evidence": "The application window is opened based on notice issued by the Department from time to time, and the PMA invites proposals through newspaper / website with a cut-off date."
+            }
+          ],
+          "geography": "India"
+        }
+      ]
+    },
+    {
+      "slug": "smdi-marginal-investment-reducing-import-dependence",
+      "sourceUrl": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+      "sourceSnapshotHash": "f26a00434c9dc86faa7dd324fa7fdd78668a9fba3bba78584c1f86aabe64447a",
+      "extractionModel": "gpt-5.6-luna",
+      "reasoningEffort": "high",
+      "extractedAt": "2026-09-07T12:13:48.895Z",
+      "payloadHash": "5acd02c00086c88f4bf33ccf076967a71805b1d36ba96d8dcf57660aedaedde3",
+      "status": "needs_review",
+      "publicationStatus": "blocked",
+      "validation": {
+        "exactSourceEvidence": true,
+        "humanReviewRequired": true
+      },
+      "records": [
+        {
+          "name": "Marginal Investment Scheme for Reducing Import Dependence",
+          "opportunity_type": "One-time capital subsidy / grant",
+          "objective": "To promote domestic production of key components, raw materials and accessories used in manufacturing of medical devices, including in-vitro diagnostic devices, in order to reduce dependence of Indian medical device manufacturers on imported key components and raw materials and increase the depth of domestic value chains.",
+          "legal_basis": "Operational Guidelines for the Scheme “Strengthening of Medical Device Industry”, a Central Sector Scheme under the Department of Pharmaceuticals, dated 08th November, 2024; Chapter III, Marginal Investment Scheme for Reducing Import Dependence.",
+          "authority": {
+            "department": "Department of Pharmaceuticals, Ministry of Chemicals and Fertilizers, Government of India",
+            "approval_authority": "Scheme Steering Committee (SSC)",
+            "implementation_and_appraisal": "Project Management Agency (PMA)",
+            "technical_appraisal": "Technical Committee"
+          },
+          "eligibility": [
+            "Central/State Government Organizations, Companies/LLPs registered in India, and Special Purpose Vehicles registered under the Companies Act or Societies Registration Act to manufacture key components, raw materials or accessories used in manufacturing finished medical devices, including in-vitro diagnostic medical devices.",
+            "Medical device or in-vitro diagnostic manufacturers having a manufacturing facility and/or intending to produce key components, input materials or accessories that may reduce import dependence and enhance the depth of domestic value chains.",
+            "Manufacturers of critical raw materials such as polymer, glass, metal, textile and paper, having a manufacturing facility and/or intending to manufacture medical-grade raw materials, components or accessories for use in medical-device or in-vitro-diagnostic applications.",
+            "Manufacturers or importers intending to manufacture any medical device or in-vitro diagnostic equipment that is on the GTE list and whose manufacture would lead to reduced import dependence."
+          ],
+          "benefit_summary": "One-time capital subsidy on reimbursement basis for eligible investment in manufacturing key components, raw materials, finished devices or accessories to reduce import dependence.",
+          "benefits": [
+            "For companies with turnover up to 250 crore: 20% of investment in the project or 10 crore, whichever is less.",
+            "For companies with turnover from 250 crore to 1,000 crore: 15% of investment in the project or 10 crore, whichever is less.",
+            "For companies with turnover above 1,000 crore: 10% of investment in the project or 10 crore, whichever is less.",
+            "Central/State Government Organizations: grant of 20% of investment in the eligible project or 10 crore, whichever is less.",
+            "The component has a total financial outlay of Rs. 180 crore and a physical target of 30 facilities: 15 facilities and Rs. 90 crore in Year 2, and 15 facilities and Rs. 90 crore in Year 3."
+          ],
+          "application": {
+            "channel": "Project Management Agency (PMA)",
+            "process": "The PMA will invite project proposals through newspaper/website and set a cut-off date for receiving applications. The PMA will handhold applicants to get applications registered for manufacturing eligible key components, raw materials or accessories used in manufacturing finished medical devices to reduce import dependence.",
+            "application_definition": "An application is submitted to the PMA in the prescribed application form with requisite information, supporting documents and application fee.",
+            "submission_deadline": "A cut-off date will be specified in the PMA invitation; the source does not state a specific date."
+          },
+          "fine_print": [
+            "The incentive is a one-time capital subsidy on reimbursement basis.",
+            "The total project cost may include land, building, internal infrastructure, machinery and equipment, miscellaneous fixed assets and related utilities such as water supply, electricity and steam.",
+            "Subsidy or grant from the Department of Pharmaceuticals will be computed strictly on the basis of fixed investment excluding land costs.",
+            "Escalation in project cost above the sanctioned amount, due to any reason, will be borne by the Central/State Government, Private Institution or Manufacturer, as applicable.",
+            "The Department shall not accept any financial liability arising from operation of the project.",
+            "The applicant is responsible for obtaining all necessary statutory clearances in a timely manner.",
+            "The indicative list of eligible key components, raw materials and accessories is in Annexure-II. The SSC may include additional items, revise the list from time to time, or approve additional items beyond the list if recommended by the Technical Committee after scrutiny of applications.",
+            "In-principle approval is valid for 6 months from the date of approval. If final approval is not accorded within 6 months, the in-principle approval automatically lapses unless specifically extended by the SSC."
+          ],
+          "requirements": [
+            "Project proposal details about the proposed manufacturing facility.",
+            "Benefit, objective, salient features and rationale explaining how the proposed key component, raw material or accessory will reduce import dependence.",
+            "Premises showing the location and area of the different sections.",
+            "List or segment of medical devices/in-vitro diagnostics for which the key components, raw materials or accessories are proposed to be manufactured.",
+            "Market size of the key components and other materials or accessories used in manufacturing finished medical devices.",
+            "PERT/CPM/Gantt Chart for completing the manufacturing facility.",
+            "Action Plan for obtaining statutory approvals for the manufacturing facilities.",
+            "Details of the expected increase in Domestic Value Addition in the finished medical device.",
+            "Operation and Maintenance plan of the project.",
+            "Action Plan for making the project self-sustaining.",
+            "Identified impediments/bottlenecks and recommended measures for improvement.",
+            "Implementation schedule containing activity-wise time schedule, milestones for payments, expected date of commissioning, delay and expected risk, and monitorable quantified targets for reporting outcomes."
+          ],
+          "steps": [
+            "PMA invites project proposals through newspaper/website and sets a cut-off date for receiving applications.",
+            "Applicants register their applications for manufacturing eligible key components, raw materials or accessories used in manufacturing finished medical devices to reduce import dependence, with assistance from the PMA.",
+            "PMA scrutinizes the proposals and submits its appraisal report with recommendations to the Technical Committee within one month for in-principle approval by the SSC.",
+            "The SSC may grant in-principle approval; such approval remains valid for 6 months from its approval date unless specifically extended by the SSC.",
+            "Final approval is to be accorded by the SSC subject to fulfillment of the applicable final-approval conditions under the guidelines."
+          ],
+          "sources": [
+            {
+              "url": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+              "anchor": "Chapter III, Sections 3.1–3.9, “Marginal Investment Scheme for Reducing Import Dependence Scheme” (PDF pp. 19–22)"
+            }
+          ],
+          "effective_dates": [
+            {
+              "window_type": "fixed",
+              "opens_at": null,
+              "closes_at": null,
+              "window_label": "Scheme performance period: FY 2024-25 to FY 2026-27",
+              "window_evidence": "The guidelines state that the tenure of the Scheme is 3 years from Financial Year 2024-25 to FY 2026-27; Section 3.5 specifies Year 2 and Year 3 outlays for this component."
+            },
+            {
+              "window_type": "call_for_applications",
+              "opens_at": null,
+              "closes_at": null,
+              "window_label": "Application windows announced by PMA",
+              "window_evidence": "Section 3.9 states that the PMA will invite project proposals through newspaper/website and set a cut-off date for receiving applications. No specific opening or closing date is stated."
+            }
+          ],
+          "geography": "India"
+        }
+      ]
+    },
+    {
+      "slug": "smdi-medical-device-clinical-studies-support",
+      "sourceUrl": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+      "sourceSnapshotHash": "f26a00434c9dc86faa7dd324fa7fdd78668a9fba3bba78584c1f86aabe64447a",
+      "extractionModel": "gpt-5.6-luna",
+      "reasoningEffort": "high",
+      "extractedAt": "2026-09-07T12:14:15.008Z",
+      "payloadHash": "5999055d1ab907541666fae069ac46428a847c227cd1087ba73ebf7b7e782fa3",
+      "status": "needs_review",
+      "publicationStatus": "blocked",
+      "validation": {
+        "exactSourceEvidence": true,
+        "humanReviewRequired": true
+      },
+      "records": [
+        {
+          "name": "Medical Device Clinical Studies Support Scheme",
+          "opportunity_type": "Government financial support scheme",
+          "objective": "To support Clinical Investigations or pre-clinical animal studies for medical devices and Clinical Performance Evaluation of new in-vitro diagnostic medical devices, promoting quality products with better efficacy and safety and enhancing the credibility of domestic manufacturers for access to markets outside India.",
+          "legal_basis": "Operational Guidelines for the Scheme “Strengthening of Medical Device Industry”, a Central Sector Scheme under the Department of Pharmaceuticals, Ministry of Chemicals and Fertilizers, Government of India, dated 08 November 2024.",
+          "authority": {
+            "implementing_department": "Department of Pharmaceuticals, Ministry of Chemicals and Fertilizers, Government of India",
+            "approval_authority": "Scheme Steering Committee (SSC)",
+            "implementation_and_application_agency": "Project Management Agency (PMA)"
+          },
+          "eligibility": {
+            "scheme_beneficiary_definition": "An entity chosen on an application approved by the Scheme Steering Committee to receive benefits of the Scheme.",
+            "component_specific_eligible_applicants": null,
+            "note": "The supplied source text does not state the component-specific eligible applicant categories for the Medical Device Clinical Studies Support Scheme."
+          },
+          "benefit_summary": "Support for Clinical Investigations or pre-clinical animal studies for medical devices and Clinical Performance Evaluation of new in-vitro diagnostic medical devices. The component has a financial outlay of Rs. 100 crore for FY 2024-25 to FY 2026-27.",
+          "benefits": [
+            "Support for conducting Clinical Investigations for medical devices.",
+            "Support for conducting pre-clinical animal studies for medical devices.",
+            "Support for conducting Clinical Performance Evaluation of new in-vitro diagnostic medical devices.",
+            "Promotion of quality products with better efficacy and safety.",
+            "Enhanced credibility of domestic manufacturers and opportunities to access markets outside India.",
+            "Component financial outlay of Rs. 100 crore for FY 2024-25 to FY 2026-27; the source does not state an individual applicant award amount or reimbursement percentage."
+          ],
+          "application": {
+            "submission_recipient": "Project Management Agency (PMA)",
+            "application_form": "Application in the form prescribed under the guidelines.",
+            "accompanying_material": "Requisite information, supporting documents and application fee.",
+            "application_window": "The application window is opened based on notice issued by the Department from time to time.",
+            "component_specific_call_details": null
+          },
+          "fine_print": [
+            "The source expressly identifies Clinical Investigations, pre-clinical animal studies and Clinical Performance Evaluation of new in-vitro diagnostic medical devices as supported activities.",
+            "The source defines post-market clinical follow-up as a study following marketing authorization concerning safety, clinical performance and/or effectiveness, but the supplied source text does not state that post-market clinical follow-up is an eligible supported activity under this component.",
+            "The supplied source text does not state the component-specific eligible applicant categories.",
+            "The supplied source text does not state an individual project funding ceiling, funding percentage, reimbursement rule or application fee amount for this component.",
+            "Proposals under the Scheme are considered for approval by the Scheme Steering Committee, and the Project Management Agency is responsible for receipt and appraisal of applications, verification of eligibility and examination of disbursement claims."
+          ],
+          "requirements": [
+            "Submit the prescribed application form to the Project Management Agency.",
+            "Provide requisite information and supporting documents.",
+            "Pay the application fee; the amount is not stated in the supplied source text.",
+            "Meet the eligibility criteria laid down for the Scheme; component-specific criteria are not stated in the supplied source text.",
+            "Obtain approval of the Scheme Steering Committee if selected."
+          ],
+          "steps": [
+            "Monitor Department notices opening an application window.",
+            "Submit the prescribed application and supporting documents, with the application fee, to the Project Management Agency.",
+            "Undergo application receipt, appraisal and eligibility verification by the Project Management Agency.",
+            "The proposal is considered for approval by the Scheme Steering Committee.",
+            "If approved, receive scheme benefits subject to the applicable criteria and conditions."
+          ],
+          "sources": [
+            {
+              "url": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+              "anchor": "Chapter I, section 1.3, objective (IV), “Medical Device Clinical Studies Support Scheme”"
+            },
+            {
+              "url": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+              "anchor": "Chapter I, section 1.4, Financial Outlay, table row 4, “Medical Device Clinical Studies Support Scheme”"
+            },
+            {
+              "url": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+              "anchor": "Chapter I, section 1.2, definitions (i), (x), (xi), (xx) and (xxviii): Animal Study, Clinical Investigation, Clinical Performance Evolution, Investigational Medical Device and Post-market clinical follow-up"
+            },
+            {
+              "url": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+              "anchor": "Chapter I, section 1.2, definitions (iv), (v) and (vi): Application, Application Window and Beneficiary"
+            },
+            {
+              "url": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+              "anchor": "Chapter I, sections 1.6.1, 1.7 and 1.8.1-1.8.2: Scheme Steering Committee approval and Project Management Agency responsibilities"
+            }
+          ],
+          "effective_dates": [
+            {
+              "window_type": "fixed",
+              "opens_at": null,
+              "closes_at": null,
+              "window_label": "Scheme performance period: FY 2024-25 to FY 2026-27",
+              "window_evidence": "The scheme tenure and performance year are stated as FY 2024-25 to FY 2026-27."
+            },
+            {
+              "window_type": "call_for_applications",
+              "opens_at": null,
+              "closes_at": null,
+              "window_label": "Application windows notified from time to time",
+              "window_evidence": "The application window shall be opened based on notice issued by the Department from time to time."
+            }
+          ],
+          "geography": "India"
+        }
+      ]
+    },
+    {
+      "slug": "smdi-medical-device-promotion-scheme",
+      "sourceUrl": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+      "sourceSnapshotHash": "f26a00434c9dc86faa7dd324fa7fdd78668a9fba3bba78584c1f86aabe64447a",
+      "extractionModel": "gpt-5.6-luna",
+      "reasoningEffort": "high",
+      "extractedAt": "2026-09-07T12:14:37.429Z",
+      "payloadHash": "22d8e69459a96f1fbda39e5cae65573b2df1e5017ba213fc07b8353369b4f40e",
+      "status": "needs_review",
+      "publicationStatus": "blocked",
+      "validation": {
+        "exactSourceEvidence": true,
+        "humanReviewRequired": true
+      },
+      "records": [
+        {
+          "name": "Medical Device Promotion Scheme",
+          "opportunity_type": "Government grant and promotional support",
+          "objective": "To promote the Medical Device Industry by bringing industry leaders, academia and policy makers together to share their knowledge and experience for overall development of the sector.",
+          "legal_basis": "Operational Guidelines for the Scheme “Strengthening of Medical Device Industry”, a Central Sector Scheme under the Department of Pharmaceuticals, dated 08 November 2024.",
+          "authority": {
+            "implementing_department": "Department of Pharmaceuticals, Ministry of Chemicals and Fertilizers, Government of India",
+            "approval_authority": "Scheme Steering Committee (SSC)",
+            "project_management_agency": "Project Management Agency (PMA), to be selected through open tender or nomination basis"
+          },
+          "eligibility": {
+            "stated_eligible_applicants": [
+              "Industry bodies and associations",
+              "Educational institutions"
+            ],
+            "eligibility_scope": "The source expressly identifies industry bodies/associations and educational institutions for conducting meetings, seminars, workshops, events, road-shows and expos. It does not state separate eligibility categories for manufacturer evaluation studies, database creation or international study missions."
+          },
+          "benefit_summary": "Financial support and grants for specified medical-device-industry promotion activities, including events and related promotional, study, database and international-promotion activities.",
+          "benefits": [
+            {
+              "benefit_type": "Grant",
+              "description": "Financial support will be provided to industry bodies/associations and educational institutions to conduct meetings, seminars, workshops, events, road-shows and expos."
+            },
+            {
+              "benefit_type": "Promotional support",
+              "description": "Support will be provided for manufacturer evaluation studies, creation of a database and international study missions."
+            },
+            {
+              "benefit_type": "Direct departmental expenditure",
+              "description": "The Department may directly incur expenditure on industry development activities."
+            }
+          ],
+          "application": {
+            "submission_authority": "Project Management Agency (PMA)",
+            "application_window": "The application window is opened based on a notice issued by the Department from time to time.",
+            "application_contents": [
+              "Prescribed application form",
+              "Requisite information",
+              "Supporting documents",
+              "Application fee"
+            ],
+            "application_fee_amount": null,
+            "component_specific_application_procedure": "Not stated in the supplied source content."
+          },
+          "fine_print": [
+            "The Medical Device Promotion Scheme has a component outlay of Rs. 10 crore for FY 2024-25 to FY 2026-27.",
+            "The source does not state a per-applicant grant amount, reimbursement percentage, expenditure ceiling, or selection quota for this component.",
+            "The source does not state a separate eligibility framework for manufacturer evaluation studies, database creation or international study missions.",
+            "The Department may directly incur expenditure on industry development activities.",
+            "The overall scheme outlay is Rs. 500 crore and the scheme tenure is from FY 2024-25 to FY 2026-27."
+          ],
+          "requirements": [
+            "Submit an application to the PMA in the prescribed form.",
+            "Provide requisite information and supporting documents.",
+            "Pay the application fee; the amount is not stated in the source.",
+            "Any additional component-specific requirements are not stated in the supplied source content."
+          ],
+          "steps": [
+            "The Department issues a notice opening an application window from time to time.",
+            "The applicant submits the application and supporting material to the PMA.",
+            "The PMA receives and appraises applications, verifies eligibility and examines claims in accordance with the guidelines.",
+            "The SSC considers and approves proposals under the scheme."
+          ],
+          "sources": [
+            {
+              "url": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+              "anchor": "Chapter I, §1.3, objective (V), “Medical Device Promotion Scheme”"
+            },
+            {
+              "url": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+              "anchor": "Chapter I, §1.4, Financial Outlay table, row 5, “Medical Device Promotion Scheme”"
+            },
+            {
+              "url": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+              "anchor": "§1.2(iv), definition of “Application”; §1.2(v), definition of “Application Window”"
+            },
+            {
+              "url": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+              "anchor": "§1.6.1, Scheme Steering Committee; §1.8.2(b), Project Management Agency responsibilities"
+            }
+          ],
+          "effective_dates": [
+            {
+              "window_type": "fixed",
+              "opens_at": "2024-04-01",
+              "closes_at": "2027-03-31",
+              "window_label": "FY 2024-25 to FY 2026-27",
+              "window_evidence": "§1.1 states that the scheme tenure is three years from FY 2024-25 to FY 2026-27; §1.2(xv) defines a financial year as beginning on 1 April and ending on 31 March."
+            }
+          ],
+          "geography": "India"
+        }
+      ]
+    },
+    {
+      "slug": "stand-up-india-scheme",
+      "sourceUrl": "https://www.financialservices.gov.in/stand-india-scheme-supi",
+      "sourceSnapshotHash": "e0d7c860f01f818672e7f82df34d4f81eec63fbbb3137228e0680a853b08315d",
+      "extractionModel": "gpt-5.6-luna",
+      "reasoningEffort": "high",
+      "extractedAt": "2026-09-07T12:14:56.167Z",
+      "payloadHash": "bef6775f4d768257523fa8130415059015a8fa437e3e1e142a3db5ece282c23b",
+      "status": "needs_review",
+      "publicationStatus": "blocked",
+      "validation": {
+        "exactSourceEvidence": true,
+        "humanReviewRequired": true
+      },
+      "records": [
+        {
+          "name": "Stand Up India Scheme (SUPI)",
+          "opportunity_type": "Government-backed composite loan scheme",
+          "objective": "Promote entrepreneurship among the Scheduled Castes/Scheduled Tribes and Women.",
+          "legal_basis": null,
+          "authority": null,
+          "eligibility": [
+            "Entrepreneurs above 18 years of age.",
+            "Scheduled Castes/Scheduled Tribes and Women entrepreneurs, as the scheme is intended to promote entrepreneurship among these groups.",
+            "Projects must be greenfield projects in manufacturing, services or trading, or activities allied to agriculture.",
+            "Loans are provided through Scheduled Commercial Banks (SCBs)."
+          ],
+          "benefit_summary": "Composite loans between Rs.10 lakh and Rs.1 crore for setting up eligible greenfield projects, with repayment of up to seven years including a moratorium period of 18 months.",
+          "benefits": {
+            "loan": "Composite Loan between Rs.10 lakh and Rs.1 crore.",
+            "sectors": [
+              "Manufacturing",
+              "Services",
+              "Trading",
+              "Activities allied to agriculture"
+            ],
+            "repayment": "Repayment in a span of upto seven years including moratorium period of 18 months.",
+            "margin_money": "Margin money ‘upto 15%’ which can be provided in convergence with eligible central/state government schemes.",
+            "own_contribution": "The borrower has to bring in minimum of 10 % of the project cost as his/her own contribution.",
+            "guidance_and_application": "The online portal www.standupmitra.in provides guidance from training to filling up loan applications, as per bank requirements. Loan applications can also be made through www.jansamarth.in."
+          },
+          "application": {
+            "channels": [
+              "Scheduled Commercial Banks (SCBs)",
+              "www.standupmitra.in",
+              "www.jansamarth.in"
+            ],
+            "process": "The portal www.standupmitra.in provides guidance starting from training to filling up loan applications, as per bank requirements. One can also apply for loan over www.jansamarth.in."
+          },
+          "fine_print": [
+            "The SUPI Scheme is upto 31.03.2025, in line with the 15th Finance Commission.",
+            "Margin money is ‘upto 15%’ and may be provided in convergence with eligible central/state government schemes.",
+            "In any case, the borrower has to bring in minimum of 10 % of the project cost as his/her own contribution.",
+            "The loan repayment period is upto seven years and includes a moratorium period of 18 months.",
+            "The source reports progress as on 28.02.2025 since launch: 2.67 lakh accounts sanctioned, Rs. 60,504 crore sanctioned, Rs. 34,450 crore disbursed, and 1.99 lakh women accounts."
+          ],
+          "requirements": [
+            "Applicant must be above 18 years of age.",
+            "The project must be a greenfield project in manufacturing, services or trading, or an activity allied to agriculture.",
+            "The borrower must contribute at least 10 % of the project cost from their own contribution.",
+            "Loan applications are subject to bank requirements."
+          ],
+          "steps": [
+            "Use www.standupmitra.in for guidance, including training and filling up loan applications as per bank requirements.",
+            "Apply through Scheduled Commercial Banks (SCBs).",
+            "Alternatively, apply through www.jansamarth.in."
+          ],
+          "sources": [
+            {
+              "url": "https://www.financialservices.gov.in/stand-india-scheme-supi",
+              "anchor": "Stand Up India Scheme (SUPI) — introductory paragraph"
+            },
+            {
+              "url": "https://www.financialservices.gov.in/stand-india-scheme-supi",
+              "anchor": "Features: loan range, greenfield project scope, repayment, margin money and own contribution"
+            },
+            {
+              "url": "https://www.financialservices.gov.in/stand-india-scheme-supi",
+              "anchor": "Scheme status paragraph beginning “Herein it maynot be out of place to mention that the SUPI Scheme is upto 31.03.2025”"
+            }
+          ],
+          "effective_dates": {
+            "window_type": "closed",
+            "opens_at": "5th April, 2016",
+            "closes_at": "31.03.2025",
+            "window_label": "Stand Up India Scheme period",
+            "window_evidence": "The scheme was launched on 5th April, 2016, and the source states that the SUPI Scheme is upto 31.03.2025."
+          },
+          "geography": null
+        },
+        {
+          "name": "New scheme for 5 lakh women, Scheduled Castes and Scheduled Tribes first-time entrepreneurs",
+          "opportunity_type": "Announced government term-loan scheme under preparation",
+          "objective": "Provide support to 5 lakh women, Scheduled Castes and Scheduled Tribes first-time entrepreneurs.",
+          "legal_basis": "Budget announcement for FY 2025-26",
+          "authority": null,
+          "eligibility": [
+            "Women, Scheduled Castes and Scheduled Tribes first-time entrepreneurs.",
+            "The source does not state any further eligibility conditions."
+          ],
+          "benefit_summary": "Term loans up to Rs.2 crore during the next 5 years, together with online capacity building for entrepreneurship and managerial skills.",
+          "benefits": {
+            "target": "5 lakh women, Scheduled Castes and Scheduled Tribes first-time entrepreneurs.",
+            "term_loans": "Term loans up to Rs.2 crore during the next 5 years.",
+            "capacity_building": "Online capacity building for entrepreneurship and managerial skills will also be organized."
+          },
+          "application": null,
+          "fine_print": [
+            "The source says that a new scheme will be launched; it does not provide an application process or launch date.",
+            "The scheme will incorporate lessons from the successful Stand-Up India scheme.",
+            "The relevant EFC note is under preparation.",
+            "Comments of the concerned Ministries & Department will be taken and the process would accordingly be taken up further."
+          ],
+          "requirements": [
+            "Applicant must be a first-time entrepreneur within the stated women, Scheduled Castes or Scheduled Tribes target groups.",
+            "No additional requirements are stated in the source."
+          ],
+          "steps": [],
+          "sources": [
+            {
+              "url": "https://www.financialservices.gov.in/stand-india-scheme-supi",
+              "anchor": "Scheme status paragraph beginning “Herein it maynot be out of place to mention that the SUPI Scheme is upto 31.03.2025”"
+            },
+            {
+              "url": "https://www.financialservices.gov.in/stand-india-scheme-supi",
+              "anchor": "Budget announcement for FY 2025-26 quoted in the scheme status paragraph"
+            }
+          ],
+          "effective_dates": {
+            "window_type": "fixed",
+            "opens_at": null,
+            "closes_at": null,
+            "window_label": "During the next 5 years",
+            "window_evidence": "The source states that the new scheme will provide term loans up to Rs.2 crore during the next 5 years."
+          },
+          "geography": null
+        }
+      ]
+    },
+    {
+      "slug": "startup-india-fund-of-funds-2",
+      "sourceUrl": "https://www.dpiit.gov.in/static/uploads/2026/04/8949d8e0dabf11cb9291b00ec1d1f727.pdf",
+      "sourceSnapshotHash": "98de5b6dfb5d44f1d2ed4869c47f69448c165730e4b3539671ecb5c0a6dc6ddd",
+      "extractionModel": "gpt-5.6-luna",
+      "reasoningEffort": "high",
+      "extractedAt": "2026-09-07T12:15:13.473Z",
+      "payloadHash": "225f9706609518cdc378bf5a4c7134f9a326514ba61a6a21eacaf08fee31b8aa",
+      "status": "needs_review",
+      "publicationStatus": "blocked",
+      "validation": {
+        "exactSourceEvidence": true,
+        "humanReviewRequired": true
+      },
+      "records": [
+        {
+          "name": "Startup India Fund of Funds 2.0 – Selection of Category I and Category II AIFs",
+          "opportunity_type": "Government fund-of-funds capital contribution opportunity for SEBI-registered Alternative Investment Funds",
+          "objective": "To support startups by contributing to the corpus of eligible Category I and Category II AIFs registered with SEBI, which invest in equity, equity-linked instruments and debt instruments of startups. The Fund of Funds will not invest directly in startups.",
+          "legal_basis": "Operational Guidelines for Startup India Fund of Funds 2.0, document reference P-38015/17/2025-STARTUP INDIA (E-212782).",
+          "authority": "Department for Promotion of Industry and Internal Trade (DPIIT); Small Industries Development Bank of India (SIDBI) as the Implementation Agency initially; a further domestic Implementation Agency may be selected by DPIIT. A Venture Capital Investment Committee (VCIC) screens and recommends AIF proposals, and a sub-committee of the Board of the Implementation Agency sanctions proposals.",
+          "eligibility": {
+            "fund_type": "Category I or Category II AIF registered with SEBI.",
+            "management": "VCIC will consider AIFs managed by experienced professionals with proven track records for funding under the Scheme.",
+            "segments": [
+              {
+                "segment": "AIFs supporting deep tech startups",
+                "eligible_aif_corpus": "No cap",
+                "aif_term_or_life": "Up to 18 years",
+                "maximum_contribution": "40% of the corpus of the AIF subject to max of Rs. 500 crore",
+                "minimum_investment_multiplier": "AIFs to invest 1.5X of the amount committed to them under Startup India FoF 2.0"
+              },
+              {
+                "segment": "Smaller AIFs supporting early-growth stage startups",
+                "eligible_aif_corpus": "AIFs with corpus up to Rs. 400 crore i.e. Micro VCs",
+                "aif_term_or_life": "Up to 10 years",
+                "maximum_contribution": "30% of the corpus of the AIF subject to max of Rs. 100 crore",
+                "minimum_investment_multiplier": "AIFs to invest 2X of the amount committed to them under Startup India FoF 2.0"
+              },
+              {
+                "segment": "AIFs supporting tech-driven and innovative manufacturing startups",
+                "eligible_aif_corpus": "No cap",
+                "aif_term_or_life": "Up to 18 years",
+                "maximum_contribution": "30% of the corpus of the AIF subject to max of Rs. 200 crore",
+                "minimum_investment_multiplier": "AIFs to invest 1.75X of the amount committed to them under Startup India FoF 2.0"
+              },
+              {
+                "segment": "AIFs supporting sector/stage agnostic startups",
+                "eligible_aif_corpus": "No cap",
+                "aif_term_or_life": "Up to 12 years",
+                "maximum_contribution": "25% of the corpus of the AIF subject to max of Rs. 180 crore",
+                "minimum_investment_multiplier": "AIFs to invest 2.5X of the amount committed to them under Startup India FoF 2.0"
+              }
+            ]
+          },
+          "benefit_summary": "Potential capital contribution to selected AIFs from the Startup India Fund of Funds 2.0, subject to segment-specific contribution limits, investment multipliers, selection, due diligence and sanction.",
+          "benefits": [
+            {
+              "benefit": "Capital contribution to selected AIFs",
+              "condition": "The Startup India Fund of Funds 2.0 shall invest in or contribute to the corpus of selected eligible AIFs."
+            },
+            {
+              "benefit": "Scheme corpus",
+              "amount": "Rs. 10,000 crore",
+              "condition": "Commitments to AIFs are spread over the 16th and 17th Finance Commission Cycles."
+            },
+            {
+              "benefit": "Segment-specific contribution limits",
+              "details": [
+                "Deep tech: 40% of the corpus of the AIF subject to max of Rs. 500 crore.",
+                "Smaller early-growth AIFs: 30% of the corpus of the AIF subject to max of Rs. 100 crore.",
+                "Tech-driven and innovative manufacturing: 30% of the corpus of the AIF subject to max of Rs. 200 crore.",
+                "Sector/stage agnostic: 25% of the corpus of the AIF subject to max of Rs. 180 crore."
+              ]
+            },
+            {
+              "benefit": "Potential representation",
+              "condition": "The Implementation Agency may take necessary measures, to the extent possible, to have representation in the Advisory Board or Limited Partner Advisory Committees of supported AIFs."
+            }
+          ],
+          "application": {
+            "method": "The Implementation Agency shall seek proposals from AIFs and conduct due diligence.",
+            "submission_deadline": null,
+            "submission_portal": null,
+            "presentation": "The AIF would make a detailed presentation to the VCIC.",
+            "post_selection_documents": [
+              "Letter of Intent issued upon sanction.",
+              "Contribution Agreement signed with the individual AIF upon sanction."
+            ]
+          },
+          "fine_print": [
+            "The total aggregate contribution in a selected AIF from various Fund of Funds of different Ministries of the Government of India and State Governments, whether operated directly or through implementing agencies, will be within 50% of the corpus of the AIF. The VCIC may adopt a lower limit based on market assessment.",
+            "The Implementation Agency is responsible for monitoring and ensuring compliance so that investments are channelized for the intended segments and comply with the AIF placement memorandum.",
+            "Selection should give due consideration to supporting startups beyond metro regions.",
+            "AIFs selected under the Scheme must use committed funds, along with the applicable segment-wise minimum investment multiplier, to fund startups recognized by DPIIT under the latest eligibility criteria notified in the Official Gazette.",
+            "If the full committed amount has not been released before an entity ceases to be recognized as a startup, balance funding may continue from the committed amount along with further nurturing of the entity.",
+            "The Implementation Agency must ensure mechanisms to prevent potential misuse, which may include requiring AIFs to conduct due diligence on beneficiary startups and disclose other Government support received.",
+            "Operating costs of the Implementation Agency are capped at 0.50% per annum of total commitments to AIFs and outstanding, net-off capital redemptions, and are met from the Scheme corpus.",
+            "Distributions from the Startup India Fund of Funds 2.0, both capital redeemed and returns earned, net-off utilisation of up to 5% of returns for capacity building of the startup ecosystem, will be deposited into the Consolidated Fund of India.",
+            "Up to 5% of returns may be earmarked for sensitization, workshops, capacity building, plug and play shared facilities, mentorship and regulatory support; utilisation and implementation are to be decided separately by DPIIT on the recommendation of the Empowered Committee.",
+            "No application deadline, application portal or specific proposal format is stated in the source."
+          ],
+          "requirements": [
+            {
+              "requirement": "The AIF must be a Category I or Category II AIF registered with SEBI."
+            },
+            {
+              "requirement": "The AIF should be managed by experienced professionals with proven track records for funding under the Scheme."
+            },
+            {
+              "requirement": "Deep tech segment: the Private Placement Memorandum must mention support for “Deep Tech Startups” as defined by DPIIT in point 1(n) of Gazette Notification G.S.R. 108(E) dated 4th February, 2026, and as amended from time to time by the Government."
+            },
+            {
+              "requirement": "Smaller early-growth stage segment: the Private Placement Memorandum must mention that at least 50% of the corpus will be dedicated to seed/early-stage stage funding and that funding of up to Rs. 10 crore per startup will be undertaken."
+            },
+            {
+              "requirement": "Tech-driven and innovative manufacturing segment: the Private Placement Memorandum must mention support for tech-driven innovative startups in at least one manufacturing-oriented champion sector as defined by the Government of India and as amended from time to time by the Government."
+            },
+            {
+              "requirement": "Sector/stage agnostic segment: the source states no additional Private Placement Memorandum requirements."
+            },
+            {
+              "requirement": "The AIF must meet the applicable segment-specific corpus, term or life, contribution cap and minimum investment multiplier parameters in Annexure-I."
+            }
+          ],
+          "steps": [
+            "Prepare and submit a proposal to the Implementation Agency when proposals are sought.",
+            "Undergo due diligence by the Implementation Agency.",
+            "Make a detailed presentation to the Venture Capital Investment Committee.",
+            "Undergo VCIC screening and recommendation.",
+            "Undergo sanction consideration by a sub-committee of the Board of the Implementation Agency.",
+            "Upon sanction, receive a Letter of Intent.",
+            "Sign a Contribution Agreement with the individual AIF.",
+            "Invest committed funds in eligible DPIIT-recognized startups in accordance with the applicable segment-wise minimum investment multiplier and Scheme conditions.",
+            "Comply with monitoring, due diligence, disclosure and reporting requirements established by the Implementation Agency."
+          ],
+          "sources": [
+            {
+              "url": "https://www.dpiit.gov.in/static/uploads/2026/04/8949d8e0dabf11cb9291b00ec1d1f727.pdf",
+              "anchor": "Pages 1-2, Sections 1-6: Principal Features; Purpose; Investment in AIFs; Investment by AIFs in Startups; Operating Expenses; Selection Process for AIFs"
+            },
+            {
+              "url": "https://www.dpiit.gov.in/static/uploads/2026/04/8949d8e0dabf11cb9291b00ec1d1f727.pdf",
+              "anchor": "Page 2, Section 6, Stage I – Screening by Venture Capital Investment Committee and Stage II – Sanction by a sub-committee of the Board of the IA"
+            },
+            {
+              "url": "https://www.dpiit.gov.in/static/uploads/2026/04/8949d8e0dabf11cb9291b00ec1d1f727.pdf",
+              "anchor": "Pages 3-5, Annexure-I: Parameters table for the four AIF segments"
+            },
+            {
+              "url": "https://www.dpiit.gov.in/static/uploads/2026/04/8949d8e0dabf11cb9291b00ec1d1f727.pdf",
+              "anchor": "Page 5, Annexure-I, footnote 1: manufacturing-oriented champion sectors reference"
+            }
+          ],
+          "effective_dates": {
+            "window_type": "call_for_applications",
+            "opens_at": null,
+            "closes_at": null,
+            "window_label": null,
+            "window_evidence": "Section 6, Stage I states that the Implementation Agency shall seek proposals from AIFs, but the source does not specify an opening date, closing date or application schedule. Section 1 states that SIDBI shall start implementing the Scheme with effect from the date of notification of the Scheme and issuance of its guidelines."
+          },
+          "geography": "India; the selection process should give due consideration to supporting startups beyond metro regions."
+        }
+      ]
+    }
+  ]
+}

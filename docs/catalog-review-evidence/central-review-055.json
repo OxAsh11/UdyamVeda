@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-055",
+  "authority": "DAY-NRLM - Start-up Village Entrepreneurship Programme",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party SVEP observations for reviewer use. It does not establish that a particular State, district or block is covered, create a universal applicant entitlement, approve finance, or authorize publication.",
+  "sourcePolicy": "The official SVEP portal, official FAQ, contact route and Ministry of Rural Development context are primary. State/block coverage, local intake, community implementation, finance, repayment, documents and current operating terms must be verified for the applicant's location. UdyamVeda can prepare a profile and checklist but cannot create a local SVEP entitlement or impersonate a community implementation user.",
+  "records": [
+    {
+      "slug": "startup-village-entrepreneurship-programme",
+      "sourceUrl": "https://www.svep.nrlm.gov.in/landing",
+      "supportingSources": [
+        {"url":"https://svep.nrlm.gov.in/svepdemo/pdf/FAQ_SVEP.pdf","anchor":"Official FAQ: entrepreneur profile, business-plan support, CRP-EP workflow and implementation administration"},
+        {"url":"https://svep.nrlm.gov.in/contactUs","anchor":"Official SVEP technical and implementation contact route"},
+        {"url":"https://rural.gov.in/","anchor":"Ministry of Rural Development context for DAY-NRLM"},
+        {"url":"https://svep.nrlm.gov.in/Privacy-Policy.html","anchor":"Official portal ownership, DAY-NRLM relationship, community-organisation model and location/data caveats"}
+      ],
+      "sourceKind": "official_svep_current_portal_and_faq_cross_check",
+      "sourceAnchor": "SVEP objective, DAY-NRLM relationship, early-stage rural enterprises, community implementation model, support categories and current portal update",
+      "observations": [
+        "The official portal describes SVEP as part of DAY-NRLM, a centrally sponsored programme implemented since June 2011; it records approval as an NRLM sub-scheme in May 2015 and guidelines issued on 15 June 2015. The portal was last updated on 19 January 2026.",
+        "SVEP is intended to help rural poor establish and stabilise enterprises, particularly early-stage and new non-farm enterprises, through a combination of financial assistance, business-management and soft-skills training, business-development support, mentoring, finance access, banking linkage and convergence guidance.",
+        "The delivery model uses State/block implementation structures and community cadres or enterprise-support institutions. The FAQ describes profile, business-plan and related data workflows; it is not a general public national self-service loan application.",
+        "The official portal does not establish one universal applicant-level grant, loan ceiling, fee, repayment term or national deadline. Applicable finance and support terms depend on the covered State/block and local implementation route.",
+        "Eligibility therefore requires a rural location in an active SVEP implementation area, an eligible proposed or existing non-farm enterprise and the applicable State/block/community process. Unknown block coverage must produce more-information-required, not automatic ineligibility.",
+        "The programme focuses on rural self-employment and small enterprises, with particular attention to youth, women and skill-based work, but the portal's programme description does not replace local eligibility or implementation confirmation.",
+        "The portal disclaimer directs users to verify information with the relevant State Rural Livelihoods Mission or government department. UdyamVeda must present SVEP as local, conditional support rather than a guaranteed cash benefit."
+      ],
+      "reviewFollowUps": [
+        "Verify the applicant's State, district and block against the current SVEP implementation route and identify the authorized local contact or enterprise-support channel.",
+        "Confirm current intake, eligible activities, profile/business-plan documents, finance mechanism, contribution, repayment, training, mentoring and service timeline for that route.",
+        "Keep financial assistance, training, mentoring, banking linkage and convergence as separate benefit buckets; do not invent a national loan or grant ceiling.",
+        "Check current portal and FAQ revisions, local notices and any State/block supersession before publication.",
+        "Record amendment or supersession evidence and obtain a reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source","eligibility","benefit","application","window","fine_print","amendment","current_terms","reviewer_decision"],
+    "reason": "Official SVEP evidence supports the programme purpose and support model, but local State/block coverage, current intake, finance terms, documents, implementation route and human approval remain unresolved."
+  }
+}

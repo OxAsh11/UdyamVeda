@@ -1,8 +1,8 @@
-import { GoogleGenerativeAI } from '@google/generative-ai'
+import OpenAI from 'openai'
 import { createClient } from '@/lib/supabase/server'
 import { NextRequest, NextResponse } from 'next/server'
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!)
+const getOpenAI = () => new OpenAI({ apiKey: process.env.OPENAI_API_KEY! })
 
 export async function GET() {
   const supabase = await createClient()
@@ -84,11 +84,15 @@ Layout rules:
 - Total of ~12-15 nodes maximum
 `
 
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash-exp' })
-    const result = await model.generateContent(prompt)
-    const text = result.response.text()
-    const cleaned = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim()
-    const board = JSON.parse(cleaned)
+    const completion = await getOpenAI().chat.completions.create({
+      model: 'gpt-4o-mini',
+      messages: [
+        { role: 'system', content: 'You are a visual GTM strategist. Always respond with valid JSON only.' },
+        { role: 'user', content: prompt },
+      ],
+      response_format: { type: 'json_object' },
+    })
+    const board = JSON.parse(completion.choices[0].message.content ?? '{}')
 
     await supabase.from('drawing_boards').upsert({
       user_id: user.id,

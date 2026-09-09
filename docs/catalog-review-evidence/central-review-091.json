@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-091",
+  "authority": "NABVENTURES Limited / NABARD - AgriSURE Fund",
+  "observedAt": "2026-09-09",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window or publication status.",
+  "sourcePolicy": "The official NABVENTURES fund-manager page and NABARD FAQ/public notice control the AgriSURE routes. The PIB launch release provides institutional context and the Startup India Playbook is discovery-only. Direct startup investment and Fund-of-Funds AIF contribution must remain separate.",
+  "records": [
+    {
+      "slug": "agrisure-agri-fund-startups-rural-enterprises",
+      "sourceUrl": "https://nabventures.in/agrisure.aspx",
+      "supportingSources": [
+        {
+          "url": "https://www.nabard.org/pdf/agrisure-faq.pdf",
+          "anchor": "Official NABARD FAQ: INR 750 crore corpus, INR 250 crore each from Ministry of Agriculture and NABARD, NABVENTURES as Investment Manager, ten-year duration, target sectors and two schemes"
+        },
+        {
+          "url": "https://www.nabard.org/auth/writereaddata/WhatsNew/aisclaimer-for-agrisure.pdf",
+          "anchor": "Official NABARD public notice: no money is charged for seeking assistance and interested parties should contact NABVENTURES directly at agrisure@nabard.org"
+        },
+        {
+          "url": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=2051466&lang=2&reg=48",
+          "anchor": "Ministry of Agriculture and Farmers Welfare/PIB launch release: blended capital Category II AIF and sponsor contributions"
+        },
+        {
+          "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf",
+          "anchor": "Startup India Playbook AgriSURE discovery entry; used only to cross-check the startup-facing support label"
+        }
+      ],
+      "sourceKind": "official_nabventures_nabard_and_ministry_cross_check",
+      "sourceAnchor": "NABVENTURES AgriSURE page: FoF Scheme, Direct Scheme, corpus buckets, target beneficiaries, duration, investment-manager contact and no-guarantee terms",
+      "observations": [
+        "AgriSURE is a Category-II AIF promoted by the Ministry of Agriculture and Farmers Welfare and NABARD, with NABVENTURES Limited as Investment Manager.",
+        "The official page separates a INR 450 crore Fund-of-Funds route for eligible AIFs from a INR 300 crore Direct Scheme for early-stage agriculture and rural startups; the total INR 750 crore is fund-level capital.",
+        "Target sectors include agritech, food processing, animal husbandry, fisheries, supply chain, farm mechanisation, biotechnology, waste management, renewable energy, agri-value chain, FPO support, farm-level technology and climate change.",
+        "Startups or AIFs may reach out to the Investment Manager at agrisure@nabard.org. The official page states that qualifying criteria do not guarantee sanction or investment, and the NABARD public notice warns against intermediaries charging money.",
+        "The public sources do not establish an individual startup ticket, valuation, dilution, governance, exit terms or fixed deadline. Direct and FoF routes remain separate and the record stays in review."
+      ],
+      "reviewFollowUps": [
+        "Verify the current NABVENTURES intake, fund availability, applicable Private Placement Memorandum and route-specific application/diligence documents.",
+        "Confirm Direct Scheme startup definitions, stage, sectors, instruments, investment committee process, ticket size, valuation, dilution and exit terms.",
+        "Confirm FoF AIF incorporation, SEBI Category I/II status, corpus limit, 5%/INR 25 crore cap, investment mandate and onward-investment conditions.",
+        "Confirm the NABVENTURES/NABARD authority mapping against the official IGOD/Ministry of Agriculture organizational source before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "reviewer_decision"
+    ],
+    "reason": "Official NABVENTURES/NABARD sources support a structured AgriSURE draft, but current intake, route-specific fund documents, investment terms, authority mapping and applicant-specific conditions remain unresolved. The record stays paused and human-review pending."
+  }
+}

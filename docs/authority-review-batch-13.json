@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-09-08",
+  "sourceBaseline": "docs/igod-coverage-baseline.json",
+  "purpose": "Final remainder pack for the thirteenth bounded manual review batch. These authorities have official portal evidence but no specific opportunity evidence in the current seed corpus; each remains explicitly unclear pending a bounded crawl and human review.",
+  "reviewStatus": "pending_human_approval",
+  "terminalAssessmentWritesAllowed": false,
+  "rows": [
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Revenue (DoR)",
+      "authorityUrl": "https://dor.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://dor.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for tax, customs, trade, compliance, digital services and business-facing authorization routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Rural Development (DoRD)",
+      "authorityUrl": "https://www.dord.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://www.dord.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for rural enterprise, livelihoods, infrastructure, procurement and implementation-partner routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of School Education and Literacy (DSEL)",
+      "authorityUrl": "https://dsel.education.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://dsel.education.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for education technology, school procurement, training, implementation and service-provider routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Sports (DoS)",
+      "authorityUrl": "https://dbtyas-sports.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://dbtyas-sports.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for sports infrastructure, equipment, events, training, technology and procurement routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Water Resources, River Development and Ganga Rejuvenation (DoWRGR)",
+      "authorityUrl": "https://www.jalshakti-dowr.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://www.jalshakti-dowr.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for water infrastructure, river works, technology, procurement and implementation-partner routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Youth Affairs (DoYA)",
+      "authorityUrl": "https://youth.yas.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://youth.yas.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for youth entrepreneurship, training, events, innovation, procurement and implementation-partner routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Legislative Department (LD)",
+      "authorityUrl": "https://legislative.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://legislative.gov.in/",
+      "evidenceAnchor": "Official department portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The department must be crawled for legal-information, digital-publication, translation, procurement and service-provider routes before relevance or exclusion can be decided."
+    }
+  ]
+}

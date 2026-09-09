@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-086",
+  "authority": "Office of the Development Commissioner (MSME) - Procurement and Marketing Support",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records current first-party observations for reviewer use. It does not guarantee IITF stall allotment, reimbursement, event participation or selection, and it does not authorize UdyamVeda to submit the application, collect fees or represent the applicant.",
+  "sourcePolicy": "The official PMS event portal and the Ministry of MSME MyMSME notice control the current IITF 2026 dates, Udyam cut-off, late-application rule and stall-fee-at-application boundary. The PMS guideline controls the underlying component terms. The record remains review-gated until a human reviewer confirms the exact event route and current notice.",
+  "records": [
+    {
+      "slug": "iitf-2026-pms-domestic-trade-fair",
+      "sourceUrl": "https://pms.dcmsme.gov.in/view-all-event",
+      "supportingSources": [
+        { "url": "https://pms.dcmsme.gov.in/", "anchor": "Official PMS portal: IITF-2026 application announcement, domestic MSE application route and separate organiser proposal route." },
+        { "url": "https://my.msme.gov.in/mymsme/Reg/home.aspx", "anchor": "Official MyMSME notice: IITF 2026 applications open 01.09.2026 to 20.09.2026; valid Udyam registration required as of 31.08.2026; late applications not considered; stall fee is collected only from MSEs allotted stalls." },
+        { "url": "https://msme.gov.in/sites/default/files/PMSSchemeGuidelines.pdf", "anchor": "Official PMS Scheme Guidelines controlling the underlying procurement and marketing support terms and reimbursement boundaries." }
+      ],
+      "sourceKind": "official_pms_event_portal_and_ministry_notice",
+      "sourceAnchor": "PMS event listing and MyMSME IITF 2026 notice: 01 September 2026 to 20 September 2026, Udyam valid as of 31 August 2026, late applications excluded and no stall fee at application stage",
+      "observations": [
+        "The official PMS portal and MyMSME notice state that online IITF 2026 applications are open from 1 September 2026 through 20 September 2026.",
+        "Only micro and small enterprises with valid Udyam Registration as of 31 August 2026 are identified as eligible in the official notice; the enterprise must still satisfy the applicable event and PMS conditions.",
+        "Applications received after 20 September 2026 are not considered according to the official notice.",
+        "A stall fee or receipt/invoice is not required at the application stage and is collected only from MSEs allotted stalls under the PMS guidelines; UdyamVeda must not collect or represent this fee as its own charge.",
+        "The PMS portal separates the domestic MSE application route from the organiser proposal route. The temporary PMS extension for organiser proposals from October 2026 onward must not be merged into the IITF 2026 MSE application window.",
+        "An application is not an allotment or reimbursement guarantee. Event selection, stall allotment, eligible expenditure and any later claim remain subject to the official review and PMS terms.",
+        "UdyamVeda may explain the event, validate readiness and prepare a checklist, but the applicant must use the official portal and submit with its own account, declarations and documents."
+      ],
+      "reviewFollowUps": [
+        "Capture and hash the current event listing, PMS portal announcement and MyMSME notice when Firecrawl credits are available.",
+        "Confirm the exact IITF 2026 application form, required documents, category/event selection, contact route and acknowledgement behavior.",
+        "Reconcile the current event-specific conditions with the PMS guideline, including stall categories, support components, selection/allotment and post-event claim evidence.",
+        "Confirm the Udyam validity date and enterprise classification using the applicant's verified facts without storing unnecessary identity values.",
+        "Keep IITF 2026's fixed window separate from generic PMS rolling/event-specific routes and organiser proposals.",
+        "Obtain human reviewer approval for source, eligibility, benefit, application, window, fine print, amendment and factual accuracy before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source", "eligibility", "benefit", "application", "window", "fine_print", "amendment", "current_terms", "reviewer_decision"],
+    "reason": "The official notice supports the current dated window and eligibility boundary, but the event form, complete document/selection terms, fresh source capture and human review remain outstanding."
+  }
+}

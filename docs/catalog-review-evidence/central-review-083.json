@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-083",
+  "authority": "Office of Development Commissioner (Handicrafts), Ministry of Textiles",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records current first-party observations for reviewer use. It does not establish a universal grant, guaranteed event selection, participant admission, reimbursement, stipend or open deadline.",
+  "sourcePolicy": "The NHDP guideline controls the component descriptions and broad route. The current DC (Handicrafts) schemes and circular indexes control current FY 2026-27 notice presence. The attached notice PDFs, current MIS route and component-specific terms must be reviewed before publication.",
+  "records": [
+    {
+      "slug": "nhdp-marketing-support-services-handicrafts",
+      "sourceUrl": "https://handicrafts.nic.in/cmsUpload/20230425203825NHDP_Guidlines.pdf",
+      "supportingSources": [
+        { "url": "https://handicrafts.nic.in/schemes.aspx", "anchor": "NHDP is listed under the generic schemes implemented by the Office of Development Commissioner (Handicrafts); the scheme is composite and not specific to area, caste or gender." },
+        { "url": "https://handicrafts.nic.in/tenders.aspx?type=27", "anchor": "Current circular index lists FY 2026-27 MSS proposal and domestic/Dilli Haat marketing-calendar notices." },
+        { "url": "https://handicrafts.nic.in/Showall.aspx?link=allnews", "anchor": "Current official news index repeats the FY 2026-27 MSS calendar and proposal notices." }
+      ],
+      "sourceKind": "official_nhdp_guideline_and_current_circular_index",
+      "sourceAnchor": "NHDP guideline index and Marketing Support and Services component; current FY 2026-27 MSS notices in the official circular index",
+      "observations": [
+        "The NHDP guideline describes Marketing Support and Services as a programme component for market-access and marketing activities rather than an automatic cash benefit for every artisan or business.",
+        "The official circular index currently lists an invitation for MSS project proposals during FY 2026-27 dated 2026-01-02.",
+        "The same index lists an international marketing action-plan notice dated 2026-01-19, a domestic marketing-events calendar dated 2026-03-31 and a Dilli Haat marketing-events calendar dated 2026-04-06.",
+        "The current index proves that the notices exist, but the attached PDFs must be checked for eligible agency class, event-level deadline, proposal format, contribution/stall terms, selection and reporting conditions.",
+        "The route is agency/project and event based. UdyamVeda must not show a fixed rupee entitlement, guaranteed stall, guaranteed sales or automatic selection."
+      ],
+      "reviewFollowUps": [
+        "Open and hash the current FY 2026-27 MSS proposal notice and both marketing-calendar PDFs.",
+        "Confirm eligible government bodies, corporations, NGOs, cooperatives, producer companies or other agency classes and the exact MIS submission route.",
+        "Extract event-level deadlines, participant capacity, stall/contribution terms, assistance limits, selection authority, reimbursement rules, reporting and cancellation conditions.",
+        "Check amendments, corrigenda and whether each listed event or proposal window is still actionable on the date of recommendation.",
+        "Keep market-access value separate from any subsidy, reimbursement or other financial support."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "nhdp-skill-development-handicraft-sector",
+      "sourceUrl": "https://handicrafts.nic.in/cmsUpload/20230425203825NHDP_Guidlines.pdf",
+      "supportingSources": [
+        { "url": "https://handicrafts.nic.in/schemes.aspx", "anchor": "NHDP scheme index and Design and Skill Development in Handicraft Sector component." },
+        { "url": "https://handicrafts.nic.in/tenders.aspx?type=27", "anchor": "Current circular index lists Invitation of Project Proposal under Skill Development for Handicraft Sector for FY 2026-27 dated 02 January 2026." },
+        { "url": "https://handicrafts.nic.in/Showall.aspx?link=allnews", "anchor": "Current official news index lists the FY 2026-27 SDHS project-proposal notice." }
+      ],
+      "sourceKind": "official_nhdp_guideline_and_current_sdhs_notice_index",
+      "sourceAnchor": "NHDP guideline Design and Skill Development component, including design and technology workshops, toolkit distribution, Guru Shishya training and comprehensive skill upgradation; current FY 2026-27 SDHS notice",
+      "observations": [
+        "The NHDP guideline identifies Design and Skill Development in Handicraft Sector as a component with design and technology development workshops, toolkit distribution, Guru Shishya Hastshilp Prashikshan and comprehensive skill upgradation.",
+        "The official circular index currently lists an Invitation of Project Proposal under Skill Development for Handicraft Sector for FY 2026-27 dated 2026-01-02.",
+        "The earlier CSUP material in the seed is retained only as historical component detail; it must not be treated as the current FY 2026-27 participant notice.",
+        "Component-specific participant, craft, PAHCHAN, batch, trainer, duration, attendance, toolkit, certificate and agency conditions must be taken from the current notice and approved programme route.",
+        "This is training/design support, not a guaranteed grant, job, loan, stipend or market order."
+      ],
+      "reviewFollowUps": [
+        "Open and hash the current FY 2026-27 SDHS proposal notice and identify the official MIS/application route.",
+        "Confirm whether the current notice is for implementing agencies, individual participants, or both, and capture component-specific eligibility.",
+        "Verify PAHCHAN, craft identity, batch size, duration, trainer/agency approval, toolkit/stipend/certificate, attendance, monitoring and reporting terms.",
+        "Record the exact deadline or mark the route notice-listed but deadline-unverified until the attachment is reviewed.",
+        "Keep historical CSUP details separate from current FY 2026-27 terms."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source", "eligibility", "benefit", "application", "window", "fine_print", "amendment", "current_terms", "reviewer_decision"],
+    "reason": "The official scheme and circular indexes establish current notice presence, but the attached FY 2026-27 notices, exact terms, deadline status and current application route still require source capture and human review."
+  }
+}

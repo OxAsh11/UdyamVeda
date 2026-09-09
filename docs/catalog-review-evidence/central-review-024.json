@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-024",
+  "authority": "Department of Urban Development (DUD)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "The Ministry of Housing and Urban Affairs and its scheme portals are the controlling sources. PIB releases are used for current change detection and must not replace the operative guidelines or tender documents.",
+  "records": [
+    {
+      "slug": "mohua-pm-ebus-sewa-ppp-urban-transport-access",
+      "sourceUrl": "https://pm-ebus-sewa.mohua.gov.in/wp-content/uploads/2025/08/PM-eBus-Sewa-Guidelines-Part-I-1.pdf",
+      "supportingSources": [
+        {
+          "url": "https://pm-ebus-sewa.mohua.gov.in/?page_id=631",
+          "anchor": "Official PM-eBus Sewa brief: current tender/award progress, operation-support rate, eligible-city expansion, PPP model and central-assistance description"
+        },
+        {
+          "url": "https://pm-ebus-sewa.mohua.gov.in/?page_id=857",
+          "anchor": "Official scheme FAQ index for state/city/OEM implementation questions; current tender and implementation caveats require route-specific review"
+        },
+        {
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2237554&reg=3&lang=2",
+          "anchor": "Official PIB progress update mirrored by the scheme portal: 6,228 buses tendered and state/UT implementation status as of February 2026"
+        }
+      ],
+      "sourceKind": "official_mohua_guidelines_scheme_portal_and_pib_progress",
+      "sourceAnchor": "Part I sections 3.1, 5 and Annexures 2-4: city/state pre-qualification, challenge selection, eligible-city list, required documents and CESL tender route",
+      "observations": [
+        "PM-eBus Sewa is an indirect procurement and urban-mobility market-access opportunity, not a general startup grant or direct cash benefit. The primary applicants in Part I are eligible cities, states and implementing authorities; private operators and OEMs participate through the concession and CESL tender routes.",
+        "The scheme portal describes a PPP deployment model, central assistance of INR 20,000 crore, eligible city population bands, and current implementation including Letter of Award activity. The portal also reports operation support of INR 24 per kilometre for standard 12-metre buses and 100% central assistance for behind-the-meter power infrastructure; these figures must remain route-specific and must not be presented as an applicant grant ceiling.",
+        "The guidelines require state/city undertakings, a scheme-dedicated escrow account, payment-security conditions, ITMS and NCMC-based AFCS implementation, power-supply evidence, depot details, city scoring and supporting documents. The challenge-method ranking and city eligibility are prerequisites before any private-business opportunity can be shown.",
+        "A company-facing record should be framed as ‘procurement/tender access’ only for a manufacturer, OEM, operator or consortium that can identify an eligible city demand lot and satisfy the relevant CESL tender or concession documents. UdyamVeda must not imply that a normal MSME can claim the central assistance directly.",
+        "The current portal shows active implementation and awarded/tendered quantities, but it does not establish a universally open application window for private businesses. The record therefore remains review-gated until the current tender, lot, city and bidder route are identified."
+      ],
+      "reviewFollowUps": [
+        "Confirm the latest addendum, Part II/SOP and live CESL tender documents governing a private OEM/operator route.",
+        "Separate state/city eligibility, OEM eligibility, operator/concession eligibility and procurement-stage deadlines into distinct rule branches.",
+        "Verify whether each displayed operation-support or infrastructure amount is a government payment to the selected implementing arrangement, a tender price input, or a business revenue assumption.",
+        "Capture tender security, technical specifications, service-level obligations, depot/charging obligations, contract duration, payment-security and performance-penalty terms before publication.",
+        "Do not rank the scheme as a direct grant or loan; classify it as public procurement/market access with a route-specific tender window."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "pm-street-vendors-atmanirbhar-nidhi-pm-svanidhi",
+      "sourceUrl": "https://mohua.gov.in/pm_svandhi/PMSVANidhi%20Guideline_English.pdf",
+      "supportingSources": [
+        {
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2161157&lang=1&reg=1",
+          "anchor": "Cabinet restructuring release dated 27 August 2025: lending period extended to 31 March 2030, total outlay, beneficiary target and revised loan structure"
+        },
+        {
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2303797&lang=2&reg=48",
+          "anchor": "MoHUA progress release dated 27 August 2026: first-year post-restructuring implementation, new beneficiaries, disbursal and UPI-linked RuPay credit-card status"
+        },
+        {
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2237554&reg=3&lang=2",
+          "anchor": "Official implementation clarification: tranche sequencing, repayment boundary and UPI-linked credit-card eligibility"
+        }
+      ],
+      "sourceKind": "official_mohua_guideline_and_pib_current_restructuring_updates",
+      "sourceAnchor": "Base guideline reconciled with Cabinet restructuring release and MoHUA one-year implementation update",
+      "observations": [
+        "PM SVANidhi is a collateral-free working-capital credit route for eligible urban street vendors, with implementation through MoHUA, States/UTs, Urban Local Bodies, banks and other lending institutions. It is relevant to self-employed founders and micro-businesses but is not a grant or direct government cash transfer.",
+        "The Cabinet restructuring extended lending through 31 March 2030 and increased the first tranche up to INR 15,000 and second tranche up to INR 25,000, while the third tranche remains INR 50,000. The scheme also introduced a UPI-linked RuPay credit card for eligible vendors after timely repayment of the second tranche and cashback incentives for specified digital transactions.",
+        "The current 2026 MoHUA progress release confirms that the restructured phase is operating and reports new beneficiaries, loan disbursal and credit-card rollout. These are programme progress metrics, not an applicant guarantee or an available amount for every vendor.",
+        "Eligibility, vendor identification/certificate or Letter of Recommendation, urban-local-body coverage, lender appraisal, tranche sequencing, repayment history and any graded expansion to census towns or peri-urban areas must be evaluated separately. Unknown vendor-recognition or lender information must produce ‘more information required’, not automatic ineligibility.",
+        "The record should expose loan tranches, interest subsidy/cashback and credit-card support as separate benefit buckets. UdyamVeda must not add the three loan ceilings into a single eligible-value number or imply sanction by the government."
+      ],
+      "reviewFollowUps": [
+        "Reconcile the base guideline with the operative 2025 restructuring instructions and the latest applicant-facing portal/application route.",
+        "Verify current vendor-identification alternatives, ULB/urban-area expansion, lender list, documents, grievance route and any application fee.",
+        "Model first-, second- and third-tranche eligibility as sequential dependencies driven by repayment history, not as simultaneous benefits.",
+        "Confirm current interest-subsidy and digital-cashback calculation rules, caps and transaction conditions before displaying amounts.",
+        "Record the 31 March 2030 lending-period end as a scheme-level date while separately checking whether an applicant-facing window or local implementation cutoff applies."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment"
+    ],
+    "reason": "Official sources support two structured drafts, but PM-eBus Sewa requires a current tender/concession route and PM SVANidhi requires reconciliation of the restructured guideline, vendor-recognition path, lender route and sequential credit conditions before either record can be published."
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-089",
+  "authority": "Women Entrepreneurship Platform (WEP), NITI Aayog-originated ecosystem platform",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records current first-party observations for reviewer use. WEP is a discovery, matching and ecosystem platform, not a direct grant, loan, investment, certification or government filing entitlement. WEP-listed programmes retain their own authority, eligibility, terms and application route.",
+  "sourcePolicy": "WEP is useful for discovery and ecosystem-service evidence. The underlying Government scheme source remains the publishing authority for any scheme record. WEP partner and knowledge-portal content must be labelled and independently verified before UdyamVeda publishes it as an opportunity.",
+  "records": [
+    {
+      "slug": "women-entrepreneurship-platform-wep",
+      "sourceUrl": "https://wep.gov.in/knowledge-portal",
+      "supportingSources": [
+        { "url": "https://wep.gov.in/knowledge-portal", "anchor": "Current WEP discovery portal: government schemes, access to finance, incubators and accelerators, mentoring/networking, market linkages and business-development resources; registration/full-access and smart-match entry points." },
+        { "url": "https://wep.gov.in/access-finance/about-us", "anchor": "Current access-to-finance page: government-scheme, financial-institution, state-scheme and knowledge-bank categories, with partner/resource content and Smart Match." },
+        { "url": "https://wep.gov.in/mentor-individual-landing", "anchor": "Current individual mentorship route: women entrepreneurs and women-led collective enterprises may join as mentees; profile inputs include industry, stage, location, language, ecosystem need and engagement mode; no sensitive information should be shared with mentors." },
+        { "url": "https://wep.gov.in/individual-mentorship-guidelines-and-code-of-conduct", "anchor": "Current mentorship code: mentors volunteer on a pro-bono basis, must follow conduct expectations and cannot be treated as government-appointed advisors or guaranteed service providers." },
+        { "url": "https://wep.gov.in/ciiyi-disclaimer", "anchor": "Current disclaimer: WEP/CII-Yi knowledge content is general information, may include external sources, is not a warranty of completeness or accuracy, and users should verify details with the respective authorities." },
+        { "url": "https://niti.gov.in/sites/default/files/2023-02/Annual-Report-2022-2023-English_06022023_compressed.pdf?trk=public_post_comment-text", "anchor": "NITI Aayog Annual Report 2022-23: WEP described as a unified-access aggregator and knowledge hub addressing information asymmetry for women entrepreneurship." }
+      ],
+      "sourceKind": "official_wep_current_ecosystem_and_partner-content_cross_check",
+      "sourceAnchor": "WEP current knowledge/access-to-finance/mentorship pages and disclaimer; NITI Aayog annual-report description",
+      "observations": [
+        "WEP currently presents discovery categories covering funding, incubation and acceleration, mentoring and networking, market linkages, business-development services, schemes, incubators, publications and videos. A category or listing is not itself a Government benefit entitlement.",
+        "The access-to-finance page contains Government schemes, financial-institution resources, State schemes and other knowledge/partner content. UdyamVeda must not inherit WEP's labels, amounts or eligibility into a canonical opportunity record without verifying the underlying authority source.",
+        "The current individual mentorship route welcomes existing and aspiring women entrepreneurs and women-led collective enterprises as mentees. Smart Match uses business stage, industry, location, language, ecosystem need and engagement mode; a match is a discovery result, not acceptance or a guaranteed mentor relationship.",
+        "WEP states that individual mentoring is free for mentees, mentees contact mentors first, and no sensitive personal information needs to be shared with mentors. These are current platform-service conditions, not a Government subsidy or cash benefit.",
+        "The mentorship guidelines describe pro-bono mentor participation and conduct boundaries, while the portal also discloses content, technology and design partners. Partner services and external listings require separate terms and due diligence.",
+        "The WEP/CII-Yi disclaimer explicitly warns that portal information may come from external sources and should be verified with the respective Government authority. This makes WEP a discovery/cross-check source in UdyamVeda's editorial hierarchy, not a standalone publishing authority for listed schemes.",
+        "Mentor and partner availability is dynamic; the current page may show no mentors or a changing resource set. UdyamVeda must not publish fixed counts, availability or acceptance promises without a dated source check."
+      ],
+      "reviewFollowUps": [
+        "Capture and hash the current exact WEP pages when Firecrawl credits are restored, including the disclaimer and mentorship route.",
+        "Map WEP's NITI Aayog relationship and current operating/partner authority against the IGOD authority matrix before counting WEP as a Central ministry/department opportunity source.",
+        "Verify registration/full-access, consent, privacy, profile fields, data sharing, mentor-contact controls and deletion/withdrawal behavior through the live route.",
+        "Keep WEP ecosystem support, WEP mentorship and every underlying Government/partner scheme as separate records and separate benefit/value buckets.",
+        "Review partner disclosures, external listings, fees, current programme windows and authority links before showing any WEP listing as actionable.",
+        "Obtain human reviewer approval for source, eligibility, benefit, application, window, fine print, amendment, partner classification and factual accuracy before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source", "eligibility", "benefit", "application", "window", "fine_print", "amendment", "partner_classification", "reviewer_decision"],
+    "reason": "Current WEP pages support a non-financial ecosystem and mentorship draft, but underlying-authority mapping, partner classification, consent/privacy behavior, live availability and exact source capture remain outstanding."
+  }
+}

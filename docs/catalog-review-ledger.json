@@ -1,0 +1,3843 @@
+{
+  "generatedAt": "2026-09-09T10:22:52.423Z",
+  "status": "local_review_queue",
+  "interpretation": "This ledger records work required before publication. It is not evidence that a Government opportunity is approved, active, or eligible for a specific business.",
+  "summary": {
+    "totalRecords": 174,
+    "structuredRecords": 174,
+    "editorialFieldsComplete": 174,
+    "sourceRegistered": 174,
+    "humanReviewPending": 174,
+    "publicationReady": 0
+  },
+  "records": [
+    {
+      "slug": "agriculture-infrastructure-fund",
+      "name": "Agriculture Infrastructure Fund (AIF)",
+      "seedFile": "verified_central_agri_enterprise.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://agriinfra.dac.gov.in/Documents/Circular/91EE46A50D3941908F192725717E431B.pdf",
+        "anchor": "Eligible entities, project purpose and financing facility",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "pradhan-mantri-kisan-urja-suraksha-evam-utthaan-mahabhiyaan-pm-kusum",
+      "name": "Pradhan Mantri Kisan Urja Suraksha evam Utthaan Mahabhiyaan (PM-KUSUM)",
+      "seedFile": "verified_central_agri_enterprise.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://mnre.gov.in/en/pradhan-mantri-kisan-urja-suraksha-evam-utthaan-mahabhiyaan-pm-kusum/",
+        "anchor": "Objectives, components, beneficiaries and period",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "agrisure-agri-fund-startups-rural-enterprises",
+      "name": "AgriSURE - Agri Fund for Start-ups & Rural Enterprises",
+      "seedFile": "verified_central_agrisure.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://nabventures.in/agrisure.aspx",
+        "anchor": "About AgriSURE, FoF Scheme, Direct Scheme, key features, target beneficiaries, duration, other information and investment-manager contact route",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "national-livestock-mission-entrepreneurship-development",
+      "name": "National Livestock Mission (NLM) - Entrepreneurship Development",
+      "seedFile": "verified_central_animal_husbandry.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://dahd.gov.in/sites/default/files/2026-02/RevisedNLMGuidelines.pdf",
+        "anchor": "Current component guidelines; entrepreneurship assistance; eligible entities; follow-up and exclusions",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "animal-husbandry-infrastructure-development-fund-ahidf",
+      "name": "Animal Husbandry Infrastructure Development Fund (AHIDF)",
+      "seedFile": "verified_central_animal_husbandry.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.dahd.gov.in/sites/default/files/2023-11/ImplementationGuidelinesAHIDF.pdf",
+        "anchor": "Eligible entities and activities; section 7.1 Quantum of loan and margin money / beneficiary contribution",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "antariksh-venture-capital-fund",
+      "name": "Antariksh Venture Capital Fund (AVCF)",
+      "seedFile": "verified_central_antariksh_vcf.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.sidbiventure.co.in/antariksh_venture_capital_fund.html",
+        "anchor": "Fund overview, SEBI Category II AIF registration, fund manager, key investment criteria, mode of investment and contact/application route",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "pm-vishwakarma",
+      "name": "PM Vishwakarma",
+      "seedFile": "verified_central_artisan_programs.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://pmvishwakarma.gov.in/cdn/MiscFiles/eng_v30.0_PM_Vishwakarma_Guidelines_final.pdf",
+        "anchor": "Eligibility, 18 trades, benefits, verification and implementation period",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "production-linked-incentive-automobile-auto-components",
+      "name": "Production Linked Incentive Scheme for Automobile and Auto Component Industry",
+      "seedFile": "verified_central_auto_pli.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.heavyindustries.gov.in/sites/default/files/2023-09/PLI%20AUto%20Guidelines.pdf",
+        "anchor": "Sections 1.1-1.4; scheme objective, advanced automotive technology products and implementation framework",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "ayush-super-speciality-hospital-day-care-infrastructure",
+      "name": "AYUSH Super-Speciality Hospital and Day-Care Centre Infrastructure Support",
+      "seedFile": "verified_central_ayush_healthcare_infrastructure.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://ngo.ayush.gov.in/Default/assets/front/documents/Updated_Guidelines_of_CSSS_(Hospital).pdf",
+        "anchor": "Project eligibility, investor/SME/organization conditions, PSC consideration, CPMU implementation and grant conditions",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "ayushman-sahakar-cooperative-healthcare-support",
+      "name": "Ayushman Sahakar - Cooperative Healthcare and Health-Education Support",
+      "seedFile": "verified_central_ayushman_sahakar.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://ncdc.in/documents/other/Ayushman-sahakar20102020.pdf",
+        "anchor": "Objectives, activities covered, eligibility, loan period, interest incentive, security and funding pattern",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "pm-formalisation-micro-food-processing-enterprises",
+      "name": "Pradhan Mantri Formalisation of Micro Food Processing Enterprises (PMFME)",
+      "seedFile": "verified_central_batch_3.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.pmfme.mofpi.gov.in/newsletters/docs/SchemeGuidelines.pdf",
+        "anchor": "Support to Individual Micro Enterprises, sections 4.1-4.2",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "msme-samadhaan-delayed-payment-assistance",
+      "name": "MSME Samadhaan - Delayed Payment Assistance",
+      "seedFile": "verified_central_batch_3.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://ramp.msme.gov.in/ramp/RAMP-initiative/msme-samadhaan/msme-samadhaan",
+        "anchor": "Introduction; Nature of Assistance; Who can Apply",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "procurement-and-marketing-support-pms",
+      "name": "Procurement and Marketing Support (PMS) Scheme",
+      "seedFile": "verified_central_batch_4.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://msme.gov.in/sites/default/files/PMSSchemeGuidelines.pdf",
+        "anchor": "Trade fairs, exhibitions and participation assistance",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "iitf-2026-pms-domestic-trade-fair",
+      "name": "IITF 2026 under Procurement and Marketing Support Scheme",
+      "seedFile": "verified_central_batch_4.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://pms.dcmsme.gov.in/view-all-event",
+        "anchor": "Online applications for IITF-2026 are open from 01.09.2026 to 20.09.2026; valid Udyam registration as on 31.08.2026; late applications not considered",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "msme-international-cooperation-scheme",
+      "name": "International Cooperation (IC) Scheme",
+      "seedFile": "verified_central_batch_4.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://msme.gov.in/sites/default/files/Revised_IC_Scheme2023.pdf",
+        "anchor": "Objective and sub-components",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "msme-innovative-incubation-design-ipr",
+      "name": "MSME Innovative (Incubation, Design and IPR)",
+      "seedFile": "verified_central_batch_5.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://design.msme.gov.in/Documents/FinalGuidelines_MSME_Innovative.pdf",
+        "anchor": "Incubation, Design and IPR components",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "scheme-for-fund-for-regeneration-of-traditional-industries-sfurti",
+      "name": "Scheme of Fund for Regeneration of Traditional Industries (SFURTI)",
+      "seedFile": "verified_central_batch_5.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://sfurti.msme.gov.in/WriteReadData/Circular/SFURTI_NEW.pdf",
+        "anchor": "Objectives of SFURTI Scheme",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "national-scheduled-caste-scheduled-tribe-hub",
+      "name": "National Scheduled Caste and Scheduled Tribe Hub (NSSH)",
+      "seedFile": "verified_central_batch_5.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://sclcss.msme.gov.in/Manual/Guidelines.pdf",
+        "anchor": "Definition of SC/ST MSEs and Functions of NSSH",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "special-credit-linked-capital-subsidy-scheme-sclcss",
+      "name": "Special Credit Linked Capital Subsidy Scheme (SCLCSS)",
+      "seedFile": "verified_central_batch_5.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://sclcss.msme.gov.in/",
+        "anchor": "Nature of assistance, Who can be benefitted and How to apply",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "aspire-innovation-rural-industry-entrepreneurship",
+      "name": "A Scheme for Promoting Innovation, Rural Industry and Entrepreneurship (ASPIRE)",
+      "seedFile": "verified_central_batch_5.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://aspire.msme.gov.in/WriteReadData/DocumentFile/ASPIRE_NEW.pdf",
+        "anchor": "Guidelines for ASPIRE - A Scheme for Promoting Innovation, Rural Industry & Entrepreneurship",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "apeda-bharati-export-enablement-acceleration",
+      "name": "APEDA BHARATI Export Enablement Acceleration",
+      "seedFile": "verified_central_bharati_apeda_export_acceleration.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://apeda.gov.in/bharati/index.html",
+        "anchor": "About BHARATI; application process; programme announcements and official subpages",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "birac-ace-fund-biotech-fund-of-funds",
+      "name": "BIRAC AcE Fund (Accelerating Entrepreneurs)",
+      "seedFile": "verified_central_birac_ace_fund.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.birac.nic.in/webcontent/ace_fund_guidelines.pdf",
+        "anchor": "Pages 1-4: scope, fund-of-funds framework, AIF partner criteria, commitment limits, startup investment boundary, governance and reporting",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "birac-eyuva-student-research-innovation",
+      "name": "E-YUVA - Empowering Youth for Undertaking Value Added Innovative Translational Research",
+      "seedFile": "verified_central_birac_eyuva.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://birac.nic.in/e_yuva.php",
+        "anchor": "Current E-YUVA page: Innovation Fellows, E-YUVA Fellows, E-YUVA Centres, covered areas and NO ACTIVE CALLS",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "birac-leap-fund-biotech-startup-equity",
+      "name": "LEAP Fund - Launching Entrepreneurial Driven Affordable Products Fund",
+      "seedFile": "verified_central_birac_leap_fund.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://birac.nic.in/webcontent/1616486900_leap_fund_guidelines.pdf",
+        "anchor": "Pages 1-3: scope, funding framework, incubator criteria, startup ownership, investment ceiling, non-concurrency, monitoring and exit terms",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "birac-pace-academic-research-conversion-to-enterprise",
+      "name": "PACE - Promoting Academic Research Conversion to Enterprise",
+      "seedFile": "verified_central_birac_pace.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://birac.nic.in/desc_new.php?id=286",
+        "anchor": "Current PACE page: AIR and CRS components, eligibility, funding, online submission and two recurring call windows",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "birac-sbiri-small-business-innovation-research-initiative",
+      "name": "BIRAC Small Business Innovation Research Initiative (SBIRI)",
+      "seedFile": "verified_central_birac_sbiri_bipp.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://birac.nic.in/webcontent/1745298212_SBIRI_scheme_guidelines_16_04_2025.pdf",
+        "anchor": "Eligibility and Funding Guidelines: startup age, prior BIRAC grant, grant structure, milestones and royalty",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "birac-bipp-biotechnology-industry-partnership-programme",
+      "name": "BIRAC Biotechnology Industry Partnership Programme (BIPP)",
+      "seedFile": "verified_central_birac_sbiri_bipp.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.birac.nic.in/webcontent/1729751884_BIPP_scheme_guidelines_revised.pdf",
+        "anchor": "Scope, TRL, eligibility, funding/cost sharing, milestone disbursement, royalty and Category IV facility rules",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "birac-seed-fund-biotech-startup-equity",
+      "name": "SEED Fund - Sustainable Entrepreneurship and Enterprise Development Fund",
+      "seedFile": "verified_central_birac_seed_fund.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.birac.nic.in/webcontent/1616486925_seed_fund_Guidelines.pdf",
+        "anchor": "Pages 1-3: scope, incubator criteria, startup ownership, investment ceiling, instruments, monitoring and exit terms",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "birac-sitare-student-innovation",
+      "name": "SITARE — Students Innovations for Translation and Advancement of Research Explorations",
+      "seedFile": "verified_central_birac_sitare.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.birac.nic.in/desc_new.php?id=581",
+        "anchor": "Current SITARE page: GYTI, BIIS and Appreciation components, student eligibility, award amounts, annual cadence and active-call application requirement",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "bis-fmcs-foreign-manufacturer-licence",
+      "name": "BIS Foreign Manufacturers Certification Scheme (FMCS)",
+      "seedFile": "verified_central_bis_product_compliance_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.bis.gov.in/fmcs/fmcs-overview/?lang=en",
+        "anchor": "Foreign manufacturer licensing, Indian Standard conformity, Authorized Indian Representative and Electronics/IT boundary",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "bis-hallmarking-jeweller-registration",
+      "name": "BIS Registration of Jewellers for Sale of Hallmarked Gold and Silver Articles",
+      "seedFile": "verified_central_bis_product_compliance_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.bis.gov.in/hallmarking-jewellers/?lang=en",
+        "anchor": "Jeweller registration, gold and silver scope, turnover exemption and online application route",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "bis-crs-electronics-it-registration",
+      "name": "BIS Compulsory Registration Scheme (CRS) for Electronics and IT Products",
+      "seedFile": "verified_central_bis_product_compliance_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.crsbis.in/BIS/about-crs.do",
+        "anchor": "Electronics and IT product registration route and Standard Mark boundary",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "chemicals-promotion-development-scheme",
+      "name": "Chemicals Promotion and Development Scheme",
+      "seedFile": "verified_central_chemicals_promotion.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://chemicals.gov.in/cpds",
+        "anchor": "Objective, four components, eligible organizations/industry associations, grant-in-aid scope and current CPDS application references",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "ministry-of-coal-surface-coal-lignite-gasification",
+      "name": "Scheme for Promotion of Surface Coal/Lignite Gasification Projects (2026 RFP)",
+      "seedFile": "verified_central_coal_gasification_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://coal.gov.in/sites/default/files/2026-07/07-07-2026-rpf.pdf",
+        "anchor": "Request for Proposal (RFP); Scheme for Promotion of Surface Coal/Lignite Gasification Projects; 1.1 Background of the Scheme; 1.2 Key Features of the Scheme",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "commerce-special-economic-zone-unit-approval-and-authorized-operations",
+      "name": "Special Economic Zone Unit Approval and Authorized-Operations Benefits",
+      "seedFile": "verified_central_commerce_sez_unit_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://sezindia.gov.in/facilities-and-incentives",
+        "anchor": "Unit facilities, duty-free import/domestic procurement, zero-rated supplies and single-window clearance; Section 10AA sunset note",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "trade-infrastructure-for-export-scheme-ties",
+      "name": "Trade Infrastructure for Export Scheme (TIES)",
+      "seedFile": "verified_central_commerce_ties.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.commerce.gov.in/wp-content/uploads/2021/07/TIES-revised-guidelines-FY22-to-FY26.pdf",
+        "anchor": "Objectives, scope, eligible implementing agencies and extent of financial assistance, pages 1-4",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "financial-assistance-allied-cultural-activities",
+      "name": "Financial Assistance for Allied Cultural Activities",
+      "seedFile": "verified_central_culture_allied_activities.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://culture.gov.in/files/inline-documents/Sub_component_1B_SCHEME_31_01_2019.pdf",
+        "anchor": "Sections 1-9: audio-visual equipment, applicants, assistance ceilings, matching share, application, evaluation, instalments and conditions",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "financial-assistance-building-grants-studio-theatres",
+      "name": "Financial Assistance for Building Grants including Studio Theatres",
+      "seedFile": "verified_central_culture_building_grants.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://culture.gov.in/files/inline-documents/Approved_Revised_Scheme_Guidelnes_of_Building_Grants270623.pdf",
+        "anchor": "Sections 1-8: project scope, applicant eligibility, assistance ceilings, matching share, rolling application, evaluation, instalments and grant conditions",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "cultural-function-and-production-grant-cfpg",
+      "name": "Cultural Function and Production Grant (CFPG)",
+      "seedFile": "verified_central_culture_cfpg.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://culture.gov.in/cultural-function-and-production-grant-cfpg",
+        "anchor": "Scope, eligibility, quantum, rolling submission, documents, selection, instalments and output requirements",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "financial-assistance-cultural-organizations-national-presence",
+      "name": "Financial Assistance to Cultural Organizations with National Presence",
+      "seedFile": "verified_central_culture_national_presence.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://culture.gov.in/files/inline-documents/2026-27-grant-in-aid.pdf",
+        "anchor": "FY 2026-27 call, 67 percent assistance limit, prescribed application and 15 July 2026 5 PM deadline",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "financial-assistance-tagore-cultural-complexes",
+      "name": "Financial Assistance for Tagore Cultural Complexes (TCC)",
+      "seedFile": "verified_central_culture_tagore_complexes.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://culture.gov.in/offering/schemes-services/financial-assistance-tagore-cultural-complexes-tcc",
+        "anchor": "Objective, eligible organizations, projects, assistance, matching share, application, DPR, release and grant conditions",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "dairy-sahakar-cooperative-dairy-business-support",
+      "name": "Dairy Sahakar - Cooperative Dairy Business and Infrastructure Support",
+      "seedFile": "verified_central_dairy_sahakar.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.ncdc.in/documents/downloads/5615200923Dairy-Sahakar-English.pdf",
+        "anchor": "Objectives, activities covered, eligibility, loan period and credit-linkage assistance",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "digital-communication-innovation-square-dcis",
+      "name": "Digital Communication Innovation Square (DCIS)",
+      "seedFile": "verified_central_dcis_innovation.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://dcis.dot.gov.in/page/faq",
+        "anchor": "What is the DCIS Scheme?; Who can apply?; How much DCIS funding can an applicant receive?; online application and Technical Expert Committee review",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "idex-open-challenge-2026",
+      "name": "iDEX Open Challenge 2026",
+      "seedFile": "verified_central_defence_innovation.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://idex.gov.in/open-challenge/",
+        "anchor": "Open Challenge; deadline; grant ceiling; applicant route",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "scheme-for-promotion-of-msmes-in-defence",
+      "name": "Scheme for Promotion of MSMEs in Defence",
+      "seedFile": "verified_central_defence_msme_promotion.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.ddpmod.gov.in/sites/default/files/2e7aaf1bd5030bd12ef5e83c096ef5bca4dc3aac2c4b7f55013996b6cbc75239/4ac52b4c9f672575ba175be70bcc2be4f5b96d9614b2e2081ee88cfccb809c87.pdf",
+        "anchor": "Pages 1-3: objectives, scope, operationalisation, eligible agencies, criteria for sanction and funding; page 4: FY 2026-27 event proposal form",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "idex-aditi-critical-technologies",
+      "name": "iDEX ADITI Critical and Strategic Defence Technologies",
+      "seedFile": "verified_central_defence_production_tdf_aditi_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://idex.gov.in/disc-category/26",
+        "anchor": "ADITI eligibility, critical-technology objective, grant ceiling and displayed call timeline",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "drdo-technology-development-fund-startup-msme",
+      "name": "DRDO Technology Development Fund (TDF) for Startups and MSMEs",
+      "seedFile": "verified_central_defence_production_tdf_aditi_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://tdf.drdo.gov.in/faq",
+        "anchor": "Project cost ceiling, duration, applicant entities, resident-Indian control, online application and milestone funding",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "dgft-export-promotion-capital-goods-epcg",
+      "name": "Export Promotion Capital Goods (EPCG) Scheme",
+      "seedFile": "verified_central_dgft_epcg_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://content.dgft.gov.in/Website/dgftprod/62a8184d-a7c6-42c5-8711-f7964ab7b2ba/FTP2023_Chapter05.pdf",
+        "anchor": "Paras 5.00-5.04, 5.10-5.12: objective, zero-duty treatment, coverage, six-times export obligation, validity and reduced EO routes",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "design-linked-incentive-semiconductor-design",
+      "name": "Design Linked Incentive (DLI) Scheme",
+      "seedFile": "verified_central_dli_semiconductor_design.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.meity.gov.in/static/uploads/2024/02/Notification-Design-Linked-Incentive-Scheme.pdf",
+        "anchor": "Pages 6-8, paragraphs 2-11: objectives, eligibility, tenure, Product Design Linked Incentive, Deployment Linked Incentive, design infrastructure, C-DAC implementation and disbursement",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "dsir-prism-innovation-support",
+      "name": "DSIR PRISM Innovation Support for Individuals, Start-ups and MSMEs",
+      "seedFile": "verified_central_dsir_prism.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.dsir.gov.in/promoting-innovations-individuals-start-ups-and-msmes-prism",
+        "anchor": "PRISM programme scope; individual innovators, start-ups, MSMEs and technology solutions for MSME clusters",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "dst-nidhi-seed-support-program",
+      "name": "NIDHI Seed Support Program (NIDHI-SSP)",
+      "seedFile": "verified_central_dst_nidhi_ssp_coe.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://nidhi.dst.gov.in/nidhissp/",
+        "anchor": "Purpose, support limits, application route and beneficiaries",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "dst-nidhi-centres-of-excellence",
+      "name": "NIDHI Centres of Excellence (NIDHI-CoE)",
+      "seedFile": "verified_central_dst_nidhi_ssp_coe.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://nidhi.dst.gov.in/nidhicoe/",
+        "anchor": "Objectives, support description, How to Apply and beneficiaries",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "cpcb-plastic-packaging-epr-registration",
+      "name": "CPCB Plastic Packaging Extended Producer Responsibility Registration",
+      "seedFile": "verified_central_environment_compliance_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://cpcb.nic.in/uploads/plasticwaste/SOP_PWM_24062024.pdf",
+        "anchor": "Plastic packaging EPR coverage, mandatory registration categories, portal route, targets and consequences",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "cpcb-e-waste-epr-producer-registration",
+      "name": "CPCB E-Waste Extended Producer Responsibility Registration",
+      "seedFile": "verified_central_environment_compliance_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://cpcb.nic.in/uploads/Projects/E-Waste/FAQ_ewaste_23012024.pdf",
+        "anchor": "Producer registration requirement, covered entity categories, exclusions and phase-wise recycling targets",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "moefcc-parivesh-environmental-clearance",
+      "name": "MoEFCC Environmental Clearance through PARIVESH",
+      "seedFile": "verified_central_environment_compliance_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://moef.gov.in/index.php/environmental-impact-assessment-eia",
+        "anchor": "EIA appraisal, two-stage projects, PARIVESH online application and complete-information decision boundary",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "export-promotion-mission-niryat-protsahan-niryat-disha",
+      "name": "Export Promotion Mission (Niryat Protsahan and Niryat Disha)",
+      "seedFile": "verified_central_export_access.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.commerce.gov.in/wp-content/uploads/2026/02/Starred-Question-87.pdf",
+        "anchor": "EPM approval, FY 2025-26 to FY 2030-31 outlay and phased operationalisation of MSME exporter interventions",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "market-access-initiative-mai",
+      "name": "Market Access Initiative (MAI)",
+      "seedFile": "verified_central_export_access.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.commerce.gov.in/wp-content/uploads/2021/07/Market-Access-Initiative-MAI-Scheme-2021-dated-19-July-2021.pdf",
+        "anchor": "Main focus, eligible agencies and components",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "remission-of-duties-and-taxes-on-exported-products-rodtep",
+      "name": "Remission of Duties and Taxes on Exported Products (RoDTEP)",
+      "seedFile": "verified_central_export_access.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.commerce.gov.in/ministryofcommerce/node/856",
+        "anchor": "Eligibility framing, notified rates, value caps and e-scrip mechanism",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "prime-ministers-employment-generation-programme",
+      "name": "Prime Minister's Employment Generation Programme",
+      "seedFile": "verified_central_finance_batch.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://kviconline.gov.in/pmegpeportal/dashboard/notification/Revised_PMEGP_Scheme_Guidelines_07122023_compressed.pdf",
+        "anchor": "Maximum project cost and eligibility conditions",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "credit-guarantee-scheme-cgtmse",
+      "name": "Credit Guarantee Scheme for Micro and Small Enterprises",
+      "seedFile": "verified_central_finance_batch.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.cgtmse.in/Home/VS/3",
+        "anchor": "Guarantee coverage and scheme purpose",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "pradhan-mantri-mudra-yojana",
+      "name": "Pradhan Mantri MUDRA Yojana",
+      "seedFile": "verified_central_finance_batch_2.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://financialservices.gov.in/pradhan-mantri-mudra-yojana-pmmy",
+        "anchor": "Features: purposes, categories, member lending institutions, collateral not required",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "stand-up-india-scheme",
+      "name": "Stand Up India Scheme",
+      "seedFile": "verified_central_finance_batch_2.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.financialservices.gov.in/stand-india-scheme-supi",
+        "anchor": "Features: loan range, greenfield project scope, repayment, margin money and own contribution",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "msme-sustainable-zed-certification",
+      "name": "MSME Sustainable (ZED) Certification",
+      "seedFile": "verified_central_finance_batch_2.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.dcmsme.gov.in/CLCS_TUS_Scheme/ZED_Scheme/Scheme_Guidelines.aspx",
+        "anchor": "Key Benefits and Eligibility/Applicability",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "pradhan-mantri-matsya-kisan-samridhi-sah-yojana",
+      "name": "Pradhan Mantri Matsya Kisan Samridhi Sah-Yojana (PM-MKSSY)",
+      "seedFile": "verified_central_fisheries_pm_mkssy.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.dof.gov.in/static/uploads/2025/09/db9e0987df6461b69304fe4115aceec9.pdf",
+        "anchor": "Pages 3-13: objectives, targeted beneficiaries, NFDP formalisation, working-capital access, aquaculture insurance, performance grants, post-verification and exclusions",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "gem-startup-runway-public-procurement",
+      "name": "GeM Startup Runway",
+      "seedFile": "verified_central_gem_startup_runway.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.startupindia.gov.in/content/sih/en/public_procurement.html",
+        "anchor": "GeM seller registration; GeM Startup Runway; public-procurement relaxations",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "great-technical-textiles-startup-grant",
+      "name": "GREAT - Grant for Research and Entrepreneurship across Aspiring Innovators in Technical Textiles",
+      "seedFile": "verified_central_great_technical_textiles.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://sansad.in/getFile/annex/270/AU1753_PDeXTJ.pdf?source=pqars",
+        "anchor": "Pages 1-3: current approved-startup count, maximum support, monitoring, individual eligibility and startup-company eligibility",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "nhdp-marketing-support-services-handicrafts",
+      "name": "National Handicrafts Development Programme - Marketing Support and Services",
+      "seedFile": "verified_central_handicrafts_nhdp.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://handicrafts.nic.in/cmsUpload/20230425203825NHDP_Guidlines.pdf",
+        "anchor": "Marketing Support and Services (MSS): marketing events, exhibitions, fairs, buyer-seller meets, brand promotion and market-development activities",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "nhdp-skill-development-handicraft-sector",
+      "name": "National Handicrafts Development Programme - Skill Development in Handicraft Sector",
+      "seedFile": "verified_central_handicrafts_nhdp.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://handicrafts.nic.in/cmsUpload/20230425203825NHDP_Guidlines.pdf",
+        "anchor": "Design and Skill Development in Handicraft Sector: Design and Technology Development Workshop, Toolkit Distribution, Guru Shishya Hastshilp Prashikshan and Comprehensive Skill Upgradation",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "importer-exporter-code-iec",
+      "name": "Importer Exporter Code (IEC)",
+      "seedFile": "verified_central_iec_tax_identity.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.dgft.gov.in/CP/",
+        "anchor": "Importer Exporter Code services and current DGFT application route",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "pan-tan-allocation-readiness",
+      "name": "PAN and TAN Allocation Readiness",
+      "seedFile": "verified_central_iec_tax_identity.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.mca.gov.in/content/dam/mca/pdf/SPICEplus-and-linked-filings-FAQs-V3-20230122.pdf",
+        "anchor": "SPICe+ Part B; Application for PAN / TAN allocation; linked services and current MCA form conditions",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "company-incorporation-spice-plus",
+      "name": "Company Incorporation through SPICe+",
+      "seedFile": "verified_central_incorporation_food_safety.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.mca.gov.in/content/dam/mca/pdf/SPICEplus-and-linked-filings-FAQs-V3-20230122.pdf",
+        "anchor": "FAQs on Incorporation and Allied Matters; SPICe+ Part A; SPICe+ Part B and integrated services",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "fssai-food-business-registration-licensing",
+      "name": "FSSAI Food Business Registration or Licence",
+      "seedFile": "verified_central_incorporation_food_safety.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://fssai.gov.in/business/registration",
+        "anchor": "Business Registration; Section 31; registration and licensing route, reconciled with the 2026 turnover-threshold amendment FAQ",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "dst-technology-business-incubator",
+      "name": "DST Technology Business Incubator (TBI)",
+      "seedFile": "verified_central_incubator_programs.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.startupindia.gov.in/content/sih/en/incubator-schemes.html",
+        "anchor": "Schemes for Incubators; DST - TBI; Objective; Eligibility criteria",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "birac-bionest-incubation-support",
+      "name": "BIRAC BioNEST Incubation Support",
+      "seedFile": "verified_central_incubator_programs.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.startupindia.gov.in/content/sih/en/incubator-schemes.html",
+        "anchor": "Schemes for Incubators; DBT - BioNest; Objective; Eligibility criteria",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "atal-incubation-centres",
+      "name": "Atal Incubation Centres (AIC)",
+      "seedFile": "verified_central_incubator_programs.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.startupindia.gov.in/content/sih/en/incubator-schemes.html",
+        "anchor": "Schemes for Incubators; AIM - AIC; Objective; Eligibility criteria; Funding support",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "meity-tide-2-incubation-centres",
+      "name": "MeitY TIDE 2.0 Incubation Centres",
+      "seedFile": "verified_central_incubator_programs.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.startupindia.gov.in/content/sih/en/incubator-schemes.html",
+        "anchor": "Schemes for Incubators; MeitY - TIDE 2.0; Objective; G1C/G2C/G3C; Eligibility criteria",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "technology-incubation-and-development-of-entrepreneurs-tide-2",
+      "name": "Technology Incubation and Development of Entrepreneurs (TIDE 2.0)",
+      "seedFile": "verified_central_innovation_programs.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.meity.gov.in/offerings/schemes-and-services/details/technology-incubation-and-development-of-entrepreneurs-QMwEjNtQWa",
+        "anchor": "Introduction and Eligibility",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "startup-accelerator-meity-samridh",
+      "name": "Startup Accelerator of MeitY for Product Innovation, Development and Growth (SAMRIDH)",
+      "seedFile": "verified_central_innovation_programs.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://msh.meity.gov.in/schemes/samridh",
+        "anchor": "Programme overview and salient features",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "nidhi-prayas-2-0",
+      "name": "NIDHI PRAYAS 2.0",
+      "seedFile": "verified_central_innovation_programs.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://nidhi.dst.gov.in/document/nidhi-prayas-2-0-program-guidelines/",
+        "anchor": "NIDHI PRAYAS 2.0 Program Guidelines page; View / Download link",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "biotechnology-ignition-grant-big",
+      "name": "Biotechnology Ignition Grant (BIG)",
+      "seedFile": "verified_central_innovation_programs.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.birac.nic.in/big.php",
+        "anchor": "Scheme overview and call announcement calendar",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "in-space-seed-fund",
+      "name": "IN-SPACe Seed Fund Scheme",
+      "seedFile": "verified_central_inspace_seed_fund.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.inspace.gov.in/sys_attachment.do?sys_id=7adb190c4703aa10d4bc5b31516d43fc",
+        "anchor": "Pages 2-7: scheme purpose, space-sector focus, applicant conditions, grant structure, milestone disbursement, utilization and application announcement route",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "startup-india-investor-connect",
+      "name": "Startup India Investor Connect",
+      "seedFile": "verified_central_investor_connect.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.startupindia.gov.in/content/sih/en/about-startup-india-initiative.html",
+        "anchor": "Startup India Investor Connect: purpose, launch and investor-startup engagement description",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "khadi-gramodyog-vikas-yojana",
+      "name": "Khadi Gramodyog Vikas Yojana (KGVY)",
+      "seedFile": "verified_central_khadi_gramodyog_vikas_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://kviconline.gov.in/pmegpeportalappdoc/DigitalKVICupload/43320231218130809.pdf",
+        "anchor": "Introduction of KGVY: KVY, GVY and Khadi Grant components",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "legal-metrology-packaged-commodities-registration-rule-27",
+      "name": "Legal Metrology Packaged Commodities Registration (Rule 27)",
+      "seedFile": "verified_central_legal_metrology.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://lm.doca.gov.in/index.aspx",
+        "anchor": "Packaged Commodities Registration and Rule 27 application route",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "legal-metrology-importer-registration-weights-measures-section-19",
+      "name": "Legal Metrology Importer Registration for Weights and Measures (Section 19)",
+      "seedFile": "verified_central_legal_metrology.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://consumeraffairs.gov.in/pages/weight-and-measures",
+        "anchor": "Registration for importers of weights and measures; State enforcement rules",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "legal-metrology-model-approval-weights-measures-section-22",
+      "name": "Legal Metrology Model Approval for Weights and Measures (Section 22)",
+      "seedFile": "verified_central_legal_metrology.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://lm.doca.gov.in/index.aspx",
+        "anchor": "Model Approval System and Section 22 application route",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "startup-india-maarg-mentorship",
+      "name": "Startup India MAARG Mentorship",
+      "seedFile": "verified_central_maarg_mentorship.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://maarg.startupindia.gov.in/",
+        "anchor": "The Startup India National Mentorship Platform; Startup Application; Get a Mentor",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "mahir-advanced-high-impact-research-power-startup-support",
+      "name": "Mission on Advanced and High-Impact Research (MAHIR)",
+      "seedFile": "verified_central_mahir_power_research_startup_support.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2023/jun/doc202367209801.pdf",
+        "anchor": "Pages 1-4: mission objectives, five-year period, funding, startup pilots, selection and IP modalities",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "micro-and-small-enterprises-cluster-development-programme",
+      "name": "Micro and Small Enterprises Cluster Development Programme (MSE-CDP)",
+      "seedFile": "verified_central_market_productivity_programs.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://msme.gov.in/sites/default/files/ModifiedGuidelinesofMSE.pdf",
+        "anchor": "Background; Objectives of the Scheme; Diagnostic Study; Soft Interventions; Common Facility Centres",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "msme-competitive-lean-scheme",
+      "name": "MSME Competitive (LEAN) Scheme",
+      "seedFile": "verified_central_market_productivity_programs.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://lean.msme.gov.in/Home/Eligibility",
+        "anchor": "Coverage & Eligibility",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "nsic-consortia-and-tender-marketing-scheme",
+      "name": "NSIC Consortia & Tender Marketing Scheme",
+      "seedFile": "verified_central_market_productivity_programs.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.msme.gov.in/offerings",
+        "anchor": "Consortia & Tender Marketing Scheme",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "chips-to-startup-c2s",
+      "name": "Chips to Startup (C2S) Programme",
+      "seedFile": "verified_central_meity_c2s.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://c2s.gov.in/callforproposals.jsp",
+        "anchor": "Official C2S programme call page: startup/MSME participation, project categories, proposal route, evaluation and call-window history",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "meity-genesis-gen-next-support-for-innovative-startups",
+      "name": "GEN-NEXT Support for Innovative Startups (GENESIS)",
+      "seedFile": "verified_central_meity_genesis_telecom_testing.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.meity.gov.in/offerings/schemes-and-services/details/gen-next-support-for-innovative-startups-genesis-gN5AjNtQWa",
+        "anchor": "Introduction, eligibility, major components and detailed documents",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "dot-telecom-testing-certification-reimbursement-startups-mses",
+      "name": "Reimbursement of Testing and Certification Charges for Telecom Start-ups and MSEs",
+      "seedFile": "verified_central_meity_genesis_telecom_testing.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.meity.gov.in/offerings/schemes-and-services/details/guidelines-for-implementation-of-scheme-for-reimbursement-of-testing-and-certification-charges-for-start-ups-and-telecom-mses-cjNwMjMtQWa",
+        "anchor": "Overview, reimbursement criteria, scheme duration and application portal",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "mhi-pm-e-drive-ev-public-charging-stations",
+      "name": "PM E-DRIVE: EV Public Charging Station deployment support",
+      "seedFile": "verified_central_mhi_pm_e_drive_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://pmedrive.heavyindustries.gov.in/docs/policy_document/FAQs-Operational%20Guidelines%20for%20EV%20PCS%20under%20PM%20E-DRIVE.pdf",
+        "anchor": "Pages 1-4, Questions 1-13: location categories, benchmark charger costs, eligible proposal entities, nodal-agency route, CPO selection, commissioning, uptime, data sharing and recovery conditions",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "incentive-scheme-foreign-films-official-coproduction-india",
+      "name": "Incentive Scheme for Production of Foreign Films in India and Official Co-productions",
+      "seedFile": "verified_central_mib_foreign_film_incentive.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://indiacinehub.gov.in/incentive-calcuator-page",
+        "anchor": "Incentive Calculator: up to 40% support, production categories, fee, documents and application processing notes",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "nmdfc-term-loan-employment-venture",
+      "name": "NMDFC Term Loan Scheme for Employment-Generating Ventures",
+      "seedFile": "verified_central_minority_nmdfc_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.nmdfc.org/nmdfcschemes",
+        "anchor": "Term Loan Scheme: notified minority communities, Credit Line 1/2 income limits, loan ceilings, interest, moratorium and repayment",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "nmdfc-micro-finance-shg",
+      "name": "NMDFC Micro-Finance Scheme for Minority SHGs",
+      "seedFile": "verified_central_minority_nmdfc_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.nmdfc.org/nmdfcschemes",
+        "anchor": "Micro-Finance Scheme: SHG members, minority women focus, Credit Line 1/2 member and group ceilings, interest and repayment",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "nmdfc-virasat-artisan-credit",
+      "name": "NMDFC Virasat Credit Scheme for Craftpersons",
+      "seedFile": "verified_central_minority_nmdfc_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.nmdfc.org/nmdfcschemes",
+        "anchor": "Virasat Scheme: artisan working/fixed capital, maximum credit, interest, women concession, contribution and repayment",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "moca-production-linked-incentive-drones-components-closed",
+      "name": "Production Linked Incentive Scheme for Drones and Drone Components (Closed)",
+      "seedFile": "verified_central_moca_drone_pli_closed.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.civilaviation.gov.in/sites/default/files/2024-04/PLI%20Scheme%20Drones%20and%20Drone%20Components.pdf",
+        "anchor": "Eligibility, turnover thresholds, FY 2021-22 to FY 2023-24 tenure, 20% rate, 40% value addition, outlay and per-manufacturer cap",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "mofpi-integrated-cold-chain-value-addition-pmksy",
+      "name": "Integrated Cold Chain and Value Addition Infrastructure (PMKSY)",
+      "seedFile": "verified_central_mofpi_pmksy_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.mofpi.gov.in/en/announcements/revised-operational-guidelines-dated-22052025-respect-component-scheme-integrated-cold",
+        "anchor": "Component scope and current operational guidelines",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "mofpi-cefppc-food-processing-preservation-capacities-pmksy",
+      "name": "Creation/Expansion of Food Processing and Preservation Capacities (CEFPPC)",
+      "seedFile": "verified_central_mofpi_pmksy_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://mofpi.gov.in/en/Schemes/creation-expansion-food-processing-preservation-capacities-unit-scheme",
+        "anchor": "Objective, covered units, eligible organizations and EOI route",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "mofpi-agro-processing-cluster-pmksy",
+      "name": "Creation of Infrastructure for Agro Processing Clusters (APC)",
+      "seedFile": "verified_central_mofpi_pmksy_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.mofpi.gov.in/en/announcements/operational-guidelines-scheme-creation-infrastructure-agro-processing-clusters-apc",
+        "anchor": "Objective, common infrastructure and current 25 April 2025 guidelines",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "mohua-pm-ebus-sewa-ppp-urban-transport-access",
+      "name": "PM-eBus Sewa: PPP Urban Electric Bus and Mobility Procurement Access",
+      "seedFile": "verified_central_mohua_pm_ebus_sewa_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://pm-ebus-sewa.mohua.gov.in/wp-content/uploads/2025/08/PM-eBus-Sewa-Guidelines-Part-I-1.pdf",
+        "anchor": "Pages 1-10 and Annexures 2-4: 10,000-bus PPP support, eligible-city challenge method, proposal route, CESL tendering, 12-year GCC wet lease, depot and power infrastructure",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "mopng-cbg-biomass-aggregation-machinery",
+      "name": "Financial Assistance to CBG Producers for Biomass Aggregation Machinery (BAM)",
+      "seedFile": "verified_central_mopng_cbg_bam_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://mopng.gov.in/files/natural-gas/policies-and-guidelines/Revised-scheme-guideline.pdf",
+        "anchor": "Revised 2025 guideline; funding pattern, eligibility, procedure, documents and beneficiary responsibilities",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "msde-national-apprenticeship-promotion-scheme-2",
+      "name": "Pradhan Mantri National Apprenticeship Promotion Scheme (PM-NAPS / NAPS-2)",
+      "seedFile": "verified_central_msde_naps2_pmkvy.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2294856&lang=1&reg=1",
+        "anchor": "NAPS-2 continuity, establishment route, portal, DBT and stipend support",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "msde-pradhan-mantri-kaushal-vikas-yojana-4",
+      "name": "Pradhan Mantri Kaushal Vikas Yojana 4.0 (PMKVY 4.0)",
+      "seedFile": "verified_central_msde_naps2_pmkvy.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.pmindia.gov.in/en/news_updates/cabinet-approves-continuation-and-restructuring-of-skill-india-programme/",
+        "anchor": "PMKVY 4.0 under the composite Skill India Programme; beneficiary routes and industry-aligned training",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "msme-promotion-north-eastern-region-sikkim-infrastructure",
+      "name": "Promotion of MSMEs in North Eastern Region and Sikkim",
+      "seedFile": "verified_central_msme_ner_sikkim_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://ner-promotion.msme.gov.in/NERegion/NERLoginNew.aspx",
+        "anchor": "Scheme components, official registration and proposal route",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "msme-technology-centres-tool-rooms-extension-centres",
+      "name": "MSME Technology Centres, Tool Rooms and Extension Centres",
+      "seedFile": "verified_central_msme_technology_centres_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://dcmsme.gov.in/CLCS_TUS_Scheme/Tool_Room_Tech_Institutions/Scheme_Guidelines.aspx",
+        "anchor": "Technology Centres; technological and skilled manpower support; technical services, training and business advisory support",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "nandini-sahakar-women-cooperative-enterprise-support",
+      "name": "Nandini Sahakar - Women Cooperative Enterprise and Credit Support",
+      "seedFile": "verified_central_nandini_sahakar.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://ncdc.in/documents/other/Nandini-Sahakar-Scheme-Eng-01.11.2021.pdf",
+        "anchor": "Summary, eligibility, activities covered, period of loan, interest subvention and pattern of funding",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "dst-nidhi-entrepreneur-in-residence-fellowship",
+      "name": "NIDHI Entrepreneur-in-Residence (EIR) Fellowship",
+      "seedFile": "verified_central_nidhi_eir_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://nidhi.dst.gov.in/nidhieir/",
+        "anchor": "Introduction, programme management, application route and beneficiaries: technology-idea fellowship, INR 10,000-30,000 monthly, current page maximum 12 months, selected TBI route",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "national-quantum-mission-startup-support",
+      "name": "National Quantum Mission Startup Support",
+      "seedFile": "verified_central_nqm_startup_support.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://dst.gov.in/sites/default/files/Guidelines%20to%20support%20start-ups.pdf",
+        "anchor": "Pages 1-6: background, eligibility, application, selection, funding mechanism, mentoring, monitoring and Government support",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "udyam-registration",
+      "name": "Udyam Registration",
+      "seedFile": "verified_central_opportunities.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://udyamregistration.gov.in/default.aspx/UdyamRegistrationExist.aspx",
+        "anchor": "Current portal guidance: free, paperless and self-declaration; current MSME classification thresholds and identity fields",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "startup-india-seed-fund-scheme",
+      "name": "Startup India Seed Fund Scheme",
+      "seedFile": "verified_central_opportunities.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://seedfund.startupindia.gov.in/faq",
+        "anchor": "Eligibility, funding limits, terms and conditions",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "revamped-pharmaceutical-technology-upgradation-assistance-scheme",
+      "name": "Revamped Pharmaceutical Technology Upgradation Assistance Scheme (RPTUAS)",
+      "seedFile": "verified_central_pharma_rptuas_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.pharma-dept.gov.in/schemes/scheme-strengthening-pharmaceuticals-industry-spi",
+        "anchor": "SPI page, RPTUAS guidance, 2026 modification and official FAQ links",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "production-linked-incentive-bulk-drugs-ksm-di-api",
+      "name": "Production Linked Incentive Scheme for Bulk Drugs (KSMs, DIs and APIs)",
+      "seedFile": "verified_central_pharmaceuticals_bulk_drugs_pli.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://pharmaceuticals.gov.in/sites/default/files/Gazettee%20notification%20of%20bulk%20drug%20schemes_0.pdf",
+        "anchor": "Sections 2-13 and Annexures B-C: objective, 41 products, incentive rates, greenfield condition, thresholds, tenure and application route",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "promotion-of-medical-device-parks",
+      "name": "Promotion of Medical Device Parks",
+      "seedFile": "verified_central_pharmaceuticals_medical_device_parks.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://pharmaceuticals.gov.in/sites/default/files/Guidelines%20of%20the%20Scheme%20Promotion%20of%20Medical%20Devices%20Parks_1.pdf",
+        "anchor": "Pages 1-8, Sections 3-8: park definition, State proposer, scope, grant limits, selection and implementation",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "production-linked-incentive-medical-devices",
+      "name": "Production Linked Incentive Scheme for Promoting Domestic Manufacturing of Medical Devices",
+      "seedFile": "verified_central_pharmaceuticals_medical_devices_pli.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://pharmaceuticals.gov.in/sites/default/files/Revised%20Guidelines%20of%20PLI%20-%20MD%20dated%2025.02.2023.pdf",
+        "anchor": "Pages 1-10 and target-segment/claim provisions: applicant, greenfield project, four target segments, incentive calculation and disbursement",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "production-linked-incentive-pharmaceuticals",
+      "name": "Production Linked Incentive Scheme for Pharmaceuticals",
+      "seedFile": "verified_central_pharmaceuticals_pli.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://pharmaceuticals.gov.in/sites/default/files/Gazette%20Notification%20of%20PLI%20scheme%20for%20Pharmaceuticals_0_0.pdf",
+        "anchor": "Sections 2, 3.1 and 3.2; objective, target groups and scheme outlay",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "prip-component-a-niper-centres-of-excellence",
+      "name": "PRIP Component A - NIPER Centres of Excellence",
+      "seedFile": "verified_central_pharmaceuticals_prip.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://pharma-dept.gov.in/schemes/scheme-promotion-research-and-innovation-pharma-medtech-sector-prip",
+        "anchor": "Department scheme page: PRIP scheme guidelines, Gazette notification and additional PRIP portal resources",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "prip-component-b-industry-startup-rd-projects",
+      "name": "PRIP Component B - Industry, Startup and MSME Pharma-MedTech R&D Projects",
+      "seedFile": "verified_central_pharmaceuticals_prip.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://prip.pharma-dept.gov.in/resources/21.%20Guidelines.pdf",
+        "anchor": "PRIP FAQ download and official application guidance for eligibility, TRL routes and financial assistance",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "smdi-common-facilities-medical-device-clusters",
+      "name": "SMDI - Common Facilities for Medical Device Clusters",
+      "seedFile": "verified_central_pharmaceuticals_smdi.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+        "anchor": "Chapter II, Common Facilities for Medical Device Clusters: Sections 2.1.4-2.1.5",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "smdi-marginal-investment-reducing-import-dependence",
+      "name": "SMDI - Marginal Investment Scheme for Reducing Import Dependence",
+      "seedFile": "verified_central_pharmaceuticals_smdi.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+        "anchor": "Chapter III, Marginal Investment Scheme for Reducing Import Dependence",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "smdi-capacity-building-skill-development-medical-devices",
+      "name": "SMDI - Capacity Building and Skill Development for Medical Devices",
+      "seedFile": "verified_central_pharmaceuticals_smdi.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+        "anchor": "Capacity Building and Skill Development component: eligible institutions, Masters, diploma and short-term courses",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "smdi-medical-device-clinical-studies-support",
+      "name": "SMDI - Medical Device Clinical Studies Support Scheme",
+      "seedFile": "verified_central_pharmaceuticals_smdi.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+        "anchor": "Clinical Studies Support component: animal studies, clinical investigations, post-market follow-up and eligible applicants",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "smdi-medical-device-promotion-scheme",
+      "name": "SMDI - Medical Device Promotion Scheme",
+      "seedFile": "verified_central_pharmaceuticals_smdi.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+        "anchor": "Medical Device Promotion component: industry bodies, institutions, events, studies, database and international promotion",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "production-linked-incentive-2-it-hardware",
+      "name": "Production Linked Incentive Scheme 2.0 for IT Hardware",
+      "seedFile": "verified_central_pli_it_hardware.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.meity.gov.in/static/uploads/2024/03/Guidelines_PLI-Scheme-ITHW-min.pdf",
+        "anchor": "Pages 1 onward: applicant definition, target segment, qualification criteria, application and claim requirements",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "pm-viksit-bharat-rozgar-yojana-part-a-first-timers",
+      "name": "Pradhan Mantri Viksit Bharat Rozgar Yojana - Part A First-Time Employees",
+      "seedFile": "verified_central_pmvbry_employment_incentive.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://pmvbry.epfindia.gov.in/wp-content/themes/epfo-child/assets/images/PMVBRY-Final.pdf",
+        "anchor": "Sections 1.1-1.2; sections 3.1.5, 3.1.12-3.1.13; sections 6.1.1-6.1.2; pages 3, 6-11",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "pm-viksit-bharat-rozgar-yojana-part-b-employer-incentive",
+      "name": "Pradhan Mantri Viksit Bharat Rozgar Yojana - Part B Employer Incentive",
+      "seedFile": "verified_central_pmvbry_employment_incentive.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://pmvbry.epfindia.gov.in/wp-content/themes/epfo-child/assets/images/PMVBRY-Final.pdf",
+        "anchor": "Sections 4.1-5.2; sections 6.2.1-6.4; pages 9-14",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "india-post-franchise-outlet",
+      "name": "India Post Franchise Outlet",
+      "seedFile": "verified_central_posts_franchise_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+        "anchor": "Sections 2.1-2.7 and 2.6: counter services, eligible applicants, age/education, premises, security deposit, selection and commission",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "india-post-postal-agent",
+      "name": "India Post Postal Agent",
+      "seedFile": "verified_central_posts_franchise_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+        "anchor": "Sections 3.1-3.4: postal-agent services, eligibility, no security deposit, 5% commission and licence terms",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "mop-adeetie-energy-efficiency-msme",
+      "name": "ADEETIE - Assistance for Deployment of Energy Efficient Technologies in MSMEs",
+      "seedFile": "verified_central_power_adeetie_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.beeindia.gov.in/show_content.php?lang=1&level=1&lid=384&ls_id=234",
+        "anchor": "Current scheme overview: interest subvention, eligible MSMEs, 14 sectors, 60 clusters, ₹10 lakh-₹15 crore loan range, up to 75% debt funding, 10% energy-savings test and FY 2025-26 to FY 2027-28 duration",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "public-procurement-policy-for-micro-and-small-enterprises",
+      "name": "Public Procurement Policy for Micro and Small Enterprises (MSEs)",
+      "seedFile": "verified_central_procurement_credit_access.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://msme.gov.in/sites/default/files/MSMEANNUALREPORT2025-26ENGLISH_0.pdf",
+        "anchor": "1.8 Procurement; 1.8.1 Public Procurement Policy; 1.8.2 MSME Sambandh; 1.8.3 GeM",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "performance-and-credit-rating-scheme-for-micro-and-small-enterprises",
+      "name": "Performance and Credit Rating Scheme for Micro and Small Enterprises",
+      "seedFile": "verified_central_procurement_credit_access.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://msme.gov.in/sites/default/files/PCRSchemeGuidelines.pdf",
+        "anchor": "Approach for rating of SSI units; Selection of rating agency; rating process",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "railways-dpiit-startup-procurement-access",
+      "name": "Indian Railways Procurement Access for DPIIT-Recognized Startups",
+      "seedFile": "verified_central_railways_startup_procurement_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://secr.indianrailways.gov.in/uploads/files/1738300360704-Manual%20for%20procurement%20Goods_2024.pdf",
+        "anchor": "Section 1.11.5 Support to Start-up Enterprises; DPIIT startup definition, bid-security exemption and prior turnover/experience relaxation",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "mse-online-dispute-resolution-scheme",
+      "name": "MSE Scheme on Online Dispute Resolution (MSE-ODR)",
+      "seedFile": "verified_central_ramp_programs.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://ramp.msme.gov.in/ramp/pdf-documents/scheme-guidelines/odr-guidelines.pdf",
+        "anchor": "Financial Assistance to MSEs; Eligibility Criterion; Implementation Period",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "mse-green-investment-and-financing-for-transformation",
+      "name": "MSE Green Investment and Financing for Transformation (MSE GIFT)",
+      "seedFile": "verified_central_ramp_programs.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://ramp.msme.gov.in/ramp/RAMP-initiative/mse-gift/gift-risk-sharing-facility-coverage-rsf",
+        "anchor": "Scheme Components; Eligibility; Sectors Covered",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "mse-scheme-for-promotion-and-investment-in-circular-economy",
+      "name": "MSE Scheme for Promotion and Investment in Circular Economy (MSE SPICE)",
+      "seedFile": "verified_central_ramp_programs.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://ramp.msme.gov.in/ramp/RAMP-initiative/mse-spice/mse-spice",
+        "anchor": "Scheme Components; Eligibility; Capital Subsidy",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "msme-trade-enablement-and-marketing-team-initiative",
+      "name": "MSME Trade Enablement and Marketing (TEAM) Initiative",
+      "seedFile": "verified_central_ramp_programs.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://ramp.msme.gov.in/ramp/RAMP-initiative/msme-team-initiative/msme-team-initiative",
+        "anchor": "Scheme Components; Partners; Expected Impact",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "dpiit-startup-recognition",
+      "name": "DPIIT Startup Recognition",
+      "seedFile": "verified_central_registration_journeys.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.startupindia.gov.in/content/sih/en/startupgov/startup_recognition_page.html",
+        "anchor": "DPIIT Startup Recognition; Eligibility Criteria for Startup Recognition; Apply through National Single Window System; applicant and fee disclaimer",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "gst-registration",
+      "name": "GST Registration",
+      "seedFile": "verified_central_registration_journeys.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://tutorial.gst.gov.in/cbt/registration/gstregistration/course/story_content/external_files/GST_Registration_Document_Checklist.pdf",
+        "anchor": "Check-list of Documents Required For GST Registration; Proof of Constitution; Proof of Appointment of Authorised Signatory; Proof of Principal Place of Business; supporting document while filing clarification",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "pm-rkvy-raftaar-navodaya-agripreneurship-orientation",
+      "name": "RKVY-RAFTAAR NAVODAYA Agripreneurship Orientation",
+      "seedFile": "verified_central_rkvy_raftaar_agripreneurship_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.ivri.nic.in/Rabi/navodaya.aspx",
+        "anchor": "Programme description and eligibility: Indian citizen, innovative agriculture/allied idea, pre-seed market-fit/PoC/prototype condition, two-month training, stipend and grant-in-aid",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "pm-rkvy-raftaar-samriddhi-startup-incubation",
+      "name": "RKVY-RAFTAAR SAMRIDDHI Startup Agribusiness Incubation",
+      "seedFile": "verified_central_rkvy_raftaar_agripreneurship_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.ivri.nic.in/Rabi/samridhi.aspx",
+        "anchor": "Programme description and eligibility: MVP-ready animal-science/allied start-ups, registered Indian legal entity, DPIIT start-up definition, one-time subsequent-round restriction and grant-in-aid up to INR 25 lakh",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "startup-village-entrepreneurship-programme",
+      "name": "Start-up Village Entrepreneurship Programme (SVEP)",
+      "seedFile": "verified_central_rural_entrepreneurship.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.svep.nrlm.gov.in/landing",
+        "anchor": "Objective, focus areas, support model, DAY-NRLM relationship and last-updated date",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "pm-street-vendors-atmanirbhar-nidhi-pm-svanidhi",
+      "name": "Prime Minister Street Vendors AtmaNirbhar Nidhi (PM SVANidhi)",
+      "seedFile": "verified_central_self_employment.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://mohua.gov.in/pm_svandhi/PMSVANidhi%20Guideline_English.pdf",
+        "anchor": "Base guideline reconciled with PIB 27 August 2025 restructuring release and PIB 27 July 2026 current tranche/repayment clarification",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "shipbuilding-development-scheme-greenfield-cluster",
+      "name": "Shipbuilding Development Scheme - Greenfield Shipbuilding Cluster Development",
+      "seedFile": "verified_central_shipbuilding_sbds.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://shipmin.gov.in/sites/default/files/Annexure%203%20Greenfield%20guidelines.pdf",
+        "anchor": "Pages 1-5 and monitoring sections: SPV, anchor shipyard, eligible items, capital assistance and approval validity",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "shipbuilding-development-scheme-brownfield-capacity-expansion",
+      "name": "Shipbuilding Development Scheme - Brownfield Capacity Expansion",
+      "seedFile": "verified_central_shipbuilding_sbds.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://shipmin.gov.in/sites/default/files/Annexure%204%20Brownfield_V23%20%282%29_0.pdf",
+        "anchor": "Pages 1-3 and Section 5.10: existing shipyard, approved project cost, 25% grant, financial closure and tranche release",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "shipbuilding-development-scheme-risk-coverage",
+      "name": "Shipbuilding Development Scheme - Shipbuilding Risk Coverage",
+      "seedFile": "verified_central_shipbuilding_sbds.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://shipmin.gov.in/sites/default/files/Annexure%202%20Credit%20risk%20coverage%20guidelines_0.pdf",
+        "anchor": "Pages 1-3: validity, credit-risk coverage agencies, pre-shipment, post-shipment and vendor-default risks",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "shipbuilding-financial-assistance-scheme-sbfas",
+      "name": "Shipbuilding Financial Assistance Scheme (SBFAS)",
+      "seedFile": "verified_central_shipbuilding_sbfas.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://shipmin.gov.in/sites/default/files/Modified%20Guidelines%20for%20implementation%20of%20Shipbuilding%20Financial%20Assistance%20Scheme%20%28SBFAS%29_0.pdf",
+        "anchor": "Pages 1-9 and Schedules IV-V: eligible contracts, vessel categories, assistance rates, domestic content and application procedure",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "credit-enhancement-guarantee-sc",
+      "name": "Credit Enhancement Guarantee Scheme for Scheduled Castes",
+      "seedFile": "verified_central_social_justice_credit_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.ifcicegssc.in/",
+        "anchor": "Highlights: objective, eligible entity forms, more than 51% SC ownership/control for the past 6 months, guarantee cover and tenure",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "nsfdc-income-generating-credit",
+      "name": "NSFDC Income-Generating Credit Schemes",
+      "seedFile": "verified_central_social_justice_credit_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://nsfdc.nic.in/faqs",
+        "anchor": "Eligibility, application route and credit-scheme tracks: MFS, AMY, Term Loan and Udyam Nidhi Yojana",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "epfo-establishment-registration",
+      "name": "EPFO Establishment Registration and Employer Compliance",
+      "seedFile": "verified_central_social_security_compliance.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.epfindia.gov.in/site_en/EODB.php",
+        "anchor": "Registration in EPFO; Common Registration for EPFO/ESIC; employer registration services",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "esic-employer-registration",
+      "name": "ESIC Employer Registration",
+      "seedFile": "verified_central_social_security_compliance.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://portal.esic.gov.in/ESICInsurance1/ESICInsurancePortal/Employer_Employee_registration_through_portal.pdf",
+        "anchor": "Online Registration of the Employers; registration under the ESI Act; registration workflow and applicability overview",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "production-linked-incentive-specialty-steel",
+      "name": "Production Linked Incentive Scheme for Specialty Steel",
+      "seedFile": "verified_central_specialty_steel_pli.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://steel.gov.in/pli",
+        "anchor": "Current scheme status, PLI 1.1 rounds, selected companies and current implementation information",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "self-reliant-india-sri-fund-msme-growth-capital",
+      "name": "Self-Reliant India (SRI) Fund",
+      "seedFile": "verified_central_sri_fund.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.nvcfl.co.in/Scheme",
+        "anchor": "Introduction, Objectives, SRI Fund Structure, Investment Process and eligibility/exclusion conditions",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "credit-guarantee-scheme-for-startups",
+      "name": "Credit Guarantee Scheme for Startups",
+      "seedFile": "verified_central_startup_credit.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.startupindia.gov.in/content/dam/invest-india/PGF/credit-guarantee-scheme-for-startup.pdf",
+        "anchor": "S.O. 2046(E), 8 May 2025; Chapters I-V: commencement, objective, definitions, eligible borrowers and Member Institutions",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "startup-india-fund-of-funds-2",
+      "name": "Startup India Fund of Funds 2.0",
+      "seedFile": "verified_central_startup_fund.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.dpiit.gov.in/static/uploads/2026/04/8949d8e0dabf11cb9291b00ec1d1f727.pdf",
+        "anchor": "Pages 1-5: principal features, purpose, investment in AIFs, investment by AIFs, operating expenses, AIF selection process and Annexure-I parameters",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "bharat-startup-grand-challenge",
+      "name": "Bharat Startup Grand Challenge",
+      "seedFile": "verified_central_startup_programs.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.startupindia.gov.in/content/sih/en/bharat-startup-grand-challenge.html",
+        "anchor": "Objective; Benefits; Ongoing Challenges; Frequently Asked Questions",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "national-startup-awards",
+      "name": "National Startup Awards",
+      "seedFile": "verified_central_startup_programs.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.startupindia.gov.in/content/sih/en/ams-application/application-listing.html",
+        "anchor": "Applications for National Startup Awards 5.0 are now open; Apply in 20+ Categories; Win a Cash Prize of Rs. 10 Lakhs",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "technology-development-board-technology-commercialisation-finance",
+      "name": "Technology Development Board Technology Commercialisation Finance",
+      "seedFile": "verified_central_tdb_technology_funding.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://tdb.gov.in/sites/default/files/2023-12/funding_guidelines_march_23_revised.pdf",
+        "anchor": "Pages 2-6: what the Board does, who can be funded, eligible technology-commercialisation routes and application conditions",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "msme-tool-rooms-and-technology-centres",
+      "name": "MSME Tool Rooms and Technology Centres",
+      "seedFile": "verified_central_technology_coir_programs.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.msme.gov.in/sites/default/files/MSMESchemebooklet2024.pdf",
+        "anchor": "Tool Rooms and Technical Institutions - A Component of Infrastructure Development & Capacity Building",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "coir-vikas-yojana",
+      "name": "Coir Vikas Yojana (CVY)",
+      "seedFile": "verified_central_technology_coir_programs.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://msme.gov.in/sites/default/files/Coir-Vikas-YojanaContents.pdf",
+        "anchor": "Introduction; objectives; scheme components and eligible coir-sector support",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "production-linked-incentive-telecom-networking-products",
+      "name": "Production Linked Incentive Scheme for Telecom and Networking Products",
+      "seedFile": "verified_central_telecom_pli.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.dot.gov.in/static/uploads/2025/07/425537d318df04ffd54bd262fa9610f6.pdf",
+        "anchor": "Sections 1.1, 1.3, 5.3, 5.6 and 5.7; scheme purpose, application route and window caveat",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "production-linked-incentive-textiles-new-applicants",
+      "name": "Production Linked Incentive (PLI) Scheme for Textiles - New Applicant Track",
+      "seedFile": "verified_central_textiles_pli.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://pli.texmin.gov.in/frontend/images/Documents/Approved%20Guidelines%20for%20PLI%20scheme%20for%20Textiles.pdf",
+        "anchor": "Sections 3-6, 7, 16-17 and Table 2; pages 4-6, 7-8 and 13-14, read with later amendments",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "production-linked-incentive-textiles-existing-participants-added-products",
+      "name": "Production Linked Incentive (PLI) Scheme for Textiles - Existing Participant Added-Product Track",
+      "seedFile": "verified_central_textiles_pli.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://pli.texmin.gov.in/frontend/images/Documents/Amendment%20%26%20Addition-PLI%20for%20Textiles%20-%20Noti%20dt%2009.10.2025.pdf",
+        "anchor": "Sections 2.1-2.3 and 3.3-4.1; amendment pages 12-14, read with current portal notices",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "incredible-india-bed-breakfast-homestay-classification",
+      "name": "Incredible India Bed & Breakfast / Homestay Classification",
+      "seedFile": "verified_central_tourism_hospitality.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://nidhi.tourism.gov.in/uploads/gallery/1659456723.pdf",
+        "anchor": "Pages 3-6: purpose, applicability where the State/UT has no own scheme, one-to-six rooms/12 beds, inspection, two-year validity, classification fees, documents, appeal and official submission route",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "assistance-to-training-institutions-ati",
+      "name": "Assistance to Training Institutions (ATI)",
+      "seedFile": "verified_central_training_programs.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://ati.msme.gov.in/ATI/home.aspx",
+        "anchor": "Scheme overview and assistance to training institutions",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "entrepreneurship-and-skill-development-programme-esdp",
+      "name": "Entrepreneurship and Skill Development Programme (ESDP)",
+      "seedFile": "verified_central_training_programs.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://msme.gov.in/sites/default/files/Approved_ESDP_Guidelines.pdf",
+        "anchor": "Background; Aims and objectives; Enterprise Development Centres",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "pmjvm-tribal-value-chain",
+      "name": "Pradhan Mantri Janjatiya Vikas Mission (PMJVM)",
+      "seedFile": "verified_central_tribal_livelihood_nstfdc_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://tribal.gov.in/Livelihood.aspx",
+        "anchor": "PMJVM merger of MFP value-chain and tribal-product marketing support; tribal entrepreneurship and livelihood objectives; TRIFED implementation",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "vcf-st-tribal-startups",
+      "name": "Venture Capital Fund for Scheduled Tribes (VCF-ST)",
+      "seedFile": "verified_central_tribal_livelihood_nstfdc_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://tribal.gov.in/Livelihood.aspx",
+        "anchor": "VCF-ST objective to promote ST entrepreneurship and support/incubate startup ideas; IFCI VCF Ltd management",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "nstfdc-term-loan-st-entrepreneurs",
+      "name": "NSTFDC Term Loan Scheme for Scheduled Tribe Entrepreneurs",
+      "seedFile": "verified_central_tribal_livelihood_nstfdc_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://nstfdc.tribal.gov.in/CuteSoft_Client/writereaddata/upload/NSTFDC_AR%20-%202024-25_Final_03-12-25_English.pdf",
+        "anchor": "Term Loan Scheme: viable projects up to INR 50 lakh per unit, up to 90% project cost, ST eligibility and beneficiary interest bands",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "nstfdc-trifed-empanelled-artisan-credit",
+      "name": "NSTFDC Assistance for TRIFED-empanelled Tribal Artisans",
+      "seedFile": "verified_central_tribal_livelihood_nstfdc_current.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://nstfdc.tribal.gov.in/CuteSoft_Client/writereaddata/upload/NSTFDC_AR%20-%202024-25_Final_03-12-25_English.pdf",
+        "anchor": "Special scheme for TRIFED-empanelled artisans: project assets and working capital, individual/SHG ceilings and interest concessions",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "women-entrepreneurship-platform-wep",
+      "name": "Women Entrepreneurship Platform (WEP)",
+      "seedFile": "verified_central_wep_women_entrepreneurship.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://wep.gov.in/knowledge-portal",
+        "anchor": "Knowledge Portal categories: schemes, access to finance, incubators and accelerators, business development support, mentorship and services",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    },
+    {
+      "slug": "yuva-sahakar-cooperative-enterprise-support-innovation",
+      "name": "Yuva Sahakar - Cooperative Enterprise Support and Innovation Scheme",
+      "seedFile": "verified_central_yuva_sahakar.sql",
+      "localStatus": "in_review",
+      "publicationStatus": "blocked",
+      "source": {
+        "url": "https://www.ncdc.in/documents/faq/2010210223Pattern-of-Assistance-2021-22.pdf",
+        "anchor": "Eligibility, project cost, loan period, rate of interest, security and subsidy sections",
+        "registered": true
+      },
+      "editorial": {
+        "structured": true,
+        "requiredFieldsComplete": true
+      },
+      "blockers": [
+        "live_official_source_snapshot_required",
+        "human_source_and_factual_review_required",
+        "reviewer_approval_required_before_publication"
+      ],
+      "nextAction": "capture_current_official_snapshot_then_complete_reviewer_dossier"
+    }
+  ]
+}

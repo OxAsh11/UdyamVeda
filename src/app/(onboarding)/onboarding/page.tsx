@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { createClient } from '@/lib/supabase/client'
 import { toast } from 'sonner'
 
 const SECTORS = [
@@ -68,18 +67,16 @@ export default function OnboardingPage() {
     }
 
     setLoading(true)
-    const supabase = createClient()
-    const { data: { user } } = await supabase.auth.getUser()
-
-    if (!user) { router.push('/login'); return }
-
-    const { error } = await supabase.from('business_profiles').upsert({
-      user_id: user.id,
-      ...form,
+    const response = await fetch('/api/businesses/onboard', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form),
     })
+    const payload = await response.json().catch(() => ({})) as { error?: string }
 
-    if (error) {
-      toast.error('Something went wrong. Please try again.')
+    if (!response.ok) {
+      if (response.status === 401) router.push('/login')
+      else toast.error(payload.error ?? 'Something went wrong. Please try again.')
       setLoading(false)
       return
     }
@@ -92,7 +89,7 @@ export default function OnboardingPage() {
       <div className="glass p-10 w-full max-w-xl">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
-          <div className="text-xl font-bold text-neutral-900 tracking-tight">Center</div>
+          <div className="text-xl font-bold text-indigo-700 tracking-tight">UdyamVeda</div>
           <div className="text-neutral-400 text-xs font-medium">Step 1 of 2</div>
         </div>
 

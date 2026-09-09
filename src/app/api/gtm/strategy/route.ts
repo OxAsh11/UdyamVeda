@@ -1,8 +1,9 @@
-import { GoogleGenerativeAI } from '@google/generative-ai'
+import OpenAI from 'openai'
 import { createClient } from '@/lib/supabase/server'
 import { NextRequest, NextResponse } from 'next/server'
+import { aiModelConfig } from '@/lib/ai/config'
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!)
+const getOpenAI = () => new OpenAI({ apiKey: process.env.OPENAI_API_KEY! })
 
 export async function POST(req: NextRequest) {
   try {
@@ -12,19 +13,40 @@ export async function POST(req: NextRequest) {
 
     const context = await req.json()
 
+    // Fetch brand intelligence for richer context
+    const { data: brand } = await supabase
+      .from('brand_intelligence')
+      .select('*')
+      .eq('user_id', user.id)
+      .single()
+
+    const brandSection = brand ? `
+BRAND INTELLIGENCE (from brand profile — use this to make the strategy highly specific):
+- What they sell: ${brand.what_you_sell ?? ''}
+- Ideal customer: ${brand.target_customer ?? ''}
+- Customer location: ${brand.customer_location ?? ''}
+- Differentiator: ${brand.differentiator ?? ''}
+- Brand voice / personality: ${Array.isArray(brand.brand_voice) ? brand.brand_voice.join(', ') : ''}
+- Active channels: ${Array.isArray(brand.channels) ? brand.channels.join(', ') : ''}
+- What has worked: ${brand.what_works ?? ''}
+- Additional context: ${brand.additional_context ?? ''}
+` : ''
+
     const prompt = `
 You are a senior product marketing strategist with deep expertise in the Indian market.
 A founder has shared their business context below. Generate a comprehensive, actionable GTM strategy.
-
-BUSINESS CONTEXT:
-- What they sell: ${context.product}
-- Target customer: ${context.targetCustomer}
+${brandSection}
+FORM CONTEXT:
+- What they sell (form): ${context.product}
+- Target customer (form): ${context.targetCustomer}
 - Business sector: ${context.sector}
 - Geography: ${context.geography}
 - Monthly marketing budget: ${context.budget}
 - Business stage: ${context.stage}
 - Biggest challenge: ${context.challenge}
 - State: ${context.state}
+
+NOTE: Where brand intelligence and form context differ, trust the brand intelligence — it is more specific and detailed.
 
 Return ONLY a valid JSON object (no markdown, no explanation) with this exact structure:
 {
@@ -80,13 +102,15 @@ Channels should be ranked by priority (primary, secondary, tertiary).
 Include exactly 3 channels and 2 case studies.
 `
 
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash-exp' })
-    const result = await model.generateContent(prompt)
-    const text = result.response.text()
-
-    // Strip any markdown code fences if present
-    const cleaned = text.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim()
-    const strategy = JSON.parse(cleaned)
+    const completion = await getOpenAI().chat.completions.create({
+      ...aiModelConfig(),
+      messages: [
+        { role: 'system', content: 'You are a senior product marketing strategist. Always respond with valid JSON only.' },
+        { role: 'user', content: prompt },
+      ],
+      response_format: { type: 'json_object' },
+    })
+    const strategy = JSON.parse(completion.choices[0].message.content ?? '{}')
 
     // Save to Supabase
     await supabase.from('gtm_strategies').insert({

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-042",
+  "authority": "Ministry of Skill Development and Entrepreneurship (MSDE)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "MSDE, PMO/PIB releases, PMKVY guidelines, Skill India Digital and the National Apprenticeship Portal are primary sources. NAPS-2 employer/stipend support and PMKVY learner/provider training routes remain separate records with different beneficiaries, benefits and application evidence.",
+  "records": [
+    {
+      "slug": "msde-national-apprenticeship-promotion-scheme-2",
+      "sourceUrl": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2294856&lang=1&reg=1",
+      "supportingSources": [
+        {"url":"https://www.pib.gov.in/PressReleasePage.aspx?PRID=2238227&lang=1&reg=3","anchor":"Official MSDE progress release: NAPS-2 since FY 2022-23, 25% support up to INR 1,500 per apprentice per month through DBT"},
+        {"url":"https://www.pib.gov.in/PressReleasePage.aspx?PRID=2286582&lang=1&reg=3","anchor":"Official July 2026 MSDE release: apprenticeship engagement, MSME participation and DBT support"},
+        {"url":"https://www.apprenticeshipindia.gov.in/","anchor":"Official National Apprenticeship Portal for establishment, vacancy, contract and apprenticeship processes"},
+        {"url":"https://www.msde.gov.in/","anchor":"Official MSDE ministry portal for programme and implementation updates"}
+      ],
+      "sourceKind": "official_msde_pib_naps2_portal_cross_check",
+      "sourceAnchor": "NAPS-2 establishment route, Apprentices Act, 1961, 25% Central stipend contribution capped at INR 1,500 per apprentice per month, and DBT to the apprentice bank account",
+      "observations": [
+        "NAPS-2 is an establishment-based apprenticeship route governed by the Apprentices Act, 1961; the employer and apprentice must use the official apprenticeship process and satisfy current trade, contract and portal conditions.",
+        "The official MSDE/PIB material describes the Central Government share as limited to 25% of the stipend paid or the minimum prescribed stipend boundary, subject to a maximum of INR 1,500 per apprentice per month during the apprenticeship training period.",
+        "The Central support is paid through DBT to the apprentice's bank account. It is not an unrestricted employer grant and must not be added to the establishment's own stipend obligation as a single business benefit.",
+        "The establishment remains responsible for eligible engagement, the apprenticeship contract, prescribed stipend, workplace training, attendance, records, safety and reporting; eligibility and excluded establishment categories require current portal review.",
+        "The route is rolling in structure, but available trades, seats, contracts, claim timing, local implementation and portal conditions must be checked when the business acts. UdyamVeda can prepare and hand off the checklist but cannot create contracts, store OTPs or impersonate an employer or apprentice."
+      ],
+      "reviewFollowUps": [
+        "Verify the current Apprenticeship Portal establishment categories, public-body exclusions, trade and seat rules, apprentice age/qualification conditions and contract templates.",
+        "Confirm the current prescribed-stipend schedule, 25% calculation base, INR 1,500 cap, DBT bank requirements, attendance evidence and claim timing.",
+        "Check establishment registration, authorised signatory, workplace/trainer evidence, safety records, reporting duties, TPA route and any portal or scheme amendments.",
+        "Keep Central stipend support, employer-paid stipend, training value and any post-training employment outcome in separate value buckets; do not promise reimbursement or hiring.",
+        "Obtain human reviewer confirmation of current route availability before publishing an actionable recommendation."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "msde-pradhan-mantri-kaushal-vikas-yojana-4",
+      "sourceUrl": "https://www.pmindia.gov.in/en/news_updates/cabinet-approves-continuation-and-restructuring-of-skill-india-programme/",
+      "supportingSources": [
+        {"url":"https://www.msde.gov.in/static/uploads/2025/09/20d9aac4ce972a765e83f28682536ee0.pdf","anchor":"Official MSDE PMKVY 4.0 guidelines: beneficiary, training-provider, Skill India Centre, RPL and implementation requirements"},
+        {"url":"https://www.skillindiadigital.gov.in/about-us","anchor":"Official Skill India Digital discovery and delivery route"},
+        {"url":"https://www.msde.gov.in/","anchor":"Official MSDE portal for current skill-programme announcements and implementation"}
+      ],
+      "sourceKind": "official_msde_pmo_pmkv y_guideline_portal_cross_check",
+      "sourceAnchor": "PMKVY 4.0 under the composite Skill India Programme: Short-Term Training, Special Projects, Recognition of Prior Learning, industry-oriented roles, on-the-job exposure and Skill India Digital integration",
+      "observations": [
+        "PMKVY 4.0 is a skilling, reskilling, upskilling and credential pathway for eligible candidates and separate training-provider or project routes; it is not a single cash award for a business.",
+        "The official PMKVY guideline describes Short-Term Training, Special Projects, Recognition of Prior Learning, industry-oriented job roles, assessment/certification and digital lifecycle delivery through the Skill India ecosystem.",
+        "Candidate eligibility and provider eligibility are different: a learner's enrolment, identity, age, job role and course conditions must not be conflated with a company's training-provider accreditation, centre, infrastructure, disclosure and project requirements.",
+        "The published programme evidence states a PMKVY 4.0 period of 2022-23 to 2025-26. On 8 September 2026, current portal availability, successor/continuation status, active courses and provider calls require fresh verification before the record can be treated as an active opportunity.",
+        "No direct cash benefit, guaranteed seat, certificate, employment result or business subsidy is asserted; the useful outcome is access to an eligible training, RPL or provider pathway when currently available."
+      ],
+      "reviewFollowUps": [
+        "Verify the current MSDE/Skill India Digital notice and whether PMKVY 4.0 has an active successor or continuation route after FY2025-26.",
+        "Confirm current candidate age, identity, course, job-role, batch, location, RPL and certification conditions for the selected route.",
+        "For a business seeking to provide training, verify legal form, accreditation, Skill India Centre/provider onboarding, infrastructure, trainer, disclosure, project and monitoring requirements.",
+        "Check current course and provider availability, fees, assessment/certification rules, duplicate-enrolment controls, grievance route and any local implementation instructions.",
+        "Do not publish as an active universal opportunity until the current portal route and authorized reviewer decision are recorded."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source","eligibility","benefit","application","window","fine_print","amendment","current_terms","reviewer_decision"],
+    "reason": "NAPS-2's stipend and DBT boundaries are supported by current official MSDE/PIB evidence, but portal, contract, claim and establishment conditions require review. PMKVY 4.0's published period ends in FY2025-26 and its post-period route, current courses and provider availability must be reconciled before publication."
+  }
+}

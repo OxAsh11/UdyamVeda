@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-013",
+  "authority": "Department of Commerce and Directorate General of Foreign Trade",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "Department of Commerce, DGFT, official scheme guidelines, official notifications, official implementing portals and official committee records only; third-party claims are excluded.",
+  "records": [
+    {
+      "slug": "export-promotion-mission-niryat-protsahan-niryat-disha",
+      "sourceUrl": "https://www.commerce.gov.in/wp-content/uploads/2026/02/Starred-Question-87.pdf",
+      "supportingSources": [
+        {
+          "url": "https://www.commerce.gov.in/wp-content/uploads/2026/02/Starred-Question-87.pdf",
+          "anchor": "Department of Commerce answer dated 6 February 2026: Cabinet approval, two sub-schemes, six-year outlay and phased MSME exporter interventions"
+        },
+        {
+          "url": "https://www.commerce.gov.in/wp-content/uploads/2026/02/USQ-1516-PDF.pdf",
+          "anchor": "Official Department of Commerce policy update: Niryat Protsahan, Niryat Disha and exporter credit-support context"
+        },
+        {
+          "url": "https://www.commerce.gov.in/",
+          "anchor": "Department of Commerce official portal for current implementing notices and routes"
+        }
+      ],
+      "sourceKind": "official_policy_update_and_ministry_portal",
+      "sourceAnchor": "EPM approval, FY 2025-26 to FY 2030-31 outlay and phased operationalisation of MSME exporter interventions",
+      "observations": [
+        "The Department of Commerce states that the Cabinet approved the Export Promotion Mission on 12 November 2025, with an outlay of ₹25,060 crore for FY 2025-26 to FY 2030-31 and availability to exporters across India.",
+        "The mission has two integrated sub-schemes: Niryat Protsahan for financial support and Niryat Disha for non-financial support such as quality and compliance, branding and packaging, market access, logistics and trade intelligence.",
+        "Niryat Protsahan is described as exclusively for MSME exporters and includes interest subvention, export factoring, collateral guarantee for export credit, e-commerce exporter credit and credit enhancement for diversification. The cited February 2026 answer says interest subvention for pre- and post-shipment export credit and collateral support had been operationalised; the remaining initiatives were being rolled out in phases.",
+        "The ₹25,060 crore mission outlay is not an applicant entitlement or a single grant ceiling. Each intervention requires its own current implementing notice, lender or agency route, eligibility conditions, documents and window.",
+        "The record should therefore be presented as a framework-level export opportunity with separate benefit records and an evidence-based needs-information result until the operational route is confirmed for the user's export need."
+      ],
+      "reviewFollowUps": [
+        "Verify current lender, agency and portal routes for the operationalised MSME interest-subvention and collateral-support interventions, including exact rates, credit limits, guarantee terms and documentation.",
+        "Confirm which Niryat Protsahan and Niryat Disha interventions have subsequently opened, their eligible exporter categories, current calls, selection conditions and effective dates.",
+        "Separate trade-finance support, credit guarantee, e-commerce support, compliance, branding, market-access, logistics and intelligence benefits; do not combine their values.",
+        "Extract export-registration, IEC, lender, shipment, milestone, reporting, repayment, recovery and non-duplication conditions from the operative notices before publishing eligibility rules."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "market-access-initiative-mai",
+      "sourceUrl": "https://www.commerce.gov.in/wp-content/uploads/2021/07/Market-Access-Initiative-MAI-Scheme-2021-dated-19-July-2021.pdf",
+      "supportingSources": [
+        {
+          "url": "https://www.commerce.gov.in/wp-content/uploads/2021/07/Market-Access-Initiative-MAI-Scheme-2021-dated-19-July-2021.pdf",
+          "anchor": "MAI Scheme 2021 guidelines: agency-led market-development support, eligible agencies and components"
+        },
+        {
+          "url": "https://www.commerce.gov.in/ministryofcommerce/sites/default/files/2026-04/Annual_0.pdf",
+          "anchor": "Department of Commerce Annual Report 2025-26: MAI continuation through 31 March 2026 and consolidation into EPM"
+        },
+        {
+          "url": "https://apps.commerce.gov.in/schemes/schemereport",
+          "anchor": "Official scheme claims monitor: MAI claims and disbursement reporting through the current reporting period"
+        }
+      ],
+      "sourceKind": "official_guideline_annual_report_and_claims_monitor",
+      "sourceAnchor": "MAI 2021 continuation period, agency-led assistance and successor/consolidation context",
+      "observations": [
+        "The MAI 2021 guideline describes project-based export-promotion assistance for eligible agencies supporting market development, standards, packaging, branding, trade fairs, buyer-seller meets, research and related activities.",
+        "The route is agency-led and project-specific. It must not be represented as a universal direct grant or reimbursement available to every exporter, startup or individual business.",
+        "The captured MAI continuation period ended on 31 March 2026. The Department of Commerce Annual Report 2025-26 describes MAI as consolidated into the Export Promotion Mission, while the claims monitor remains useful for historical or continuing claim context.",
+        "A claims-monitor entry is operational reporting, not proof of a fresh 2026-27 direct application window. The record is retained as a superseded historical/claims opportunity until the successor route and residual claims process are reviewed."
+      ],
+      "reviewFollowUps": [
+        "Verify the Annual Report statement and successor EPM route against the operative 2026 notices and amendments.",
+        "Confirm any residual MAI claims process, agency pass-through rules, eligible project costs, release conditions and current submission route.",
+        "Keep agency project support, indirect exporter benefit, trade events, training and reimbursement categories separate, with no inferred direct applicant ceiling."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "remission-of-duties-and-taxes-on-exported-products-rodtep",
+      "sourceUrl": "https://www.commerce.gov.in/ministryofcommerce/node/856",
+      "supportingSources": [
+        {
+          "url": "https://www.commerce.gov.in/ministryofcommerce/node/856",
+          "anchor": "Department of Commerce RoDTEP overview: notified tariff-line rates, value caps and electronic transferable duty-credit scrips"
+        },
+        {
+          "url": "https://content.dgft.gov.in/Website/dgftprod/1322d65e-dd25-46ec-a7e9-7b0a3f9765f2/RoDTEP%20Notification.pdf",
+          "anchor": "DGFT Notification 74/2025-26 dated 31 March 2026: continuation from 1 April to 30 September 2026 at rates and caps in force on 31 March 2026"
+        },
+        {
+          "url": "https://www.dgft.gov.in/",
+          "anchor": "DGFT official portal for notification, exporter and e-scrip route verification"
+        }
+      ],
+      "sourceKind": "official_ministry_overview_and_dgft_notification",
+      "sourceAnchor": "RoDTEP eligibility framing, notified rates, per-unit value caps, e-scrip mechanism and current continuation period",
+      "observations": [
+        "RoDTEP is a remission mechanism for eligible duties, taxes and levies on exported products, delivered through electronic transferable duty-credit scrips rather than a universal cash grant.",
+        "The Department of Commerce overview describes notified rates as a percentage of FOB value subject to a per-unit value cap and identifies Customs/DGFT as part of the e-scrip mechanism. The rate is tariff-line and product specific; no universal percentage should be shown.",
+        "The captured DGFT continuation notification keeps the scheme available for eligible exports from 1 April through 30 September 2026 at the rates and caps in force on 31 March 2026. Current eligibility, tariff-line rate, cap and exporter-category conditions still require a live DGFT/Customs lookup.",
+        "Recommendation logic must distinguish RoDTEP from grants, loans, subsidies and tax benefits, and must not estimate a benefit without the export product, tariff line, FOB value, cap and applicable exclusions."
+      ],
+      "reviewFollowUps": [
+        "Verify the current tariff-line rate table and per-unit cap for each supported product, including exporter-category exclusions and effective amendments.",
+        "Confirm claim linkage, shipping-bill or customs data requirements, e-scrip ledger operation, transfer/use rules and non-duplication conditions.",
+        "Monitor whether the post-30 September 2026 period is extended or replaced before treating the opportunity as currently available after that date."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "trade-infrastructure-for-export-scheme-ties",
+      "sourceUrl": "https://www.commerce.gov.in/wp-content/uploads/2021/07/TIES-revised-guidelines-FY22-to-FY26.pdf",
+      "supportingSources": [
+        {
+          "url": "https://www.commerce.gov.in/wp-content/uploads/2021/07/TIES-revised-guidelines-FY22-to-FY26.pdf",
+          "anchor": "TIES revised guidelines: objectives, export-infrastructure scope, eligible implementing agencies, assistance, appraisal and monitoring"
+        },
+        {
+          "url": "https://www.commerce.gov.in/wp-content/uploads/2025/08/MoM_20th-EC_23.07.2025.pdf",
+          "anchor": "20th Empowered Committee minutes: FY 2021-22 to FY 2025-26 extension context, sanctioned projects and remaining outlay context"
+        },
+        {
+          "url": "https://apps.commerce.gov.in/schemes/schemereport",
+          "anchor": "Official scheme claims monitor for implementation and claim-status context"
+        }
+      ],
+      "sourceKind": "official_guideline_committee_minutes_and_claims_monitor",
+      "sourceAnchor": "TIES institutional export-infrastructure assistance, eligible agencies, project ceiling and FY 2021-22 to FY 2025-26 period",
+      "observations": [
+        "TIES is an institutional project-grant route for export-linked infrastructure such as testing and certification labs, cold chains, trade-promotion centres, dry ports, export warehousing and packaging, cargo facilities and first-mile or last-mile export logistics.",
+        "Eligible applicants are implementing agencies such as Central or State agencies, Export Promotion Councils, Commodity Boards, SEZ authorities, recognised apex trade bodies, qualifying government joint ventures and PPP projects. The agency must own and operate the facility; ordinary startups, exporters and individuals are not direct applicants under the captured guideline.",
+        "The guideline normally limits assistance to the implementing agency equity or 50% of total equity, with up to 80% in specified special-area or low-capacity circumstances, and a normal ceiling of ₹20 crore per project. The ceiling is project-level and is not an exporter entitlement.",
+        "The route requires a DPR, land and statutory readiness, financial closure, export linkage, Empowered Committee approval, matching contribution, utilization evidence and monitoring. The guideline also provides for recovery with penal interest in cases such as unsatisfactory use or incomplete implementation.",
+        "The captured guideline period ends with FY 2025-26. July 2025 committee minutes show continued implementation and projects, but do not prove a new FY 2026-27 proposal window. The record remains closed and institutional until an extension or successor call is verified."
+      ],
+      "reviewFollowUps": [
+        "Verify whether the Department of Commerce has issued an extension or successor after FY 2025-26 and whether a new institutional proposal window is open.",
+        "Confirm current implementing agencies, remaining committed outlay, eligible costs, special-area treatment, procurement, land, statutory approvals, milestones and clawback terms.",
+        "Keep TIES out of ordinary founder recommendations unless the business is itself an eligible implementing agency or is participating through a documented institutional project route."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment"
+    ],
+    "reason": "The batch combines a phased export mission, a superseded agency-led market-access route, a tariff-line remission mechanism and a closed institutional infrastructure grant. Current implementing notices, exact applicant conditions and post-period status require human review before publication."
+  }
+}

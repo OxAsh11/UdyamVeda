@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-046",
+  "authority": "Atal Innovation Mission - NITI Aayog",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "AIM's direct AIC pages, current AIC portal/guideline material and NITI Aayog/AIM notices are primary. Startup India is a discovery source only. AIC establishment support is kept separate from support received by incubated startups and from AIC/EIC/ACIC routes.",
+  "records": [
+    {
+      "slug": "atal-incubation-centres",
+      "sourceUrl": "https://aim.gov.in/atal-incubation-centres.php",
+      "supportingSources": [
+        {"url":"https://aim.gov.in/pdf/AIC-Guidelines-Final_24Nov-2023.pdf","anchor":"Official AIC Guidelines: objectives, eligible host institutions, AIC functions, infrastructure and online application route"},
+        {"url":"https://www.aim.gov.in/established-incubation-centres.php","anchor":"Official AIM EIC page distinguishing scale-up support for established incubators from greenfield AIC establishment"},
+        {"url":"https://aim.gov.in/aic-overview.php","anchor":"Official AIM AIC overview and incubator ecosystem context"},
+        {"url":"https://www.startupindia.gov.in/content/sih/en/incubator-schemes.html","anchor":"Startup India discovery page used only as an alternate discovery source; direct AIM material controls"}
+      ],
+      "sourceKind": "official_aim_aic_page_guideline_startup_india_discovery_cross_check",
+      "sourceAnchor": "AIM AIC page: greenfield incubator objective, eligible academic/non-academic applicants, up to INR 10 crore grant-in-aid for up to five years, and at least 10,000 sq ft ready-to-use space",
+      "observations": [
+        "AIC support is an institution-led incubator-establishment route intended to create facilities and services for innovative technology-based startups; it is not a grant paid directly to every startup that joins an AIC.",
+        "AIM's direct page lists academic and non-academic applicant categories, including higher-education/R&D institutions, corporate enterprises, SEBI-registered alternative investment funds, business accelerators, groups and individuals, subject to the current guideline and evaluation route.",
+        "The direct AIM page describes grant-in-aid of up to INR 10 crore for a maximum period of five years to cover capital and operating expenditure for the proposed AIC, subject to selection, approved costs, tranches and reporting.",
+        "The direct page requires at least 10,000 square feet of ready-to-use built-up space for exclusive AIC use. Sector focus may include manufacturing, transport, energy, health, education, agriculture, water, sanitation and other technology areas.",
+        "AIC establishment, Established Incubation Centre scale-up and Atal Community Innovation Centre support are distinct routes. The current public material does not establish an open nationwide deadline for new AIC proposals, so the live AIM call must be verified before recommending application."
+      ],
+      "reviewFollowUps": [
+        "Verify the current AIM call or online application portal, opening/closing dates, eligible host form, proposal template and selection process.",
+        "Confirm the host's legal status, team, sector thesis, startup-support plan, mentor/industry network, sustainability model and 10,000-square-foot infrastructure evidence.",
+        "Reconcile the current guideline with the up-to-INR-10-crore statement: eligible cost heads, tranche schedule, maximum period, matching contribution, procurement, utilisation certificates and reporting.",
+        "Keep AIC establishment grant, EIC scale-up support, ACIC support and benefits received by incubated startups in separate records and value buckets.",
+        "Obtain an authorized reviewer decision before publishing a funding amount or treating AIC as an open application opportunity."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source","eligibility","benefit","application","window","fine_print","amendment","current_terms","reviewer_decision"],
+    "reason": "Direct AIM sources support the AIC beneficiary and up-to-INR-10-crore/10,000-square-foot boundaries, but current call availability, selection, eligible costs, tranches, reporting and reviewer decision remain unresolved. The record stays human-review pending."
+  }
+}

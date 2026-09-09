@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-09-08",
+  "sourceBaseline": "docs/igod-coverage-baseline.json",
+  "purpose": "Evidence pack for the ninth bounded manual review batch. These authorities have official portal evidence but no specific opportunity evidence in the current seed corpus; each remains explicitly unclear pending a bounded crawl and human review.",
+  "reviewStatus": "pending_human_approval",
+  "terminalAssessmentWritesAllowed": false,
+  "rows": [
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Panchayati Raj (MoPR)",
+      "authorityUrl": "https://panchayat.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://panchayat.gov.in/",
+      "evidenceAnchor": "Official ministry portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The ministry must be crawled for rural procurement, local-government implementation, technology and enterprise-partner routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Parliamentary Affairs (MPA)",
+      "authorityUrl": "https://www.mpa.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://www.mpa.gov.in/",
+      "evidenceAnchor": "Official ministry portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The ministry must be crawled for procurement, communications, events, digital services and other business-relevant routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Personnel, Public Grievances and Pensions (MoPPGP)",
+      "authorityUrl": "https://persmin.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://persmin.gov.in/",
+      "evidenceAnchor": "Official ministry portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The ministry must be crawled for public-sector innovation, procurement, service-delivery, training and digital-governance routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Planning (MoP)",
+      "authorityUrl": "https://www.niti.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://www.niti.gov.in/",
+      "evidenceAnchor": "Official NITI Aayog portal used for the Ministry of Planning authority row: current programmes, missions and notices require bounded discovery",
+      "rationale": "The authority must be crawled for startup, innovation, challenge, public-policy, procurement and market-access routes; the portal boundary alone cannot establish complete coverage."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Road Transport and Highways (MoRTH)",
+      "authorityUrl": "https://morth.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://morth.gov.in/",
+      "evidenceAnchor": "Official ministry portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The ministry must be crawled for highway, logistics, vehicle, safety, tolling, infrastructure and procurement routes relevant to businesses before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Science and Technology (MST)",
+      "authorityUrl": "https://most.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://most.gov.in/",
+      "evidenceAnchor": "Official ministry portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The ministry must be crawled for research, technology transfer, innovation, commercialization and institutional-support routes before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Statistics and Programme Implementation (MoSPI)",
+      "authorityUrl": "https://www.mospi.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://www.mospi.gov.in/",
+      "evidenceAnchor": "Official ministry portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The ministry must be crawled for data, survey, statistical-service, procurement and research-partner routes relevant to businesses before relevance or exclusion can be decided."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Women and Child Development (MoWCD)",
+      "authorityUrl": "https://wcd.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://wcd.gov.in/",
+      "evidenceAnchor": "Official ministry portal boundary and current notices; no specific business-opportunity record is asserted from the homepage alone",
+      "rationale": "The ministry must be crawled for women-led enterprise, nutrition, childcare, procurement, social-enterprise and implementation-partner routes before relevance or exclusion can be decided."
+    }
+  ]
+}

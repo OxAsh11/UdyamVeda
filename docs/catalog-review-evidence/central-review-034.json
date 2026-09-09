@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-034",
+  "authority": "Ministry of Heavy Industries",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "The Ministry of Heavy Industries, the official PM E-DRIVE portal, the PLI-Auto portal and notified guidelines/amendments are the primary sources. PM E-DRIVE EV PCS support and PLI-Auto remain separate routes: one is institutional public infrastructure deployment, the other is performance-linked manufacturing support. Programme outlays, charger benchmarks and approved-applicant lists are not individual entitlements.",
+  "records": [
+    {
+      "slug": "mhi-pm-e-drive-ev-public-charging-stations",
+      "sourceUrl": "https://pmedrive.heavyindustries.gov.in/docs/policy_document/FAQs-Operational%20Guidelines%20for%20EV%20PCS%20under%20PM%20E-DRIVE.pdf",
+      "supportingSources": [
+        {
+          "url": "https://pmedrive.heavyindustries.gov.in/policy_procedure",
+          "anchor": "Current PM E-DRIVE guideline index: EV PCS operational guidelines released 26 September 2025 and EV PCS FAQ released 23 December 2025"
+        },
+        {
+          "url": "https://pmedrive.heavyindustries.gov.in/docs/policy_document/EV%20PCS%20operational%20guidelines_F.pdf",
+          "anchor": "26 September 2025 operational guidelines for deployment of EV Public Charging Stations under PM E-DRIVE"
+        },
+        {
+          "url": "https://pmedrive.heavyindustries.gov.in/",
+          "anchor": "Official PM E-DRIVE portal and Ministry/IFCI operational handoff"
+        },
+        {
+          "url": "https://heavyindustries.gov.in/en/rajya-sabha-q-a?page=2",
+          "anchor": "Current Ministry parliamentary-material index for PM E-DRIVE and EV-charging implementation context"
+        }
+      ],
+      "sourceKind": "official_mhi_pm_e_drive_guideline_faq_and_current_portal_cross_check",
+      "sourceAnchor": "EV PCS Category A/B location rules, unrestricted public access, nodal-agency route, feasibility, CPO selection, commissioning, data and recovery conditions",
+      "observations": [
+        "The current PM E-DRIVE guideline index lists the EV PCS operational guideline dated 26 September 2025 and the EV PCS FAQ dated 23 December 2025. The EV PCS record should use those documents as the controlling operational source rather than a generic PM E-DRIVE summary.",
+        "The official FAQ distinguishes Category A and Category B locations, requires unrestricted public access and assigns location categorisation to the respective nodal agency. Misclassification can trigger recovery of excess subsidy with applicable interest.",
+        "The route is institutional: eligible Government/public-sector entities use an appointed nodal agency to aggregate demand, complete feasibility studies, submit proposals and oversee procurement, commissioning, maintenance, uptime and data sharing. A private Charge Point Operator may participate through the nodal agency's fair procurement route but is not automatically the subsidy beneficiary.",
+        "Charger benchmark values, scheme outlay and the 31 March 2028 overall scheme period are programme or calculation inputs, not a universal per-founder grant ceiling. Upstream infrastructure, DISCOM evidence, location category and current component funds require case-specific review.",
+        "This opportunity should not be recommended to ordinary founders, startups, private landowners or private CPOs as a direct subsidy. UdyamVeda can explain institutional eligibility and procurement boundaries but cannot act as a nodal agency or submit the proposal.",
+        "The PM E-DRIVE portal contains other vehicle and infrastructure routes, so EV PCS evidence must not be mixed with e-2W/e-3W, e-truck, e-ambulance or buyer incentive rules."
+      ],
+      "reviewFollowUps": [
+        "Confirm the current EV PCS operational guideline and any 2026 amendment, including eligible institutional entities, nodal-agency appointment, location categories, charger configurations and subsidy components.",
+        "Verify whether the applicant is an eligible Government/public-sector entity and identify the appointed nodal agency and current proposal intake route.",
+        "Review each location's unrestricted public access, feasibility, charger rating, DISCOM demand note, land/utility readiness and Category A/B/C classification.",
+        "Reconcile benchmark-cost treatment, GST/refundable-deposit exclusions, upstream-infrastructure limits, subsidy caps and recovery conditions.",
+        "Verify CPO procurement, commissioning, uptime, maintenance, pricing/payment, data-sharing and Unified Bharat E-Charge onboarding obligations.",
+        "Confirm component funds, proposal window, official portal acceptance and the current terminal/amendment position before publication.",
+        "Obtain a human reviewer decision; keep the record review-gated and never display it as a direct startup or individual charger subsidy."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "production-linked-incentive-automobile-auto-components",
+      "sourceUrl": "https://www.heavyindustries.gov.in/sites/default/files/2023-09/PLI%20AUto%20Guidelines.pdf",
+      "supportingSources": [
+        {
+          "url": "https://heavyindustries.gov.in/en/pli-scheme-automobile-and-auto-component-industry",
+          "anchor": "Current MHI overview: Advanced Automotive Technology focus, ZEV focus, FY2022-23 to FY2026-27 incentive period and FY2023-24 to FY2027-28 disbursement period"
+        },
+        {
+          "url": "https://heavyindustries.gov.in/en/the-production-linked-incentive-pli-scheme-for-automobile-and-auto-components",
+          "anchor": "MHI amendment and implementation index: PMP amendment, 29 December 2023 amendments, approved-manufacturer list and application/FAQ material"
+        },
+        {
+          "url": "https://pliauto.in/approvedaatproduct/1",
+          "anchor": "Current PLI-Auto approved AAT product/model records with certificates and revalidation entries"
+        },
+        {
+          "url": "https://pliauto.in/docs/app/List%20of%20Approved%20Applicants%20-%20Feb%202026.pdf",
+          "anchor": "Official list of approved PLI-Auto applicants as of 28 February 2026"
+        },
+        {
+          "url": "https://heavyindustries.gov.in/sites/default/files/2024-01/notification-pli_auto-amendment-in-guidelines-29-12-2023_0.pdf",
+          "anchor": "29 December 2023 amendment to PLI-Auto guidelines"
+        }
+      ],
+      "sourceKind": "official_mhi_pli_auto_guideline_amendment_portal_and_approved_list_cross_check",
+      "sourceAnchor": "Advanced Automotive Technology products, ZEV focus, approved-applicant/product status, performance conditions, amendments and no-current-new-intake assumption",
+      "observations": [
+        "The current MHI overview describes PLI-Auto as a Rs 25,938 crore, five-year scheme for Advanced Automotive Technology products, focused on zero-emission vehicles and deep localisation. The outlay is not an applicant-specific benefit ceiling.",
+        "MHI states that incentive applicability runs from FY 2022-23 through FY 2026-27, with disbursement in the following financial year through FY 2027-28. Scheme-period dates do not by themselves establish that a new applicant window is open.",
+        "The current MHI implementation page lists 2023 amendments, the 2024 PMP amendment and an approved-manufacturer update. The current PLI-Auto portal also exposes approved AAT product/model records and a February 2026 approved-applicant list, indicating ongoing implementation and claims/verification activity rather than universal open intake.",
+        "PLI-Auto is performance-linked manufacturing support, not a flat grant or subsidy. Eligibility and claims depend on the current AAT product list, approved applicant track, investment, determined sales, domestic value addition, testing/certification, reporting and amendment-specific conditions.",
+        "The draft record's original 60-day application-window history must remain separate from later incentive-period and implementation evidence. New applications must not be assumed without a current MHI notice or official portal instruction.",
+        "UdyamVeda can help a qualifying manufacturer map evidence and claim prerequisites, but cannot promise selection, calculate an entitlement from scheme outlay or submit declarations on the applicant's behalf."
+      ],
+      "reviewFollowUps": [
+        "Confirm current applicant status: new intake, approved-applicant claims, amendment handling or closed intake; do not infer a fresh window from the FY2026-27 scheme period.",
+        "Reconcile the current AAT product/component list, manufacturer track, global-group revenue, investment, determined-sales and domestic-value-addition thresholds.",
+        "Verify the 2024 PMP amendment, 2023 guideline amendments, testing/certification requirements, annual claim data and ERP/DVA evidence route.",
+        "Check the current PLI-Auto portal workflow, claim period, disbursement timing, audit evidence, approved-applicant/product lists and recovery/clawback conditions.",
+        "Keep budgetary outlay, incentive rates, sales thresholds and approved-company status in separate fields; never calculate a guaranteed benefit from the scheme total.",
+        "Obtain a human reviewer decision before publication; the record remains review-gated until the exact current terms and window are evidenced."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "Official MHI and implementing-portal sources confirm two distinct routes and current implementation context, but applicant status, current intake, exact subsidy/claim terms, amendments, evidence requirements and component funding remain unresolved. Both records stay human-review pending."
+  }
+}

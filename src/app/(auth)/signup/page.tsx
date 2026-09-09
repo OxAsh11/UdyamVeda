@@ -9,6 +9,7 @@ import { toast } from 'sonner'
 export default function SignupPage() {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
+  const [accountHint, setAccountHint] = useState(false)
   const [form, setForm] = useState({ name: '', email: '', password: '' })
 
   async function handleSignup(e: React.FormEvent) {
@@ -16,19 +17,38 @@ export default function SignupPage() {
     setLoading(true)
 
     const supabase = createClient()
-    const { error } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signUp({
       email: form.email,
       password: form.password,
       options: { data: { full_name: form.name } },
     })
 
     if (error) {
+      const mayAlreadyExist = /already|exist|registered/i.test(error.message)
+      setAccountHint(mayAlreadyExist)
       toast.error(error.message)
       setLoading(false)
       return
     }
 
-    router.push('/onboarding')
+    // Supabase may return an apparently successful response for an existing
+    // email to avoid account enumeration. An empty identities array is the
+    // signal that this was not a new account; never send that user through
+    // onboarding or back into a misleading "account created" state.
+    if (data.user && data.user.identities?.length === 0) {
+      setAccountHint(true)
+      toast.error('This email already has an account. Sign in or reset your password.')
+      setLoading(false)
+      return
+    }
+
+    if (!data.session) {
+      toast.success('Account created. Check your email to confirm it, then sign in.')
+      router.replace('/login')
+      return
+    }
+
+    router.replace('/onboarding')
   }
 
   return (
@@ -36,12 +56,20 @@ export default function SignupPage() {
       <div className="glass p-10 w-full max-w-md">
         {/* Logo */}
         <div className="mb-8">
-          <div className="text-2xl font-bold text-neutral-900 tracking-tight">Center</div>
-          <p className="text-neutral-500 text-sm mt-1">From idea to first customer</p>
+          <div className="text-2xl font-bold text-neutral-900 tracking-tight">UdyamVeda</div>
+          <p className="text-neutral-500 text-sm mt-1">India&apos;s Business Lifecycle &amp; Growth OS</p>
         </div>
 
         <h1 className="text-xl font-semibold text-neutral-900 mb-1">Create your account</h1>
         <p className="text-neutral-500 text-sm mb-8">Free to start. No credit card needed.</p>
+
+        {accountHint && (
+          <div className="mb-5 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+            This email may already have an account.{' '}
+            <Link href="/login" className="font-semibold underline">Sign in</Link>{' '}
+            or <Link href="/forgot-password" className="font-semibold underline">reset your password</Link>.
+          </div>
+        )}
 
         <form onSubmit={handleSignup} className="flex flex-col gap-4">
           {/* Name */}

@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-090",
+  "authority": "Unresolved mapping: Khadi and Village Industries Commission (KVIC)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party PMEGP guideline, portal, terms, manual and operational-route observations for reviewer use. It does not guarantee subsidy, bank sanction, fund availability, approval, processing time or applicant eligibility, and it does not authorize UdyamVeda to submit an application or handle credentials and OTPs.",
+  "sourcePolicy": "The official MSME guideline, PMEGP common portal, PMEGP terms, applicant manual and MyMSME route are primary. The current portal's operating statistics support an active operational route but do not by themselves establish a current funding window or guaranteed assistance.",
+  "records": [
+    {
+      "slug": "prime-ministers-employment-generation-programme",
+      "sourceUrl": "https://www.msme.gov.in/sites/default/files/Revisedguidelines07.12.2023.pdf",
+      "supportingSources": [
+        {
+          "url": "https://common-pmegp.msme.gov.in/",
+          "anchor": "Current PMEGP common portal and application-routing notices"
+        },
+        {
+          "url": "https://common-pmegp.msme.gov.in/Home/MSME_List",
+          "anchor": "Official current eligibility, new-unit conditions and Udyam prerequisite route"
+        },
+        {
+          "url": "https://pmegp.msme.gov.in/Home/TermsAndConditions",
+          "anchor": "Official terms: online submission, one-family-member rule, capital-expenditure boundary and upgradation distinction"
+        },
+        {
+          "url": "https://pmegp.msme.gov.in/Documents/UserManual/UserManual_NewApplicant.pdf",
+          "anchor": "Official new-applicant manual: applicant documents, activity restrictions and project-cost treatment"
+        },
+        {
+          "url": "https://kviconline.gov.in/pmegpeportal/",
+          "anchor": "Official PMEGP application portal alias retained for operational handoff"
+        },
+        {
+          "url": "https://my.msme.gov.in/mymsme/reg/com_pmegpform.aspx",
+          "anchor": "Official MyMSME route and current 2026-27 operational statistics"
+        }
+      ],
+      "sourceKind": "official_msme_pmegp_guideline_portal_terms_cross_check",
+      "sourceAnchor": "Revised scheme guideline reconciled with current eligibility, terms, applicant manual and operational route",
+      "observations": [
+        "PMEGP is a credit-linked margin-money subsidy for eligible new micro-enterprises; the seed dossier keeps subsidy and bank finance in separate value buckets.",
+        "The guideline provides subsidy-supported project-cost ceilings of INR 50 lakh for manufacturing and INR 20 lakh for business or service activities, with stated working-capital component limits.",
+        "Beneficiary contribution is 10% for the General category and 5% for the Special category; margin-money rates vary by category and rural or urban location.",
+        "Existing units under PMRY, REGP or other Government schemes, and units that already received Government subsidy under another scheme, are excluded from the new-unit route.",
+        "New PMEGP units must be registered on the Udyam Portal before physical verification and adjustment of margin money in the beneficiary loan account.",
+        "Current portal terms state that applications are submitted online, only one person from a family is eligible for new-enterprise assistance, and projects without capital expenditure are not eligible for financing.",
+        "The current portal shows 2026-27 operational activity; this supports a live operational route but does not guarantee fund availability, subsidy, bank sanction or processing time.",
+        "EDP training, physical verification, three-year margin-money lock and refund conditions remain review-sensitive implementation terms.",
+        "The second-loan or upgradation route is distinct from new-unit eligibility and must not be merged into this record."
+      ],
+      "reviewFollowUps": [
+        "Confirm the current portal migration, live application window and lender or implementing-agency routing.",
+        "Reconcile the full negative list, beneficiary categories, education threshold, EDP requirements and current document checklist.",
+        "Verify current repayment, collateral, moratorium, training and physical-verification rules.",
+        "Confirm how the current portal handles Aadhaar consent and alternative identification cases before collecting any identity information.",
+        "Have a reviewer validate the subsidy calculation separately from the bank-loan calculation and approve the new-unit scope.",
+        "Obtain human reviewer approval for source, eligibility, benefit, application, window, fine print, amendment and factual accuracy before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "The official sources support a structured PMEGP draft, but the current window, migration, document checklist and implementation terms require human reconciliation before publication."
+  }
+}

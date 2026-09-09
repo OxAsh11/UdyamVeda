@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-038",
+  "authority": "Ministry of Petroleum and Natural Gas (MoPNG)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "The MoPNG policy index and revised BAM guideline, official GOBARdhan material, and the designated EIL BAM portal are primary sources. The CBG project, machinery grant, procurement, lender finance, physical verification and biomass reporting obligations remain separate facts. UdyamVeda prepares and explains evidence but does not submit the BAM application, store portal credentials or represent itself as MoPNG/CHT/EIL.",
+  "records": [
+    {
+      "slug": "mopng-cbg-biomass-aggregation-machinery",
+      "sourceUrl": "https://mopng.gov.in/files/natural-gas/policies-and-guidelines/Revised-scheme-guideline.pdf",
+      "supportingSources": [
+        {"url":"https://mopng.gov.in/en/natural-gas/policies-guidelines","anchor":"Official MoPNG policy index: BAM guideline listed with 11 July 2025 publish date"},
+        {"url":"https://gobardhan.sbm.gov.in/whats-new/1752042813_2a6f019a8e6186349c85.pdf","anchor":"Government-hosted BAM guideline copy: eligibility, funding, machinery list and procedure"},
+        {"url":"https://bam.eil.co.in/Default","anchor":"Official EIL BAM portal: observed 1 July to 30 July 2026 intake notice"},
+        {"url":"https://bam.eil.co.in/Frequently%20asked%20questions%20BAM%2031.03.2025%20rev.pdf","anchor":"Official BAM FAQ: nodal agency, eligibility, assistance cap and calculation"},
+        {"url":"https://bam.eil.co.in/AboutSchemeNew.pdf","anchor":"Official EIL application document checklist and release evidence"}
+      ],
+      "sourceKind": "official_mopng_guideline_gobardhan_eil_portal_faq_cross_check",
+      "sourceAnchor": "CBG producer eligibility, 2 TPD and 50% agricultural-residue thresholds, assistance cap, pre-purchase rule, quarterly window and post-approval verification",
+      "observations": [
+        "Official BAM material describes financial assistance for eligible CBG producers to procure approved biomass aggregation machinery, with CHT as nodal agency and the EIL BAM portal as the designated route.",
+        "The official FAQ and guideline identify at least 2 TPD CBG capacity, at least 50% agricultural-residue feedstock, GOBARdhan registration, the applicable construction/commissioning condition and no duplicate Government assistance for the same machinery as key conditions.",
+        "The benefit is up to 50% of eligible machinery procurement cost or Rs 90 lakh per BAM set, whichever is lower, with a pro-rata Rs 9 crore project cap; the cap and scheme corpus are not automatic applicant entitlement.",
+        "Application must precede procurement. After approval, the applicant must provide invoices/payment or loan evidence, equipment identifiers and geotagged photographs, undergo physical verification and meet bond, insurance, reporting and non-transfer obligations.",
+        "The revised guideline states 30 September 2026 as the last date unless extended, while the official EIL BAM portal observed on 8 September 2026 displayed a 1 July to 30 July 2026 intake notice. This is an unresolved official-source window conflict; neither date should be surfaced as actionable without reviewer reconciliation."
+      ],
+      "reviewFollowUps": [
+        "Reconcile the EIL portal intake notice, revised MoPNG guideline date, any extension and the currently enabled application form before publication.",
+        "Verify the CBG project's capacity, feedstock percentage, GOBARdhan registration, construction/commissioning status, approved machinery set and duplicate-subsidy position.",
+        "Confirm current PMA/PAC/PAB workflow, available budget, lender/self-finance route, mobilization-advance conditions, document checklist and physical-verification process.",
+        "Verify the five-year bond, insurance, annual biomass-collection reporting, equipment transfer/hypothecation rules and recovery/suspension consequences.",
+        "Keep grant value separate from machinery cost, loan finance and any CBG offtake benefit; obtain an authorized reviewer decision before publishing or recommending."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source","eligibility","benefit","application","window","fine_print","amendment","current_terms","reviewer_decision"],
+    "reason": "Official MoPNG, GOBARdhan and EIL sources support the BAM structure and fine print, but the official guideline deadline and the current portal intake notice conflict. Current window, approved machinery, budget, operational route and reviewer decision remain unresolved."
+  }
+}

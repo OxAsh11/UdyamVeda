@@ -15,160 +15,119 @@ export interface RegType {
   documents: string[]
   taxHighlight: string
   bestFor: string[]
+  officialSource: string
 }
 
+/**
+ * Entity orientation only. These records intentionally avoid fixed fees,
+ * tax rates, timelines, turnover cut-offs, or universal eligibility claims.
+ * Current incorporation and tax rules belong in reviewed catalog versions.
+ */
 export const REGISTRATION_TYPES: RegType[] = [
   {
     id: 'pvt-ltd',
     name: 'Private Limited Company',
     shortName: 'Pvt Ltd',
-    tagline: 'Most preferred for startups & funded businesses',
-    pros: [
-      'Limited liability — personal assets protected',
-      'Easier to raise funding from investors',
-      'Separate legal entity — can own property, sue/be sued',
-      'ESOP friendly for hiring talent',
-      'DPIIT/Startup India recognition eligible',
-    ],
-    cons: [
-      'Higher compliance cost (annual filings, audit)',
-      'Minimum 2 directors and 2 shareholders required',
-      'More paperwork to set up',
-    ],
-    costRange: '₹6,000 – ₹15,000',
-    govtFees: '₹1,000 – ₹7,000 (varies by capital)',
-    timeline: '10–15 working days',
+    tagline: 'A separate company structure for teams and growth plans',
+    pros: ['Separate legal identity', 'Limited liability framework', 'Designed for shareholding and formal governance'],
+    cons: ['More governance and filing responsibilities', 'Requires current MCA forms and supporting evidence', 'Professional advice may be appropriate'],
+    costRange: 'Confirm current MCA and professional fees',
+    govtFees: 'Confirm current MCA fees for the selected capital and filings',
+    timeline: 'Depends on the current MCA route and clarifications',
     minFounders: 2,
     maxFounders: 200,
-    documents: ['PAN card', 'Aadhaar card', 'Passport-size photo', 'Address proof', 'Digital Signature Certificate (DSC)', 'Director Identification Number (DIN)'],
-    taxHighlight: '22% flat corporate tax (after Startup India: 3 years tax-free)',
-    bestFor: ['Startups seeking investment', 'Teams of 2+', 'Tech/SaaS/D2C', 'Businesses planning to scale'],
+    documents: ['Identity and address evidence', 'Registered-office evidence', 'Subscriber/director declarations', 'Digital-signature readiness'],
+    taxHighlight: 'Tax treatment depends on the entity, elections, income, and current law',
+    bestFor: ['Teams planning a company structure', 'Businesses considering formal shareholding', 'Founders evaluating future capital or governance needs'],
+    officialSource: 'https://www.mca.gov.in/',
   },
   {
     id: 'llp',
     name: 'Limited Liability Partnership',
     shortName: 'LLP',
-    tagline: 'Best for professional services with 2+ partners',
-    pros: [
-      'Limited liability for all partners',
-      'Lower compliance than Pvt Ltd',
-      'No minimum capital requirement',
-      'Flexible profit sharing agreement',
-      'No mandatory audit (below ₹40L turnover)',
-    ],
-    cons: [
-      'Cannot raise equity funding from VCs',
-      'Not eligible for Startup India recognition',
-      'Less trusted by large enterprise clients',
-    ],
-    costRange: '₹3,000 – ₹8,000',
-    govtFees: '₹500 – ₹5,600 (varies by capital)',
-    timeline: '7–12 working days',
+    tagline: 'A partner-led structure with a separate legal identity',
+    pros: ['Limited liability framework for partners', 'Flexible partner arrangement', 'Separate legal identity'],
+    cons: ['Requires an LLP agreement and ongoing filings', 'Funding and governance options differ from a company', 'Current MCA requirements must be confirmed'],
+    costRange: 'Confirm current MCA and professional fees',
+    govtFees: 'Confirm current MCA fees and contribution-related requirements',
+    timeline: 'Depends on the current MCA route and clarifications',
     minFounders: 2,
     maxFounders: null,
-    documents: ['PAN card', 'Aadhaar card', 'Address proof', 'Digital Signature Certificate (DSC)', 'Proof of registered office'],
-    taxHighlight: 'Partners taxed individually — no dividend distribution tax',
-    bestFor: ['CA / legal / consulting firms', 'Service-based businesses', 'Partners who want lower compliance', 'Freelancer collectives'],
+    documents: ['Partner identity and address evidence', 'Registered-office evidence', 'LLP agreement information', 'Digital-signature readiness'],
+    taxHighlight: 'Tax treatment depends on the entity and current law',
+    bestFor: ['Professional or partner-led businesses', 'Teams comparing flexible governance with a company structure'],
+    officialSource: 'https://www.mca.gov.in/',
   },
   {
     id: 'opc',
     name: 'One Person Company',
     shortName: 'OPC',
-    tagline: 'Limited liability for solo founders',
-    pros: [
-      'Single founder — full ownership & control',
-      'Limited liability protection',
-      'Separate legal entity',
-      'Lower compliance than Pvt Ltd',
-      'Nominee protection built-in',
-    ],
-    cons: [
-      'Cannot raise VC funding (must convert to Pvt Ltd)',
-      'Only Indian residents can be directors',
-      'Mandatory conversion if turnover exceeds ₹2 crore',
-    ],
-    costRange: '₹4,000 – ₹10,000',
-    govtFees: '₹500 – ₹2,000',
-    timeline: '7–10 working days',
+    tagline: 'A company structure for a single founder to evaluate',
+    pros: ['Separate legal identity', 'Limited liability framework', 'Single-founder structure'],
+    cons: ['Nominee and governance requirements apply', 'Conversion and eligibility rules must be checked', 'Current MCA forms and conditions are decisive'],
+    costRange: 'Confirm current MCA and professional fees',
+    govtFees: 'Confirm current MCA fees',
+    timeline: 'Depends on the current MCA route and clarifications',
     minFounders: 1,
     maxFounders: 1,
-    documents: ['PAN card', 'Aadhaar card', 'Address proof', 'Nominee details', 'Digital Signature Certificate (DSC)'],
-    taxHighlight: 'Same as Pvt Ltd — 22% flat corporate tax',
-    bestFor: ['Solo founders', 'Freelancers formalising', 'Consultants', 'Single-person service businesses'],
+    documents: ['Founder identity and address evidence', 'Registered-office evidence', 'Nominee information', 'Digital-signature readiness'],
+    taxHighlight: 'Tax treatment depends on the entity and current law',
+    bestFor: ['Solo founders evaluating a company structure', 'Founders comparing control and limited-liability options'],
+    officialSource: 'https://www.mca.gov.in/',
   },
   {
     id: 'sole-proprietor',
     name: 'Sole Proprietorship',
     shortName: 'Proprietorship',
-    tagline: 'Simplest structure — zero registration cost',
-    pros: [
-      'Zero registration cost or formality',
-      'Complete owner control',
-      'Easiest and fastest to start',
-      'Minimal compliance burden',
-      'Direct tax — income taxed as personal income',
-    ],
-    cons: [
-      'Unlimited personal liability',
-      'Cannot raise funding',
-      'No separate legal identity',
-      'Ends with the owner — not transferable',
-    ],
-    costRange: '₹0 – ₹2,000 (just GST/Shop Act)',
-    govtFees: '₹0 (optional registrations only)',
-    timeline: '1–3 days',
+    tagline: 'An individual-led operating structure to compare with formal entities',
+    pros: ['Simple operating model', 'Direct owner control', 'Can be suitable for some early operating contexts'],
+    cons: ['No separate legal identity', 'Personal-liability and tax consequences require review', 'Local, sector, tax, and banking registrations may still apply'],
+    costRange: 'Depends on the registrations and providers required',
+    govtFees: 'Confirm current fees for each applicable registration',
+    timeline: 'Depends on the applicable registration and business activity',
     minFounders: 1,
     maxFounders: 1,
-    documents: ['PAN card', 'Aadhaar card', 'Bank account in business name (optional)', 'GST registration (if turnover > ₹20L)'],
-    taxHighlight: 'Business income taxed as personal income (0–30% slab)',
-    bestFor: ['Micro businesses', 'Street vendors', 'Small shops', 'Testing an idea before formalising'],
+    documents: ['Owner identity and address evidence', 'Business address evidence', 'Activity-specific documents'],
+    taxHighlight: 'Tax treatment depends on the owner and current law',
+    bestFor: ['Solo operators comparing structures', 'Founders assessing whether formal incorporation is needed'],
+    officialSource: 'https://www.india.gov.in/',
   },
   {
     id: 'partnership',
     name: 'Partnership Firm',
     shortName: 'Partnership',
-    tagline: 'Simple structure for 2–20 partners',
-    pros: [
-      'Simple to set up with a partnership deed',
-      'No minimum capital requirement',
-      'Flexible management structure',
-      'Low compliance cost',
-    ],
-    cons: [
-      'Unlimited personal liability for all partners',
-      'Cannot raise VC/equity funding',
-      'Partners personally liable for each other\'s actions',
-    ],
-    costRange: '₹1,000 – ₹3,000',
-    govtFees: '₹0 – ₹5,000 (optional registration)',
-    timeline: '3–7 days',
+    tagline: 'A partner-led operating structure to compare with an LLP',
+    pros: ['Partner agreement can define responsibilities', 'Flexible operating arrangement', 'May suit some closely held businesses'],
+    cons: ['Liability and registration consequences require review', 'Partner rights and duties depend on the agreement and current law', 'State-specific requirements may apply'],
+    costRange: 'Confirm current state and professional fees',
+    govtFees: 'Confirm current state registration and filing fees',
+    timeline: 'Depends on the state route and documents',
     minFounders: 2,
-    maxFounders: 20,
-    documents: ['PAN card', 'Aadhaar card', 'Partnership deed', 'Address proof of firm'],
-    taxHighlight: 'Firm taxed at 30% + surcharge; partners taxed on profit share',
-    bestFor: ['Family businesses', '2–3 partner businesses', 'Low-risk traditional businesses'],
+    maxFounders: null,
+    documents: ['Partner identity and address evidence', 'Partnership-deed information', 'Business address evidence'],
+    taxHighlight: 'Tax treatment depends on the firm and current law',
+    bestFor: ['Partner-led businesses comparing structures', 'Founders evaluating LLP versus partnership trade-offs'],
+    officialSource: 'https://www.india.gov.in/',
   },
 ]
 
-// Recommendation engine
 export function recommendRegistrationType(
   stage: string,
   capital: string,
   founderType: string,
   sector: string,
-  numFounders?: number
+  numFounders?: number,
 ): { primary: RegistrationType; alternatives: RegistrationType[]; reasoning: string } {
   const isPreLaunch = stage === 'pre-launch' || stage === 'just-started'
   const isLowCapital = capital === 'Under ₹1 lakh' || capital === '₹1–5 lakh'
   const isSolo = numFounders === 1 || founderType === 'general'
   const isProfessional = ['Professional Services', 'Finance & FinTech', 'IT & Software'].includes(sector)
-  const isMicro = isLowCapital && isPreLaunch
 
-  if (isMicro && isSolo) {
+  if (isPreLaunch && isLowCapital && isSolo) {
     return {
       primary: 'sole-proprietor',
       alternatives: ['opc', 'llp'],
-      reasoning: 'Given your early stage and low capital, a Sole Proprietorship lets you start immediately with zero cost. Upgrade to OPC or Pvt Ltd when you cross ₹20L turnover or want limited liability.',
+      reasoning: 'Orientation only: compare a simple operating structure with limited-liability alternatives against current activity, tax, banking, and registration requirements.',
     }
   }
 
@@ -176,7 +135,7 @@ export function recommendRegistrationType(
     return {
       primary: 'opc',
       alternatives: ['pvt-ltd', 'sole-proprietor'],
-      reasoning: 'As a solo founder with some capital, an OPC gives you limited liability and a proper legal identity without needing a co-founder. Convert to Pvt Ltd when you seek investment.',
+      reasoning: 'Orientation only: compare solo-founder company options, governance, liability, funding plans, and current eligibility before choosing a structure.',
     }
   }
 
@@ -184,13 +143,13 @@ export function recommendRegistrationType(
     return {
       primary: 'llp',
       alternatives: ['pvt-ltd', 'partnership'],
-      reasoning: 'For a professional services business with partners, an LLP offers limited liability with lower compliance than Pvt Ltd — and better credibility than a simple partnership.',
+      reasoning: 'Orientation only: compare partner governance, liability, funding needs, professional registrations, and current MCA/state rules.',
     }
   }
 
   return {
     primary: 'pvt-ltd',
     alternatives: ['llp', 'opc'],
-    reasoning: 'A Private Limited Company is the most versatile structure. It gives you limited liability, the ability to raise funding, and Startup India recognition — ideal for a growing business.',
+    reasoning: 'Orientation only: a company structure is one option to compare for a growing business; verify current MCA requirements and obtain professional advice where needed.',
   }
 }

@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-023",
+  "authority": "Department of Telecommunications (DoT)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "DoT, its official implementing portals, TEC/DoT guidelines, and the official MeitY-hosted TEC document are used as authoritative evidence. Historical beneficiary pages, programme ceilings and implementation notices are not treated as proof of a current open call or applicant entitlement.",
+  "records": [
+    {
+      "slug": "digital-communication-innovation-square-dcis",
+      "sourceUrl": "https://dcis.dot.gov.in/page/faq",
+      "supportingSources": [
+        {
+          "url": "https://dcis.dot.gov.in/",
+          "anchor": "Official DCIS portal: objectives, 2021-2023 beneficiary cohorts, DCIS guidelines/e-books and implementing-agency context"
+        },
+        {
+          "url": "https://dcis.dot.gov.in/assets/document/DCIS_Guidelines2.0.pdf",
+          "anchor": "DCIS Guidelines 2.0 linked by the official FAQ; detailed eligibility, funding instruments, milestones and selection terms require document review"
+        },
+        {
+          "url": "https://www.dot.gov.in/static/uploads/2025/07/2f60438eb0a477fabf48adb932863d0.pdf",
+          "anchor": "DoT revised DCIS guidelines: extension boundary through March 2026 and implementation framework"
+        },
+        {
+          "url": "https://www.dot.gov.in/static/uploads/2025/07/86ad6f0555dd4aa05a455d61b2294a3a.pdf",
+          "anchor": "DoT DCIS official eligibility flyer: applicant categories, DPIIT/MSME/individual eligibility, milestone-based support and historical 2022 call"
+        },
+        {
+          "url": "https://www.dot.gov.in/static/uploads/2025/07/ab1626d64d8125b7ef400cf641abfc65.pdf",
+          "anchor": "DoT DCIS grant SOP: scheme duration, eligible expenditure, due diligence, milestones, disbursement, monitoring and grant conditions"
+        },
+        {
+          "url": "https://www.eservices.dot.gov.in/service-list",
+          "anchor": "Official DoT eServices listing for DCIS and related telecom services"
+        }
+      ],
+      "sourceKind": "official_dot_implementing_portal_faq_and_guideline",
+      "sourceAnchor": "DCIS FAQ and DoT grant SOP: programme purpose, funding ceilings, applicant categories, permissible use, duration, eligible expenditure, milestones, disbursement, online route and technical review",
+      "observations": [
+        "The official FAQ describes DCIS as financial assistance for startups for proof of concept, prototype development, product trials, market entry and commercialization, with startups/MSMEs applying through the DCIS portal.",
+        "The FAQ states a grant up to INR 50 lakh for startups, INR 2 crore for MSMEs and up to INR 10 crore for technology requiring higher funding, excluding academia. These are track-level ceilings and must not be presented as an automatic award or combined applicant value.",
+        "Individual entrepreneurs may apply, but after selection must satisfy the applicable startup or MSME criteria. The FAQ separately describes DPIIT-startup legal-form, age, turnover and innovation conditions and says there are no eligibility exemptions.",
+        "The FAQ distinguishes grant use for proof-of-concept validation, prototype development and product trials from debt/convertible-debenture use for market entry, commercialization or scaling. The instrument and milestone terms must therefore remain separate in the data model.",
+        "The FAQ says calls are hosted on an ongoing basis, while the portal also records invited rounds for 2021, 2022 and 2023 and displays historical beneficiary cohorts. This is a current-status conflict that requires reviewer confirmation of the live call before an actionable recommendation is shown.",
+        "Applications are online with no application fee and are reviewed by a Technical Expert Committee, which also recommends future tranche disbursement based on performance. The DoT grant SOP adds due diligence, a project agreement, milestone-linked disbursement, periodic monitoring and utilization reporting. Selection and later tranches are not guaranteed by eligibility alone."
+      ],
+      "reviewFollowUps": [
+        "Open and review the current DCIS Guidelines 2.0 and the DoT revised guideline together, including the operative extension, applicant definitions, grant/debt/convertible instruments, eligible costs, milestones, tranche release, reporting and recovery terms.",
+        "Verify whether an application call is actually accepting submissions on the DCIS portal as of the verification date; reconcile the FAQ's ongoing-call wording with the portal's historical-round notice and March 2026 extension boundary.",
+        "Separate startup grant, MSME grant and higher-funding technology routes, including whether the INR 10 crore route is debt, convertible or another instrument and whether academia is excluded in the current operative document.",
+        "Confirm current DPIIT/Udyam evidence, team requirements, ownership, technology scope, documents, TEC selection criteria, eligible expenditure, project agreement, utilization reporting and subsequent-tranche conditions before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "production-linked-incentive-telecom-networking-products",
+      "sourceUrl": "https://www.dot.gov.in/static/uploads/2025/07/425537d318df04ffd54bd262fa9610f6.pdf",
+      "supportingSources": [
+        {
+          "url": "https://www.dot.gov.in/static/uploads/2025/07/73c25f6e2641b31ee2e50b5ba4ffdd62.pdf",
+          "anchor": "Official design-led manufacturing amendment: balance-fund application, selection priority, ranking and existing-beneficiary treatment"
+        },
+        {
+          "url": "https://www.eservices.dot.gov.in/service-list",
+          "anchor": "Official DoT eServices entry point for the PLI service"
+        },
+        {
+          "url": "https://www.pli-telecom.udyamimitra.in",
+          "anchor": "Scheme portal named by the DoT guidelines for online applications; live window and availability require direct verification"
+        }
+      ],
+      "sourceKind": "official_dot_pli_guideline_amendment_and_portal_route",
+      "sourceAnchor": "DoT Telecom and Networking Products PLI guideline: company/manufacturing eligibility, investment and sales thresholds, application window, claims and disbursement",
+      "observations": [
+        "This is a performance-linked manufacturing incentive for Indian companies manufacturing specified telecom and networking products in India. It is not a general startup grant, loan or reimbursement.",
+        "The guideline uses global manufacturing-revenue qualification thresholds, including more than INR 10 crore for MSMEs and more than INR 250 crore for domestic companies in the base year, plus minimum cumulative incremental investment and incremental sales thresholds.",
+        "Eligibility and annual disbursement depend on product-segment mapping, baseline investment/sales, committed investment, incremental sales, statutory/auditor evidence and annual claims. Missing an annual threshold forfeits incentive for that year without automatic carryover.",
+        "The guideline says applications are submitted online through the notified scheme portal, require a non-refundable application fee, and that acknowledgement does not confer a right to claim incentive. The application window is notified by DoT; no open-window conclusion is made from the guideline alone.",
+        "The guideline describes an overall financial limit of INR 12,195 crore over five years and a maximum INR 1,000 crore allocation for MSMEs. These are programme/category allocations, not an applicant's eligible amount.",
+        "The design-led amendment prioritizes compliant design-led manufacturers and ranks applications to the extent of fund availability, so the amendment and available-balance state must be evaluated separately from the base guideline."
+      ],
+      "reviewFollowUps": [
+        "Verify the current DoT-notified application window, portal operation, selected PMA, fee, remaining category allocation and whether new applications are currently permitted.",
+        "Extract the applicable telecom product segments, year-specific incentive rates, annual ceilings, investment/sales thresholds and category rules from the controlling scheme and approval documents.",
+        "Confirm treatment of design-led manufacturers, existing beneficiaries, fresh applicants, duplicate PLI claims, foreign investment, NPA/wilful-defaulter exclusions and the current amendment hierarchy.",
+        "Model incentive calculation and annual claims separately from programme outlay; do not use INR 12,195 crore or INR 1,000 crore as an applicant benefit."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "dot-telecom-testing-certification-reimbursement-startups-mses",
+      "sourceUrl": "https://www.meity.gov.in/offerings/schemes-and-services/details/guidelines-for-implementation-of-scheme-for-reimbursement-of-testing-and-certification-charges-for-start-ups-and-telecom-mses-cjNwMjMtQWa",
+      "supportingSources": [
+        {
+          "url": "https://www.meity.gov.in/static/uploads/2025/06/837f9d009185a3e2061fb12ba8ef4d17.pdf",
+          "anchor": "Official TEC/DoT guideline: eligibility, two-year/INR 25 crore boundary, reimbursement rates, cap, lab rules, documents, quarterly cut-off and no-double-benefit declaration"
+        },
+        {
+          "url": "https://tec.gov.in/tcrs",
+          "anchor": "TEC online reimbursement portal named in the official guideline"
+        },
+        {
+          "url": "https://www.mtcte.tec.gov.in/",
+          "anchor": "TEC MTCTE route for mandatory telecom equipment testing/certification context"
+        },
+        {
+          "url": "https://nccs.gov.in/",
+          "anchor": "NCCS certification/laboratory authority referenced by the official guideline"
+        }
+      ],
+      "sourceKind": "official_tec_dot_guideline_and_portal",
+      "sourceAnchor": "TEC/DoT guideline: reimbursement rates, entity thresholds, eligible laboratories, claim timing, documents and implementing route",
+      "observations": [
+        "The guideline covers partial reimbursement of telecom testing and certification charges for DPIIT-registered startups and Indian Micro/Small Enterprises, using TEC/NCCS designated or recognized laboratories or NABL-accredited laboratories where no TEC-designated conformity body exists.",
+        "The guideline states reimbursement up to 75% for startups, 60% for micro enterprises and 50% for small enterprises, with a maximum INR 50 lakh per startup or MSE for the scheme duration. These are reimbursement ceilings, not advance grants.",
+        "The scheme is operational for two years from implementation or until the INR 25 crore allocation is fully utilized, whichever occurs earlier. The implementation date, remaining funds and any extension must be verified before calling the route actionable.",
+        "Applicants must be incorporated in India; annual revenue must not have crossed INR 5 crore in any financial year since incorporation, and startups must not have raised more than INR 10 crore. The guideline requires incorporation, audited financials, DPIIT/Udyam, lab designation/accreditation, test reports, product certificate, invoice, payment, bank, PAN and declarations.",
+        "Product certification must be issued after the implementation/notified date, claims must be submitted within three months of the TEC product certificate, and applications submitted by the 20th of the last month of a quarter are considered. The route excludes control testing for product R&D and requires a no-duplicate-government-reimbursement declaration.",
+        "TCOE receives and screens applications, TEC is the nodal authority, and a Technical Evaluation Committee evaluates complete applications. The TEC portal and current designated-lab list must be verified before recommending a business."
+      ],
+      "reviewFollowUps": [
+        "Verify the current TEC portal, implementation date, open intake, available funds, designated-lab list, eligible product/certification scope and any amendment or extension.",
+        "Confirm the entity-size, revenue, funding, DPIIT/Udyam and Indian-incorporation tests against the applicant's evidence; do not infer eligibility from the telecom sector alone.",
+        "Validate certificate dates, quarterly submission cut-off, three-month claim deadline, eligible cost categories and duplicate-benefit declaration before calculating a reimbursement estimate.",
+        "Keep reimbursement percentage, INR 50 lakh cap and INR 25 crore programme allocation as separate fields, and show the current portal handoff only after live availability is confirmed."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment"
+    ],
+    "reason": "The three DoT records have distinct support models: DCIS startup/MSME innovation assistance, performance-linked telecom manufacturing incentive, and testing/certification reimbursement. Official evidence supports structured drafts, but current calls/windows, amendments, fund availability, route ownership and applicant-specific conditions require human review before publication."
+  }
+}

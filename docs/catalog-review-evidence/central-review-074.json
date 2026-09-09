@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-074",
+  "authority": "National Cooperative Development Corporation - Ayushman Sahakar",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party NCDC scheme-document, scheme-index and application-route observations for reviewer use. It does not guarantee loan sanction, subsidy convergence, interest incentive, project viability, statutory approval or healthcare outcome.",
+  "sourcePolicy": "The official NCDC Ayushman Sahakar document and compendium, current NCDC scheme index, common loan application route, FAQ and Ministry of Cooperation scheme page are primary. Activity-specific forms, current rates, security and State/direct-funding terms require reviewer confirmation before publication.",
+  "records": [
+    {
+      "slug": "ayushman-sahakar-cooperative-healthcare-support",
+      "sourceUrl": "https://ncdc.in/documents/other/Ayushman-sahakar20102020.pdf",
+      "supportingSources": [
+        {
+          "url": "https://www.ncdc.in/index.jsp?page=scheme",
+          "anchor": "Current NCDC scheme index: hospital, healthcare and education financial-assistance guideline and current scheme navigation"
+        },
+        {
+          "url": "https://ncdc.in/index.jsp?page=common-application%3Den",
+          "anchor": "Current common loan application route: choose activity/purpose and loan type, download the applicable form and submit with supporting documents"
+        },
+        {
+          "url": "https://www.ncdc.in/index.jsp?page=faq%3Dhi",
+          "anchor": "NCDC FAQ/application-channel context for State Government and direct routes"
+        },
+        {
+          "url": "https://www.ncdc.in/documents/booklet/2609240524English-Compendium-as-on-22.05.2024.pdf",
+          "anchor": "Official NCDC compendium: cooperative eligibility, eight-year loan period, moratorium, interest incentive and funding pattern"
+        },
+        {
+          "url": "https://www.cooperation.gov.in/en/programmes-schemes",
+          "anchor": "Ministry of Cooperation programme and cooperative-sector scheme context"
+        }
+      ],
+      "sourceKind": "official_ncdc_ayushman_sahakar_scheme_index_application_cross_check",
+      "sourceAnchor": "Cooperative eligibility, healthcare activity scope, current NCDC application handoff, funding routes and conditional credit terms",
+      "observations": [
+        "Ayushman Sahakar is a cooperative project-finance framework, not a universal grant. The applicant must be a cooperative society registered under a State or Multi-State Cooperative Societies Act with suitable bye-law provisions for hospital, healthcare or health-education services; an individual, private company or LLP should not be matched to this record as a direct applicant.",
+        "Eligible activity groups include healthcare and hospital infrastructure, AYUSH, medical/health education, diagnostics, telemedicine, digital health, health insurance subject to IRDA/accreditation boundaries, margin money and working capital. Each activity retains its own statutory permissions and appraisal conditions.",
+        "The scheme document states an eight-year loan period including a one-to-two-year principal moratorium. NCDC interest rates remain subject to circulars and amendments. A women-majority borrower cooperative may receive a 1 percentage-point term-loan interest reduction for the tenure only when timely repayments are made and current conditions are met.",
+        "Funding routes differ: direct infrastructure funding may provide NCDC loan up to 70 percent with at least 30 percent society share; State Government routes may provide NCDC-to-State loan up to 90 percent and a separate State-to-Society loan/share-capital pattern with minimum society share. The scheme document also provides security alternatives and allows possible subsidy/grant/VGF convergence, but none is automatic.",
+        "The current NCDC scheme index and common application route confirm that the operational handoff is activity/purpose and loan-type specific. Current rates, forms, contribution, security, State/direct route, processing, repayment and grievance details must be verified before an actionable recommendation.",
+        "UdyamVeda may prepare the cooperative, bye-law, project, permission, funding and security checklist. It must not promise sanction, calculate a guaranteed funding amount, act as a healthcare regulator, submit the NCDC form, or treat subsidy convergence as approved."
+      ],
+      "reviewFollowUps": [
+        "Confirm the current NCDC guideline/form version, eligible activity, direct versus State route, current interest rate, margin, moratorium, repayment and security requirements.",
+        "Verify cooperative registration, bye-laws, project report, financials, society contribution, land/building evidence and all clinical, education, insurance, pharmacy, environmental and local permissions.",
+        "Separate NCDC loan, society contribution, State share-capital/loan, subsidy/grant/VGF convergence and women-majority interest incentive in the benefit model.",
+        "Confirm the live common-application form, submission office/channel, processing fees, appraisal timeline, monitoring, disbursement, grievance and amendment route.",
+        "Obtain human reviewer approval for source, eligibility, benefit, application, window, fine print, amendment, current terms and factual accuracy before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "The official NCDC sources confirm the cooperative project-finance framework and current application navigation, but activity-specific route, rates, security, forms, permissions and sanction conditions require human review before publication."
+  }
+}

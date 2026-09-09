@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-062",
+  "authority": "Employees' State Insurance Corporation (ESIC)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party ESIC employer-registration observations for reviewer use. It does not determine statutory coverage for a particular employer, replace professional advice, or authorize UdyamVeda to file declarations or contributions.",
+  "sourcePolicy": "The current ESI Act, ESIC coverage and wage guidance, official employer-registration overview, Unified Shram Suvidha instructions and live ESIC/registration portals are primary. Older PDFs are supporting evidence only after reconciliation with current state/UT notifications and the live route. The employer or authorised representative must use its own account, credentials, OTPs and statutory declarations.",
+  "records": [
+    {
+      "slug": "esic-employer-registration",
+      "sourceUrl": "https://portal.esic.gov.in/ESICInsurance1/ESICInsurancePortal/Employer_Employee_registration_through_portal.pdf",
+      "supportingSources": [
+        {
+          "url": "https://www.esic.gov.in/attachments/publicationfile/4bba80675aa61f0e8c9f7f57c155b185.pdf",
+          "anchor": "Current ESIC coverage and wage guidance: factories, specified establishments, notified areas, 10-employee categories and INR 21,000/25,000 wage limits"
+        },
+        {
+          "url": "https://esic.gov.in/Publications/ESIAct1948Amendedupto010610.htm",
+          "anchor": "ESI Act: registration of covered factories/establishments, government extension to additional classes, employer returns and contribution framework"
+        },
+        {
+          "url": "https://esic.gov.in/attachments/circularfile/Guidelines_for_USSP_Unified_Shram_Suvidha_Portal_Registration_for_ESIC_User_Manual_V1_0_1752730200.pdf",
+          "anchor": "Unified Shram Suvidha employer-registration route and ESIC/EPFO Act selection"
+        },
+        {
+          "url": "https://esic.gov.in/",
+          "anchor": "Official ESIC portal and current employer-service handoff"
+        }
+      ],
+      "sourceKind": "official_esic_registration_coverage_wage_act_cross_check",
+      "sourceAnchor": "Online registration of employers, applicability overview, state/UT area boundary, employee/wage conditions and current registration route",
+      "observations": [
+        "The official ESIC employer-registration overview describes an online employer/unit registration workflow and an employer code/registration confirmation route. The exact current form, confirmation, contribution and post-registration steps must be checked in the live ESIC or Unified Shram Suvidha route.",
+        "ESIC coverage is establishment- and area-dependent. Official material describes factories employing 10 or more persons and several Section 1(5) categories such as shops, hotels, restaurants, cinemas, road motor transport and newspaper establishments at 10 or more coverable employees in applicable/notified areas, subject to state/UT and category exceptions.",
+        "The official employer-registration PDF contains state-specific minimum-employee values that vary between 10 and 20. Therefore, the platform must not hardcode a universal 10-employee or 20-employee rule; it must evaluate establishment type, state/UT, notified area, employee definition, wage condition and current notification together.",
+        "The current coverage guidance states a wage limit of INR 21,000 per month, with INR 25,000 per month for persons with disability. Wage computation, overtime treatment, contribution periods and any later amendments must be verified for the recommendation date.",
+        "Once the ESI Act applies, the employer may have continuing duties involving employee registration, contributions, returns, records, inspections, amendments, closure and employer/employee communications. Registration should not be presented as completion of ESIC compliance.",
+        "The ESI Act provides for registration of covered factories and establishments and allows extension to other classes by appropriate-government notification. Coverage and exemption logic therefore needs statutory and notification evidence, not only a generic portal checklist.",
+        "ESIC registration and insurance compliance are statutory compliance activities, not grants, subsidies, loans or tax benefits. The record's benefit remains compliance readiness with no monetary entitlement.",
+        "UdyamVeda may explain the current route, prepare the employer and employee checklist and identify missing information, but the employer must use its own credentials, OTPs, declarations and uploads. Sensitive identity and employee data must follow the private document-vault controls."
+      ],
+      "reviewFollowUps": [
+        "Build and verify the state/UT and notified-area matrix for each covered establishment category; record the source date and applicable notification rather than using a national default threshold.",
+        "Confirm current employee definitions, wage computation, disability treatment, contribution periods, overtime treatment, exclusions, exemptions and the rule for establishments that become covered and later fall below the threshold.",
+        "Confirm the current ESIC/Unified Shram Suvidha route, Form 01 or successor form, authentication, documents, registration timing, advance contribution/payment behaviour and registration-letter workflow.",
+        "Model factory, shop, hotel, restaurant, cinema, transport, newspaper, education, medical, municipal and other notified categories separately; do not merge them into one generic eligibility rule.",
+        "Verify employer and employee contribution rates, returns/ECR, records, inspections, amendments, closure, contractor and principal-employer duties from current official sources.",
+        "Keep ESIC distinct from EPFO, payroll, labour licences, professional tax and private insurance; obtain human reviewer approval before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "Official ESIC materials support the employer-registration route, broad coverage categories and wage limits, but state/UT thresholds, notified areas, establishment categories, current forms, contributions, exceptions and post-registration duties require review before publication."
+  }
+}

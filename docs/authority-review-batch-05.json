@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-09-08",
+  "sourceBaseline": "docs/igod-coverage-baseline.json",
+  "purpose": "Evidence pack for the fifth bounded manual review batch. These are proposed relevance decisions only and do not alter the terminal IGOD assessment state or authorize publication.",
+  "reviewStatus": "pending_human_approval",
+  "terminalAssessmentWritesAllowed": false,
+  "rows": [
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Agriculture and Farmers Welfare (MoAFW)",
+      "authorityUrl": "https://agriwelfare.gov.in/en/who",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://agriinfra.dac.gov.in/Documents/Circular/91EE46A50D3941908F192725717E431B.pdf",
+      "evidenceAnchor": "Agriculture Infrastructure Fund operational guidance: eligible beneficiaries, post-harvest and farm-gate infrastructure, interest subvention, credit guarantee, project conditions, and application route",
+      "rationale": "The ministry portfolio includes agriculture infrastructure finance and enterprise-support routes directly relevant to agri-businesses, FPOs, cooperatives, startups, and infrastructure developers."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Finance (MoF)",
+      "authorityUrl": "https://finmin.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://financialservices.gov.in/pradhan-mantri-mudra-yojana-pmmy",
+      "evidenceAnchor": "Pradhan Mantri Mudra Yojana: micro-enterprise lending categories, eligible borrowers, lending-purpose coverage, and participating financial-institution route",
+      "rationale": "The ministry portfolio includes financial-inclusion, credit, guarantee, and lending-policy routes that are central to self-employed founders and small businesses."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Labour and Employment (MoLE)",
+      "authorityUrl": "https://labour.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://esic.gov.in/attachments/circularfile/Guidelines_for_USSP_Unified_Shram_Suvidha_Portal_Registration_for_ESIC_User_Manual_V1_0_1752730200.pdf",
+      "evidenceAnchor": "ESIC Unified Shram Suvidha Portal registration manual: employer registration, establishment details, contribution and compliance workflow, and official handoff",
+      "rationale": "The ministry portfolio includes employer registration, social-security compliance, and establishment obligations that are required for growing businesses and their workers."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Rural Development (MoRD)",
+      "authorityUrl": "https://www.rural.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://svep.nrlm.gov.in/svepdemo/pdf/FAQ_SVEP.pdf",
+      "evidenceAnchor": "Start-up Village Entrepreneurship Programme FAQ: rural enterprise support, community resource persons, financing linkage, eligibility context, and implementation route",
+      "rationale": "The ministry portfolio includes rural entrepreneurship, self-employment, livelihood, and enterprise-support routes for founders and micro-businesses outside major urban centres."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Social Justice and Empowerment (MoSJE)",
+      "authorityUrl": "https://socialjustice.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://socialjustice.gov.in/schemes/32",
+      "evidenceAnchor": "Credit Enhancement Guarantee Scheme for Scheduled Castes: eligible beneficiaries, credit-support structure, implementing route, and scheme conditions",
+      "rationale": "The ministry portfolio includes targeted credit, entrepreneurship, and livelihood-support routes for eligible founder categories and disadvantaged entrepreneurs."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Tourism",
+      "authorityUrl": "https://tourism.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://nidhi.tourism.gov.in/home/page/guidelines",
+      "evidenceAnchor": "NIDHI+ guidelines: tourism-service-provider registration, eligible accommodation and hospitality categories, documents, verification, and renewal or update context",
+      "rationale": "The ministry publishes registration, recognition, standards, and hospitality-support routes relevant to tourism businesses, accommodation providers, and travel-service operators."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Cooperation",
+      "authorityUrl": "https://www.cooperation.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://www.cooperation.gov.in/en/programmes-schemes",
+      "evidenceAnchor": "Ministry programmes and schemes page: cooperative-sector assistance, NCDC financing and enterprise-development routes, and programme navigation",
+      "rationale": "The ministry portfolio includes cooperative enterprise, producer organisations, financing, infrastructure, and business-development routes that are relevant to cooperative founders and member-owned businesses."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of AYUSH (MoA)",
+      "authorityUrl": "https://ayush.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://ngo.ayush.gov.in/Default/assets/front/documents/Updated_Guidelines_of_CSSS_(Hospital).pdf",
+      "evidenceAnchor": "Updated Central Sector Scheme guideline for AYUSH hospitals and day-care centres: eligible organisations, project requirements, proposal route, release conditions, monitoring, and stated validity requiring current-status verification",
+      "rationale": "The ministry publishes sector-specific grant and infrastructure-support routes relevant to AYUSH hospitals, day-care providers, and eligible organisations; current validity must be verified before any opportunity is published."
+    }
+  ]
+}

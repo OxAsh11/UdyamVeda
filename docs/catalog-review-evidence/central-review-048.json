@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-048",
+  "authority": "Biotechnology Industry Research Assistance Council (BIRAC)",
+  "observedAt": "2026-09-09",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party BIRAC observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "BIRAC's current scheme pages, the October 2025 BIG guidelines, the revised 2024 BIPP guidelines, the 2025 SBIRI guidelines and the BIRAC submission guide are primary. Historical calls are used only to identify call-specific fields and must not be presented as open deadlines. UdyamVeda prepares evidence and checklists but does not store BIRAC credentials, submit confidential R&D material or represent BIRAC.",
+  "records": [
+    {
+      "slug": "biotechnology-ignition-grant-big",
+      "sourceUrl": "https://www.birac.nic.in/big.php",
+      "supportingSources": [
+        {"url":"https://www.birac.nic.in/webcontent/1761936564_big_new_guidelines_nov_2025.pdf","anchor":"BIG Scheme Guidelines Version 9, October 2025: scope, exclusions, funding, eligibility, application and milestone controls"},
+        {"url":"https://www.birac.nic.in/howtoSubmitProposal.php","anchor":"BIRAC proposal submission guide: BIG proforma, registration, documents, online submission and final submit"},
+        {"url":"https://www.birac.nic.in/desc_new.php?id=1046","anchor":"BIRAC BIG guideline, FAQ, registration and online-application route"},
+        {"url":"https://www.birac.nic.in/cfp_view.php?id=32&scheme_type=5","anchor":"Historical BIG-25 call example used only to show call-specific startup-age and prior-recipient conditions"}
+      ],
+      "sourceKind": "official_birac_current_page_and_2025_guideline",
+      "sourceAnchor": "Current BIG overview plus October 2025 Version 9 guideline: early-stage biotech PoC, grant ceiling, eligibility, exclusions, evidence, call cadence and milestone release",
+      "observations": [
+        "BIRAC describes BIG as early-stage biotech support from ideation to proof of concept, with grant-in-aid up to INR 50 lakhs for up to 18 months; it is not a loan or a general research fellowship.",
+        "Version 9 supports biotech deep-tech categories including devices and diagnostics, drugs, industrial biotechnology, agriculture, biosimilars and stem cells, vaccines and bioinformatics, while excluding basic or exploratory research, low-novelty work and late-stage validation or certification.",
+        "The October 2025 guideline requires an Indian Company or LLP, incorporation no earlier than five years before the particular call, resident-Indian ownership conditions, a shareholder Project Leader, and a functional in-house R&D facility or eligible incubator route. Promoter ineligibility and BIRAC-default checks also apply.",
+        "Funding is milestone based: the guideline describes an initial INR 20 lakh release, one or two progress instalments up to INR 20 lakh each, and up to INR 5 lakh after final technical and utilization documents; exact payment scheduling remains call and agreement dependent.",
+        "The current BIRAC page says calls are normally announced twice yearly around 1 January and 1 July, while Version 9 says calls are typically open for 30 days. No current deadline is inferred from the calendar alone; a live call notice is required.",
+        "BIRAC and BIG Partners provide mentoring, IP, legal, regulatory, business and investor support, but these are non-cash support components and must remain separate from the grant value."
+      ],
+      "reviewFollowUps": [
+        "Verify the active call notice, exact call launch date, deadline, named BIG Partners and any call-specific eligibility changes.",
+        "Confirm company/LLP incorporation-age calculation, resident-Indian ownership evidence, Project Leader shareholding, promoter exclusions, prior BIG support and BIRAC default status.",
+        "Validate budget-head caps, milestone schedule, utilization certificate and final-report requirements against the executed call documents.",
+        "Keep grant-in-aid, mentoring, investor access and incubator support in separate benefit buckets; do not show the INR 50 lakh ceiling as guaranteed eligibility.",
+        "Record amendment or supersession evidence and obtain a reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "birac-bipp-biotechnology-industry-partnership-programme",
+      "sourceUrl": "https://www.birac.nic.in/webcontent/1729751884_BIPP_scheme_guidelines_revised.pdf",
+      "supportingSources": [
+        {"url":"https://www.birac.nic.in/howtoSubmitProposal.php","anchor":"BIRAC proposal submission guide: BIPP proforma, company/institution documents and online final submission"},
+        {"url":"https://www.birac.nic.in/cfp.php","anchor":"BIRAC current-calls route required for an actionable BIPP deadline"},
+        {"url":"https://birac.nic.in/","anchor":"BIRAC official portal and authority identity"}
+      ],
+      "sourceKind": "official_birac_revised_2024_guideline",
+      "sourceAnchor": "Revised 2024 BIPP guideline: transformational scope, TRL 7 or above, categories I-IV, company/LLP eligibility, cost sharing, milestones and royalty",
+      "observations": [
+        "The revised BIPP document describes an advanced technology scheme for high-risk, transformational biotechnology work and says projects should end at TRL 7 or above; incremental development is excluded.",
+        "BIPP covers socially relevant and globally competitive research, clinical or agriculture field trials, and shared major facilities through separate categories. Category IV facility support is not a general applicant grant ceiling.",
+        "Eligible applicants include Indian Companies or LLPs, alone or with eligible academic or research collaborators, with Indian ownership and adequate in-house or recognised-incubator capability. Default, duplicate-funding and prior-project irregularity exclusions require documentary review.",
+        "The guideline provides up to 50% of approved company/LLP project cost as grant-in-aid with applicant contribution; eligible Phase III clinical or agriculture field-trial work may receive up to 75% of in-India trial cost under the stated conditions.",
+        "Funds are milestone based and the document states royalty conditions, including 7% annual net-sales royalty and category-specific recovery/transfer rules. These are obligations, not extra benefits.",
+        "The submission route is online during an active call, with technical, IP, regulatory and financial due diligence. A current deadline must come from a live BIRAC call notice."
+      ],
+      "reviewFollowUps": [
+        "Reconcile the revised guideline with any current BIRAC scheme-directory or call language before publishing funding or soft-loan claims.",
+        "Verify the active call, category, priority area, end-TRL, company/LLP ownership and collaborator accreditation requirements.",
+        "Confirm project-cost basis, applicant contribution, India-only trial scope, milestone schedule, royalty/recovery terms and Category IV facility rules.",
+        "Capture regulatory, site-visit, IP, confidentiality and duplicate-funding evidence without requesting confidential proposal contents in UdyamVeda.",
+        "Record amendment or supersession evidence and obtain a reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "birac-sbiri-small-business-innovation-research-initiative",
+      "sourceUrl": "https://birac.nic.in/webcontent/1745298212_SBIRI_scheme_guidelines_16_04_2025.pdf",
+      "supportingSources": [
+        {"url":"https://www.birac.nic.in/howtoSubmitProposal.php","anchor":"BIRAC proposal submission guide: SBIRI proforma, registration, documents and final submission"},
+        {"url":"https://www.birac.nic.in/cfp.php","anchor":"BIRAC current-calls route required for an actionable SBIRI deadline"},
+        {"url":"https://birac.nic.in/","anchor":"BIRAC official portal and authority identity"}
+      ],
+      "sourceKind": "official_birac_2025_guideline",
+      "sourceAnchor": "2025 SBIRI guideline: eligible company/LLP and collaborator routes, pre-PoC scope, funding tracks, milestones, contribution and royalty",
+      "observations": [
+        "The 2025 SBIRI guideline supports early-stage, pre-proof-of-concept biotechnology R&D by industry and says concepts without proper proof-of-principle, preliminary data or product/technology potential are not supported.",
+        "Applicants use eligible Companies, LLPs, Section 8 companies or collaborators, with institution/accreditation and facility requirements depending on the route. Default, duplicate-funding and prior-project irregularity exclusions are material.",
+        "The guideline states there is no ceiling on total project cost, but the funding model is track-specific: a first-time startup under ten years may receive up to INR 50 lakh under the stated formula, while other companies or previously funded startups are capped at 70% with at least 30% contribution.",
+        "Research-institution support has separate public or private rules. Disbursement is milestone based, applicant contribution must precede relevant instalments, the final instalment is reimbursement, and royalty is payable under the guideline after product sales.",
+        "Submission is online only during an active call. The recurring route and any historical call windows do not prove that a call is open today; UdyamVeda must require a current call notice before showing a deadline or Apply action.",
+        "The 2025 complete guideline is the controlling source for the structured funding draft; older SBIRI pages may contain conflicting legacy loan language that must not be silently merged into this record."
+      ],
+      "reviewFollowUps": [
+        "Confirm the active SBIRI call, current proposal form, exact deadline and any amendment to the 2025 funding tracks.",
+        "Verify startup-age calculation, prior BIRAC support, Indian ownership, company/LLP or collaborator route, technical facility, preliminary data and regulatory/IP evidence.",
+        "Reconcile the 2025 grant-in-aid document with legacy public pages before exposing any loan, repayment or Phase-II language.",
+        "Keep grant, applicant contribution, milestone reimbursement and royalty/recovery obligations as separate value and effort fields.",
+        "Record amendment or supersession evidence and obtain a reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "birac-seed-fund-biotech-startup-equity",
+      "sourceUrl": "https://www.birac.nic.in/webcontent/1616486925_seed_fund_Guidelines.pdf",
+      "supportingSources": [
+        {"url":"https://www.birac.nic.in/seedFundNew.php","anchor":"Current BIRAC SEED Fund page: post-PoC biotech route, 16 partner BioNEST incubators, startup access and displayed impact context"},
+        {"url":"https://www.birac.nic.in/description_new.php?id=263","anchor":"BIRAC SEED Fund description: incubator grant-in-aid framework, selected incubator route and startup equity support"},
+        {"url":"https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf","anchor":"Official Startup India Playbook SEED equity-funding discovery entry"}
+      ],
+      "sourceKind": "official_birac_seed_guideline_and_current_partner_page",
+      "sourceAnchor": "SEED Fund guideline pages 1-3: incubator eligibility, startup Indian ownership, INR 30 lakh investment ceiling, instruments, monitoring and exit terms",
+      "observations": [
+        "BIRAC describes SEED Fund as first equity exposure for post-PoC biotech startups, intended to bridge promoter investment and angel or venture investment.",
+        "The guideline requires selected incubators to have BioNEST support, at least three years of operation, at least five resident biotech/med-tech/life-science startups, incubation and mentoring capacity, IP/technology-transfer services and early-stage funding experience.",
+        "The guideline provides an incubator-level INR 100-200 lakh grant-in-aid for implementation. The incubator may provide up to INR 30 lakh per startup through equity or equity-linked instruments for startup costs such as equipment, supplies and employees.",
+        "The startup must be registered under the Companies Act, 2013 and have at least 51% shareholders who are Indian citizens; the guideline expressly excludes OCI and PIO holdings from this mandatory condition.",
+        "The investment is held in the incubator's name under a legally binding agreement. BIRAC governance, conflict-of-interest controls, milestone monitoring, half-yearly reporting, BIRAC nominee participation and exit-return provisions apply.",
+        "The current BIRAC page lists 16 partner BioNEST incubators and a startup-facing partner route, but its displayed impact figures are marked February 2023. No universal current startup call or deadline was verified."
+      ],
+      "reviewFollowUps": [
+        "Verify the current selected partner list, partner-level intake, fund availability and official startup application route.",
+        "Confirm post-PoC stage, biotechnology/life-science scope, Indian-citizen ownership evidence and any current partner-specific eligibility or diligence requirements.",
+        "Validate equity/equity-linked instrument, valuation, dilution, board-observer, IP, milestone, reporting, exit and conflict-of-interest terms before showing an Apply action.",
+        "Keep the incubator-level grant-in-aid and startup-level investment ceiling as separate value buckets; do not present the INR 30 lakh ceiling as a grant or entitlement.",
+        "Record amendment or supersession evidence and obtain a reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "birac-leap-fund-biotech-startup-equity",
+      "sourceUrl": "https://birac.nic.in/webcontent/1616486900_leap_fund_guidelines.pdf",
+      "supportingSources": [
+        {"url":"https://birac.nic.in/leapFundNew.php","anchor":"Current BIRAC LEAP Fund page: post-PoC-to-pilot objective, six partner BioNEST incubators, startup access and displayed impact context"},
+        {"url":"https://birac.nic.in/leapFund.php","anchor":"Official BIRAC LEAP programme description: up-to-INR 1 crore startup support, up-to-INR 5 crore partner fund and incubator criteria"},
+        {"url":"https://www.birac.nic.in/seedFundNew.php","anchor":"Official BIRAC SEED page used to preserve the threshold and dependency boundary"},
+        {"url":"https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf","anchor":"Official Startup India Playbook LEAP entry and SEED threshold distinction"}
+      ],
+      "sourceKind": "official_birac_leap_guideline_and_current_partner_page",
+      "sourceAnchor": "LEAP Fund guideline pages 1-3: incubator eligibility, startup Indian ownership, INR 1 crore investment ceiling, SEED dependency, non-concurrency, monitoring and exit terms",
+      "observations": [
+        "BIRAC describes LEAP Fund as support for post-PoC biotech startups moving toward piloting and commercialisation, with follow-on private funding as the intended catalyst.",
+        "The guideline requires selected incubators to be BioNEST and SEED fund partners, to have operated for at least five years with at least five resident biotech/med-tech/life-science startups, and to have incubation, IP/technology-transfer and early-stage funding experience including four years of relevant funding or grant management.",
+        "The guideline provides an incubator-level grant-in-aid of up to INR 500 lakh and permits up to INR 1 crore per startup through equity or equity-linked instruments, potentially in milestone-based tranches.",
+        "The startup must be registered under the Companies Act, 2013 and have at least 51% shareholders who are Indian citizens; the guideline expressly excludes OCI and PIO holdings from this mandatory condition.",
+        "LEAP is subject to a dependency and routing boundary: a startup is not eligible if SEED duration has not completed or SEED was foreclosed/terminated; startups suitable for up to INR 30 lakh belong under SEED; SEED, LEAP and AcE are mutually exclusive and support must not be concurrent.",
+        "The investment is held in the incubator's name under a legally binding agreement. BIRAC governance, conflict-of-interest controls, milestone monitoring, half-yearly reporting, nominee participation and exit-return provisions apply.",
+        "The current BIRAC page lists six partner BioNEST incubators, but its displayed impact figures are marked February 2023. No universal current startup call or deadline was verified."
+      ],
+      "reviewFollowUps": [
+        "Verify the current selected partner list, partner-level intake, fund availability and official startup application route.",
+        "Confirm post-PoC/pilot stage, biotechnology/life-science scope, Indian-citizen ownership evidence and any current partner-specific diligence requirements.",
+        "Validate SEED completion/non-termination evidence and prevent concurrent SEED, LEAP or AcE support in the recommendation and application flows.",
+        "Validate equity/equity-linked instrument, valuation, dilution, board-observer, IP, milestone, reporting, exit and conflict-of-interest terms before showing an Apply action.",
+        "Keep the incubator-level grant-in-aid and startup-level investment ceiling as separate value buckets; do not present the INR 1 crore ceiling as a grant or entitlement.",
+        "Record amendment or supersession evidence and obtain a reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "birac-sitare-student-innovation",
+      "sourceUrl": "https://www.birac.nic.in/desc_new.php?id=581",
+      "supportingSources": [
+        {"url":"https://www.birac.nic.in/webcontent/1568955483_birac_sitare_gyti_biis_guidelines.pdf","anchor":"SITARE scheme guidelines: GYTI, BIIS and Appreciation components, student eligibility, duration, selection, milestones and terms"},
+        {"url":"https://www.birac.nic.in/cfp.php","anchor":"BIRAC current-calls index checked for a live SITARE call on 2026-09-08"},
+        {"url":"https://www.birac.nic.in/birac_supported_projects.php","anchor":"Historical SITARE-GYTI supported-projects route; not evidence of a current open call"},
+        {"url":"https://www.birac.nic.in/howtoSubmitProposal.php","anchor":"BIRAC account, proposal and online submission guidance"}
+      ],
+      "sourceKind": "official_birac_sitare_programme_page_and_guideline",
+      "sourceAnchor": "Current SITARE page and official guideline: separate GYTI grant, BIIS training and Appreciation award routes, student eligibility, annual timing and active-call requirement",
+      "observations": [
+        "BIRAC describes SITARE as a student-innovation biotechnology programme with separate SITARE-GYTI, BIIS and SITARE-Appreciation components.",
+        "SITARE-GYTI describes up to 15 selected projects receiving up to INR 15 lakh each for up to 24 months, subject to selection, milestones and agreement terms; this is not a general company or MSME grant.",
+        "GYTI requires an eligible Indian PhD or Masters student, valid institution or university identity and the prescribed NoC, with translational research potential for an innovative biotechnology product or technology and a biotech startup pathway.",
+        "BIIS is a separate student training and mentoring route, while SITARE-Appreciation is a separate award route for selected BIIS work described as up to INR 1 lakh. These amounts and benefits must not be combined.",
+        "The SITARE page describes an annual August/September cycle and an active Call for Proposals requirement. The BIRAC current-calls index reviewed on 2026-09-08 did not establish a currently open SITARE call.",
+        "Historical supported-project listings identify past results only and do not establish a current deadline or applicant entitlement. UdyamVeda must guide the student route without submitting on behalf of the applicant."
+      ],
+      "reviewFollowUps": [
+        "Verify the current SITARE call or notified BIIS route, opening date, closing date, applicant component and official submission path.",
+        "Confirm the student definition, institution ID, NoC, one-time participation limits and whether any current call changes the guideline route.",
+        "Reconcile grant maxima, workshop/training support, milestone releases, project duration, IP, reporting, agreement, partner and termination terms against the current call and amendments.",
+        "Keep GYTI grant, BIIS training/mentoring and Appreciation awards as separate benefits; do not match an ordinary incorporated company without the student route.",
+        "Record amendment or supersession evidence and obtain a reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "birac-eyuva-student-research-innovation",
+      "sourceUrl": "https://birac.nic.in/e_yuva.php",
+      "supportingSources": [
+        {"url":"https://birac.nic.in/webcontent/1643177664_EYUVA_Guidelines.pdf","anchor":"E-YUVA guidelines: EYC eligibility, Innovation Fellow and E-YUVA Fellow categories, separate benefits, duration, selection, IP and reporting"},
+        {"url":"https://www.birac.nic.in/cfp_view.php?id=112&scheme_type=41","anchor":"Historical 3rd E-YUVA Fellow call: undergraduate team route, participating centres and 15 October 2025 to 15 December 2025 window"},
+        {"url":"https://www.birac.nic.in/howtoSubmitProposal.php","anchor":"BIRAC account, proposal and online submission guidance"}
+      ],
+      "sourceKind": "official_birac_eyuva_programme_page_and_guideline",
+      "sourceAnchor": "Current E-YUVA page and guideline: student/researcher categories, E-YUVA Centres, separate fellowship and research-grant benefits and NO ACTIVE CALLS",
+      "observations": [
+        "BIRAC describes E-YUVA as a student and researcher innovation programme with separate Innovation Fellow and E-YUVA Fellow categories, implemented through E-YUVA Centres and BioNEST Knowledge Partners.",
+        "The guideline describes Innovation Fellow support of INR 30,000 per month plus INR 2 lakh annual research grant for a post-graduate fellow, and INR 50,000 per month plus INR 5 lakh annual research grant for a post-doctoral fellow, subject to category and selection conditions.",
+        "The E-YUVA Fellow route is for teams of up to five Indian undergraduate students with a mentor or guide and an E-Cell, Institutional Innovation Council or incubation-centre route; the guideline describes INR 7,500 quarterly stipend per student and INR 2.5 lakh annual research grant per team.",
+        "Fellowship, research grant, pre-incubation, equipment, workshops and mentoring are separate benefits. This is not a general incorporated-company or MSME grant.",
+        "The current official E-YUVA page states NO ACTIVE CALLS. The reviewed third undergraduate call closed on 15 December 2025 at 05:30 PM, so its deadline is historical and cannot be shown as current.",
+        "E-YUVA has student, researcher, institution and centre-specific conditions; UdyamVeda may prepare guidance but must not submit on behalf of applicants."
+      ],
+      "reviewFollowUps": [
+        "Verify the current E-YUVA call, component, participating centres, opening date, closing date and official submission path.",
+        "Confirm current degree-age, citizenship, full-time, PhD, mentor, team-size and E-Cell/institutional conditions against the active call.",
+        "Reconcile fellowship, stipend, research-grant instalments, centre support, milestones, reporting, IP, agreement and termination terms against current amendments.",
+        "Keep Innovation Fellow, E-YUVA Fellow, centre incubation and mentoring benefits as separate buckets; do not match an ordinary company without the student/researcher route.",
+        "Record amendment or supersession evidence and obtain a reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "birac-pace-academic-research-conversion-to-enterprise",
+      "sourceUrl": "https://birac.nic.in/desc_new.php?id=286",
+      "supportingSources": [
+        {"url":"https://www.birac.nic.in/webcontent/1729751841_Revised_PACE_guidelines_oct.pdf","anchor":"Revised PACE guidelines: AIR and CRS scope, eligibility, funding, IP, monitoring, termination and terms"},
+        {"url":"https://birac.nic.in/webcontent/1745322583_i4_rfp_22_04_2025.pdf","anchor":"Historical PACE/i4 RFP: AIR/CRS scope, TRL boundaries and 2025 deadline; not a current call"},
+        {"url":"https://www.birac.nic.in/howtoSubmitProposal.php","anchor":"Institution registration, PACE proforma and online submission guidance"}
+      ],
+      "sourceKind": "official_birac_pace_programme_page_and_guideline",
+      "sourceAnchor": "Current PACE page and revised guideline: academia-led AIR/CRS components, proof-of-principle/PoC, funding boundaries, IP and recurring-call route",
+      "observations": [
+        "BIRAC describes PACE as an academia-led programme with two separate components: Academic Innovation Research (AIR) for proof-of-concept/prototype development and Contract Research Scheme (CRS) for industrial validation of academic technology.",
+        "AIR supports projects with established proof-of-principle, up to 24 months, with total project cost not exceeding INR 50 lakh and non-recurring cost not exceeding 10% under the current page/guideline.",
+        "CRS requires established PoC and validation-ready data with an industrial partner or LLP. The reviewed guideline states grant support for academic and industrial partners with no ceiling; this is retained as a caveat, not a guaranteed entitlement.",
+        "An accredited academic institute, university, NGO or research foundation is the primary applicant. Industry is optional for AIR and mandatory for CRS, with separate Indian ownership, facility, background-IP and first-right requirements.",
+        "The current PACE page describes regular 1 April-15 May and 1 September-15 October windows plus possible need-based calls, but no current AIR/CRS RFP or deadline was established on 2026-09-08.",
+        "PACE is not a general startup or MSME grant; UdyamVeda must preserve academia-first routing and must not merge AIR and CRS value or IP terms."
+      ],
+      "reviewFollowUps": [
+        "Verify the active AIR/CRS call, RFP, opening date, closing date, scope, component and official submission path.",
+        "Confirm academic accreditation, PI qualification, prior funded project/publication or patent, proof-of-principle/PoC, TRL and final milestone conditions.",
+        "Reconcile AIR cost and non-recurring caps, CRS funding basis, collaborator ownership/facility, background IP, first right, milestone, monitoring, reporting and termination terms against amendments.",
+        "Keep AIR academic grant, CRS academic validation grant, CRS industrial validation grant and IP/commercialization rights as separate fields; do not match ordinary companies without the academic route.",
+        "Record amendment or supersession evidence and obtain a reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "birac-ace-fund-biotech-fund-of-funds",
+      "sourceUrl": "https://www.birac.nic.in/aceFundNew.php",
+      "supportingSources": [
+        {"url":"https://www.birac.nic.in/webcontent/ace_fund_guidelines.pdf","anchor":"AcE guideline pages 1-4: fund-of-funds scope, SEBI-registered AIF partner selection, BIRAC commitment, startup investment boundary and governance"},
+        {"url":"https://www.birac.nic.in/webcontent/1680262332_AcE_FAQ_revised.pdf","anchor":"Official FAQ: INR 7 crore portfolio limit, follow-on computation, Indian ownership interpretation, nominee and timing clarifications"},
+        {"url":"https://www.birac.nic.in/webcontent/1668922503_Application_form_ACE.pdf","anchor":"AIF application form: fund-level applicant boundary, fund manager, corpus, investment strategy and diligence documents"},
+        {"url":"https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf","anchor":"AcE appears in the official Startup India Playbook growth/scaling index; discovery only"}
+      ],
+      "sourceKind": "official_birac_ace_page_guideline_faq_and_application_form",
+      "sourceAnchor": "Current BIRAC AcE page and guideline: indirect fund-of-funds route through SEBI-registered AIF partners, separate fund-level and portfolio-level limits, and partner-mediated startup access",
+      "observations": [
+        "BIRAC describes AcE as a Fund of Funds that invests in and partners with SEBI-registered Category I and II AIFs; those daughter funds invest in biotech startups and SMEs.",
+        "The current page lists healthcare, life sciences, pharma, biopharma, med-tech, diagnostics, industrial biotech, agri-tech, bio-IT/services and allied areas, with early and growth-stage relevance.",
+        "The guideline permits BIRAC to commit up to INR 30 crore or 30% of each daughter-fund corpus, while assistance to an individual startup is described as up to INR 7 crore against equity held by the partner. These are separate fund-level and portfolio-level boundaries.",
+        "The AcE partner must commit to invest at least twice BIRAC's committed amount into biotech or life-science startups over the daughter-fund term. This is a partner obligation, not a guaranteed amount for one applicant.",
+        "The official FAQ limits the investment that may count for one biotech portfolio entity to INR 7 crore and describes a separate second-round follow-on rule of up to INR 3.5 crore subject to the 25% computation cap and an external VC condition.",
+        "The official AIF application form is for an AIF requesting BIRAC contribution and says receipt of an application does not bind BIRAC to sanction assistance. Startup selection occurs through the partner AIF's own diligence and investment process.",
+        "The current BIRAC page says startups can avail AcE through listed AcE Fund Partners, but No universal current startup call, single application window or guaranteed ticket was established. This record must remain paused and review-gated.",
+        "AcE must not be matched as a direct grant, loan or guaranteed government payout, and BIRAC commitment, partner 2x obligation and startup investment ceiling must not be added into one misleading eligible-value metric."
+      ],
+      "reviewFollowUps": [
+        "Verify the current AcE Fund Partner list, partner-specific startup intake, sector and stage fit, fund availability and official handoff route.",
+        "Confirm current Indian ownership, company, diligence, IP, regulatory, valuation, dilution, instrument, milestone, reporting, governance, exit and grievance terms against the contribution agreement and any amendment.",
+        "Keep BIRAC's daughter-fund commitment, the partner's 2x obligation, the INR 7 crore portfolio-entity boundary and the FAQ follow-on counting rule as separate fields and benefit buckets.",
+        "Do not expose the AIF fund-manager application as a startup application, and do not promise an investment or current deadline without partner-level evidence.",
+        "Record supersession or amendment evidence and obtain a reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source","eligibility","benefit","application","window","fine_print","amendment","current_terms","reviewer_decision"],
+    "reason": "Official BIRAC sources support the structured BIG, BIPP, SBIRI, SEED, LEAP, AcE, SITARE, E-YUVA and PACE observations, but current-call status, record-specific eligibility, amendments, funding obligations and human approval remain unresolved."
+  }
+}

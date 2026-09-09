@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-047",
+  "authority": "Biotechnology Industry Research Assistance Council (BIRAC) - BioNEST",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "Direct BIRAC BioNEST pages, BIRAC's current BioNEST guidelines, assessment criteria, proposal submission route and DBT/BIRAC notices are primary. Startup India is retained only as the original discovery source and must not override direct BIRAC terms.",
+  "records": [
+    {
+      "slug": "birac-bionest-incubation-support",
+      "sourceUrl": "https://birac.nic.in/bionest.php",
+      "supportingSources": [
+        {"url":"https://www.birac.nic.in/webcontent/bionest_guidelines_2025.pdf","anchor":"Official BIRAC BioNEST 2025 assessment criteria: host preparedness, dedicated space, instruments, mentoring, pipeline, governance, sustainability and category-specific evaluation"},
+        {"url":"https://www.birac.nic.in/howtoSubmitProposal.php","anchor":"Official BIRAC proposal submission route: BioNest proforma, registration/login, institution/company documents and final submission"},
+        {"url":"https://birac.nic.in/desc_new.php?id=264","anchor":"Official BIRAC BioNEST programme context: bio-incubation infrastructure, mentoring and networking support"},
+        {"url":"https://www.startupindia.gov.in/content/sih/en/incubator-schemes.html","anchor":"Original Startup India discovery source for DBT BioNEST; direct BIRAC evidence now controls"}
+      ],
+      "sourceKind": "official_birac_bionest_current_page_guideline_assessment_submission_cross_check",
+      "sourceAnchor": "BIRAC BioNEST page: programme supports establishment of bio-incubators as standalone or academic facilities; direct guideline and 2025 assessment material govern categories, host readiness and proposals",
+      "observations": [
+        "BIRAC describes BioNEST as a programme for establishing or strengthening biotechnology bio-incubators that provide space, high-end instrumentation access, technical/business mentoring, IP/legal support, networking and links between academia and industry.",
+        "The beneficiary is an eligible host institution, organisation or existing BioNEST facility; support is not a direct grant paid to every biotech startup using the incubator.",
+        "BIRAC's 2025 assessment criteria emphasise translational activity, host preparedness, dedicated bio-incubation space, access to instruments, technical and business mentoring, potential incubatee pipeline, governance, sustainability/revenue model and category-specific capability.",
+        "The direct BIRAC page distinguishes BioNEST categories and provides a proposal/register route. The exact category, capex contribution, eligible cost, grant structure, equity position, tranche and reporting terms must be taken from the current guideline and applicable call.",
+        "BIRAC's submission guidance requires registration or login, company/institution documents, scheme selection and final proposal submission. UdyamVeda may prepare an evidence checklist but must not store BIRAC credentials, submit confidential material or represent itself as BIRAC."
+      ],
+      "reviewFollowUps": [
+        "Verify the current BioNEST category: new incubator, State biotech/science council, strengthening or scale-up, and confirm the applicant's legal form and host-institution route.",
+        "Reconcile the current 2025 guideline and call with the discovery record's 20% private-capex contribution and possible equity language; do not publish either until category-specific terms are confirmed.",
+        "Confirm eligible cost heads, funding ceiling, capex/operating split, milestones, tranche/disbursement, utilisation, audit, governance, sustainability and reporting obligations.",
+        "Check whether a current BioNEST call or proposal window is open, its deadline, proposal format, institution/company documents and evaluation timetable.",
+        "Keep incubator support, startup incubation access and any BIRAC startup grant/equity programme in separate records and value buckets; obtain an authorized reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source","eligibility","benefit","application","window","fine_print","amendment","current_terms","reviewer_decision"],
+    "reason": "Direct BIRAC sources establish BioNEST's institutional bio-incubator purpose and current assessment/submission routes, but category-specific funding, capex contribution, equity, eligible costs, active call and reviewer decision remain unresolved. The record stays human-review pending."
+  }
+}

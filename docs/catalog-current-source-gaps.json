@@ -1,0 +1,17 @@
+{
+  "generatedAt": "2026-09-08T20:40:10.966Z",
+  "status": "current_primary_source_gaps",
+  "interpretation": "This report reconciles each structured record with its current primary source URL. Every listed record remains publication-blocked until current evidence is captured, integrity-checked, and reviewed by an authorized human.",
+  "summary": {
+    "totalRecords": 174,
+    "currentSourceGaps": 0,
+    "primarySnapshotMissing": 0,
+    "primaryCaptureFailed": 0,
+    "retryableFailures": 0,
+    "manualReviewRequired": 0,
+    "integrityReviewRequired": 0,
+    "alternateCapturesAvailable": 0,
+    "publicationReady": 0
+  },
+  "gaps": []
+}

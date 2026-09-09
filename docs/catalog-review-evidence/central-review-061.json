@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-061",
+  "authority": "Employees' Provident Fund Organisation (EPFO)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party EPFO employer-registration observations for reviewer use. It does not determine statutory coverage for a particular establishment, replace professional advice, or authorize UdyamVeda to file returns or declarations.",
+  "sourcePolicy": "Current EPFO employer pages, Ease of Doing Business guidance, FAQ, applicable EPF law and notifications, the employer unified portal and the common EPFO/ESIC registration route are primary. Older manuals are supporting evidence only where reconciled with the current portal and law. The employer or authorised representative must use its own account, credentials, OTPs and statutory declarations.",
+  "records": [
+    {
+      "slug": "epfo-establishment-registration",
+      "sourceUrl": "https://www.epfindia.gov.in/site_en/EODB.php",
+      "supportingSources": [
+        {
+          "url": "https://www.epfindia.gov.in/site_en/FAQ.php",
+          "anchor": "EPFO FAQ: voluntary coverage below the ordinary 20-employee reference, employee membership and establishment-level coverage boundaries"
+        },
+        {
+          "url": "https://www.epfindia.gov.in/site_en/For_Employers.php/Contact_us.php?id=sm4_index",
+          "anchor": "EPFO employer page: Act coverage for specified establishments, online establishment registration, monthly returns and online payment facilities"
+        },
+        {
+          "url": "https://unifiedportal-emp.epfindia.gov.in/epfo/",
+          "anchor": "Current employer portal: employer sign-in, common EPFO/ESIC registration link, pre-OLRE route, credentials warning and portal state"
+        },
+        {
+          "url": "https://registration.shramsuvidha.gov.in/",
+          "anchor": "Official common registration entry point linked from the EPFO employer portal"
+        },
+        {
+          "url": "https://www.epfindia.gov.in/site_docs/PDFs/OLRE_PDFs/OLRE_withDSC_RevisedJune2016.pdf",
+          "anchor": "EPFO online employer-registration instructions and establishment information; older procedural document requiring current-portal reconciliation"
+        }
+      ],
+      "sourceKind": "official_epfo_eodb_faq_employer_portal_cross_check",
+      "sourceAnchor": "Registration in EPFO, common EPFO/ESIC registration, establishment coverage, voluntary coverage and employer service route",
+      "observations": [
+        "EPFO provides an online employer establishment-registration route and a common EPFO/ESIC registration link. The current employer portal also distinguishes employer sign-in, uncovered principal-employer sign-in and a pre-OLRE establishment function, so the business must use the route applicable to its situation.",
+        "EPFO employer guidance describes the EPF law as applying to specified factories and other notified establishments engaging 20 or more employees. The EPFO FAQ separately recognises voluntary coverage where the majority of employees and the employer opt in under Section 1(4). Therefore, 20 employees is a review input, not a universal deterministic rule.",
+        "Coverage must be evaluated using establishment class, industry/activity, notifications, employee status, exclusions, contractor/principal-employer facts and any voluntary-coverage route. A headcount-only rule can incorrectly label a business eligible or exempt.",
+        "EPFO's Ease of Doing Business material states that bank-account and company-seal details are not required for establishment registration, while the current portal and applicable form checklist control the actual information and documents requested. This distinction must be preserved in the application checklist.",
+        "Official EPFO employer guidance describes online registration and online monthly-return/payment facilities, while the current portal warns employers to protect credentials and not share passwords. UdyamVeda may explain and validate the route, but may not collect credentials, OTPs, digital signatures or statutory declarations.",
+        "EPFO registration and provident-fund compliance are statutory compliance activities, not grants, subsidies, loans or tax benefits. The record's benefit must remain a compliance-readiness outcome with no monetary value.",
+        "The current employer portal links to common EPFO/ESIC registration and shows a portal last-updated date of 7 September 2026. Portal availability, route labels and form fields remain operational facts that require periodic re-verification.",
+        "Post-registration duties such as member enrolment, ECR/returns, contribution payment, contractor/principal-employer reporting, profile changes, inspections, closure and grievance handling require separate applicability and current-procedure review; establishment registration alone does not complete compliance."
+      ],
+      "reviewFollowUps": [
+        "Reconcile current EPF Act coverage, notified establishment classes, employee definitions, exclusions, wage treatment and Section 1(4) voluntary coverage before implementing deterministic recommendation logic.",
+        "Confirm the current EPFO/common EPFO-ESIC portal route, registration timing, form fields, authentication/digital-signature requirements, document list and official fee/no-fee wording.",
+        "Verify PAN, establishment, address, authorised-person, workforce, contractor and principal-employer facts required by the current route; do not infer them from company type alone.",
+        "Model post-registration obligations separately: member enrolment, ECR/returns, contribution/payment, records, amendments, inspections, closure and grievance routes.",
+        "Keep EPFO registration distinct from ESIC registration, labour licences, professional tax, payroll implementation and employee-benefit calculations.",
+        "Record current amendments, notifications and portal changes and obtain a human reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "Official EPFO sources establish the online employer route and the ordinary 20-employee reference, but statutory coverage, voluntary coverage, establishment classes, exclusions, workforce facts, current forms and post-registration duties require reviewer confirmation before publication."
+  }
+}

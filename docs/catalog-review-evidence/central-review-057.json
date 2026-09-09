@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-057",
+  "authority": "Defence Innovation Organisation - iDEX",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party iDEX Open Challenge observations for reviewer use. It does not guarantee that a proposal will be selected, a grant will be sanctioned, a deadline will be extended, or procurement will follow.",
+  "sourcePolicy": "Current iDEX challenge pages, the official FAQ, financial FAQ, how-to-apply guidance and registration route are primary. Window, category, problem statement/focus, applicant evidence, matching contribution, Product Development Budget, milestone agreement and procurement consequences must be checked for the current edition. UdyamVeda prepares evidence but is not iDEX or a defence-procurement authority.",
+  "records": [
+    {
+      "slug": "idex-open-challenge-2026",
+      "sourceUrl": "https://idex.gov.in/open-challenge/",
+      "supportingSources": [
+        {"url":"https://idex.gov.in/disc-category/18","anchor":"Current Open Challenge category page: applicant description, 30 September 2026 deadline, no challenge found and ₹1.5 crore ceiling"},
+        {"url":"https://www.idex.gov.in/challenges","anchor":"Current iDEX challenge index: Open Challenge card, last date and closed status context for other challenge cards"},
+        {"url":"https://idex.gov.in/faq","anchor":"Current FAQ: Open Challenge model, applicant categories, grant ceiling, six milestone releases, matching contribution and separate procurement decision"},
+        {"url":"https://idex.gov.in/financial-faq","anchor":"Current financial FAQ: 50% Product Development Budget limit, matching contribution and eligible expenditure boundaries"},
+        {"url":"https://idex.gov.in/how_to_apply","anchor":"Official application steps and proposal submission route"},
+        {"url":"https://idex.gov.in/register","anchor":"Official iDEX applicant registration route"}
+      ],
+      "sourceKind": "official_idex_open_challenge_current_page_and_faq_cross_check",
+      "sourceAnchor": "Open Challenge focus, current deadline, grant ceiling, applicant route, SPARK milestones, matching contribution and procurement separation",
+      "observations": [
+        "The official Open Challenge root page was last updated 7 September 2026 but currently exposes only sparse page content. The official category page for Open Challenge was last updated 8 September 2026 and displays a 30 September 2026 11:59 PM deadline, up to ₹1.5 crore grant support and 'No Challenge Found' in its challenge list.",
+        "The official challenge index presents Open Challenge with a 30 September 2026 last date, while separately marking other older challenge cards as closed. The current window and the meaning of the sparse/no-challenge display require reviewer confirmation before publication.",
+        "The iDEX FAQ describes Open Challenge as a route where innovators identify critical defence challenges and submit suo-moto proposals for Services, DPSUs or other nodal agencies, and says the Open Challenge application window remains open throughout the year. This general FAQ statement must be reconciled with the current category-page deadline for this edition.",
+        "The FAQ states that Open Challenge winners may receive grant-in-aid up to ₹1.5 crore, subject to Product Development Budget approval. It separately distinguishes ADITI's ₹25 crore ceiling; those benefits must never be combined.",
+        "Applicant categories include DPIIT-recognized startups, Indian companies primarily operating as MSMEs and individual innovators. A startup's majority-Indian-stake and current entity evidence must be verified; an individual innovator may need to establish an eligible legal entity before grant execution.",
+        "SPARK grant release is milestone-based at 10%, 20%, 20%, 20%, 20% and 10% of the sanctioned grant under the current FAQ. Matching contribution is at least 50% of total project cost under the SPARK agreement.",
+        "Selection, Product Development Budget approval, grant agreement, milestone validation, user acceptance and any procurement or minimum pilot order are separate decisions. iDEX does not guarantee procurement from an application or award.",
+        "Open Challenge is distinct from curated DISC and ADITI problem statements. The proposal must demonstrate defence/aerospace relevance and technical fit; a generic product or a registration alone is not enough."
+      ],
+      "reviewFollowUps": [
+        "Reconcile the category-page deadline with the FAQ's generally open-window statement and the sparse root page; record the edition, final deadline, extension state and no-challenge display.",
+        "Confirm the current proposal form, focus-area/problem-statement requirements, applicant category, majority-Indian ownership evidence and entity-formation condition for individual innovators.",
+        "Confirm Product Development Budget, matching contribution, milestone agreement, eligible expenditure, testing, IP, security, user acceptance and any procurement terms.",
+        "Keep the ₹1.5 crore ceiling separate from the sanctioned amount, Product Development Budget, other iDEX categories and procurement value.",
+        "Record amendment or supersession evidence and obtain a reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source","eligibility","benefit","application","window","fine_print","amendment","current_terms","reviewer_decision"],
+    "reason": "Official iDEX sources support the Open Challenge route, deadline and grant ceiling, but the sparse root page, no-challenge display and FAQ window language require reconciliation before publication."
+  }
+}

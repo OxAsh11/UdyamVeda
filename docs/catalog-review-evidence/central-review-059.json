@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-059",
+  "authority": "Directorate General of Foreign Trade (DGFT)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party DGFT IEC observations for reviewer use. It does not determine whether a particular business must obtain an IEC, guarantee approval, or authorize UdyamVeda to file on the applicant's behalf.",
+  "sourcePolicy": "The current DGFT portal, Foreign Trade Policy, Handbook of Procedures, applicable exemption order, notifications, appendices and live IEC service route are primary. UdyamVeda may explain the route, check consistency and prepare a checklist, but the applicant or its authorised representative must use its own DGFT account, credentials, authentication and declarations.",
+  "records": [
+    {
+      "slug": "importer-exporter-code-iec",
+      "sourceUrl": "https://www.dgft.gov.in/CP/",
+      "supportingSources": [
+        {
+          "url": "https://content.dgft.gov.in/Website/dgftprod/38d98f53-86e0-4cf7-98db-834864a08524/HBP2023_Chapter02.pdf",
+          "anchor": "Current HBP Chapter 2: IEC requirement, exempted categories, incomplete applications and current procedural conditions"
+        },
+        {
+          "url": "https://content.dgft.gov.in/Website/dgftprod/85f0e5a2-14d7-4e66-b9c4-4eba7bfd1810/Appendix-2k.pdf",
+          "anchor": "DGFT Appendix 2K: IEC application fee and annual IEC updation period"
+        },
+        {
+          "url": "https://www.dgft.gov.in/",
+          "anchor": "Official DGFT entry point, IEC services, IEC profile management, current notices and application handoff"
+        }
+      ],
+      "sourceKind": "official_dgft_portal_hbp_appendix_fee_cross_check",
+      "sourceAnchor": "DGFT IEC service route, HBP Chapter 2 exemptions and procedure, Appendix 2K fee/update terms",
+      "observations": [
+        "The current DGFT portal describes the Importer-Exporter Code as a key business identification number that is mandatory for export from India or import to India, subject to the applicable legal exceptions. For services or technology, the portal states that IEC is required only in the specified policy or benefit-related cases.",
+        "The DGFT portal identifies common applicant forms including proprietorships, partnerships, LLPs, limited companies, trusts, HUFs and societies, and states that after GST the IEC is the firm's PAN while the IEC is separately issued by DGFT. The exact current entity and PAN mapping must still be checked against the applicant's legal records.",
+        "The current portal exposes IEC registration, update, profile management, view and help routes. It also directs existing holders to link IECs and shows Aadhaar-based OTP or Digital Signature authentication for that linking step. Authentication method and form behaviour must be confirmed in the live applicant route before publication.",
+        "The HBP source audit records that IEC is generally compulsory for import and export of goods subject to exempted categories in the current foreign-trade rules and procedures. Product-specific restricted, prohibited, regulated or sector permissions remain separate; an IEC alone does not authorize every product or shipment.",
+        "The source audit records the official Appendix 2K fee as INR 500 for IEC application and annual IEC updation during April-June. These are retained as review evidence and must be rechecked against the current portal payment and update flow before publication.",
+        "Applicant identity must be consistent across PAN, entity name, address, bank and authorised-person records. An incomplete, unauthorised or inconsistent application may be rejected or require correction through the official DGFT route.",
+        "IEC is a compliance and foreign-trade access prerequisite, not a grant, subsidy, loan, tax saving or guarantee of import/export permission. UdyamVeda may prepare an applicability assessment and document checklist but must not collect OTPs or passwords, sign, submit, impersonate the applicant or represent itself as DGFT.",
+        "The applicable exemption categories, modification, surrender, annual-update failure, deactivation/reactivation and profile-change consequences remain policy- and notification-dependent and must be checked against current DGFT materials before public recommendation."
+      ],
+      "reviewFollowUps": [
+        "Reconcile every current IEC exemption category and service/technology exception with HBP Chapter 2, the applicable exemption order, later notifications and the live DGFT portal.",
+        "Confirm the current IEC application form, fee, payment route, PAN/entity/bank requirements, authorised-person data, signing method, Aadhaar/DSC options and any attachment limits.",
+        "Verify the April-June annual update period, failure/deactivation/reactivation behaviour, modification workflow, surrender conditions and current portal notices.",
+        "Keep IEC applicability separate from customs registration, GST, RCMC, product-specific licences, restricted/prohibited goods permissions, sector approvals and export incentives.",
+        "Confirm whether the applicant is importing/exporting goods or falls within a service/technology exception before producing an Eligible result; unknown activity or exception facts must produce More information required.",
+        "Record current amendment, supersession and portal-change evidence and obtain a human reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "Official DGFT materials establish the IEC route and core boundaries, but current exemption categories, live form/authentication/payment behaviour, annual-update consequences and applicant-specific product/service facts still require review before publication."
+  }
+}

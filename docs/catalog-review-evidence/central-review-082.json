@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-082",
+  "authority": "National Scheduled Tribes Finance and Development Corporation / TRIFED Empanelled Artisan Assistance",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet corrects the prior draft provenance and records current first-party observations for reviewer use. It does not guarantee empanelment, loan sanction, disbursement, rate, contribution, SCA availability or repayment outcome.",
+  "sourcePolicy": "The direct NSTFDC RTI Manual No. 4 controls the artisan-assistance purpose, individual/group ceilings, finance-share statement and rates. The current TRIFED empanelment page controls the supplier/artisan route and group-composition condition. The previously cited NSTFDC 2024-25 annual report is not used as the artisan-specific source because the reviewed PDF does not contain the cited artisan row.",
+  "records": [
+    {
+      "slug": "nstfdc-trifed-empanelled-artisan-credit",
+      "sourceUrl": "https://nstfdc.tribal.gov.in/UploadData/pdf/RTI.pdf",
+      "supportingSources": [
+        { "url": "https://trifed.tribal.gov.in/en/node/950", "anchor": "Current TRIFED empanelment process: individual tribal artisans, SHGs/FPOs and other tribal suppliers; groups/organisations require at least 70% tribal persons and key positions held by ST persons" },
+        { "url": "https://nstfdc.tribal.gov.in/", "anchor": "Current NSTFDC portal and channelising-agency handoff" },
+        { "url": "https://nstfdc.tribal.gov.in/frm_eligibility.aspx", "anchor": "Current NSTFDC eligibility route for ST applicants/members and State/UT notified-tribe residence" }
+      ],
+      "sourceKind": "official_nstfdc_rti_and_trifed_current_route_cross_check",
+      "sourceAnchor": "NSTFDC RTI Manual No. 4, lending norms: Assistance to TRIFED empanelled Artisans and Special scheme for TRIFED empanelled artisans",
+      "observations": [
+        "The NSTFDC RTI manual states that the scheme provides concessional finance for project-related assets and working capital for tribal artisans empanelled with TRIFED.",
+        "The same manual states assistance up to INR 50,000 for individuals and up to INR 5 lakh per SHG or cooperative society. These are separate ceilings and must not be combined.",
+        "The lending-norm table states NSTFDC share up to 90% of unit cost for the special artisan scheme. The source does not provide enough detail to infer the exact group-level cost base or a guaranteed sanction.",
+        "The table states SCA interest of 2% for women and 3% for men, and beneficiary interest of 4% for women and 6% for men.",
+        "TRIFED's current empanelment page describes individual artisans, tribal SHGs/FPOs, VDVKs and other supplier categories. For a group or organisation, it states that at least 70% of persons must be tribal and key positions must be held by ST persons.",
+        "The cited current pages do not establish a nationwide application deadline, repayment schedule, contribution base, security/collateral requirement, processing fee or current SCA-specific document list.",
+        "The earlier seed cited the 2024-25 annual report for the artisan-specific row. The reviewed PDF contains general NSTFDC and TRIFED references but not that cited row; the direct RTI manual is therefore the corrected source anchor.",
+        "TRIFED empanelment, market access and NSTFDC credit are separate supports. UdyamVeda must not present empanelment as guaranteed finance or combine market-access value with loan value."
+      ],
+      "reviewFollowUps": [
+        "Confirm that the RTI manual remains the controlling current artisan-assistance publication and identify any newer NSTFDC lending circular or scheme guideline.",
+        "Confirm the exact group/cooperative ceiling, unit-cost base and whether the 90% share applies identically to individual and group routes.",
+        "Confirm ST/artisan proof, TRIFED empanelment status, group composition, notified-State residence and any income condition applicable to the current artisan route.",
+        "Confirm current SCA route, contribution/margin, repayment, moratorium, security, insurance, processing charges, documents and monitoring obligations.",
+        "Confirm whether the women/men rate distinction is applied by beneficiary status, borrower route or another current policy definition.",
+        "Keep individual ceiling, group ceiling, finance share, market access and final sanction as separate values and obtain human approval before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source", "eligibility", "benefit", "application", "window", "fine_print", "amendment", "current_terms", "reviewer_decision"],
+    "reason": "The direct NSTFDC artisan source is now corrected, but current group interpretation, SCA terms, repayment/security, eligibility details and amendment status still require human review before publication."
+  }
+}

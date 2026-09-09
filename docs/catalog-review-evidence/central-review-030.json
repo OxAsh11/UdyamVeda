@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-030",
+  "authority": "Ministry of Culture",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "The Ministry of Culture scheme pages, current calls, guidelines and application forms are the controlling sources. These are primarily institutional not-for-profit cultural routes, not general startup or MSME benefits. Current page presence does not establish an open intake or guaranteed grant.",
+  "records": [
+    {
+      "slug": "cultural-function-and-production-grant-cfpg",
+      "sourceUrl": "https://culture.gov.in/cultural-function-and-production-grant-cfpg",
+      "supportingSources": [
+        {
+          "url": "https://culture.gov.in/files/inline-documents/CFPG_Latest_Guidelines_03_05_2019.pdf",
+          "anchor": "CFPGS guideline: not-for-profit scope, three-year registration, matching resources, assistance, submission, instalments and reporting"
+        },
+        {
+          "url": "https://culture.gov.in/files/inline-documents/Application_Form_CFPGS_03_05_2019.pdf",
+          "anchor": "Prescribed CFPG application and checklist: organization, project, finance, audit, recommendation, bank and declaration fields"
+        }
+      ],
+      "sourceKind": "official_ministry_of_culture_current_scheme_page_guideline_and_application_form",
+      "sourceAnchor": "Current CFPG page: scope, not-for-profit eligibility, NGO Darpan, rolling submission, Expert Committee, 75/25 instalments and reporting",
+      "observations": [
+        "The current Ministry page, last updated 7 September 2026, describes CFPG support for conferences, seminars, workshops, symposia, festivals, exhibitions, productions and small cultural research projects.",
+        "The page limits the route to qualifying not-for-profit organizations, NGOs, societies, trusts, universities and similar institutional applicants with the required registration history, governing body, experience and recommendation. Religious institutions, schools, colleges and college or university festivals are excluded.",
+        "The page states that applications are open throughout the year, but the route remains subject to the prescribed form, recommendation, Expert Committee meetings, fund availability and current operating instructions. Rolling does not mean automatic acceptance or guaranteed funding.",
+        "The seed's benefit terms are retained as historical guideline claims: normally up to 75 percent and INR 5 lakh per project, with an exceptional higher ceiling requiring approval. Human review must reconcile the current page, guideline, form and any later circular before publication.",
+        "This is an institutional cultural grant, not a direct benefit for an ordinary for-profit startup, MSME or individual founder. UdyamVeda should only recommend it when the applicant's legal form, cultural purpose, age, matching resources and recommendation are verified."
+      ],
+      "reviewFollowUps": [
+        "Confirm the current assistance ceiling, matching-resource calculation, recommendation route, submission address and current prescribed form.",
+        "Verify NGO Darpan, PAN, audited accounts, utilization certificates, reporting and video/output obligations against the current checklist.",
+        "Confirm whether the page's rolling statement remains operative for the current financial year and record any fund or call restriction.",
+        "Keep grant amount, matching share, instalments and possible recovery separate in the benefit model; never present the ceiling as an entitlement."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "financial-assistance-allied-cultural-activities",
+      "sourceUrl": "https://culture.gov.in/files/inline-documents/Sub_component_1B_SCHEME_31_01_2019.pdf",
+      "supportingSources": [
+        {
+          "url": "https://culture.gov.in/financial-assistance-allied-cultural-activities",
+          "anchor": "Current Ministry page, last updated 7 September 2026, links the guidelines, application proforma and grantee notices"
+        },
+        {
+          "url": "https://culture.gov.in/files/inline-documents/Sub_component_1B_APPLICATION_31_01_2019.pdf",
+          "anchor": "Prescribed application, checklist, recommendation, financial and declaration fields"
+        }
+      ],
+      "sourceKind": "official_ministry_of_culture_current_scheme_page_guideline_and_application_form",
+      "sourceAnchor": "Allied Cultural Activities guideline: eligible audio/audio-video equipment, institutional applicants, assistance ceiling, matching share, inspection and completion",
+      "observations": [
+        "The current Ministry page provides the current guideline, application proforma and grantee notices, but the linked older guideline is not by itself proof of a currently open call.",
+        "The scheme is an institutional equipment-support route for eligible cultural organizations and government or local bodies; it is not general working capital or an ordinary commercial startup subsidy.",
+        "The seed records separate audio and audio-video assistance ceilings and the 90 percent approved-cost boundary, with matching share, project completion, operation and maintenance, inspection and reporting conditions. These terms require current-form reconciliation.",
+        "The current application route, recommendation authority, project scope and exact equipment-cost treatment must be taken from the latest notice and prescribed form rather than inferred from the 2019 guideline alone."
+      ],
+      "reviewFollowUps": [
+        "Confirm the current application window, recipient categories, recommendation route and receiving office.",
+        "Reconcile audio versus audio-video ceilings, eligible taxes and duties, matching share, one-year completion and operation-maintenance obligations.",
+        "Verify NGO Darpan, quotations, inspection, asset restrictions, noise compliance, audit and recovery conditions from the current checklist.",
+        "Keep this route unavailable to ordinary for-profit startups unless a current official source explicitly expands eligibility."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "financial-assistance-building-grants-studio-theatres",
+      "sourceUrl": "https://culture.gov.in/files/inline-documents/Approved_Revised_Scheme_Guidelnes_of_Building_Grants270623.pdf",
+      "supportingSources": [
+        {
+          "url": "https://culture.gov.in/offering/schemes-services/financial-assistance-building-grants-including-studio-theatres",
+          "anchor": "Current Ministry page: eligible cultural spaces, organization boundary, assistance ceilings, matching share and release conditions"
+        },
+        {
+          "url": "https://culture.gov.in/files/inline-documents/Modified_Application_Form_Building_Grant270623.pdf",
+          "anchor": "Prescribed application instructions: rolling route, cut-off before Expert Committee meetings, WZCC submission and documents"
+        }
+      ],
+      "sourceKind": "official_ministry_of_culture_current_scheme_page_revised_guideline_and_application_form",
+      "sourceAnchor": "Building Grants including Studio Theatres: performing-arts infrastructure, three-year cultural profile, metro/non-metro/NER caps, matching share and 50/50 release",
+      "observations": [
+        "The current Ministry page lists the scheme, guidelines, application forms and grantee notices and describes auditoria, rehearsal halls, training centres, studio theatres and related facilities.",
+        "Eligible applicants are predominantly not-for-profit cultural organizations and dedicated performing-arts institutions meeting the stated registration and activity history. Ordinary for-profit startups, MSMEs, religious institutions and non-performing-arts educational bodies are outside the stated route.",
+        "The seed captures separate metro, non-metro and North Eastern Region assistance boundaries, a matching-share requirement, two 50 percent instalments, completion and inspection conditions. These values remain review-gated until the current form and latest notice are reconciled.",
+        "The application form describes a rolling route with a cut-off notified before Expert Committee meetings. A rolling route must not be displayed as an immediately open deadline-free application without verifying the current cut-off and WZCC route."
+      ],
+      "reviewFollowUps": [
+        "Confirm the current cut-off, WZCC receiving route, recommendation requirement, city classification and NER treatment.",
+        "Verify land/title, civic approvals, architect estimates, matching share, three-year activity, second-installment evidence and three-year completion conditions.",
+        "Reconcile the current assistance ceilings and percent-of-cost calculation with the current guideline and application form.",
+        "Show this as institutional cultural infrastructure, not a general founder or commercial-business opportunity."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "financial-assistance-tagore-cultural-complexes",
+      "sourceUrl": "https://culture.gov.in/offering/schemes-services/financial-assistance-tagore-cultural-complexes-tcc",
+      "supportingSources": [
+        {
+          "url": "https://culture.gov.in/files/inline-documents/Updated_Application_Form_of_TCC_07092022.pdf",
+          "anchor": "TCC application form for State/UT bodies, agencies, universities, municipalities and eligible cultural nonprofits"
+        },
+        {
+          "url": "https://culture.gov.in/files/inline-documents/Revised_Guidelines_TCC_Scheme_07092022.pdf",
+          "anchor": "Revised TCC guideline: applicant categories, project scope, DPR, matching share, assistance, appraisal, installments and completion"
+        }
+      ],
+      "sourceKind": "official_ministry_of_culture_current_scheme_page_guideline_and_application_form",
+      "sourceAnchor": "TCC current page: institutional applicant boundary, Tagore naming, cultural-complex projects, DPR/appraisal, 60/90 percent assistance and matching share",
+      "observations": [
+        "The current Ministry page describes TCC as institutional cultural infrastructure for States, UTs, government-sponsored bodies, universities, municipalities, approved agencies and qualifying not-for-profit cultural organizations.",
+        "The page requires a cultural-complex project and preserves the Tagore naming boundary for new TCC projects. It is not a generic building grant or a direct opportunity for ordinary startups or MSMEs.",
+        "The seed captures the normal and exceptional assistance ceilings, standard and NER percentage boundaries, matching share, DPR process, 50/50 instalments, inspection, quarterly reporting and recurring-cost responsibility. These remain review-gated and must be reconciled with the current application route.",
+        "The current page does not establish a fixed public deadline. The opportunity should be represented as a recurring institutional route only after confirming current intake, cut-off and submission instructions."
+      ],
+      "reviewFollowUps": [
+        "Confirm current intake, application recipient, DPR format, appraisal threshold and submission route.",
+        "Verify applicant category, land and civic approvals, matching share, operation-maintenance plan, Tagore naming and NER treatment.",
+        "Confirm release, inspection, quarterly progress, completion and recovery obligations from the current guideline and form.",
+        "Keep capital assistance, matching share and recurring operating costs as separate value and effort buckets."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "financial-assistance-cultural-organizations-national-presence",
+      "sourceUrl": "https://culture.gov.in/files/inline-documents/2026-27-grant-in-aid.pdf",
+      "supportingSources": [
+        {
+          "url": "https://culture.gov.in/offering/schemes-services/financial-assistance-cultural-organizations-national-presence",
+          "anchor": "Current Ministry page, last updated 7 September 2026: 2026-27 call, eligibility, assistance, documents, routing, 75/25 release and inspection"
+        },
+        {
+          "url": "https://culture.gov.in/files/inline-documents/formnationalpresence.pdf",
+          "anchor": "Prescribed application and checklist: registration, NGO Partnership ID, audited accounts, recommendation and supporting documents"
+        },
+        {
+          "url": "https://culture.gov.in/financial-assistance-cultural-organizations-national-presence-minutes",
+          "anchor": "Current Ministry minutes page: 12 March 2026 steering-committee record for the scheme"
+        }
+      ],
+      "sourceKind": "official_ministry_of_culture_current_call_scheme_page_application_form_and_minutes",
+      "sourceAnchor": "National Presence 2026-27 call: institutional eligibility, 20-programme capacity, three-of-five-year cultural expenditure, 67 percent limit, 15 July 2026 deadline and 75/25 release",
+      "observations": [
+        "The current Ministry page lists a 2026-27 grant-in-aid call and states that eligible organizations should have an all-India character, national or international operational presence, a predominantly cultural profile, capacity for at least 20 programmes per year and at least INR 1 crore of cultural expenditure in three of the previous five years.",
+        "The 2026-27 call deadline recorded in the seed was 15 July 2026 at 5 PM. As of 8 September 2026, that specific call must be treated as closed; the record must not appear as currently actionable unless a later call is found and reviewed.",
+        "The scheme page describes normal assistance of INR 1 crore, a normal Ministry limit of INR 2 crore and exceptional enhancement up to INR 5 crore, limited to 67 percent of approved cost with a 33 percent matching share. These are scheme ceilings, not guaranteed awards.",
+        "The route requires a prescribed application, recommendation or notified routing body, audited accounts, utilization evidence, reporting, separate accounts and inspection. Ordinary commercial businesses and individual founders are not direct applicants under the stated institutional scheme."
+      ],
+      "reviewFollowUps": [
+        "Retain the 15 July 2026 call as closed and create a new version for any future call rather than reopening this version.",
+        "Confirm future-call eligibility, route, deadline, recommendation, NGO Partnership ID, audited cultural spend, programme capacity and matching share.",
+        "Verify 75/25 release, utilization certificates, audit, school-activity and recovery conditions against the current call and application form.",
+        "Show the potential grant ceiling separately from the matching share and do not rank this closed call as an available opportunity."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "The current Ministry pages confirm that these five institutional cultural-support routes exist, but their applicant boundaries, current intake, historical guideline terms, deadlines, ceilings, matching share and reporting conditions require human reconciliation. The National Presence 2026-27 call is specifically closed as of 8 September 2026."
+  }
+}

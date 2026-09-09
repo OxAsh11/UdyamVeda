@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-037",
+  "authority": "Ministry of New and Renewable Energy (MNRE)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "MNRE's official scheme page, comprehensive guidelines, national PM-KUSUM portal and official state implementing routes are the primary sources. Component A, B, C individual pump solarisation and C feeder-level solarisation remain separate routes. UdyamVeda explains and prepares evidence but does not file state applications, handle OTPs or represent itself as an implementing agency.",
+  "records": [
+    {
+      "slug": "pradhan-mantri-kisan-urja-suraksha-evam-utthaan-mahabhiyaan-pm-kusum",
+      "sourceUrl": "https://mnre.gov.in/en/pradhan-mantri-kisan-urja-suraksha-evam-utthaan-mahabhiyaan-pm-kusum/",
+      "supportingSources": [
+        {"url":"https://pmkusum.mnre.gov.in/","anchor":"Official national PM-KUSUM portal: components, designated State implementation and achievement reporting"},
+        {"url":"https://pmkusum.mnre.gov.in/assets/pdf/PM%20KUSUM%20FAQs%20-%20Revised_%20April%20%28Brand%29.pdf","anchor":"Official revised FAQ: component stakeholders and scheme mechanics"},
+        {"url":"https://mnre.gov.in/en/notice/comprehensive-guidelines-for-implementation-of-pradhan-mantri-kisan-urja-suraksha-evam-utthaan-mahabhiyaan-pm-kusum-scheme/","anchor":"Official comprehensive guideline notice and 17 January 2024 guideline document"}
+      ],
+      "sourceKind": "official_mnre_pmkusum_page_national_portal_guidelines_cross_check",
+      "sourceAnchor": "Three components, capacity/assistance parameters, designated State route and national period through 31 March 2026",
+      "observations": [
+        "The official MNRE page describes Component A for 500 kW to 2 MW decentralized renewable plants, Component B for standalone agricultural pumps up to 7.5 HP, and Component C for individual pump and feeder-level solarisation.",
+        "The page states central financial assistance of 30% for general regions and 50% for specified special regions for applicable pump/solarisation routes, calculated against the lower of benchmark or tender cost; State support and beneficiary/finance balance remain separate buckets.",
+        "Component A, pump installation, individual pump solarisation and feeder-level solarisation have different beneficiaries, implementing agencies, land/pump/capacity conditions, procurement routes and payment mechanics; they must not be presented as one generic subsidy.",
+        "The MNRE page states the scheme period through 31 March 2026, while the national portal reports achievements as of 31 July 2026. The later reporting does not by itself establish a new universal national application window or continuation.",
+        "State allocation and designated State/DISCOM implementing routes control actionable applications. A business or farmer must not be told that the national record alone proves current local availability."
+      ],
+      "reviewFollowUps": [
+        "Reconcile any official extension, continuation or state-specific current window after 31 March 2026 before surfacing an actionable recommendation.",
+        "Confirm the selected component, beneficiary/entity class, land or pump condition, capacity/HP, State allocation, vendor and designated implementing agency.",
+        "Verify current State/DISCOM application forms, deadlines, beneficiary contribution, bank-finance route, benchmark/tender cost and completion conditions.",
+        "Keep central assistance, State subsidy, loan finance, feed-in tariff and any DISCOM incentive in separate benefit buckets.",
+        "Check amendments, vendor lists, portal notices, grievance routes and obtain a human reviewer decision; no national record should publish as active until the continuation/window issue is resolved."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source","eligibility","benefit","application","window","fine_print","amendment","current_terms","reviewer_decision"],
+    "reason": "Official MNRE sources confirm the component structure and financial-assistance framework, but the national period ended on 31 March 2026 on the cited scheme page and no universal post-period continuation was established. State implementation, current allocation, vendor route, component-specific terms and reviewer decision remain unresolved."
+  }
+}

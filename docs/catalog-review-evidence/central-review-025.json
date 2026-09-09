@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-025",
+  "authority": "Ministry of AYUSH (MoA)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "The Ministry of Ayush and its Ayush Anudan/NGO scheme portal are the controlling sources. The guideline PDF is retained as historical evidence because its stated validity period has ended; no current call or extension is inferred from the historical document.",
+  "records": [
+    {
+      "slug": "ayush-super-speciality-hospital-day-care-infrastructure",
+      "sourceUrl": "https://ngo.ayush.gov.in/Default/assets/front/documents/Updated_Guidelines_of_CSSS_(Hospital).pdf",
+      "supportingSources": [
+        {
+          "url": "https://ngo.ayush.gov.in/scheme6",
+          "anchor": "Official Ayush scheme page: scheme title, guideline link, scheme selection route, portal migration notice to Ayush Anudan Portal and page last-updated date"
+        },
+        {
+          "url": "https://ngo.ayush.gov.in/faq",
+          "anchor": "Official portal FAQ: NGO Darpan prerequisite and portal-based submission model for Central Sector Scheme funding"
+        },
+        {
+          "url": "https://www.ayush.gov.in/",
+          "anchor": "Current Ministry of Ayush site used for change detection; current public scheme/tender surface does not itself confirm an open CSSS hospital call"
+        }
+      ],
+      "sourceKind": "official_ayush_guideline_and_scheme_portal",
+      "sourceAnchor": "Guideline pages 32-35: objective, private-investor scope, greenfield/brownfield modes, validity, categories, interest subsidy, caps and bank/SIDBI route; pages 45-46: application and checklist; pages 50-51: operating and clawback obligations",
+      "observations": [
+        "The scheme was designed to encourage private investment in Ayush super-speciality hospitals and day-care centres for medical value travel, including greenfield and brownfield projects across India. Eligible forms in the historical guideline include private institutions, hospitals, individual investors, SMEs and other organizations; preference was given to registered ASU&H practitioners.",
+        "The historical guideline states that the scheme was valid up to 31 March 2024 and could be extended only after competent-authority approval. The official scheme page now states that the Ayush NGO Portal will be known as the Ayush Anudan Portal and will be live from 22 April 2026. These facts create a supersession/currentness boundary; the old guideline cannot be published as an active 2026 opportunity without an official extension or replacement decision.",
+        "The historical benefit is interest subsidy, not a cash grant or loan principal. It was routed through SIDBI to the financial institution/bank and linked to construction progress, required documents and EMI payment. The subsidy schedule in the document is 100%, 70%, 50%, 40% and 20% across up to five years, subject to the applicable project start year and scheme conditions.",
+        "The historical project categories are 50-bed hospitals, 10-bed hospitals and day-care centres. The stated scheme caps include estimated construction/equipment costs of INR 50 crore, INR 15 crore and INR 6 crore respectively; investor contribution and actual loan considered for interest subsidy are separate fields, and maximum interest subsidy is capped at INR 8.15 crore, INR 2.45 crore and INR 0.98 crore respectively. The document also caps the admissible interest rate at 9% per annum or actual, whichever is lower.",
+        "The guideline requires, among other items, in-principle approval of a public-sector-bank loan, a project proposal/DPR, registration and financial records, audited accounts or applicable income-tax returns, land/connectivity information, and prescribed declarations. It requires NABH accreditation within one year and a project completion/operational timeline not exceeding three years.",
+        "The post-support obligation is material: the facility must operate for the initial five-year support period plus at least ten additional years. Breach, premature termination, non-completion or misrepresentation can trigger repayment of the interest subsidy with penal interest and other recovery action. These conditions make this a high-impact record requiring amendment and legal/factual review before any recommendation is shown."
+      ],
+      "reviewFollowUps": [
+        "Search the Ayush Anudan Portal and current Ministry circulars for an express extension, replacement component, fresh guidelines, open call or closure notice; bind any decision to the exact official document.",
+        "Classify the historical record as superseded, closed or archived only after an authorized reviewer reconciles the 31 March 2024 validity clause with later Ministry decisions.",
+        "If a replacement exists, create a new version rather than silently overwriting the historical opportunity; preserve the original caps, obligations and source anchors as history.",
+        "Keep interest subsidy, underlying bank loan, investor contribution, project-cap and maximum subsidy as separate benefit/value fields.",
+        "Do not recommend this record as actionable unless the current application portal, window, eligible legal forms, bank/SIDBI route, documents and extension authority are verified.",
+        "Verify the exact application and reporting forms, construction-linked release conditions, NABH deadline, 15-year operating obligation, clawback formula and grievance/contact route from the operative version."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "supersession"
+    ],
+    "reason": "The official guideline supports a detailed historical financing model but explicitly states validity through 31 March 2024, while the official portal indicates migration to Ayush Anudan Portal. A current extension or replacement has not been established, so the record must remain unpublished pending supersession review."
+  }
+}

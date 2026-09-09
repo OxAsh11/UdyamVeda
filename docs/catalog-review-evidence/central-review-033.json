@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-033",
+  "authority": "Ministry of Food Processing Industries / Pradhan Mantri Kisan Sampada Yojana",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "MoFPI guidelines, circulars, scheme pages, official FAQs, the current MoFPI archive and the SAMPADA handoff are the primary sources. PMKSY components remain separate records. Project ceilings, assistance rates and programme-level status are not applicant entitlements; live EOIs and current guideline versions must control publication.",
+  "records": [
+    {
+      "slug": "mofpi-integrated-cold-chain-value-addition-pmksy",
+      "sourceUrl": "https://www.mofpi.gov.in/en/announcements/revised-operational-guidelines-dated-22052025-respect-component-scheme-integrated-cold",
+      "supportingSources": [
+        {
+          "url": "https://www.mofpi.gov.in/sites/default/files/operational_revised_cold_chain_scheme_duidelines_dated_22.05.2025.pdf",
+          "anchor": "22 May 2025 revised Integrated Cold Chain and Value Addition Infrastructure guidelines"
+        },
+        {
+          "url": "https://www.mofpi.gov.in/node/197",
+          "anchor": "Current Cold Chain circular list: 2026 multiproduct irradiation EOI, 31 August 2026 extension, July 2026 WDRA registration circular and related notices"
+        },
+        {
+          "url": "https://www.mofpi.gov.in/en/announcements/extension-timeline-1700-hrs-30092026-submission-multiproduct-food-irradiation",
+          "anchor": "Extension to 17:00 on 30 September 2026 for multiproduct food irradiation proposals under the 20 May 2026 EOI"
+        },
+        {
+          "url": "https://www.mofpi.gov.in/announcements-archive",
+          "anchor": "Current MoFPI archive and 2025-2026 PMKSY announcements"
+        }
+      ],
+      "sourceKind": "official_mofpi_guideline_circular_and_current_archive_cross_check",
+      "sourceAnchor": "Component-specific cold-chain/value-addition assistance, staged project support, current irradiation EOI and separate facility-registration dependencies",
+      "observations": [
+        "The current MoFPI source set identifies the Integrated Cold Chain and Value Addition Infrastructure component and a revised guideline dated 22 May 2025. The exact eligible-cost, facility, applicant, rate and release provisions must be extracted from that version before publication.",
+        "The current Cold Chain circular list shows a multiproduct food irradiation EOI dated 20 May 2026 and an extension notice dated 31 August 2026. The official extension is to 17:00 on 30 September 2026 and applies only to that specified irradiation EOI, not to every cold-chain or value-addition proposal.",
+        "The current circular list also shows a July 2026 notice concerning compulsory WDRA registration of cold-storage facilities created under the Cold Chain scheme. This is a separate facility/compliance dependency and must not be silently treated as satisfied by the PMKSY grant application.",
+        "This is project-level grant-in-aid subject to EOI selection, eligible project cost, promoter/finance evidence, technical and statutory readiness, milestones and staged release. A project ceiling or assistance percentage is not a guaranteed payment to an individual business.",
+        "The official PMKSY policy material describes a demand-driven EOI route and distinguishes PMKSY component schemes. Any standalone cold-storage, godown, logistics or transportation boundary must be reconciled against the current guideline and exact project configuration before recommendation.",
+        "SAMPADA is the official handoff route identified in the seed. UdyamVeda may prepare a project-readiness dossier and link the applicant to the official route, but must not submit credentials, guarantee approval or represent MoFPI.",
+        "The 2026 deadline is time-sensitive and should become stale quickly if not reverified. The recommendation must show the exact EOI scope, last verification date and remaining document/technical effort rather than a generic cold-chain deadline."
+      ],
+      "reviewFollowUps": [
+        "Extract and verify the 22 May 2025 guideline sections for eligible entities, facilities, project cost, rates, ceiling, promoter contribution, term loan, release milestones and clawback/monitoring conditions.",
+        "Confirm that the 20 May 2026 irradiation EOI remains open and that the 30 September 2026 17:00 deadline is still applicable to the applicant's exact proposal type.",
+        "Reconcile the July 2026 WDRA registration requirement, food-safety, pollution-control, local and other facility permissions with the proposed site and facility.",
+        "Confirm whether the project is integrated and eligible rather than a standalone cold storage, godown, logistics or transport proposal outside the current component rules.",
+        "Verify current SAMPADA portal fields, documents, fee instructions, signatory requirements, project appraisal and staged-release evidence.",
+        "Check amendments, corrigenda, current fund availability, approved-project interactions and any duplicate-assistance restrictions before publication.",
+        "Obtain a human reviewer decision; keep the record review-gated and do not publish the 30 September 2026 date as a general PMKSY deadline."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "mofpi-cefppc-food-processing-preservation-capacities-pmksy",
+      "sourceUrl": "https://mofpi.gov.in/en/Schemes/creation-expansion-food-processing-preservation-capacities-unit-scheme",
+      "supportingSources": [
+        {
+          "url": "https://www.mofpi.gov.in/sites/default/files/20250122205611_1.pdf",
+          "anchor": "22 January 2025 CEFPPC/Unit Scheme guidelines"
+        },
+        {
+          "url": "https://mofpi.gov.in/en/Schemes/creation-expansion-food-processing-preservation-capacities-unit-scheme/download-guidelines-1",
+          "anchor": "Official CEFPPC guidelines page listing the 27 January 2025 EOI and 28 March 2025 extension"
+        },
+        {
+          "url": "https://www.mofpi.gov.in/announcements-archive",
+          "anchor": "Current archive showing CEFPPC 2025 EOI, extension, guidelines, FAQ and approved-project notices"
+        },
+        {
+          "url": "https://www.mofpi.gov.in/sites/default/files/eoi_notice_0.pdf",
+          "anchor": "Official CEFPPC EOI for food-processing units outside Mega Food Parks and Agro Processing Clusters"
+        }
+      ],
+      "sourceKind": "official_mofpi_cefppc_guideline_eoi_and_archive_cross_check",
+      "sourceAnchor": "New, modernised or expanded food-processing capacity, project-level grant, 2025 guideline/EOI history and current-window uncertainty",
+      "observations": [
+        "MoFPI publishes CEFPPC/Unit Scheme guidelines dated 22 January 2025 and lists a 27 January 2025 EOI with an extension dated 28 March 2025. These establish the component route and historical call context, not a currently open application window in September 2026.",
+        "The current MoFPI archive displays the 2025 CEFPPC EOI, extension, FAQ, guidelines and approved-project status notices. No newer open CEFPPC EOI was identified in the current archive check; this must be confirmed by a reviewer before the record is labelled open or actionable.",
+        "The route is for project-level creation, expansion or modernisation of eligible food-processing and preservation capacity. The draft ceiling and assistance rates remain subject to the current guideline's eligible-cost, category, applicant, finance and EOI conditions.",
+        "A project ceiling is not an assured individual grant, and CEFPPC must remain separate from PMFME's micro-enterprise route. Existing-unit expansion requires baseline/capacity evidence and cannot be inferred from a business profile alone.",
+        "The official application path is EOI-based with SAMPADA handoff, technical/financial appraisal and milestone/utilization review. UdyamVeda can prepare and explain the dossier but cannot guarantee selection or file as the applicant."
+      ],
+      "reviewFollowUps": [
+        "Confirm whether a new CEFPPC EOI is open, paused, closed or superseded after the 2025 EOI and extension; do not infer active status from the scheme page alone.",
+        "Extract the 22 January 2025 guideline sections for eligible entities, sectors, unit/expansion conditions, project-cost ceiling, assistance rate, promoter contribution, term loan and release milestones.",
+        "Verify the applicant's new-unit or expansion status, baseline capacity, site, plant and machinery, food-safety and statutory permissions.",
+        "Reconcile the EOI scope for units outside Mega Food Parks/APCs and the January 2025 withdrawal notice for the older 2023 EOI.",
+        "Verify SAMPADA application fields, documents, fees, appraisal route, reporting and any current fund or duplicate-assistance restrictions.",
+        "Keep the record review-gated until current window evidence and the exact eligible-cost calculation are anchored to the applicable version."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "mofpi-agro-processing-cluster-pmksy",
+      "sourceUrl": "https://www.mofpi.gov.in/en/announcements/operational-guidelines-scheme-creation-infrastructure-agro-processing-clusters-apc",
+      "supportingSources": [
+        {
+          "url": "https://www.mofpi.gov.in/en/Schemes/agro-processing-cluster/download-guidelines-2",
+          "anchor": "Current APC guideline page listing operational guidelines dated 25 April 2025 and prior revisions"
+        },
+        {
+          "url": "https://www.mofpi.gov.in/announcements-archive",
+          "anchor": "Current archive showing the 14 May 2025 APC EOI, 25 April 2025 guidelines, 1 July 2025 FAQ and project-status material"
+        },
+        {
+          "url": "https://mofpi.gov.in/Schemes/agro-processing-cluster/download-circulars-2",
+          "anchor": "Official APC circulars, EOI, FAQ and approved-project-status route"
+        },
+        {
+          "url": "https://www.mofpi.gov.in/sites/default/files/_annex_266_au2946_tb9abm.pdf",
+          "anchor": "Official Government answer describing PMKSY component schemes, EOI-based demand-driven applications and project-level boundaries"
+        }
+      ],
+      "sourceKind": "official_mofpi_apc_guideline_eoi_faq_and_policy_cross_check",
+      "sourceAnchor": "Cluster/common infrastructure, producer-processor-market linkage, project-level grant and 2025 EOI history",
+      "observations": [
+        "MoFPI lists operational APC guidelines dated 25 April 2025. The current guideline page and archive also show a 14 May 2025 APC EOI and a 1 July 2025 FAQ, so the route is a cluster/common-infrastructure project route rather than an ordinary individual-unit subsidy.",
+        "The official policy answer describes PMKSY as demand-driven with applications invited through EOI and lists APC, Integrated Cold Chain and CEFPPC as separate component schemes. A historical EOI or approved-project list is not evidence that a new APC EOI is open now.",
+        "The draft ceiling and assistance rates are project-level amounts subject to eligible-cost, cluster structure, applicant/SPV, producer/processor linkage, finance, statutory and milestone conditions. They must not be displayed as a guaranteed amount for one business.",
+        "The APC scope covers common enabling and core processing infrastructure that links producers or farmers with processors and markets. A standalone unit without a documented cluster/common-infrastructure rationale should not receive an APC recommendation.",
+        "APC must remain separate from CEFPPC, PMFME and Cold Chain. The official application handoff is through the applicable MoFPI/SAMPADA route, with project appraisal and utilization/completion evidence."
+      ],
+      "reviewFollowUps": [
+        "Confirm whether a current APC EOI is open, paused, closed or superseded after the 14 May 2025 call; do not use the 2025 EOI date as a current deadline.",
+        "Extract the 25 April 2025 guideline sections for cluster area, common enabling/core facilities, applicant/SPV structure, eligible cost, grant ceiling, promoter contribution and milestones.",
+        "Verify producer, processor and market linkages, site/utilities, finance, implementation structure and all applicable statutory permissions.",
+        "Check the 1 July 2025 FAQ, corrigenda, approved-project notices and any later amendment or duplicate-assistance restrictions.",
+        "Verify current SAMPADA fields, document formats, appraisal authority, fee instructions, reporting and completion evidence.",
+        "Keep the record review-gated until current EOI evidence and the project's common-infrastructure fit are independently confirmed."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "Official MoFPI sources confirm the three distinct PMKSY component routes and the current irradiation extension, but current EOI status, exact eligible-cost treatment, project/applicant structure, facility dependencies, amendments, fund availability and live portal acceptance require human reconciliation. All records stay review-gated."
+  }
+}

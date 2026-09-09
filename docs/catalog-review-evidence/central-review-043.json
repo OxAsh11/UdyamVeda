@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-043",
+  "authority": "Ministry of Steel (MoS)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "The Ministry of Steel PLI page, Gazette/guideline documents, current annual reports, official Ministry notices and parliamentary answers are primary. Scheme outlay, selected-company commitments, production figures and PLI rates are not treated as an individual applicant entitlement.",
+  "records": [
+    {
+      "slug": "production-linked-incentive-specialty-steel",
+      "sourceUrl": "https://steel.gov.in/pli",
+      "supportingSources": [
+        {"url":"https://steel.gov.in/sites/default/files/2026-04/Final%20Annual%20Report%202025-26%20%28English%20Version%29.pdf","anchor":"Official 2025-26 annual report: concluded rounds, PLI 1.2 launch, 22 sub-categories, five-year incentives and selected-company MoU/claim conditions"},
+        {"url":"https://steel.gov.in/sites/default/files/2025-04/Scheme%20Guidelines_Final_Upload.pdf","anchor":"Official scheme guideline route for product categories, qualifying conditions and scheme period"},
+        {"url":"https://steel.gov.in/sites/default/files/2026-04/OOMF%202026-27%20%281%29.pdf","anchor":"Official 2026-27 output/outcome framework: approved companies, production and incentive release context"},
+        {"url":"https://steel.gov.in/sites/default/files/2025-12/lu%20323.pdf","anchor":"Official Lok Sabha answer describing PLI 1.2 product sub-categories and five-year performance-linked incentives"}
+      ],
+      "sourceKind": "official_ministry_steel_pli_current_page_annual_report_guideline_cross_check",
+      "sourceAnchor": "Ministry PLI page last updated 7 September 2026; PLI 1.0 and 1.1 selected-company/MoU status; PLI 1.2 launched 4 November 2025 with 22 product sub-categories",
+      "observations": [
+        "The Ministry page describes the Specialty Steel PLI as a performance-linked manufacturing framework for eligible Indian steel manufacturers, with the original approved outlay of INR 6,322 crore and product categories intended to promote domestic specialty-steel production.",
+        "The current official material states that two earlier application rounds were concluded with selected companies and signed project-wise MoUs; the scheme page does not establish a universal new-applicant window for every steel business.",
+        "The 2025-26 annual report describes PLI 1.2 as launched on 4 November 2025, covering 22 product sub-categories, with incentive rates of 4% to 15% for five years beginning FY 2025-26 and disbursal beginning FY 2026-27, subject to the applicable documents.",
+        "Incentives are tied to approved investment, production, sales and other commitments and are evaluated through claims and verification; scheme outlay, selected-company commitments, capacity and employment figures are not the applicant's benefit ceiling.",
+        "The current record is closed for new discovery until a current official invitation is evidenced, while selected-company claim and reporting obligations may continue. Product mapping, investment and production thresholds, base year, MoU, quality, environmental, labour, tax, audit and clawback conditions remain round-specific."
+      ],
+      "reviewFollowUps": [
+        "Verify whether PLI 1.2 has a current application invitation, the exact official route, selection status and applicable deadline before recommending a new applicant.",
+        "Map the company's product to the controlling target category or PLI 1.2 sub-category and confirm the applicable rate, base year, minimum investment, production, sales and other thresholds.",
+        "Reconcile the guideline's FY 2023-24 to FY 2029-30 period with later official material describing incentive release through FY 2030-31; preserve the controlling current term in the reviewed version.",
+        "Verify project-wise MoU, claim format, milestone evidence, quality certification, audit, inspection, reporting, environmental/labour/tax compliance and clawback or recovery conditions.",
+        "Keep PLI, loans, grants, subsidies and committed investment in separate value buckets; obtain an authorized reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source","eligibility","benefit","application","window","fine_print","amendment","current_terms","reviewer_decision"],
+    "reason": "Official Ministry sources establish the specialty-steel PLI structure and current selected-company/PLI 1.2 context, but current new-applicant availability, round-specific thresholds, product mapping, claims, amendments and reviewer decision remain unresolved. The record stays closed for discovery and human-review pending."
+  }
+}

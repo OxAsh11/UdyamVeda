@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-094",
+  "authority": "Agricultural and Processed Food Products Export Development Authority (APEDA)",
+  "observedAt": "2026-09-09",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party APEDA source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window or publication status.",
+  "sourcePolicy": "APEDA's BHARATI pages and terms control the operational record; the Startup India Playbook is discovery-only cross-check evidence.",
+  "records": [
+    {
+      "slug": "apeda-bharati-export-enablement-acceleration",
+      "sourceUrl": "https://apeda.gov.in/bharati/index.html",
+      "sourceKind": "official_apeda_programme_portal",
+      "sourceAnchor": "About BHARATI; application process; programme announcements and official subpage links",
+      "observations": [
+        "APEDA describes BHARATI as its flagship export-enablement initiative for India's agricultural and processed food export landscape.",
+        "The official eligibility page covers agri-food startups, export-enabling technology/service startups, SPS solution providers, exporters, FPCs and individual researchers/innovators/solo entrepreneurs for the SPS category.",
+        "The programme structure describes screening, a business challenge, a final cohort of up to 100 and a 120-hour acceleration programme. The official timelines page states Application Window Closed and says later phase dates will be intimated.",
+        "APEDA terms state that participation does not provide or guarantee direct funding, grants, investment or automatic access to other Government schemes. Optional one-to-one mentorship costs INR 5,000; common acceleration content is separate.",
+        "The record therefore remains a closed, review-gated accelerator opportunity. A future cohort, current form, category route, RCMC timing and amended terms must be reverified before actioning."
+      ],
+      "supportingSources": [
+        {"url":"https://apeda.gov.in/bharati/Who_Can_Apply.html","anchor":"Official startup, FPC, exporter, SPS and individual eligibility conditions"},
+        {"url":"https://apeda.gov.in/bharati/How_to_Apply.html","anchor":"Category application, APEDA RCMC and supporting-document requirements"},
+        {"url":"https://apeda.gov.in/bharati/Terms_Conditions.html","anchor":"Application cap, participation costs, optional INR 5,000 mentorship, no-funding boundary and selection discretion"},
+        {"url":"https://apeda.gov.in/bharati/Objective_Initiative.html","anchor":"Export, market-access, SPS, collaboration and investor-readiness objectives"},
+        {"url":"https://apeda.gov.in/bharati/Program_Structure.html","anchor":"Closed application window, 20-point scoring, 200 shortlist, 100 cohort and 120-hour acceleration"},
+        {"url":"https://apeda.gov.in/bharati/Focus_Areas.html","anchor":"High-value agri-food, export technology and SPS solution focus areas"},
+        {"url":"https://apeda.gov.in/bharati/Program_Benefits.html","anchor":"Knowledge, certification, market linkage, event and investor-exposure benefits"},
+        {"url":"https://apeda.gov.in/bharati/Timelines.html","anchor":"Application Window Closed; later phase dates to be intimated"},
+        {"url":"https://apeda.gov.in/bharati/Evaluation.html","anchor":"20-criterion scoring and selection process"}
+      ],
+      "reviewFollowUps": [
+        "Verify whether APEDA has opened a post-pilot or successor BHARATI cohort and capture the exact official notice and deadline.",
+        "Confirm current category forms, screening questions, RCMC timing, documents and startup-definition thresholds.",
+        "Reconcile any amended fee, mentorship, attendance, privacy, IP, investor-outreach and no-funding terms.",
+        "Keep acceleration, optional paid mentorship, market linkages and investor exposure as separate non-financial benefit buckets."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source","eligibility","benefit","application","window","fine_print","amendment","reviewer_decision"],
+    "reason": "APEDA sources support a structured BHARATI draft, but the pilot window is closed and future-cohort availability, current forms, RCMC/document conditions and amended terms require human review."
+  }
+}

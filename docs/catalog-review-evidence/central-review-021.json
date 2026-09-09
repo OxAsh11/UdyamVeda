@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-021",
+  "authority": "Department of Scientific and Industrial Research (DSIR)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "DSIR and PIB are used as authoritative government evidence. The current Creative India 2025 compendium is treated as programme-context evidence; the legacy PRISM guidelines remain controlling for the specific tracks they cover until DSIR publishes or confirms current operative terms.",
+  "records": [
+    {
+      "slug": "dsir-prism-innovation-support",
+      "sourceUrl": "https://www.dsir.gov.in/promoting-innovations-individuals-start-ups-and-msmes-prism",
+      "supportingSources": [
+        {
+          "url": "https://www.dsir.gov.in/static/uploads/2026/06/471beeb220be61b7c01b478e427b35ae.pdf",
+          "anchor": "Creative India PRISM 2025 compendium: PRISM scope, innovation journey, TOCIC outreach-centre network, support for validation/prototyping/mentoring/funding and current programme context"
+        },
+        {
+          "url": "https://www.dsir.gov.in/documents/publications",
+          "anchor": "DSIR publications index: Creative-India-PRISM scheme_2025 listed with publication date 15 May 2026"
+        },
+        {
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2211282&lang=1&reg=3",
+          "anchor": "PIB DSIR Foundation Day release dated 4 January 2026: Creative India 2025 under PRISM and PRISM Network Platform launched"
+        },
+        {
+          "url": "https://www.dsir.gov.in/sites/default/files/2019-08/guide_msme_0.pdf",
+          "anchor": "PRISM R&D proposal form for MSME clusters: institutional/cluster collaboration, technical evidence and project proposal route"
+        },
+        {
+          "url": "https://www.dsir.gov.in/sites/default/files/2019-09/guide_ph2.pdf",
+          "anchor": "PRISM Phase-II guideline: demonstrated proof of concept, market/enterprise progression and phase-specific proposal conditions"
+        }
+      ],
+      "sourceKind": "official_dsir_compendium_publications_and_pib",
+      "sourceAnchor": "DSIR PRISM page plus Creative India 2025 compendium and PIB launch evidence; current call and successor terms remain to be confirmed",
+      "observations": [
+        "The current DSIR compendium identifies PRISM as Promoting Innovations in Individuals, Start-ups and MSMEs and describes support across idea validation, prototype development, testing/refinement, intellectual property, mentoring and commercialization.",
+        "The compendium describes a TOCIC outreach-centre network that provides technical expertise, laboratory/prototyping, testing/validation, mentoring and ecosystem linkages. This is an implementation and support route, not proof that every innovator receives a fixed grant amount.",
+        "The current DSIR publications index lists Creative-India-PRISM scheme_2025, published 15 May 2026. The direct compendium is programme-context evidence and contains supported-innovation examples, but it does not establish a universal open application deadline or a single current benefit ceiling.",
+        "The PIB release dated 4 January 2026 records the launch of Creative India 2025 under PRISM and the PRISM Network Platform. It confirms programme activity and a current initiative, but it does not replace the operative application guidelines or establish applicant-level entitlement.",
+        "The legacy PRISM material separates individual/start-up innovation phases from MSME-cluster R&D proposals. The cluster form and Phase-II guideline should not be merged into one generic grant rule; applicant type, stage, route, eligible cost, matching contribution, review and IP conditions differ by track.",
+        "The seed record's earlier window was reported through 30 March 2026. As of this review, a current DSIR call, successor application route, or extension with a universal deadline was not verified, so the opportunity remains closed/review-gated rather than actionable."
+      ],
+      "reviewFollowUps": [
+        "Obtain and review the current Creative-India-PRISM scheme document linked from the DSIR publications index, including applicant definitions, phase/category thresholds, eligible costs, benefit ceilings, DBT conditions, milestones, reporting, audit and recovery terms.",
+        "Confirm whether DSIR has an active call or notified application route through the DSIR page, TOCIC centres or PRISM Network Platform; do not expose a submit action from the programme compendium alone.",
+        "Split the record into separate track-level benefit and eligibility logic for individual innovators/start-ups, Phase-II proposals and MSME-cluster institutional proposals if the current operative documents confirm those routes.",
+        "Reconcile the inaccessible or superseded annual-report evidence and the 30 March 2026 window with the current DSIR publication before assigning active, upcoming, closed or superseded status.",
+        "Verify the current TOCIC list, local application forms, selection process, IP ownership, DBT/payment conditions, milestone reporting and recovery/clawback terms."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment"
+    ],
+    "reason": "Current DSIR evidence confirms an active PRISM programme context and the Creative India 2025 initiative, but it does not by itself establish a universal open call, current applicant-level benefit ceiling or operative track-specific terms. Publication requires human reconciliation of the current scheme document, call route and legacy-guideline boundaries."
+  }
+}

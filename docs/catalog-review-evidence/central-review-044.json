@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-044",
+  "authority": "Ministry of Tourism",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "The Ministry of Tourism NIDHI+ portal, its current guidelines index, the Common National Standards guideline and State/UT tourism authorities are primary. Central classification is kept separate from local licences, project approvals, construction permissions and commercial occupancy outcomes.",
+  "records": [
+    {
+      "slug": "incredible-india-bed-breakfast-homestay-classification",
+      "sourceUrl": "https://nidhi.tourism.gov.in/uploads/gallery/1659456723.pdf",
+      "supportingSources": [
+        {"url":"https://nidhi.tourism.gov.in/home/","anchor":"Current NIDHI+ portal: accommodation-unit registration/classification routes and 16 March 2026 discontinuation notice for fresh voluntary construction/pre-construction project approvals"},
+        {"url":"https://nidhi.tourism.gov.in/home/page/guidelines","anchor":"Current NIDHI+ guidelines index listing the Common National Standards for Bed & Breakfast and Homestay establishments"},
+        {"url":"https://nidhi.tourism.gov.in/mynidhi/","anchor":"Official MyNIDHI unit-registration handoff"},
+        {"url":"https://nidhi.tourism.gov.in/home/page/accommodation-units","anchor":"Official NIDHI+ accommodation-unit definitions for Bed & Breakfast and Homestay"}
+      ],
+      "sourceKind": "official_tourism_nidhi_guideline_portal_state_route_cross_check",
+      "sourceAnchor": "Common National Standards guideline pages 3-6: one to six rooms/up to 12 beds, owner/operator residence, inspection, two-year validity, Silver/Gold fees, documents and classification/reclassification route",
+      "observations": [
+        "The Ministry guideline describes a classification and official listing route for eligible Bed & Breakfast and Homestay establishments, not a grant, loan, subsidy, guaranteed occupancy or replacement for local permissions.",
+        "A Homestay route requires the owner/promoter and family to physically reside in the establishment; the Bed & Breakfast route requires an owner-appointed agent or operator to reside on the premises. Both routes describe one to six lettable rooms and up to 12 beds.",
+        "The guideline requires inspection readiness and states two-year classification validity, with Silver and Gold classification/reclassification fees listed as INR 3,000 and INR 5,000 respectively; the live portal and applicable State/UT route must control current payment and renewal details.",
+        "NIDHI+ currently exposes unit registration and classification-related routes, while its current notice says fresh voluntary project-approval applications for hospitality units at the construction/pre-construction stage are not entertained from 16 March 2026 and pending applications were treated as closed.",
+        "The central guideline does not by itself replace municipal, fire, police, food, building, tax, labour, environmental or State/UT permissions. Changes, inspection deficiencies, validity, reclassification and withdrawal conditions must be tracked separately."
+      ],
+      "reviewFollowUps": [
+        "Confirm whether the user's State/UT has its own controlling homestay or hospitality classification scheme and whether the Central route is applicable before recommending it.",
+        "Verify the current NIDHI+ registration flow, live fee screen, required uploads, regional classification authority, inspection checklist and two-year renewal/reclassification process.",
+        "Check owner/operator residence, room and bed count, ownership or lease evidence, police clearance, safety, hygiene, facility, photograph and undertaking requirements.",
+        "Explicitly block the discontinued construction/pre-construction project-approval route from recommendations and distinguish it from operational-unit registration/classification.",
+        "Track every State/UT and local licence independently; obtain an authorized reviewer decision before publishing any actionable classification recommendation."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source","eligibility","benefit","application","window","fine_print","amendment","current_terms","reviewer_decision"],
+    "reason": "The official guideline and NIDHI+ portal support a conditional operational-unit classification route, but State/UT applicability, current portal fields, fees, inspection, local permissions and the discontinued project-approval boundary require reviewer confirmation. The record remains review-gated."
+  }
+}

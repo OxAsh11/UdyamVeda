@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-079",
+  "authority": "National SC-ST Hub - SCLCSS",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records current official SCLCSS portal, checklist, guideline and dashboard observations for reviewer use. It does not establish that a new national application window is open, guarantee subsidy approval, or replace lender, NSSH, NSIC or Ministry review.",
+  "sourcePolicy": "The official SCLCSS portal and January 2026 checklist are operating evidence. The official NSSH guideline is the controlling scheme-cycle evidence, and the MSME dashboard is reporting context only. A current continuation or operating notice must be verified before the opportunity can become actionable.",
+  "records": [
+    {
+      "slug": "special-credit-linked-capital-subsidy-scheme-sclcss",
+      "sourceUrl": "https://sclcss.msme.gov.in/Common/Home.aspx",
+      "supportingSources": [
+        { "url": "https://sclcss.msme.gov.in/Manual/Checklist_SCLCSS_Application_26Jan2026.pdf", "anchor": "Official SCLCSS application checklist dated 26 January 2026: application, undertaking, DIC clearance, PLI due diligence, GeM undertaking and caste certificate" },
+        { "url": "https://sclcss.msme.gov.in/Manual/Guidelines.pdf", "anchor": "Official NSSH/SCLCSS guideline: 25% subsidy, subsidy cap, institutional-credit route, eligible sectors and exclusions" },
+        { "url": "https://dashboard.msme.gov.in/scsthub.aspx", "anchor": "Official MSME National SC-ST Hub dashboard: current reporting context and last-updated timestamp, not proof of a new application window" },
+        { "url": "https://www.msme.gov.in/sites/default/files/guidelines-SCLCSS1.PDF", "anchor": "Official Ministry SCLCSS guideline provenance and original scheme basis" },
+        { "url": "https://sclcss.msme.gov.in/Manual/Constitution_Technical%20EvaluaionCommittee.pdf", "anchor": "Official 30 January 2025 technical evaluation committee memorandum for activity/product relevance" }
+      ],
+      "sourceKind": "official_sclcss_current_portal_checklist_and_guideline_cross_check",
+      "sourceAnchor": "Current portal terms, 25% subsidy, INR 25 lakh ceiling, lender route, checklist documents, scheme-cycle boundary and dashboard context",
+      "observations": [
+        "The current SCLCSS portal describes a 25% subsidy for eligible SC/ST MSEs purchasing new plant, machinery or equipment through institutional credit, with an overall subsidy ceiling of INR 25 lakh.",
+        "The guideline describes institutional finance up to INR 1 crore for the plant/machinery or equipment route, with subsidy calculated at 25% subject to the subsidy cap. Loan amount, eligible asset cost and subsidy value must remain separate benefit buckets.",
+        "The portal describes a lender-led application route through the concerned Prime Lending Institution; nodal banks/agencies upload claims and the portal is not a direct UdyamVeda submission route.",
+        "The official January 2026 checklist is useful operational evidence and lists the application form, undertaking, DIC clearance, PLI due-diligence certificate, GeM undertaking and recent caste certificate. It does not itself extend the NSSH financial cycle or prove a universal new-intake window.",
+        "The current guideline evidence cites the NSSH financial cycle 2021-22 to 2025-26 ending on 31 March 2026. The MSME dashboard shows 2026-27 reporting activity, but reporting activity is not treated as a successor legal cycle or universal application notice.",
+        "The guideline excludes trading activity and requires the relevant manufacturing/service, SC/ST ownership, new-asset, PLI and applicable pollution-clearance conditions to be verified. Mixed manufacturing/service plus trading cases require the controlling activity and undertaking to be checked.",
+        "The record remains closed and review-gated pending a post-31 March 2026 continuation or current operating notice. UdyamVeda may explain and prepare but must not represent a portal submission or guarantee subsidy release."
+      ],
+      "reviewFollowUps": [
+        "Verify whether a post-31 March 2026 continuation, extension, successor cycle or current operating notice exists and record the exact official anchor.",
+        "Confirm current eligible asset list, manufacturing/service and NIC boundaries, trading exclusion, RED-category exclusion, pollution NOC and mixed-activity treatment.",
+        "Confirm current SC/ST ownership thresholds by entity type, caste-certificate validity, Udyam requirement, DIC clearance and PLI/nodal-bank route.",
+        "Confirm how subsidy is calculated against sanctioned term loan versus eligible asset cost, claim timing, lock-in, adjustment, monitoring and clawback conditions.",
+        "Confirm the January 2026 checklist remains the controlling current document and identify any replacement checklist or portal notice.",
+        "Obtain human reviewer approval for source, eligibility, benefit, application, window, fine print, amendment, current terms and factual accuracy before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source", "eligibility", "benefit", "application", "window", "fine_print", "amendment", "current_terms", "reviewer_decision"],
+    "reason": "The official portal and checklist provide current operating evidence, but the cited NSSH cycle ended on 31 March 2026 and no successor or universal application window has been verified. Keep closed until a reviewer confirms continuation and current claim conditions."
+  }
+}

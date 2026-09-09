@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-066",
+  "authority": "India Cine Hub / National Film Development Corporation under the Ministry of Information and Broadcasting",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party India Cine Hub permission and foreign-film incentive observations for reviewer use. It does not guarantee permission, incentive approval, reimbursement, visa issuance or acceptance of a production claim, and it does not authorize UdyamVeda to represent a producer or submit an application.",
+  "sourcePolicy": "The current India Cine Hub international-project guide, incentive calculator, official Ministry of Information and Broadcasting guideline and official India Cine Hub/NFDC route are primary. The guideline figures remain review-gated because the Ministry PDF timed out during current retrieval and the indexed India Cine Hub guideline copy returned 404; search-indexed content is supporting evidence until the exact current document is captured, hashed and reconciled.",
+  "records": [
+    {
+      "slug": "incentive-scheme-foreign-films-official-coproduction-india",
+      "sourceUrl": "https://indiacinehub.gov.in/incentive-calcuator-page",
+      "supportingSources": [
+        {
+          "url": "https://indiacinehub.gov.in/permission/step-by-step-guide/international-projects",
+          "anchor": "Current international-project guide: eligible production formats, non-refundable USD 225 equivalent processing fee, documents, permission flow, location permits, film visa, script review and normal three-week processing statement"
+        },
+        {
+          "url": "https://mib.gov.in/sites/default/files/2024-02/Revised%20incentive%20guidelines.pdf",
+          "anchor": "Ministry guideline indexed as governing incentive evidence: up to 40% of qualifying Indian production expenditure and maximum INR 30 crore cap; direct current retrieval requires confirmation"
+        },
+        {
+          "url": "https://indiacinehub.gov.in/sites/default/files/2025-03/india-cine-hub-film-incentive-guidelines-2023-ver-feb-2025_0.pdf",
+          "anchor": "Indexed India Cine Hub guideline copy with project documents and incentive terms; current URL returned 404 and cannot be treated as live evidence until replaced"
+        },
+        {
+          "url": "https://indiacinehub.gov.in/about-us/FAQs",
+          "anchor": "Current ICH FAQ: restricted-area caveat, documentary/AV-commercial/music-video boundary, advance-application guidance and permit route"
+        }
+      ],
+      "sourceKind": "official_ich_mib_guideline_portal_cross_check",
+      "sourceAnchor": "India Cine Hub incentive calculator and international-project guide reconciled with the Ministry incentive guideline and current permission route",
+      "observations": [
+        "India Cine Hub is established by the Ministry of Information and Broadcasting as a single-window facilitation and clearance route, managed by NFDC and operated through the official portal for international filming permissions.",
+        "The current international-project guide accepts feature films, TV/web shows and series, and reality TV/web shows and series. It states that the online application requires a non-refundable INR equivalent of USD 225 and that documentaries, AV commercials and music videos are not accepted through this route.",
+        "The route requires a detailed script/synopsis or reality-show concept, crew passport details, Indian shooting locations and period, temporary-import equipment details, applicable no-objection material and an official co-production agreement where the project is an international co-production under a treaty.",
+        "Permission normally takes no more than three weeks after all requisite documents are submitted, but Ministry of Home Affairs or Ministry of External Affairs consultation can extend the timeline. The permission letter does not erase separate local authority, location, monument, forest, railway, animal, visa or other permissions.",
+        "The indexed Ministry incentive guideline describes up to 40% of qualifying production expenditure incurred in India, with a base reimbursement and conditional Indian-manpower and Significant Indian Content bonuses, subject to an indexed INR 30 crore cap. These figures are not yet publication-ready because the exact current guideline must be captured and reconciled.",
+        "The incentive calculator estimate, permission approval and reimbursement claim are separate stages. A portal estimate is not a sanction, reimbursement approval or guaranteed payout, and qualifying expenditure, claimant, claim timing, bonus evidence and cap treatment must follow the governing guideline.",
+        "The Ministry guideline PDF timed out during the current source check, while the indexed India Cine Hub guideline copy returned 404. The current ICH permission route is live, but the guideline evidence remains a source-resolution and amendment blocker.",
+        "UdyamVeda may prepare the production, permission and evidence checklist, but the producer or authorised Indian production services/line-production entity must use its own account, declarations, documents, fee payment and claim route."
+      ],
+      "reviewFollowUps": [
+        "Capture the current Ministry guideline or an official successor from MIB/ICH, record its exact revision date and content hash, and reconcile it with the indexed 2023/February 2025 guideline copy and any later amendment or corrigendum.",
+        "Verify the current claimant boundary, eligible project categories, qualifying-production-expenditure definition, base percentage, Indian-manpower and Significant Indian Content bonus evidence, INR 30 crore cap and claim timing.",
+        "Verify the live incentive application and post-production claim forms, required approvals, expenditure records, auditor or certification requirements, disbursement process, clawback and grievance route.",
+        "Keep national filming permission, State/UT/local location permissions, restricted/protected-area approvals, equipment import, animal/forest/railway/monument approvals and Film Visa tasks distinct from the incentive record.",
+        "Confirm the current processing fee, application availability, restricted-area exceptions, required feedback/credits, script modification controls and human reviewer decision before publication or recommendation ranking."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "The current ICH permission and application route is source-supported, but the governing incentive guideline, current claim route, cap, qualifying expenditure, claimant and bonus conditions require exact-document capture and human reconciliation before publication."
+  }
+}

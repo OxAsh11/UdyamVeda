@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-081",
+  "authority": "National Scheduled Tribes Finance and Development Corporation - Term Loan Scheme",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records current first-party NSTFDC Term Loan observations for reviewer use. It does not guarantee loan sanction, disbursement, rate, contribution, SCA availability, collateral or repayment outcome.",
+  "sourcePolicy": "The current NSTFDC Term Loan page controls current unit-cost, finance-share, contribution, rate and repayment terms. The current eligibility and application pages control applicant and route boundaries. The 2024-25 annual report is retained as a supporting cross-check; conflicting historical income references require human review.",
+  "records": [
+    {
+      "slug": "nstfdc-term-loan-st-entrepreneurs",
+      "sourceUrl": "https://nstfdc.tribal.gov.in/frm_term_loan.aspx",
+      "supportingSources": [
+        { "url": "https://nstfdc.tribal.gov.in/frm_eligibility.aspx", "anchor": "Current eligibility page: ST community, annual family-income reference of INR 3 lakh, cooperative 80% ST-membership boundary and notified-State residence" },
+        { "url": "https://nstfdc.tribal.gov.in/frm_how_to_apply.aspx", "anchor": "Current application route: district office of the State Channelising Agency" },
+        { "url": "https://nstfdc.tribal.gov.in/UploadData/pdf/List_of_Addresses_of_SCAs.pdf", "anchor": "Official State Channelising Agency address list" },
+        { "url": "https://nstfdc.tribal.gov.in/CuteSoft_Client/writereaddata/upload/NSTFDC_AR%20-%202024-25_Final_03-12-25_English.pdf", "anchor": "Official 2024-25 annual report: project-cost, finance-share and historical income/rate context" }
+      ],
+      "sourceKind": "official_nstfdc_current_term_loan_route_cross_check",
+      "sourceAnchor": "Current term-loan unit cost, finance share, promoter contribution, beneficiary rate bands, repayment and SCA route",
+      "observations": [
+        "The current NSTFDC Term Loan page describes viable income-generating ventures in industrial, agricultural and service sectors, with applications through State Channelizing Agencies and compliance with SCA terms.",
+        "The current page states viable projects/units costing up to INR 50 lakh and NSTFDC term-loan assistance up to 90% of unit cost. Project cost and loan sanction must remain separate values.",
+        "The current promoter-contribution table states no contribution is to be insisted upon up to INR 1 lakh, 2% for cost above INR 1 lakh up to INR 2.50 lakh, 3% above INR 2.50 lakh up to INR 5 lakh, and 5% above INR 5 lakh.",
+        "The current beneficiary rate bands are 6% for loan amounts up to INR 5 lakh, 8% for amounts up to INR 10 lakh, and 10% above INR 10 lakh; the corresponding SCA rates are 3%, 5% and 7%.",
+        "The current page states quarterly repayment within a maximum period of five years including the moratorium period; it does not specify the moratorium duration on that page. Refinance repayment is linked to the period fixed by banks.",
+        "The current eligibility page states that individual/SHG/partnership/other-association applicants and all members must belong to the Scheduled Tribes community, with annual family income not exceeding INR 3 lakh, and that a cooperative must maintain at least 80% ST membership. Assistance is limited to persons residing in a State/UT where the tribe is notified as ST.",
+        "The annual report contains historical/reference income and rate-band material that must not silently override the current term-loan and eligibility pages. UdyamVeda must not present 90% or INR 50 lakh as guaranteed sanction."
+      ],
+      "reviewFollowUps": [
+        "Reconcile the current eligibility page's INR 3 lakh family-income reference with any annual-report higher-income or rate-band references and record the controlling policy.",
+        "Confirm current SCA list, State/UT notified-tribe condition, applicant/entity rules, project viability and sector boundaries.",
+        "Confirm whether promoter contribution is calculated on total unit cost, financed amount or another base, and verify current security, collateral, insurance and processing charges.",
+        "Confirm the applicable moratorium duration, quarterly schedule, refinance treatment, utilization, monitoring, documentation and amendments.",
+        "Keep project cost, NSTFDC share, promoter contribution and beneficiary loan sanction as separate values.",
+        "Obtain human reviewer approval for source, eligibility, benefit, application, window, fine print, amendment, current terms and factual accuracy before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source", "eligibility", "benefit", "application", "window", "fine_print", "amendment", "current_terms", "reviewer_decision"],
+    "reason": "The current NSTFDC term-loan page provides detailed financial terms, but income-reference reconciliation, SCA availability, contribution base, security, moratorium and current policy still require human review before publication."
+  }
+}

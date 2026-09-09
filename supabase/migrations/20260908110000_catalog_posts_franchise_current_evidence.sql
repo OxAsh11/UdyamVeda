@@ -1,0 +1,146 @@
+-- Official Department of Posts business-opportunity evidence. Franchise outlet
+-- and postal-agent routes are separate and have different obligations.
+
+insert into public.source_registry
+  (name, url, source_kind, coverage_level, cadence, authority_rank, verification_required, notes)
+values
+  ('India Post franchise scheme page', 'https://www.indiapost.gov.in/vacancies/franchise', 'ministry_portal', 'central', 'weekly', 1, true, 'Current Department of Posts page describing franchise services, application route and selection by the Department.'),
+  ('India Post Franchise Scheme 2021 document', 'https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf', 'guideline', 'central', 'monthly', 1, true, 'Official scheme document defining franchise outlets, postal agents, eligibility, security, commission and licence terms.'),
+  ('India Post business services page', 'https://www.indiapost.gov.in/business-services/otherservices', 'ministry_portal', 'central', 'weekly', 1, true, 'Current India Post business-services navigation including the franchise route and other commercial services.')
+on conflict (url) do update set
+  name = excluded.name,
+  source_kind = excluded.source_kind,
+  coverage_level = excluded.coverage_level,
+  cadence = excluded.cadence,
+  authority_rank = excluded.authority_rank,
+  verification_required = excluded.verification_required,
+  notes = excluded.notes;
+
+do $$
+declare
+  item jsonb;
+  authority_id uuid;
+  seed_opportunity_id uuid;
+  version_id uuid;
+begin
+  for item in
+    select value from jsonb_array_elements($records$[
+      {
+        "slug":"india-post-franchise-outlet",
+        "name":"India Post Franchise Outlet",
+        "type":"market_access",
+        "status":"active",
+        "authority":"Department of Posts - India Post Franchise Scheme",
+        "authority_url":"https://www.indiapost.gov.in/",
+        "canonical_url":"https://www.indiapost.gov.in/vacancies/franchise",
+        "source_url":"https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+        "source_kind":"guideline",
+        "source_title":"India Post Franchise Scheme 2021",
+        "source_anchor":"Sections 2.1-2.7 and 2.6: counter services, eligible applicants, age/education, premises, security deposit, selection and commission",
+        "summary":"A Department of Posts franchise route for eligible individuals, shops, institutions and other entities to provide defined postal counter services in locations where demand exists but a post office cannot be opened.",
+        "objective":"Expand access to postal counter services through selected local franchise outlets while allowing an eligible operator to earn Department-prescribed remuneration or commission.",
+        "legal_basis":"Department of Posts Franchise Scheme and the current India Post franchise page; the concerned Postal Divisional Office and current agreement control local selection and operating terms.",
+        "eligibility":{"entity_types":["individual","corner_shop","paan_shop","kirana_shop","stationery_shop","small_shopkeeper","institution","organization","other_eligible_entity"],"lifecycle_stages":["starting","operating","expanding_services"],"industries":["postal_services","retail","e_governance","citizen_services"],"locations":["India","urban_area","rural_area","upcoming_urban_township","special_economic_zone","highway_project","industrial_centre","educational_institution"],"conditions":["applicant must be an individual or eligible local shop, institution, organization or other entity able to manage and market the service range","individual applicant must be above 18 years with no upper age limit","individual applicant must be at least 8th-class pass under the scheme document","suitable and accessible premises must be available and maintained with approved signage","applicant must be willing to invest, provide operating hours, business plan, local reference and proposed service/marketing details","family members of serving postal employees are excluded from taking the franchise in the same Division","selection is by the concerned Postal Divisional authority and requires a Department agreement","minimum security deposit is ₹5,000 in NSC form, with the actual amount based on expected daily transactions"],"thresholds":{"minimum_age_years":18,"minimum_education_class":8,"minimum_security_deposit_inr":5000},"unknown_handling":"needs_information"},
+        "exclusions":["delivery and transmission remain with the Department; this route is for defined counter services","no automatic right to open an outlet or earn a particular revenue or commission","permission is not granted in Gram Panchayats where Panchayat Sanchar Sewa Kendras are functioning under the referenced scheme","family members of serving postal employees cannot take the franchise in the same Division","security deposit can be increased based on average daily revenue and may be forfeited for infringement","continuation is subject to review after opening and the Department's decision","PLI, partner, e-governance and other services may require additional criteria or agreements"],
+        "application":{"portal":"https://www.indiapost.gov.in/vacancies/franchise","route":"Prepare the prescribed application, premises and business plan, submit it with supporting evidence to the concerned Senior/Superintendent of Post Offices or Postal Divisional Office, provide the required NSC security deposit if selected, and execute the Department's Memorandum of Agreement.","selection":"Concerned Divisional Head selection based on local verification/report and the applicant's capacity, premises, business plan, community need and willingness to use technology.","fees":"The scheme document specifies a security deposit, not a universal application fee. Local office, premises, equipment, training and operating costs must be verified from the current division and agreement.","applicant_note":"UdyamVeda may explain the route and prepare the application checklist, but must not represent itself as India Post, submit the application without authorization or promise selection or income."},
+        "fine_print":{"services":"Permitted services include stamps and stationery, registered and Speed Post articles, money orders, PLI agency subject to criteria, retail bill/tax/fine payment, e-governance and other services introduced through the outlet subject to applicable agreements.","security":"The minimum security deposit is ₹5,000 in National Savings Certificate form; it is based on maximum possible daily transactions, can increase with average daily revenue and may be forfeited for breaches.","review":"The first review is six months after opening and final continuation decision is made six months later; local viability and performance matter.","commission":"Remuneration/commission is set in the Department's Memorandum of Agreement schedule and can change; no fixed income estimate should be shown.","review_note":"Human review must confirm the current form, local divisional availability, PSSK exclusion, security calculation, service permissions, agreement schedule, monitoring and renewal/continuation terms before publication."},
+        "benefit_summary":{"types":["market_access","training"],"summary":"Access to a selected postal counter-franchise business model with Department-prescribed commissions/remuneration, operating guidance and training; no guaranteed income or selection.","separate_value_buckets":true},
+        "benefit_type":"market_access",
+        "benefit_label":"Selected postal counter-franchise route with Department-prescribed commission",
+        "amount_max":null,
+        "percentage":null,
+        "benefit_conditions":{"selection_required":true,"security_deposit_minimum_inr":5000,"commission_schedule_is_agreement_specific":true,"income_not_guaranteed":true},
+        "requirement":"Eligible applicant, suitable premises, business plan, local verification and security deposit",
+        "requirement_description":"Provide age/education or entity evidence, PAN or permitted declaration, premises ownership/lease details, proposed timings, local reference, business plan, investment details and the NSC security deposit when required by the selected route.",
+        "rules":{"all":[{"field":"applicant_or_entity_form_eligible","operator":"equals","value":true},{"field":"applicant_age_years","operator":"greater_than_or_equal","value":18},{"field":"premises_and_location_verified","operator":"equals","value":true},{"field":"postal_division_route_available","operator":"equals","value":true},{"field":"serving_postal_employee_family_same_division","operator":"equals","value":false},{"field":"security_deposit_inr","operator":"greater_than_or_equal","value":5000}],"unknown_handling":"needs_information"},
+        "steps":[{"title":"Confirm local route and premises","description":"Check the concerned Postal Division, local demand, the PSSK exclusion and whether the proposed premises is suitable and accessible.","url":"https://www.indiapost.gov.in/vacancies/franchise"},{"title":"Prepare the franchise business plan","description":"Document opening hours, proposed investment, service range, local customer base, marketing plan, computer capability and local reference.","url":"https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf"},{"title":"Submit to the Postal Divisional Office","description":"Use the prescribed application and submit it with supporting documents to the concerned Senior/Superintendent of Post Offices or competent Divisional Office.","url":"https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf"},{"title":"Complete selection and agreement","description":"If selected, provide the required NSC security deposit, sign the Memorandum of Agreement and complete Department induction/training before operating.","url":"https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf"}],
+        "window_type":"rolling",
+        "window_close_at":null,
+        "window_label":"Rolling local route: applications are handled by the concerned Postal Division; no single nationwide closing date is stated.",
+        "window_evidence":{"source_url":"https://www.indiapost.gov.in/vacancies/franchise","anchor":"Current page describes application in prescribed format and selection by the Department; local availability must be confirmed."},
+        "review_note":"Keep review-gated and local-availability dependent. Do not present this as a guaranteed franchise, fixed-income opportunity or universal nationwide opening."
+      },
+      {
+        "slug":"india-post-postal-agent",
+        "name":"India Post Postal Agent",
+        "type":"market_access",
+        "status":"active",
+        "authority":"Department of Posts - India Post Franchise Scheme",
+        "authority_url":"https://www.indiapost.gov.in/",
+        "canonical_url":"https://www.indiapost.gov.in/vacancies/franchise",
+        "source_url":"https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf",
+        "source_kind":"guideline",
+        "source_title":"India Post Franchise Scheme 2021",
+        "source_anchor":"Sections 3.1-3.4: postal-agent services, eligibility, no security deposit, 5% commission and licence terms",
+        "summary":"A lighter India Post agency route for eligible individuals, shops, institutions and organizations to sell postal stamps and stationery, including philatelic items, in urban and rural areas.",
+        "objective":"Expand public access to stamps and stationery through local postal agents while providing a defined commission-based retail route.",
+        "legal_basis":"Department of Posts Franchise Scheme, postal-agent provisions and the current India Post franchise/business-services pages; the concerned Postal Divisional Office controls selection and licensing.",
+        "eligibility":{"entity_types":["individual","corner_shop","paan_shop","kirana_shop","stationery_shop","small_shopkeeper","institution","organization","other_eligible_entity"],"lifecycle_stages":["starting","operating","expanding_services"],"industries":["postal_retail","stationery_retail"],"locations":["India","urban_area","rural_area"],"conditions":["applicant may be an individual or eligible local shop, institution, organization or other entity","individual applicant must be above 18 years with no upper age limit","no prescribed educational qualification is stated for postal agents","proper premises/shop/outlet must be available with adequate stamps and stationery and approved signage","family members of serving postal employees are excluded from taking a postal-agent route in the same Division","selection is by the concerned Divisional Head on receipt of the prescribed application","postal agents do not sign a Memorandum of Agreement and do not provide a security deposit under the scheme document"],"thresholds":{"minimum_age_years":18,"minimum_cash_purchase_inr":300,"commission_percent":5},"unknown_handling":"needs_information"},
+        "exclusions":["postal agents may sell stamps and stationery only; they do not receive the broader counter-service permissions of franchise outlets","family members of serving postal employees cannot take the route in the same Division","no security deposit does not mean no premises, stock, cash-purchase or local selection requirements","the 5% commission/deduction is tied to cash purchase of available stamps/stationery and must not be treated as guaranteed income","the licence is initially one year and later continuation is subject to satisfactory work and conduct and Department discretion"],
+        "application":{"portal":"https://www.indiapost.gov.in/vacancies/franchise","route":"Complete the prescribed postal-agent application, confirm suitable premises and local route availability, submit to the concerned Postal Divisional Office, obtain the Photo Identity Card and purchase eligible stamps/stationery from the Link Post Office by the specified cash route.","selection":"Concerned Divisional Head selection on receipt of application; Photo Identity Card is issued based on the application information.","fees":"The scheme document states no security deposit for postal agents. Stock purchases, premises, equipment and other operating costs remain the applicant's responsibility and must be confirmed locally.","applicant_note":"UdyamVeda may explain and prepare the checklist, but must not promise a licence, stock availability, customer demand or commission income."},
+        "fine_print":{"services":"Postal agents provide only counter sale of postal stamps and stationery, including philatelic items.","commission":"The scheme document states a 5% commission/deduction on cash purchases from the Link Post Office, subject to availability and a minimum ₹300 transaction value; current terms must be confirmed locally.","licence":"The licence is initially for one year and subsequent continuation is for three-year periods subject to satisfactory work and conduct; the Department may terminate/cancel on valid grounds.","security":"Postal agents are not required to sign a Memorandum of Agreement or give a security deposit under the scheme document, but this does not remove premises, stock, identification and local selection requirements.","review_note":"Human review must confirm the current form, local selection status, stock availability, service boundary, cash-purchase rule, commission wording and licence continuation before publication."},
+        "benefit_summary":{"types":["market_access"],"summary":"Postal-agent retail route with a documented 5% commission/deduction on eligible cash purchases of stamps and stationery, subject to availability and local licensing; no guaranteed income.","separate_value_buckets":true},
+        "benefit_type":"market_access",
+        "benefit_label":"5% commission/deduction on eligible stamp and stationery purchases",
+        "amount_max":null,
+        "percentage":5,
+        "benefit_conditions":{"minimum_cash_purchase_inr":300,"security_deposit_required":false,"stock_availability_required":true,"income_not_guaranteed":true},
+        "requirement":"Age, eligible entity/premises, local selection and Photo Identity Card",
+        "requirement_description":"Provide age/entity and premises details, prescribed application, local route evidence and any documents required by the Postal Division; maintain adequate stamps/stationery and use the issued Photo Identity Card for purchases.",
+        "rules":{"all":[{"field":"applicant_or_entity_form_eligible","operator":"equals","value":true},{"field":"applicant_age_years","operator":"greater_than_or_equal","value":18},{"field":"premises_and_stock_route_verified","operator":"equals","value":true},{"field":"postal_division_route_available","operator":"equals","value":true},{"field":"serving_postal_employee_family_same_division","operator":"equals","value":false}],"unknown_handling":"needs_information"},
+        "steps":[{"title":"Confirm local postal-agent route","description":"Check the concerned Postal Division, local demand and stock/service availability before applying.","url":"https://www.indiapost.gov.in/vacancies/franchise"},{"title":"Complete the prescribed application","description":"Prepare the postal-agent form with applicant/entity, premise, location and operating details; no security deposit is required under the scheme document.","url":"https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf"},{"title":"Submit to the Divisional Office","description":"Submit the application to the concerned Postal Divisional Office and obtain the Photo Identity Card if selected.","url":"https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf"},{"title":"Operate within the postal-agent boundary","description":"Purchase available stamps and stationery by the prescribed cash route, maintain the outlet and claim only the documented commission/deduction.","url":"https://www.indiapost.gov.in/documents/offerings/vacancies/Franchise_2021.pdf"}],
+        "window_type":"rolling",
+        "window_close_at":null,
+        "window_label":"Rolling local route: the concerned Postal Division receives applications; no single nationwide closing date is stated.",
+        "window_evidence":{"source_url":"https://www.indiapost.gov.in/vacancies/franchise","anchor":"Current page links the Franchise Scheme; the scheme document states selection by the concerned Divisional Head on receipt of application."},
+        "review_note":"Keep review-gated and local-availability dependent. Do not present the commission percentage as guaranteed earnings or extend the route beyond stamps and stationery."
+      }
+    ]$records$::jsonb)
+  loop
+    authority_id := null;
+    insert into public.authorities (name, level, ministry, department, official_url)
+    select item->>'authority', 'central', 'Ministry of Communications', 'Department of Posts', item->>'authority_url'
+    where not exists (select 1 from public.authorities where name = item->>'authority')
+    returning id into authority_id;
+    if authority_id is null then select id into authority_id from public.authorities where name = item->>'authority' limit 1; end if;
+    seed_opportunity_id := null;
+    insert into public.opportunities (slug, name, opportunity_type, status, authority_id, geography, canonical_url)
+    values (item->>'slug', item->>'name', item->>'type', item->>'status', authority_id, '{"coverage":"central","locations":["India"]}'::jsonb, item->>'canonical_url')
+    on conflict (slug) do update set name = excluded.name, status = excluded.status, authority_id = excluded.authority_id, canonical_url = excluded.canonical_url
+    returning id into seed_opportunity_id;
+    if seed_opportunity_id is null then select id into seed_opportunity_id from public.opportunities where slug = item->>'slug' limit 1; end if;
+    version_id := null;
+    insert into public.opportunity_versions
+      (opportunity_id, version_number, title, summary, objective, legal_basis, eligibility, application, fine_print, benefit_summary, last_verified_at, completeness, confidence, review_status)
+    values (seed_opportunity_id, 1, item->>'name', item->>'summary', item->>'objective', item->>'legal_basis', item->'eligibility', item->'application', item->'fine_print', item->'benefit_summary', now(), 0.91, 0.88, 'in_review')
+    on conflict (opportunity_id, version_number) do nothing
+    returning id into version_id;
+    if version_id is null then select ov.id into version_id from public.opportunity_versions ov where ov.opportunity_id = seed_opportunity_id and ov.version_number = 1 limit 1; end if;
+    update public.opportunities set current_version_id = version_id, status = item->>'status' where id = seed_opportunity_id;
+    insert into public.opportunity_sources (opportunity_version_id, source_url, source_kind, source_title, source_anchor, fetched_at, is_primary)
+    values
+      (version_id, item->>'source_url', item->>'source_kind', item->>'source_title', item->>'source_anchor', now(), true),
+      (version_id, 'https://www.indiapost.gov.in/vacancies/franchise', 'ministry', 'India Post franchise scheme page', 'Current services and application route', now(), false),
+      (version_id, 'https://www.indiapost.gov.in/business-services/otherservices', 'ministry', 'India Post business services page', 'Current franchise/business-services navigation', now(), false)
+    on conflict do nothing;
+    insert into public.opportunity_benefits (opportunity_version_id, benefit_type, label, amount_max, percentage, conditions)
+    select version_id, item->>'benefit_type', item->>'benefit_label', (item->>'amount_max')::numeric, (item->>'percentage')::numeric, item->'benefit_conditions'
+    where not exists (select 1 from public.opportunity_benefits where opportunity_version_id = version_id and label = item->>'benefit_label');
+    insert into public.opportunity_requirements (opportunity_version_id, requirement_type, name, description, required)
+    select version_id, 'registration', item->>'requirement', item->>'requirement_description', true
+    where not exists (select 1 from public.opportunity_requirements where opportunity_version_id = version_id and name = item->>'requirement');
+    insert into public.eligibility_rule_sets (opportunity_version_id, rules, source_evidence, reviewed)
+    select version_id, item->'rules', jsonb_build_array(jsonb_build_object('source_url', item->>'source_url', 'anchor', item->>'source_anchor')), false
+    where not exists (select 1 from public.eligibility_rule_sets where opportunity_version_id = version_id);
+    insert into public.opportunity_steps (opportunity_version_id, step_number, title, description, official_url)
+    select version_id, row_number() over ()::integer, step->>'title', step->>'description', step->>'url'
+    from jsonb_array_elements(item->'steps') as steps(step)
+    where not exists (select 1 from public.opportunity_steps where opportunity_version_id = version_id);
+    insert into public.opportunity_windows (opportunity_version_id, window_type, closes_at, label, source_evidence)
+    select version_id, item->>'window_type', (item->>'window_close_at')::timestamptz, item->>'window_label', item->'window_evidence'
+    where not exists (select 1 from public.opportunity_windows where opportunity_version_id = version_id);
+    insert into public.review_tasks (opportunity_version_id, task_type, status)
+    select version_id, 'publish', 'open'
+    where not exists (select 1 from public.review_tasks where opportunity_version_id = version_id and task_type = 'publish' and status in ('open', 'in_review'));
+  end loop;
+end $$;

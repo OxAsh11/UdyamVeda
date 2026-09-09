@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-011",
+  "authority": "Department of Animal Husbandry and Dairying (DAHD)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "DAHD official scheme pages, operational guidelines, amendments, dashboards and official Udyamimitra application handoffs only; third-party claims are excluded.",
+  "records": [
+    {
+      "slug": "animal-husbandry-infrastructure-development-fund-ahidf",
+      "sourceUrl": "https://www.dahd.gov.in/sites/default/files/2023-11/ImplementationGuidelinesAHIDF.pdf",
+      "supportingSources": [
+        {
+          "url": "https://www.dahd.gov.in/schemes/programmes/ahidf",
+          "anchor": "Current DAHD AHIDF page last updated 8 September 2026: eligible entities, seven activity groups, DIDF subsumption, stated outlay through 31 March 2026 and official portal link"
+        },
+        {
+          "url": "https://www.dahd.gov.in/sites/default/files/2026-04/AnnualReport2025-26.pdf",
+          "anchor": "DAHD Annual Report 2025-26: AHIDF implementation, approved projects, loan/subsidy/guarantee and employment context"
+        },
+        {
+          "url": "https://ahidf.udyamimitra.in/",
+          "anchor": "Official AHIDF loan-application dashboard handoff; current continuation and acceptance status require review"
+        },
+        {
+          "url": "https://dahd.gov.in/node/3914",
+          "anchor": "DAHD 7th addendum dated 19 January 2026 to the AHIDF implementation guidelines"
+        }
+      ],
+      "sourceKind": "official_operational_guideline_with_current_scheme_page_annual_report_and_amendment_evidence",
+      "sourceAnchor": "AHIDF operational guideline: eligible entities/activities and section 7.1 loan quantum, margin money and beneficiary contribution; current DAHD page and 2026 amendment/status sources",
+      "observations": [
+        "AHIDF is an infrastructure-finance route under the Infrastructure Development Fund, not a universal grant. The current DAHD page lists individual entrepreneurs, private companies, MSMEs, FPOs, Section 8 companies and dairy cooperatives for specified dairy, meat, feed, breed, veterinary vaccine/drug, waste-to-wealth and primary-wool infrastructure activities.",
+        "The current page states that DIDF was subsumed into AHIDF and that dairy cooperatives are now eligible under the operational guidelines. This current entity treatment must be reconciled against older FAQ/guideline wording before publication.",
+        "The structured seed record separates term-loan financing, 3% interest subvention and a separate MSME credit-guarantee route. The cited operational terms include loan support up to 90% of project cost, repayment up to eight years, principal moratorium up to two years and category-dependent beneficiary contribution. These figures are not an applicant entitlement and remain subject to the operative guideline, lender appraisal and project conditions.",
+        "The current DAHD page states a revised AHIDF outlay of INR 29,110.25 crore only through FY 2025-26 ending 31 March 2026. The page and linked portal remain visible in September 2026, but that visibility is not evidence of post-March-2026 continuation or an open application window. The record must remain closed/non-actionable until an official continuation and current acceptance status are verified.",
+        "Land, working capital, recurring expenditure and other excluded costs must not be included in project-cost calculations without an explicit current basis. UdyamVeda can prepare the project and lender checklist but cannot promise sanction, interest subvention, guarantee coverage or disbursement."
+      ],
+      "reviewFollowUps": [
+        "Verify whether a post-31 March 2026 Cabinet, budget, administrative approval or amended guideline continues AHIDF and establishes a current application period.",
+        "Reconcile the 2023 operational guideline, the 2025-26 Annual Report, the 7th addendum dated 19 January 2026 and any later amendment, especially for dairy-cooperative treatment and eligible activities.",
+        "Extract current loan share, interest-subvention calculation, guarantee route, contribution/margin, security, repayment, moratorium, eligible-cost exclusions, milestone and clawback conditions with exact section/page anchors.",
+        "Check the AHIDF Udyamimitra dashboard for current login/application acceptance, lender route, state/UT handling, documents, fees and grievance contacts; do not infer openness from the portal link alone.",
+        "Keep the scheme corpus, loan amount, interest subvention and credit guarantee in separate value buckets and never add them into one advertised eligible value."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "national-livestock-mission-entrepreneurship-development",
+      "sourceUrl": "https://dahd.gov.in/sites/default/files/2026-02/RevisedNLMGuidelines.pdf",
+      "supportingSources": [
+        {
+          "url": "https://dahd.gov.in/en/node/3986",
+          "anchor": "DAHD circulation notice dated 25 February 2026 for the amended NLM implementation guidelines"
+        },
+        {
+          "url": "https://www.dahd.gov.in/en/schemes/programmes/national_livestock_mission",
+          "anchor": "Current NLM page last updated 8 September 2026: three sub-missions, entrepreneurship activities, guideline and subsidy dashboard links"
+        },
+        {
+          "url": "https://dahd.gov.in/en/nlm-edp",
+          "anchor": "Current official NLM EDP dashboard: DAHD-approved projects, project cost, loan, subsidy and released-subsidy context"
+        },
+        {
+          "url": "https://nlm.udyamimitra.in/",
+          "anchor": "Official NLM EDP application/dashboard handoff"
+        }
+      ],
+      "sourceKind": "current_amended_guideline_with_official_scheme_page_dashboard_and_application_handoff",
+      "sourceAnchor": "February 2026 amended NLM guideline and circulation notice; current DAHD page: breed, feed/fodder and research/innovation sub-missions and apply-subsidy route",
+      "observations": [
+        "NLM is a centrally sponsored scheme with separate sub-missions for breed development, feed and fodder, and research/development, livestock insurance, extension and innovation. A founder-facing record must not treat it as one undifferentiated subsidy.",
+        "The current DAHD page lists entrepreneurship activities including rural poultry, sheep/goat, piggery, feed/fodder and related breed-improvement routes. The amended 2026 guidance expands the breed-development focus to camel, donkey, horse and mule and adds current institution/innovation provisions; the exact component rule controls each recommendation.",
+        "The structured record describes a component-specific capital subsidy reference of 50% up to INR 50 lakh in two instalments, with State Implementing Agency review, financing or self-financing evidence and milestone/completion verification. This pattern must not be displayed as a universal NLM entitlement because caps, eligible costs and conditions vary by activity and amendment.",
+        "The official NLM page links an EDP dashboard and subsidy route, while the current dashboard reports approved-project and released-subsidy statistics. Aggregate dashboard figures are implementation statistics, not a founder's guaranteed benefit or proof that a new application is open.",
+        "The current official materials do not establish one nationwide deadline; the application route is component- and State-EOI-dependent. Unknown state, component, financing, land, training and project facts must produce more-information-required rather than automatic ineligibility."
+      ],
+      "reviewFollowUps": [
+        "Extract and version the February 2026 amended guideline by component, including eligible entities, activity-specific project costs, subsidy caps, eligible expenditure, milestones, instalments, recovery and reporting.",
+        "Verify the current State Implementing Agency and EOI/application window for each component and state before exposing an actionable application task.",
+        "Reconcile the January 2025 comprehensive guideline, February 2026 amendment and any later circular or dashboard notice; record supersession and effective dates.",
+        "Confirm the current NLM portal workflow, bank/self-finance route, guarantee/surety requirements, KYC, land/lease evidence, training requirements, documents and grievance contacts.",
+        "Keep subsidy, loan, bank guarantee and project outlay separate; do not derive an applicant ceiling from the overall INR 2,300 crore scheme outlay or dashboard totals."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment"
+    ],
+    "reason": "AHIDF has a visible current page and portal but no verified post-31 March 2026 actionable continuation in the reviewed evidence. NLM has current amended guidance and dashboard activity, but its subsidy and application route are component- and State-EOI-specific. Both require human review before publication."
+  }
+}

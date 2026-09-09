@@ -1,391 +1,167 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import { createClient } from '@/lib/supabase/client'
-import { REGISTRATION_TYPES, recommendRegistrationType, type RegType } from '@/lib/data/registration-types'
-import { getSegmentedPlatforms, type Platform } from '@/lib/data/registration-platforms'
-import { CheckCircle2, XCircle, Clock, FileText, ExternalLink, ChevronDown, ChevronUp, ArrowRight } from 'lucide-react'
-import { COMPLIANCE_ITEMS, CATEGORY_LABELS as COMPLIANCE_CATEGORY_LABELS, filterCompliance } from '@/lib/data/compliance-roadmap'
+import { useEffect, useMemo, useState } from 'react'
+import Link from 'next/link'
+import {
+  ArrowRight,
+  Building2,
+  Check,
+  CheckCircle2,
+  ChevronRight,
+  CircleHelp,
+  Clock3,
+  ExternalLink,
+  FileCheck2,
+  FileText,
+  Globe2,
+  Landmark,
+  MapPin,
+  ShieldCheck,
+  Sparkles,
+  Users,
+} from 'lucide-react'
+import { recommendRegistrationType, REGISTRATION_TYPES, type RegType } from '@/lib/data/registration-types'
+import {
+  NATIONAL_REGISTRATION_JOURNEYS,
+  type RegistrationJourney,
+} from '@/lib/data/national-registration-journeys'
 
-type TabKey = 'most-used' | 'lowest-price' | 'top-rated'
+type JourneyFilter = 'all' | RegistrationJourney['category']
+type BusinessProfile = Record<string, string>
 
-const TAB_LABELS: { key: TabKey; label: string }[] = [
-  { key: 'most-used', label: '5 Most Used' },
-  { key: 'lowest-price', label: '10 Lowest Price' },
-  { key: 'top-rated', label: '5 Top Rated' },
+const DEFAULT_PROFILE: BusinessProfile = {
+  sector: 'your business',
+  stage: 'planning',
+  initial_capital: '',
+  founder_type: '',
+  district: '',
+}
+
+const FILTERS: Array<{ id: JourneyFilter; label: string; color: string }> = [
+  { id: 'all', label: 'All journeys', color: '#3F46E8' },
+  { id: 'foundation', label: 'Start the business', color: '#059669' },
+  { id: 'tax', label: 'Tax identity', color: '#D99A00' },
+  { id: 'recognition', label: 'Recognition', color: '#7C3AED' },
+  { id: 'trade', label: 'Trade', color: '#0891B2' },
+  { id: 'food', label: 'Food', color: '#FF8A34' },
+  { id: 'workforce', label: 'Workforce', color: '#E95454' },
+  { id: 'state', label: 'State & local', color: '#64748B' },
 ]
 
+const CATEGORY_META: Record<RegistrationJourney['category'], { label: string; color: string; tint: string }> = {
+  foundation: { label: 'Start & Operate', color: '#059669', tint: '#ECFDF5' },
+  tax: { label: 'Tax readiness', color: '#B77900', tint: '#FFFBEB' },
+  recognition: { label: 'Government recognition', color: '#7C3AED', tint: '#F5F3FF' },
+  trade: { label: 'Trade readiness', color: '#0891B2', tint: '#ECFEFF' },
+  food: { label: 'Sector licence', color: '#EA6A10', tint: '#FFF7ED' },
+  workforce: { label: 'Workforce compliance', color: '#D13B3B', tint: '#FEF2F2' },
+  state: { label: 'Expanding coverage', color: '#64748B', tint: '#F1F5F9' },
+}
+
+function displayStage(stage: string) {
+  return stage.replace(/-/g, ' ')
+}
+
 export default function RegistrationPage() {
-  const [business, setBusiness] = useState<Record<string, string> | null>(null)
+  const [business, setBusiness] = useState<BusinessProfile>(DEFAULT_PROFILE)
   const [primaryType, setPrimaryType] = useState<RegType | null>(null)
-  const [alternatives, setAlternatives] = useState<RegType[]>([])
-  const [reasoning, setReasoning] = useState('')
-  const [selectedType, setSelectedType] = useState<RegType | null>(null)
-  const [activeTab, setActiveTab] = useState<TabKey>('most-used')
-  const [expandedDocs, setExpandedDocs] = useState(false)
-  const [platforms, setPlatforms] = useState(getSegmentedPlatforms())
+  const [filter, setFilter] = useState<JourneyFilter>('all')
+  const [selectedId, setSelectedId] = useState(NATIONAL_REGISTRATION_JOURNEYS[0]?.id ?? '')
+  const [completedSteps, setCompletedSteps] = useState<Set<string>>(new Set())
 
   useEffect(() => {
-    async function load() {
-      const supabase = createClient()
-      const { data: { user } } = await supabase.auth.getUser()
-      if (!user) return
+    const controller = new AbortController()
 
-      const { data } = await supabase
-        .from('business_profiles')
-        .select('*')
-        .eq('user_id', user.id)
-        .single()
+    async function loadBusiness() {
+      try {
+        const response = await fetch('/api/businesses/current', { cache: 'no-store', signal: controller.signal })
+        if (!response.ok) return
+        const payload = await response.json() as {
+          data?: { business?: { district?: string | null }; profile?: Record<string, unknown> }
+        }
+        const profile = payload.data?.profile
+        if (!profile) return
 
-      if (data) {
-        setBusiness(data)
-        const rec = recommendRegistrationType(
-          data.stage,
-          data.initial_capital,
-          data.founder_type,
-          data.sector
-        )
-        const primary = REGISTRATION_TYPES.find(r => r.id === rec.primary)!
-        const alts = rec.alternatives
-          .map(id => REGISTRATION_TYPES.find(r => r.id === id)!)
-          .filter(Boolean)
-
-        setPrimaryType(primary)
-        setAlternatives(alts)
-        setReasoning(rec.reasoning)
-        setSelectedType(primary)
+        const nextBusiness = { ...DEFAULT_PROFILE, ...profile, district: payload.data?.business?.district ?? '' } as BusinessProfile
+        setBusiness(nextBusiness)
+        const recommendation = recommendRegistrationType(nextBusiness.stage, nextBusiness.initial_capital, nextBusiness.founder_type, nextBusiness.sector)
+        setPrimaryType(REGISTRATION_TYPES.find((type) => type.id === recommendation.primary) ?? null)
+      } catch {
+        // The guide remains useful in preview mode when the profile API is unavailable.
       }
     }
-    load()
+
+    void loadBusiness()
+    return () => controller.abort()
   }, [])
 
-  function handlePlatformClick(platform: Platform) {
-    const utmUrl = `${platform.url}?utm_source=center&utm_medium=referral&utm_campaign=registration`
-    window.open(utmUrl, '_blank', 'noopener,noreferrer')
+  const visibleJourneys = useMemo(
+    () => filter === 'all' ? NATIONAL_REGISTRATION_JOURNEYS : NATIONAL_REGISTRATION_JOURNEYS.filter((journey) => journey.category === filter),
+    [filter],
+  )
+  const selectedJourney = NATIONAL_REGISTRATION_JOURNEYS.find((journey) => journey.id === selectedId) ?? visibleJourneys[0]
+  const completedCount = completedSteps.size
+  const totalSteps = NATIONAL_REGISTRATION_JOURNEYS.reduce((total, journey) => total + journey.steps.length, 0)
+  const profileLocation = business.district ? `${business.district}, India` : 'India-wide beta'
+
+  function toggleStep(journeyId: string, stepIndex: number) {
+    const key = `${journeyId}:${stepIndex}`
+    setCompletedSteps((current) => {
+      const next = new Set(current)
+      if (next.has(key)) next.delete(key)
+      else next.add(key)
+      return next
+    })
   }
 
-  function getTabPlatforms() {
-    if (activeTab === 'most-used') return platforms.mostUsed
-    if (activeTab === 'lowest-price') return platforms.lowestPrice
-    return platforms.topRated
-  }
-
-  if (!primaryType) {
-    return (
-      <div className="p-8 flex items-center justify-center min-h-[60vh]">
-        <div className="text-neutral-400 text-sm">Loading your recommendation...</div>
-      </div>
-    )
+  function openOfficialRoute(journey: RegistrationJourney) {
+    if (journey.officialUrl) window.open(journey.officialUrl, '_blank', 'noopener,noreferrer')
   }
 
   return (
-    <div className="p-8 max-w-4xl">
-      {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-2xl font-semibold text-neutral-900 mb-1">Registration Guide</h1>
-        <p className="text-neutral-400 text-sm">
-          Based on your business profile — {business?.sector}, {business?.stage?.replace('-', ' ')}
-        </p>
-      </div>
-
-      {/* Recommendation Banner */}
-      <div className="glass p-6 mb-5 border-neutral-200">
-        <div className="flex items-start justify-between gap-4 mb-4">
-          <div>
-            <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide mb-1">Recommended for you</div>
-            <h2 className="text-xl font-semibold text-neutral-900">{primaryType.name}</h2>
-            <p className="text-neutral-500 text-sm mt-0.5">{primaryType.tagline}</p>
+    <main className="min-h-screen px-4 py-5 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
+        <section className="relative overflow-hidden rounded-[1.75rem] border border-indigo-100 bg-gradient-to-br from-indigo-700 via-indigo-600 to-violet-600 p-6 text-white shadow-xl shadow-indigo-200 sm:p-8">
+          <div className="absolute -right-20 -top-28 h-72 w-72 rounded-full bg-orange-300/25 blur-3xl" />
+          <div className="absolute -bottom-32 left-1/3 h-64 w-64 rounded-full bg-cyan-300/20 blur-3xl" />
+          <div className="relative grid gap-8 lg:grid-cols-[1fr_360px] lg:items-end">
+            <div>
+              <div className="mb-4 flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-indigo-100"><Sparkles size={14} /> Start &amp; Operate <span className="rounded-full bg-white/15 px-2.5 py-1 tracking-normal text-white">Preparation workspace</span></div>
+              <h1 className="max-w-2xl text-3xl font-black tracking-tight sm:text-5xl">Build the right foundation.</h1>
+              <p className="mt-4 max-w-2xl text-sm leading-6 text-indigo-100 sm:text-base">A guided path through India&apos;s registrations, licences and recognition routes — with the official source, documents and next action visible at every step.</p>
+              <div className="mt-6 flex flex-wrap gap-3 text-xs font-semibold"><span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-2"><Globe2 size={14} /> Central coverage first</span><span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-2"><ShieldCheck size={14} /> Review-gated guidance</span><span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-2"><MapPin size={14} /> {profileLocation}</span></div>
+            </div>
+            <div className="rounded-2xl border border-white/20 bg-white/12 p-5 backdrop-blur-sm"><div className="flex items-center justify-between text-xs text-indigo-100"><span>Your setup progress</span><span className="font-bold text-white">{completedCount}/{totalSteps} tasks</span></div><div className="mt-3 h-2 overflow-hidden rounded-full bg-white/20"><div className="h-full rounded-full bg-orange-300 transition-all" style={{ width: `${totalSteps ? (completedCount / totalSteps) * 100 : 0}%` }} /></div><p className="mt-4 text-xs leading-5 text-indigo-100">Tick preparation tasks as you complete them. Official submission always happens on the government or bank portal.</p></div>
           </div>
-          <div className="glass px-4 py-2 text-neutral-700 text-sm font-medium shrink-0">
-            {primaryType.shortName}
-          </div>
-        </div>
+        </section>
 
-        {/* Reasoning */}
-        <div className="bg-black/4 border border-neutral-200 rounded-xl p-4 mb-5">
-          <p className="text-neutral-500 text-sm leading-relaxed">{reasoning}</p>
-        </div>
-
-        {/* Key stats */}
-        <div className="grid grid-cols-3 gap-3 mb-5">
+        <section className="mt-5 grid gap-4 sm:grid-cols-3">
           {[
-            { icon: <FileText size={14} />, label: 'Cost', value: primaryType.costRange },
-            { icon: <Clock size={14} />, label: 'Timeline', value: primaryType.timeline },
-            { icon: <FileText size={14} />, label: 'Govt Fees', value: primaryType.govtFees },
-          ].map(stat => (
-            <div key={stat.label} className="bg-black/4 border border-neutral-200 rounded-xl p-3">
-              <div className="flex items-center gap-1.5 text-neutral-400 text-xs mb-1.5">
-                {stat.icon}
-                {stat.label}
-              </div>
-              <div className="text-neutral-800 text-sm font-medium">{stat.value}</div>
+            { label: 'National journeys', value: NATIONAL_REGISTRATION_JOURNEYS.filter((journey) => journey.status === 'review-gated').length, note: 'seeded for review', icon: Landmark, color: '#3F46E8', tint: '#EEF2FF' },
+            { label: 'Official handoffs', value: NATIONAL_REGISTRATION_JOURNEYS.filter((journey) => journey.officialUrl).length, note: 'source-linked routes', icon: ExternalLink, color: '#059669', tint: '#ECFDF5' },
+            { label: 'State coverage', value: 'Expanding', note: 'shown transparently', icon: MapPin, color: '#FF8A34', tint: '#FFF7ED' },
+          ].map((stat) => <div key={stat.label} className="glass flex items-center gap-4 p-4"><div className="flex h-11 w-11 items-center justify-center rounded-2xl" style={{ backgroundColor: stat.tint, color: stat.color }}><stat.icon size={20} /></div><div><div className="text-xl font-black text-slate-900">{stat.value}</div><div className="text-xs font-semibold text-slate-600">{stat.label}</div><div className="mt-0.5 text-[11px] text-slate-400">{stat.note}</div></div></div>)}
+        </section>
+
+        <section className="mt-8 grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px]">
+          <div>
+            <div className="mb-4 flex flex-col justify-between gap-3 sm:flex-row sm:items-end"><div><p className="text-xs font-bold uppercase tracking-[0.16em] text-indigo-600">Your national setup map</p><h2 className="mt-1 text-2xl font-black tracking-tight text-slate-900">Choose what you&apos;re working on</h2><p className="mt-1 text-sm text-slate-500">Every route is preparation-first until a reviewer confirms the current official requirements.</p></div><a href="/dashboard/compliance" className="inline-flex items-center gap-1.5 text-sm font-bold text-indigo-600 hover:text-indigo-800">Open compliance tracker <ArrowRight size={15} /></a></div>
+            <div className="mb-5 flex gap-2 overflow-x-auto pb-1">{FILTERS.map((item) => <button key={item.id} onClick={() => setFilter(item.id)} className={`shrink-0 rounded-full border px-3.5 py-2 text-xs font-bold transition-all ${filter === item.id ? 'border-transparent text-white shadow-md' : 'border-slate-200 bg-white text-slate-500 hover:border-indigo-200 hover:text-indigo-700'}`} style={filter === item.id ? { backgroundColor: item.color } : undefined}>{item.label}</button>)}</div>
+            <div className="grid gap-3 sm:grid-cols-2">
+              {visibleJourneys.map((journey) => {
+                const meta = CATEGORY_META[journey.category]
+                const done = journey.steps.filter((_, index) => completedSteps.has(`${journey.id}:${index}`)).length
+                const selected = selectedJourney?.id === journey.id
+                return <button key={journey.id} onClick={() => setSelectedId(journey.id)} className={`glass group text-left p-5 transition-all ${selected ? 'ring-2 ring-indigo-400 ring-offset-2' : ''}`}><div className="flex items-start justify-between gap-3"><span className="rounded-xl p-2.5" style={{ backgroundColor: meta.tint, color: meta.color }}>{journey.category === 'foundation' ? <Building2 size={19} /> : journey.category === 'workforce' ? <Users size={19} /> : journey.category === 'state' ? <MapPin size={19} /> : <FileText size={19} />}</span><span className="rounded-full px-2 py-1 text-[10px] font-bold uppercase tracking-wide" style={{ backgroundColor: journey.status === 'expanding' ? '#F1F5F9' : '#FEF3C7', color: journey.status === 'expanding' ? '#64748B' : '#A16207' }}>{journey.status === 'expanding' ? 'Expanding' : 'Review required'}</span></div><div className="mt-4 text-base font-extrabold text-slate-900">{journey.shortTitle}</div><p className="mt-1.5 line-clamp-2 text-xs leading-5 text-slate-500">{journey.description}</p><div className="mt-4 flex items-center justify-between text-[11px] font-bold text-slate-400"><span>{done}/{journey.steps.length} preparation tasks</span><ChevronRight size={16} className="text-indigo-500 transition-transform group-hover:translate-x-1" /></div></button>
+              })}
             </div>
-          ))}
-        </div>
-
-        {/* Tax highlight */}
-        <div className="bg-black/4 border border-neutral-200 rounded-xl px-4 py-3 mb-5 flex items-center gap-2">
-          <span className="text-neutral-400 text-xs">Tax:</span>
-          <span className="text-neutral-600 text-sm">{primaryType.taxHighlight}</span>
-        </div>
-
-        {/* Pros & Cons */}
-        <div className="grid grid-cols-2 gap-3 mb-5">
-          <div>
-            <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide mb-2">Advantages</div>
-            <ul className="flex flex-col gap-2">
-              {primaryType.pros.map(p => (
-                <li key={p} className="flex items-start gap-2 text-sm text-neutral-600">
-                  <CheckCircle2 size={14} className="text-neutral-400 mt-0.5 shrink-0" />
-                  {p}
-                </li>
-              ))}
-            </ul>
           </div>
-          <div>
-            <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide mb-2">Limitations</div>
-            <ul className="flex flex-col gap-2">
-              {primaryType.cons.map(c => (
-                <li key={c} className="flex items-start gap-2 text-sm text-neutral-600">
-                  <XCircle size={14} className="text-neutral-400 mt-0.5 shrink-0" />
-                  {c}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
 
-        {/* Documents required — collapsible */}
-        <button
-          onClick={() => setExpandedDocs(d => !d)}
-          className="flex items-center gap-2 text-neutral-400 text-sm hover:text-neutral-600 transition-colors"
-        >
-          {expandedDocs ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
-          Documents required ({primaryType.documents.length})
-        </button>
-        {expandedDocs && (
-          <ul className="mt-3 grid grid-cols-2 gap-2">
-            {primaryType.documents.map(doc => (
-              <li key={doc} className="flex items-center gap-2 text-sm text-neutral-500">
-                <div className="w-1.5 h-1.5 rounded-full bg-white/25 shrink-0" />
-                {doc}
-              </li>
-            ))}
-          </ul>
-        )}
+          {selectedJourney && <aside className="glass h-fit overflow-hidden lg:sticky lg:top-5"><div className="p-5" style={{ background: `linear-gradient(135deg, ${CATEGORY_META[selectedJourney.category].tint}, #fff)` }}><div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em]" style={{ color: CATEGORY_META[selectedJourney.category].color }}><FileCheck2 size={15} /> {CATEGORY_META[selectedJourney.category].label}</div><h3 className="mt-2 text-xl font-black text-slate-900">{selectedJourney.title}</h3><p className="mt-2 text-sm leading-5 text-slate-600">{selectedJourney.whyItMatters}</p></div><div className="space-y-5 p-5"><div><div className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-slate-400"><CheckCircle2 size={14} className="text-emerald-500" /> Prerequisites</div><ul className="space-y-2">{selectedJourney.prerequisites.map((item) => <li key={item} className="flex gap-2 text-xs leading-5 text-slate-600"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />{item}</li>)}</ul></div><div><div className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-slate-400"><FileText size={14} className="text-indigo-500" /> Documents to prepare</div><ul className="space-y-2">{selectedJourney.documents.map((item) => <li key={item} className="flex gap-2 text-xs leading-5 text-slate-600"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500" />{item}</li>)}</ul></div><div><div className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-slate-400"><Clock3 size={14} className="text-orange-500" /> Preparation checklist</div><div className="space-y-2">{selectedJourney.steps.map((step, index) => { const key = `${selectedJourney.id}:${index}`; const done = completedSteps.has(key); return <button key={step} onClick={() => toggleStep(selectedJourney.id, index)} className={`flex w-full items-start gap-2.5 rounded-xl border p-2.5 text-left text-xs leading-5 transition-colors ${done ? 'border-emerald-200 bg-emerald-50 text-emerald-800' : 'border-slate-100 bg-slate-50 text-slate-600 hover:border-indigo-200'}`}><span className={`mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full border text-[10px] ${done ? 'border-emerald-500 bg-emerald-500 text-white' : 'border-slate-300 bg-white'}`}>{done && <Check size={11} />}</span>{step}</button> })}</div></div><div className="rounded-xl border border-amber-200 bg-amber-50 p-3 text-xs leading-5 text-amber-900"><span className="font-bold">Review gate:</span> {selectedJourney.reviewNote}</div><div className="flex items-center justify-between gap-3 border-t border-slate-100 pt-4"><div className="min-w-0"><div className="text-[10px] font-bold uppercase tracking-wide text-slate-400">Source</div><div className="truncate text-xs font-semibold text-slate-700">{selectedJourney.sourceLabel}</div></div><button disabled={!selectedJourney.officialUrl} onClick={() => openOfficialRoute(selectedJourney)} className="btn-accent shrink-0 px-3 py-2 text-xs disabled:cursor-not-allowed"><ExternalLink size={13} /> View official source</button></div></div></aside>}
+        </section>
+
+        <section className="mt-8 grid gap-5 lg:grid-cols-2"><div className="glass p-5 sm:p-6"><div className="flex items-start gap-3"><div className="rounded-xl bg-orange-50 p-2.5 text-orange-500"><CircleHelp size={19} /></div><div><p className="text-xs font-bold uppercase tracking-wide text-orange-600">Structure orientation</p><h2 className="mt-1 text-lg font-black text-slate-900">Start with the right entity</h2><p className="mt-1 text-sm leading-5 text-slate-500">{primaryType ? `Based on your ${displayStage(business.stage)} profile, ${primaryType.name} is the current starting point.` : 'Complete your business profile to receive an entity-structure starting point.'}</p></div></div>{primaryType && <div className="mt-4 flex items-center justify-between rounded-xl bg-orange-50 px-4 py-3"><span className="text-sm font-extrabold text-orange-900">{primaryType.shortName}</span><span className="text-xs font-semibold text-orange-700">Orientation only · verify current rules</span></div>}</div><div className="glass p-5 sm:p-6"><div className="flex items-start gap-3"><div className="rounded-xl bg-indigo-50 p-2.5 text-indigo-600"><Landmark size={19} /></div><div><p className="text-xs font-bold uppercase tracking-wide text-indigo-600">Important boundary</p><h2 className="mt-1 text-lg font-black text-slate-900">We prepare. You submit.</h2><p className="mt-1 text-sm leading-5 text-slate-500">UdyamVeda does not impersonate applicants, store passwords or OTPs, or present itself as an authorised government filing portal.</p></div></div><Link href="/dashboard/schemes" className="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-indigo-600 hover:text-indigo-800">Continue to opportunities <ArrowRight size={15} /></Link></div></section>
       </div>
-
-      {/* Alternatives */}
-      {alternatives.length > 0 && (
-        <div className="mb-8">
-          <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide mb-3">Also consider</div>
-          <div className="grid grid-cols-2 gap-3">
-            {alternatives.map(alt => (
-              <button
-                key={alt.id}
-                onClick={() => setSelectedType(alt)}
-                className={`glass text-left p-4 transition-all ${
-                  selectedType?.id === alt.id ? 'border-neutral-300 bg-black/6' : ''
-                }`}
-              >
-                <div className="flex items-center justify-between mb-2">
-                  <div className="text-neutral-700 text-sm font-medium">{alt.name}</div>
-                  <div className="text-neutral-400 text-xs">{alt.shortName}</div>
-                </div>
-                <p className="text-neutral-500 text-xs leading-relaxed">{alt.tagline}</p>
-                <div className="flex gap-3 mt-3">
-                  <span className="text-neutral-400 text-xs">{alt.costRange}</span>
-                  <span className="text-neutral-300 text-xs">·</span>
-                  <span className="text-neutral-400 text-xs">{alt.timeline}</span>
-                </div>
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* All 5 types quick reference */}
-      <div className="mb-8">
-        <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide mb-3">All registration types</div>
-        <div className="glass overflow-hidden">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-neutral-200">
-                <th className="text-left text-neutral-400 text-xs font-semibold p-4 uppercase tracking-wide">Type</th>
-                <th className="text-left text-neutral-400 text-xs font-semibold p-4 uppercase tracking-wide">Cost</th>
-                <th className="text-left text-neutral-400 text-xs font-semibold p-4 uppercase tracking-wide">Timeline</th>
-                <th className="text-left text-neutral-400 text-xs font-semibold p-4 uppercase tracking-wide">Founders</th>
-              </tr>
-            </thead>
-            <tbody>
-              {REGISTRATION_TYPES.map((type, i) => (
-                <tr
-                  key={type.id}
-                  onClick={() => setSelectedType(type)}
-                  className={`border-b border-neutral-100 last:border-0 cursor-pointer transition-all hover:bg-black/4 ${
-                    selectedType?.id === type.id ? 'bg-black/5' : ''
-                  }`}
-                >
-                  <td className="p-4">
-                    <div className={`font-medium ${selectedType?.id === type.id ? 'text-neutral-900' : 'text-neutral-600'}`}>
-                      {type.shortName}
-                    </div>
-                    {type.id === primaryType?.id && (
-                      <span className="text-[10px] text-neutral-400 bg-black/7 px-1.5 py-0.5 rounded-full ml-0 mt-1 inline-block">
-                        Recommended
-                      </span>
-                    )}
-                  </td>
-                  <td className="p-4 text-neutral-500">{type.costRange}</td>
-                  <td className="p-4 text-neutral-500">{type.timeline}</td>
-                  <td className="p-4 text-neutral-500">
-                    {type.minFounders}–{type.maxFounders ?? '∞'}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      {/* Platform Comparison */}
-      <div>
-        <div className="flex items-center justify-between mb-4">
-          <div>
-            <h3 className="text-neutral-800 font-semibold">Where to register</h3>
-            <p className="text-neutral-400 text-xs mt-0.5">Compare 20 platforms — pick what works for you</p>
-          </div>
-        </div>
-
-        {/* Tabs */}
-        <div className="flex gap-2 mb-4">
-          {TAB_LABELS.map(tab => (
-            <button
-              key={tab.key}
-              onClick={() => setActiveTab(tab.key)}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
-                activeTab === tab.key
-                  ? 'bg-black/10 text-neutral-800 border border-neutral-300'
-                  : 'text-neutral-400 hover:text-neutral-600 hover:bg-white/05'
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Platform Cards */}
-        <div className="flex flex-col gap-3">
-          {getTabPlatforms().map(platform => (
-            <div key={platform.id} className="glass p-4 flex items-center gap-4">
-              {/* Logo placeholder */}
-              <div className="w-10 h-10 rounded-xl bg-black/7 flex items-center justify-center text-lg shrink-0">
-                {platform.logo}
-              </div>
-
-              {/* Info */}
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 mb-0.5">
-                  <span className="text-neutral-800 font-medium text-sm">{platform.name}</span>
-                  <span className="text-neutral-400 text-xs">★ {platform.rating}</span>
-                  <span className="text-neutral-300 text-xs">({platform.reviewCount} reviews)</span>
-                </div>
-                <div className="flex flex-wrap gap-x-3 gap-y-0.5">
-                  {platform.highlights.map(h => (
-                    <span key={h} className="text-neutral-400 text-xs">{h}</span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Right side */}
-              <div className="flex flex-col items-end gap-2 shrink-0">
-                <div className="text-neutral-800 font-semibold text-sm">{platform.costDisplay}</div>
-                <div className="text-neutral-400 text-xs">{platform.processingDays}</div>
-                <button
-                  onClick={() => handlePlatformClick(platform)}
-                  className="flex items-center gap-1.5 btn-accent px-3 py-1.5 text-xs"
-                >
-                  Register here <ExternalLink size={11} />
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Skip CTA */}
-        <div className="mt-6 flex items-center justify-between glass p-4">
-          <div>
-            <div className="text-neutral-600 text-sm font-medium">Already registered or want to skip?</div>
-            <div className="text-neutral-400 text-xs mt-0.5">You can proceed directly to finding government schemes.</div>
-          </div>
-          <a href="/dashboard/schemes" className="btn-accent px-4 py-2 text-sm">
-            Go to Schemes →
-          </a>
-        </div>
-      </div>
-
-      {/* Sector compliance checklist */}
-      {business && (() => {
-        const sectorItems = filterCompliance(COMPLIANCE_ITEMS, {
-          sector: business.sector ?? '',
-          stage: business.stage ?? '',
-        })
-        const criticalItems = sectorItems.filter(i => i.priority === 'critical' || i.priority === 'high')
-
-        return (
-          <div className="mt-10">
-            <div className="flex items-center justify-between mb-4">
-              <div>
-                <h3 className="text-neutral-800 font-semibold">Your compliance checklist</h3>
-                <p className="text-neutral-400 text-xs mt-0.5">
-                  {criticalItems.length} critical compliance items for a {business.sector} business in {business.stage?.replace(/-/g, ' ')} stage
-                </p>
-              </div>
-              <a href="/dashboard/compliance" className="flex items-center gap-1.5 text-sm text-neutral-500 hover:text-neutral-700 transition-colors">
-                Track progress <ArrowRight size={13} />
-              </a>
-            </div>
-
-            <div className="flex flex-col gap-2">
-              {criticalItems.slice(0, 8).map(item => (
-                <div key={item.id} className="glass p-4 flex items-start justify-between gap-4">
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-0.5 flex-wrap">
-                      <span className="text-neutral-700 font-medium text-sm">{item.name}</span>
-                      <span className={`text-[10px] px-2 py-0.5 rounded-full font-semibold uppercase tracking-wide ${
-                        item.priority === 'critical' ? 'bg-black/10 text-neutral-600' : 'bg-black/6 text-neutral-400'
-                      }`}>
-                        {item.priority === 'critical' ? 'Critical' : 'Important'}
-                      </span>
-                    </div>
-                    <p className="text-neutral-400 text-xs leading-relaxed">{item.description.slice(0, 100)}...</p>
-                    <div className="flex gap-3 mt-1.5 text-xs text-neutral-400">
-                      <span>Cost: {item.cost}</span>
-                      <span>·</span>
-                      <span>{item.timeline}</span>
-                    </div>
-                  </div>
-                  <a
-                    href={item.officialUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="shrink-0 flex items-center gap-1.5 text-xs text-neutral-400 hover:text-neutral-700 border border-neutral-200 hover:border-neutral-300 px-3 py-1.5 rounded-lg transition-all"
-                  >
-                    Portal <ExternalLink size={10} />
-                  </a>
-                </div>
-              ))}
-            </div>
-
-            {criticalItems.length > 8 && (
-              <a href="/dashboard/compliance"
-                className="mt-3 flex items-center justify-center gap-2 text-sm text-neutral-500 hover:text-neutral-700 transition-colors py-3">
-                View all {criticalItems.length} compliance items <ArrowRight size={13} />
-              </a>
-            )}
-          </div>
-        )
-      })()}
-    </div>
+    </main>
   )
 }

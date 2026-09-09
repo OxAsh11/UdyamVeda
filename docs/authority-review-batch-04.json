@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-09-08",
+  "sourceBaseline": "docs/igod-coverage-baseline.json",
+  "purpose": "Evidence pack for the fourth bounded manual review batch. These are proposed relevance decisions only and do not alter the terminal IGOD assessment state or authorize publication.",
+  "reviewStatus": "pending_human_approval",
+  "terminalAssessmentWritesAllowed": false,
+  "rows": [
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Coal",
+      "authorityUrl": "https://coal.nic.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://coal.gov.in/sites/default/files/2026-07/07-07-2026-rpf.pdf",
+      "evidenceAnchor": "2026 RFP for surface coal/lignite gasification projects: eligible companies, JVs and consortia, project conditions, incentive caps, securities, and milestone release",
+      "rationale": "The ministry publishes industrial project-finance and gasification incentive routes directly relevant to large businesses, infrastructure developers, and industrial consortia."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Petroleum and Natural Gas (MoPNG)",
+      "authorityUrl": "https://mopng.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://mopng.gov.in/files/natural-gas/policies-and-guidelines/Revised-scheme-guideline.pdf",
+      "evidenceAnchor": "Revised CBG Biomass Aggregation Machinery guideline: eligible CBG producers, GOBARdhan registration, machinery assistance, application window, verification, and reporting",
+      "rationale": "MoPNG publishes CBG, bioenergy, alternative-fuel, and energy-infrastructure routes for project developers and operating businesses."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Ports, Shipping and Waterways (MoPSW)",
+      "authorityUrl": "https://shipmin.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://shipmin.gov.in/guideline/guidelines-shipping",
+      "evidenceAnchor": "Shipping guidelines overview: Shipbuilding Development Scheme, Shipbuilding Financial Assistance, risk coverage, and related implementation routes",
+      "rationale": "The ministry publishes shipbuilding, maritime infrastructure, risk-coverage, and capital-assistance routes affecting industrial businesses and shipyards."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Railways (MoR)",
+      "authorityUrl": "https://indianrailways.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://indianrailways.gov.in/railwayboard/uploads/directorate/secretary_branches/IR_Reforms/Innovation%20in%20Indian%20Railways%20.pdf",
+      "evidenceAnchor": "Indian Railways innovation ecosystem overview: technology, operations, commercial, IT, and startup-collaboration opportunity areas",
+      "rationale": "Railways provides procurement, vendor registration, innovation, and startup market-access routes that are directly relevant to suppliers and technology businesses."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Defence (MoD)",
+      "authorityUrl": "https://www.mod.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://drdo.gov.in/drdo/en/offerings/schemes-and-services/startups-support",
+      "evidenceAnchor": "DRDO startup support: Technology Development Fund and related defence-technology development route for startups and MSMEs",
+      "rationale": "The ministry portfolio includes defence innovation, technology development, procurement, and startup/MSME industrial-participation routes."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Culture",
+      "authorityUrl": "https://culture.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://culture.gov.in/cultural-function-and-production-grant-cfpg",
+      "evidenceAnchor": "Cultural Function and Production Grant: eligible cultural organisations, rolling submission, prescribed documents, committee selection, and reporting",
+      "rationale": "The ministry publishes institutional cultural-support routes relevant to eligible creative organisations, venues, producers, and cultural enterprises, while excluding ordinary commercial startups where the scheme does so."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Tribal Affairs (MoTA)",
+      "authorityUrl": "https://tribal.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://tribal.gov.in/Livelihood.aspx",
+      "evidenceAnchor": "Pradhan Mantri Janjatiya Vikas Mission route: tribal producer groups, value-chain support, TRIFED/Van Dhan and livelihood-enterprise context",
+      "rationale": "The ministry publishes tribal livelihood, producer-organisation, artisan, value-chain, and enterprise-support routes for tribal founders and collectives."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Minority Affairs (MoMA)",
+      "authorityUrl": "https://minorityaffairs.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://minorityaffairs.gov.in/WriteReadData/RTF1984/1953017398.pdf",
+      "evidenceAnchor": "NMDFC scheme booklet: term-loan, micro-finance, artisan, beneficiary, channel-partner, and income-eligibility routes",
+      "rationale": "The ministry portfolio includes targeted credit and livelihood routes for eligible minority entrepreneurs, artisans, self-help groups, and enterprises."
+    }
+  ]
+}

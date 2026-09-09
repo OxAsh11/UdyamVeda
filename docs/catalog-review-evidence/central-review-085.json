@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-085",
+  "authority": "Office of the Development Commissioner (MSME) - Innovative, Ministry of MSME",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records current first-party observations for reviewer use. It does not guarantee a grant, reimbursement, incubation admission, design approval, IPR reimbursement, Idea Hackathon selection or applicant eligibility, and it does not authorize UdyamVeda to submit an application or handle credentials and OTPs.",
+  "sourcePolicy": "The official MSME Innovative portal, its Design and IPR routes, the official MSME Innovative guideline, the official MyMSME incubation route and the Ministry RAMP description are primary or first-party sources for discovery and cross-checking. Component-specific eligibility, ceilings, eligible costs, current calls and amendments require human review before publication.",
+  "records": [
+    {
+      "slug": "msme-innovative-incubation-design-ipr",
+      "sourceUrl": "https://innovative.msme.gov.in/",
+      "supportingSources": [
+        { "url": "https://innovative.msme.gov.in/Home/About", "anchor": "Official Ministry of MSME description of the unified MSME Innovative framework combining Incubation, Design and IPR." },
+        { "url": "https://innovative.msme.gov.in/Home/", "anchor": "Current official portal: Idea Hackathon 6.0 host-institute instruction is displayed; the portal also links the scheme guideline and component routes." },
+        { "url": "https://innovative.msme.gov.in/Home/Index", "anchor": "Current official Design route: up to INR 40 lakh financial assistance is advertised and the route requires or directs the user toward Udyam registration." },
+        { "url": "https://innovative.msme.gov.in/Home/IprIndex", "anchor": "Current official IPR route: patent, GI, trademark and design-patent reimbursement routes are exposed, with applicant and reimbursement conditions remaining component-specific." },
+        { "url": "https://innovative.msme.gov.in/Documents/FinalGuidelines_MSME_Innovative.pdf", "anchor": "Official guideline: Incubation, Design and IPR operate as separate verticals with interoperability; standalone and combined paths are permitted subject to the respective component guidelines." },
+        { "url": "https://www.my.msme.gov.in/inc/Default.aspx", "anchor": "Official MyMSME incubation route with Host Institute/Business Incubator instructions and Idea Hackathon materials." },
+        { "url": "https://ramp.msme.gov.in/ramp/RAMP-initiative/msme-innovative/msme-innovative", "anchor": "Official Ministry RAMP description of the unified Incubation, Design and IPR framework; it is supporting description, not a substitute for the controlling guideline." }
+      ],
+      "sourceKind": "official_msme_innovative_portal_component_and_guideline_cross_check",
+      "sourceAnchor": "MSME Innovative official portal, Design and IPR component pages, scheme guideline sections 1-3 and 7, and current incubation route",
+      "observations": [
+        "MSME Innovative unifies Incubation, Design and IPR, but the official guideline keeps the three verticals component-specific and permits only the combinations allowed by the respective component rules.",
+        "The current official portal displays Idea Hackathon 6.0 host-institute instructions. Existing controlled evidence records a 7 September 2026 Host Institute forwarding deadline as closed on this audit date; the deadline and any successor notice must be rechecked from the live route before publication.",
+        "The current Design page advertises up to INR 40 lakh financial assistance and directs applicants toward an Udyam-registration route. This is not a universal benefit: eligible project costs, applicant class, contribution and component conditions remain controlling.",
+        "The current IPR page exposes separate reimbursement routes for patents, geographical indications, trademarks and design patents. Reimbursement ceilings and applicant conditions must be read from the applicable guideline and current route; they must not be combined into one value.",
+        "The incubation route is Host Institute/Business Incubator-led. The current MyMSME route exposes Host Institute instructions and Idea Hackathon materials, so an individual founder should not be shown a direct personal grant route without a qualifying component and implementing route.",
+        "The official guideline supports standalone Incubation, Design or IPR applications and certain sequential or combined paths, but each path retains its own eligibility, benefit, document, completion and reporting conditions.",
+        "UdyamVeda may explain the components, test business facts, prepare a checklist and hand off to the official route. It must not submit on behalf of the applicant, store portal credentials or OTPs, or treat portal availability as approval."
+      ],
+      "reviewFollowUps": [
+        "Capture and hash the current official portal, Design page, IPR page, MyMSME incubation route and current component notices when Firecrawl credits are available.",
+        "Confirm the controlling guideline version, amendments and current component-specific applicant categories before publication.",
+        "Reconcile the Design assistance ceiling, matching/contribution conditions, eligible costs, Udyam requirement and project-selection process against the current official form or notice.",
+        "Reconcile each IPR reimbursement category, ceiling, filing/registration condition, eligible cost, claim timing and required proof; keep patent, GI, trademark and design benefits separate.",
+        "Verify the current Idea Hackathon window, Host Institute route, approved-idea instructions, documents, evaluation and disbursement conditions.",
+        "Confirm whether current component routes are rolling, notice-based or closed; do not infer a universal deadline from the landing page.",
+        "Obtain human reviewer approval for source, eligibility, benefit, application, window, fine print, amendment and factual accuracy before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source", "eligibility", "benefit", "application", "window", "fine_print", "amendment", "current_terms", "reviewer_decision"],
+    "reason": "Official sources support the component structure and current portal routes, but fresh snapshot capture, current notices, component-specific eligibility, financial conditions, window status and human factual review remain outstanding."
+  }
+}

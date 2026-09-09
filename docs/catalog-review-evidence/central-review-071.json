@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-071",
+  "authority": "Ministry of Micro, Small and Medium Enterprises - MSME Samadhaan",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party delayed-payment, ODR and MSEFC route observations for reviewer use. It does not decide legal limitation, merits, jurisdiction, interest, recovery, settlement, or the outcome of a filed case.",
+  "sourcePolicy": "The current Ministry RAMP page, official MSME ODR portal and seller route, official ODR guideline, Ministry Annual Report 2025-26, and the official Samadhaan portal are primary. State MSEFC rules, notices and contact routes must be added only from reviewed State source packs.",
+  "records": [
+    {
+      "slug": "msme-samadhaan-delayed-payment-assistance",
+      "sourceUrl": "https://ramp.msme.gov.in/ramp/RAMP-initiative/msme-samadhaan/msme-samadhaan",
+      "supportingSources": [
+        {
+          "url": "https://odr.msme.gov.in/",
+          "anchor": "Current official MSME ODR portal: digital dispute avoidance, containment and resolution for delayed-payment disputes, with MSEFC and Samadhaan links"
+        },
+        {
+          "url": "https://odr.msme.gov.in/seller/",
+          "anchor": "Current official claimant/seller login: Udyam Registration Number, password, captcha and OTP route"
+        },
+        {
+          "url": "https://odr.msme.gov.in/assets/pdf/MSE_Scheme_on_ODR_for_Delayed_Payment_Guidelines.pdf",
+          "anchor": "Official ODR guideline: pre-MSEFC stage, 15-day process, possible consent-based extension, buyer communication and delayed-payment application flow"
+        },
+        {
+          "url": "https://msme.gov.in/sites/default/files/MSMEANNUALREPORT2025-26ENGLISH_0.pdf",
+          "anchor": "MSME Annual Report 2025-26: new delayed-payment cases on MSME ODR from 15 October 2025 and integration with Samadhaan"
+        },
+        {
+          "url": "https://samadhaan.msme.gov.in/",
+          "anchor": "Official Samadhaan portal reference and integration handoff"
+        }
+      ],
+      "sourceKind": "official_msme_samadhaan_odr_msefc_cross_check",
+      "sourceAnchor": "Current Ministry eligibility, ODR-first filing route, statutory MSEFC context and ODR process terms reconciled for review",
+      "observations": [
+        "The current Ministry page states that the MSMED Act, 2006 contains delayed-payment provisions in Sections 15-24, and that State Governments establish MSEFCs for delayed-payment references and disputes under Sections 20-21.",
+        "The current Ministry page identifies a micro or small enterprise with valid Udyam Registration as the applicant boundary. This is not a general delayed-invoice recovery service for medium enterprises or unregistered businesses.",
+        "The Ministry Annual Report 2025-26 records that new delayed-payment cases are being filed on the MSME ODR Portal from 15 October 2025 and that ODR is being integrated with Samadhaan. The user-facing route should therefore be ODR-first, with the Samadhaan handoff verified at filing time.",
+        "The official ODR guideline describes a pre-MSEFC stage intended to complete within 15 days, with a consent-based continuation that can extend the process by up to another 15 days. This process duration must remain separate from the separate Ministry statement about MSEFC registration within 15 days.",
+        "MSEFC may issue directions for payment of the amount due together with applicable interest under the MSMED Act. This opportunity is assistance with a statutory dispute/recovery route; it provides no grant or loan, subsidy, tax benefit, guaranteed recovery amount, or guaranteed resolution timeline.",
+        "UdyamVeda may organize invoice, buyer, delivery and correspondence evidence and explain the official handoff. It must not store portal passwords or OTPs, determine legal merits or limitation, file as the claimant, provide legal representation, or impersonate the ODR/MSEFC institution."
+      ],
+      "reviewFollowUps": [
+        "Confirm the live ODR seller handoff, current portal fields, consent/terms, document upload rules and Samadhaan integration before recommending a filing.",
+        "Verify the claimant's Udyam status, enterprise classification, buyer relationship, invoice/delivery evidence, payment-delay chronology and applicable State MSEFC route.",
+        "Keep the ODR pre-MSEFC 15-day process, any consent-based extension, and the separate MSEFC registration statement in distinct evidence fields and user explanations.",
+        "Add State MSEFC contacts, grievance routes, jurisdiction and any State-specific procedure only after reviewed State source packs are available.",
+        "Obtain human reviewer approval for source, eligibility, benefit, application, window, fine print, amendment, current terms and factual accuracy before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "The official sources confirm the MSEFC/ODR route and applicant boundary, but the live filing handoff, State jurisdiction, evidence checklist, procedure/limitation treatment and current portal terms require human review before publication."
+  }
+}

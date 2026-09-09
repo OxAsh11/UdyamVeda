@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-015",
+  "authority": "Defence Research and Development Organisation - Technology Development Fund",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "DRDO and Technology Development Fund official FAQ, portal and operating-procedure sources only; third-party claims are excluded.",
+  "records": [
+    {
+      "slug": "drdo-technology-development-fund-startup-msme",
+      "sourceUrl": "https://tdf.drdo.gov.in/faq",
+      "supportingSources": [
+        {
+          "url": "https://tdf.drdo.gov.in/faq",
+          "anchor": "FAQ: scheme purpose, project cost and duration, eligible entities, ownership, application, startup/MSME recognition, funding milestones and selection boundaries"
+        },
+        {
+          "url": "https://tdf.drdo.gov.in/",
+          "anchor": "Official TDF portal for current project availability and application route"
+        },
+        {
+          "url": "https://tdf.drdo.gov.in/public/innovator/register",
+          "anchor": "Official industry/innovator registration route"
+        },
+        {
+          "url": "https://www.drdo.gov.in/drdo/sites/default/files/inline-files/SOP_TDF24102024.pdf",
+          "anchor": "Seeded official operating-procedure reference for EOI, DPR, evaluation, agreement, milestones and project terms; current URL and revision require reconciliation"
+        }
+      ],
+      "sourceKind": "official_faq_portal_registration_and_operating_procedure",
+      "sourceAnchor": "TDF purpose, project cost ceiling, typical duration, applicant entities, resident-Indian control, online application and milestone funding",
+      "observations": [
+        "The official FAQ describes TDF as a Ministry of Defence programme executed by DRDO to develop defence and dual-use technologies that are not currently available with Indian industry or have not yet been developed.",
+        "The FAQ states that the project must develop a technology or prototype with potential use for the Services, with total development cost across required phases not exceeding ₹10 crore and a typical development period not exceeding two years. These are scheme-level reference limits and still require reconciliation with the project notice and current operating procedure.",
+        "Eligible forms include proprietorships, partnerships, LLPs and private limited companies owned and controlled by resident Indian citizens. The FAQ also permits specified consortium/association routes and states that foreign investment or partnership must not exceed 49% under the published criteria.",
+        "Non-profits are not eligible. Where educational or research institutions participate, the FAQ limits their involvement to 40% and requires the industry applicant to be the lead agency.",
+        "Applications are submitted online. The applicant entity must already be founded and registered as industry in the portal, with MSME or Startup India recognition evidence required for that registration. The FAQ states that DRDO/DTDF does not charge an application or award fee.",
+        "Funding is project-specific and milestone-controlled. The FAQ describes an initial 20% grant release followed by reimbursement of costs across five milestones for the remaining 80% under one release option; submission, EOI or DPR does not guarantee an award.",
+        "The official portal material currently requires a live project or DefProc notice to be confirmed before actioning. Search-indexed project pages show 2026 project notices with April 2026 deadlines, while the portal disclaimer directs applicants to confirm dates and terms on the official procurement route. As of 8 September 2026, the record should remain paused until a current project window is directly verified."
+      ],
+      "reviewFollowUps": [
+        "Reconcile the current TDF project list and DefProc notices, including whether any project is open after the displayed 2026 deadlines and the exact current submission URL.",
+        "Verify the current operating-procedure revision, project cost ceiling, funding percentage, matching contribution, eligible cost heads, milestone release, cost/time overrun and recovery conditions.",
+        "Extract the current EOI, PDD/DPR, financial, security, IP, testing, NDA and agreement documents, including consortium limits and research-institution participation rules.",
+        "Keep TDF distinct from iDEX ADITI, Open Challenge, procurement and feasibility-study routes; a feasibility submission or own-innovation proposal does not guarantee a project award."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment"
+    ],
+    "reason": "TDF has strong official eligibility and funding evidence, but project-level calls, current deadlines, operating-procedure revision and exact funding conditions control access. The record must remain paused and review-gated until the current DefProc/TDF route is confirmed."
+  }
+}

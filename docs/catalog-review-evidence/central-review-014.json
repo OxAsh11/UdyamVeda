@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-014",
+  "authority": "Department of Defence Production",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "Department of Defence Production official scheme documents and event-proposal materials only; third-party claims are excluded.",
+  "records": [
+    {
+      "slug": "scheme-for-promotion-of-msmes-in-defence",
+      "sourceUrl": "https://www.ddpmod.gov.in/sites/default/files/2e7aaf1bd5030bd12ef5e83c096ef5bca4dc3aac2c4b7f55013996b6cbc75239/4ac52b4c9f672575ba175be70bcc2be4f5b96d9614b2e2081ee88cfccb809c87.pdf",
+      "supportingSources": [
+        {
+          "url": "https://www.ddpmod.gov.in/sites/default/files/2e7aaf1bd5030bd12ef5e83c096ef5bca4dc3aac2c4b7f55013996b6cbc75239/4ac52b4c9f672575ba175be70bcc2be4f5b96d9614b2e2081ee88cfccb809c87.pdf",
+          "anchor": "Pages 1-3: objectives, scope, operationalisation, eligible agencies, sanction criteria and event-funding norms; page 4: FY 2026-27 event proposal form"
+        },
+        {
+          "url": "https://ddpmod.gov.in/",
+          "anchor": "Department of Defence Production official portal for current notices and proposal-route confirmation"
+        }
+      ],
+      "sourceKind": "official_scheme_document_and_current_event_proposal_form",
+      "sourceAnchor": "Scheme for Promotion of MSMEs in Defence, operationalisation, eligible agencies, sanction criteria, funding and FY 2026-27 event proposal form",
+      "observations": [
+        "The scheme is designed to bring MSMEs into the defence supply chain through conclaves, workshops, vendor-development meets, seminars, exhibitions and site visits, including outreach in Tier II and Tier III cities.",
+        "The support is primarily ecosystem and event access: awareness of Defence Procurement Procedure and Make II opportunities, connections with OEMs, DPSUs and OFB, procurement relaxations, funding mechanisms and possible common testing facilities. It is not a general cash grant for an ordinary MSME's working capital or product development.",
+        "The event-management route may be through the government route or private-sector proposals. Eligible agencies include the Defence Exhibition Organisation, leading think tanks, industry associations, local industry chambers, NSIC and other agencies or entities recommended by the relevant department.",
+        "Sanction is based on impact assessment, including catchment area, number of MSME units, defence items targeted, proposer outreach, regional geo-demographic potential and existing infrastructure.",
+        "The document states Government of India funding with maximum event sponsorship of ₹3 lakh for national-level events and ₹1.5 lakh for state-level events, subject to the scheme's proposal and approval route. These are event sponsorship ceilings, not per-MSME benefits.",
+        "The same official document includes a proposal form for FY 2026-27, but the form does not by itself establish an open deadline, automatic sanction, applicant fee, reimbursement schedule or individual MSME entitlement. The opportunity should remain review-gated and be shown as an event or institutional market-access route."
+      ],
+      "reviewFollowUps": [
+        "Verify the current FY 2026-27 submission deadline, receiving authority, required proposal attachments, event calendar and whether proposals are invited continuously or only through specific calls.",
+        "Confirm whether private establishments and industry associations receive sponsorship directly, how eligible costs and release/reimbursement are handled, and whether utilization or audit documents are required.",
+        "Keep event sponsorship, event participation, defence procurement access and any separate technology-development or financing programme as distinct benefits.",
+        "Do not recommend the scheme as a direct grant unless the business itself is an eligible event-proposing agency or is participating through a documented approved event."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment"
+    ],
+    "reason": "The official document supports a defence-MSME outreach and event-sponsorship route, including a FY 2026-27 proposal form, but does not prove a universal direct MSME grant or an open deadline. Current submission, approval, reimbursement and participant boundaries require human review before publication."
+  }
+}

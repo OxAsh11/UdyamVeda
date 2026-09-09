@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-09-08",
+  "sourceBaseline": "docs/igod-coverage-baseline.json",
+  "purpose": "Evidence pack for the sixth bounded manual review batch. These are proposed relevance decisions only and do not alter the terminal IGOD assessment state or authorize publication.",
+  "reviewStatus": "pending_human_approval",
+  "terminalAssessmentWritesAllowed": false,
+  "rows": [
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Civil Aviation (MoCA)",
+      "authorityUrl": "https://www.civilaviation.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://www.civilaviation.gov.in/sites/default/files/2024-04/PLI%20Scheme%20Drones%20and%20Drone%20Components.pdf",
+      "evidenceAnchor": "Drone and drone-component PLI notification: eligible manufacturers, target segments, value-addition, sales thresholds, claim period and incentive cap; current route is retained as historical/closed context",
+      "rationale": "The ministry portfolio includes aviation and drone-sector industrial policy, certification and market-development routes relevant to manufacturers, technology companies and aviation-service businesses."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Communications (MoC)",
+      "authorityUrl": "https://www.dot.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://www.dot.gov.in/static/uploads/2025/07/2f60438eb0a477fabf48adb932863d0.pdf",
+      "evidenceAnchor": "Department of Telecommunications DCIS revised guidelines: startup/MSME innovation route, implementation framework, eligibility, evaluation, support and stated scheme period",
+      "rationale": "The ministry portfolio includes telecom innovation, testing, certification, manufacturing, digital-communication and startup/MSME market-access routes."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Consumer Affairs, Food and Public Distribution (MoCAFP)",
+      "authorityUrl": "https://consumeraffairs.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://consumeraffairs.gov.in/pages/legal-metrology-act",
+      "evidenceAnchor": "Legal Metrology Act and rules index: packaged-commodities registration, importer registration, model approval, amendments and official submission routes",
+      "rationale": "The ministry portfolio includes mandatory product, packaging, weights-and-measures and consumer-facing compliance routes that affect manufacturers, packers, importers and retailers."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of New and Renewable Energy (MNRE)",
+      "authorityUrl": "https://mnre.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://mnre.gov.in/en/pradhan-mantri-kisan-urja-suraksha-evam-utthaan-mahabhiyaan-pm-kusum/",
+      "evidenceAnchor": "PM-KUSUM official scheme page: component structure, stakeholder roles, implementation boundary and renewable-energy deployment route; continuation and state window require current verification",
+      "rationale": "The ministry publishes renewable-energy deployment, equipment, project, state-implementation and clean-energy business routes relevant to energy enterprises and project developers."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Power",
+      "authorityUrl": "https://powermin.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://adeetie.beeindia.gov.in/adeetie-scheme",
+      "evidenceAnchor": "BEE ADEETIE scheme page: eligible MSME sectors and clusters, interest-subvention structure, energy-savings condition and implementation period",
+      "rationale": "The ministry portfolio includes energy-efficiency finance and deployment routes that directly affect Udyam-registered MSMEs modernising plant, equipment and energy use."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Steel (MoS)",
+      "authorityUrl": "https://steel.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://steel.gov.in/pli",
+      "evidenceAnchor": "Specialty Steel PLI official page: scheme status, product segments, application/selection rounds, MoU context and incentive-claim boundary",
+      "rationale": "The ministry publishes industrial production, investment, product qualification and PLI routes relevant to steel producers, processors and qualifying industrial businesses."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Agricultural Research and Education (DARE)",
+      "authorityUrl": "https://dare.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://www.ivri.nic.in/Rabi/navodaya.aspx",
+      "evidenceAnchor": "ICAR-IVRI RKVY-RAFTAAR NAVODAYA route: agripreneurship orientation, participating R-ABI pathway, eligibility, cohort selection and stated support; named cohort status requires live verification",
+      "rationale": "The department-linked ICAR ecosystem provides agriculture and allied-sector research, incubation and agripreneurship routes relevant to founders and startups."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Chemicals and Petro-Chemicals (DoCP)",
+      "authorityUrl": "https://chemicals.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://chemicals.gov.in/chemicals-promotion-development-scheme",
+      "evidenceAnchor": "Chemicals Promotion and Development Scheme: industry-association and eligible-organisation route, activity categories, proposal/application references and grant-in-aid conditions",
+      "rationale": "The department publishes sector-promotion, industrial association, chemicals and petrochemicals capability-development routes relevant to industry bodies and businesses in the sector."
+    }
+  ]
+}

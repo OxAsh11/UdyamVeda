@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-039",
+  "authority": "Ministry of Ports, Shipping and Waterways (MoPSW)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "The Ministry's current Shipping Guidelines index and the component-specific SbDS/SBFAS guidelines are primary. Greenfield cluster, brownfield expansion, risk coverage and vessel-contract assistance remain separate records because they have different beneficiaries, application routes and benefit mechanics. UdyamVeda prepares evidence but does not certify DPRs, domestic content, insurance coverage or Government approvals.",
+  "records": [
+    {
+      "slug": "shipbuilding-development-scheme-greenfield-cluster",
+      "sourceUrl": "https://shipmin.gov.in/sites/default/files/Annexure%203%20Greenfield%20guidelines.pdf",
+      "supportingSources": [
+        {"url":"https://shipmin.gov.in/en/content/guidelines-greenfield-shipbuilding-cluster-development-under-shipbuilding-development-scheme","anchor":"Official Ministry page for Greenfield Shipbuilding Cluster Development under SbDS"},
+        {"url":"https://shipmin.gov.in/en/orders/guideline","anchor":"Official Ministry guidelines index listing current Greenfield, Brownfield and Risk Coverage guidelines"},
+        {"url":"https://shipmin.gov.in/guideline/guidelines-shipping","anchor":"Official current Shipping Guidelines overview"}
+      ],
+      "sourceKind": "official_mopsw_sbds_greenfield_index_cross_check",
+      "sourceAnchor": "SPV/State-Centre or Central-entity route, eligible shared cluster infrastructure, DPR, approval, capital assistance and monitoring",
+      "observations": [
+        "The record is an institutional greenfield shipbuilding-cluster route, not an ordinary standalone startup or shipyard grant.",
+        "The seed distinguishes eligible SPV/Central-entity structures, anchor shipyard responsibilities, common maritime/landside infrastructure, DPR and National Shipbuilding Mission/implementation-agency approvals.",
+        "The Ministry guideline and seed preserve a validity boundary for applications approved from 24 September 2025 through 31 March 2036, but that period does not establish a live project intake or guarantee sanction.",
+        "Capital assistance is limited to eligible items and is conditional on approval, KPIs, climate resilience, insurance, utilization and quarterly reporting; scheme-level or cluster-level amounts are not an individual company entitlement."
+      ],
+      "reviewFollowUps": [
+        "Verify the current SPV composition, eligible location, State/Centre contribution, anchor-shipyard role and implementation agency.",
+        "Confirm the current DPR format, eligible-item schedule, capital-assistance rate, sanction authority, tranche rules and budget availability.",
+        "Check KPI, environmental, climate-resilience, insurance, procurement, utilization and quarterly-reporting obligations.",
+        "Obtain an authorized reviewer decision before presenting this route to a private business or publishing any amount."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "shipbuilding-development-scheme-brownfield-capacity-expansion",
+      "sourceUrl": "https://shipmin.gov.in/sites/default/files/Annexure%204%20Brownfield_V23%20%282%29_0.pdf",
+      "supportingSources": [
+        {"url":"https://shipmin.gov.in/en/content/guidelines-brownfield-capacity-expansion-under-shipbuilding-development-scheme-sbds","anchor":"Official Ministry page for Brownfield Capacity Expansion under SbDS"},
+        {"url":"https://shipmin.gov.in/en/orders/guideline","anchor":"Official Ministry guidelines index and publication dates"},
+        {"url":"https://shipmin.gov.in/guideline/guidelines-shipping","anchor":"Official current Shipping Guidelines overview"}
+      ],
+      "sourceKind": "official_mopsw_sbds_brownfield_index_cross_check",
+      "sourceAnchor": "Existing Indian shipyard, three-year operating-history condition, 25% approved project-cost grant, financial closure and four tranches",
+      "observations": [
+        "The Brownfield record is for an existing Indian shipyard expanding or modernizing eligible shipbuilding/repair capacity; it is separate from greenfield cluster development.",
+        "The seed captures the 25% approved-project-cost boundary, an implementation overview cap of up to Rs 1,500 crore per shipyard, four tranche percentages and the requirement for complete financial closure before the first tranche.",
+        "The validity boundary through 31 March 2036 is a scheme approval boundary, not proof that every shipyard can apply or that funds are available without appraisal.",
+        "The grant is conditional on Schedule I eligibility, DPR approval, monitoring, utilization, milestone and completion certification; the cap and grant rate are not automatic sanction."
+      ],
+      "reviewFollowUps": [
+        "Verify the three-year operating-history test, Indian entity status, Schedule I eligible costs and current project-intake route.",
+        "Confirm approved project cost, cap, grant calculation, financial-closure evidence and 15/30/35/20 tranche triggers.",
+        "Check IA/NSbM appraisal, third-party monitoring, utilization certificates, completion certificate and recovery/adjustment conditions.",
+        "Obtain an authorized reviewer decision before displaying a grant estimate or treating the route as actionable."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "shipbuilding-development-scheme-risk-coverage",
+      "sourceUrl": "https://shipmin.gov.in/sites/default/files/Annexure%202%20Credit%20risk%20coverage%20guidelines_0.pdf",
+      "supportingSources": [
+        {"url":"https://shipmin.gov.in/en/content/guidelines-shipbuilding-risk-coverage-under-shipbuilding-development-scheme-sbds-0","anchor":"Official Ministry page for SbDS Shipbuilding Risk Coverage"},
+        {"url":"https://www.shipmin.gov.in/sites/default/files/Annexure%202%20Credit%20risk%20coverage%20guidelines.pdf","anchor":"Official risk-coverage guideline: validity, nominated agencies and coverage types"},
+        {"url":"https://shipmin.gov.in/en/orders/guideline","anchor":"Official Ministry guidelines index"}
+      ],
+      "sourceKind": "official_mopsw_sbds_risk_coverage_index_cross_check",
+      "sourceAnchor": "Pre-shipment, post-shipment and vendor-default risk coverage, nominated Credit Risk Cover Agencies and Sagarmala implementation route",
+      "observations": [
+        "The Risk Coverage record is an insurance/risk-mitigation route, not a direct grant, loan, equity investment or unconditional Government guarantee.",
+        "The guideline identifies pre-shipment, post-shipment and vendor-default risks and states that Government-nominated Credit Risk Cover Agencies design/administer the relevant products.",
+        "The seed identifies Sagarmala Financial Corporation Limited as implementation agency and preserves the 24 September 2025 to 31 March 2036 validity boundary.",
+        "Coverage depends on a live approved product, policy wording, premium, deductible, exclusions, security, claim process and project/contract terms; qualifying for another SbDS component does not create automatic coverage."
+      ],
+      "reviewFollowUps": [
+        "Verify the currently nominated Credit Risk Cover Agency, live product, policy wording, premium, deductible, exclusions and limits.",
+        "Classify the exposure as pre-shipment, post-shipment or vendor default and confirm the eligible contract/project and insured party.",
+        "Check underwriting, security, claim, audit, reporting and implementation-agency documents before recommending.",
+        "Keep risk coverage separate from grants, loans and revenue protection; obtain an authorized reviewer decision."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "shipbuilding-financial-assistance-scheme-sbfas",
+      "sourceUrl": "https://shipmin.gov.in/sites/default/files/Modified%20Guidelines%20for%20implementation%20of%20Shipbuilding%20Financial%20Assistance%20Scheme%20%28SBFAS%29_0.pdf",
+      "supportingSources": [
+        {"url":"https://shipmin.gov.in/en/content/modified-guidelines-implementation-shipbuilding-financial-assistance-scheme-sbfas-0","anchor":"Official Ministry page for modified SBFAS guidelines"},
+        {"url":"https://shipmin.gov.in/en/orders/guideline","anchor":"Official current guidelines index: SBFAS modified 7 January 2026"},
+        {"url":"https://shipmin.gov.in/guideline/guidelines-shipping","anchor":"Official current Shipping Guidelines overview"}
+      ],
+      "sourceKind": "official_mopsw_sbf as_guideline_index_cross_check",
+      "sourceAnchor": "Qualifying vessel contracts, 45-day application, domestic-content threshold, vessel-category rates, price basis, milestones and final verification",
+      "observations": [
+        "The modified SBFAS guideline dated 7 January 2026 provides a vessel-contract financial-assistance route for eligible Indian shipyards, separate from SbDS cluster and risk-coverage records.",
+        "The seed captures the 45-day application deadline after signing the qualifying contract, domestic-content treatment below 30%, from 30% to below 40%, and at least 40%, and the vessel-category assistance rates.",
+        "The financial assistance is calculated using the prescribed contract/fair-price and actual-payment rules and is conditional on India-based construction, domestic-content evidence, verification, milestones and delivery; the rate is not a guaranteed cash amount.",
+        "The current guideline index shows the SBFAS publication separately from amended SBFAP material, so transition treatment, Schedule I exclusions and any interaction with earlier policy must be reconciled per contract."
+      ],
+      "reviewFollowUps": [
+        "Verify the live SBFAS portal, contract date, vessel category, Schedule I exclusions and any SBFAP/SBFAS transition treatment.",
+        "Confirm domestic-content formula, Chartered Accountant certification, fair-price basis, 45-day deadline, application number and competent-authority route.",
+        "Check construction, commissioning, trial, payment, delivery, security, inspection, audit, tranche and final re-evaluation requirements.",
+        "Keep SBFAS separate from logistics, shipping-company operations, loans and SbDS benefits; obtain a reviewer decision before calculating support."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source","eligibility","benefit","application","window","fine_print","amendment","current_terms","reviewer_decision"],
+    "reason": "Official MoPSW pages and component guidelines confirm four distinct shipbuilding routes, but current intake, project/contract-specific eligibility, implementing-agency capacity, live risk products, transition rules and reviewer decisions remain unresolved. All records stay human-review pending."
+  }
+}

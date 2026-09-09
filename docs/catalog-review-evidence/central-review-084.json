@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-084",
+  "authority": "Office of the Development Commissioner (MSME), Ministry of MSME",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records current first-party observations for reviewer use. It does not authorize UdyamVeda to file, store OTPs, collect Aadhaar numbers, or represent an enterprise as registered.",
+  "sourcePolicy": "The official Udyam portal and form control the applicant identity, consent, registration-flow and no-fee boundaries. The Ministry of MSME Annual Report 2025-26 is supporting ministry evidence for the revised classification thresholds effective 2025-04-01. The record remains review-gated until live workflow and legal/security review are complete.",
+  "records": [
+    {
+      "slug": "udyam-registration",
+      "sourceUrl": "https://udyamregistration.gov.in/Important.aspx",
+      "supportingSources": [
+        { "url": "https://udyamregistration.gov.in/", "anchor": "Official portal warning that Udyam registration is free and paperless and that private intermediaries are not authorized to undertake the registration activity." },
+        { "url": "https://udyamregistration.gov.in/UdyamRegistration.aspx/", "anchor": "Current new-enterprise form: Aadhaar role by organisation type, PAN/GST fields and applicant consent; the portal states Aadhaar data is not stored/shared by the portal." },
+        { "url": "https://udyamregistration.gov.in/docs/UdyamApplication.pdf", "anchor": "Official application form: Aadhaar verification, PAN/GST-linked data consent, organisation type and self-declaration fields." },
+        { "url": "https://msme.gov.in/sites/default/files/MSMEANNUALREPORT2025-26ENGLISH_0.pdf", "anchor": "Section 1.2.4: Ministry of MSME notification dated 2025-03-21 revising classification criteria effective 2025-04-01." }
+      ],
+      "sourceKind": "official_udyam_portal_form_and_ministry_threshold_cross_check",
+      "sourceAnchor": "Important Information page: free, paperless, self-declaration, no-upload, no-renewal and one-registration boundaries; Annual Report 2025-26 Section 1.2.4 for current thresholds",
+      "observations": [
+        "The official portal states that Udyam/MSME registration is free, paperless and based on self-declaration, and warns that private systems or intermediaries are not authorized to undertake the registration activity.",
+        "The portal states that no documents or proof are required to be uploaded for registration, but the workflow still requires identity and linked-government-data fields.",
+        "The current form assigns Aadhaar responsibility to the proprietor for a proprietorship, managing partner for a partnership and karta for an HUF; companies, LLPs, cooperative societies, societies and trusts use the organisation or authorised-signatory route with PAN and GSTIN as applicable.",
+        "The official portal states that PAN and GST-linked investment and turnover details are taken from government databases where applicable, that one enterprise must not file more than one registration, and that multiple activities may be specified in one registration.",
+        "The Ministry of MSME Annual Report 2025-26 records the revised thresholds effective 2025-04-01: micro up to INR 2.5 crore investment and INR 10 crore turnover; small up to INR 25 crore and INR 100 crore; medium up to INR 125 crore and INR 500 crore.",
+        "The official portal states that the certificate has a dynamic QR code and that renewal is not required. These are registration-process facts, not a guarantee of eligibility for every MSME scheme.",
+        "UdyamVeda must prepare, explain and validate readiness only. It must not collect or retain Aadhaar/PAN values or OTPs unless a separately approved, verified workflow and legal/security review authorizes a narrowly scoped data need."
+      ],
+      "reviewFollowUps": [
+        "Capture and hash the current official portal, Important page, new-enterprise form and application PDF.",
+        "Reconcile the 2025-03-21 notification reference with the controlling notification/Gazette or an official ministry publication before publication of threshold logic.",
+        "Test the current portal's new registration, update, cancellation, print/certificate and grievance routes without submitting a real applicant record.",
+        "Complete legal and security review for Aadhaar/PAN handling, consent language, masking and retention; do not store OTPs.",
+        "Verify that the user-facing journey clearly distinguishes Udyam registration from eligibility for downstream schemes and benefits.",
+        "Confirm no fee, no-upload and no-renewal claims against the live portal before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source", "eligibility", "benefit", "application", "window", "fine_print", "amendment", "current_terms", "privacy_security", "reviewer_decision"],
+    "reason": "Current official evidence supports the draft structure, but live workflow testing, controlling threshold-notification reconciliation and Aadhaar/PAN legal-security review remain outstanding."
+  }
+}

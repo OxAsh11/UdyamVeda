@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-09-08T16:51:40.919Z",
+  "status": "local_source_failure_queue",
+  "interpretation": "Every item in this queue blocks publication until current official evidence is captured or a reviewer documents an approved alternate/manual evidence path.",
+  "summary": {
+    "totalOpen": 0,
+    "retryable": 0,
+    "manualReviewRequired": 0,
+    "alternateCapturedPendingReview": 0,
+    "publicationReady": 0
+  },
+  "failures": []
+}

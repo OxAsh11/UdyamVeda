@@ -27,7 +27,11 @@ export default function LoginPage() {
       return
     }
 
-    router.push('/')
+    const requestedPath = new URLSearchParams(window.location.search).get('next')
+    const safePath = requestedPath && requestedPath.startsWith('/') && !requestedPath.startsWith('//')
+      ? requestedPath
+      : '/dashboard'
+    router.replace(safePath)
     router.refresh()
   }
 
@@ -35,8 +39,8 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center px-4">
       <div className="glass p-10 w-full max-w-md">
         <div className="mb-8">
-          <div className="text-2xl font-bold text-neutral-900 tracking-tight">Center</div>
-          <p className="text-neutral-500 text-sm mt-1">From idea to first customer</p>
+          <div className="text-2xl font-bold text-neutral-900 tracking-tight">UdyamVeda</div>
+          <p className="text-neutral-500 text-sm mt-1">India&apos;s Business Lifecycle &amp; Growth OS</p>
         </div>
 
         <h1 className="text-xl font-semibold text-neutral-900 mb-1">Welcome back</h1>
@@ -75,6 +79,12 @@ export default function LoginPage() {
             {loading ? 'Signing in...' : 'Sign in →'}
           </button>
         </form>
+
+        <div className="mt-4 text-right">
+          <Link href="/forgot-password" className="text-sm font-medium text-indigo-600 hover:text-indigo-700 hover:underline">
+            Forgot password?
+          </Link>
+        </div>
 
         <p className="text-neutral-400 text-sm text-center mt-6">
           Don&apos;t have an account?{' '}

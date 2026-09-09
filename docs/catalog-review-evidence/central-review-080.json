@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-080",
+  "authority": "National Scheduled Castes Finance and Development Corporation",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records the current official NSFDC FAQ and mandate observations for reviewer use. It does not guarantee a loan, sanction, disbursement, rate, channel-partner availability, margin, collateral or repayment outcome.",
+  "sourcePolicy": "The current NSFDC FAQ and official about/mandate page control where they differ from the older scheme compendium. PM-SURAJ and channel-partner routes require live availability and product-specific confirmation before publication.",
+  "records": [
+    {
+      "slug": "nsfdc-income-generating-credit",
+      "sourceUrl": "https://nsfdc.nic.in/faqs",
+      "supportingSources": [
+        { "url": "https://nsfdc.nic.in/about-us-3", "anchor": "Current NSFDC mandate, SC target group, income ceiling effective 7 January 2026 and channel-finance model" },
+        { "url": "https://socialjustice.gov.in/schemes/34", "anchor": "Ministry of Social Justice and Empowerment NSFDC scheme overview" },
+        { "url": "https://pmsuraj.dosje.gov.in/", "anchor": "PM-SURAJ route referenced by the current NSFDC FAQ; live availability requires confirmation" },
+        { "url": "https://nsfdc.nic.in/UploadedFiles/other/2024-05-15/1-4-1.pdf", "anchor": "Official NSFDC scheme compendium retained for historical/product cross-check; current FAQ controls where terms differ" }
+      ],
+      "sourceKind": "official_nsfdc_current_faq_and_mandate_cross_check",
+      "sourceAnchor": "SC eligibility, INR 5 lakh income ceiling, channel route, 90% project-cost boundary, product-specific ceilings/rates/repayment and separate support activities",
+      "observations": [
+        "The current NSFDC FAQ identifies NSFDC as a Government public-sector undertaking under the Department of Social Justice and Empowerment and states that loan beneficiaries must belong to the Scheduled Caste community and have annual family income from all sources not exceeding INR 5 lakh, effective 7 January 2026 and subject to amendment.",
+        "Applicants cannot apply directly to NSFDC for a loan. Applications must be routed through authorized State Channelizing Agencies or other Channelizing Agencies, using PM-SURAJ where available or the relevant offline channel partner route.",
+        "The current FAQ states that NSFDC provides up to 90% of project cost across its credit schemes. Product-specific project cost, maximum loan, interest, moratorium and repayment terms must remain separate.",
+        "The current FAQ describes MFS for projects up to INR 1.40 lakh with maximum loan INR 1.25 lakh at 6.5% p.a. and repayment within 3 years including a 3-month moratorium; AMY covers the same project-cost boundary and maximum loan at 15% p.a. with the same repayment period.",
+        "The current FAQ describes Term Loan for projects above INR 1.40 lakh and up to INR 50 lakh, maximum loan INR 45 lakh at 8% p.a., repayment within 7 years including a 6-month moratorium, extended to 12 months for plantation and construction activities.",
+        "The current FAQ describes Udyam Nidhi for projects up to INR 5 lakh, maximum loan INR 4.50 lakh, with 13% beneficiary interest through cooperative societies/banks and 15% through Small Finance Banks, repayable within 5 years including a 3-month moratorium.",
+        "Partnership firms and cooperative societies may apply when all members belong to the Scheduled Caste community and each member satisfies the applicable INR 5 lakh income threshold. Skill-development and market-linkage support are separate activities and must not be added to loan value.",
+        "The route remains concessional channel finance, not a grant or guaranteed sanction. UdyamVeda may prepare and explain the checklist but must not submit as the applicant, collect OTPs or represent itself as NSFDC or a channel partner."
+      ],
+      "reviewFollowUps": [
+        "Verify the current PM-SURAJ route, authorized channel-partner list and local SCA/CA availability before presenting a handoff.",
+        "Reconcile the current FAQ against the older compendium and preserve the current FAQ as the controlling source for conflicting rates, ceilings and repayment terms.",
+        "Confirm the up-to-90% project-cost rule, contribution/margin, collateral/security, insurance, processing charges, disbursement and claim/repayment mechanics by product and channel partner.",
+        "Confirm product-specific eligibility, legal/viable activity definitions, entity-form rules and the treatment of partnerships and cooperatives.",
+        "Keep MFS, AMY, Term Loan and Udyam Nidhi as separate product tracks; do not combine loan ceilings or add training/market-support values to credit.",
+        "Obtain human reviewer approval for source, eligibility, benefit, application, window, fine print, amendment, current terms and factual accuracy before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source", "eligibility", "benefit", "application", "window", "fine_print", "amendment", "current_terms", "reviewer_decision"],
+    "reason": "The current FAQ provides detailed product terms and a current income rule, but channel-partner availability, product-specific contribution/security, PM-SURAJ handoff and amendments still require human review before publication."
+  }
+}

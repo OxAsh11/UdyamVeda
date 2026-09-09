@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-010",
+  "authority": "Department of Agricultural Research and Education (DARE)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "DARE, ICAR, ICAR-IVRI and the official IVRI R-ABI programme pages, instructions and notices only; third-party claims are excluded.",
+  "records": [
+    {
+      "slug": "pm-rkvy-raftaar-navodaya-agripreneurship-orientation",
+      "sourceUrl": "https://www.ivri.nic.in/Rabi/navodaya.aspx",
+      "supportingSources": [
+        {
+          "url": "https://www.ivri.nic.in/Rabi/document/NavodayaInstructions.pdf",
+          "anchor": "Official IVRI R-ABI instructions: two-month training/internship, INR 10,000 monthly stipend, pre-seed grant route, batch selection and eligibility"
+        },
+        {
+          "url": "https://ivri.nic.in/Division/JD/ExtenstionEdu/",
+          "anchor": "ICAR-IVRI Extension Education page: R-ABI created under RKVY-RAFTAAR and its incubation/seed-support role"
+        }
+      ],
+      "sourceKind": "official_institute_programme_page_with_current_window_and_programme_instructions",
+      "sourceAnchor": "IVRI R-ABI Navodaya page: 8th cohort notice, programme purpose, stipend/grant summary and eligibility; official instructions PDF for detailed selection and support conditions",
+      "observations": [
+        "NAVODAYA is an institute-specific Agripreneurship Orientation Programme operated by ICAR-IVRI R-ABI under RKVY-RAFTAAR. It is not a universal national grant available to every agriculture business without an IVRI R-ABI cohort route.",
+        "The current official page describes Indian-citizen applicants with an innovative idea in agriculture or allied fields, including technology, services, platforms or models. Before funds are released, enrolled incubatees must meet the applicable DPIIT startup definition, and pre-seed ideas should have market fit, proof of concept or prototype before the funding recommendation and MoU.",
+        "The page states a two-month training-oriented programme with an INR 10,000 monthly stipend and an opportunity for grant-in-aid up to INR 5 lakh upon selection. The official instructions add cohort, internship, incorporation/incubation and R-ABI committee conditions; these must remain separate from the headline maximum.",
+        "The current page links an 8th cohort notice with a last application date of 4 January 2026. As observed on 8 September 2026, the route is closed unless a later official reopening or new cohort notice is found. Historical programme details must not be presented as a current open window.",
+        "The official page provides IVRI R-ABI contacts, but a contact route is not evidence of an open application window or guaranteed funding. UdyamVeda should show the official handoff and cohort status separately."
+      ],
+      "reviewFollowUps": [
+        "Confirm whether IVRI or another official R-ABI has announced a cohort after the 4 January 2026 deadline; otherwise version this record as closed/historical with the observed window.",
+        "Reconcile the current programme page with the detailed instructions PDF, including cohort size, two-month attendance/internship, full-time pursuit, incorporation, incubation duration, grant release and reporting conditions.",
+        "Extract the current application form, document checklist, focus areas, file requirements, selection rubric, R-ABI committee process and grievance/contact route.",
+        "Keep the stipend, grant-in-aid, incubation and any later startup funding as separate benefits with distinct conditions; do not describe INR 5 lakh as an automatic entitlement.",
+        "Determine whether the route is limited to animal science/allied areas at IVRI or whether the current call covers the wider agriculture/allied scope stated on the page."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "pm-rkvy-raftaar-samriddhi-startup-incubation",
+      "sourceUrl": "https://www.ivri.nic.in/Rabi/samridhi.aspx",
+      "supportingSources": [
+        {
+          "url": "https://ivri.nic.in/Rabi/downloads/publications/Newsletters/Newsletter-Srijan-1st%20Issue.pdf",
+          "anchor": "Official IVRI R-ABI newsletter: SAMRIDDHI MVP-stage animal-science/allied startup incubation, eight-week support and grant-in-aid summary"
+        },
+        {
+          "url": "https://ivri.nic.in/Division/JD/ExtenstionEdu/",
+          "anchor": "ICAR-IVRI Extension Education page: R-ABI incubation, training, technical support and seed-money role under RKVY-RAFTAAR"
+        }
+      ],
+      "sourceKind": "official_institute_incubation_page_with_current_window_and_historical_programme_material",
+      "sourceAnchor": "IVRI R-ABI Samriddhi page: 8th cohort closed notice, programme purpose, grant summary and eligibility; official newsletter for programme context",
+      "observations": [
+        "SAMRIDDHI is an IVRI R-ABI Agripreneurship Incubation Programme under RKVY-RAFTAAR for startups with innovative minimum viable products, services, business processes or models in the animal-science and allied sector that are ready for commercialisation.",
+        "The current official page states that eligible recipients must be incubatees of R-ABI, a registered legal entity in India and an Indian startup under the applicable DPIIT notification. It expressly excludes Indian subsidiaries of multinational or foreign companies and says a startup supported once cannot apply for subsequent seed support to any R-ABI.",
+        "The page describes a grant-in-aid opportunity up to INR 25 lakh for selected startups. It also describes technical support, mentoring, business-plan strengthening and networking; these non-financial supports must not be merged with the grant amount or treated as guaranteed funding.",
+        "The current official page marks the 8th cohort for Navodaya, Samriddhi and Student Orientation as closed, with the linked application notice showing a 4 January 2026 deadline. On 8 September 2026 this is presumptively closed unless a later official call is found.",
+        "This is a selective incubator route, not a general RKVY-RAFTAAR cash benefit. Funding depends on R-ABI incubation, performance evaluation and committee selection, so a recommendation must expose the incubator and selection dependencies."
+      ],
+      "reviewFollowUps": [
+        "Search the official IVRI/ICAR pages for any post-4 January 2026 Samriddhi call, extension, result or reopening before classifying the opportunity as closed rather than paused.",
+        "Extract the current incubation duration, performance criteria, RIC evaluation, milestones, grant instalments, eligible expenditure, reporting, recovery/clawback and one-time-support rules.",
+        "Verify the application form, entity/incorporation evidence, DPIIT recognition evidence, MVP/commercial-readiness proof, business plan, financial documents and file limits.",
+        "Separate IVRI R-ABI eligibility from the broader DPIIT recognition criteria and from any national RKVY-RAFTAAR scheme-level route.",
+        "Confirm whether the programme accepts applications only through IVRI R-ABI or through multiple R-ABIs, and publish the correct official handoff only after confirmation."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment"
+    ],
+    "reason": "Both records are official IVRI R-ABI implementation routes under RKVY-RAFTAAR, not universal grants. The current 8th-cohort notice is closed, and the application documents, selection/funding conditions, scope boundaries and any later reopening require human review before publication."
+  }
+}

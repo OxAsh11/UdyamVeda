@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-045",
+  "authority": "Ministry of Tribal Affairs (MoTA)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "The Ministry of Tribal Affairs livelihood page, PMJVM guidelines, current financial/sanction summaries, TRIFED material and the VCF-ST guideline are primary. PMJVM project/value-chain support and VCF-ST venture finance are separate routes and neither is treated as a universal individual grant or guaranteed investment.",
+  "records": [
+    {
+      "slug": "pmjvm-tribal-value-chain",
+      "sourceUrl": "https://tribal.gov.in/Livelihood.aspx",
+      "supportingSources": [
+        {"url":"https://tribal.gov.in/downloads/Livelihood/Guidelines/PMJVMGuidelines.pdf","anchor":"Official PMJVM guidelines: objectives, tribal value chains, VDVKs/VDPEs, TRIFED route and Central grant-in-aid structure"},
+        {"url":"https://tribal.gov.in/PFMS_SentionDtSchemewise2627.aspx","anchor":"Official FY 2026-27 financial summary showing a PMJVM allocation line; allocation is not an applicant deadline or individual entitlement"},
+        {"url":"https://trifed.tribal.gov.in/index.php/node/1857","anchor":"Official TRIFED PMJVM operational-guidelines route"},
+        {"url":"https://trifed.tribal.gov.in/index.php/en/pmvdy","anchor":"Official TRIFED Van Dhan/producer-group implementation route"}
+      ],
+      "sourceKind": "official_tribal_affairs_pmjvm_guideline_finance_trifed_cross_check",
+      "sourceAnchor": "Ministry livelihood page: PMJVM merger, tribal entrepreneurship/value-chain objective and TRIFED nodal implementation; current-year continuation and component route require reconciliation",
+      "observations": [
+        "PMJVM is a tribal livelihood and value-chain route formed by merging earlier MFP/value-chain and tribal-product marketing schemes, with objectives covering tribal producer groups, VDVKs/VDPEs, value addition, market linkages and entrepreneurship.",
+        "The official guideline describes project and implementation support routed through tribal institutions, State systems and TRIFED; it does not establish a universal per-founder cash amount or direct entitlement for every tribal business.",
+        "The Ministry page identifies TRIFED as the nodal implementing agency. A business or group must map its activity to the applicable tribal value chain, producer-group/VDVK structure, State proposal and current component rules.",
+        "The Ministry livelihood page states a 2021-22 to 2025-26 vision, while the FY 2026-27 financial summary contains a PMJVM allocation line. This is evidence of current budget context, not by itself proof of an open applicant window or unchanged component terms.",
+        "UdyamVeda may prepare the group, product, budget, market and monitoring checklist, but cannot approve a project, represent itself as MoTA/TRIFED or treat a State/agency sanction as an individual grant."
+      ],
+      "reviewFollowUps": [
+        "Reconcile the current-year continuation, controlling guideline, component-level ceilings, State coverage, local proposal route and any amendments after FY2025-26.",
+        "Verify ST-community/producer-group evidence, VDVK or cooperative structure, product/value chain, value-addition activity, market linkage, procurement and implementation location.",
+        "Confirm whether the current opportunity is routed through a State Tribal Department, TRIFED, VDVK, producer group or another authorized implementing agency and record its live forms and deadlines.",
+        "Separate project grant/support, market access, procurement, training and any credit route; do not combine PMJVM allocation with an applicant benefit amount.",
+        "Obtain an authorized reviewer decision before publication and before ranking the record as actionable for an individual founder."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "vcf-st-tribal-startups",
+      "sourceUrl": "https://tribal.gov.in/Livelihood.aspx",
+      "supportingSources": [
+        {"url":"https://tribal.gov.in/downloads/Livelihood/Guidelines/VCF-STGuidelines1123.pdf","anchor":"Official VCF-ST guideline route for ST-founder condition, venture finance and investment terms"},
+        {"url":"https://tribal.gov.in/PFMS_SentionDtSchemewise2627.aspx","anchor":"Official FY 2026-27 financial summary showing a VCF-ST allocation line; allocation does not prove an open call or fixed ticket"},
+        {"url":"https://ifciventure.com/","anchor":"IFCI Venture Capital Ltd official manager route requires current product/call verification"},
+        {"url":"https://tribal.gov.in/","anchor":"Official Ministry portal and current livelihood programme context"}
+      ],
+      "sourceKind": "official_tribal_affairs_vcf_st_guideline_fund_manager_cross_check",
+      "sourceAnchor": "Ministry livelihood page: VCF-ST aims to promote ST entrepreneurship and support/incubate startup ideas; IFCI VCF Ltd is identified as manager",
+      "observations": [
+        "VCF-ST is a venture-finance route intended to promote Scheduled Tribe entrepreneurship and support or incubate startup ideas of ST youth; it is separate from PMJVM value-chain support.",
+        "The Ministry page identifies IFCI VCF Ltd as the scheme manager. Eligibility, investment instrument, ticket size, dilution, valuation, incubation, milestones and portfolio obligations must be taken from the current guideline and fund-manager route.",
+        "The Ministry FY 2026-27 financial summary shows an allocation line, but an allocation is not proof of an open founder application call, a fixed ticket, a guaranteed investment or a funder's approval.",
+        "Founder or controlling-applicant Scheduled Tribe status must be verified; a generic startup profile, company registration or MSME status cannot silently establish that condition.",
+        "UdyamVeda may prepare an investment-readiness and founder-status checklist, but cannot represent itself as IFCI VCF Ltd, promise funding or submit investment documents without explicit consent and the official route."
+      ],
+      "reviewFollowUps": [
+        "Verify the current VCF-ST guideline, founder/ST definition, eligible company and control conditions, investment instrument, ticket size, dilution and valuation rules.",
+        "Confirm whether IFCI VCF Ltd or another notified channel currently accepts applications, the current call dates, forms, fees and diligence materials.",
+        "Check incubation, milestones, disbursement, governance, reporting, exit, audit and portfolio-support obligations before presenting the route as suitable.",
+        "Keep venture finance, grants, loans and PMJVM value-chain support separate; do not infer benefit amounts from the fund corpus or annual budget allocation.",
+        "Obtain an authorized reviewer decision before publication and before showing this as an open opportunity."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source","eligibility","benefit","application","window","fine_print","amendment","current_terms","reviewer_decision"],
+    "reason": "Official MoTA sources support PMJVM and VCF-ST as distinct tribal-livelihood and venture-finance routes, but current continuation, State/agency implementation, fund-manager availability, terms, calls and reviewer decisions remain unresolved. Both records stay human-review pending."
+  }
+}

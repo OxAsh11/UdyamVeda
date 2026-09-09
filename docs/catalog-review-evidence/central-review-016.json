@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-016",
+  "authority": "Department of Financial Services",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "Department of Financial Services official scheme pages, annual reports and official application portals only; third-party claims are excluded.",
+  "records": [
+    {
+      "slug": "pradhan-mantri-mudra-yojana",
+      "sourceUrl": "https://financialservices.gov.in/pradhan-mantri-mudra-yojana-pmmy",
+      "supportingSources": [
+        {
+          "url": "https://financialservices.gov.in/pradhan-mantri-mudra-yojana-pmmy",
+          "anchor": "Current DFS PMMY page, last updated 5 February 2026: purpose, categories, lending institutions and collateral boundary"
+        },
+        {
+          "url": "https://www.mudra.org.in/",
+          "anchor": "Official MUDRA website linked by DFS for scheme and lender-route information"
+        }
+      ],
+      "sourceKind": "official_ministry_scheme_page_and_implementing_portal",
+      "sourceAnchor": "PMMY purpose, Shishu/Kishor/Tarun/Tarun Plus categories, member lending institutions and collateral not required",
+      "observations": [
+        "The Department of Financial Services describes PMMY as institutional collateral-free credit for micro enterprises, including non-agricultural activities allied to agriculture such as poultry, dairy and beekeeping. Both term-loan and working-capital needs may be covered.",
+        "The current page lists four categories: Shishu up to ₹50,000; Kishor above ₹50,000 up to ₹5 lakh; Tarun above ₹5 lakh up to ₹10 lakh; and Tarun Plus above ₹10 lakh up to ₹20 lakh for entrepreneurs who have successfully repaid a previous Tarun loan, effective from 24 October 2024.",
+        "Applications are lender-mediated through public and private banks, foreign banks, regional rural banks, small-finance banks, NBFCs, MFIs and NBFC-MFIs. The Government page states that collateral is not required, but lender appraisal, pricing, documentation, repayment and sanction remain separate decisions.",
+        "The category ceilings are credit limits, not grants, subsidies or guaranteed applicant awards. Recommendation results must not add PMMY loan ceilings to non-credit benefits or imply that every applicant qualifies for Tarun Plus.",
+        "The official DFS page was last updated on 5 February 2026, but current lender implementation, activity exclusions, interest/pricing, repayment and documentation still require human review before publication."
+      ],
+      "reviewFollowUps": [
+        "Verify the current Tarun Plus operational guidance, lender eligibility and whether any subsequent amendment changes the categories or limits.",
+        "Extract lender-specific documents, pricing, repayment, credit-history, guarantee and activity conditions without presenting them as uniform Government terms.",
+        "Confirm the correct public application handoff and escalation/grievance route for each participating lender."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "stand-up-india-scheme",
+      "sourceUrl": "https://www.financialservices.gov.in/stand-india-scheme-supi",
+      "supportingSources": [
+        {
+          "url": "https://www.financialservices.gov.in/stand-india-scheme-supi",
+          "anchor": "DFS page, last updated 5 February 2026: loan range, founder categories, greenfield scope, repayment, margin and sunset/successor statement"
+        },
+        {
+          "url": "https://financialservices.gov.in/beta/sites/default/files/2026-04/DFS-ANNUAL-REPORT-ENGLISH-2025-26.pdf",
+          "anchor": "DFS Annual Report 2025-26: historical Stand Up India operation through March 2025 and founder/loan scope"
+        },
+        {
+          "url": "https://www.standupmitra.in/",
+          "anchor": "Historical official handholding/application portal referenced by DFS"
+        },
+        {
+          "url": "https://www.jansamarth.in/",
+          "anchor": "Historical national application discovery route referenced by the DFS page"
+        }
+      ],
+      "sourceKind": "official_ministry_scheme_page_annual_report_and_portals",
+      "sourceAnchor": "Stand Up India loan features and DFS statement that the scheme was available through 31 March 2025, with a separate successor proposal under preparation",
+      "observations": [
+        "The historical Stand Up India route supported composite bank loans of ₹10 lakh to ₹1 crore for women and Scheduled Caste/Scheduled Tribe entrepreneurs above 18 setting up greenfield manufacturing, services, trading or eligible allied-agriculture enterprises.",
+        "The captured features include repayment up to seven years including up to 18 months' moratorium, margin money up to 15% through convergence, and at least 10% own contribution. Bank appraisal, pricing, security and sanction remain lender decisions.",
+        "The current DFS page states that the scheme was available up to 31 March 2025 in line with the 15th Finance Commission period. The same page describes a Budget 2025-26 proposal for a new scheme for five lakh first-time women and SC/ST entrepreneurs with loans up to ₹2 crore over five years, but says the EFC note was still under preparation.",
+        "The proposed successor is not treated as an active Stand Up India entitlement. UdyamVeda must not route a user to the historical scheme as if a current application window exists, and must not merge the successor proposal with the closed scheme.",
+        "The record should remain a closed historical opportunity for research and application-history context until a formally notified successor or extension is published and separately modeled."
+      ],
+      "reviewFollowUps": [
+        "Verify whether a formal successor notification, guidelines, portal or current lender route has been issued after the DFS page and Annual Report.",
+        "Preserve the historical founder, greenfield, contribution and loan conditions separately from any successor opportunity.",
+        "Confirm historical application and claims/support routes only for users reviewing prior applications; do not show a current Apply action without a verified open window."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment"
+    ],
+    "reason": "PMMY is lender-mediated credit with category and Tarun Plus conditions; Stand Up India is a historical closed route with a separate successor proposal not yet treated as notified. Current lender, amendment and application-boundary review is required before publication."
+  }
+}

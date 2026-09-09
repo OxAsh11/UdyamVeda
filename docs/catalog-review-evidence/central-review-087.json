@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-087",
+  "authority": "Office of the Development Commissioner (MSME) - ZED",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records current first-party observations for reviewer use. It does not guarantee certification, subsidy, joining reward, assessment outcome or technology-upgradation support, and it does not authorize UdyamVeda to certify an enterprise, submit an application or handle credentials and OTPs.",
+  "sourcePolicy": "The current DC MSME ZED page controls the displayed eligibility, levels, fee examples, subsidy categories, QCI implementation and official portal handoff. The official operational guideline is retained for process cross-checking, but its apparent level-version conflict must be resolved before publication.",
+  "records": [
+    {
+      "slug": "msme-sustainable-zed-certification",
+      "sourceUrl": "https://www.dcmsme.gov.in/CLCS_TUS_Scheme/ZED_Scheme/Scheme_Guidelines.aspx",
+      "supportingSources": [
+        { "url": "https://dcmsme.gov.in/CLCS_TUS_Scheme/ZED_Scheme/Scheme_Guidelines.aspx", "anchor": "Current DC MSME ZED page: Bronze, Silver and Gold levels, fee examples, joining reward, differentiated certification subsidy, additional subsidy categories, manufacturing-Udyam eligibility, QCI implementation and official application route." },
+        { "url": "https://zed.msme.gov.in/", "anchor": "Official ZED application portal and certification handoff." },
+        { "url": "https://zed.msme.gov.in/contact-us", "anchor": "Official ZED contact route for current operational questions." },
+        { "url": "https://dcmsme.gov.in/schemes/clcs-tus/Operational_Guidelines_ZED.pdf", "anchor": "Official operational guideline index showing a detailed certification process and level terminology that must be reconciled with the current DC MSME page." },
+        { "url": "https://www.dcmsme.gov.in/Guidelines_MSME%20Sustainable%28ZED%29%20Certification%20Scheme.pdf", "anchor": "Official ZED guideline document describing the pledge, assessment, certification and inspection boundaries." }
+      ],
+      "sourceKind": "official_dc_msme_zed_current_page_and_guideline_cross_check",
+      "sourceAnchor": "DC MSME ZED page sections Key Benefits, Eligibility/Applicability, Implementing Agency and How to apply",
+      "observations": [
+        "The current DC MSME page describes ZED as a three-level certification route: Bronze, Silver and Gold, with displayed fee examples of INR 10,000, INR 40,000 and INR 90,000.",
+        "The same page displays a INR 10,000 joining reward, certification-cost subsidy rates of 80%, 60% and 50% for micro, small and medium enterprises, and additional categories subject to the published conditions.",
+        "The eligibility statement is for manufacturing MSMEs registered with the Udyam portal; Quality Council of India is identified as the implementing agency.",
+        "Testing, quality/product certification, handholding and technology-upgradation support are separate support categories. They are not one direct grant and must remain separate benefit buckets.",
+        "The official operational-guideline search result exposes a terminology/version conflict by listing five levels including Diamond and Platinum, while the current DC MSME page states three levels. UdyamVeda must not expose Diamond or Platinum, or merge versions, until the controlling current document is resolved by a reviewer.",
+        "Certification requires the official pledge, assessment and applicable evidence; certification or subsidy is not guaranteed by registration, payment or application alone.",
+        "UdyamVeda may explain readiness and prepare a checklist, but it must not certify the enterprise, promise a subsidy or submit through the official portal on the applicant's behalf."
+      ],
+      "reviewFollowUps": [
+        "Capture and hash the current DC MSME page, ZED portal, contact route and controlling guideline when Firecrawl credits are available.",
+        "Resolve the three-level versus five-level document/version conflict and record the controlling effective guideline with page anchors.",
+        "Confirm current level fees, joining-reward use, subsidy rates, additional categories, eligible costs, contribution and claim timing.",
+        "Verify the current pledge, undertaking, assessment agency, payment, inspection, non-conformity closure, certificate validity and post-certification obligations.",
+        "Keep certification fees, subsidy/reward, testing, handholding and technology support separate in benefit calculations.",
+        "Obtain human reviewer approval for source, eligibility, benefit, application, window, fine print, amendment and factual accuracy before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source", "eligibility", "benefit", "application", "window", "fine_print", "amendment", "current_terms", "reviewer_decision"],
+    "reason": "The current official page supports the baseline ZED route, but fresh source capture, guideline-version reconciliation, operational workflow review and human factual approval remain outstanding."
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-072",
+  "authority": "Ministry of Micro, Small and Medium Enterprises - PM Vishwakarma",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party PM Vishwakarma portal, FAQ, registration, terms and guideline observations for reviewer use. It does not guarantee registration, verification, training, toolkit, credit, digital incentives, market access, loan sanction or benefit release.",
+  "sourcePolicy": "The official PM Vishwakarma portal, FAQ, registration guide, terms and scheme guideline are primary. Portal indicators and targets must be kept separate from the governing guideline and any amendment; local verification and committee decisions remain part of the official process.",
+  "records": [
+    {
+      "slug": "pm-vishwakarma",
+      "sourceUrl": "https://pmvishwakarma.gov.in/cdn/MiscFiles/eng_v30.0_PM_Vishwakarma_Guidelines_final.pdf",
+      "supportingSources": [
+        {
+          "url": "https://pmvishwakarma.gov.in/Home/",
+          "anchor": "Current official portal: 18 traditional trades, beneficiary components and programme registration indicator"
+        },
+        {
+          "url": "https://pmvishwakarma.gov.in/Home/FAQ",
+          "anchor": "Official FAQ: age, trade, family, government-service, prior-loan, document, training, toolkit, credit and digital-incentive conditions"
+        },
+        {
+          "url": "https://pmvishwakarma.gov.in/Home/HowToRegister",
+          "anchor": "Official registration and verification route through the portal and local facilitation points"
+        },
+        {
+          "url": "https://pmvishwakarma.gov.in/Home/TermsandConditions",
+          "anchor": "Official portal terms and operating boundary"
+        }
+      ],
+      "sourceKind": "official_pm_vishwakarma_portal_faq_guideline_cross_check",
+      "sourceAnchor": "18-trade beneficiary boundary, staged benefits, verification/document route and portal-versus-guideline reconciliation",
+      "observations": [
+        "The official portal and FAQ describe PM Vishwakarma as a beneficiary programme for artisans and craftspeople in 18 specified family-based traditional trades, with minimum age 18 and self-employment in the unorganised sector.",
+        "The portal/FAQ conditions include the concerned trade being practised at registration, a five-year similar-loan restriction, one member per family, and exclusion for government employees and their family members. These conditions require field-level evidence and official verification.",
+        "Benefits are separate stages: recognition, skill training, toolkit incentive, collateral-free credit, digital-transaction incentive and marketing support. They must not be combined into one guaranteed rupee value; registration alone is not benefit approval.",
+        "The toolkit incentive is tied to skill verification at the start of Basic Training. The second credit tranche has additional skilled-beneficiary and repayment/digital-training conditions. Loan approval remains subject to the lending and programme process.",
+        "The current portal displays a registration target through 2028. This is stored as a current portal fact, not treated as an automatic amendment to the guideline's implementation period until a reviewer reconciles the governing documents and any official extension notice.",
+        "Current registration guidance references Aadhaar, mobile number, bank details and ration-card/family information. UdyamVeda may prepare a checklist and explain the official route, but it must not collect Aadhaar numbers unnecessarily, store OTPs, or submit on behalf of the applicant."
+      ],
+      "reviewFollowUps": [
+        "Confirm the governing guideline version, amendments and implementation-period basis behind the portal's 2028 indicator.",
+        "Verify the full CSC, Gram Panchayat/ULB, district and committee verification workflow, including rejection, correction and grievance routes.",
+        "Confirm current training-centre availability, toolkit issuance, lender route, credit tranches, repayment terms, digital incentive evidence and market-support process.",
+        "Verify the live portal document formats and state/district operational differences without extracting sensitive identity numbers unless a reviewed workflow requires it.",
+        "Obtain human reviewer approval for source, eligibility, benefit, application, window, fine print, amendment, current terms and factual accuracy before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "The official sources describe the beneficiary and staged-benefit route, but current guideline/version reconciliation, verification flow, live availability and component-specific operating conditions require human review before publication."
+  }
+}

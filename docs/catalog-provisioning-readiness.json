@@ -1,0 +1,39 @@
+{
+  "generatedAt": "2026-09-09T05:30:46.082Z",
+  "safety": "read_only_no_authentication_no_remote_writes",
+  "localInventory": {
+    "migrationFiles": 158,
+    "seedFiles": 113,
+    "opportunitySeedFiles": 109
+  },
+  "environmentPresence": {
+    "supabaseUrl": true,
+    "supabaseAnonKey": true,
+    "supabaseServiceRoleKey": false,
+    "supabaseAccessToken": false,
+    "firecrawlApiKey": true,
+    "inngestKeys": true,
+    "resendApiKey": false
+  },
+  "remote": {
+    "state": "schema_available",
+    "status": 200,
+    "detail": "public.opportunities is reachable"
+  },
+  "tools": {
+    "supabaseCli": {
+      "available": true,
+      "detail": "npx supabase@2.116.0 (2.116.0)"
+    },
+    "supabaseAuth": {
+      "authenticated": true,
+      "detail": "projects_list_succeeded"
+    },
+    "vercelCli": {
+      "available": true,
+      "detail": "C:\\Users\\Ashish Mishra\\AppData\\Roaming\\npm\\vercel.cmd"
+    }
+  },
+  "readyForRemoteProvisioning": false,
+  "nextAction": "Do not reseed blindly; inspect remote migration state and run release checks."
+}

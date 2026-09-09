@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-017",
+  "authority": "Department of Fisheries",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "Department of Fisheries official PM-MKSSY documents, NFDP and operational-guideline routes only; third-party claims are excluded.",
+  "records": [
+    {
+      "slug": "pradhan-mantri-matsya-kisan-samridhi-sah-yojana",
+      "sourceUrl": "https://www.dof.gov.in/static/uploads/2025/09/db9e0987df6461b69304fe4115aceec9.pdf",
+      "supportingSources": [
+        {
+          "url": "https://www.dof.gov.in/static/uploads/2025/09/db9e0987df6461b69304fe4115aceec9.pdf",
+          "anchor": "PM-MKSSY Environmental and Social Management Framework: project period, objectives, components, NFDP registration, insurance incentive, performance grants and post-verification rules"
+        },
+        {
+          "url": "https://nfdp.dof.gov.in/nfdp/#/",
+          "anchor": "National Fisheries Digital Platform registration and module route"
+        },
+        {
+          "url": "https://pmmkssy.dof.gov.in/pmmkssy/#/guidelines",
+          "anchor": "Official PM-MKSSY operational-guideline route referenced by the Department of Fisheries document"
+        }
+      ],
+      "sourceKind": "official_project_framework_nfdp_and_operational_guideline",
+      "sourceAnchor": "Pages 3-13 and 41-50: objectives, targeted beneficiaries, NFDP formalisation, working-capital access, aquaculture insurance, performance grants, post-verification and exclusions",
+      "observations": [
+        "PM-MKSSY is a Central Sector sub-scheme of PMMSY approved for four years from FY 2023-24 to FY 2026-27. Its objectives include formalising the fisheries sector, improving access to working capital and insurance, improving value chains, and strengthening fish-product safety and quality systems.",
+        "The source separates the route into formalisation and credit facilitation, aquaculture-insurance adoption, fisheries value-chain performance grants, and fish-product safety and quality performance grants. These are different benefits and must not be combined into one eligibility amount.",
+        "Stakeholders must register on the National Fisheries Digital Platform as an individual or organisation, with self-registration or assisted registration through a Common Service Centre. State or UT fisheries officials verify registration before the beneficiary can use the relevant modules.",
+        "The working-capital component facilitates a bank loan lead and provides support up to ₹5,000 for a successfully approved bankable loan proposal; the bank still decides whether to approve or reject the loan.",
+        "For aquaculture insurance, the source describes a one-time incentive after purchase of an eligible insurance product: generally 40% of premium subject to ₹25,000 per hectare and a maximum of four hectares, with separate intensive-aquaculture limits and an additional 10% incentive for SC, ST and women beneficiaries under the stated conditions.",
+        "Performance grants require the applicant to invest first and then claim after scrutiny, field verification, monitoring and grant approval. The framework expressly says no upfront subsidies will be given, and eligible activities are subject to environmental, social and exclusion-list conditions.",
+        "The opportunity is therefore a component-specific fisheries support route, not a universal grant. Current operational guidelines, module availability, applicant categories, caps, documents, state verification and live windows require human review before publication."
+      ],
+      "reviewFollowUps": [
+        "Verify the current PM-MKSSY operational guideline and NFDP module status, including the effective dates, state/UT participation, registration documents and grievance route.",
+        "Extract separate eligibility and benefit records for working-capital facilitation, insurance incentive, value-chain performance grant, product-safety grant and fisheries-cooperative/FFPO support.",
+        "Confirm exact performance-grant ceilings, investment categories, post-verification evidence, employment and women/SC/ST conditions, environmental exclusions and release stages from the operative guidelines.",
+        "Do not treat the insurance incentive as a grant before insurance purchase or present loan facilitation as guaranteed credit."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment"
+    ],
+    "reason": "PM-MKSSY contains several separate modules with different applicants, benefits, investment-first and post-verification rules. The framework is official, but current operational guidelines and module-specific ceilings and windows require human review before publication."
+  }
+}

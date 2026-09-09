@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-060",
+  "authority": "DPIIT - Startup India",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party Startup India observations for reviewer use. It does not guarantee challenge selection, an award, a cash prize, mentorship, procurement, market access or an open application window.",
+  "sourcePolicy": "Current Startup India programme pages, edition pages, application forms, guidelines and official notices are primary. Edition, window, category, eligibility, documents and award/support terms must be checked separately for each record. UdyamVeda may explain and prepare a checklist but is not Startup India or DPIIT and must not submit on an applicant's behalf.",
+  "records": [
+    {
+      "slug": "bharat-startup-grand-challenge",
+      "sourceUrl": "https://www.startupindia.gov.in/content/sih/en/bharat-startup-grand-challenge.html",
+      "supportingSources": [
+        {
+          "url": "https://www.startupindia.gov.in/content/sih/en/nsa-landing.html",
+          "anchor": "Startup India navigation links to Bharat Startup Grand Challenge and other current marquee programmes"
+        },
+        {
+          "url": "https://www.startupindia.gov.in/content/sih/en/startup_ranking_framework.html",
+          "anchor": "Startup Grand Challenges background and programme context; not evidence of a current application deadline"
+        },
+        {
+          "url": "https://www.startupindia.gov.in/",
+          "anchor": "Official Startup India portal and current programme navigation"
+        }
+      ],
+      "sourceKind": "official_startup_india_challenge_page_cross_check",
+      "sourceAnchor": "Objective, benefits, ongoing/concluded challenges, application route and FAQ",
+      "observations": [
+        "The Bharat Startup Grand Challenge is described as a Startup India initiative launched on National Startup Day 2025 to connect emerging startups with real-world industry and societal challenges.",
+        "The programme page distinguishes benefits for industry and startups. Startup-side support may include expert mentorship, strategic guidance, partnerships, business linkages, fiscal or other support and infrastructure access, but these are programme or challenge-dependent and are not guaranteed benefits for every participant.",
+        "The page separates ongoing challenges, concluded challenges and completed programmes. A current challenge problem statement, applicant eligibility, deadline, evaluation method, prize/support and post-selection terms must be identified from the specific challenge before the record can become actionable.",
+        "The current page/search snapshot did not provide a reliable universal deadline or fixed cash entitlement for the programme. The record therefore remains a rolling challenge-discovery route rather than an open grant application.",
+        "Eligibility must be evaluated against the active problem statement and any challenge-specific criteria. A generic startup profile or DPIIT recognition alone is not sufficient to return Eligible.",
+        "UdyamVeda must not combine potential fiscal support, mentorship, market access, infrastructure or partner commitments into one monetary benefit value. Each challenge must retain separate benefit buckets and evidence."
+      ],
+      "reviewFollowUps": [
+        "Capture the current active challenge identifier, problem statement, host/partner, opening and closing dates, official application form and challenge-specific eligibility.",
+        "Verify whether a current challenge is genuinely open, concluded, paused or only listed as programme history; do not infer availability from the programme landing page.",
+        "Confirm selection rubric, documents, IP/confidentiality, pilot or procurement implications, prize/fiscal support and post-selection obligations for each challenge.",
+        "Keep mentorship, partnerships, infrastructure, fiscal support and market access as separate conditional outcomes; do not publish a universal cash amount.",
+        "Record amendments, extensions or supersession evidence and obtain a human reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "national-startup-awards",
+      "sourceUrl": "https://www.startupindia.gov.in/content/sih/en/ams-application/application-listing.html",
+      "supportingSources": [
+        {
+          "url": "https://www.startupindia.gov.in/content/sih/en/nsa-landing.html",
+          "anchor": "National Startup Awards purpose and support; NSA 5.0 section states applications are closed"
+        },
+        {
+          "url": "https://www.startupindia.gov.in/content/sih/en/nsa2025.html",
+          "anchor": "NSA 5.0 edition guidelines, eligibility, 20 categories, INR 10 lakh proposed winner prize, documents, two-category limit and closed application state"
+        },
+        {
+          "url": "https://www.startupindia.gov.in/content/sih/en/startup-awards.html",
+          "anchor": "NSA 5.0 application form fields, required documents, category submission limit and explicit form-closed message"
+        }
+      ],
+      "sourceKind": "official_startup_india_nsa_edition_and_application_cross_check",
+      "sourceAnchor": "NSA 5.0 application state, award purpose, eligibility, category rules, documents, prize and support terms",
+      "observations": [
+        "The National Startup Awards are intended to recognise innovative, impactful and scalable startups and ecosystem enablers, with recognition, visibility, handholding and connection opportunities described separately from the cash prize.",
+        "The official NSA 5.0 page currently states that applications are closed. The application form page also states that the form is closed and that the last submission date was 31 July 2025. The seed's earlier open-application wording has therefore been corrected to a closed-window state.",
+        "NSA 5.0 describes 20 general categories and a proposed INR 10 lakh prize for each winning startup in the general categories. This is a conditional award outcome, not an entitlement or an amount that should be ranked as immediately available funding.",
+        "The current NSA 5.0 eligibility material requires a DPIIT-recognised startup and BHASKAR registration, a market-present hardware/software product or process solution, applicable trade-specific registrations, no specified recent defaults and financial statements subject to the stated age-based exceptions. These conditions must be checked against the edition actually open at the time of recommendation.",
+        "An applicant may apply in a maximum of two categories, and previous winners of National Startup Awards are excluded under the stated rules. Category-specific eligibility, legal diligence, founder documents, financials, registrations, pitch material and other uploads may be required.",
+        "The application form includes sensitive identity and business documents, including PAN and Aadhaar fields. UdyamVeda may provide a checklist and official handoff, but must not store OTPs/passwords or impersonate the applicant; any document handling must use the approved private-vault controls.",
+        "The application state, edition, dates, category rules, prize terms and support terms are version-specific. A future edition must not inherit NSA 5.0 eligibility, documents or prize values without a new evidence packet."
+      ],
+      "reviewFollowUps": [
+        "Confirm the next live edition and official deadline before changing the window from closed or recommending an application.",
+        "Verify the current edition's DPIIT recognition, BHASKAR, incorporation-age, market-presence, trade-registration, default, financial-statement, category and past-winner rules.",
+        "Reconcile the official landing page, edition page, application form and any extension/notice for category count, prize wording, application limits and support terms.",
+        "Verify the current document list, upload format/size rules and privacy handling; keep PAN/Aadhaar and other identity documents outside ordinary recommendation text.",
+        "Keep the INR 10 lakh proposed prize separate from recognition, handholding, investor/government connections, market access and event participation; none is guaranteed by applying.",
+        "Record amendment or supersession evidence and obtain a human reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "Startup India pages support the programme and award concepts, but the Bharat Startup Grand Challenge requires challenge-specific current-window evidence and NSA 5.0 is currently closed. Edition-specific eligibility, documents, deadlines, prize/support terms and amendments must be reviewed before publication."
+  }
+}

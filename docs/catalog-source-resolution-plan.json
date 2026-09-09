@@ -1,0 +1,1018 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-08",
+  "status": "manual_review_resolution_plan",
+  "interpretation": "This plan makes failed source capture actionable. Alternate URLs are official evidence leads for reviewer capture and comparison; they do not clear a publication blocker, replace the primary source automatically, or approve a record.",
+  "plans": [
+    {
+      "slug": "drdo-technology-development-fund-startup-msme",
+      "status": "review_pending",
+      "manualPath": "Retry the official FAQ with bounded backoff. If it remains unavailable, manually capture the official TDF portal and obtain an official FAQ or current call document before reviewing eligibility and funding terms.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://tdf.drdo.gov.in/",
+          "title": "DRDO Technology Development Fund official portal",
+          "role": "portal_context",
+          "captureRequired": true
+        },
+        {
+          "url": "https://drdo.gov.in/drdo/en/offerings/schemes-and-services/startups-support",
+          "title": "DRDO Startups Support - TDF overview",
+          "role": "official_startup_route",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "export-promotion-mission-niryat-protsahan-niryat-disha",
+      "status": "review_pending",
+      "manualPath": "Capture the alternate Commerce operational-status document, compare it with the policy evidence, and retain page or question anchors for the current components and rollout status.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://www.commerce.gov.in/wp-content/uploads/2026/02/Starred-Question-87.pdf",
+          "title": "Export Promotion Mission operational status, Starred Question 87",
+          "role": "current_operational_status",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "market-access-initiative-mai",
+      "status": "review_pending",
+      "manualPath": "Capture an alternate official MAI guideline, compare the scope and eligible-agency route with the 2021 guideline, and verify whether any successor or extension is currently open before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://commerce.gov.in/wp-content/uploads/2020/08/MOC_636546562282394611_Market_Access_Initiative-_Scheme_2018.pdf",
+          "title": "Market Access Initiative Scheme 2018 official guideline",
+          "role": "historical_scope_comparison",
+          "captureRequired": true
+        },
+        {
+          "url": "https://apps.commerce.gov.in/schemes/schemereport",
+          "title": "Department of Commerce scheme claim monitoring system",
+          "role": "current_operational_context",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "trade-infrastructure-for-export-scheme-ties",
+      "status": "review_pending",
+      "manualPath": "Capture the official implementation and claims context, then compare it with the FY 2021-22 to FY 2025-26 guideline. Do not infer a FY 2026-27 application window from claims or committee minutes.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://apps.commerce.gov.in/schemes/schemereport",
+          "title": "Department of Commerce scheme claim monitoring system",
+          "role": "current_claims_context",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.commerce.gov.in/wp-content/uploads/2025/08/MoM_20th-EC_23.07.2025.pdf",
+          "title": "TIES 20th Empowered Committee minutes",
+          "role": "implementation_status",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.commerce.gov.in/wp-content/uploads/2025/03/LS-USQ-No.2050-dated.-11.03.2025.pdf",
+          "title": "Department of Commerce Projects under TIES parliamentary answer",
+          "role": "current_implementation_status",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "moca-production-linked-incentive-drones-components-closed",
+      "status": "review_pending",
+      "manualPath": "Capture the Ministry of Civil Aviation notification or guideline page through an approved current official URL, reconcile it with the archived 2021-23 PLI documents and any 2024-25 operational material, and preserve the closed-window status unless a later official extension is proven.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://www.civilaviation.gov.in/ministry-documents/notifications/pli-scheme-drones-and-drone-components-0",
+          "title": "Ministry of Civil Aviation PLI Scheme Drones and Drone Components notification",
+          "role": "current_official_notification_page",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.civilaviation.gov.in/ministry-documents/guidelines/guidelines-pli-drones-and-drone-components",
+          "title": "Ministry of Civil Aviation PLI Drones and Drone Components guidelines page",
+          "role": "official_guideline_page",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.civilaviation.gov.in/sites/default/files/migration/Guidelines%20for%20the%20Operation%20of%20Production%20Linked%20Incentive%20Scheme%20%28PLI%29%20fro%20Drones%20and%20Drone%20Components%20%281%29.pdf",
+          "title": "Operational Guidelines for PLI Drones and Drone Components",
+          "role": "official_operational_guideline_pdf",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "pm-street-vendors-atmanirbhar-nidhi-pm-svanidhi",
+      "status": "review_pending",
+      "manualPath": "Use the current PIB restructuring and tranche clarification releases as alternate official evidence, reconcile them against the historical MoHUA guideline and FAQ, and verify the current portal, local-body identification route, lender terms, subsidy and cashback conditions before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2161157&lang=1&reg=1",
+          "title": "PIB Cabinet approval for PM SVANidhi restructuring and extension",
+          "role": "current_restructuring_and_extension",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2289997&lang=1&reg=48",
+          "title": "PIB current PM SVANidhi tranche and repayment clarification",
+          "role": "current_tranche_and_repayment_terms",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2289997",
+          "title": "PIB current PM SVANidhi tranche and repayment clarification",
+          "role": "current_tranche_and_repayment_terms_canonical_url",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.disclaimerpms.mohua.gov.in/",
+          "title": "PM SVANidhi official portal disclaimer",
+          "role": "lender_decision_and_application_boundary",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "mofpi-cefppc-food-processing-preservation-capacities-pmksy",
+      "status": "review_pending",
+      "manualPath": "Use the official MoFPI CEFPPC scheme page and 2022 operational guideline as alternate evidence, then reconcile the current 2025-26 proposal status, eligible project routes, financial assistance and application-window boundaries. Do not treat the status of approved projects as an open application window.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://www.mofpi.gov.in/en/Schemes/about-cefppc-scheme",
+          "title": "MoFPI About CEFPPC Scheme",
+          "role": "official_scheme_overview_and_application_boundary",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.mofpi.gov.in/sites/default/files/cefppc_scheme_guidelines_dated_08.06.2022.pdf",
+          "title": "MoFPI CEFPPC operational guidelines dated 08.06.2022",
+          "role": "official_operational_guideline",
+          "captureRequired": true
+        },
+        {
+          "url": "https://mofpi.gov.in/en/Schemes/creation-expansion-food-processing-preservation-capacities-unit-scheme/download-circulars-1",
+          "title": "MoFPI CEFPPC circulars and current proposal-status notices",
+          "role": "current_status_and_window_context",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "technology-incubation-and-development-of-entrepreneurs-tide-2",
+      "status": "review_pending",
+      "manualPath": "Capture the current MeitY TIDE page and an official MeitY Startup Hub or annual-report reference, compare the incubator route with startup-facing eligibility and benefit language, and preserve the distinction between incubator support and direct founder funding.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://www.meity.gov.in/offerings/schemes-and-services/details/technology-incubation-and-development-of-entrepreneurs-QMwEjNtQWa",
+          "title": "MeitY Technology Incubation and Development of Entrepreneurs page",
+          "role": "official_current_scheme_page",
+          "captureRequired": true
+        },
+        {
+          "url": "https://msh.meity.gov.in/schemes/tide",
+          "title": "MeitY Startup Hub TIDE 2.0 scheme page",
+          "role": "official_implementing_portal_context",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.meity.gov.in/static/uploads/2024/02/32-1.pdf",
+          "title": "MeitY Annual Report TIDE 2.0 reference",
+          "role": "official_programme_context",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "coir-vikas-yojana",
+      "status": "review_pending",
+      "manualPath": "Replace the captured 404 page with the current MSME CVY guideline and scheme-index evidence, then reconcile the older component document with the current Coir Vikas Yojana structure. Preserve the component-level boundaries for MCY, EMP, DPI, DMP, TIRFSS and welfare support until a reviewer confirms the applicable current version.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://msme.gov.in/sites/default/files/Latest%20guidelines-for-CVY.pdf",
+          "title": "MSME latest guidelines for Coir Vikas Yojana",
+          "role": "current_operational_guideline",
+          "captureRequired": true
+        },
+        {
+          "url": "https://my.msme.gov.in/mymsme/Scheme.aspx",
+          "title": "MyMSME official scheme list with CVY links",
+          "role": "official_scheme_index",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.my.msme.gov.in/MyMsmeMob/MsmeScheme/Pages/1_3_5_1.html",
+          "title": "MyMSME Skill Upgradation and Mahila Coir Yojana component page",
+          "role": "official_component_context",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "pm-viksit-bharat-rozgar-yojana-part-a-first-timers",
+      "status": "review_pending",
+      "manualPath": "Use the official PMVBRY portal, EPFO/Ministry communication and the shared guideline as alternate evidence for Part A. Confirm the first-time employee route, payment milestones, wage threshold, identity requirements and scheme period; do not treat employer Part B evidence as evidence for Part A.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://pmvbry.epfindia.gov.in/",
+          "title": "EPFO PM Viksit Bharat Rozgar Yojana portal",
+          "role": "official_application_portal",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.epfindia.gov.in/site_docs/PDFs/Updates/Newsletter_July_September_2025_EPFO.pdf",
+          "title": "EPFO official PMVBRY programme summary",
+          "role": "official_benefit_and_period_context",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.epfindia.gov.in/site_docs/PDFs/EPFO_PRESS_RELEASES/PressRelease_03092025_MOLECautionsCitizensAgainstFakePMVBRY.pdf",
+          "title": "Ministry of Labour and Employment PMVBRY portal caution",
+          "role": "official_portal_authenticity_boundary",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "pm-viksit-bharat-rozgar-yojana-part-b-employer-incentive",
+      "status": "review_pending",
+      "manualPath": "Use the official PMVBRY portal, EPFO/Ministry communication and the shared guideline as alternate evidence for Part B. Confirm the additional-employment test, employer contribution/registration conditions, manufacturing extension, payment duration and reporting obligations; do not merge the employer benefit with Part A.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://pmvbry.epfindia.gov.in/",
+          "title": "EPFO PM Viksit Bharat Rozgar Yojana portal",
+          "role": "official_application_portal",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.epfindia.gov.in/site_docs/PDFs/Updates/Newsletter_July_September_2025_EPFO.pdf",
+          "title": "EPFO official PMVBRY employer incentive summary",
+          "role": "official_benefit_and_period_context",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.epfindia.gov.in/site_docs/PDFs/EPFO_PRESS_RELEASES/PressRelease_03092025_MOLECautionsCitizensAgainstFakePMVBRY.pdf",
+          "title": "Ministry of Labour and Employment PMVBRY portal caution",
+          "role": "official_portal_authenticity_boundary",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "entrepreneurship-and-skill-development-programme-esdp",
+      "status": "review_pending",
+      "manualPath": "Replace the captured 404 page with the current approved ESDP guideline and official MSME scheme/ATI pages. Reconcile the 25 March 2022 guideline with the older source, distinguish implementing-institution support from direct founder benefits, and preserve the programme-component boundaries before review.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://msme.gov.in/sites/default/files/Approved_ESDP_Guidelines.pdf",
+          "title": "MSME approved ESDP guidelines dated 25.03.2022",
+          "role": "current_operational_guideline",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.msme.gov.in/offerings",
+          "title": "MSME schemes and services ESDP listing",
+          "role": "official_scheme_index",
+          "captureRequired": true
+        },
+        {
+          "url": "https://ati.msme.gov.in/ATI/home.aspx",
+          "title": "MSME Assistance to Training Institutions portal",
+          "role": "official_implementing_institution_context",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "khadi-gramodyog-vikas-yojana",
+      "status": "review_pending",
+      "manualPath": "Capture the official KVIC Gramodyog Vikas guideline through the KVIC portal or an approved alternate host, compare it with the current KVIC programme context, and preserve the component, implementing-agency and assistance boundaries before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://kviconline.gov.in/khadi.jsp",
+          "title": "KVIC official Khadi applications portal",
+          "role": "official_implementing_portal_context",
+          "captureRequired": true
+        },
+        {
+          "url": "https://kviconline.gov.in/kvicoffice.jsp",
+          "title": "KVIC official home and office portal",
+          "role": "official_authority_context",
+          "captureRequired": true
+        },
+        {
+          "url": "https://kviconline.gov.in/pmegpeportalappdoc/DigitalKVICupload/43320231218130809.pdf",
+          "title": "KVIC Revised Gramodyog Vikas Yojana guidelines",
+          "role": "official_operational_guideline",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "micro-and-small-enterprises-cluster-development-programme",
+      "status": "review_pending",
+      "manualPath": "Capture the current official MSE-CDP guidelines and reconcile the superseded URL with the current guideline, including diagnostic studies, soft interventions, common facility centres, infrastructure development, SPV structure and funding pattern.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://msme.gov.in/sites/default/files/ModifiedGuidelinesofMSE_0.pdf",
+          "title": "MSME Modified Guidelines of MSE-CDP",
+          "role": "current_operational_guideline",
+          "captureRequired": true
+        },
+        {
+          "url": "https://msme.gov.in/sites/default/files/ModifiedGuidelinesofMSE.pdf",
+          "title": "MSME Modified Guidelines of MSE-CDP alternate file",
+          "role": "official_guideline_compatibility_copy",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.msme.gov.in/offerings",
+          "title": "MSME schemes and services portal",
+          "role": "official_scheme_index",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "msme-tool-rooms-and-technology-centres",
+      "status": "review_pending",
+      "manualPath": "Replace the unusable annual-report capture with official MSME Technology Centre portal and scheme-booklet evidence, then confirm the service scope, beneficiary route, fees, training and technology-support boundaries before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://www.msme.gov.in/offerings",
+          "title": "MSME official schemes and services portal",
+          "role": "official_scheme_index",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.msme.gov.in/sites/default/files/MSMESchemebooklet2024.pdf",
+          "title": "MSME scheme booklet with Technology Centres context",
+          "role": "official_programme_context",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.msme.gov.in/technology-centres",
+          "title": "MSME Technology Centres official portal route",
+          "role": "official_implementing_route",
+          "captureRequired": true
+        },
+        {
+          "url": "https://dashboard.msme.gov.in/100_TC_EC.aspx",
+          "title": "MSME Technology Centres and Extension Centres official dashboard",
+          "role": "official_current_network_status",
+          "sourceAnchor": "Technology Centres Extension Centres hub and spoke model",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.dashboard.msme.gov.in/tcsp_details.aspx",
+          "title": "MSME Tool Room and Technology Centres official dashboard",
+          "role": "official_current_tool_room_status",
+          "sourceAnchor": "Tool Room Technology Centres Technology Centre Systems Programme",
+          "captureRequired": true
+        },
+        {
+          "url": "https://my.msme.gov.in/files/assets/pdf/v2.0%20-2025-%20Scheme%20booklet%20Eng-14.02.2025.pdf",
+          "title": "MSME scheme booklet - Tool Rooms and Technical Institutions",
+          "role": "official_programme_context",
+          "sourceAnchor": "Tool Rooms Technical Institutions tooling facilities training programmes",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "performance-and-credit-rating-scheme-for-micro-and-small-enterprises",
+      "status": "review_pending",
+      "manualPath": "Use the official MyMSME scheme page and scheme index to replace the unusable guideline capture. Reconcile the current reimbursement limits, eligibility, rating-agency route, NSIC role and application process with the official guideline before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://my.msme.gov.in/MyMsmeMob/MsmeScheme/Pages/1_2_0.html",
+          "title": "MyMSME Performance and Credit Rating scheme page",
+          "role": "official_scheme_detail",
+          "sourceAnchor": "Performance and Credit Rating Nature of assistance Who can apply How to apply",
+          "captureRequired": true
+        },
+        {
+          "url": "https://my.msme.gov.in/MyMsme/Scheme.aspx",
+          "title": "MyMSME official scheme index",
+          "role": "official_scheme_index",
+          "sourceAnchor": "Performance and Credit Rating Scheme Schemes Guidelines",
+          "captureRequired": true
+        },
+        {
+          "url": "https://my.msme.gov.in/MyMsme/SchemeWiseProposals.aspx",
+          "title": "MyMSME scheme proposal context",
+          "role": "official_operational_context",
+          "sourceAnchor": "Performance and Credit Rating Scheme TOTAL PROPOSALS IN SCHEME",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "public-procurement-policy-for-micro-and-small-enterprises",
+      "status": "review_pending",
+      "manualPath": "Replace the unusable annual-report capture with the official MyMSME procurement-policy portal and current MSME policy evidence. Reconcile the Gazette order, procurement targets, SC/ST and women sub-targets, tender exemptions and vendor-development route before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://my.msme.gov.in/MyMsme/Reg/PPP_Home.aspx",
+          "title": "MyMSME Public Procurement Policy for MSEs portal",
+          "role": "official_policy_and_operational_portal",
+          "captureRequired": true
+        },
+        {
+          "url": "https://msme.gov.in/sites/default/files/MSME-ANNUAL-REPORT-2024-25-ENGLISH.pdf",
+          "title": "MSME Annual Report procurement-policy context",
+          "role": "official_current_policy_context",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.msme.gov.in/offerings",
+          "title": "MSME official schemes and services portal",
+          "role": "official_scheme_index",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "mse-online-dispute-resolution-scheme",
+      "status": "review_pending",
+      "manualPath": "Replace the captured RAMP 404 page with the current MSE-ODR scheme page and scheme-guidelines index. Reconcile the official financial-assistance limits, MSEFC workflow, Udyam/UAP eligibility and current ODR portal route before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://ramp.msme.gov.in/ramp/index.php/RAMP-initiative/mse-odr/mse-odr-scheme",
+          "title": "MSME RAMP MSE-ODR scheme page",
+          "role": "official_current_scheme_page",
+          "captureRequired": true
+        },
+        {
+          "url": "https://ramp.msme.gov.in/ramp/scheme-guidelines",
+          "title": "MSME RAMP scheme-guidelines index",
+          "role": "official_guideline_index",
+          "captureRequired": true
+        },
+        {
+          "url": "https://ramp.msme.gov.in/ramp/sites/default/files/2026-05/odr-guidelines.pdf",
+          "title": "MSE-ODR official scheme guidelines PDF",
+          "role": "official_scheme_guideline",
+          "captureRequired": true
+        },
+        {
+          "url": "https://ramp.msme.gov.in/ramp/",
+          "title": "MSME RAMP official portal",
+          "role": "official_programme_and_portal_context",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "nandini-sahakar-women-cooperative-enterprise-support",
+      "status": "review_pending",
+      "manualPath": "Retry the official NCDC guideline with bounded backoff. If the timeout persists, capture the official NCDC scheme index and an official NCDC annual-report or compendium reference, compare the eligibility and credit-linkage terms with the primary guideline, and retain the timeout as an open primary-source failure until a reviewer confirms the alternate evidence.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://www.ncdc.in/index.jsp?page=scheme",
+          "title": "National Cooperative Development Corporation scheme index",
+          "role": "official_scheme_index",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.ncdc.in/documents/annual-report/2813271221NCDC_Annual-Report_2020-21_English.pdf",
+          "title": "NCDC Annual Report 2020-21 Nandini Sahakar reference",
+          "role": "official_scope_and_eligibility_context",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.ncdc.in/documents/booklet/2609240524English-Compendium-as-on-22.05.2024.pdf",
+          "title": "NCDC scheme compendium with Nandini Sahakar reference",
+          "role": "official_current_context",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "incredible-india-bed-breakfast-homestay-classification",
+      "status": "review_pending",
+      "manualPath": "Firecrawl credits are unavailable for the primary Tourism PDF. Manually capture the official Tourism Ministry guideline or current NIDHI portal evidence, verify whether the classification route applies in the relevant State or Union Territory, and record the state-scheme dependency before publication.",
+        "alternateOfficialSources": [
+          {
+            "url": "https://tourism.gov.in/",
+            "title": "Ministry of Tourism official portal",
+            "role": "official_authority_and_current_programme_context",
+            "captureRequired": true
+          },
+          {
+            "url": "https://nidhi.tourism.gov.in/home/page/guidelines",
+            "title": "NIDHI+ official guidelines index",
+            "role": "official_guideline_index_and_application_context",
+            "sourceAnchor": "common national standards; classification of Incredible India Bed & Breakfast Establishments; Incredible India Homestay Establishments; State or Union Territory own scheme; Regional Classification Committee",
+            "captureRequired": true
+          },
+          {
+            "url": "https://nidhi.tourism.gov.in/",
+            "title": "NIDHI Ministry of Tourism portal",
+          "role": "official_classification_application_route",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "mop-adeetie-energy-efficiency-msme",
+      "status": "review_pending",
+      "manualPath": "Firecrawl credits are unavailable for the primary BEE page. Manually capture the official ADEETIE programme page, implementation guidelines and lender or cluster route; verify the interest-subvention formula, eligible sectors, loan range, energy-savings test and current programme period before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://www.beeindia.gov.in/",
+          "title": "Bureau of Energy Efficiency official portal",
+          "role": "official_authority_context",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.beeindia.gov.in/show_content.php?lang=1&level=1&lid=384&ls_id=234",
+          "title": "BEE ADEETIE scheme page",
+          "role": "official_scheme_detail",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "mopng-cbg-biomass-aggregation-machinery",
+      "status": "review_pending",
+      "manualPath": "The primary Ministry of Petroleum and Natural Gas PDF failed DNS resolution. Manually capture the current official CBG or SATAT scheme guideline and retain the 2025 revised BAM guideline as the legal basis; verify funding caps, eligible CBG producers, machinery scope, application route and reimbursement evidence before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://mopng.gov.in/",
+          "title": "Ministry of Petroleum and Natural Gas official portal",
+          "role": "official_authority_context",
+          "captureRequired": true
+        },
+        {
+          "url": "https://mopng.gov.in/en/refining/compressed-bio-gas",
+          "title": "Ministry of Petroleum and Natural Gas Compressed Bio Gas page",
+          "role": "official_current_programme_context",
+          "sourceAnchor": "Compressed Bio Gas; SATAT; entrepreneur EoI and off-take; biomass supply chain; financing and lending context",
+          "captureRequired": true
+        },
+        {
+          "url": "https://mopng.gov.in/files/natural-gas/policies-and-guidelines/Revised-scheme-guideline.pdf",
+          "title": "Revised CBG Biomass Aggregation Machinery scheme guideline",
+          "role": "official_operational_guideline",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "msde-national-apprenticeship-promotion-scheme-2",
+      "status": "review_pending",
+      "manualPath": "Firecrawl credits are unavailable for the primary current communication. Manually capture the official apprenticeship portal, scheme guidelines and current MSDE or PIB notification; verify establishment eligibility, registration, stipend support, DBT mechanics and current version before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://www.apprenticeshipindia.gov.in/",
+          "title": "Apprenticeship India official portal",
+          "role": "official_application_and_establishment_route",
+          "captureRequired": true
+        },
+        {
+          "url": "https://msde.gov.in/",
+          "title": "Ministry of Skill Development and Entrepreneurship official portal",
+          "role": "official_authority_context",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "msde-pradhan-mantri-kaushal-vikas-yojana-4",
+      "status": "review_pending",
+      "manualPath": "Firecrawl credits are unavailable for the primary current communication. Manually capture the official Skill India or MSDE PMKVY 4.0 guidelines and training-centre route; verify beneficiary eligibility, training and assessment support, centre requirements and live enrolment status before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://www.skillindiadigital.gov.in/",
+          "title": "Skill India Digital official portal",
+          "role": "official_training_and_beneficiary_route",
+          "captureRequired": true
+        },
+        {
+          "url": "https://msde.gov.in/",
+          "title": "Ministry of Skill Development and Entrepreneurship official portal",
+          "role": "official_authority_context",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.msde.gov.in/static/uploads/2024/04/PMKVY-4.0-Guidelines.pdf",
+          "title": "MSDE PMKVY 4.0 Guidelines",
+          "role": "official_operational_guideline",
+          "sourceAnchor": "PMKVY 4.0; candidate selection; Skill India Digital; NSDC implementing arm; training lifecycle; Skill Hubs",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "pmjvm-tribal-value-chain",
+      "status": "review_pending",
+      "manualPath": "Firecrawl credits are unavailable for the primary Tribal Affairs page. Manually capture the current PMJVM guidelines and TRIFED implementation route; distinguish tribal producer or institution eligibility from individual founder eligibility and verify the active component, funding and market-access terms before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://tribal.gov.in/Livelihood.aspx",
+          "title": "Ministry of Tribal Affairs livelihood and PMJVM page",
+          "role": "official_scheme_context",
+          "captureRequired": true
+        },
+        {
+          "url": "https://trifed.tribal.gov.in/",
+          "title": "TRIFED official portal",
+          "role": "official_implementing_agency_route",
+          "captureRequired": true
+        },
+        {
+          "url": "https://tribal.gov.in/downloads/Livelihood/Guidelines/PMJVMGuidelines.pdf",
+          "title": "Ministry of Tribal Affairs PMJVM Guidelines",
+          "role": "official_operational_guideline",
+          "sourceAnchor": "PMJVM; merger of earlier tribal livelihood schemes; vision; objectives; production, procurement, processing and marketing value chain",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "production-linked-incentive-specialty-steel",
+      "status": "review_pending",
+      "manualPath": "Firecrawl credits are unavailable for the primary Steel Ministry page. Manually capture the official PLI Specialty Steel guidelines, notification and current selected-company or application status; preserve the distinction between a historical window and a currently open application round before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://steel.gov.in/pli",
+          "title": "Ministry of Steel PLI Specialty Steel page",
+          "role": "official_scheme_status_and_guideline_route",
+          "sourceAnchor": "PLI Specialty Steel; guideline and notification downloads; application and current status route",
+          "captureRequired": true
+        },
+        {
+          "url": "https://steel.gov.in/sites/default/files/2025-04/Scheme%20Guidelines_Final_Upload.pdf",
+          "title": "Ministry of Steel PLI Specialty Steel guidelines",
+          "role": "official_operational_guideline",
+          "sourceAnchor": "Guidelines for Production Linked Incentive (PLI) Scheme for Specialty Steel; Sections 1.1-1.4; target segments and scheme period",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2225496&lang=1&reg=3",
+          "title": "PIB Ministry of Steel PLI 1.2 status release",
+          "role": "official_current_selected_company_status",
+          "sourceAnchor": "PLI Scheme 1.2; 85 projects; 55 companies; February 2026 MoUs; investment and capacity commitments",
+          "captureRequired": true
+        },
+        {
+          "url": "https://steel.gov.in/",
+          "title": "Ministry of Steel official portal",
+          "role": "official_authority_context",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "railways-dpiit-startup-procurement-access",
+      "status": "review_pending",
+      "manualPath": "Firecrawl credits are unavailable for the primary Railway procurement manual. Manually capture the Railway Board or zone procurement rules and the current DPIIT startup procurement guidance; verify applicability by tender, bid-security exemption, prior-experience relaxation and official bid route before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://www.startupindia.gov.in/content/sih/en/government-schemes.html",
+          "title": "Startup India government schemes and procurement context",
+          "sourceAnchor": "Public procurement for startups; GeM Startup Runway; prior experience and turnover exemption; EMD exemption; DPIIT recognition",
+          "role": "official_startup_procurement_context",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.startupindia.gov.in/content/sih/en/startup-scheme.html",
+          "title": "Startup India public procurement benefits page",
+          "sourceAnchor": "Public procurement; GeM; prior experience and turnover exemption; EMD exemption; DPIIT recognised startups",
+          "role": "official_startup_procurement_benefits",
+          "captureRequired": true
+        },
+        {
+          "url": "https://secr.indianrailways.gov.in/",
+          "title": "South East Central Railway official portal",
+          "role": "official_railway_procurement_context",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "shipbuilding-development-scheme-brownfield-capacity-expansion",
+      "status": "review_pending",
+      "manualPath": "The captured response was an access-denied page. Manually capture the current Ministry of Ports, Shipping and Waterways shipbuilding guidelines and brownfield annexure, verify the 25% grant, project-cost, financial-closure and tranche conditions, and retain the rejected response as audit history only.",
+        "alternateOfficialSources": [
+          {
+            "url": "https://shipmin.gov.in/",
+            "title": "Ministry of Ports, Shipping and Waterways official portal",
+            "role": "official_authority_context",
+            "captureRequired": true
+          },
+          {
+            "url": "https://shipmin.gov.in/sites/default/files/Annexure%204%20Brownfield%20guidelines.pdf",
+            "title": "Shipbuilding Development Scheme Brownfield capacity expansion guidelines",
+            "role": "official_operational_guideline_current",
+            "sourceAnchor": "Brownfield Capacity Expansion; Shipbuilding Development Scheme; 24th September 2025; 31st March 2036; Applicant; Shipyard; Capital Assistance; Approved Project Cost; INR 1500 crore; Detailed Project Report; National Shipbuilding Mission; Directorate General of Shipping; eligibility criteria",
+            "captureRequired": true
+          },
+          {
+            "url": "https://shipmin.gov.in/sites/default/files/Annexure%204%20Brownfield_V23%20%282%29_0.pdf",
+          "title": "Shipbuilding Development Scheme Brownfield annexure",
+          "role": "official_operational_guideline",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "shipbuilding-development-scheme-risk-coverage",
+      "status": "review_pending",
+      "manualPath": "Firecrawl credits are unavailable for the primary annexure. Manually capture the current Ministry shipbuilding risk-coverage guideline and verify validity, covered agencies, pre-shipment, post-shipment and vendor-default risks before publication.",
+        "alternateOfficialSources": [
+          {
+            "url": "https://shipmin.gov.in/",
+            "title": "Ministry of Ports, Shipping and Waterways official portal",
+            "role": "official_authority_context",
+            "captureRequired": true
+          },
+          {
+            "url": "https://shipmin.gov.in/sites/default/files/Annexure%202%20Credit%20risk%20coverage%20guidelines.pdf",
+            "title": "Shipbuilding Development Scheme credit-risk coverage guidelines",
+            "role": "official_operational_guideline_current",
+            "sourceAnchor": "Shipbuilding risk coverage; Shipbuilding Development Scheme; 24th September 2025; 31st March 2036; Credit Risk Cover Agencies; Sagarmala Financial Corporation Limited; Pre-Shipment Insurance; Post-Shipment Insurance; Vendor Default Insurance",
+            "captureRequired": true
+          },
+          {
+            "url": "https://shipmin.gov.in/sites/default/files/Annexure%202%20Credit%20risk%20coverage%20guidelines_0.pdf",
+          "title": "Shipbuilding Development Scheme credit-risk coverage guidelines",
+          "role": "official_operational_guideline",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "shipbuilding-financial-assistance-scheme-sbfas",
+      "status": "review_pending",
+      "manualPath": "Firecrawl credits are unavailable for the primary SBFAS PDF. Manually capture the current Ministry guideline and schedules, verify eligible contracts, vessel categories, assistance rates, domestic-content conditions and application procedure before publication.",
+        "alternateOfficialSources": [
+          {
+            "url": "https://shipmin.gov.in/",
+            "title": "Ministry of Ports, Shipping and Waterways official portal",
+            "role": "official_authority_context",
+            "captureRequired": true
+          },
+          {
+            "url": "https://shipmin.gov.in/sites/default/files/Modified%20Guidelines%20for%20implementation%20of%20Shipbuilding%20Financial%20Assistance%20Scheme%20%28SBFAS%29.pdf",
+            "title": "Shipbuilding Financial Assistance Scheme modified guidelines",
+            "role": "official_operational_guideline_current",
+            "sourceAnchor": "Shipbuilding Financial Assistance Scheme; 24th September 2025; 31st March 2036; shipyards located in India; Domestic Content; 45 days; 30%; 40%; stage payments; Keel laying; Launching; delivery",
+            "captureRequired": true
+          },
+          {
+            "url": "https://shipmin.gov.in/sites/default/files/Modified%20Guidelines%20for%20implementation%20of%20Shipbuilding%20Financial%20Assistance%20Scheme%20%28SBFAS%29_0.pdf",
+          "title": "Shipbuilding Financial Assistance Scheme modified guidelines",
+          "role": "official_operational_guideline",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "assistance-to-training-institutions-ati",
+      "status": "review_pending",
+      "manualPath": "Retry the exact official ATI URL with bounded backoff. If it remains unavailable, capture the official ATI portal context and current scheme document, then verify institutional eligibility, assistance limits and the current application route before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://ati.msme.gov.in/",
+          "title": "Official Assistance to Training Institutions portal",
+          "role": "official_portal_context",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "cpcb-e-waste-epr-producer-registration",
+      "status": "review_pending",
+      "manualPath": "Retry the exact CPCB E-Waste FAQ URL with bounded backoff. If it remains unavailable, capture the official CPCB portal and current E-Waste EPR registration guidance, then reconcile covered producer categories, exclusions, targets and portal obligations before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://cpcb.nic.in/",
+          "title": "Central Pollution Control Board official portal",
+          "role": "official_authority_context",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "cpcb-plastic-packaging-epr-registration",
+      "status": "review_pending",
+      "manualPath": "Retry the exact CPCB plastic-packaging EPR URL with bounded backoff. If it remains unavailable, capture the official CPCB portal and current Plastic Waste EPR guidance, then reconcile registration roles, packaging categories, targets and continuing obligations before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://cpcb.nic.in/",
+          "title": "Central Pollution Control Board official portal",
+          "role": "official_authority_context",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "dairy-sahakar-cooperative-dairy-business-support",
+      "status": "review_pending",
+      "manualPath": "Retry the exact NCDC Dairy Sahakar PDF with an extended bounded timeout. If it remains unavailable, capture the official NCDC portal and current Dairy Sahakar materials, then verify cooperative eligibility, activities, loan period and credit-linkage terms before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://www.ncdc.in/",
+          "title": "National Cooperative Development Corporation official portal",
+          "role": "official_authority_context",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "epfo-establishment-registration",
+      "status": "review_pending",
+      "manualPath": "Retry the exact EPFO EODB URL with bounded backoff. If it remains unavailable, capture the official EPFO employer-registration route and current EPFO/ESIC common-registration guidance, then verify registration triggers and employer obligations before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://www.epfindia.gov.in/",
+          "title": "Employees Provident Fund Organisation official portal",
+          "role": "official_authority_context",
+          "captureRequired": true
+        },
+        {
+          "url": "https://www.epfindia.gov.in/site_en/EODB.php?id=sm22_index",
+          "title": "EPFO Ease of Doing Business registration page",
+          "role": "official_registration_route_context",
+          "sourceAnchor": "Registration in EPFO; Common Registration for EPFO/ESIC",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "fssai-food-business-registration-licensing",
+      "status": "review_pending",
+      "manualPath": "Retry the exact FSSAI registration URL with bounded backoff. If it remains unavailable, capture the official FSSAI portal and current registration/licensing guidance, then reconcile the 2026 threshold amendment, Section 31 route and licence categories before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://fssai.gov.in/",
+          "title": "Food Safety and Standards Authority of India official portal",
+          "role": "official_authority_context",
+          "captureRequired": true
+        },
+        {
+          "url": "https://fssai.gov.in/upload/advisories/2026/03/69c6a23234827order_27032026.pdf",
+          "title": "FSSAI 2026 licensing and registration amendment FAQ",
+          "role": "current_operational_guideline",
+          "sourceAnchor": "FAQs Q2 revised turnover thresholds effective 1 April 2026 and Q4 perpetual validity",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "nhdp-marketing-support-services-handicrafts",
+      "status": "review_pending",
+      "manualPath": "Retry the exact NHDP guideline URL with bounded backoff. If it remains unavailable, capture the official handicrafts portal and current NHDP marketing-support guidance, then verify eligible activities, event support and implementing routes before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://handicrafts.nic.in/",
+          "title": "Office of the Development Commissioner Handicrafts official portal",
+          "role": "official_authority_context",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "nhdp-skill-development-handicraft-sector",
+      "status": "review_pending",
+      "manualPath": "Retry the exact NHDP guideline URL with bounded backoff. If it remains unavailable, capture the official handicrafts portal and current skill-development guidance, then verify workshop, toolkit, apprenticeship and beneficiary boundaries before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://handicrafts.nic.in/",
+          "title": "Office of the Development Commissioner Handicrafts official portal",
+          "role": "official_authority_context",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "prime-ministers-employment-generation-programme",
+      "status": "review_pending",
+      "manualPath": "Retry the exact KVIC PMEGP guideline URL with bounded backoff. If it remains unavailable, capture the official PMEGP portal and current scheme guidance, then verify project-cost ceilings, applicant conditions, Udyam prerequisite and subsidy boundaries before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://kviconline.gov.in/pmegpeportal/",
+          "title": "KVIC PMEGP official portal",
+          "role": "official_application_portal",
+          "captureRequired": true
+        },
+        {
+          "url": "https://kviconline.gov.in/pmegpeportal/pmegpeportaltutorialdoc/PMEGP_Guidelines_Certified_2022_3.pdf",
+          "title": "KVIC certified PMEGP guidelines",
+          "role": "official_operational_guideline_supporting",
+          "sourceAnchor": "Other eligibility conditions for PMEGP (New units); maximum cost of the project for Business / Trading activities",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "production-linked-incentive-bulk-drugs-ksm-di-api",
+      "status": "review_pending",
+      "manualPath": "Retry the exact Department of Pharmaceuticals bulk-drugs Gazette URL with bounded backoff. If it remains unavailable, capture the official Department portal and current bulk-drugs PLI guidance, then verify the 41-product scope, greenfield condition, thresholds, incentive rates and application route before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://pharmaceuticals.gov.in/",
+          "title": "Department of Pharmaceuticals official portal",
+          "role": "official_authority_context",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "production-linked-incentive-medical-devices",
+      "status": "review_pending",
+      "manualPath": "Retry the exact Department of Pharmaceuticals medical-devices PLI guideline URL with bounded backoff. If it remains unavailable, capture the official Department portal and current guidance, then verify greenfield eligibility, four target segments, thresholds, claim calculation and disbursement before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://pharmaceuticals.gov.in/",
+          "title": "Department of Pharmaceuticals official portal",
+          "role": "official_authority_context",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "production-linked-incentive-pharmaceuticals",
+      "status": "review_pending",
+      "manualPath": "Retry the exact Department of Pharmaceuticals PLI Gazette URL with bounded backoff. If it remains unavailable, capture the official Department portal and current pharmaceutical PLI materials, then verify target groups, outlay, qualification conditions and claim boundaries before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://pharmaceuticals.gov.in/",
+          "title": "Department of Pharmaceuticals official portal",
+          "role": "official_authority_context",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "promotion-of-medical-device-parks",
+      "status": "review_pending",
+      "manualPath": "Retry the exact Department of Pharmaceuticals Medical Device Parks guideline URL with bounded backoff. If it remains unavailable, capture the official Department portal and current scheme guidance, then verify State/SIA eligibility, common-infrastructure scope, grant limits and selection route before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://pharmaceuticals.gov.in/",
+          "title": "Department of Pharmaceuticals official portal",
+          "role": "official_authority_context",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "startup-accelerator-meity-samridh",
+      "status": "review_pending",
+      "manualPath": "Retry the exact MeitY SAMRIDH URL with bounded backoff. If it remains unavailable, capture the official MeitY Startup Hub portal and current SAMRIDH programme materials, then verify accelerator, startup, funding and call-window boundaries before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://msh.meity.gov.in/",
+          "title": "MeitY Startup Hub official portal",
+          "role": "official_programme_context",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "startup-india-maarg-mentorship",
+      "status": "review_pending",
+      "manualPath": "Retry the exact MAARG platform URL with bounded backoff. If it remains unavailable, capture the official Startup India mentorship route and current platform guidance, then verify mentor onboarding, startup application and service boundaries before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://www.startupindia.gov.in/",
+          "title": "Startup India official portal",
+          "role": "official_startup_route",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "vcf-st-tribal-startups",
+      "status": "review_pending",
+      "manualPath": "Retry the exact Ministry of Tribal Affairs livelihood URL with bounded backoff. If it remains unavailable, capture the official Ministry and implementing-agency context for VCF-ST, then verify Scheduled Tribe founder eligibility, venture-finance route and IFCI management boundaries before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://tribal.gov.in/",
+          "title": "Ministry of Tribal Affairs official portal",
+          "role": "official_authority_context",
+          "captureRequired": true
+        }
+      ]
+    },
+    {
+      "slug": "women-entrepreneurship-platform-wep",
+      "status": "review_pending",
+      "manualPath": "Restore Firecrawl credits or retry the exact WEP Knowledge Portal URL through the approved HTML/manual path. Capture the official WEP platform context and verify that its schemes, finance, incubator, mentorship and service links are discovery content rather than direct entitlements before publication.",
+      "alternateOfficialSources": [
+        {
+          "url": "https://wep.gov.in/",
+          "title": "Women Entrepreneurship Platform official portal",
+          "role": "official_platform_context",
+          "captureRequired": true
+        }
+      ]
+    }
+  ]
+}

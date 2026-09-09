@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-052",
+  "authority": "Central Pollution Control Board - E-Waste EPR",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party CPCB e-waste EPR observations for reviewer use. It does not approve registration, product coverage, a target calculation, an exemption, or publication status.",
+  "sourcePolicy": "CPCB rules, the official CPCB E-Waste FAQ and the current CPCB EPR route are primary. Schedule-I product coverage, role, target year, portal fields, recycler evidence, fees and amendments must be checked against the current case. UdyamVeda explains the route but does not issue CPCB registration or EPR certificates.",
+  "records": [
+    {
+      "slug": "cpcb-e-waste-epr-producer-registration",
+      "sourceUrl": "https://cpcb.nic.in/uploads/Projects/E-Waste/FAQ_ewaste_23012024.pdf",
+      "supportingSources": [
+        {"url":"https://cpcb.nic.in/rules-7/","anchor":"Current CPCB rules and EPR resource index"},
+        {"url":"https://cpcb.nic.in/index.php","anchor":"CPCB current portal index and EPR portal links"},
+        {"url":"https://eprewastecpcb.in/","anchor":"CPCB e-waste EPR portal route requiring current portal verification"}
+      ],
+      "sourceKind": "official_cpcb_e_waste_faq_current_cross_check",
+      "sourceAnchor": "E-Waste (Management) Rules, 2022, covered roles, Schedule-I equipment, exclusions, registration, registered-recycler route, returns and phase-wise recycling targets",
+      "observations": [
+        "The CPCB FAQ states that the E-Waste (Management) Rules, 2022 came into force on 1 April 2023. EPR applies to covered producers under Schedule I, with targets under Schedules III and IV.",
+        "The FAQ describes 106 electrical and electronic equipment items grouped into seven categories. Product and role classification must be confirmed before a recommendation or target calculation.",
+        "The FAQ identifies Manufacturer, Producer, Recycler and Refurbisher as registration categories. A bulk consumer does not need producer registration, and the distinction between an activity role and a portal-registration role must remain explicit.",
+        "The FAQ defines producer coverage to include own-brand manufacture, own-brand assembly, imports of electrical and electronic equipment, and imports of used equipment. The exact role still depends on the current facts and schedule.",
+        "The FAQ excludes waste batteries, plastic packaging, micro enterprises and radioactive waste from the E-Waste Rules scope. These exclusions must not be silently used as a general exemption from other laws or registrations.",
+        "Producer EPR is fulfilled through registered e-waste recyclers. The route includes EPR certificates, quarterly and annual returns, records, audits and possible environmental compensation; registration alone is not compliance completion.",
+        "The FAQ states phase-wise recycling targets of 60% for FY 2023-24 and FY 2024-25, 70% for FY 2025-26 and FY 2026-27, and 80% from FY 2027-28 onward. Used-equipment imports and any amended or special schedule require separate verification before calculation.",
+        "The FAQ states that solar photovoltaic modules are covered with storage obligations through 2034-35 and that no recycling target is presently specified for that storage stream. This is a current-detail checkpoint, not a universal solar exemption.",
+        "Role-specific documentation and pollution-control authorizations differ. The FAQ refers to valid Consent to Operate and authorization for recycler/refurbisher and applicable manufacturer categories, with a white-category caveat, plus RoHS self-declaration and technical documentation.",
+        "Current portal fees, form fields, document limits, amendments, enforcement and the exact current EPR portal route require reviewer confirmation before publication."
+      ],
+      "reviewFollowUps": [
+        "Verify the current Schedule-I equipment list and the applicant's role, including own-brand, assembled, imported and used-import facts.",
+        "Confirm the current CPCB portal, registration form, fees, required documents, recycler certificate route and return schedule.",
+        "Recalculate the applicable financial-year target only after product quantities, target category and any amendment or special schedule are verified.",
+        "Check CTO/authorization, RoHS, technical-document and state pollution-control dependencies for the specific role.",
+        "Record amendment or supersession evidence and obtain a reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source","eligibility","benefit","application","window","fine_print","amendment","current_terms","reviewer_decision"],
+    "reason": "Official CPCB evidence supports the core e-waste route and target boundaries, but current product coverage, portal terms, role documents, fees, amendments and human approval remain unresolved."
+  }
+}

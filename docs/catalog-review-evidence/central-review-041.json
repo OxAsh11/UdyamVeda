@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-041",
+  "authority": "Ministry of Railways (MoR)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "The Indian Railways Manual for Procurement of Goods, current Railway Board/zone procurement instructions, official IREPS route, RailTech portal and DPIIT/Startup India guidance are the relevant first-party sources. Procurement access, bid-security relief and prior-experience/turnover relaxation remain tender-specific and separate from grants, loans, tax benefits and guaranteed orders.",
+  "records": [
+    {
+      "slug": "railways-dpiit-startup-procurement-access",
+      "sourceUrl": "https://secr.indianrailways.gov.in/uploads/files/1738300360704-Manual%20for%20procurement%20Goods_2024.pdf",
+      "supportingSources": [
+        {"url":"https://www.ireps.gov.in/","anchor":"Official Indian Railways e-Procurement System route for current tenders and vendor participation"},
+        {"url":"https://rwp.indianrailways.gov.in/works/uploads/File/User_Manual_for_Registration_of_New_Vendors_%26_Contractors_Version_1.0.pdf","anchor":"Official new-vendor and contractor registration guide covering registration and digital-signature workflow"},
+        {"url":"https://railtech.indianrailways.gov.in/","anchor":"Official RailTech innovation and startup collaboration route; live challenge terms require current verification"},
+        {"url":"https://www.startupindia.gov.in/content/sih/en/startup-scheme.html","anchor":"Official Startup India public-procurement context for DPIIT-recognized startups"}
+      ],
+      "sourceKind": "official_railways_procurement_manual_ireps_startup_route_cross_check",
+      "sourceAnchor": "Manual for Procurement of Goods 2024, section 1.11.5 Support to Start-up Enterprises, pages 60-61: DPIIT definition, ten-year and INR 100 crore boundaries, earnest-money exemption, and prior turnover/experience relaxation subject to quality and technical specifications",
+      "observations": [
+        "The Indian Railways procurement manual defines a startup for this support route as an Indian private limited company, registered partnership or LLP within ten years of incorporation or registration, with turnover not exceeding INR 100 crore in any financial year since incorporation, working toward innovation or a scalable employment/wealth-creation model, and recognized by DPIIT.",
+        "The manual states that eligible DPIIT-recognized startups are exempt from payment of earnest money or bid security for the relevant procurement route.",
+        "The manual states that the procuring entity may relax prior turnover and prior experience subject to quality and technical specifications; this relaxation is normally to be ensured, with documented public-safety, health and critical-security exceptions, and the procuring entity's decision remains final.",
+        "The route is a procurement-access policy and does not create a grant, loan, subsidy, tax benefit, fixed contract value, guaranteed purchase order or guaranteed award.",
+        "Current applicability depends on the live tender or innovation challenge, the tender's explicit wording, DPIIT recognition evidence, technical and statutory readiness, IREPS or other official bid route, and any tender fee, digital-signature, performance-security, safety or security requirements.",
+        "The official manual is a standing policy source, so it does not establish a generic application deadline; each current tender or RailTech challenge has its own publication date, deadline, evaluation and contract terms."
+      ],
+      "reviewFollowUps": [
+        "Confirm that the current manual edition and any Railway Board or zone instructions remain controlling for the intended tender, works procurement or RailTech challenge.",
+        "Verify DPIIT recognition, entity form, incorporation or registration date, turnover history, innovation/scalability facts and absence of formation by splitting up or reconstructing an existing business.",
+        "For the exact live tender, verify the bid-security clause, prior turnover/experience clause, quality and technical specifications, public-safety/health/security exception, tender fee, performance security and submission deadline.",
+        "Verify the official participation route, current IREPS vendor registration and digital-signature requirements, or the current RailTech challenge route, without storing credentials or OTPs.",
+        "Keep procurement access and any future contract value separate from cash benefits; do not rank the record as immediately actionable without a current tender or challenge and an authorized reviewer decision."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source","eligibility","benefit","application","window","fine_print","amendment","current_terms","reviewer_decision"],
+    "reason": "The official manual supports the startup definition and procurement relief, but live tender applicability, current route, exception handling, vendor readiness and reviewer decision remain unresolved. The record stays human-review pending."
+  }
+}

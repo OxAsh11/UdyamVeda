@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-012",
+  "authority": "Department of Chemicals and Petrochemicals (DCPC)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "Department of Chemicals and Petrochemicals official scheme pages, guidelines, annual reports, notifications and CPDS grant portal only; third-party claims are excluded.",
+  "records": [
+    {
+      "slug": "chemicals-promotion-development-scheme",
+      "sourceUrl": "https://chemicals.gov.in/cpds",
+      "supportingSources": [
+        {
+          "url": "https://chemicals.gov.in/chemicals-promotion-development-scheme",
+          "anchor": "Official CPDS scheme page: four components, eligible organisations/industry associations, web-based application and grant-in-aid scope"
+        },
+        {
+          "url": "https://chemicals.gov.in/sites/default/files/inline-files/CPDSguidline1.pdf",
+          "anchor": "Official CPDS guidelines: objectives, knowledge products, knowledge dissemination, excellence awards and eligible activity conditions"
+        },
+        {
+          "url": "https://cpds.chemicals.gov.in/",
+          "anchor": "Official DCPC CPDS grant-in-aid portal: NGO and government-body registration, portal submission and NGO-DARPAN identity requirements"
+        },
+        {
+          "url": "https://chemicals.gov.in/sites/default/files/Reports/annual_report_2025-26_Eng_1.pdf",
+          "anchor": "DCPC Annual Report 2025-26: CPDS purpose, grant-in-aid and sector-promotion activity context"
+        }
+      ],
+      "sourceKind": "official_scheme_overview_guideline_grant_portal_and_annual_report",
+      "sourceAnchor": "Current CPDS overview: objective, four components, grant-in-aid scope and web-based application; official guideline and grant portal for applicant route and conditions",
+      "observations": [
+        "CPDS is an association- and organization-led sector-development support route operated by DCPC. Its purpose is to create knowledge products, disseminate knowledge, support studies/surveys, conduct seminars/workshops/exhibitions/training and recognize research/innovation in the chemicals and petrochemicals sector.",
+        "The current official overview describes four components: creation of knowledge products, knowledge dissemination, excellence awards, and other approved activities such as industry-facilitation measures and help-desk or committee-support expenses. It is not a direct subsidy or reimbursement for every chemical company.",
+        "Eligible applicants and activity routes are organization-specific. The official pages refer to organizations, industry associations and similar bodies; the grant portal separately supports NGO and government-body registration. A participating company may benefit indirectly through an approved association activity, but that does not create an individual grant entitlement.",
+        "The CPDS portal says proposals are submitted through the web-based department route and that NGO applicants must maintain the required NGO-DARPAN organization identity information. Portal availability and registration are not evidence that a new call is open or that a proposal will be sanctioned.",
+        "The reviewed official material does not establish a current universal deadline, assistance ceiling, applicant contribution, release schedule or eligible-cost cap for the specific proposal. The opportunity should remain an activity-specific, review-gated route until the current calendar/call and operative guideline are confirmed."
+      ],
+      "reviewFollowUps": [
+        "Verify the current operative CPDS guideline and all revisions after the 2019/2024-era documents, including the number of components and any changed applicant categories or grant ceilings.",
+        "Confirm whether a current 2026 CPDS call, event calendar, application window or departmental invitation exists; do not infer an open window from the portal login page.",
+        "Extract eligible organization types, registration/governance records, audited accounts, budgets, applicant contribution, release tranches, utilization certificates, audit, unspent funds and recovery conditions.",
+        "Verify the exact NGO-DARPAN, CPDS portal and department submission route for NGOs, industry associations, PSUs, autonomous bodies and government organizations, keeping routes separate.",
+        "Keep association grant support, awards, workshops, studies, events and indirect member benefit as distinct benefit records, with no individual-company amount or guaranteed reimbursement."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment"
+    ],
+    "reason": "CPDS is an organization/industry-association grant-in-aid route with multiple activity components, not a direct company subsidy. Current applicant categories, operative guidelines, grant ceilings, proposal calendar and portal requirements require human review before publication."
+  }
+}

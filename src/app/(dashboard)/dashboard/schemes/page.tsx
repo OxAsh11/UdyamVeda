@@ -1,475 +1,227 @@
 'use client'
 
-import { useEffect, useState, useCallback } from 'react'
-import { createClient } from '@/lib/supabase/client'
-import { matchSchemes, SCHEMES, CATEGORY_LABELS, BENEFIT_TYPE_LABELS, type Scheme } from '@/lib/data/schemes'
-import { BookmarkPlus, Bookmark, ExternalLink, ChevronDown, ChevronUp, CheckCircle2, Clock, Landmark, Share2, Check, Loader2 } from 'lucide-react'
+import { useCallback, useEffect, useState } from 'react'
+import Link from 'next/link'
+import { CATEGORY_LABELS, BENEFIT_TYPE_LABELS } from '@/lib/opportunities/taxonomy'
+import { opportunityToScheme, type CatalogScheme } from '@/lib/opportunities/compat'
+import type { OpportunityDetail, OpportunitySummary } from '@/lib/opportunities/types'
+import { Bookmark, BookmarkPlus, Check, CheckCircle2, ChevronDown, ChevronUp, Clock, ExternalLink, Landmark, Link2, Loader2, Share2 } from 'lucide-react'
 import { toast } from 'sonner'
+import { AUTH_REQUIRED } from '@/lib/auth/mode'
 
-type SavedMap = Record<string, string>       // scheme_id → status
-type StepMap = Record<string, Record<number, boolean>>  // scheme_id → step_index → completed
+type SavedStatus = 'saved' | 'started' | 'applied' | 'approved' | 'rejected' | 'withdrawn'
+type SavedMap = Record<string, SavedStatus>
+type StepMap = Record<string, Record<number, boolean>>
+type ApplicationState = { id: string; status: string; tasks: Array<{ id: string; sort_order: number; status: string }> }
+type ApplicationMap = Record<string, ApplicationState>
 
-function formatCrore(value: number): string {
-  if (value >= 10000000) return `₹${(value / 10000000).toFixed(0)} crore`
-  if (value >= 100000) return `₹${(value / 100000).toFixed(0)} lakh`
-  if (value >= 1000) return `₹${(value / 1000).toFixed(0)}K`
-  return `₹${value}`
+function firstRelation<T>(value: T | T[] | null | undefined) {
+  return (Array.isArray(value) ? value[0] : value) ?? null
+}
+
+async function readJson<T>(response: Response): Promise<T> {
+  const payload = await response.json().catch(() => ({})) as T & { error?: string }
+  if (!response.ok) throw new Error(payload.error ?? 'Request failed')
+  return payload
 }
 
 export default function SchemesPage() {
-  const [business, setBusiness] = useState<Record<string, string> | null>(null)
-  const [matched, setMatched] = useState<Scheme[]>([])
+  const [matched, setMatched] = useState<CatalogScheme[]>([])
   const [saved, setSaved] = useState<SavedMap>({})
   const [steps, setSteps] = useState<StepMap>({})
-  const [loadingSteps, setLoadingSteps] = useState<string | null>(null)
+  const [applications, setApplications] = useState<ApplicationMap>({})
   const [expanded, setExpanded] = useState<string | null>(null)
-  const [filterCategory, setFilterCategory] = useState<string>('all')
+  const [filterCategory, setFilterCategory] = useState('all')
+  const [searchQuery, setSearchQuery] = useState('')
+  const [searchInput, setSearchInput] = useState('')
   const [loading, setLoading] = useState(true)
-  const [userId, setUserId] = useState<string | null>(null)
+  const [loadingAction, setLoadingAction] = useState<string | null>(null)
+  const [catalogSource, setCatalogSource] = useState<'database' | 'research_beta' | 'legacy_draft' | 'empty_unpublished' | 'unavailable'>('unavailable')
+  const [catalogAvailability, setCatalogAvailability] = useState<'available' | 'unavailable'>('unavailable')
+  const [catalogDetails, setCatalogDetails] = useState<Record<string, OpportunityDetail>>({})
   const [copied, setCopied] = useState(false)
+
+  const loadApplications = useCallback(async () => {
+    if (!AUTH_REQUIRED) {
+      setApplications({})
+      setSteps({})
+      return
+    }
+    const response = await fetch('/api/applications', { cache: 'no-store' })
+    if (!response.ok) return
+    const payload = await response.json() as { data?: Array<{ id: string; opportunity_id: string; status: string; opportunity?: unknown; tasks?: ApplicationState['tasks'] }> }
+    const applicationMap: ApplicationMap = {}
+    const stepMap: StepMap = {}
+    for (const item of payload.data ?? []) {
+      const opportunity = firstRelation(item.opportunity) as { slug?: string } | null
+      const key = opportunity?.slug ?? item.opportunity_id
+      applicationMap[key] = { id: item.id, status: item.status, tasks: item.tasks ?? [] }
+      stepMap[key] = {}
+      for (const task of item.tasks ?? []) {
+        if (task.sort_order < 1000) stepMap[key][task.sort_order - 1] = task.status === 'done'
+      }
+    }
+    setApplications(applicationMap)
+    setSteps(stepMap)
+  }, [])
 
   useEffect(() => {
     async function load() {
-      const supabase = createClient()
-      const { data: { user } } = await supabase.auth.getUser()
-      if (!user) return
+      const [catalogResponse, savedResponse] = await Promise.all([
+        fetch(`/api/opportunities?limit=100${searchQuery ? `&q=${encodeURIComponent(searchQuery)}` : ''}`),
+        AUTH_REQUIRED ? fetch('/api/saved-opportunities', { cache: 'no-store' }) : Promise.resolve(null),
+      ])
+      const catalogPayload = await catalogResponse.json() as { data?: OpportunitySummary[]; meta?: { source?: 'database' | 'research_beta' | 'legacy_draft' | 'empty_unpublished' | 'unavailable'; availability?: 'available' | 'unavailable' } }
+      const source = catalogPayload.meta?.source ?? 'unavailable'
+      setCatalogSource(source)
+      setCatalogAvailability(catalogPayload.meta?.availability ?? 'unavailable')
+      setMatched((catalogPayload.data ?? []).map(opportunityToScheme))
 
-      setUserId(user.id)
-
-      const { data: biz } = await supabase
-        .from('business_profiles')
-        .select('stage, founder_type, sector, state, initial_capital, business_name')
-        .eq('user_id', user.id)
-        .single()
-
-      if (biz) {
-        setBusiness(biz)
-        setMatched(matchSchemes(biz))
+      if (savedResponse?.ok) {
+        const savedPayload = await savedResponse.json() as { data?: Array<{ opportunity_id: string; status: SavedStatus; opportunity?: unknown }> }
+        const nextSaved: SavedMap = {}
+        for (const item of savedPayload.data ?? []) {
+          const opportunity = firstRelation(item.opportunity) as { slug?: string } | null
+          nextSaved[opportunity?.slug ?? item.opportunity_id] = item.status
+        }
+        setSaved(nextSaved)
       }
-
-      const { data: savedData } = await supabase
-        .from('saved_schemes')
-        .select('scheme_id, status')
-        .eq('user_id', user.id)
-
-      if (savedData) {
-        const map: SavedMap = {}
-        savedData.forEach(s => { map[s.scheme_id] = s.status })
-        setSaved(map)
-      }
-
-      // Load all scheme step progress at once
-      const stepsRes = await fetch('/api/scheme-steps')
-      const stepsJson = await stepsRes.json()
-      if (stepsJson.progress) setSteps(stepsJson.progress)
-
+      await loadApplications()
       setLoading(false)
     }
-    load()
-  }, [])
+    load().catch(() => {
+      toast.error('Unable to load the opportunity workspace')
+      setLoading(false)
+    })
+  }, [loadApplications, searchQuery])
 
-  // Load steps for a specific scheme when expanded (lazy)
-  async function handleExpand(schemeId: string) {
-    if (expanded === schemeId) {
+  async function handleExpand(opportunityId: string) {
+    if (expanded === opportunityId) {
       setExpanded(null)
       return
     }
-    setExpanded(schemeId)
-
-    if (!steps[schemeId] && saved[schemeId]) {
-      setLoadingSteps(schemeId)
-      const res = await fetch(`/api/scheme-steps?scheme_id=${schemeId}`)
-      const json = await res.json()
-      if (json.progress?.[schemeId]) {
-        setSteps(prev => ({ ...prev, [schemeId]: json.progress[schemeId] }))
-      }
-      setLoadingSteps(null)
+    setExpanded(opportunityId)
+    if (['database', 'research_beta'].includes(catalogSource) && !catalogDetails[opportunityId]) {
+      const response = await fetch(`/api/opportunities/${opportunityId}`)
+      if (!response.ok) return
+      const payload = await response.json() as { data: OpportunityDetail }
+      setCatalogDetails(previous => ({ ...previous, [opportunityId]: payload.data }))
+      setMatched(previous => previous.map(item => item.id === opportunityId
+        ? { ...item, description: payload.data.description, applicationSteps: payload.data.steps.map(step => step.title) }
+        : item))
     }
   }
 
-  const toggleStep = useCallback(async (schemeId: string, stepIndex: number) => {
-    const current = steps[schemeId]?.[stepIndex] ?? false
-    const newVal = !current
-
-    setSteps(prev => ({
-      ...prev,
-      [schemeId]: { ...(prev[schemeId] ?? {}), [stepIndex]: newVal },
-    }))
-
+  const toggleStep = useCallback(async (opportunityId: string, stepIndex: number) => {
+    const application = applications[opportunityId]
+    const task = application?.tasks.find(item => item.sort_order === stepIndex + 1)
+    if (!application || !task) {
+      toast.error('Start the guided application before tracking tasks.')
+      return
+    }
+    const current = steps[opportunityId]?.[stepIndex] ?? false
+    const completed = !current
+    setSteps(previous => ({ ...previous, [opportunityId]: { ...(previous[opportunityId] ?? {}), [stepIndex]: completed } }))
     try {
-      await fetch('/api/scheme-steps', {
-        method: 'POST',
+      await readJson(await fetch(`/api/applications/${application.id}/tasks/${task.id}`, {
+        method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ scheme_id: schemeId, step_index: stepIndex, completed: newVal }),
-      })
-    } catch {
-      setSteps(prev => ({
-        ...prev,
-        [schemeId]: { ...(prev[schemeId] ?? {}), [stepIndex]: current },
+        body: JSON.stringify({ status: completed ? 'done' : 'todo' }),
       }))
-      toast.error('Failed to save step')
+      setApplications(previous => ({ ...previous, [opportunityId]: { ...previous[opportunityId], tasks: previous[opportunityId].tasks.map(item => item.id === task.id ? { ...item, status: completed ? 'done' : 'todo' } : item) } }))
+    } catch (error) {
+      setSteps(previous => ({ ...previous, [opportunityId]: { ...(previous[opportunityId] ?? {}), [stepIndex]: current } }))
+      toast.error(error instanceof Error ? error.message : 'Failed to save task progress')
     }
-  }, [steps])
+  }, [applications, steps])
 
-  async function toggleSave(scheme: Scheme) {
-    if (!userId) return
-    const supabase = createClient()
-
-    if (saved[scheme.id]) {
-      await supabase.from('saved_schemes').delete()
-        .eq('user_id', userId).eq('scheme_id', scheme.id)
-      setSaved(prev => { const n = { ...prev }; delete n[scheme.id]; return n })
-      toast.success('Removed from saved schemes')
-    } else {
-      await supabase.from('saved_schemes').insert({ user_id: userId, scheme_id: scheme.id, status: 'saved' })
-      setSaved(prev => ({ ...prev, [scheme.id]: 'saved' }))
-      toast.success('Saved! Track your application progress below.')
+  async function toggleSave(scheme: CatalogScheme) {
+    if (catalogSource !== 'database') {
+      toast.error('Only published official catalog records can be saved.')
+      return
+    }
+    setLoadingAction(scheme.id)
+    try {
+      if (saved[scheme.id]) {
+        await readJson(await fetch(`/api/saved-opportunities?opportunityId=${encodeURIComponent(scheme.id)}`, { method: 'DELETE' }))
+        setSaved(previous => { const next = { ...previous }; delete next[scheme.id]; return next })
+        toast.success('Removed from saved opportunities')
+      } else {
+        await readJson(await fetch('/api/saved-opportunities', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ opportunityId: scheme.id }) }))
+        setSaved(previous => ({ ...previous, [scheme.id]: 'saved' }))
+        toast.success('Saved to your business workspace')
+      }
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : 'Unable to update saved opportunities')
+    } finally {
+      setLoadingAction(null)
     }
   }
 
-  async function markApplied(scheme: Scheme) {
-    if (!userId) return
-    const supabase = createClient()
-    await supabase.from('saved_schemes').upsert({ user_id: userId, scheme_id: scheme.id, status: 'applied' })
-    setSaved(prev => ({ ...prev, [scheme.id]: 'applied' }))
-    toast.success('Marked as applied!')
+  async function startApplication(scheme: CatalogScheme) {
+    if (catalogSource !== 'database') {
+      toast.error('Applications open only for published official catalog records.')
+      return
+    }
+    setLoadingAction(scheme.id)
+    try {
+      await readJson(await fetch('/api/applications', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ opportunityId: scheme.id }) }))
+      setSaved(previous => ({ ...previous, [scheme.id]: 'started' }))
+      await loadApplications()
+      toast.success('Guided application workspace started')
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : 'Unable to start the application')
+    } finally {
+      setLoadingAction(null)
+    }
   }
 
   function shareEligibility() {
-    const totalValue = matched.reduce((s, sch) => s + sch.benefitValue, 0)
-    const sectorText = business?.sector ?? 'your sector'
-    const stateText = business?.state ?? 'your state'
-    const text = `I just found ${matched.length} government schemes worth ${formatCrore(totalValue)} that I'm eligible for as a ${sectorText} business in ${stateText}.\n\nCheck if you qualify too → ${window.location.origin}/signup`
-
+    const text = `I found ${matched.length} government opportunities on UdyamVeda.\n\nExplore verified opportunities: ${window.location.origin}/dashboard/schemes`
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true)
-      toast.success('Share text copied to clipboard!')
+      toast.success('Share text copied to clipboard')
       setTimeout(() => setCopied(false), 2500)
-    }).catch(() => {
-      toast.error('Copy failed — please copy manually')
-    })
+    }).catch(() => toast.error('Copy failed — please copy manually'))
   }
 
-  const categories = ['all', ...Array.from(new Set(matched.map(s => s.category)))]
-  const displayed = filterCategory === 'all' ? matched : matched.filter(s => s.category === filterCategory)
-  const savedSchemes = SCHEMES.filter(s => saved[s.id])
+  const categories = ['all', ...Array.from(new Set(matched.map(item => item.category)))]
+  const displayed = filterCategory === 'all' ? matched : matched.filter(item => item.category === filterCategory)
+  const savedSchemes = matched.filter(item => saved[item.id])
+  const startedCount = Object.values(saved).filter(status => ['started', 'applied'].includes(status)).length
+  const catalogCountLabel = catalogSource === 'database'
+    ? 'Published opportunities'
+    : catalogSource === 'research_beta'
+      ? 'Research beta opportunities'
+    : catalogSource === 'legacy_draft'
+      ? 'Development draft records'
+      : catalogSource === 'empty_unpublished'
+        ? 'Approved opportunities'
+        : 'Opportunities available'
 
-  // Savings calculator
-  const totalEligible = matched.reduce((s, sch) => s + sch.benefitValue, 0)
-  const totalClaimed = matched.filter(s => saved[s.id] === 'applied').reduce((s, sch) => s + sch.benefitValue, 0)
-  const claimedCount = Object.values(saved).filter(s => s === 'applied').length
-
-  if (loading) {
-    return (
-      <div className="p-8 flex items-center justify-center min-h-[60vh]">
-        <div className="text-neutral-400 text-sm">Finding your eligible schemes...</div>
-      </div>
-    )
-  }
+  if (loading) return <div className="flex min-h-[60vh] items-center justify-center p-8"><div className="text-sm text-slate-400">Loading the verified opportunity catalog...</div></div>
 
   return (
-    <div className="p-8 max-w-4xl">
-      {/* Header */}
-      <div className="flex items-start justify-between mb-8">
-        <div>
-          <h1 className="text-2xl font-semibold text-neutral-900 mb-1">Scheme Matcher</h1>
-          <p className="text-neutral-400 text-sm">
-            Government schemes you are eligible for — ranked by benefit value
-          </p>
-        </div>
-        <button
-          onClick={shareEligibility}
-          className="flex items-center gap-2 px-4 py-2.5 text-sm rounded-xl border border-neutral-200 text-neutral-500 hover:text-neutral-700 hover:border-neutral-300 transition-all"
-        >
-          {copied ? <><Check size={13} /> Copied!</> : <><Share2 size={13} /> Share eligibility</>}
-        </button>
-      </div>
-
-      {/* Savings Calculator */}
-      <div className="glass p-6 mb-6">
-        <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide mb-4">Your Scheme Potential</div>
-        <div className="grid grid-cols-3 gap-4">
-          <div>
-            <div className="text-3xl font-bold text-neutral-900 mb-1">{formatCrore(totalEligible)}</div>
-            <div className="text-neutral-400 text-sm">Total eligible benefits</div>
-            <div className="text-neutral-400 text-xs mt-0.5">across {matched.length} schemes</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-neutral-900 mb-1">{formatCrore(totalClaimed)}</div>
-            <div className="text-neutral-400 text-sm">In progress / applied</div>
-            <div className="text-neutral-400 text-xs mt-0.5">{claimedCount} scheme{claimedCount !== 1 ? 's' : ''} applied for</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-neutral-900 mb-1">{formatCrore(totalEligible - totalClaimed)}</div>
-            <div className="text-neutral-500 text-sm">Still unclaimed</div>
-            <div className="text-neutral-400 text-xs mt-0.5">{matched.length - claimedCount} schemes not yet applied</div>
-          </div>
-        </div>
-
-        {/* Progress bar */}
-        <div className="mt-4">
-          <div className="flex justify-between text-xs text-neutral-400 mb-1.5">
-            <span>Claimed: {totalEligible > 0 ? Math.round((totalClaimed / totalEligible) * 100) : 0}%</span>
-            <span>{matched.length - claimedCount} schemes remaining</span>
-          </div>
-          <div className="w-full h-1.5 bg-neutral-200 rounded-full overflow-hidden">
-            <div
-              className="h-full bg-neutral-700 rounded-full transition-all"
-              style={{ width: `${totalEligible > 0 ? (totalClaimed / totalEligible) * 100 : 0}%` }}
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Summary stats */}
-      <div className="grid grid-cols-3 gap-3 mb-6">
-        {[
-          { label: 'Schemes found', value: matched.length },
-          { label: 'Saved', value: Object.values(saved).filter(s => s === 'saved').length },
-          { label: 'Applied', value: claimedCount },
-        ].map(stat => (
-          <div key={stat.label} className="glass p-4 flex flex-col gap-1">
-            <div className="text-2xl font-semibold text-neutral-900">{stat.value}</div>
-            <div className="text-neutral-400 text-xs">{stat.label}</div>
-          </div>
-        ))}
-      </div>
-
-      {/* Category filters */}
-      <div className="flex flex-wrap gap-2 mb-6">
-        {categories.map(cat => (
-          <button
-            key={cat}
-            onClick={() => setFilterCategory(cat)}
-            className={`chip ${filterCategory === cat ? 'selected' : ''}`}
-          >
-            {cat === 'all' ? `All (${matched.length})` : `${CATEGORY_LABELS[cat] ?? cat} (${matched.filter(s => s.category === cat).length})`}
-          </button>
-        ))}
-      </div>
-
-      {/* Scheme list */}
-      <div className="flex flex-col gap-3 mb-10">
-        {displayed.map(scheme => {
-          const isExpanded = expanded === scheme.id
-          const isSaved = !!saved[scheme.id]
-          const isApplied = saved[scheme.id] === 'applied'
-          const schemeSteps = steps[scheme.id] ?? {}
-          const completedSteps = Object.values(schemeSteps).filter(Boolean).length
-          const totalSteps = scheme.applicationSteps.length
-
-          return (
-            <div
-              key={scheme.id}
-              className={`glass transition-all ${isExpanded ? 'border-neutral-300' : ''}`}
-            >
-              {/* Card header */}
-              <div
-                className="p-5 cursor-pointer"
-                onClick={() => handleExpand(scheme.id)}
-              >
-                <div className="flex items-start justify-between gap-3">
-                  <div className="flex-1 min-w-0">
-                    <div className="flex flex-wrap items-center gap-2 mb-2">
-                      <span className="text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-black/7 text-neutral-500">
-                        {CATEGORY_LABELS[scheme.category]}
-                      </span>
-                      <span className="text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-black/5 text-neutral-400">
-                        {BENEFIT_TYPE_LABELS[scheme.benefitType]}
-                      </span>
-                      {isApplied && (
-                        <span className="text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-black/7 text-neutral-500 flex items-center gap-1">
-                          <CheckCircle2 size={10} /> Applied
-                        </span>
-                      )}
-                      {isSaved && !isApplied && completedSteps > 0 && (
-                        <span className="text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-black/5 text-neutral-400">
-                          {completedSteps}/{totalSteps} steps done
-                        </span>
-                      )}
-                    </div>
-
-                    <h3 className="text-neutral-800 font-semibold text-sm leading-snug mb-1">{scheme.name}</h3>
-                    <p className="text-neutral-500 text-xs">{scheme.ministry}</p>
-                  </div>
-
-                  <div className="flex flex-col items-end gap-2 shrink-0">
-                    <div className="text-neutral-700 font-semibold text-sm text-right">{scheme.benefitHeadline}</div>
-                    <div className="text-neutral-400 text-xs text-right">{scheme.benefitEstimate}</div>
-                    <div className="text-neutral-400 mt-1">
-                      {isExpanded ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Expanded detail */}
-              {isExpanded && (
-                <div className="border-t border-neutral-200 px-5 pb-5">
-                  <p className="text-neutral-500 text-sm leading-relaxed mt-4 mb-5">{scheme.description}</p>
-
-                  {/* Metadata */}
-                  <div className="flex flex-wrap gap-4 mb-5">
-                    <div className="flex items-center gap-1.5 text-neutral-400 text-xs">
-                      <Clock size={12} />Processing: {scheme.processingTime}
-                    </div>
-                    <div className="flex items-center gap-1.5 text-neutral-400 text-xs">
-                      <Landmark size={12} />
-                      Deadline: {scheme.deadline === 'rolling' ? 'Open year-round' : scheme.deadline === 'annual' ? 'Annual cycle' : scheme.deadline}
-                    </div>
-                  </div>
-
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-5">
-                    {scheme.tags.map(tag => (
-                      <span key={tag} className="chip text-xs py-1 px-3">{tag}</span>
-                    ))}
-                  </div>
-
-                  {/* Application Steps + tracker */}
-                  <div className="mb-5">
-                    <div className="flex items-center justify-between mb-3">
-                      <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide">
-                        How to apply {isSaved && `· ${completedSteps}/${totalSteps} done`}
-                      </div>
-                      {isSaved && (
-                        <div className="w-20 h-1 bg-neutral-200 rounded-full overflow-hidden">
-                          <div
-                            className="h-full bg-neutral-700 rounded-full transition-all"
-                            style={{ width: `${totalSteps > 0 ? (completedSteps / totalSteps) * 100 : 0}%` }}
-                          />
-                        </div>
-                      )}
-                    </div>
-
-                    {loadingSteps === scheme.id ? (
-                      <div className="flex items-center gap-2 text-neutral-400 text-sm py-2">
-                        <Loader2 size={13} className="animate-spin" /> Loading progress...
-                      </div>
-                    ) : (
-                      <ol className="flex flex-col gap-2">
-                        {scheme.applicationSteps.map((step, i) => {
-                          const stepDone = !!schemeSteps[i]
-                          return (
-                            <li key={i} className="flex items-start gap-3">
-                              {/* Checkbox — only when saved */}
-                              {isSaved ? (
-                                <button
-                                  onClick={e => { e.stopPropagation(); toggleStep(scheme.id, i) }}
-                                  className={`shrink-0 mt-0.5 transition-colors ${stepDone ? 'text-neutral-700' : 'text-neutral-300 hover:text-neutral-500'}`}
-                                >
-                                  {stepDone
-                                    ? <CheckCircle2 size={16} />
-                                    : <div className="w-4 h-4 rounded-full border-2 border-current" />}
-                                </button>
-                              ) : (
-                                <span className="w-5 h-5 rounded-full bg-black/7 text-neutral-400 text-xs flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
-                              )}
-                              <span className={`text-sm ${stepDone ? 'text-neutral-400 line-through' : 'text-neutral-500'}`}>{step}</span>
-                            </li>
-                          )
-                        })}
-                      </ol>
-                    )}
-                  </div>
-
-                  {/* Action buttons */}
-                  <div className="flex flex-wrap items-center gap-3">
-                    <a
-                      href={scheme.officialUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-accent flex items-center gap-2 px-4 py-2 text-sm"
-                    >
-                      Apply on official portal <ExternalLink size={13} />
-                    </a>
-
-                    <button
-                      onClick={() => toggleSave(scheme)}
-                      className={`flex items-center gap-2 px-4 py-2 text-sm rounded-xl border transition-all ${
-                        isSaved
-                          ? 'border-neutral-300 bg-black/7 text-neutral-600'
-                          : 'border-neutral-200 text-neutral-400 hover:border-neutral-300 hover:text-neutral-600'
-                      }`}
-                    >
-                      {isSaved ? <Bookmark size={14} /> : <BookmarkPlus size={14} />}
-                      {isSaved ? 'Saved' : 'Save & track'}
-                    </button>
-
-                    {isSaved && !isApplied && (
-                      <button
-                        onClick={() => markApplied(scheme)}
-                        className="flex items-center gap-2 px-4 py-2 text-sm rounded-xl border border-neutral-200 text-neutral-400 hover:border-neutral-300 hover:text-neutral-600 transition-all"
-                      >
-                        <CheckCircle2 size={14} />
-                        Mark as applied
-                      </button>
-                    )}
-                  </div>
-
-                  {!isSaved && (
-                    <p className="text-neutral-400 text-xs mt-3">Save this scheme to track your application steps</p>
-                  )}
-                </div>
-              )}
-            </div>
-          )
-        })}
-      </div>
-
-      {/* My Schemes tracker */}
-      {savedSchemes.length > 0 && (
-        <div>
-          <div className="text-neutral-400 text-xs font-semibold uppercase tracking-wide mb-3">My Schemes</div>
-          <div className="glass overflow-hidden">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-neutral-200">
-                  <th className="text-left text-neutral-400 text-xs font-semibold p-4 uppercase tracking-wide">Scheme</th>
-                  <th className="text-left text-neutral-400 text-xs font-semibold p-4 uppercase tracking-wide">Benefit</th>
-                  <th className="text-left text-neutral-400 text-xs font-semibold p-4 uppercase tracking-wide">Progress</th>
-                  <th className="text-left text-neutral-400 text-xs font-semibold p-4 uppercase tracking-wide">Status</th>
-                </tr>
-              </thead>
-              <tbody>
-                {savedSchemes.map(scheme => {
-                  const schemeSteps = steps[scheme.id] ?? {}
-                  const completedSteps = Object.values(schemeSteps).filter(Boolean).length
-                  const totalSteps = scheme.applicationSteps.length
-                  const pct = totalSteps > 0 ? Math.round((completedSteps / totalSteps) * 100) : 0
-
-                  return (
-                    <tr key={scheme.id} className="border-b border-neutral-100 last:border-0">
-                      <td className="p-4">
-                        <div className="text-neutral-700 font-medium text-sm">{scheme.shortName}</div>
-                        <div className="text-neutral-400 text-xs mt-0.5">{scheme.ministry}</div>
-                      </td>
-                      <td className="p-4 text-neutral-500 text-sm">{scheme.benefitHeadline}</td>
-                      <td className="p-4">
-                        <div className="flex items-center gap-2">
-                          <div className="w-16 h-1 bg-neutral-200 rounded-full overflow-hidden">
-                            <div className="h-full bg-neutral-600 rounded-full" style={{ width: `${pct}%` }} />
-                          </div>
-                          <span className="text-neutral-400 text-xs">{completedSteps}/{totalSteps}</span>
-                        </div>
-                      </td>
-                      <td className="p-4">
-                        <span className={`text-xs px-2.5 py-1 rounded-full ${
-                          saved[scheme.id] === 'applied'
-                            ? 'bg-black/10 text-neutral-600'
-                            : 'bg-black/6 text-neutral-500'
-                        }`}>
-                          {saved[scheme.id] === 'applied' ? '✓ Applied' : 'Saved'}
-                        </span>
-                      </td>
-                    </tr>
-                  )
-                })}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      )}
+    <div className="mx-auto max-w-6xl p-5 md:p-8">
+      <div className="mb-8 flex flex-wrap items-end justify-between gap-4"><div><p className="text-xs font-bold uppercase tracking-[0.16em] text-indigo-600">Start & Operate</p><h1 className="mt-2 text-3xl font-extrabold tracking-tight text-slate-950">Government opportunities</h1><p className="mt-2 max-w-xl text-sm text-slate-500">Evidence-backed opportunities ranked for your business, with official provenance and a guided application path.</p></div><button onClick={shareEligibility} className="inline-flex items-center gap-2 rounded-xl border border-indigo-100 bg-indigo-50 px-4 py-2.5 text-sm font-bold text-indigo-700 hover:bg-indigo-100">{copied ? <><Check size={13} /> Copied</> : <><Share2 size={13} /> Share</>}</button></div>
+      <form onSubmit={event => { event.preventDefault(); setSearchQuery(searchInput.trim()); setFilterCategory('all'); setExpanded(null); setLoading(true) }} className="mb-6 flex flex-wrap gap-2 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm"><label className="sr-only" htmlFor="opportunity-search">Search approved opportunities</label><input id="opportunity-search" value={searchInput} onChange={event => setSearchInput(event.target.value)} placeholder="Search approved schemes, grants, loans, policies, or authorities" className="min-w-72 flex-1 rounded-xl border border-slate-200 px-4 py-2.5 text-sm outline-none ring-indigo-200 focus:ring-2" /><button type="submit" className="rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-bold text-white">Search</button>{searchQuery && <button type="button" onClick={() => { setSearchInput(''); setSearchQuery(''); setFilterCategory('all'); setExpanded(null); setLoading(true) }} className="rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-bold text-slate-600">Clear</button>}</form>
+      <div className={`mb-6 rounded-2xl border px-5 py-4 text-sm ${catalogAvailability === 'unavailable' ? 'border-rose-200 bg-rose-50 text-rose-900' : catalogSource === 'database' ? 'border-emerald-200 bg-emerald-50 text-emerald-900' : catalogSource === 'research_beta' || catalogSource === 'legacy_draft' ? 'border-amber-200 bg-amber-50 text-amber-900' : 'border-indigo-200 bg-indigo-50 text-indigo-900'}`}><div className="font-semibold">Catalog status: {catalogAvailability === 'unavailable' ? 'catalog connection unavailable' : catalogSource === 'database' ? 'published official records' : catalogSource === 'research_beta' ? 'research beta records' : catalogSource === 'legacy_draft' ? 'development-only draft records' : 'official review in progress'}</div><p className="mt-1 text-xs leading-5">{catalogAvailability === 'unavailable' ? 'The catalog database could not be reached. No Government opportunity count or eligibility decision is being inferred; retry after the connection is restored.' : catalogSource === 'database' ? 'Each record has an approved catalog version and official-source provenance. Confirm current terms on the authority portal before applying.' : catalogSource === 'research_beta' ? 'These source-backed research records are visible in founder-authorized beta mode while editorial review continues. Confirm current terms on the official portal before acting; saving, recommendations, and applications remain disabled until approval.' : catalogSource === 'legacy_draft' ? 'Draft records are visible only for interface testing and cannot be saved or used to start applications.' : 'Unreviewed Government records are intentionally withheld until source, eligibility, and current-term review is complete.'}</p></div>
+      <div className="mb-6 grid gap-4 md:grid-cols-3"><div className="rounded-2xl bg-indigo-600 p-5 text-white shadow-sm"><div className="text-3xl font-black">{matched.length}</div><div className="mt-1 text-sm font-semibold text-indigo-100">{catalogCountLabel}</div><div className="mt-1 text-xs text-indigo-200">{catalogSource === 'database' ? 'approved catalog records' : catalogSource === 'research_beta' ? 'research records; not yet fully approved' : catalogSource === 'legacy_draft' ? 'not publishable or actionable' : catalogSource === 'empty_unpublished' ? 'official review is in progress' : 'catalog connection required'}</div></div><div className="rounded-2xl bg-orange-50 p-5 text-orange-950"><div className="text-3xl font-black text-orange-600">{Object.values(saved).filter(status => status === 'saved').length}</div><div className="mt-1 text-sm font-semibold">Saved to review</div><div className="mt-1 text-xs text-orange-700">kept in your business workspace</div></div><div className="rounded-2xl bg-emerald-50 p-5 text-emerald-950"><div className="text-3xl font-black text-emerald-600">{startedCount}</div><div className="mt-1 text-sm font-semibold">Applications started</div><div className="mt-1 text-xs text-emerald-700">with versioned task tracking</div></div></div>
+      <div className="mb-6 flex flex-wrap gap-2">{categories.map(category => <button key={category} onClick={() => setFilterCategory(category)} className={`rounded-full px-3 py-1.5 text-xs font-bold transition ${filterCategory === category ? 'bg-indigo-600 text-white' : 'border border-slate-200 bg-white text-slate-500 hover:border-indigo-200 hover:text-indigo-700'}`}>{category === 'all' ? `All (${matched.length})` : `${CATEGORY_LABELS[category] ?? category} (${matched.filter(item => item.category === category).length})`}</button>)}</div>
+      {displayed.length === 0 ? <div className={`rounded-2xl border p-6 text-sm ${catalogAvailability === 'unavailable' ? 'border-rose-200 bg-rose-50 text-rose-900' : 'border-indigo-200 bg-indigo-50 text-indigo-900'}`}><p className="font-semibold">{catalogAvailability === 'unavailable' ? 'Government opportunities are temporarily unavailable.' : searchQuery ? 'No approved opportunities match this search.' : 'No approved opportunities are available yet.'}</p><p className="mt-2 leading-6">{catalogAvailability === 'unavailable' ? 'This is a connection state, not an eligibility result. Try again once the catalog service is reachable.' : searchQuery ? 'Try a broader term or clear the search. Only approved official records are shown here.' : 'UdyamVeda is completing official-source review before showing Government opportunities as actionable recommendations.'}</p></div> : <div className="space-y-4">{displayed.map(scheme => {
+        const isExpanded = expanded === scheme.id
+        const isSaved = Boolean(saved[scheme.id])
+        const application = applications[scheme.id]
+        const schemeSteps = steps[scheme.id] ?? {}
+        const completedSteps = Object.values(schemeSteps).filter(Boolean).length
+        const totalSteps = scheme.applicationSteps.length
+        const detail = catalogDetails[scheme.id]
+        return <article key={scheme.id} className={`rounded-2xl border bg-white shadow-sm transition ${isExpanded ? 'border-indigo-200 shadow-indigo-100' : 'border-slate-100'}`}>
+          <button className="w-full p-5 text-left" onClick={() => handleExpand(scheme.id)}><div className="flex items-start justify-between gap-4"><div className="min-w-0 flex-1"><div className="mb-2 flex flex-wrap items-center gap-2"><span className="rounded-full bg-indigo-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-indigo-700">{CATEGORY_LABELS[scheme.category] ?? scheme.category}</span><span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-slate-500">{BENEFIT_TYPE_LABELS[scheme.benefitType] ?? scheme.benefitType}</span>{application ? <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-emerald-700">Application {application.status.replace('_', ' ')}</span> : null}</div><h2 className="text-base font-bold text-slate-900">{scheme.name}</h2><p className="mt-1 text-xs text-slate-500">{scheme.ministry}</p>{scheme.sourceLabel ? <p className="mt-1 text-[10px] text-slate-400">{scheme.sourceLabel}</p> : null}</div><div className="shrink-0 text-right"><div className="text-sm font-bold text-slate-800">{scheme.benefitHeadline}</div><div className="mt-1 text-xs text-slate-400">{scheme.deadline === 'rolling' ? 'Rolling' : scheme.deadline}</div><div className="mt-3 text-slate-300">{isExpanded ? <ChevronUp size={16} /> : <ChevronDown size={16} />}</div></div></div></button>
+          {isExpanded ? <div className="border-t border-slate-100 px-5 pb-5"><p className="mt-4 text-sm leading-6 text-slate-600">{scheme.description}</p><div className="mt-4 flex flex-wrap gap-4 text-xs text-slate-500"><span className="inline-flex items-center gap-1.5"><Clock size={13} /> {scheme.processingTime}</span><span className="inline-flex items-center gap-1.5"><Landmark size={13} /> {scheme.deadline === 'rolling' ? 'Open year-round' : scheme.deadline}</span>{scheme.lastVerifiedAt ? <span>Verified {new Date(scheme.lastVerifiedAt).toLocaleDateString('en-IN')}</span> : null}</div><div className="mt-4 flex flex-wrap gap-2">{scheme.tags.map(tag => <span key={tag} className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-600">{tag}</span>)}</div><div className="mt-6"><div className="mb-3 flex items-center justify-between"><div className="text-xs font-bold uppercase tracking-wide text-slate-500">Guided application steps</div>{application ? <span className="text-xs text-slate-400">{completedSteps}/{totalSteps} complete</span> : null}</div><ol className="space-y-2">{scheme.applicationSteps.map((step, index) => { const done = Boolean(schemeSteps[index]); return <li key={`${scheme.id}-${index}`} className="flex items-start gap-3 rounded-xl bg-slate-50 p-3">{application ? <button aria-label={`${done ? 'Reopen' : 'Complete'} step ${index + 1}`} onClick={() => toggleStep(scheme.id, index)} className={done ? 'text-emerald-600' : 'text-slate-300 hover:text-indigo-500'}>{done ? <CheckCircle2 size={17} /> : <span className="block h-[17px] w-[17px] rounded-full border-2 border-current" />}</button> : <span className="flex h-[17px] w-[17px] shrink-0 items-center justify-center rounded-full bg-indigo-100 text-[10px] font-bold text-indigo-700">{index + 1}</span>}<span className={`text-sm ${done ? 'text-slate-400 line-through' : 'text-slate-600'}`}>{step}</span></li> })}</ol></div><div className="mt-6 flex flex-wrap items-center gap-3"><a href={scheme.officialUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-bold text-white hover:bg-indigo-700">Official portal <ExternalLink size={13} /></a><Link href={`/dashboard/schemes/${scheme.id}`} className="inline-flex items-center gap-2 rounded-xl border border-indigo-100 bg-indigo-50 px-4 py-2.5 text-sm font-bold text-indigo-700 hover:bg-indigo-100">Evidence detail</Link><button disabled={loadingAction === scheme.id || Boolean(application)} onClick={() => toggleSave(scheme)} className={`inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 text-sm font-bold transition ${isSaved ? 'border-slate-200 bg-slate-50 text-slate-600' : 'border-indigo-100 text-indigo-700 hover:bg-indigo-50'} disabled:cursor-not-allowed disabled:opacity-50`}>{loadingAction === scheme.id ? <Loader2 size={14} className="animate-spin" /> : isSaved ? <Bookmark size={14} /> : <BookmarkPlus size={14} />}{application ? 'Application linked' : isSaved ? 'Saved' : 'Save opportunity'}</button>{isSaved && !application ? <button disabled={loadingAction === scheme.id} onClick={() => startApplication(scheme)} className="inline-flex items-center gap-2 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-2.5 text-sm font-bold text-emerald-700 hover:bg-emerald-100 disabled:opacity-50"><Link2 size={14} /> Start guided application</button> : null}</div>{!isSaved ? <p className="mt-3 text-xs text-slate-400">Save this opportunity first, then start a versioned application workspace.</p> : null}{detail?.requirements.length ? <p className="mt-4 text-xs text-slate-500">{detail.requirements.filter(item => item.required).length} required document or registration items are recorded in the approved version.</p> : null}</div> : null}
+        </article>
+      })}</div>}
+      {savedSchemes.length > 0 ? <section className="mt-8 rounded-2xl border border-slate-100 bg-white p-5 shadow-sm"><div className="mb-4 flex items-center gap-2"><Bookmark size={17} className="text-orange-500" /><h2 className="font-bold text-slate-900">Saved opportunities</h2></div><div className="grid gap-3 md:grid-cols-2">{savedSchemes.map(item => <div key={item.id} className="rounded-xl bg-orange-50/70 p-4"><div className="text-sm font-bold text-slate-800">{item.name}</div><div className="mt-1 text-xs text-slate-500">{saved[item.id] === 'started' ? 'Guided application started' : 'Saved for review'}</div></div>)}</div></section> : null}
     </div>
   )
 }

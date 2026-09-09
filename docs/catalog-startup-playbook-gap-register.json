@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-09-09",
+  "source": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf",
+  "sourceAnchor": "Page 11, What Do You Need? index",
+  "purpose": "Discovery-only leads found in the official Startup India Playbook but not matched by the current structured record slug or name. These are not opportunity records and must not appear in recommendations.",
+  "publicationAllowed": false,
+  "status": "all_playbook_leads_resolved_to_review_gated_drafts",
+  "leads": [],
+  "resolvedDrafts": [
+    {
+      "leadName": "Design Linked Incentive (DLI)",
+      "resolvedSlug": "design-linked-incentive-semiconductor-design",
+      "primarySource": "https://www.meity.gov.in/static/uploads/2024/02/Notification-Design-Linked-Incentive-Scheme.pdf",
+      "recordStatus": "in_review",
+      "publicationAllowed": false,
+      "reviewStatus": "pending_human_approval",
+      "note": "Resolved from the Playbook lead into a structured draft using the MeitY Gazette notification and current DLI portal; current intake and all amendments remain reviewer-controlled."
+    },
+    {
+      "leadName": "DCIS (Telecom)",
+      "resolvedSlug": "digital-communication-innovation-square-dcis",
+      "primarySource": "https://dcis.dot.gov.in/page/faq",
+      "recordStatus": "in_review",
+      "publicationAllowed": false,
+      "reviewStatus": "pending_human_approval",
+      "note": "Resolved to the existing structured DCIS record using the official DoT/TCOE portal, FAQ, DoT flyers and grant SOP. The scheme duration, historical call rounds and current intake conflict remain explicitly review-gated."
+    },
+    {
+      "leadName": "IN-SPACe Seed Fund",
+      "resolvedSlug": "in-space-seed-fund",
+      "primarySource": "https://www.inspace.gov.in/sys_attachment.do?sys_id=7adb190c4703aa10d4bc5b31516d43fc",
+      "recordStatus": "in_review",
+      "publicationAllowed": false,
+      "reviewStatus": "pending_human_approval",
+      "note": "Resolved into a paused, review-gated structured draft using the official IN-SPACe scheme document, prior scheme document, portal, knowledge article and results route. The current 2026 application window is not established by the reviewed evidence."
+    },
+    {
+      "leadName": "Chips to Startup (C2S)",
+      "resolvedSlug": "chips-to-startup-c2s",
+      "primarySource": "https://c2s.gov.in/callforproposals.jsp",
+      "recordStatus": "in_review",
+      "publicationAllowed": false,
+      "reviewStatus": "pending_human_approval",
+      "note": "Resolved into a paused, review-gated umbrella record using official MeitY C2S programme, guidelines, eligibility, BLDC, RSC and ChipIN EDA routes. The current applicable call and category-specific terms remain unresolved."
+    },
+    {
+      "leadName": "SITARE",
+      "resolvedSlug": "birac-sitare-student-innovation",
+      "primarySource": "https://www.birac.nic.in/desc_new.php?id=581",
+      "recordStatus": "in_review",
+      "publicationAllowed": false,
+      "reviewStatus": "pending_human_approval",
+      "note": "Resolved into a paused, student-facing, review-gated record using the official BIRAC SITARE page, guideline PDF, supported-projects route, current-calls index and proposal guide. The current GYTI/BIIS route and call remain reviewer-controlled."
+    },
+    {
+      "leadName": "E-YUVA",
+      "resolvedSlug": "birac-eyuva-student-research-innovation",
+      "primarySource": "https://birac.nic.in/e_yuva.php",
+      "recordStatus": "in_review",
+      "publicationAllowed": false,
+      "reviewStatus": "pending_human_approval",
+      "note": "Resolved into a paused, student/researcher-facing, review-gated record using the official BIRAC E-YUVA page, guideline PDF, historical call and proposal guide. The current component, centres and call remain reviewer-controlled."
+    },
+    {
+      "leadName": "PACE",
+      "resolvedSlug": "birac-pace-academic-research-conversion-to-enterprise",
+      "primarySource": "https://birac.nic.in/desc_new.php?id=286",
+      "recordStatus": "in_review",
+      "publicationAllowed": false,
+      "reviewStatus": "pending_human_approval",
+      "note": "Resolved into a paused, academia-led, review-gated record using the official BIRAC PACE page, revised guidelines, historical RFP and proposal guide. AIR/CRS component terms and the current call remain reviewer-controlled."
+    },
+    {
+      "leadName": "BIRAC Antariksh VCF",
+      "resolvedSlug": "antariksh-venture-capital-fund",
+      "primarySource": "https://www.sidbiventure.co.in/antariksh_venture_capital_fund.html",
+      "recordStatus": "in_review",
+      "publicationAllowed": false,
+      "reviewStatus": "pending_human_approval",
+      "note": "Resolved to the Antariksh Venture Capital Fund, which is managed by SIDBI Venture Capital Limited and anchored by IN-SPACe/Department of Space; the Playbook label must not be treated as a BIRAC programme. Equity terms, diligence, ticket size and current availability remain reviewer-controlled."
+    },
+    {
+      "leadName": "AgriSURE",
+      "resolvedSlug": "agrisure-agri-fund-startups-rural-enterprises",
+      "primarySource": "https://nabventures.in/agrisure.aspx",
+      "recordStatus": "in_review",
+      "publicationAllowed": false,
+      "reviewStatus": "pending_human_approval",
+      "note": "Resolved to the official NABVENTURES/NABARD AgriSURE fund with separate Direct and Fund-of-Funds routes; corpus figures, investment terms and startup/AIF selection remain reviewer-controlled and are not individual entitlements."
+    },
+    {
+      "leadName": "SRI Fund",
+      "resolvedSlug": "self-reliant-india-sri-fund-msme-growth-capital",
+      "primarySource": "https://www.nvcfl.co.in/Scheme",
+      "recordStatus": "in_review",
+      "publicationAllowed": false,
+      "reviewStatus": "pending_human_approval",
+      "note": "Resolved to the official NVCFL Self-Reliant India Fund, a Category-II fund-of-funds route for MSME growth capital through empanelled daughter funds; corpus, investment terms, current intake and daughter-fund selection remain reviewer-controlled."
+    },
+    {
+      "leadName": "NQM",
+      "resolvedSlug": "national-quantum-mission-startup-support",
+      "primarySource": "https://dst.gov.in/sites/default/files/Guidelines%20to%20support%20start-ups.pdf",
+      "recordStatus": "in_review",
+      "publicationAllowed": false,
+      "reviewStatus": "pending_human_approval",
+      "note": "Resolved to the official DST National Quantum Mission startup-support route. Four hub routes and funding/equity terms remain review-controlled, and current windows must be verified before publication."
+    },
+    {
+      "leadName": "BHARATI",
+      "resolvedSlug": "apeda-bharati-export-enablement-acceleration",
+      "primarySource": "https://apeda.gov.in/bharati/index.html",
+      "recordStatus": "in_review",
+      "publicationAllowed": false,
+      "reviewStatus": "pending_human_approval",
+      "note": "Resolved to APEDA's official BHARATI export-enablement acceleration programme. The pilot application window is closed; acceleration, market linkage, optional paid mentorship and investor exposure are separate non-financial or best-effort benefits, and direct funding is expressly disclaimed. Future-cohort availability remains reviewer-controlled."
+    },
+    {
+      "leadName": "MAHIR",
+      "resolvedSlug": "mahir-advanced-high-impact-research-power-startup-support",
+      "primarySource": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2023/jun/doc202367209801.pdf",
+      "recordStatus": "in_review",
+      "publicationAllowed": false,
+      "reviewStatus": "pending_human_approval",
+      "note": "Resolved to the joint Ministry of Power and MNRE MAHIR mission using the official Office Memorandum and CPRI page/call. The first call closed on 20 January 2024; startup pilot and outcome-linked support are call/agreement-controlled, with committee approval and applicable IP-sharing terms. No current call or universal startup ceiling is asserted."
+    },
+    {
+      "leadName": "GREAT",
+      "resolvedSlug": "great-technical-textiles-startup-grant",
+      "primarySource": "https://sansad.in/getFile/annex/270/AU1753_PDeXTJ.pdf?source=pqars",
+      "recordStatus": "in_review",
+      "publicationAllowed": false,
+      "reviewStatus": "pending_human_approval",
+      "note": "Resolved to the Ministry of Textiles National Technical Textiles Mission GREAT route using the official PIB announcement and February 2026 Rajya Sabha answer. The programme is active with reported approved startup projects, but no current open call or deadline was verified; the INR 50 lakh ceiling, 18-month period, incubator allocation and minimum 10% incubatee contribution remain review-gated."
+    },
+    {
+      "leadName": "SEED",
+      "resolvedSlug": "birac-seed-fund-biotech-startup-equity",
+      "primarySource": "https://www.birac.nic.in/webcontent/1616486925_seed_fund_Guidelines.pdf",
+      "recordStatus": "in_review",
+      "publicationAllowed": false,
+      "reviewStatus": "pending_human_approval",
+      "note": "Resolved to BIRAC's Sustainable Entrepreneurship and Enterprise Development Fund using the official BIRAC page, guideline and partner route. The programme is partner-mediated for post-PoC biotech startups; up to INR 30 lakh equity or equity-linked investment and incubator-level grant-in-aid remain separate, and no universal current startup call was verified."
+    },
+    {
+      "leadName": "LEAP Fund",
+      "resolvedSlug": "birac-leap-fund-biotech-startup-equity",
+      "primarySource": "https://birac.nic.in/webcontent/1616486900_leap_fund_guidelines.pdf",
+      "recordStatus": "in_review",
+      "publicationAllowed": false,
+      "reviewStatus": "pending_human_approval",
+      "note": "Resolved to BIRAC's Launching Entrepreneurial Driven Affordable Products Fund using the official BIRAC page, operational guideline and SEED dependency evidence. The programme is partner-mediated for post-PoC biotech, med-tech and life-science startups; up to INR 1 crore equity or equity-linked investment, the incubator-level INR 5 crore bucket, the INR 30 lakh SEED threshold and non-concurrent SEED/LEAP/AcE rules remain review-gated; no universal current startup call was verified."
+    },
+    {
+      "leadName": "AcE",
+      "resolvedSlug": "birac-ace-fund-biotech-fund-of-funds",
+      "primarySource": "https://www.birac.nic.in/webcontent/ace_fund_guidelines.pdf",
+      "recordStatus": "in_review",
+      "publicationAllowed": false,
+      "reviewStatus": "pending_human_approval",
+      "note": "Resolved to BIRAC's Biotechnology Innovation Fund - AcE using the official BIRAC page, guideline, FAQ and AIF application form. AcE is an indirect fund-of-funds route through SEBI-registered AIF partners; the BIRAC daughter-fund commitment, partner 2x obligation and up-to-INR 7 crore portfolio-entity boundary remain separate and non-guaranteed, with no universal current startup call verified."
+    }
+  ]
+}

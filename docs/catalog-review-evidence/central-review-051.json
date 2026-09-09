@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-051",
+  "authority": "Bureau of Indian Standards - Hallmarking",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party BIS hallmarking and jeweller-registration observations for reviewer use. It does not approve registration, hallmarking applicability, an exemption, a district, or publication status.",
+  "sourcePolicy": "BIS hallmarking pages, the current jeweller-registration page, mandatory-hallmarking amendments, and BIS jeweller guidelines are primary. District coverage, article exemptions, turnover treatment, registration status and operational obligations must be checked against the current order and specific business facts. UdyamVeda explains the route but does not issue registration or certify jewellery.",
+  "records": [
+    {
+      "slug": "bis-hallmarking-jeweller-registration",
+      "sourceUrl": "https://www.bis.gov.in/hallmarking-jewellers/?lang=en",
+      "supportingSources": [
+        {"url":"https://www.bis.gov.in/hallmarking-overview/?lang=en","anchor":"Gold and silver scope, online registration, instant/lifetime certificate and current hallmarking overview"},
+        {"url":"https://www.bis.gov.in/apply-for-jewellers-registration/?lang=en","anchor":"Current application page last updated February 3, 2026, with Manakonline registration route"},
+        {"url":"https://www.bis.gov.in/wp-content/uploads/2024/01/Revised-Guidelines-for-JEWELLERS-Jan-24.pdf","anchor":"Grant, operation, surveillance and cancellation guidelines, cooling periods, outlet display and hallmarking charges"},
+        {"url":"https://www.bis.gov.in/hallmarking-overview/?lang=en","anchor":"Current BIS hallmarking amendments and phase-wise district coverage links"},
+        {"url":"https://www.nsws.gov.in/","anchor":"National Single Window System route referenced by BIS jeweller FAQ"}
+      ],
+      "sourceKind": "official_bis_hallmarking_current_page_and_guideline",
+      "sourceAnchor": "Jeweller registration for hallmarked gold/silver articles, mandatory seller categories, turnover exemption, job-work boundary, district coverage and operating duties",
+      "observations": [
+        "BIS states that gold and silver are currently within the hallmarking scope. A jeweller seeking registration to sell hallmarked gold or silver jewellery/artefacts applies online through the BIS/Manakonline route; the current FAQ also references access through NSWS.",
+        "The current BIS FAQ states that manufacturers, wholesalers, distributors and retailers selling hallmarked precious-metal articles must register. Artisans or job workers who do not sell directly may be exempt, but supporting evidence is required.",
+        "BIS states that annual turnover up to INR 40 lakh is outside mandatory hallmarking, but such a jeweller may register if it wants to sell hallmarked jewellery. This is a conditional exemption from mandatory hallmarking, not a blanket exemption from every registration or sale obligation.",
+        "BIS states that jeweller registration is granted instantly, without a registration fee, and is valid for life. The January 2024 guideline adds that BIS may scrutinize registrations and seek a response within 30 days; unsatisfactory or absent responses can lead to cancellation.",
+        "The January 2024 guideline records cooling-period exclusions after certain cancellation or conviction events, corporate registration with separate outlet certificates, required display and customer-verification equipment, market surveillance, and hallmarking charge display. These are ongoing compliance duties rather than registration benefits.",
+        "The BIS site links mandatory-hallmarking amendments through 3 August 2026 and phase-wise district coverage. Whether a specific article or jeweller is under mandatory hallmarking therefore depends on the current district/order, article, business role and exemption facts.",
+        "The first-point-of-sale rule assigns responsibility for getting an article hallmarked to the party making the first sale in the manufacturer/wholesaler/distributor/retailer chain; registration does not itself hallmark or certify an article."
+      ],
+      "reviewFollowUps": [
+        "Verify the current mandatory-hallmarking order, district list, article categories, fineness rules, HUID obligations and all current amendments.",
+        "Confirm business role, direct-sale facts, job-work evidence, turnover, corporate outlets, imported articles and any article-specific exemption before matching.",
+        "Reconcile current portal behavior and registration fields with the January 2024 guideline, including scrutiny, cancellation, display, surveillance and change requests.",
+        "Keep registration, hallmarking/assaying charges, article obligations and market-access consequences separate; do not describe registration as product approval.",
+        "Record amendment or supersession evidence and obtain a reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source","eligibility","benefit","application","window","fine_print","amendment","current_terms","reviewer_decision"],
+    "reason": "Official BIS sources support the registration route and core conditions, but current district/article applicability, exemptions, amendments, portal behavior and human approval remain unresolved."
+  }
+}

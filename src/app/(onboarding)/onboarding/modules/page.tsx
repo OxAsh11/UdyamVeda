@@ -77,7 +77,7 @@ export default function ModuleSelectionPage() {
       return
     }
 
-    router.push('/dashboard')
+    router.push('/onboarding/brand')
   }
 
   return (
@@ -85,7 +85,7 @@ export default function ModuleSelectionPage() {
       <div className="w-full max-w-2xl">
         {/* Header */}
         <div className="flex items-center justify-between mb-10">
-          <div className="text-xl font-bold text-neutral-900 tracking-tight">Center</div>
+          <div className="text-xl font-bold text-neutral-900 tracking-tight">UdyamVeda</div>
           <div className="text-neutral-400 text-xs font-medium">Step 2 of 2</div>
         </div>
 

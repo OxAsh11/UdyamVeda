@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-053",
+  "authority": "Central Pollution Control Board - Plastic Packaging EPR",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party CPCB plastic-packaging EPR observations for reviewer use. It does not approve registration, category coverage, a target calculation, a state route, or publication status.",
+  "sourcePolicy": "The CPCB plastic EPR SOP, CPCB rules index, current CPCB portal resources and the centralized plastic EPR route are primary. Category, unit, State/UT, target, fee, reporting and amendment details must be checked against the current case. UdyamVeda explains the route but does not issue registration or EPR certificates.",
+  "records": [
+    {
+      "slug": "cpcb-plastic-packaging-epr-registration",
+      "sourceUrl": "https://cpcb.nic.in/uploads/plasticwaste/SOP_PWM_24062024.pdf",
+      "supportingSources": [
+        {"url":"https://cpcb.nic.in/rules-7/","anchor":"Current CPCB Plastic Waste Management rules and EPR resource index"},
+        {"url":"https://cpcb.nic.in/index.php","anchor":"CPCB current portal index and EPR portal links"},
+        {"url":"https://cpcbeprplastic.in/","anchor":"Centralized plastic EPR portal route requiring current portal verification"}
+      ],
+      "sourceKind": "official_cpcb_plastic_epr_sop_current_cross_check",
+      "sourceAnchor": "Mandatory registration categories, centralized portal, State/unit treatment, continuing EPR duties, target categories and enforcement boundaries",
+      "observations": [
+        "The CPCB SOP covers Producer, Importer, Brand Owner and Plastic Waste Processor categories. It also addresses manufacturers and importers of plastic raw material and manufacturers of compostable or biodegradable plastic items.",
+        "The current SOP search evidence expressly includes micro and small producers in the registration categories. This corrects the older seed assumption that could have treated smaller producers as outside the route.",
+        "Covered businesses must register through the centralized plastic EPR route before carrying on the covered activity. The entity category, packaging category, State/UT and unit structure must be classified first.",
+        "Multiple categories and State or unit situations require separate treatment under the SOP and current portal. A single registration should not be assumed to cover every role, category, product or location.",
+        "Registration is only the entry point. Reuse, recycling, recycled-content, end-of-life, target, certificate, return, record and enforcement obligations continue after registration.",
+        "The SOP presents 2024-25 onward recycling target sequences of Category I: 50%, 60%, 70%, 80%; Category II: 30%, 40%, 50%, 60%; and Category III: 30%, 40%, 50%, 60% across the stated financial-year bands. Current category definitions, amendments and applicability must be checked before calculation.",
+        "This is a regulatory compliance route, not a grant, subsidy, loan or guaranteed financial saving. Benefit values must remain separate from any financing or incentive recommendation.",
+        "Current portal fields, documents, fees, returns, certificate mechanics, State Pollution Control Board or PCC dependencies, enforcement and amendments require reviewer confirmation before publication."
+      ],
+      "reviewFollowUps": [
+        "Verify the applicant's role, packaging category, raw-material or compostable/biodegradable status and each applicable State/UT or unit.",
+        "Confirm the current portal route, registration fields, fees, documents, returns, certificates and state-authority dependencies.",
+        "Reconcile the applicable target category and financial year with the current SOP, rules and amendments before computing any obligation.",
+        "Keep registration distinct from continuing recycling, reuse, recycled-content, end-of-life, reporting and enforcement duties.",
+        "Record amendment or supersession evidence and obtain a reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source","eligibility","benefit","application","window","fine_print","amendment","current_terms","reviewer_decision"],
+    "reason": "Official CPCB evidence supports covered roles, the registration prerequisite and continuing EPR boundaries, but current category, state/unit, target, portal, fee, reporting and amendment details remain subject to human review."
+  }
+}

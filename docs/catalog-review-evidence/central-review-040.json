@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-040",
+  "authority": "Ministry of Power / Bureau of Energy Efficiency (BEE)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "BEE's current ADEETIE pages, operation-guideline route, technology and cluster lists, PIB/MoP programme material and the official BEE portal are primary. Interest subvention, audit/DPR support, technical handholding, lender finance and measured savings remain separate benefit and eligibility facts. UdyamVeda prepares and explains evidence but does not approve loans, certify energy savings or submit EOI/claim records.",
+  "records": [
+    {
+      "slug": "mop-adeetie-energy-efficiency-msme",
+      "sourceUrl": "https://www.beeindia.gov.in/show_content.php?lang=1&level=1&lid=384&ls_id=234",
+      "supportingSources": [
+        {"url":"https://adeetie.beeindia.gov.in/adeetie-scheme","anchor":"Official BEE ADEETIE scheme page: 60 clusters, 14 sectors, 5%/3% subvention and FY 2025-26 to FY 2027-28 duration"},
+        {"url":"https://adeetie.beeindia.gov.in/operation-guideline-of-scheme","anchor":"Official BEE operation-guideline download route"},
+        {"url":"https://adeetie.beeindia.gov.in/list-of-energy-efficient-technologies","anchor":"Official BEE technology list and potential-savings context"},
+        {"url":"https://beeindia.gov.in/sites/default/files/ADEETIE_Brochure.pdf","anchor":"Official BEE brochure: debt-funding, subvention and audit/DPR support overview"},
+        {"url":"https://adeetie.beeindia.gov.in/expression-of-interest-for-msmes-under-adeetie-scheme","anchor":"Official MSME EOI/willingness route"}
+      ],
+      "sourceKind": "official_bee_adeetie_current_page_guideline_portal_cross_check",
+      "sourceAnchor": "Udyam MSME, identified energy-intensive cluster/sector, eligible energy-efficiency project, loan and lender route, interest subvention, audit/DPR support and 10% savings condition",
+      "observations": [
+        "BEE describes ADEETIE as a Ministry of Power initiative providing technical handholding and conditional financial support for energy-efficient technology adoption by MSMEs.",
+        "The current BEE page identifies Udyam-registered MSMEs in 60 identified energy-intensive clusters across 14 sectors, with a requirement to demonstrate at least 10% energy savings from implemented technologies.",
+        "The scheme describes 5% interest subvention for Micro/Small enterprises and 3% for Medium enterprises; this is applied to eligible lender finance and is not itself a grant or guaranteed loan approval.",
+        "Investment-grade energy audit/DPR reimbursement, technical handholding and monitoring/verification are separate support tracks and must not be added to interest subvention as one total benefit.",
+        "The programme period is FY 2025-26 through FY 2027-28. EOI, cluster availability, technology eligibility, registered financial institutions, minimum-net-interest wording and annual claim rules require current guideline reconciliation before an actionable recommendation."
+      ],
+      "reviewFollowUps": [
+        "Verify active Udyam status, identified cluster, covered sector, current technology list and any phased expansion before matching.",
+        "Confirm eligible loan range, debt-funding percentage, lender approval, subvention calculation, minimum-net-interest condition and claim timing.",
+        "Verify audit/DPR reimbursement caps, empanelled auditors, DPR format, commissioning evidence and 10% savings measurement/verification.",
+        "Check current EOI route, registered financial institutions, operation guideline, scheme amendments, portal status and grievance route.",
+        "Keep loan principal, interest subvention, audit/DPR reimbursement and energy-cost savings separate; obtain a human reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "mahir-advanced-high-impact-research-power-startup-support",
+      "sourceUrl": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2023/jun/doc202367209801.pdf",
+      "sourceKind": "official_ministry_office_memorandum",
+      "sourceAnchor": "Pages 1-4: mission objectives, five-year period, funding, startup pilots, selection and IP modalities",
+      "observations": [
+        "The Ministry of Power and Ministry of New and Renewable Energy established MAHIR for indigenous development and demonstration of advanced energy-sector technologies.",
+        "The Office Memorandum provides for outcome-linked funding, calls/RFPs, Technical Scoping Committee screening, Apex Committee approval and pilot projects of technologies developed by Indian startups.",
+        "The CPRI programme page identifies the research domains, records the first call as closed and says a second call will be advertised soon. The first-call PDF sets 20 January 2024 as the submission deadline.",
+        "The first call invited academia, industry, utilities, startups and R&D institutions and required substantial research and innovation, technical and financial particulars, milestones, deliverables and institutional declarations.",
+        "The Office Memorandum states that IP in developed technology is shared with the Government of India and research agency, and startup pilots have applicable IP-sharing conditions."
+      ],
+      "supportingSources": [
+        {"url":"https://cpri.res.in/en/content/mahir","anchor":"Official CPRI MAHIR objectives, domains, first-call activity and closed status"},
+        {"url":"https://cpri.res.in/sites/default/files/MAHIR_Call%20for%20proposals.pdf","anchor":"First-call applicants, research areas, proposal format, 20 January 2024 deadline and declarations"},
+        {"url":"https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf","anchor":"Official discovery entry for MAHIR power and clean-energy R&D support"}
+      ],
+      "reviewFollowUps": [
+        "Verify a new CPRI MAHIR call or RFP before presenting any actionable route.",
+        "Confirm the current approved research domain, applicant route, budget, eligible costs, milestones, selection method and project duration.",
+        "Confirm the current IP-sharing, non-duplication, non-double-financing, consortium and agreement terms.",
+        "Keep mission-level support, startup pilot support and any call-specific funding as separate benefit buckets; do not publish a universal ceiling."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source","eligibility","benefit","application","window","fine_print","amendment","current_terms","reviewer_decision"],
+    "reason": "Official BEE sources support ADEETIE's structure and conditional rates, but live cluster/technology/lender availability, the controlling operation guideline, claim calculation, savings verification and reviewer decision remain unresolved."
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-026",
+  "authority": "Ministry of Civil Aviation (MoCA)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "The Ministry of Civil Aviation notification and archive are the controlling sources. PIB releases are supporting change-detection evidence for the original notification, application window and implementation history.",
+  "records": [
+    {
+      "slug": "moca-production-linked-incentive-drones-components-closed",
+      "sourceUrl": "https://www.civilaviation.gov.in/sites/default/files/2024-04/PLI%20Scheme%20Drones%20and%20Drone%20Components.pdf",
+      "supportingSources": [
+        {
+          "url": "https://www.civilaviation.gov.in/ministry-documents/notifications/archive-document",
+          "anchor": "Official Ministry archive lists PLI Scheme Drones and Drone Components as an archived notification dated 11 April 2024"
+        },
+        {
+          "url": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1822838",
+          "anchor": "Official application-window release: eligible FY 2021-22 manufacturers, 20 May 2022 deadline, turnover thresholds, 40% value-addition condition and INR 120 crore three-year outlay"
+        },
+        {
+          "url": "https://www.pib.gov.in/pressreleasepage.aspx?lang=2&prid=1776089&reg=48",
+          "anchor": "Official original scheme announcement: 20% value-addition incentive across three financial years"
+        },
+        {
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1880690&lang=2&reg=48",
+          "anchor": "Official operational-guideline release: 29 November 2022 guideline notification, online application/claims and INR 120 crore corpus"
+        }
+      ],
+      "sourceKind": "official_moca_gazette_archive_and_pib_application_history",
+      "sourceAnchor": "Gazette notification sections 3-6 and implementation/application provisions: eligible manufacturers, turnover thresholds, FY 2021-22 to FY 2023-24 tenure, 20% rate, 40% value-addition threshold, INR 120 crore outlay and INR 30 crore per-manufacturer cap",
+      "observations": [
+        "The scheme incentivised manufacturing of drones and specified drone components in India. The eligible component list includes airframe, propulsion, power systems, batteries, navigation/flight-control systems, communications, cameras/sensors/payloads and safety/security components; software developers were also eligible subject to the scheme norms.",
+        "The notification sets minimum annual sales turnover thresholds of INR 2 crore for Indian MSME/startup drone manufacturers, INR 0.5 crore for Indian MSME/startup component manufacturers, INR 4 crore for Indian non-MSME drone manufacturers and INR 1 crore for Indian non-MSME component manufacturers. Component manufacturers had to establish that the claimed components were used solely in drone manufacturing.",
+        "The scheme tenure was three years starting FY 2021-22, with benefits not beyond FY 2023-24. The PLI rate was 20% of eligible value addition, calculated as eligible sales turnover net of GST minus eligible purchase cost net of GST, and a manufacturer needed at least 40% value addition of eligible sales for the year.",
+        "The total financial outlay was INR 120 crore and the notification capped total PLI per manufacturer at INR 30 crore, or 25% of total outlay. These are programme and manufacturer-level caps, not a universal grant entitlement; payout could be reduced pro rata if calculated incentives exceeded the budget.",
+        "Applications were to be submitted through the Project Management Agency online portal, with annual claims within six months from the end of the relevant financial year. PIB records the 20 May 2022 application deadline for the relevant FY 2021-22 eligibility window, and the Ministry archive now classifies the notification as archived.",
+        "The record is therefore a closed historical opportunity. It may be useful for application history and research, but must not appear in active recommendations or be presented as a current drone-manufacturing incentive unless a new official scheme or extension is found."
+      ],
+      "reviewFollowUps": [
+        "Confirm whether any successor drone-manufacturing incentive, extension, or replacement PLI exists in the current Ministry/Cabinet source set; create a separate version/record if found.",
+        "Capture the final beneficiary list, claim/disbursement status and any amendments or corrigenda if historical research and application-history views require them.",
+        "Preserve the 20 May 2022 application deadline and FY 2021-22 to FY 2023-24 benefit period as historical windows, not current deadlines.",
+        "Keep programme outlay, per-manufacturer cap, eligible value addition and actual annual claim as separate fields.",
+        "Maintain the closed/archived status even if the 2024-04 PDF remains technically downloadable from the Ministry website."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "supersession"
+    ],
+    "reason": "The official sources support a detailed historical PLI record, but the benefit period and application window have ended and the controlling Ministry page is archived. Publication is blocked pending confirmation of any successor scheme and authorized archival disposition."
+  }
+}

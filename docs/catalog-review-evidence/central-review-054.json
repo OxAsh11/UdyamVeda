@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-054",
+  "authority": "Credit Guarantee Fund Trust for Micro and Small Enterprises (CGTMSE)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party CGTMSE observations for reviewer use. It does not promise a loan, guarantee approval, collateral-free treatment, fee rate, claim payment, or publication status.",
+  "sourcePolicy": "CGTMSE's current scheme document, official overview, credit-facility guidance, fee guidance and circulars are primary. The current lender list, borrower constitution, enterprise classification, facility type, fee, security, rating, guarantee filing and amendments must be checked against the specific case. UdyamVeda prepares a lender-facing checklist but is not a lender or CGTMSE.",
+  "records": [
+    {
+      "slug": "credit-guarantee-scheme-cgtmse",
+      "sourceUrl": "https://www.cgtmse.in/Home/VS/3",
+      "supportingSources": [
+        {"url":"https://www.cgtmse.in/Default/ViewFile/?id=1743176302611_CGTMSE+-+Scheme+Document+CGS+I_updated+as+on+Apr+1+2025.pdf&path=Page","anchor":"April 1, 2025 scheme document: eligible borrower, annual guarantee fee, guarantee coverage, claims, hybrid security and lender conditions"},
+        {"url":"https://www.cgtmse.in/Home/VS/96","anchor":"Credit facilities and parameters, including hybrid security, ₹10 crore ceiling and lender/rating boundaries"},
+        {"url":"https://www.cgtmse.in/Home/VS/98","anchor":"Annual Guarantee Fee and outstanding-basis fee questions"},
+        {"url":"https://www.cgtmse.in/Circulars","anchor":"Current circular index, including 2025-26 modifications and March 2026 Micro Credit Card circular"},
+        {"url":"https://www.cgtmse.in/Default/ViewFile/?id=1733998438524_Circular+241-+enhancement+in+extent+of+coverage+for+women+entrepreneurs.pdf&path=Circular","anchor":"Women-led enterprise coverage enhancement to 90% and category table"}
+      ],
+      "sourceKind": "official_cgtmse_current_scheme_and_circular_cross_check",
+      "sourceAnchor": "CGS-I eligible borrower, member-lending-institution route, coverage percentages, ₹10 crore ceiling, annual guarantee fee, hybrid security, lender filing and current circular boundary",
+      "observations": [
+        "CGTMSE describes the Credit Guarantee Scheme as a lender-facing guarantee mechanism intended to strengthen institutional credit to micro and small enterprises. It is not a direct borrower loan, grant or subsidy.",
+        "The April 1, 2025 scheme document defines an eligible borrower as a new or existing Micro or Small Enterprise receiving a qualifying credit facility without collateral security and/or third-party guarantees. A hybrid or partial-collateral product may cover only the unsecured portion.",
+        "The route runs through an eligible Member Lending Institution. The lender evaluates and sanctions the facility and lodges the guarantee application; UdyamVeda cannot apply as CGTMSE, sanction credit or promise coverage.",
+        "For guarantees approved or renewed on or after April 1, 2025, the scheme document shows coverage bands up to ₹5 lakh, above ₹5 lakh to ₹50 lakh and above ₹50 lakh to ₹10 crore. The category table includes 85%/75% micro coverage, 90% for women entrepreneurs or MSEs promoted by Agniveers, 85% for specified social/status categories, 80% for specified North-East/J&K/Ladakh cases, and 75% for other categories, subject to the exact rules and additional ICDD treatment.",
+        "The scheme document states that the guarantee ceiling is ₹10 crore per eligible borrower under the described route, and that facilities above ₹50 lakh require internal lender rating and investment-grade treatment. Existing guarantees approved before April 1, 2025 retain their applicable historical treatment.",
+        "Annual Guarantee Fee is charged on the guaranteed amount for the first year and on outstanding amounts for later periods under the current document. The lender pays CGTMSE and may recover the fee from the borrower at its discretion; non-payment can cause guarantee liability to lapse.",
+        "The current document includes annual fee timing, outstanding updates, claims, hybrid-security calculations and conditions for revival or closure. These are operational obligations and must not be presented as a guaranteed borrower benefit.",
+        "CGTMSE's current circular index shows continuing amendments, including 2025-26 modifications and a March 2026 special provision for Micro Credit Card coverage. The current circular set must be checked before publishing any static percentage, fee or product statement.",
+        "Enterprise size, activity, PAN, borrower constitution, eligible lender, facility type, existing exposure, security, category, geography, rating and lender-specific underwriting remain required facts. Unknowns must produce more-information-required rather than automatic eligibility."
+      ],
+      "reviewFollowUps": [
+        "Verify the current CGTMSE scheme document and circulars, including any modification after the April 1, 2025 document and the current 2026 product notices.",
+        "Confirm borrower size, constitution, activity, PAN, facility type, lender eligibility, existing exposure, security model, rating and relevant social/geographic category.",
+        "Confirm the current coverage ceiling, fee table, risk premium/discount, first-year and subsequent fee calculations, and whether the lender may recover the fee from the borrower.",
+        "Keep guarantee coverage, loan amount, lender sanction, claim amount and any subsidy or interest support in separate value buckets.",
+        "Record amendment or supersession evidence and obtain a reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source","eligibility","benefit","application","window","fine_print","amendment","current_terms","reviewer_decision"],
+    "reason": "Official CGTMSE evidence supports the lender-facing guarantee route and current coverage/fee boundaries, but current amendments, lender eligibility, borrower facts, fee application, facility treatment and human approval remain unresolved."
+  }
+}

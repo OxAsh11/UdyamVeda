@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-063",
+  "authority": "Food Safety and Standards Authority of India (FSSAI)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party FSSAI registration and licensing observations for reviewer use. It does not determine statutory coverage for a particular food business, replace professional advice, or authorize UdyamVeda to file declarations or contributions.",
+  "sourcePolicy": "Current FSSAI registration guidance, the Food Safety and Standards regulations and amendments, the official FoSCoS eligibility matrix and application portal are primary. Older eligibility pages and PDFs are supporting evidence only after reconciliation with the current matrix and applicable state/UT or activity-specific conditions. The food business operator or authorised representative must use its own account, credentials, OTPs and statutory declarations.",
+  "records": [
+    {
+      "slug": "fssai-food-business-registration-licensing",
+      "sourceUrl": "https://fssai.gov.in/business/registration",
+      "supportingSources": [
+        {
+          "url": "https://foscos.fssai.gov.in/search-eligibility/CL",
+          "anchor": "Current FoSCoS kind-of-business eligibility matrix: activity, capacity, turnover, location and Central/State/Registration route with fee information"
+        },
+        {
+          "url": "https://fssai.gov.in/upload/advisories/2026/03/69c6a23234827order_27032026.pdf",
+          "anchor": "2026 amendment FAQ, pages 1-3: revised turnover bands, effective date, perpetual validity, migration, street-vendor treatment and continuing hygiene/safety duties"
+        },
+        {
+          "url": "https://foscos.fssai.gov.in/",
+          "anchor": "Official FoSCoS application, payment, modification and compliance handoff"
+        }
+      ],
+      "sourceKind": "official_fssai_registration_foscos_matrix_2026_amendment_cross_check",
+      "sourceAnchor": "Section 31 registration/licensing route, current FoSCoS kind-of-business matrix, 2026 amended thresholds and validity FAQ",
+      "observations": [
+        "FSSAI's registration guidance states that every Food Business Operator must be licensed or registered under Section 31(1) and 31(2) of the Food Safety and Standards Act, 2006. The correct route is registration, State Licence or Central Licence depending on the applicable business conditions.",
+        "The FSSAI 27 March 2026 FAQ records revised bands effective from 1 April 2026 for new applications: Registration up to INR 1.5 crore, State Licence above INR 1.5 crore and up to INR 50 crore, and Central Licence above INR 50 crore.",
+        "Turnover is not sufficient to decide the route. The official FoSCoS matrix evaluates kind of business and may depend on activity, capacity, premises, location, import/export, Central Government premises, multiple locations and other category-specific conditions. High-risk and activity-specific exceptions must remain explicit.",
+        "The 2026 FAQ says FSSAI licences and registrations have perpetual validity unless suspended, cancelled or surrendered. Perpetual validity does not remove hygiene, safety, testing, inspection, recordkeeping or other statutory obligations.",
+        "Existing food businesses may need migration through FoSCoS to align with the revised turnover thresholds. The FAQ states that migration due to the revised thresholds has no modification fee, the licence or registration number does not change, and migration is system-driven from the FBO's self-declaration; the live route still requires reviewer verification before product guidance is published.",
+        "The FoSCoS route must be checked for the exact current application form, documents, fees, payment, inspection, modification, surrender, closure, annual-return and other continuing-compliance requirements. A single generic checklist is unsafe.",
+        "This is a statutory compliance requirement and application route, not a grant, subsidy, loan or tax benefit. The record must remain separate from financial-benefit calculations and must not imply an entitlement or approval.",
+        "UdyamVeda may explain the route, prepare a checklist, validate known facts and hand the user to FoSCoS, but it must not impersonate the applicant, store passwords or OTPs, submit declarations as the applicant, or represent itself as an authorised government filing portal."
+      ],
+      "reviewFollowUps": [
+        "Reconcile the current FoSCoS eligibility matrix and revised April 2026 eligibility PDF against the record for each relevant kind of business, including activity, capacity, turnover, premises, location and Central/State/Registration route.",
+        "Capture category-specific and state/UT exceptions, multi-state head-office rules, import/export conditions, high-risk commodities, street-vendor deemed-registration treatment and any product-approval prerequisite.",
+        "Verify the current document lists, fees, payment flow, inspection or Tatkal conditions, application steps, modification, surrender, closure, annual returns and continuing hygiene, safety and testing duties.",
+        "Verify the live migration route for existing FBOs, including self-declaration, timing, fee treatment, unchanged licence number, auto-migration behavior and handling of applications already under process.",
+        "Record any subsequent Gazette amendment, order, FAQ, corrigendum or supersession before publication and obtain human reviewer approval for deterministic eligibility logic."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "Primary FSSAI and FoSCoS sources support the Section 31 route, the revised 2026 turnover bands and the perpetual-validity reform, but the live business-category matrix, state/activity exceptions, documents, fees, migration and continuing obligations require reviewer reconciliation before publication."
+  }
+}

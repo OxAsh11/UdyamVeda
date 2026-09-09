@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { toast } from 'sonner'
-import { User, LayoutGrid, Plug, ChevronRight, ExternalLink, Save, Loader2 } from 'lucide-react'
+import { User, LayoutGrid, Plug, ExternalLink, Save, Loader2 } from 'lucide-react'
 
 type Tab = 'profile' | 'modules' | 'integrations'
 
@@ -33,15 +33,23 @@ export default function SettingsPage() {
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) return
 
-      const [{ data: p }, { data: b }, { data: m }] = await Promise.all([
+      const [profileResult, businessResult, moduleResult] = await Promise.all([
         supabase.from('profiles').select('full_name').eq('id', user.id).single(),
-        supabase.from('business_profiles').select('*').eq('user_id', user.id).single(),
+        fetch('/api/businesses/current', { cache: 'no-store' }),
         supabase.from('module_selections').select('*').eq('user_id', user.id).single(),
       ])
 
-      if (p) setProfile({ full_name: p.full_name ?? '' })
-      if (b) setBusiness({ business_name: b.business_name ?? '', sector: b.sector ?? '', stage: b.stage ?? '', state: b.state ?? '', district: b.district ?? '' })
-      if (m) setModules({ setup_schemes: m.setup_schemes, gtm_platform: m.gtm_platform })
+      if (profileResult.data) setProfile({ full_name: profileResult.data.full_name ?? '' })
+      const businessPayload = await businessResult.json() as { data?: { business?: { name?: string | null; district?: string | null }; profile?: Record<string, unknown> } }
+      const businessProfile = businessPayload.data?.profile
+      if (businessProfile) setBusiness({
+        business_name: String(businessProfile.business_name ?? businessPayload.data?.business?.name ?? ''),
+        sector: String(businessProfile.sector ?? ''),
+        stage: String(businessProfile.stage ?? ''),
+        state: String(businessProfile.state ?? ''),
+        district: String(businessPayload.data?.business?.district ?? ''),
+      })
+      if (moduleResult.data) setModules({ setup_schemes: moduleResult.data.setup_schemes, gtm_platform: moduleResult.data.gtm_platform })
       setLoading(false)
     }
     load()
@@ -53,10 +61,26 @@ export default function SettingsPage() {
     const { data: { user } } = await supabase.auth.getUser()
     if (!user) return
 
-    await Promise.all([
+    const [profileResult, businessResult] = await Promise.all([
       supabase.from('profiles').update({ full_name: profile.full_name }).eq('id', user.id),
-      supabase.from('business_profiles').update(business).eq('user_id', user.id),
+      fetch('/api/businesses/current', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          businessName: business.business_name,
+          sector: business.sector,
+          stage: business.stage,
+          state: business.state,
+          district: business.district,
+        }),
+      }),
     ])
+
+    if (profileResult.error) throw new Error(profileResult.error.message)
+    if (!businessResult.ok) {
+      const payload = await businessResult.json().catch(() => ({})) as { error?: string }
+      throw new Error(payload.error ?? 'Business details could not be saved')
+    }
 
     setSaving(false)
     toast.success('Profile saved')

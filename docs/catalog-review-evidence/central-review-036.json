@@ -1,0 +1,448 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-036",
+  "authority": "Ministry of Micro, Small & Medium Enterprises (MSME)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "The Ministry of MSME, Office of the Development Commissioner, MyMSME, RAMP, NSIC, Coir Board/KVIC and scheme-specific government portals are the primary sources. Each record remains separate where beneficiary, delivery route, or benefit mechanics differ. UdyamVeda prepares and explains evidence but does not file applications, handle OTPs, submit tenders or represent itself as a government portal.",
+  "records": [
+    {
+      "slug": "coir-vikas-yojana",
+      "sourceUrl": "https://msme.gov.in/sites/default/files/Coir-Vikas-YojanaContents.pdf",
+      "supportingSources": [
+        {"url":"https://my.msme.gov.in/mymsme/Scheme.aspx","anchor":"Official MyMSME scheme list: Coir Vikas Yojana and its components"},
+        {"url":"https://msme.gov.in/sites/default/files/Latest%20guidelines-for-CVY.pdf","anchor":"Official Ministry CVY guideline link listed by MyMSME"}
+      ],
+      "sourceKind": "official_msme_coir_board_and_mymsme_cross_check",
+      "sourceAnchor": "Coir Vikas Yojana components covering skill development, women artisans, production infrastructure, domestic/export promotion, functional support and welfare",
+      "observations": [
+        "The official Ministry material describes CVY as a multi-component coir-sector programme, not a single undifferentiated grant.",
+        "The component structure includes skill and Mahila Coir support, export market promotion, production infrastructure, domestic market promotion, trade/industry support and welfare measures.",
+        "The draft must keep artisan training, coir processing infrastructure, market promotion and institutional support as distinct benefits with distinct applicants and routes.",
+        "Older component documents and current guideline links coexist in official listings; the effective version and current call or application route require reviewer confirmation before any matching result is published."
+      ],
+      "reviewFollowUps": [
+        "Confirm the currently operative CVY guideline, component names, effective dates and any superseding circulars.",
+        "Verify applicant class, coir registration, geographic/sector conditions and component-specific contribution or ceiling rules.",
+        "Confirm current application forms, Coir Board office route, windows, training calendars and contact/grievance path.",
+        "Keep component-specific benefits separate and obtain a human reviewer decision before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "entrepreneurship-and-skill-development-programme-esdp",
+      "sourceUrl": "https://msme.gov.in/sites/default/files/Approved_ESDP_Guidelines.pdf",
+      "supportingSources": [
+        {"url":"https://msme.gov.in/sites/default/files/Approved_ESDP_Guidelines.pdf","anchor":"25 March 2022 approved ESDP guidelines and 15th Finance Commission commencement"},
+        {"url":"https://my.msme.gov.in/MyMsmeMob/MsmeScheme/Pages/0_3_1.html","anchor":"Official MyMSME training-institution assistance and enrollment route"}
+      ],
+      "sourceKind": "official_msme_esdp_guideline_and_mymsme_cross_check",
+      "sourceAnchor": "ESDP approved guideline memorandum, MIS proposal route and training institution participation",
+      "observations": [
+        "The official memorandum identifies ESDP as a component of the Development of MSMEs scheme and states that the approved guidelines apply from 25 March 2022 for the 15th Finance Commission period.",
+        "The guideline directs quarter-wise training proposals to be uploaded on the MyMSME MIS portal; this is an operational workflow, not a guaranteed individual cash benefit.",
+        "MyMSME separately describes assistance to eligible training institutions for infrastructure and entrepreneurship/skill programmes, so institution and trainee journeys must not be conflated.",
+        "The draft should expose training discovery and institution eligibility separately from any financial assistance available to implementing institutions."
+      ],
+      "reviewFollowUps": [
+        "Confirm current programme calendar, eligible training providers, trainee categories, geography and seat availability.",
+        "Verify current assistance rates, matching requirements, proposal approvals and reimbursement conditions from the operative guideline.",
+        "Confirm the current MyMSME/MIS application route, documents, deadlines and grievance contact.",
+        "Obtain reviewer confirmation of whether each published result is for a trainee, training institution or implementing agency."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "msme-international-cooperation-scheme",
+      "sourceUrl": "https://msme.gov.in/sites/default/files/Revised_IC_Scheme2023.pdf",
+      "supportingSources": [
+        {"url":"https://ic.msme.gov.in/IC_APP/WriteReadData/GuideLine/MDAGuidelines_2024.pdf","anchor":"Amended IC Scheme guidelines and market-development sub-components"},
+        {"url":"https://ic.msme.gov.in/","anchor":"Official International Cooperation scheme portal and current calls route"}
+      ],
+      "sourceKind": "official_msme_international_cooperation_guideline_and_portal_cross_check",
+      "sourceAnchor": "Market Development Assistance, international exhibitions/fairs, buyer-seller meets, conferences and export-market support",
+      "observations": [
+        "The official amended guidance describes the scheme as support for MSMEs entering export markets through international exhibitions, fairs, conferences, seminars, buyer-seller meets and market intelligence.",
+        "The scheme contains multiple sub-components and applicant routes, including industry associations, government organisations and Ministry-led activities; a business should not be treated as directly eligible for every component.",
+        "Reimbursement, delegation, event and market-intelligence benefits require event-specific terms, approved participation and supporting expenditure evidence.",
+        "The portal and the guideline should be reconciled for current calls, forms, deadlines, eligible costs and any amendments before publication."
+      ],
+      "reviewFollowUps": [
+        "Verify the current call/event, eligible applicant type, exporter status and approved event list.",
+        "Confirm ceilings, reimbursement percentages, admissible costs, contribution and payment timing for the selected sub-component.",
+        "Check required documents, GST/Udyam/export evidence, delegation rules and post-event reporting.",
+        "Obtain a reviewer decision for each active sub-component rather than publishing one generic IC benefit."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "khadi-gramodyog-vikas-yojana",
+      "sourceUrl": "https://kviconline.gov.in/pmegpeportalappdoc/DigitalKVICupload/43320231218130809.pdf",
+      "supportingSources": [
+        {"url":"https://www.kvic.gov.in/","anchor":"Official KVIC institutional and scheme authority"},
+        {"url":"https://msme.gov.in/offerings","anchor":"Official Ministry offerings index for current scheme discovery"}
+      ],
+      "sourceKind": "official_kvic_and_msme_source_cross_check",
+      "sourceAnchor": "KGVY sub-scheme structure, implementing agency and component-specific artisan/enterprise support",
+      "observations": [
+        "KGVY is an umbrella programme whose components can have different beneficiaries, interventions and implementing routes.",
+        "The draft must distinguish khadi institutions, village-industry units, artisans, clusters and individual entrepreneurs instead of treating KGVY as one universal subsidy.",
+        "The captured KVIC PDF is authoritative evidence for review, but the current portal route, forms, selection process and operative component circulars still need confirmation.",
+        "Any amount shown must be tied to a specific KGVY component and source clause; umbrella outlay or institutional allocation must not be presented as applicant value."
+      ],
+      "reviewFollowUps": [
+        "Confirm the current KGVY component list, implementing agency, applicant class and applicable geography.",
+        "Verify benefit ceilings, beneficiary contribution, equipment/asset conditions, milestones and utilization reporting.",
+        "Confirm current KVIC application route, documents, inspection/selection steps, window and grievance contact.",
+        "Resolve the official PDF/portal version and obtain human approval before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "micro-and-small-enterprises-cluster-development-programme",
+      "sourceUrl": "https://msme.gov.in/sites/default/files/ModifiedGuidelinesofMSE.pdf",
+      "supportingSources": [
+        {"url":"https://dashboard.msme.gov.in/cdp.aspx","anchor":"Official MSE-CDP project dashboard and current project status"},
+        {"url":"https://msme.gov.in/sites/default/files/ModifiedGuidelinesofMSE_0.pdf","anchor":"Official modified MSE-CDP guideline copy with intervention and grant parameters"}
+      ],
+      "sourceKind": "official_msme_cluster_guideline_dashboard_cross_check",
+      "sourceAnchor": "Diagnostic study, soft interventions, common facility centres and infrastructure development under MSE-CDP",
+      "observations": [
+        "The official dashboard treats MSE-CDP as a project/cluster programme with Common Facility Centre and Infrastructure Development project tracks, not an individual enterprise grant by default.",
+        "The guideline requires cluster diagnosis and an action plan; soft-intervention eligibility, critical mass, beneficiary share and grant percentage are intervention-specific.",
+        "The draft must distinguish cluster SPV, implementing agency, participating MSE and infrastructure beneficiary roles.",
+        "Project status and approved amounts on the dashboard are programme context and must not be divided into a per-business eligible value."
+      ],
+      "reviewFollowUps": [
+        "Confirm current project call, eligible cluster/SPV, state/agency contribution and project-specific intervention.",
+        "Verify the applicable critical mass, grant percentage, maximum cost, beneficiary contribution and release milestones.",
+        "Check diagnostic study, DPR, procurement, utilization, monitoring and completion documents.",
+        "Publish only a role-specific opportunity after a reviewer confirms the live route and current guideline version."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "mse-green-investment-and-financing-for-transformation",
+      "sourceUrl": "https://ramp.msme.gov.in/ramp/RAMP-initiative/mse-gift/gift-risk-sharing-facility-coverage-rsf",
+      "supportingSources": [
+        {"url":"https://ramp.msme.gov.in/ramp/RAMP-initiative/mse-gift/gift-risk-sharing-facility-coverage-rsf","anchor":"Official RAMP GIFT overview, eligibility, interest subvention and risk-sharing components"},
+        {"url":"https://ramp.msme.gov.in/ramp/pdf-documents/scheme-guidelines/MSE-GIFT-Circular.pdf","anchor":"Official GIFT circular: guarantee coverage and implementation details"}
+      ],
+      "sourceKind": "official_ramp_gift_page_and_circular_cross_check",
+      "sourceAnchor": "Udyam eligibility, green project sectors, 2% interest subvention up to Rs 2 crore and risk-sharing coverage",
+      "observations": [
+        "The official RAMP page describes GIFT as a green-finance sub-scheme with interest subvention, risk-sharing support and information/education/communication components.",
+        "The page states that Udyam-registered MSMEs and participating lending institutions have different roles; the business benefit depends on lender and project qualification.",
+        "The circular provides category- and facility-dependent guarantee coverage percentages, so the headline loan limit is not a guaranteed loan or grant value.",
+        "Eligible sectors include resource efficiency, waste management, clean transportation and other approved climate-impact projects; the project classification must be evidenced."
+      ],
+      "reviewFollowUps": [
+        "Verify current participating lenders, approved project taxonomy, loan terms, sanction route and lender-level underwriting.",
+        "Confirm interest-subvention duration, eligible principal, risk-sharing cap, guarantee fee and borrower contribution.",
+        "Check green project documents, Udyam status, environmental/technical evidence, monitoring and reporting conditions.",
+        "Keep interest support and guarantee coverage separate in benefit calculations and obtain reviewer approval."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "mse-scheme-for-promotion-and-investment-in-circular-economy",
+      "sourceUrl": "https://ramp.msme.gov.in/ramp/RAMP-initiative/mse-spice/mse-spice",
+      "supportingSources": [
+        {"url":"https://ramp.msme.gov.in/ramp/RAMP-initiative/mse-spice/mse-spice","anchor":"Official RAMP SPICE overview, brownfield condition, subsidy cap and current programme status"},
+        {"url":"https://ramp.msme.gov.in/ramp/scheme-guidelines","anchor":"Official RAMP scheme-guidelines index"}
+      ],
+      "sourceKind": "official_ramp_spice_page_and_guideline_index_cross_check",
+      "sourceAnchor": "Udyam-registered MSE, brownfield project, 25% plant-and-machinery capital subsidy capped at Rs 12.5 lakh and Rs 2 crore project ceiling",
+      "observations": [
+        "The current RAMP page describes SPICE as support for MSEs adopting circular-economy practices through a credit-linked capital subsidy and awareness/IEC.",
+        "The page states that Udyam-registered MSEs are eligible and that the scheme is for brownfield projects; both facts are blocking conditions for matching.",
+        "The listed 25% subsidy and Rs 12.5 lakh cap apply to qualifying plant and machinery within the project rules, not to total project cost or working capital.",
+        "The RAMP page shows live programme metrics, but those metrics are not applicant entitlement and must not be used as a user benefit calculation."
+      ],
+      "reviewFollowUps": [
+        "Verify the current guideline, eligible circular technologies, lender/PLI route and brownfield definition.",
+        "Confirm eligible machinery, project-cost ceiling, subsidy calculation, disbursement and lock-in/monitoring conditions.",
+        "Check Udyam evidence, technical appraisal, quotations, loan sanction and required environmental documents.",
+        "Obtain a reviewer decision and keep subsidy value separate from any associated credit."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "mse-online-dispute-resolution-scheme",
+      "sourceUrl": "https://ramp.msme.gov.in/ramp/pdf-documents/scheme-guidelines/odr-guidelines.pdf",
+      "supportingSources": [
+        {"url":"https://ramp.msme.gov.in/ramp/RAMP-initiative/mse-odr/mse-odr-scheme","anchor":"Official RAMP MSE-ODR overview, outlay, eligibility and components"},
+        {"url":"https://ramp.msme.gov.in/ramp/pdf-documents/scheme-guidelines/odr-guidelines.pdf","anchor":"Official ODR guidelines: Udyam/UAP eligibility and one-time documentation/application-fee support"}
+      ],
+      "sourceKind": "official_ramp_odr_page_and_guideline_cross_check",
+      "sourceAnchor": "Delayed-payment dispute resolution, Udyam/UAP eligibility, MSEFC support and up-to-Rs 4,000 one-time assistance",
+      "observations": [
+        "The official RAMP page describes MSE-ODR as an online dispute-resolution infrastructure and support scheme for delayed-payment cases, not a general business loan or grant.",
+        "The guideline states that micro and small enterprises registered on Udyam or Udyam Assist Platform are eligible under the scheme.",
+        "The guideline includes one-time financial assistance for documentation and MSEFC application fees, limited to Rs 4,000 per MSE where applicable; this must not be shown as compensation for the delayed invoice.",
+        "The operational ODR portal, MSEFC integration, legal support and applicant handoff require current route verification because the programme is being implemented in stages."
+      ],
+      "reviewFollowUps": [
+        "Verify the current ODR portal route, participating MSEFCs, filing prerequisites and jurisdiction.",
+        "Confirm the documentation/application-fee assistance process, admissible costs and payment evidence.",
+        "Explain that UdyamVeda cannot decide disputes, provide legal representation or guarantee recovery.",
+        "Check current amendments, grievance route, privacy terms and obtain reviewer approval before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "msme-competitive-lean-scheme",
+      "sourceUrl": "https://lean.msme.gov.in/Home/Eligibility",
+      "supportingSources": [
+        {"url":"https://lean.msme.gov.in/Home/Eligibility","anchor":"Official LEAN eligibility: Udyam-registered MSMEs and eligible cluster CFCs"},
+        {"url":"https://lean.msme.gov.in/Home/FAQs","anchor":"Official LEAN FAQ: manufacturing scope, levels, implementing agencies and subsidy"}
+      ],
+      "sourceKind": "official_lean_portal_eligibility_faq_cross_check",
+      "sourceAnchor": "Udyam registration, manufacturing scope, Basic/Intermediate/Advanced levels, consultant support and subsidy",
+      "observations": [
+        "The official LEAN portal states that Udyam-registered MSMEs are eligible and that eligible CFCs under SFURTI and MSE-CDP may also participate.",
+        "The FAQ describes the current scheme as focused on manufacturing MSMEs, with Basic, Intermediate and Advanced levels and different support mechanics.",
+        "The portal describes 90% subsidy for consultant implementation costs, with an additional 5% for women/SC/ST-owned MSMEs; the level, cost base and completion conditions must be verified before calculating value.",
+        "Registration uses Udyam details and portal verification; UdyamVeda may prepare the checklist but must not handle portal OTPs or credentials."
+      ],
+      "reviewFollowUps": [
+        "Confirm whether the current phase covers the applicant's manufacturing activity and CFC status.",
+        "Verify level-specific fees, subsidy base, additional category support, consultant assignment and completion evidence.",
+        "Confirm current registration steps, Udyam/mobile verification, pledge/undertaking, documents and portal status.",
+        "Obtain reviewer approval for the active scheme version and ensure non-manufacturing businesses are not silently matched."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "msme-technology-centres-tool-rooms-extension-centres",
+      "sourceUrl": "https://dcmsme.gov.in/CLCS_TUS_Scheme/Tool_Room_Tech_Institutions/Scheme_Guidelines.aspx",
+      "supportingSources": [
+        {"url":"https://dcmsme.gov.in/CLCS_TUS_Scheme/Tool_Room_Tech_Institutions/Scheme_Guidelines.aspx","anchor":"Official DC-MSME current Technology Centre network and services"},
+        {"url":"https://dcmsme.gov.in/CLCS_TUS_Scheme/TCSP/new-Technology-Centers/Scheme_Guidelines.aspx","anchor":"Official new Technology Centres and Extension Centres scheme objectives and support"}
+      ],
+      "sourceKind": "official_dc_msme_technology_centres_cross_check",
+      "sourceAnchor": "18 existing Technology Centres, 20 new Technology Centres, 100 Extension Centres and technology/skilling/advisory services",
+      "observations": [
+        "The official DC-MSME page describes 18 autonomous Technology Centres, including Tool Rooms and product-specific Technology Development Centres, providing technical services, training and technology support.",
+        "The new-centre scheme targets institutional expansion and catchment-area services; the targets are not automatically an applicant grant or subsidy.",
+        "Most Technology Centre services may be chargeable, with concessions depending on the centre, category and applicable scheme, so a user-facing match must identify the specific centre service.",
+        "The draft must distinguish service access, training enrolment, incubation/advisory support and institutional infrastructure projects."
+      ],
+      "reviewFollowUps": [
+        "Verify the current centre directory, service catalogue, fees, concessions, seats and location eligibility.",
+        "Confirm whether the user is seeking a service, a training seat, a centre partnership or a state/institutional project.",
+        "Check current application forms, documents, scheduling, payment and grievance routes for the selected centre.",
+        "Do not publish institutional expansion targets as direct business benefits; obtain reviewer approval."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "msme-tool-rooms-and-technology-centres",
+      "sourceUrl": "https://www.msme.gov.in/sites/default/files/MSMESchemebooklet2024.pdf",
+      "supportingSources": [
+        {"url":"https://dcmsme.gov.in/CLCS_TUS_Scheme/Tool_Room_Tech_Institutions/Scheme_Guidelines.aspx","anchor":"Official Technology Centre directory, technical services and training descriptions"},
+        {"url":"https://www.dcmsme.gov.in/CLCS_TUS_Scheme/TCSP/new_tcs.aspx","anchor":"Official DC-MSME list of current and new Technology Centres"}
+      ],
+      "sourceKind": "official_msme_scheme_booklet_and_dc_msme_directory_cross_check",
+      "sourceAnchor": "Technology Centre/Tool Room service discovery, centre-specific capabilities and training/advisory access",
+      "observations": [
+        "This record is retained as a service-directory opportunity distinct from the institutional Technology Centre/Extension Centre expansion scheme.",
+        "Official DC-MSME material describes Tool Rooms and Technology Development Centres as providing design, manufacturing, testing, product/process technology and skilled-manpower support.",
+        "The user value is centre-specific access, training or technical assistance; there is no universal cash benefit to add to a recommendation.",
+        "The scheme booklet is a discovery seed and must be reconciled with the current DC-MSME directory and each centre's own service/fee information."
+      ],
+      "reviewFollowUps": [
+        "Map each centre to current capabilities, sectors, location, service fees, seats and application route.",
+        "Verify concession categories, training prerequisites, equipment/service scheduling and deliverables.",
+        "Retain source anchors for the centre selected by the user rather than citing only the umbrella booklet.",
+        "Obtain reviewer decision before treating a centre service as an active opportunity."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "msme-trade-enablement-and-marketing-team-initiative",
+      "sourceUrl": "https://ramp.msme.gov.in/ramp/RAMP-initiative/msme-team-initiative/msme-team-initiative",
+      "supportingSources": [
+        {"url":"https://ramp.msme.gov.in/ramp/RAMP-initiative/msme-team-initiative/msme-team-initiative","anchor":"Official TEAM initiative: 2024-27 outlay, ONDC onboarding, catalogue and account-management support"},
+        {"url":"https://ramp.msme.gov.in/ramp/pdf-documents/scheme-guidelines/Approved-msme-team-guidelines.pdf","anchor":"Official TEAM guidelines: objectives, local-language access and convergence"}
+      ],
+      "sourceKind": "official_ramp_team_page_and_guideline_cross_check",
+      "sourceAnchor": "Udyam/MSE market access, ONDC onboarding, catalogue/account support, logistics/packaging support and NSIC implementation",
+      "observations": [
+        "The official RAMP page describes TEAM as a three-year market-access initiative launched on 27 June 2024 under RAMP, implemented by NSIC with ONDC as technical partner.",
+        "The page lists support caps for ONDC-compliant catalogue creation, account management, logistics and packaging-related assistance; these caps are component-specific and not a single grant.",
+        "The intended beneficiary is an MSE seeking digital market access, and the current route may depend on Udyam, product catalogue, ONDC partner and onboarding conditions.",
+        "The draft must keep support ceilings separate and verify whether a user is eligible for onboarding support, logistics, packaging design or another component."
+      ],
+      "reviewFollowUps": [
+        "Confirm current onboarding partners, Udyam requirements, product/SKU limits, support caps and available windows.",
+        "Verify reimbursement or service-delivery mechanics, eligible packaging/logistics costs and beneficiary contribution.",
+        "Check current documents, catalogue data, bank/payment details, consent and ONDC handoff steps.",
+        "Obtain a reviewer decision for each component and do not combine caps into one value."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "national-scheduled-caste-scheduled-tribe-hub",
+      "sourceUrl": "https://sclcss.msme.gov.in/Manual/Guidelines.pdf",
+      "supportingSources": [
+        {"url":"https://sclcss.msme.gov.in/Manual/Guidelines.pdf","anchor":"Official NSSH guidelines: capacity enhancement and entrepreneurship support for SC/ST entrepreneurs"},
+        {"url":"https://sclcss.msme.gov.in/","anchor":"Official National SC/ST Hub portal and application/support route"}
+      ],
+      "sourceKind": "official_nssh_guideline_and_portal_cross_check",
+      "sourceAnchor": "SC/ST entrepreneur capacity enhancement, procurement readiness, training, mentoring and scheme convergence",
+      "observations": [
+        "The official NSSH guideline states that the Hub aims to enhance the capacity of SC/ST entrepreneurs and promote entrepreneurship culture.",
+        "NSSH is an ecosystem and facilitation programme with multiple support activities; it must not be represented as one universal grant for every SC/ST founder.",
+        "Procurement-readiness, vendor development, training, mentoring and convergence benefits can have separate eligibility and documentation conditions.",
+        "The applicant's self-identification, enterprise status, Udyam/registration, activity and selected NSSH service must be verified without exposing sensitive caste information unnecessarily."
+      ],
+      "reviewFollowUps": [
+        "Confirm current NSSH components, eligible entity classes, category evidence and active calls or events.",
+        "Verify support ceilings, reimbursement rules, procurement requirements, training/mentoring route and timelines.",
+        "Define purpose-specific consent and minimum data collection for sensitive category information.",
+        "Check portal forms, documents, grievance route and obtain reviewer approval for the selected component."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "nsic-consortia-and-tender-marketing-scheme",
+      "sourceUrl": "https://www.msme.gov.in/offerings",
+      "supportingSources": [
+        {"url":"https://www.nsic.co.in/Corporate/AboutUs","anchor":"Official NSIC description of consortia and tender marketing"},
+        {"url":"https://www.nsic.co.in/Schemes/MarketingFacilitation?AspxAutoDetectCookieSupport=1","anchor":"Official NSIC 2024 Marketing Facilitation Scheme, SPRS scope, fees and commission"}
+      ],
+      "sourceKind": "official_nsic_marketing_facilitation_and_tender_cross_check",
+      "sourceAnchor": "MSE consortium formation, NSIC tender facilitation, SPRS requirement, enlistment fees and milestone-linked service charges",
+      "observations": [
+        "NSIC explains that it forms consortia of MSEs to pool capacity and applies for tenders or orders on behalf of eligible units.",
+        "The current NSIC Marketing Facilitation Scheme page states that the service covers MSEs registered or applying under the Single Point Registration Scheme, with tender-specific documents and inspection requirements.",
+        "The current page lists annual/renewal fees and a milestone-linked NSIC facilitation charge; these are service costs, not a grant or guaranteed order value.",
+        "Eligibility and outcome depend on the specific tender, product capability, consortium composition, bid terms and award; the opportunity must not be ranked as guaranteed procurement."
+      ],
+      "reviewFollowUps": [
+        "Verify the current NSIC scheme name, SPRS status, inspection, fee schedule and consortium formation route.",
+        "Capture the specific tender notice, specifications, bid security, delivery terms, award and payment conditions.",
+        "Confirm product capability, capacity, statutory registrations, partner responsibilities and service charges.",
+        "Keep tender access, consortium facilitation and any awarded contract value separate; obtain human approval."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "performance-and-credit-rating-scheme-for-micro-and-small-enterprises",
+      "sourceUrl": "https://msme.gov.in/sites/default/files/PCRSchemeGuidelines.pdf",
+      "supportingSources": [
+        {"url":"https://my.msme.gov.in/MyMsmeMob/MsmeScheme/Pages/1_2_0.html","anchor":"Official MyMSME Performance and Credit Rating description, eligibility and reimbursement slabs"},
+        {"url":"https://msme.gov.in/sites/default/files/PCRSchemeGuidelines.pdf","anchor":"Official PCR scheme guideline document"}
+      ],
+      "sourceKind": "official_mymsme_pcr_guideline_cross_check",
+      "sourceAnchor": "MSE eligibility, empanelled rating agencies, turnover-linked fee reimbursement and application route",
+      "observations": [
+        "The official MyMSME description states that an Indian micro or small enterprise may apply for a performance and credit rating through an empanelled rating agency or NSIC route.",
+        "The displayed reimbursement slabs are turnover-based and capped; they reduce an eligible rating fee and are not a cash grant or loan approval.",
+        "The enterprise chooses from empanelled agencies, while the rating itself remains an independent assessment and is not a guarantee of credit sanction.",
+        "The draft must capture turnover band, rating fee, reimbursement route, agency status and current scheme version before calculating any support."
+      ],
+      "reviewFollowUps": [
+        "Confirm the current empanelled agency list, turnover bands, reimbursement caps and fee treatment.",
+        "Verify MSE/Udyam evidence, application form, rating documents, payment proof and NSIC submission route.",
+        "Explain that a rating is an assessment and cannot be represented as a guaranteed loan or score improvement.",
+        "Check amendments, processing time, reimbursement timing and grievance route before human approval."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "procurement-and-marketing-support-pms",
+      "sourceUrl": "https://msme.gov.in/sites/default/files/PMSSchemeGuidelines.pdf",
+      "supportingSources": [
+        {"url":"https://msme.gov.in/sites/default/files/PMSSchemeGuidelines.pdf","anchor":"Official PMS guideline: Udyam-registered manufacturing/service MSE eligibility and market-access components"},
+        {"url":"https://ramp.msme.gov.in/ramp/RAMP-initiative/pms-scheme/pms-scheme","anchor":"Official RAMP PMS overview and current scheme-guideline route"}
+      ],
+      "sourceKind": "official_msme_pms_guideline_ramp_cross_check",
+      "sourceAnchor": "Trade fairs/exhibitions, packaging, GeM/export awareness and market-access support for Udyam-registered MSEs",
+      "observations": [
+        "The official PMS guideline states that the scheme is intended to improve marketability and access to national/international trade fairs, exhibitions and related market-development activities.",
+        "The guideline specifies manufacturing/service MSEs with valid Udyam Registration as the eligibility baseline, subject to component-specific conditions.",
+        "Assistance differs by activity and beneficiary category, including trade-fair space support and awareness/packaging activities; caps must be captured per component.",
+        "The opportunity is event- or activity-sensitive and should not be presented as a standing unrestricted subsidy."
+      ],
+      "reviewFollowUps": [
+        "Verify the current event/activity calendar, application window, participating agency and component selected.",
+        "Confirm category-based assistance, eligible expenses, contribution, reimbursement and stall/product requirements.",
+        "Capture Udyam, product, export/packaging and payment documents required for the chosen activity.",
+        "Check current MyMSME/RAMP application links, amendments and grievance route before reviewer approval."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "msme-promotion-north-eastern-region-sikkim-infrastructure",
+      "sourceUrl": "https://ner-promotion.msme.gov.in/NERegion/NERLoginNew.aspx",
+      "supportingSources": [
+        {"url":"https://ner-promotion.msme.gov.in/NERegion/schemes/RevisedGuidelines_NER_Sikkim.pdf","anchor":"Official revised NER and Sikkim guideline and component structure"},
+        {"url":"https://ner-promotion.msme.gov.in/NERegion/Reports/FAQs.aspx","anchor":"Official NER/Sikkim FAQ: grant percentages, project ceilings, beneficiaries and timelines"}
+      ],
+      "sourceKind": "official_ner_sikkim_portal_guideline_faq_cross_check",
+      "sourceAnchor": "Mini Technology Centres, industrial estates, tourism-sector common services, State Government agency eligibility and project ceilings",
+      "observations": [
+        "The official portal describes three components: new or modernized Mini Technology Centres, new or existing Industrial Estates and Tourism Sector development.",
+        "The FAQ states that the primary beneficiaries of the Government grant are State Government organisations or departments engaged in MSME promotion in the NER and Sikkim.",
+        "The FAQ lists project-level assistance percentages and ceilings, but those figures are institutional project funding and must not be shown as direct individual MSME benefits.",
+        "The portal's login and registration routes are for agencies; a business-facing recommendation should be framed as regional ecosystem/service access or a state-agency route."
+      ],
+      "reviewFollowUps": [
+        "Confirm the applicant role: State agency, implementing institution, cluster or individual enterprise.",
+        "Verify current project call, DPR requirements, State contribution, release milestones, completion period and monitoring.",
+        "Capture regional location, project component, agency authorisation and current contact/DFO route.",
+        "Keep project grants separate from business-level support and obtain human approval before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "public-procurement-policy-for-micro-and-small-enterprises",
+      "sourceUrl": "https://msme.gov.in/sites/default/files/MSMEANNUALREPORT2025-26ENGLISH_0.pdf",
+      "supportingSources": [
+        {"url":"https://msme.gov.in/sites/default/files/SO-581_E_23_March_2012.pdf","anchor":"Official Public Procurement Policy order and 25% procurement target framework"},
+        {"url":"https://www.nsic.co.in/Schemes/SinglePointRegistration","anchor":"Official NSIC SPRS route and procurement-policy benefits"}
+      ],
+      "sourceKind": "official_msme_gazette_nsic_cross_check",
+      "sourceAnchor": "MSE government procurement preference, annual target framework, vendor development and NSIC SPRS access",
+      "observations": [
+        "The official procurement order establishes a policy framework for Central Ministries, departments and PSUs to report and pursue procurement from MSEs, including the 25% annual target framework and reserved categories.",
+        "The policy creates procurement preference and vendor-development mechanisms; it does not guarantee an individual MSE an order or a fixed revenue amount.",
+        "NSIC states that units under the Single Point Registration Scheme can access benefits under the Public Procurement Policy, subject to the policy and tender terms.",
+        "The draft must distinguish policy-level eligibility, SPRS registration, exemptions/benefits and the actual tender opportunity."
+      ],
+      "reviewFollowUps": [
+        "Verify the current policy order and amendments, reserved items, target calculation and participating buyer obligations.",
+        "Confirm SPRS eligibility, monetary limits, EMD/tender benefits, documents, inspection and renewal.",
+        "Capture tender-specific qualification, technical capability, delivery, price and award conditions.",
+        "Do not calculate expected sales from the procurement target; obtain reviewer approval and current-source confirmation."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source","eligibility","benefit","application","window","fine_print","amendment","current_terms","reviewer_decision"],
+    "reason": "Official MSME, RAMP, DC-MSME, MyMSME, NSIC and scheme-specific portals provide first-party evidence for all 18 draft records, but current component terms, applicant-specific routes, amendments, windows, source-version reconciliation and reviewer decisions remain unresolved. All records stay human-review pending."
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-018",
+  "authority": "Department of Pharmaceuticals",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "Department of Pharmaceuticals scheme pages, official guidelines, amendments, FAQs, portals and official call notices only; third-party claims are excluded.",
+  "records": [
+    {
+      "slug": "prip-component-a-niper-centres-of-excellence",
+      "sourceUrl": "https://pharma-dept.gov.in/schemes/scheme-promotion-research-and-innovation-pharma-medtech-sector-prip",
+      "supportingSources": [
+        { "url": "https://prip.pharma-dept.gov.in/resources/21.%20Guidelines.pdf", "anchor": "PRIP guidelines dated 1 October 2025: Component A, NIPER Centres of Excellence, collaboration, priority areas, milestones and reporting" },
+        { "url": "https://prip.pharma-dept.gov.in/", "anchor": "Official PRIP portal for current CoE and collaboration routes" }
+      ],
+      "sourceKind": "official_scheme_page_and_guideline",
+      "sourceAnchor": "PRIP Department page and 1 October 2025 guidelines: Component A and NIPER CoE route",
+      "observations": [
+        "Component A is institute and Centre-of-Excellence support at NIPERs, not an unrestricted startup grant.",
+        "A startup or company generally reaches this route through an approved NIPER, academic or industry-collaboration arrangement; independent company eligibility must not be inferred.",
+        "The PRIP programme period and component outlay are programme-level values, not an applicant entitlement. Priority area, CoE scope, project ownership, IP, milestones, eligible costs and reporting require route-specific confirmation.",
+        "The official portal must be checked for the current CoE or collaboration call before the record is actionable."
+      ],
+      "reviewFollowUps": [
+        "Identify each current NIPER CoE and its approved focus areas.",
+        "Confirm whether a startup can apply directly or only through a named institutional collaboration route.",
+        "Extract current application window, IP/data terms, eligible costs, milestone and access conditions."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "prip-component-b-industry-startup-rd-projects",
+      "sourceUrl": "https://prip.pharma-dept.gov.in/resources/21.%20Guidelines.pdf",
+      "supportingSources": [
+        { "url": "https://pharma-dept.gov.in/schemes/scheme-promotion-research-and-innovation-pharma-medtech-sector-prip", "anchor": "Official Department page linking the Gazette, guidelines and PRIP portal" },
+        { "url": "https://prip.pharma-dept.gov.in/", "anchor": "Current PRIP portal call and two-step early-stage application route" },
+        { "url": "https://prip.pharma-dept.gov.in/auth/login", "anchor": "Official portal application entry route" }
+      ],
+      "sourceKind": "official_guideline_and_application_portal",
+      "sourceAnchor": "PRIP guidelines: Component B eligibility, TRL routes, co-funding, financial closure and milestone assistance",
+      "observations": [
+        "Component B covers eligible India-registered companies, LLPs and registered partnerships for Pharma and MedTech R&D; sole proprietorships and one-person/non-profit forms are excluded under the reviewed route.",
+        "Early-stage applicants need the required DPIIT startup or Udyam MSME evidence. The project must map to an eligible priority area and the relevant TRL route.",
+        "The guidelines require a project-specific account, milestone plan, financial closure and applicant co-funding where applicable. Assistance is released in milestones and is not an unconditional grant or guaranteed award.",
+        "The portal describes a second call opening soon and a two-step concept-note/detailed-application process for early-stage applications; the live call notice and deadline were not treated as verified for publication.",
+        "Component A and Component B ceilings must remain separate. The total PRIP outlay must never be shown as the applicant's eligible value."
+      ],
+      "reviewFollowUps": [
+        "Verify the live call notice, deadline, current form and portal status.",
+        "Confirm entity-form exclusions, TRL evidence, strategic-priority treatment, co-funding, IP/data, recovery and milestone rules against the current FAQ and guideline.",
+        "Review whether assistance is grant, reimbursement, or another instrument for each route before publishing a benefit label."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "revamped-pharmaceutical-technology-upgradation-assistance-scheme",
+      "sourceUrl": "https://www.pharma-dept.gov.in/schemes/scheme-strengthening-pharmaceuticals-industry-spi",
+      "supportingSources": [
+        { "url": "https://pharma-dept.gov.in/sites/default/files/Revised%20guidelines%20SPI%20dated%2014.03.2024_0.pdf", "anchor": "RPTUAS objectives, existing pharmaceutical manufacturing units, turnover bands and eligible post-1 January 2024 investment" },
+        { "url": "https://pharma-dept.gov.in/sites/default/files/Corrigendum%20RPTUAS%2021st%20March%2C%202026_0.pdf", "anchor": "21 March 2026 modification to staged certification claims" },
+        { "url": "https://pharmaceuticals.gov.in/sites/default/files/FAQs%20in%20respect%20of%20RPTUAS%20-%20Copy.pdf", "anchor": "Official FAQ for application route, bank boundary, eligible investment and technical review" },
+        { "url": "https://pharma-dept.gov.in/important-document", "anchor": "Department important-document index listing the RPTUAS 2026 modification" }
+      ],
+      "sourceKind": "official_scheme_page_guideline_faq_and_amendment",
+      "sourceAnchor": "SPI/RPTUAS revised guideline, FAQ and 2026 modification",
+      "observations": [
+        "RPTUAS is for existing Indian pharmaceutical manufacturing units with preceding-three-year average turnover below the stated ceiling and an upgrade scope toward Revised Schedule M and/or WHO-GMP.",
+        "The reviewed sources describe turnover bands with 20%, 15% and 10% incentive rates, subject to the current maximum and eligible-investment rules. This is a reimbursement/capital-subsidy route, not a working-capital loan or automatic reimbursement.",
+        "Only eligible investment after 1 January 2024 and the prescribed utilities, clean-room, testing, effluent, certification and other approved heads can be counted; the current modification changes the staged certification sequence.",
+        "The official annual-report evidence describes an earlier application window and expected sanctioning of remaining outlay by March 2026. No current September 2026 new-intake window was independently verified, so this route remains paused.",
+        "Users must not be told that the scheme page alone proves a new application is open."
+      ],
+      "reviewFollowUps": [
+        "Confirm current new-application versus pending-project status with the live Department/SIDBI route.",
+        "Reconcile the current maximum, turnover treatment, certification sequence, eligible heads, release stages and remaining budget across the 2026 amendment, FAQ and implementation notice.",
+        "Keep paused until an official live intake or explicit route for pending applicants is verified."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "smdi-capacity-building-skill-development-medical-devices",
+      "sourceUrl": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+      "supportingSources": [
+        { "url": "https://pharma-dept.gov.in/schemes/scheme-strengthening-medical-device-industry", "anchor": "Official SMDI scheme page and current calls/modifications" },
+        { "url": "https://pharma-dept.gov.in/important-document", "anchor": "Department notices and SMDI proposal calls" }
+      ],
+      "sourceKind": "official_guideline_and_call_index",
+      "sourceAnchor": "SMDI Chapter IV: capacity-building and skill-development beneficiaries, course routes and reimbursement",
+      "observations": [
+        "This component primarily supports eligible universities, institutes, courses, students and existing medical-device workforce; it is not a direct unrestricted founder or company grant.",
+        "The guideline separates postgraduate-course support from diploma and short-term training routes, with different institutions, batches, cost-sharing and reimbursement limits.",
+        "The reviewed guideline describes up to 75% of course cost or INR 21 crore for eligible central-government postgraduate-course institutions, with separate non-recurring and recurring limits; diploma and short-term support is candidate-linked.",
+        "The Department lists later modifications and current calls, so the 2024 guideline alone cannot establish a live application route."
+      ],
+      "reviewFollowUps": [
+        "Read the latest capacity-building modification and current call notice.",
+        "Confirm institution, course, NCVET, batch, candidate, cost-sharing, reimbursement and reporting rules.",
+        "Model this as an institutional/training opportunity, not as a company cash benefit."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "smdi-common-facilities-medical-device-clusters",
+      "sourceUrl": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+      "supportingSources": [
+        { "url": "https://pharma-dept.gov.in/schemes/scheme-strengthening-medical-device-industry", "anchor": "Official SMDI scheme page, common-facility route and current proposal notices" },
+        { "url": "https://pharma-dept.gov.in/important-document", "anchor": "Department notices including extensions and calls for common facilities" }
+      ],
+      "sourceKind": "official_guideline_and_call_index",
+      "sourceAnchor": "SMDI Chapter II: common and testing facilities, SPV/cluster structure, caps and release conditions",
+      "observations": [
+        "This route is for cluster or institutional common facilities and testing facilities, not a general subsidy for an individual company's ordinary equipment.",
+        "The reviewed guideline describes cluster/SPV and institution routes with minimum participating medical-device units and separate public/private assistance percentages and caps.",
+        "Common-facility assistance and testing-facility assistance are separate benefits, with asset-use, maintenance, verification and recovery conditions.",
+        "The Department's current notices and extensions must control whether a proposal window is open."
+      ],
+      "reviewFollowUps": [
+        "Verify the current call, deadline and proposal template.",
+        "Extract the exact SPV composition, minimum-unit, accreditation, land, O&M, contribution, release and clawback requirements.",
+        "Show any cap as project/component-specific and never as an individual founder entitlement."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "smdi-marginal-investment-reducing-import-dependence",
+      "sourceUrl": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+      "supportingSources": [
+        { "url": "https://pharma-dept.gov.in/schemes/scheme-strengthening-medical-device-industry", "anchor": "Official SMDI scheme page and current application notices" },
+        { "url": "https://pharma-dept.gov.in/important-document", "anchor": "Department proposal-call index" }
+      ],
+      "sourceKind": "official_guideline_and_call_index",
+      "sourceAnchor": "SMDI Chapter III: domestic production of medical-device components, raw materials and accessories",
+      "observations": [
+        "Eligible applicants include Indian companies/LLPs, government organisations and qualifying SPVs manufacturing key components, raw materials, accessories or specified finished devices/IVDs that reduce import dependence.",
+        "The guideline describes a one-time capital subsidy on reimbursement basis: 20%, 15% or 10% by turnover band, subject to INR 10 crore, with a separate 20%/INR 10 crore rule for central/state government organisations.",
+        "The subsidy is computed on eligible fixed investment excluding land and is released only after completion, commissioning, Chartered Engineer and statutory-auditor evidence, first-sales evidence and PMA verification.",
+        "The eligible item list can be revised or supplemented through the technical and scheme authorities, so the current call and approved product list must be checked before matching a business."
+      ],
+      "reviewFollowUps": [
+        "Confirm the live proposal window, eligible product/component list and current GTE list.",
+        "Extract turnover definition, project duration, statutory-clearance, first-sale, audit, O&M and recovery conditions.",
+        "Keep the benefit as a post-completion reimbursement subsidy, not upfront working capital."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "smdi-medical-device-clinical-studies-support",
+      "sourceUrl": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+      "supportingSources": [
+        { "url": "https://pharma-dept.gov.in/schemes/scheme-strengthening-medical-device-industry", "anchor": "Official SMDI scheme page and clinical-studies route" },
+        { "url": "https://pharma-dept.gov.in/important-document", "anchor": "Department index listing the 2026 clinical-studies modification and current SMDI calls" },
+        { "url": "https://pharma-dept.gov.in/sites/default/files/Corrigendum%20for%20revised%20operational%20guidelines%20of%20sub-scheme%20Medical%20Device_0.pdf", "anchor": "Official 2026 modification to the clinical-studies operational guidelines" }
+      ],
+      "sourceKind": "official_guideline_and_amendment_index",
+      "sourceAnchor": "SMDI Chapter V: pre-clinical, clinical, post-market and new-IVD evidence routes",
+      "observations": [
+        "The route covers eligible Indian medical-device manufacturers, IVD manufacturers and specified institutes for animal/pre-clinical studies, clinical investigations, post-market clinical follow-up and clinical-performance evaluation of new IVDs.",
+        "Manufacturers need the required Indian facility and regulatory/test-licence or study readiness evidence; the grant does not replace ethics, regulatory, safety, consent or clinical obligations.",
+        "The guideline describes reimbursement caps by study type: up to INR 1 crore for new-IVD performance evaluation, INR 2 crore for pre-clinical studies, INR 5 crore for clinical investigations and INR 1 crore for post-market follow-up, each also limited by the stated percentage of expenditure.",
+        "The Department lists a 2026 modification affecting the operational guideline, so the 2024 text cannot be published as the sole current rule. Clinical data retention and government-access obligations are material fine print."
+      ],
+      "reviewFollowUps": [
+        "Apply the 2026 modification to paragraphs 5.4 and 5.11 and reconcile any changed applicant, study, cost or release conditions.",
+        "Confirm current call dates, PMA route, device class, statutory/ethics prerequisites, audit evidence and data-retention requirements.",
+        "Require specialist reviewer sign-off before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "smdi-medical-device-promotion-scheme",
+      "sourceUrl": "https://pharma-dept.gov.in/sites/default/files/Final%20guidelines%20for%20SMDI-8.11.2024_0.pdf",
+      "supportingSources": [
+        { "url": "https://pharma-dept.gov.in/schemes/scheme-strengthening-medical-device-industry", "anchor": "Official SMDI scheme page and promotion route" },
+        { "url": "https://pharma-dept.gov.in/important-document", "anchor": "Department call and notice index" }
+      ],
+      "sourceKind": "official_guideline_and_call_index",
+      "sourceAnchor": "SMDI Chapter VI: industry bodies, studies, events, databases and market-development activities",
+      "observations": [
+        "The component provides support to recognised industry associations/bodies, experienced study or survey organisations and government/quasi-government agencies; it is not a general company advertising subsidy.",
+        "Eligible activities include study reports, seminars, conferences, workshops, exhibitions, databases, mega events, international participation and other approved industry-development activities.",
+        "The guideline describes competitive or nominated routes, staged grant release for studies, Department ownership/non-commercial-use conditions for funded reports and output verification.",
+        "The component outlay is a programme budget, not an individual applicant ceiling. Current calls, eligible activity limits and reporting requirements must be verified from the Department."
+      ],
+      "reviewFollowUps": [
+        "Confirm current applicant classes, call, grant limits, procurement and reporting terms.",
+        "Keep non-financial logo support distinct from grant-in-aid and from a company marketing benefit.",
+        "Verify ownership and permitted-use terms for any funded study or database."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment"
+    ],
+    "reason": "PRIP, RPTUAS and SMDI contain distinct applicant classes, benefit mechanisms, reimbursement rules, amendments and live-call dependencies. The official sources support structured drafts, but the records require human review before publication or actionable recommendations."
+  }
+}

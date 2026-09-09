@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-069",
+  "authority": "Ministry of Micro, Small and Medium Enterprises - ASPIRE",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party ASPIRE dashboard, registration, manual and guideline observations for reviewer use. It does not guarantee an incubator approval, grant, equipment support, trainee outcome, current window, project sanction or applicant eligibility, and it does not authorize UdyamVeda to submit an institutional proposal or handle credentials and OTPs.",
+  "sourcePolicy": "The official ASPIRE portal, current registration route, official registration manual, official LBI application form and revised operational guideline are primary. The guideline's 2021-22 to 2025-26 cycle boundary must be reconciled with any current continuation, amendment or assistance terms before publication.",
+  "records": [
+    {
+      "slug": "aspire-innovation-rural-industry-entrepreneurship",
+      "sourceUrl": "https://aspire.msme.gov.in/ASPIRE/Registration.aspx",
+      "supportingSources": [
+        {
+          "url": "https://aspire.msme.gov.in/ASPIRE/AFHome.aspx",
+          "anchor": "Current official ASPIRE dashboard: invitation for eligible applicants to apply for new Livelihood Business Incubators and displayed programme metrics"
+        },
+        {
+          "url": "https://aspire.msme.gov.in/ASPIRE/Registration.aspx",
+          "anchor": "Current official ASPIRE Registration Form: Livelihood Business Incubator (LBI) category"
+        },
+        {
+          "url": "https://aspire.msme.gov.in/ASPIRE/AFLogin.aspx",
+          "anchor": "Current official portal navigation: Apply for New LBI, sign-in, forgot password and official applicant login surface"
+        },
+        {
+          "url": "https://aspire.msme.gov.in/WriteReadData/Circular/RegistrationUserManualAspire.pdf",
+          "anchor": "Official registration manual: LBI/TBI category selection and registration process"
+        },
+        {
+          "url": "https://aspire.msme.gov.in/WriteReadData/DocumentFile/ASPIRE_New_21112023.pdf",
+          "anchor": "Official LBI guideline/application document: agro-rural incubation purpose, LBI functions and eligible Government, academic, industry and not-for-profit proposal institutions"
+        },
+        {
+          "url": "https://aspire.msme.gov.in/WriteReadData/DocumentFile/ASPIRE_NEW.pdf",
+          "anchor": "Official revised operational guideline retained in the source registry; its stated 2021-22 to 2025-26 cycle requires current-continuation reconciliation"
+        }
+      ],
+      "sourceKind": "official_msme_aspire_portal_guideline_cross_check",
+      "sourceAnchor": "Current ASPIRE dashboard and LBI registration route reconciled with official manual, LBI document and revised operational guideline",
+      "observations": [
+        "ASPIRE is an institution-led incubation and rural-entrepreneurship route. The current portal exposes Apply for New LBI and the registration form identifies Livelihood Business Incubator (LBI) as the applicant category.",
+        "The official LBI document describes skill development and incubation for entrepreneurship and employment generation in agro-rural and underserved areas, including outreach, incubation workshops, support services, formalisation assistance, funding linkages, hands-on training and prototype facilities.",
+        "The official guideline describes Government institutions, State institutions, existing Government training centres, industry associations, academic institutions and eligible not-for-profit private institutions with relevant incubation or skill-development experience as proposal categories; current host, mentor and implementation conditions still require review.",
+        "The current dashboard displays programme metrics such as approved and functional LBIs, beneficiaries skilled, beneficiaries employed and micro-enterprises established or supported. These are programme metrics, not a founder entitlement or guaranteed benefit.",
+        "The revised operational guideline in the registered source set is bounded to the 2021-22 to 2025-26 cycle. The current portal invitation does not by itself prove post-2025-26 continuation, current assistance ceilings, eligible cost heads, approval terms or a universal rolling window.",
+        "A founder or individual business should not be matched to ASPIRE as a direct personal grant application. The user-facing route should identify an approved or currently accepting LBI and keep LBI participation, training and any downstream financing distinct from the institution's ASPIRE proposal.",
+        "UdyamVeda may prepare an institutional proposal checklist or help a founder find an LBI, but the institution or founder must use the official account, documents, declarations and portal submission."
+      ],
+      "reviewFollowUps": [
+        "Confirm the latest ASPIRE operational guideline, continuation beyond 2025-26, current assistance ceilings, eligible cost heads, contribution or matching conditions and implementing agencies.",
+        "Verify current LBI host and mentor categories, location/rural focus, sector or thrust-area requirements, training obligations, beneficiary rules, equipment/prototype conditions and approval process.",
+        "Verify whether the current Apply for New LBI route is open for submission, its deadline, required documents, proposal form, attachment formats, portal status and grievance contact.",
+        "Reconcile LBI, TBI, LBI-PPP and other incubator categories; do not merge their assistance, approval, funding or reporting terms.",
+        "Keep dashboard metrics, institution-level assistance, incubation services and founder-level downstream benefits in separate value and outcome buckets.",
+        "Obtain human reviewer approval for source, eligibility, benefit, application, window, fine print, amendment and factual accuracy before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "The official portal confirms an institution-led LBI route, but current continuation, financial terms, proposal window, host categories and beneficiary-level downstream outcomes require human reconciliation before publication."
+  }
+}

@@ -1,0 +1,12 @@
+Twitter OAuth Dashboard
+
+Deployment ID - AKfycby4KjL_J5yqj8CvzkWuPhzswrTDUEOubiE3vjSJQ7kbjXr-uW6eObNFyfgrYglM_Mg
+WebApp URl - https://script.google.com/macros/s/AKfycby4KjL_J5yqj8CvzkWuPhzswrTDUEOubiE3vjSJQ7kbjXr-uW6eObNFyfgrYglM_Mg/exec
+
+
+New One 
+ Dep Id - AKfycbzvm_orAvB6rvYp_2-hjAUUdIURLUIsdC2NZTVt3v79NUI65_J_41-RZAC4EL6foeA 
+- Web App URL - https://script.google.com/macros/s/AKfycbzvm_orAvB6rvYp_2-hjAUUdIURLUIsdC2NZTVt3v79NUI65_J_41-RZAC4EL6foeA/exec
+
+AKfycbyxGpynRgNa8sRq98rOOGwBht6-6V6dBmTvP8L-FgoeEA2mmDq4JnDe8_4A_oZmn50
+https://script.google.com/macros/s/AKfycbyxGpynRgNa8sRq98rOOGwBht6-6V6dBmTvP8L-FgoeEA2mmDq4JnDe8_4A_oZmn50/exec

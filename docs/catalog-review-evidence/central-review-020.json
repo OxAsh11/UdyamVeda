@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-020",
+  "authority": "Department of Science and Technology",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "Department of Science and Technology and official NIDHI portal pages/guidelines only for authoritative evidence; Startup India remains discovery/cross-check evidence where present but is not relied on as the controlling source.",
+  "records": [
+    {
+      "slug": "dst-technology-business-incubator",
+      "sourceUrl": "https://nidhi.dst.gov.in/nidhitbi/",
+      "supportingSources": [
+        {
+          "url": "https://cdnbbsr.s3waas.gov.in/s312b1e42dc0746f22cf361267de07073f/uploads/2023/09/202309061141858190.pdf",
+          "anchor": "NIDHI-TBI guidelines: host-institute eligibility, not-for-profit boundary, proposal process, NEAC review, incubation facilities, performance funding and reporting"
+        },
+        {
+          "url": "https://nidhi.dst.gov.in/",
+          "anchor": "Current NIDHI homepage: programme guidelines and current open-call panel"
+        },
+        {
+          "url": "https://www.startupindia.gov.in/content/sih/en/incubator-schemes.html",
+          "anchor": "Discovery/cross-check entry for DST-TBI incubator support"
+        }
+      ],
+      "sourceKind": "official_nidhi_page_and_guideline",
+      "sourceAnchor": "NIDHI-TBI official page: startup route, host route, beneficiaries and periodic TBI calls",
+      "observations": [
+        "NIDHI-TBI supports technology and knowledge-driven incubation infrastructure and services. The official page says startups apply directly to a TBI and receive support after that TBI accepts the application.",
+        "The detailed guideline is primarily an institution route: eligible academic/technical/R&D or other proven institutions, a not-for-profit society/trust/Section 8 entity, adequate expertise and infrastructure, and generally three years of institutional existence subject to the stated government-entity exception.",
+        "The guideline requires a transparent incubatee-selection system, an agreement with incubatees, defined residency/exit terms, facilities and performance monitoring. It is not a direct cash grant to every startup that reads the programme page.",
+        "The NIDHI page says TBIs periodically announce startup calls, while the current NIDHI homepage showed no generic open-call post when checked. A startup-facing match therefore requires a specific TBI and live local call."
+      ],
+      "reviewFollowUps": [
+        "Replace the discovery-only primary source in the seed record with the official NIDHI-TBI page/guideline before publication, while retaining Startup India as cross-check evidence.",
+        "Verify the current TBI list, local calls, admission criteria, fees/equity terms, residency, exit policy and services for each matched startup.",
+        "Keep host-institution grant support separate from startup incubation access."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "dst-nidhi-centres-of-excellence",
+      "sourceUrl": "https://nidhi.dst.gov.in/nidhicoe/",
+      "supportingSources": [
+        {
+          "url": "https://cdnbbsr.s3waas.gov.in/s312b1e42dc0746f22cf361267de07073f/uploads/2023/09/20230906543462663.pdf",
+          "anchor": "NIDHI-CoE guidelines: enhanced support to existing TBIs, proposal route, infrastructure, startup acceleration and institutional obligations"
+        },
+        {
+          "url": "https://nidhi.dst.gov.in/document/list-of-nidhi-centres-of-excellence/",
+          "anchor": "Official list of NIDHI Centres of Excellence"
+        },
+        {
+          "url": "https://nidhi.dst.gov.in/",
+          "anchor": "Current NIDHI homepage and programme-guideline index"
+        }
+      ],
+      "sourceKind": "official_nidhi_page_guideline_and_list",
+      "sourceAnchor": "NIDHI-CoE official page: five-year institutional support, startup incubation access and periodic CoE calls",
+      "observations": [
+        "NIDHI-CoE strengthens existing TBIs into higher-capability incubation centres with design, product, prototype, validation, patent and technology-incubation facilities.",
+        "The guideline describes enhanced institutional support of up to INR 50 crore over five years; this is an establishment/strengthening support ceiling for the CoE, not a direct startup entitlement.",
+        "Startups and innovators may apply for incubation support to a CoE, but each CoE periodically announces its own enrollment call, selection criteria, services and terms.",
+        "The official page states that nine CoEs have been supported and provides a list route. The current generic NIDHI homepage did not show an open generic call, so current startup-facing availability must be checked per CoE."
+      ],
+      "reviewFollowUps": [
+        "Verify the current CoE list, each centre's focus, live enrollment call and application route.",
+        "Extract institutional grant conditions, milestones, infrastructure ownership, reporting, sustainability and recovery terms from the current guideline and sanction documents.",
+        "Present startup access as incubation/acceleration support, not as the INR 50 crore institutional figure."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "dst-nidhi-entrepreneur-in-residence-fellowship",
+      "sourceUrl": "https://nidhi.dst.gov.in/nidhieir/",
+      "supportingSources": [
+        {
+          "url": "https://cdnbbsr.s3waas.gov.in/s312b1e42dc0746f22cf361267de07073f/uploads/2023/01/2023010680.pdf",
+          "anchor": "NIDHI-EIR guidelines updated April 2022: fellowship, 12-month term, conditional extension, eligibility, TBI route and selection"
+        },
+        {
+          "url": "https://www.nidhi-eir.in/",
+          "anchor": "Official NIDHI-EIR implementation-partner/centre route linked by the NIDHI page"
+        },
+        {
+          "url": "https://nidhi.dst.gov.in/",
+          "anchor": "Current NIDHI homepage and programme status"
+        }
+      ],
+      "sourceKind": "official_nidhi_page_guideline_and_centre_route",
+      "sourceAnchor": "NIDHI-EIR official page: INR 10,000-30,000 monthly, maximum 12 months, selected TBI route",
+      "observations": [
+        "NIDHI-EIR is a fellowship for students, researchers, innovators and entrepreneurs pursuing a technology business idea; it is not a startup loan, investment or unrestricted company grant.",
+        "The current official page states financial support from INR 10,000 to INR 30,000 per month for a maximum of 12 months, together with TBI infrastructure, mentoring, technical/financial advice and industry connections.",
+        "The April 2022 guideline permits a 12-month period to be extended up to 18 months only for deserving candidates and with selection-committee approval. The extension must not be presented as automatic.",
+        "Applicants apply through selected NIDHI-EIR centres/TBIs, and the current centre call, education/experience requirements, full-time commitment, concurrent-support restrictions, ownership disclosures and local selection terms must be confirmed."
+      ],
+      "reviewFollowUps": [
+        "Verify the current selected-centre list, local call, application form and any amended fellowship terms.",
+        "Keep monthly fellowship, TBI services and any conditional extension as separate benefit buckets.",
+        "Do not show the monthly amount as total startup funding or imply guaranteed selection."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "dst-nidhi-seed-support-program",
+      "sourceUrl": "https://nidhi.dst.gov.in/nidhissp/",
+      "supportingSources": [
+        {
+          "url": "https://nidhi.dst.gov.in/document/nidhi-seed-support-program-nidhi-ssp-guidelines/",
+          "anchor": "Official NIDHI-SSP guideline index"
+        },
+        {
+          "url": "https://cdnbbsr.s3waas.gov.in/s312b1e42dc0746f22cf361267de07073f/uploads/2024/03/202403201078034720.pdf",
+          "anchor": "NIDHI-SSP guideline: incubator eligibility, Indian-company/51%-promoter rule, three-month association, caps, instruments, milestones and recovery"
+        },
+        {
+          "url": "https://nidhi.dst.gov.in/document-category/programme-wise-tbi-lists/",
+          "anchor": "Official list of seed-supported TBIs for the startup application route"
+        }
+      ],
+      "sourceKind": "official_nidhi_page_guideline_and_incubator_list",
+      "sourceAnchor": "NIDHI-SSP official page: incubator grant, startup support cap and periodic incubator calls",
+      "observations": [
+        "NIDHI-SSP is a two-level route: DST provides grant-in-aid to eligible incubators, and the incubator then provides seed support to selected incubatee startups. These are not the same benefit.",
+        "The official page states up to INR 1000 lakh for an incubator and up to INR 100 lakh for a deserving startup. The startup cap is not an automatic award or a direct DST payment to every applicant.",
+        "The guideline requires an eligible Indian company, preferably DPIIT registered/applied, at least three months' association with the incubator, customer/USP clarity and at least 51% Indian promoter shareholding under the stated conditions.",
+        "The instrument may be soft loan, equity or equity-linked; agreements must define milestones, repayment/recovery, equity liquidation and monitoring. Funding can therefore create repayment or ownership consequences.",
+        "Startup applications are made to listed incubators/TBIs through their periodic calls. No generic national startup deadline was treated as verified from the official page."
+      ],
+      "reviewFollowUps": [
+        "Verify the current seed-supported TBI list, each incubator's call, instrument, valuation/equity, repayment, milestone and due-diligence terms.",
+        "Separate the incubator-level grant from the startup-level investment/soft-loan/equity support in the data model and UI.",
+        "Confirm current guideline version and any amendments before using the INR 100 lakh startup cap in recommendations."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "national-quantum-mission-startup-support",
+      "sourceUrl": "https://dst.gov.in/sites/default/files/Guidelines%20to%20support%20start-ups.pdf",
+      "supportingSources": [
+        {
+          "url": "https://dst.gov.in/node/8226",
+          "anchor": "Official DST NQM Startup - Call for Proposals page: four thematic hub routes and instruction to apply to only one hub"
+        },
+        {
+          "url": "https://dst.gov.in/dst-drive-quantum-leap-indian-startups-i-hub-qtf-iiser-pune-issues-call-proposals",
+          "anchor": "DST announcement: startup-support guidelines, initial I-HUB QTF implementation route, funding, mentorship and facilities"
+        },
+        {
+          "url": "https://dst.gov.in/national-quantum-mission-nqm",
+          "anchor": "Official DST National Quantum Mission mission and hub context"
+        },
+        {
+          "url": "https://qcinnovation.co.in/",
+          "anchor": "Officially linked Quantum Computing hub route"
+        },
+        {
+          "url": "https://samgnya.in/",
+          "anchor": "Officially linked Quantum Communication hub route"
+        },
+        {
+          "url": "https://qmettech.com/",
+          "anchor": "Officially linked Quantum Sensing and Metrology hub route"
+        },
+        {
+          "url": "https://qmdhub.co.in/",
+          "anchor": "Officially linked Quantum Materials and Devices hub route"
+        }
+      ],
+      "sourceKind": "official_dst_guideline_and_startup_call",
+      "sourceAnchor": "DST NQM startup-support guideline, pages 1-6: eligibility, application modes, selection, funding/equity, milestones, mentoring, monitoring and Government support",
+      "observations": [
+        "The guideline supports DPIIT-registered Indian startups with market-fit, scalable and commercializable quantum-technology products or services, subject to Indian-company, India-based IP, ownership and promoter-shareholding conditions.",
+        "The startup route is mediated by NQM thematic hubs. The official DST startup page lists computing, communication, sensing/metrology and materials/devices routes and instructs a startup to apply to only one hub.",
+        "Track 1 describes seed funding up to INR 5 crore with incubation equity, while Track 2 describes equity or CCPS up to INR 25 crore for startups with prior VC funding. These are guideline reference structures, not automatic entitlements; milestone tranches and agreements apply.",
+        "The guideline also describes mentoring, facilities, user-agency engagement, demo days and possible Government procurement preference, subject to the applicable hub route and current terms.",
+        "The historical I-HUB QTF call and any hub page do not establish a current universal deadline. Current hub windows, route-specific terms, valuation, dilution, milestones, monitoring, facility charges and grievance routes remain unresolved."
+      ],
+      "reviewFollowUps": [
+        "Verify the current open call, intake window, application form and vertical fit for each linked NQM hub.",
+        "Confirm the current hub legal structure, funding instrument, equity/CCPS, valuation, dilution, milestone and incubation terms against the latest guideline or agreement.",
+        "Confirm the latest guideline amendments, procurement preference, facility, monitoring and grievance conditions before publication.",
+        "Keep mission outlay and fund-level figures separate from startup-level benefits and never present them as an applicant entitlement."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment"
+    ],
+    "reason": "NIDHI-TBI, CoE, EIR and SSP are incubator-mediated or institution-led routes with different applicants, instruments, local calls and indirect startup benefits. Official sources support structured drafts, but current centre-level availability and detailed terms require human review before publication."
+  }
+}

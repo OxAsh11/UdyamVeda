@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-09-08",
+  "sourceBaseline": "docs/igod-coverage-baseline.json",
+  "purpose": "Evidence pack for the seventh bounded manual review batch. These are proposed relevance decisions only and do not alter the terminal IGOD assessment state or authorize publication.",
+  "reviewStatus": "pending_human_approval",
+  "terminalAssessmentWritesAllowed": false,
+  "rows": [
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Capital Development (DCD)",
+      "authorityUrl": "https://mohua.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://pm-ebus-sewa.mohua.gov.in/wp-content/uploads/2025/08/PM-eBus-Sewa-Guidelines-Part-I-1.pdf",
+      "evidenceAnchor": "PM-eBus Sewa guideline: eligible-city challenge, State/ULB proposal, CESL demand aggregation, procurement and contract route; the source is hosted by the MoHUA portfolio and department-level ownership requires confirmation",
+      "rationale": "The evidence supports a business-relevant urban-transport route, but it does not by itself prove that the IGOD-listed DCD record is the responsible authority. Human review must confirm the organizational mapping or record an exclusion."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Defence Research and Development (DRDO)",
+      "authorityUrl": "https://drdo.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://drdo.gov.in/drdo/en/offerings/schemes-and-services/startups-support",
+      "evidenceAnchor": "DRDO startup-support page: Technology Development Fund and related defence-technology development routes for startups and MSMEs",
+      "rationale": "The department publishes defence innovation, prototype, testing and startup/MSME technology-development routes directly relevant to eligible technology businesses."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Posts (DoP)",
+      "authorityUrl": "https://www.indiapost.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://www.indiapost.gov.in/vacancies/franchise",
+      "evidenceAnchor": "India Post franchise page: prescribed application, local postal-division selection, franchise route and current business-service navigation",
+      "rationale": "The department publishes franchise and postal-agent routes relevant to self-employed operators and small businesses, subject to local availability and official selection."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Scientific and Industrial Research (DSIR)",
+      "authorityUrl": "https://www.dsir.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://www.dsir.gov.in/promoting-innovations-individuals-start-ups-and-msmes-prism",
+      "evidenceAnchor": "DSIR PRISM programme page: innovation support for individuals, start-ups and MSMEs, support tracks, notified route and successor/current-call verification boundary",
+      "rationale": "The department publishes R&D, innovation, commercialization and technology-support routes directly relevant to innovators, startups and MSMEs."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Social Justice and Empowerment (DoSJE)",
+      "authorityUrl": "https://socialjustice.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://socialjustice.gov.in/schemes/32",
+      "evidenceAnchor": "Credit Enhancement Guarantee Scheme for Scheduled Castes page: eligible entrepreneurs, lender-led guarantee route, ownership/control conditions and implementing path; department/ministry ownership requires confirmation",
+      "rationale": "The evidence supports a business-relevant targeted credit route, but the same portal is also mapped to the ministry-level authority. Human review must confirm the correct IGOD owner before counting coverage."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Urban Development (DUD)",
+      "authorityUrl": "https://mohua.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://pm-ebus-sewa.mohua.gov.in/",
+      "evidenceAnchor": "PM-eBus Sewa official portal: scheme overview, notices, city/tender progress and implementation updates; department-level ownership requires confirmation",
+      "rationale": "The evidence supports an urban-transport market-access route, but it does not establish that DUD, rather than the MoHUA ministry or another implementing body, owns the opportunity."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Education (MoE)",
+      "authorityUrl": "https://www.education.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://www.education.gov.in/",
+      "evidenceAnchor": "Official Ministry of Education portal baseline: authority scope and current notices; no specific business-opportunity record is asserted from this homepage alone",
+      "rationale": "The authority must be crawled for incubator, innovation, skilling, research-commercialization or procurement routes before relevance can be decided. The homepage is evidence of the official source boundary, not evidence of catalog completeness."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Health and Family Welfare (MoHFW)",
+      "authorityUrl": "https://mohfw.gov.in/",
+      "proposedDisposition": "unclear",
+      "evidenceUrl": "https://mohfw.gov.in/",
+      "evidenceAnchor": "Official Ministry of Health and Family Welfare portal baseline: authority scope and current notices; no specific business-opportunity record is asserted from this homepage alone",
+      "rationale": "The authority must be crawled for health-sector procurement, innovation, research-commercialization, licensing or facility-support routes before relevance can be decided. The homepage does not prove that no business-relevant opportunities exist."
+    }
+  ]
+}

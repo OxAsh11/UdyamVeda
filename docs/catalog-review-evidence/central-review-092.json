@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-092",
+  "authority": "Ministry of Micro, Small and Medium Enterprises - SRI Fund / NVCFL",
+  "observedAt": "2026-09-09",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window or publication status.",
+  "sourcePolicy": "The official NVCFL scheme page and portal control the SRI structure and route. Ministry annual-report material provides government programme context and the Startup India Playbook is discovery-only. SRI's indirect daughter-fund route must remain separate from direct founder benefits.",
+  "records": [
+    {
+      "slug": "self-reliant-india-sri-fund-msme-growth-capital",
+      "sourceUrl": "https://www.nvcfl.co.in/Scheme",
+      "sourceKind": "official_nvcfl_and_ministry_cross_check",
+      "sourceAnchor": "NVCFL scheme page: Introduction, Objectives, SRI Fund Structure, Investment Process and eligibility/exclusion conditions",
+      "observations": [
+        "The official NVCFL scheme page describes SRI as a Category-II mother fund supporting empanelled Category-I/II daughter funds for onward MSME equity or quasi-equity growth capital.",
+        "MSMEs defined under the MSMED Act, as amended from time to time, are eligible for consideration, while non-profit institutions, NBFCs, financial-inclusion entities, micro-credit entities, SHGs and other financial intermediaries are excluded on the published page.",
+        "The NVCFL daughter-fund interest route is for prospective daughter-fund empanelment and must not be presented as a direct MSME investment application.",
+        "The published INR 10,000 crore government provision and approximately INR 50,000 crore leveraged structure are fund-level figures, not an individual applicant entitlement.",
+        "The public sources do not establish an individual enterprise ticket, valuation, dilution, governance, exit terms or guaranteed investment. The record remains paused and review-gated."
+      ],
+      "supportingSources": [
+        {
+          "url": "https://www.nvcfl.co.in/",
+          "anchor": "Objectives, Recent Notifications and current SRI Fund portal",
+          "observation": "The official NVCFL portal presents SRI as growth capital for high-potential MSMEs and provides current notification and contact context."
+        },
+        {
+          "url": "https://www.nvcfl.co.in/Home/InterestAsDaughterFund",
+          "anchor": "Show Your Interest as Daughter Fund",
+          "observation": "The published route is for prospective daughter-fund empanelment and must not be presented as a direct MSME investment application."
+        },
+        {
+          "url": "https://msme.gov.in/sites/default/files/MSMEANNUALREPORT2025-26ENGLISH_0.pdf",
+          "anchor": "Section 1.10.2: SRI Fund objective and structure",
+          "observation": "The Ministry annual report confirms the Government-backed equity fund-of-funds objective and the need to distinguish fund-level corpus from individual benefit."
+        },
+        {
+          "url": "https://msme.gov.in/sites/default/files/MSME-ANNUAL-REPORT-2024-25-ENGLISH.pdf",
+          "anchor": "Special Measures under Aatmanirbhar Bharat: SRI Fund and NVCFL implementation context",
+          "observation": "The Ministry annual report provides official implementation context and historical programme status, which still requires current reconciliation before publication."
+        },
+        {
+          "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf",
+          "anchor": "Page 11, SRI Fund entry",
+          "observation": "The Playbook is discovery evidence for viable MSMEs and startup MSMEs; it is not treated as the sole operational authority."
+        }
+      ],
+      "reviewFollowUps": [
+        "Confirm the latest NVCFL operating guidelines and any amendments.",
+        "Confirm the current empanelled daughter-fund list, MSME intake route and whether any direct referral path is active.",
+        "Verify the current MSME definition, instrument terms, valuation, dilution, governance, fees, reporting, grievance path and PPM conditions.",
+        "Reconcile current programme-status figures before displaying any impact metric."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": ["source", "eligibility", "benefit", "application", "window", "fine_print", "amendment", "reviewer_decision"],
+    "reason": "Official NVCFL and Ministry sources support a structured SRI draft, but current intake, daughter-fund availability, investment terms, amendments, authority mapping and applicant-specific conditions remain unresolved."
+  }
+}

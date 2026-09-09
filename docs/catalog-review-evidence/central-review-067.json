@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-067",
+  "authority": "Indian National Space Promotion and Authorisation Centre (IN-SPACe)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window or publication status.",
+  "sourcePolicy": "IN-SPACe's official scheme documents and official portal are the controlling sources. Portal results and announcements are used for current-state detection only and do not prove an open application window.",
+  "records": [
+    {
+      "slug": "in-space-seed-fund",
+      "sourceUrl": "https://www.inspace.gov.in/sys_attachment.do?sys_id=7adb190c4703aa10d4bc5b31516d43fc",
+      "supportingSources": [
+        {
+          "url": "https://www.inspace.gov.in/sys_attachment.do?sys_id=2d09969c879a755082e163d70cbb3518",
+          "anchor": "Official earlier Seed Fund document: 80 percent Indian shareholding, matching promoter/angel investment, prior-government-support limit, INR 1 crore ceiling, milestone instalments, three-year utilization and audit/IP obligations"
+        },
+        {
+          "url": "https://www.inspace.gov.in/",
+          "anchor": "Current IN-SPACe homepage: Seed Fund - Use Case Demonstration results and current announcements"
+        },
+        {
+          "url": "https://www.inspace.gov.in/inspace?id=kb_article&sysparm_article=KB0010016",
+          "anchor": "Official IN-SPACe Seed Fund knowledge article"
+        },
+        {
+          "url": "https://www.inspace.gov.in/inspace?id=results_seedfund_2026",
+          "anchor": "Official Seed Fund results route; results do not establish a new open application call"
+        },
+        {
+          "url": "https://www.inspace.gov.in/inspace?id=kb_article&sysparm_article=KB0010003",
+          "anchor": "Official IN-SPACe and Department of Space institutional context"
+        }
+      ],
+      "sourceKind": "official_inspace_scheme_documents_and_portal",
+      "sourceAnchor": "Scheme document pages 2-7: purpose, eligible startup/MSE route, Indian ownership, matching investment, prior-support limit, grant ceiling, milestones, utilization, audit and application announcement; official portal current results/announcements",
+      "observations": [
+        "The official scheme document describes seed capital for eligible startups and micro/small enterprises developing technology-led products or services in the commercial space sector.",
+        "The reviewed scheme document states up to INR 1 crore in grant support, released on milestones in three or more instalments; the exact amount and instalments are decided by an Experts Committee and are not applicant entitlements.",
+        "The earlier official document states an 80 percent Indian-shareholding condition, matching promoter/angel investment, a prior-government-support ceiling of INR 50 lakh subject to stated exclusions, three-year utilization and audited utilization obligations.",
+        "The current official portal shows Seed Fund results/use-case information and announcements, but the reviewed evidence does not establish that a new 2026 application window is open. The record therefore remains paused and non-actionable.",
+        "The benefit must remain a grant bucket separate from any later investment, prize, facility access, authorization or space-sector procurement opportunity."
+      ],
+      "reviewFollowUps": [
+        "Verify the current IN-SPACe announcement, closing date, operative application form and whether the Seed Fund is accepting new applications.",
+        "Reconcile the latest startup/MSE definition, Indian ownership, funding-round, matching-investment and prior-government-support rules against any current amendment.",
+        "Confirm space-sector scope, eligible costs, milestones, committee selection, instalment release, agreement, reporting, audit, recovery and IP conditions.",
+        "Confirm the authority mapping against the official IGOD/Department of Space source before treating the opportunity as authority-resolved or publication-ready."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "antariksh-venture-capital-fund",
+      "sourceUrl": "https://www.sidbiventure.co.in/antariksh_venture_capital_fund.html",
+      "supportingSources": [
+        {
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2247865&lang=1&reg=1",
+          "anchor": "Department of Space/PIB operationalisation release: SEBI registration, initial close, committed corpus, SIDBI Venture Capital Limited as investment manager and institutional mechanisms"
+        },
+        {
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2294772&lang=1&reg=3",
+          "anchor": "Department of Space/PIB current status reply: fund in operation, contributions as of 24 July 2026, selected startups and investment objective/strategy"
+        },
+        {
+          "url": "https://www.startupindia.gov.in/content/dam/startupindia/homebanners/Startup-Schemes-Playbook-June-2026.pdf",
+          "anchor": "Startup India Playbook page 77: IN-SPACe/Department of Space, TRL 4+, equity instruments and SIDBI Venture Capital application route"
+        }
+      ],
+      "sourceKind": "official_sidbi_fund_manager_and_department_of_space_cross_check",
+      "sourceAnchor": "SIDBI Venture Capital AVCF page: Category II AIF registration, fund manager, key investment criteria, mode of investment and contact/application route",
+      "observations": [
+        "The primary operational source is the SIDBI Venture Capital Limited fund-manager page. The Playbook label must not be treated as a BIRAC programme.",
+        "AVCF is a SEBI-registered Category II AIF with IN-SPACe as key investor/anchor and SIDBI Venture Capital Limited as fund manager/sponsor. The fund page states that it seeks Indian space companies with TRL 4 or above.",
+        "The benefit is negotiated equity, convertible instruments and/or other permissible instruments in unlisted Indian space companies. It is not a grant, subsidy, loan or guaranteed Government payment.",
+        "The April 2026 Department of Space/PIB release reports an initial close with a committed corpus of INR 1,005 crore, while the August 2026 reply reports operation and selected startups. Fund corpus and selected-startup figures are not individual applicant benefits.",
+        "The public sources do not establish a universal ticket size, fixed deadline, automatic selection, valuation, dilution, governance or exit terms. The record therefore remains paused and non-actionable until current fund documents and diligence terms are reviewed."
+      ],
+      "reviewFollowUps": [
+        "Verify the current SIDBI Venture Capital application/contact route, fund availability, operative form and latest fund documents.",
+        "Confirm Indian company, unlisted status, space-sector scope, TRL evidence and any additional financial, ownership, legal or commercial conditions.",
+        "Review the Private Placement Memorandum, investment instruments, ticket-size range, valuation, dilution, governance, fees, confidentiality, reporting, exit and committee process.",
+        "Confirm the IN-SPACe/Department of Space authority mapping against the official IGOD/Department of Space source before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "reviewer_decision"
+    ],
+    "reason": "Official IN-SPACe documents support a structured seed-fund draft, but the current call, authority mapping, amendments and applicant-specific conditions remain unresolved. The record stays paused and human-review pending."
+  }
+}

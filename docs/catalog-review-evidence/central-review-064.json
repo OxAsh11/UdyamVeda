@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-064",
+  "authority": "Goods and Services Tax Network (GSTN)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party GST registration and preparation observations for reviewer use. It does not determine whether a particular business is liable to register, replace tax or legal advice, or authorize UdyamVeda to file declarations, authenticate an applicant or handle credentials and OTPs.",
+  "sourcePolicy": "Current CBIC GST registration rules, the official GST portal and current GSTN taxpayer guidance are primary. The GSTN document checklist is retained as official supporting evidence, but its current URL availability and any successor checklist must be verified before publication. Thresholds, exceptions, special taxpayer categories and state/supply facts must be reconciled with the applicable law and notifications, not inferred from a generic business profile.",
+  "records": [
+    {
+      "slug": "gst-registration",
+      "sourceUrl": "https://tutorial.gst.gov.in/cbt/registration/gstregistration/course/story_content/external_files/GST_Registration_Document_Checklist.pdf",
+      "supportingSources": [
+        {
+          "url": "https://cbic-gst.gov.in/gst-registration-rules.html",
+          "anchor": "Registration Rules: Part A and Part B of FORM GST REG-01, PAN/mobile/email verification, TRN, acknowledgement, approval or clarification, REG-06/GSTIN, amendment, cancellation and revocation"
+        },
+        {
+          "url": "https://www.gst.gov.in/",
+          "anchor": "Official GST portal registration and applicant handoff"
+        },
+        {
+          "url": "https://tutorial.gst.gov.in/userguide/registration/Business_Details.htm",
+          "anchor": "GST registration is state-wise and business-detail guidance for the official form"
+        }
+      ],
+      "sourceKind": "official_gstn_checklist_cbic_rules_portal_cross_check",
+      "sourceAnchor": "GSTN document checklist for constitution, authorised signatory and business-place evidence reconciled with CBIC registration rules and the official portal",
+      "observations": [
+        "The GSTN checklist identifies proof of business constitution, stakeholder or authorised-signatory photographs, appointment of the authorised signatory, principal and additional places of business, and supporting documents during clarification.",
+        "The checklist records row-specific JPG/PDF formats, 100 KB or 1 MB limits and row-specific multiple-upload behavior. UdyamVeda must preserve those per-document rules rather than flattening them into one generic upload rule.",
+        "The current CBIC registration rules describe Part A of FORM GST REG-01 with PAN, mobile number, email address and State/UT, followed by OTP verification and generation of a temporary reference number. Part B is then submitted electronically with the prescribed documents and signature.",
+        "The CBIC rules provide an electronic acknowledgement, officer review, clarification through the prescribed forms, issuance of REG-06/GSTIN on approval and deemed-approval conditions. These are statutory workflow rules and must be presented with their current-law and amendment caveat.",
+        "GST registration is state-wise. SEZ units or developers have a separate registration route, and multiple business locations, business verticals, taxpayer categories, e-commerce, inter-state supplies and special categories can change the applicable route.",
+        "The document checklist is not an eligibility determination. GST liability, voluntary registration and exemptions depend on current law, notifications and the business's state, supplies, turnover, e-commerce, sector and taxpayer facts. No threshold or exemption should be hardcoded from this preparation record without a current legal review.",
+        "The GSTN checklist URL was recorded as an official source in the existing audit, but the current source fetch did not return the document. The record therefore remains blocked until the checklist is recaptured or an official successor is bound to the record and reviewed.",
+        "UdyamVeda may prepare and validate a checklist, explain the official sequence and hand the user to GSTN, but the applicant or authorised representative must use its own account, credentials, mobile number, email, OTPs, signatures and statutory declarations."
+      ],
+      "reviewFollowUps": [
+        "Recapture the GSTN checklist from the official host or identify and bind the current official successor; record the exact retrieval date, hash, page/row anchors and any amendment or replacement notice.",
+        "Verify current GST liability thresholds, exceptions, voluntary-registration rules, special taxpayer categories, state/supply/e-commerce conditions and the treatment of inter-state or SEZ activity against current law and official notifications.",
+        "Test the live GST portal sequence, PAN/mobile/email OTPs, TRN, Part A/Part B forms, Aadhaar or other verification choices, bank-account timing, ARN, clarification and certificate download without storing credentials or OTPs.",
+        "Verify the current document list, file-size and format limits, multiple-upload rules, principal/additional-place evidence, authorised-signatory evidence and any revised checklist or portal validation.",
+        "Model amendment, additional-place, cancellation, revocation, returns and continuing tax-compliance obligations separately from registration readiness, then obtain human reviewer approval before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "CBIC rules support the core application sequence and statutory workflow, but the current GSTN checklist must be recaptured or replaced, and tax-liability thresholds, exceptions, special categories and live portal behavior require current legal and human review before publication."
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-001",
+  "authority": "Candidate: Department for Promotion of Industry and Internal Trade (DPIIT)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve an authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "Official Gazette, ministry or implementing-agency pages only; third-party claims are excluded.",
+  "records": [
+    {
+      "slug": "credit-guarantee-scheme-for-startups",
+      "sourceUrl": "https://www.startupindia.gov.in/content/dam/invest-india/PGF/credit-guarantee-scheme-for-startup.pdf",
+      "sourceKind": "gazette_notification",
+      "sourceAnchor": "S.O. 2046(E), 8 May 2025; Chapters I-V: commencement, objective, definitions, eligible borrowers and Member Institutions",
+      "observations": [
+        "The 8 May 2025 notification identifies the Credit Guarantee Scheme for Startups (CGSS) as a DPIIT scheme for credit guarantees on loans extended by Member Institutions to eligible startups.",
+        "The notification states that it supersedes the earlier 6 October 2022 notification.",
+        "The benefit must remain represented as loan-linked credit-guarantee support rather than a direct grant or automatic loan entitlement."
+      ],
+      "reviewFollowUps": [
+        "Reconcile the current scheme guideline, Member Institution route, lender conditions and any subsequent amendment before publication.",
+        "Verify the record's DPIIT-recognition, borrower, facility, default/NPA and guarantee-coverage rules against the complete notification and current operational source.",
+        "Confirm the current Jan Samarth and NCGTC routes and record any route-specific document or window changes."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "startup-india-investor-connect",
+      "sourceUrl": "https://www.startupindia.gov.in/content/sih/en/about-startup-india-initiative.html",
+      "sourceKind": "official_portal_page",
+      "sourceAnchor": "Startup India Investor Connect: purpose, launch and investor-startup engagement description",
+      "observations": [
+        "The official Startup India page describes Investor Connect as a platform connecting startups and investors.",
+        "The page states that the initiative was launched at the sixth National Startup Advisory Council meeting on 11 March 2023.",
+        "The record should remain a non-financial market-access or investor-connection opportunity and must not imply funding approval or guaranteed investment."
+      ],
+      "reviewFollowUps": [
+        "Verify the current authenticated application route, profile requirements, investor-hosted opportunity flow and any request limits.",
+        "Confirm whether the dashboard entry and current platform operation remain available to the intended startup profile."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "startup-india-maarg-mentorship",
+      "sourceUrl": "https://maarg.startupindia.gov.in/",
+      "sourceKind": "official_implementing_portal",
+      "sourceAnchor": "Startup India National Mentorship Platform; Startup Application; Get a Mentor; Key Functions of MAARG Program",
+      "observations": [
+        "The official MAARG portal identifies itself as the Startup India National Mentorship Platform under DPIIT and the Ministry of Commerce and Industry.",
+        "The portal provides separate startup and mentor application routes and describes matching and mentor-startup interaction functions.",
+        "The record should remain a mentorship and guidance opportunity, not a grant, loan, investment, or guaranteed business outcome."
+      ],
+      "reviewFollowUps": [
+        "Verify current startup eligibility, application fields, cohort route, matching availability and platform terms.",
+        "Confirm that the current portal and contact route are operational at the time of human publication review."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment"
+    ],
+    "reason": "External source cross-check is not a substitute for the persisted reviewer checklist, complete evidence capture, and authorized publication decision."
+  }
+}

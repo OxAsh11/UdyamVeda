@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-075",
+  "authority": "National Cooperative Development Corporation - Dairy Sahakar",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party NCDC Dairy Sahakar observations for reviewer use. It does not convert the launch earmark into an applicant entitlement, guarantee a loan, grant, subsidy, project cost, interest rate, approval, or convergence benefit.",
+  "sourcePolicy": "The official NCDC Dairy Sahakar brochure, NCDC pattern-of-assistance document, NCDC compendium, current dairy portal, common loan application route and launch notice are primary. Current rates, forms, security, route and State-specific terms require reviewer confirmation before publication.",
+  "records": [
+    {
+      "slug": "dairy-sahakar-cooperative-dairy-business-support",
+      "sourceUrl": "https://www.ncdc.in/documents/downloads/5615200923Dairy-Sahakar-English.pdf",
+      "supportingSources": [
+        {
+          "url": "https://www.ncdc.in/documents/faq/2010210223Pattern-of-Assistance-2021-22.pdf",
+          "anchor": "Dairy Sahakar section: objective, activity scope, cooperative eligibility, project-cost statement, 5-8 year loan period, 1-3 year principal moratorium and funding/convergence boundaries"
+        },
+        {
+          "url": "https://www.ncdc.in/documents/booklet/2609240524English-Compendium-as-on-22.05.2024.pdf",
+          "anchor": "Dairy Sahakar entry: infrastructure, dairy value-chain and supporting activities, cooperative eligibility, loan period, security, subsidy and funding patterns"
+        },
+        {
+          "url": "https://www.ncdc.in/index.jsp?page=dairy",
+          "anchor": "Current NCDC dairy and livestock route with common loan application navigation; page updated 1 July 2026"
+        },
+        {
+          "url": "https://www.ncdc.in/index.jsp?page=common-application",
+          "anchor": "Current common loan application route: select activity/purpose and loan type, download the form and submit with supporting documents; page updated 12 August 2026"
+        },
+        {
+          "url": "https://www.ncdc.in/documents/whats-new/3716081121LAUNCH-OF-DAIRY-SAHAKAR.pdf",
+          "anchor": "31 October 2021 launch notice: Rs 5,000 crore earmarked as an investment for dairy cooperatives; launch-level corpus context, not a per-applicant benefit"
+        }
+      ],
+      "sourceKind": "official_ncdc_dairy_sahakar_scheme_and_current_route_cross_check",
+      "sourceAnchor": "Cooperative eligibility, dairy and supporting activity scope, 5-8 year credit linkage, 1-3 year moratorium, funding routes, current application handoff and corpus-versus-entitlement boundary",
+      "observations": [
+        "Dairy Sahakar is a cooperative dairy-business finance framework, not a universal grant or automatic subsidy. An applicant must be a cooperative society registered under a State or Multi-State Cooperative Societies Act with suitable bye-law provisions; the brochure also describes cooperative FPO/SHG eligibility subject to the applicable wording and guidelines.",
+        "Eligible activity groups cover bovine development, procurement, processing, quality assurance, value addition, branding, packaging, marketing, transport, storage, dairy exports and supporting activities including renewable energy, ICT, cattle feed, research, packaging materials, equipment, veterinary services, education and capacity development.",
+        "The official NCDC material states that project assistance has no fixed minimum or maximum for eligible cooperative projects, but sanction remains subject to viability, assessment, current NCDC terms, security and applicable permissions. This must not be displayed as an assured amount.",
+        "The NCDC compendium records a 5-8 year loan period including a 1-3 year principal moratorium. Interest is notified by NCDC from time to time. Security is required to NCDC satisfaction, and working-capital or margin-money assistance remains assessment-dependent.",
+        "Infrastructure funding patterns are route-specific: the compendium records up to 90% NCDC-to-State assistance with minimum 10% society share through the State route, and up to 70% direct NCDC assistance with minimum 30% society share. Margin money and working capital are separate benefit buckets.",
+        "The 2021 launch notice mentions a Rs 5,000 crore investment earmark for dairy cooperatives. It is scheme-level launch context, not a per-applicant ceiling, grant pool balance or guaranteed allocation.",
+        "The current NCDC dairy page and common loan application route confirm that the operational handoff is activity/purpose and loan-type specific. UdyamVeda may prepare the cooperative, project, permission, contribution and security checklist, but cannot submit the NCDC application, guarantee sanction or treat convergence as approved."
+      ],
+      "reviewFollowUps": [
+        "Confirm the current Dairy Sahakar brochure/form version, current NCDC rate circular, direct versus State/UT route, project appraisal, contribution, security and repayment terms.",
+        "Verify the cooperative registration, bye-laws, dairy/supporting activity classification, project report, technical feasibility, financials and all food-safety, animal-husbandry, veterinary, environmental, factory, building, labour and local permissions.",
+        "Separate project finance, society contribution, State share-capital/loan, margin money, working capital, subsidy or interest subvention and the scheme-level launch earmark in the benefit model.",
+        "Confirm the live common-application form, submission office/channel, fees, appraisal timeline, disbursement, monitoring, repayment, grievance and amendment route.",
+        "Obtain human reviewer approval for source, eligibility, benefit, application, window, fine print, amendment, current terms and factual accuracy before publication."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "The official NCDC sources confirm cooperative dairy project-finance scope and current application navigation, but current rates, forms, route, security, permissions and sanction conditions require human review before publication."
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-008",
+  "authority": "Candidate: Ministry of Textiles (MoT)",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "Ministry of Textiles and official PLI Textiles portal notifications, guidelines, SOPs and portal notices only; third-party claims are excluded.",
+  "records": [
+    {
+      "slug": "production-linked-incentive-textiles-existing-participants-added-products",
+      "sourceUrl": "https://pli.texmin.gov.in/frontend/images/Documents/Amendment%20%26%20Addition-PLI%20for%20Textiles%20-%20Noti%20dt%2009.10.2025.pdf",
+      "supportingSources": [
+        {
+          "url": "https://pli.texmin.gov.in/",
+          "anchor": "Current portal notice: existing Round 1 and Round 2 PLI companies can submit applications for 17 added MMF Apparel and Fabric HSN codes"
+        },
+        {
+          "url": "https://pli.texmin.gov.in/Scheme-Notifications",
+          "anchor": "Notifications and amendment history through 26 December 2025, extensions through 2026 and July 2026 approval update"
+        }
+      ],
+      "sourceKind": "gazette_amendment_and_current_implementing_portal",
+      "sourceAnchor": "9 October 2025 amendment, sections 2.1-2.3 and 3.3-4.1; current portal notice and notification history",
+      "observations": [
+        "The October 2025 notification adds MMF Apparel and MMF Fabric products identified through 8-digit HSN codes and requires eligible turnover to correspond to the listed product descriptions on GST invoices.",
+        "Existing applicants receive a separate additional application window and must make fresh investment of at least 15% of the applicable prescribed minimum threshold. The amendment states that incentives under this provision apply to production in the current financial year and prospectively; it is not a general reopening for every textile company.",
+        "The amendment removes the earlier requirement to form a separate company before investment and instead requires an applicant company to establish a separate project unit and maintain distinct books for investment and turnover. Only new investment is eligible for the relevant calculation.",
+        "For existing participants, the amendment reduces the minimum additional incremental-turnover requirement from 25% to 10% from the second performance year and subsequent years, effective from FY 2025-26, subject to the remaining scheme conditions and later operational guidance.",
+        "The official portal currently states that existing PLI companies selected in Rounds 1 and 2 can submit applications for 17 added HSN codes. That notice must be treated as a participant-only route and must not be shown to an unselected company as a fresh grant opportunity.",
+        "The portal and notification page show later operational amendments, extension notices and approvals through 2026. The exact current submission deadline, eligible participant cohort, HSN list, document route and whether the added-product window remains open on the observed date require a live reviewer check."
+      ],
+      "reviewFollowUps": [
+        "Confirm the current registration/submission window and whether the portal accepts added-product applications from all Round 1/2 participants or only a defined cohort.",
+        "Reconcile the 9 October 2025 notification with the 3 November 2025 corrigendum and the 17 October and 26 December 2025 operational-guideline amendments.",
+        "Validate the complete 17 HSN-code list, GST invoice matching rule, 15% fresh-investment calculation, project-unit and distinct-books evidence, turnover formula and claim-period treatment.",
+        "Keep this participant-only route separate from the new-applicant track and from incentive disbursement claims; record selected-participant prerequisites and PMA verification requirements.",
+        "Capture application forms, project report, authorization, QRR, statutory-auditor and financial documents from the official formats/SOP pages, with exact version and upload requirements.",
+        "Determine whether the record is active, paused or closed for the observed date and publish only if the current portal route and window are confirmed."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    },
+    {
+      "slug": "production-linked-incentive-textiles-new-applicants",
+      "sourceUrl": "https://pli.texmin.gov.in/frontend/images/Documents/Approved%20Guidelines%20for%20PLI%20scheme%20for%20Textiles.pdf",
+      "supportingSources": [
+        {
+          "url": "https://pli.texmin.gov.in/Scheme-Notifications",
+          "anchor": "Official portal history: new-application reopening, 31 December 2025 extension, 31 March 2026 extension and 2026 approval updates"
+        },
+        {
+          "url": "https://pli.texmin.gov.in/frontend/images/Documents/Amendment%20%26%20Addition-PLI%20for%20Textiles%20-%20Noti%20dt%2009.10.2025.pdf",
+          "anchor": "Sections 3.1-3.2 and 4.1: subsequent-round investment thresholds and FY 2025-26 entry boundary"
+        },
+        {
+          "url": "https://pli.texmin.gov.in/frontend/images/Documents/PLI%20Textile_%20User%20guide%20Cum%20SOP%20-%2016.04.2025.pdf",
+          "anchor": "PMA verification SOP: threshold investment, threshold/incremental sales, minimum value addition and claim documentation"
+        }
+      ],
+      "sourceKind": "scheme_guideline_with_amendments_and_current_portal_history",
+      "sourceAnchor": "Original guideline sections 3-6, 7 and 16-17; October 2025 amendment sections 3.1-4.1; official extension and approval notices",
+      "observations": [
+        "The base scheme targets MMF Apparel, MMF Fabrics and specified Technical Textiles manufactured in India, with incentive eligibility tied to prescribed investment, turnover and product conditions rather than a general subsidy for textile businesses.",
+        "The October 2025 amendment states that in subsequent rounds new applicants may apply for the added notified HSN codes, with a minimum investment of ₹150 crore for Scheme Part I or ₹50 crore for Scheme Part II in plant, machinery, equipment and civil works, excluding land and administrative-building cost.",
+        "The same amendment states that entry of new applicants is permitted only until FY 2025-26 subject to fund availability, while incentives for qualifying entrants may continue for the scheme period up to FY 2028-29. The official portal records a later extension of the new-application deadline to 31 March 2026; therefore, on 8 September 2026 this track is presumptively closed to new applications unless a later official reopening is found.",
+        "The scheme requires product-level HSN matching, prescribed threshold investment, incremental sales and minimum value addition, and PMA verification with financial and statutory-auditor evidence. The maximum advertised scheme outlay or projected company totals must not be presented as an individual guaranteed benefit.",
+        "The official portal reports 170 approved companies and continues to publish participant and amendment information. Approved-participant counts are evidence of selection history, not proof that a new applicant can apply today."
+      ],
+      "reviewFollowUps": [
+        "Confirm the final operative closing notice for new applicants and search for any official reopening after 31 March 2026 before marking the track closed rather than superseded or paused.",
+        "Reconcile the original guidelines and all notification/operational-guideline amendments, including the 2025 product additions, investment changes, turnover changes, claim rules and corrigendum.",
+        "Validate Part I/Part II eligibility, full investment thresholds, product/HSN schedules, minimum value addition, threshold and incremental-turnover formulas, performance years, incentive rates and disbursement conditions.",
+        "Separate the new-applicant track from existing-participant added-product applications and from approved-company claim filing; expose historical windows and selected-participant boundaries.",
+        "Capture exact application documents, portal route, PMA verification steps, bank-guarantee requirements, reporting, clawback and grievance/contact routes.",
+        "Classify the record as closed/historical unless a current official application window is confirmed by the reviewer."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment"
+    ],
+    "reason": "PLI Textiles contains separate new-applicant and selected-participant routes, a dense amendment history, HSN-specific product tests and date-sensitive windows. Current participant eligibility, closure/reopening state, operative guidelines and claim documentation require human review before publication."
+  }
+}

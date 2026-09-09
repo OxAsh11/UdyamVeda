@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "batchId": "central-review-032",
+  "authority": "Ministry of Environment, Forest and Climate Change / PARIVESH",
+  "observedAt": "2026-09-08",
+  "status": "draft_source_cross_check",
+  "interpretation": "This packet records first-party source observations for reviewer use. It does not approve the authority, opportunity, eligibility rule, benefit, window, or publication status.",
+  "sourcePolicy": "MoEFCC, PARIVESH and the applicable EIA notification/rules are the primary sources. The current PARIVESH portal is used for the live route and portal status; the MoEFCC EIA page and official notification material are used for process and legal-context cross-checking. This record is a regulatory workflow, not a grant or universal business entitlement.",
+  "records": [
+    {
+      "slug": "moefcc-parivesh-environmental-clearance",
+      "sourceUrl": "https://moef.gov.in/index.php/environmental-impact-assessment-eia",
+      "supportingSources": [
+        {
+          "url": "https://parivesh.nic.in/",
+          "anchor": "Current PARIVESH 2.0 portal: Environmental, Forest, Wild Life and CRZ clearance routes, proposal tracking, and current instruction to apply through NSWS"
+        },
+        {
+          "url": "https://cpc.parivesh.nic.in/SingleWindow.aspx",
+          "anchor": "Official PARIVESH description: role-based online submission and monitoring of Environment, Forest, Wildlife and CRZ proposals at Central, State and district levels"
+        },
+        {
+          "url": "https://cpc.parivesh.nic.in/acts.aspx?id=EC",
+          "anchor": "Official Environmental Clearance acts/rules index, including the EIA Notification and subsequent amendments"
+        },
+        {
+          "url": "https://cpc.parivesh.nic.in/writereaddata/ENV/EnvironmentalClearance-General/18.pdf",
+          "anchor": "Official EIA Notification material describing Category A/Category B appraisal and Form-I/application decision points"
+        }
+      ],
+      "sourceKind": "official_moefcc_parivesh_and_eia_notification_cross_check",
+      "sourceAnchor": "EIA appraisal, category/site screening, PARIVESH proposal tracking, complete-information boundary and separate clearance dependencies",
+      "observations": [
+        "The current PARIVESH portal exposes separate Environmental, Forest, Wild Life and CRZ clearance routes, proposal tracking and a current instruction to apply for EC/FC/WL/CRZ through NSWS. A PARIVESH record must therefore identify the exact clearance route instead of treating all green clearances as one approval.",
+        "The official PARIVESH description states that the system supports online submission and monitoring of proposals from proponents for Environment, Forest, Wildlife and CRZ clearances at Central, State and district authority levels. The approving route depends on the project and competent authority; MoEFCC does not decide every proposal.",
+        "The MoEFCC EIA page describes technical scrutiny, expert appraisal and a complete-information decision reference, and notes that certain site-specific projects use a two-stage process. The 90-day reference must remain a process note, not a guaranteed approval deadline, because the applicable notification, category, authority requests and completeness control the case.",
+        "The EIA material distinguishes project/activity categories and Central/State appraisal pathways. Environmental clearance is not required for every company, startup, shop or ordinary service business; the recommendation engine must first evaluate activity, scale, location, site sensitivity and the current notification schedule.",
+        "Form-I, pre-feasibility, EIA/EMP, public hearing, terms of reference and other reports are conditional requirements. The checklist must not show all of them as mandatory for every project, and unknown project/site facts must produce more information required rather than not eligible.",
+        "Forest, wildlife, CRZ, pollution-control consent, local construction and other permissions can be separate dependencies. An environmental-clearance application or PARIVESH proposal is not itself a clearance and does not guarantee approval.",
+        "This is a regulatory approval and compliance route with no applicant-level grant, subsidy, loan ceiling or savings amount. UdyamVeda may explain the route and prepare a document checklist but cannot grant approval, provide legal clearance advice or impersonate the applicant or authority.",
+        "The live portal was observed on 2026-09-08 and displayed a 2026-09-07 last-updated date. Portal notices and the current EIA notification/amendments must be rechecked before publication because the route, forms and dependencies can change."
+      ],
+      "reviewFollowUps": [
+        "Confirm the applicable EIA notification schedule, project category, threshold, expansion/modernisation status and whether prior environmental clearance is required before the proposed activity starts.",
+        "Confirm the competent appraisal route: MoEFCC/EAC, SEIAA/SEAC, district or another authority, based on category, delegation and site.",
+        "Verify current PARIVESH/NSWS account, proposal form, portal fields, fees, document formats, signatory requirements and any current technical notices.",
+        "Verify whether Form-I, pre-feasibility, terms of reference, EIA/EMP, public hearing, site clearance or other studies are required for this project and location.",
+        "Check forest, wildlife, CRZ, pollution-control, water, construction and local permissions as separate dependencies; do not mark environmental clearance as satisfying them.",
+        "Reconcile the current processing timeline and complete-information rule with the applicable notification and authority practice; never promise the 90-day reference as an outcome.",
+        "Confirm amendment/corrigendum history, proposal-specific conditions, validity, monitoring, compliance reporting and consequences of construction or operation without required approval.",
+        "Obtain a human reviewer decision before any active publication or recommendation; the record must remain review-gated until the exact category and current source version are evidenced."
+      ],
+      "proposedDecision": "remain_in_review",
+      "humanReviewer": null
+    }
+  ],
+  "publicationGuard": {
+    "publicationReady": false,
+    "requiredHumanChecks": [
+      "source",
+      "eligibility",
+      "benefit",
+      "application",
+      "window",
+      "fine_print",
+      "amendment",
+      "current_terms",
+      "reviewer_decision"
+    ],
+    "reason": "Official MoEFCC and PARIVESH sources confirm the route and its project/category-dependent boundary, but the exact project schedule, appraisal authority, current forms, documents, dependencies, amendments and proposal-specific conditions remain unresolved. The record stays human-review pending."
+  }
+}

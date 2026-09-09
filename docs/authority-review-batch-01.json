@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "asOf": "2026-09-08",
+  "sourceBaseline": "docs/igod-coverage-baseline.json",
+  "purpose": "Evidence pack for the first bounded manual review batch. These are proposed relevance decisions only and do not alter the terminal IGOD assessment state or authorize publication.",
+  "reviewStatus": "pending_human_approval",
+  "terminalAssessmentWritesAllowed": false,
+  "rows": [
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Micro, Small & Medium Enterprises (MSME)",
+      "authorityUrl": "https://msme.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://www.msme.gov.in/offerings",
+      "evidenceAnchor": "Schemes and Services: PMEGP, CGTMSE, Procurement and Marketing Support, Consortia and Tender Marketing, MSME Champions, and Entrepreneurship and Skill Development Programs",
+      "rationale": "The ministry publishes business-facing finance, market-access, technology, formalisation, and entrepreneurship offerings for MSMEs and self-employed applicants."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Commerce and Industry (MoCI)",
+      "authorityUrl": "https://www.moci.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://www.startupindia.gov.in/content/sih/en/government-schemes.html",
+      "evidenceAnchor": "Central Government Schemes section: initiatives by Central Ministries and Departments supporting startups through financial, infrastructural, and regulatory support",
+      "rationale": "The ministry family includes DPIIT and Startup India, which publish startup recognition, funding, procurement, mentorship, and ecosystem routes."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Corporate Affairs (MCA)",
+      "authorityUrl": "https://www.mca.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://www.mca.gov.in/content/dam/mca/pdf/SPICEplus-and-linked-filings-FAQs-V3-20230122.pdf",
+      "evidenceAnchor": "SPICe+ Part A and Part B with linked services, including incorporation and PAN/TAN allocation",
+      "rationale": "MCA controls a core company-incorporation and continuing-compliance journey required by the Start and Operate pillar."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Electronics and Information Technology (MeitY)",
+      "authorityUrl": "https://meity.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://www.meity.gov.in/offerings/schemes-and-services/details/technology-incubation-and-development-of-entrepreneurs-QMwEjNtQWa",
+      "evidenceAnchor": "Technology Incubation and Development of Entrepreneurs (TIDE 2.0): eligibility and list of TIDE centres",
+      "rationale": "MeitY publishes technology-incubation, startup, testing, certification, and production-support routes relevant to technology businesses and incubators."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Food Processing Industries (MoFPI)",
+      "authorityUrl": "https://mofpi.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://www.pmfme.mofpi.gov.in/newsletters/docs/SchemeGuidelines.pdf",
+      "evidenceAnchor": "PMFME guideline sections covering individual units, groups, common infrastructure, credit-linked subsidy, and State/UT implementation",
+      "rationale": "MoFPI publishes formalisation, subsidy, common-infrastructure, and food-processing project routes for businesses and producer groups."
+    },
+    {
+      "authorityLevel": "ministry",
+      "authorityName": "Ministry of Skill Development and Entrepreneurship (MSDE)",
+      "authorityUrl": "https://www.msde.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://www.msde.gov.in/static/uploads/2025/09/20d9aac4ce972a765e83f28682536ee0.pdf",
+      "evidenceAnchor": "PMKVY 4.0 candidate, training-provider, Recognition of Prior Learning, and Skill India implementation routes",
+      "rationale": "MSDE controls training, apprenticeship, provider, and entrepreneurship-support routes that affect founders, workers, and growing businesses."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department for Promotion of Industry and Internal Trade (DPIIT)",
+      "authorityUrl": "https://dpiit.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://www.startupindia.gov.in/content/sih/en/startup-scheme.html",
+      "evidenceAnchor": "DPIIT recognition, self-certification, intellectual-property support, tax-exemption route, and public-procurement benefits",
+      "rationale": "DPIIT directly administers startup recognition and multiple startup ecosystem and market-access programmes."
+    },
+    {
+      "authorityLevel": "department",
+      "authorityName": "Department of Financial Services (DoFS)",
+      "authorityUrl": "https://financialservices.gov.in/",
+      "proposedDisposition": "relevant",
+      "evidenceUrl": "https://financialservices.gov.in/pradhan-mantri-mudra-yojana-pmmy",
+      "evidenceAnchor": "PMMY categories and Member Lending Institutions route",
+      "rationale": "DFS publishes and coordinates formal credit routes used by micro businesses and self-employed applicants, including lender-mediated products that must be kept separate from grants."
+    }
+  ]
+}
