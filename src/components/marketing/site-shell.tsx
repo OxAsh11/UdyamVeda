@@ -6,11 +6,11 @@ const APP_URL = process.env.NEXT_PUBLIC_APP_HOST
   : 'https://app.udyamveda.in'
 
 const navItems = [
+  { href: '/schemes', label: 'Schemes' },
   { href: '/resources', label: 'Resources' },
   { href: '/government', label: 'Government' },
-  { href: '/blogs', label: 'Blogs' },
-  { href: '/news', label: 'News' },
   { href: '/insights', label: 'Insights' },
+  { href: '/methodology', label: 'Methodology' },
 ]
 
 export function BrandMark() {
