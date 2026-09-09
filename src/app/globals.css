@@ -160,7 +160,7 @@ body {
   * { @apply border-border outline-ring/50; }
 }
 
-/* Vidyam Veda public experience */
+/* Udyam Veda public experience */
 :root { --vv-navy: #102a43; --vv-ink: #17324d; --vv-muted: #61758a; --vv-paper: #f8f5ef; --vv-orange: #f28c38; --vv-teal: #0f8b8d; --vv-blue: #3674d9; --vv-violet: #7653d6; }
 .vv-site { overflow: hidden; background: var(--vv-paper); color: var(--vv-ink); }
 .vv-container { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }

@@ -11,9 +11,9 @@ const navItems = [
 
 export function BrandMark() {
   return (
-    <Link href="/" className="vv-brand" aria-label="Vidyam Veda home">
+    <Link href="/" className="vv-brand" aria-label="Udyam Veda home">
       <span className="vv-brand-mark" aria-hidden="true"><span>V</span></span>
-      <span><strong>Vidyam</strong><em>Veda</em></span>
+      <span><strong>Udyam</strong><em>Veda</em></span>
     </Link>
   )
 }
@@ -54,7 +54,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
             <p>Every source is dated and linked. Official authorities remain the final source for eligibility and application decisions.</p>
           </div>
         </div>
-        <div className="vv-container vv-footer-bottom"><span>© 2026 Vidyam Veda</span><span>Built for founders, operators, and local businesses.</span></div>
+        <div className="vv-container vv-footer-bottom"><span>© 2026 Udyam Veda</span><span>Built for founders, operators, and local businesses.</span></div>
       </footer>
     </div>
   )

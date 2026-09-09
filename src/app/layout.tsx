@@ -4,10 +4,10 @@ import './globals.css'
 import { Toaster } from '@/components/ui/sonner'
 
 export const metadata: Metadata = {
-  title: { default: 'Vidyam Veda — clearer paths for Indian businesses', template: '%s · Vidyam Veda' },
+  title: { default: 'Udyam Veda — clearer paths for Indian businesses', template: '%s · Udyam Veda' },
   description: 'Find trusted government resources, practical business guides, and fresh signals for your next move.',
   manifest: '/manifest.json',
-  appleWebApp: { capable: true, statusBarStyle: 'default', title: 'Vidyam Veda' },
+  appleWebApp: { capable: true, statusBarStyle: 'default', title: 'Udyam Veda' },
   icons: { icon: '/icons/icon.svg', apple: '/icons/icon.svg' },
   other: { 'mobile-web-app-capable': 'yes' },
 }
