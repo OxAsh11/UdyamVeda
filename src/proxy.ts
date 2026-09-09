@@ -2,6 +2,25 @@ import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 import { AUTH_REQUIRED } from '@/lib/auth/mode'
 
+// Host separation: udyamveda.in (and www) is the public website.
+// app.udyamveda.in is the product: login, dashboard, admin, workspace.
+// Sessions are host-scoped, so authentication happens on the app host and
+// the website host forwards every auth/product route there.
+const SITE_HOST = process.env.NEXT_PUBLIC_SITE_HOST || 'udyamveda.in'
+const APP_HOST = process.env.NEXT_PUBLIC_APP_HOST || `app.${SITE_HOST}`
+
+const PRODUCT_PATH_PREFIXES = ['/dashboard', '/admin']
+const AUTH_PATHS = ['/login', '/signup', '/forgot-password', '/reset-password']
+
+function isProductPath(pathname: string) {
+  return PRODUCT_PATH_PREFIXES.some(prefix => pathname === prefix || pathname.startsWith(`${prefix}/`))
+}
+
+function hostOf(request: NextRequest) {
+  const host = request.headers.get('x-forwarded-host') ?? request.headers.get('host') ?? ''
+  return host.split(':')[0].toLowerCase()
+}
+
 export async function proxy(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request })
 
@@ -21,6 +40,17 @@ export async function proxy(request: NextRequest) {
   )
 
   const { pathname } = request.nextUrl
+  const host = hostOf(request)
+  const onSiteHost = host === SITE_HOST || host === `www.${SITE_HOST}`
+
+  // The website host serves only public marketing content; every auth and
+  // product route hands off to the app host, preserving the query string.
+  if (onSiteHost && (isProductPath(pathname) || AUTH_PATHS.includes(pathname))) {
+    const url = new URL(`https://${APP_HOST}${pathname}`)
+    url.search = request.nextUrl.search
+    return NextResponse.redirect(url)
+  }
+
   const isAdminPage = pathname === '/admin' || pathname.startsWith('/admin/')
 
   if (!AUTH_REQUIRED && !isAdminPage) {
@@ -29,18 +59,14 @@ export async function proxy(request: NextRequest) {
 
   const { data: { user } } = await supabase.auth.getUser()
 
-  if (isAdminPage && !user) {
+  if ((isAdminPage || pathname.startsWith('/dashboard')) && !user) {
     const loginUrl = new URL('/login', request.url)
     loginUrl.searchParams.set('next', pathname)
     return NextResponse.redirect(loginUrl)
   }
 
-  if (pathname.startsWith('/dashboard') && !user) {
-    return NextResponse.redirect(new URL('/login', request.url))
-  }
-
-  if ((pathname === '/login' || pathname === '/signup') && user) {
-    return NextResponse.redirect(new URL('/', request.url))
+  if (AUTH_PATHS.includes(pathname) && user) {
+    return NextResponse.redirect(new URL('/dashboard', request.url))
   }
 
   return supabaseResponse

@@ -1,6 +1,10 @@
 import Link from 'next/link'
 import { ArrowUpRight, BookOpen, Compass, ShieldCheck } from 'lucide-react'
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_HOST
+  ? `https://${process.env.NEXT_PUBLIC_APP_HOST}`
+  : 'https://app.udyamveda.in'
+
 const navItems = [
   { href: '/resources', label: 'Resources' },
   { href: '/government', label: 'Government' },
@@ -27,7 +31,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           <nav className="vv-nav" aria-label="Primary navigation">
             {navItems.map(item => <Link key={item.href} href={item.href}>{item.label}</Link>)}
           </nav>
-          <Link href="/resources" className="vv-header-cta">Explore resources <ArrowUpRight size={15} /></Link>
+          <a href={`${APP_URL}/login`} className="vv-header-cta">Open the app <ArrowUpRight size={15} /></a>
         </div>
       </header>
       <main>{children}</main>
