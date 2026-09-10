@@ -42,11 +42,23 @@ export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
   const host = hostOf(request)
   const onSiteHost = host === SITE_HOST || host === `www.${SITE_HOST}`
+  const onAppHost = host === APP_HOST
+  // Once apex DNS points at Vercel, enforce the strict split: the app host
+  // serves only the product; public pages live on the website host.
+  const enforceSplit = process.env.NEXT_PUBLIC_ENFORCE_HOST_SPLIT === 'true'
 
   // The website host serves only public marketing content; every auth and
   // product route hands off to the app host, preserving the query string.
   if (onSiteHost && (isProductPath(pathname) || AUTH_PATHS.includes(pathname))) {
     const url = new URL(`https://${APP_HOST}${pathname}`)
+    url.search = request.nextUrl.search
+    return NextResponse.redirect(url)
+  }
+
+  // The app host serves only the product (login, dashboard, admin) and APIs;
+  // every public page redirects to the website host.
+  if (onAppHost && enforceSplit && !isProductPath(pathname) && !AUTH_PATHS.includes(pathname) && !pathname.startsWith('/api')) {
+    const url = new URL(`https://${SITE_HOST}${pathname}`)
     url.search = request.nextUrl.search
     return NextResponse.redirect(url)
   }
