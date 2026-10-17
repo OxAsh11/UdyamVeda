@@ -206,7 +206,7 @@ export default function IdeatePage() {
                 <RefreshCw size={13} /> Regenerate
               </button>
             )}
-            {!strategy && (
+            {!strategy && process.env.NEXT_PUBLIC_VERCEL_ENV !== 'production' && (
               <button type="button" onClick={loadDemoData} disabled={loading || seedLoading}
                 className="flex items-center gap-2 px-4 py-2.5 text-sm rounded-xl border border-neutral-200 text-neutral-500 hover:text-neutral-600 hover:border-neutral-300 transition-all disabled:opacity-40">
                 {seedLoading ? <Loader2 size={13} className="animate-spin" /> : <FlaskConical size={13} />}

@@ -76,6 +76,13 @@ export async function proxy(request: NextRequest) {
     return supabaseResponse
   }
 
+  // Only product and auth pages depend on the session here. Public pages and
+  // API routes skip the Supabase round-trip (route handlers check auth
+  // themselves), so the website stays fast even when Supabase is slow.
+  if (!isProductPath(pathname) && !AUTH_PATHS.includes(pathname)) {
+    return supabaseResponse
+  }
+
   const { data: { user } } = await supabase.auth.getUser()
 
   if ((isAdminPage || pathname.startsWith('/dashboard')) && !user) {

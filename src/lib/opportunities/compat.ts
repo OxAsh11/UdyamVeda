@@ -6,25 +6,50 @@ export type CatalogScheme = Scheme & {
   sourceLabel?: string
   completeness?: number
   lastVerifiedAt?: string
+  // Raw catalog type (e.g. `concessional_loan`), kept for keyword filters.
+  opportunityType?: string
+}
+
+// The live catalog uses many specific types (`innovation_grant`,
+// `concessional_loan`, `credit_guarantee`…), so group them by keyword
+// rather than by exact value.
+const CREDIT = /loan|credit|guarantee|microfinance|finance/
+const SKILL = /training|skill|mentor|apprentice/
+const EQUITY = /equity|venture/
+const RECOGNITION = /registration|licen[cs]e|certification|compliance|approval|policy/
+const SUBSIDY = /subsid|reimburse|incentive/
+
+function rawTypeOf(opportunity: OpportunitySummary) {
+  return `${opportunity.category} ${opportunity.type}`.toLowerCase()
 }
 
 function categoryFor(opportunity: OpportunitySummary): Scheme['category'] {
+  const raw = rawTypeOf(opportunity)
   if (opportunity.coverage === 'state') return 'state'
-  if (opportunity.type === 'loan' || opportunity.type === 'guarantee' || opportunity.benefitType === 'credit') return 'credit'
-  if (opportunity.type === 'training' || opportunity.type === 'mentorship') return 'skill'
-  if (opportunity.type === 'tax_benefit') return 'startup'
-  if (opportunity.type === 'subsidy' || opportunity.type === 'registration' || opportunity.type === 'compliance') return 'msme'
+  if (CREDIT.test(raw) || opportunity.benefitType === 'credit') return 'credit'
+  if (SKILL.test(raw)) return 'skill'
+  if (RECOGNITION.test(raw)) return 'msme'
+  if (/manufactur|production_linked|shipbuild|shipyard|cluster|sector|tribal|artisan|industry/.test(raw)) return 'sector'
+  if (/subsid|infrastructure|productivity|enterprise|business|market_access|procurement/.test(raw)) return 'msme'
   return 'startup'
 }
 
 function benefitTypeFor(opportunity: OpportunitySummary): Scheme['benefitType'] {
-  if (opportunity.type === 'tax_benefit') return 'tax'
-  if (opportunity.type === 'equity_investment' || opportunity.benefitType === 'equity_investment') return 'equity'
-  if (opportunity.type === 'loan' || opportunity.type === 'guarantee' || opportunity.benefitType === 'credit') return 'credit'
-  if (opportunity.type === 'training' || opportunity.type === 'mentorship') return 'training'
-  if (opportunity.type === 'subsidy') return 'subsidy'
-  if (opportunity.type === 'registration' || opportunity.type === 'policy') return 'recognition'
+  const raw = rawTypeOf(opportunity)
+  if (raw.includes('tax')) return 'tax'
+  if (EQUITY.test(raw) || opportunity.benefitType === 'equity_investment') return 'equity'
+  if (CREDIT.test(raw) || opportunity.benefitType === 'credit') return 'credit'
+  if (SKILL.test(raw)) return 'training'
+  if (SUBSIDY.test(raw)) return 'subsidy'
+  if (RECOGNITION.test(raw)) return 'recognition'
   return 'financial'
+}
+
+// Keyword groups behind the dashboard's `?type=` shortcuts.
+export const TYPE_FILTERS: Record<string, { label: string; pattern: RegExp }> = {
+  grant: { label: 'Grants', pattern: /grant|award|challenge|innovation/ },
+  loan: { label: 'Loans & subsidies', pattern: /loan|credit|guarantee|microfinance|finance|subsid|reimburse/ },
+  accelerator: { label: 'Accelerators & incubators', pattern: /accelerat|incubat|mentor|startup_support/ },
 }
 
 export function opportunityToScheme(opportunity: OpportunitySummary): CatalogScheme {
@@ -49,5 +74,6 @@ export function opportunityToScheme(opportunity: OpportunitySummary): CatalogSch
     sourceLabel: opportunity.sourceLabel,
     completeness: opportunity.completeness,
     lastVerifiedAt: opportunity.lastVerifiedAt,
+    opportunityType: opportunity.category,
   }
 }

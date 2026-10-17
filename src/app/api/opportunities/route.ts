@@ -6,7 +6,7 @@ export async function GET(request: NextRequest) {
   const query = params.get('q') ?? undefined
   const type = params.get('type') ?? undefined
   const coverage = params.get('coverage') ?? undefined
-  const limit = Math.min(Math.max(Number(params.get('limit') ?? 24), 1), 100)
+  const limit = Math.min(Math.max(Number(params.get('limit') ?? 24), 1), 500)
 
   const result = await searchPublishedOpportunities(query, type, coverage, limit)
   const catalog = result.items

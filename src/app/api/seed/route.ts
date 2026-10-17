@@ -404,6 +404,12 @@ const MOCK_METRICS = [
 ]
 
 export async function POST() {
+  // This replaces the caller's real strategy, board, campaigns and metrics
+  // with mock data, so it is for local and preview testing only.
+  if (process.env.VERCEL_ENV === 'production') {
+    return NextResponse.json({ error: 'Demo data is disabled in production.' }, { status: 403 })
+  }
+
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })

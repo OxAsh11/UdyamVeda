@@ -139,7 +139,7 @@ function escapeLike(value: string) {
 
 function boundedLimit(limit?: number) {
   if (limit === undefined) return undefined
-  return Math.min(Math.max(Math.floor(limit), 1), 100)
+  return Math.min(Math.max(Math.floor(limit), 1), 500)
 }
 
 function asRecord(value: unknown): Record<string, unknown> {

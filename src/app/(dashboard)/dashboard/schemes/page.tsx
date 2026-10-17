@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { CATEGORY_LABELS, BENEFIT_TYPE_LABELS } from '@/lib/opportunities/taxonomy'
-import { opportunityToScheme, type CatalogScheme } from '@/lib/opportunities/compat'
+import { opportunityToScheme, TYPE_FILTERS, type CatalogScheme } from '@/lib/opportunities/compat'
 import type { OpportunityDetail, OpportunitySummary } from '@/lib/opportunities/types'
 import { Bookmark, BookmarkPlus, Check, CheckCircle2, ChevronDown, ChevronUp, Clock, ExternalLink, Landmark, Link2, Loader2, Share2 } from 'lucide-react'
 import { toast } from 'sonner'
@@ -25,6 +25,11 @@ async function readJson<T>(response: Response): Promise<T> {
   return payload
 }
 
+function initialParam(name: string) {
+  if (typeof window === 'undefined') return ''
+  return new URLSearchParams(window.location.search).get(name)?.trim() ?? ''
+}
+
 export default function SchemesPage() {
   const [matched, setMatched] = useState<CatalogScheme[]>([])
   const [saved, setSaved] = useState<SavedMap>({})
@@ -32,8 +37,13 @@ export default function SchemesPage() {
   const [applications, setApplications] = useState<ApplicationMap>({})
   const [expanded, setExpanded] = useState<string | null>(null)
   const [filterCategory, setFilterCategory] = useState('all')
-  const [searchQuery, setSearchQuery] = useState('')
-  const [searchInput, setSearchInput] = useState('')
+  // `?q=` comes from the header search box, `?type=` from the dashboard tiles.
+  const [searchQuery, setSearchQuery] = useState(() => initialParam('q'))
+  const [searchInput, setSearchInput] = useState(() => initialParam('q'))
+  const [typeFilter, setTypeFilter] = useState(() => {
+    const type = initialParam('type')
+    return TYPE_FILTERS[type] ? type : ''
+  })
   const [loading, setLoading] = useState(true)
   const [loadingAction, setLoadingAction] = useState<string | null>(null)
   const [catalogSource, setCatalogSource] = useState<'database' | 'research_beta' | 'legacy_draft' | 'empty_unpublished' | 'unavailable'>('unavailable')
@@ -68,7 +78,7 @@ export default function SchemesPage() {
   useEffect(() => {
     async function load() {
       const [catalogResponse, savedResponse] = await Promise.all([
-        fetch(`/api/opportunities?limit=100${searchQuery ? `&q=${encodeURIComponent(searchQuery)}` : ''}`),
+        fetch(`/api/opportunities?limit=500${searchQuery ? `&q=${encodeURIComponent(searchQuery)}` : ''}`),
         AUTH_REQUIRED ? fetch('/api/saved-opportunities', { cache: 'no-store' }) : Promise.resolve(null),
       ])
       const catalogPayload = await catalogResponse.json() as { data?: OpportunitySummary[]; meta?: { source?: 'database' | 'research_beta' | 'legacy_draft' | 'empty_unpublished' | 'unavailable'; availability?: 'available' | 'unavailable' } }
@@ -185,8 +195,9 @@ export default function SchemesPage() {
     }).catch(() => toast.error('Copy failed — please copy manually'))
   }
 
-  const categories = ['all', ...Array.from(new Set(matched.map(item => item.category)))]
-  const displayed = filterCategory === 'all' ? matched : matched.filter(item => item.category === filterCategory)
+  const typed = typeFilter ? matched.filter(item => TYPE_FILTERS[typeFilter].pattern.test(item.opportunityType ?? '')) : matched
+  const categories = ['all', ...Array.from(new Set(typed.map(item => item.category)))]
+  const displayed = filterCategory === 'all' ? typed : typed.filter(item => item.category === filterCategory)
   const savedSchemes = matched.filter(item => saved[item.id])
   const startedCount = Object.values(saved).filter(status => ['started', 'applied'].includes(status)).length
   const catalogCountLabel = catalogSource === 'database'
@@ -207,7 +218,8 @@ export default function SchemesPage() {
       <form onSubmit={event => { event.preventDefault(); setSearchQuery(searchInput.trim()); setFilterCategory('all'); setExpanded(null); setLoading(true) }} className="mb-6 flex flex-wrap gap-2 rounded-2xl border border-slate-200 bg-white p-3 shadow-sm"><label className="sr-only" htmlFor="opportunity-search">Search approved opportunities</label><input id="opportunity-search" value={searchInput} onChange={event => setSearchInput(event.target.value)} placeholder="Search approved schemes, grants, loans, policies, or authorities" className="min-w-72 flex-1 rounded-xl border border-slate-200 px-4 py-2.5 text-sm outline-none ring-indigo-200 focus:ring-2" /><button type="submit" className="rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-bold text-white">Search</button>{searchQuery && <button type="button" onClick={() => { setSearchInput(''); setSearchQuery(''); setFilterCategory('all'); setExpanded(null); setLoading(true) }} className="rounded-xl border border-slate-200 px-4 py-2.5 text-sm font-bold text-slate-600">Clear</button>}</form>
       <div className={`mb-6 rounded-2xl border px-5 py-4 text-sm ${catalogAvailability === 'unavailable' ? 'border-rose-200 bg-rose-50 text-rose-900' : catalogSource === 'database' ? 'border-emerald-200 bg-emerald-50 text-emerald-900' : catalogSource === 'research_beta' || catalogSource === 'legacy_draft' ? 'border-amber-200 bg-amber-50 text-amber-900' : 'border-indigo-200 bg-indigo-50 text-indigo-900'}`}><div className="font-semibold">Catalog status: {catalogAvailability === 'unavailable' ? 'catalog connection unavailable' : catalogSource === 'database' ? 'published official records' : catalogSource === 'research_beta' ? 'research beta records' : catalogSource === 'legacy_draft' ? 'development-only draft records' : 'official review in progress'}</div><p className="mt-1 text-xs leading-5">{catalogAvailability === 'unavailable' ? 'The catalog database could not be reached. No Government opportunity count or eligibility decision is being inferred; retry after the connection is restored.' : catalogSource === 'database' ? 'Each record has an approved catalog version and official-source provenance. Confirm current terms on the authority portal before applying.' : catalogSource === 'research_beta' ? 'These source-backed research records are visible in founder-authorized beta mode while editorial review continues. Confirm current terms on the official portal before acting; saving, recommendations, and applications remain disabled until approval.' : catalogSource === 'legacy_draft' ? 'Draft records are visible only for interface testing and cannot be saved or used to start applications.' : 'Unreviewed Government records are intentionally withheld until source, eligibility, and current-term review is complete.'}</p></div>
       <div className="mb-6 grid gap-4 md:grid-cols-3"><div className="rounded-2xl bg-indigo-600 p-5 text-white shadow-sm"><div className="text-3xl font-black">{matched.length}</div><div className="mt-1 text-sm font-semibold text-indigo-100">{catalogCountLabel}</div><div className="mt-1 text-xs text-indigo-200">{catalogSource === 'database' ? 'approved catalog records' : catalogSource === 'research_beta' ? 'research records; not yet fully approved' : catalogSource === 'legacy_draft' ? 'not publishable or actionable' : catalogSource === 'empty_unpublished' ? 'official review is in progress' : 'catalog connection required'}</div></div><div className="rounded-2xl bg-orange-50 p-5 text-orange-950"><div className="text-3xl font-black text-orange-600">{Object.values(saved).filter(status => status === 'saved').length}</div><div className="mt-1 text-sm font-semibold">Saved to review</div><div className="mt-1 text-xs text-orange-700">kept in your business workspace</div></div><div className="rounded-2xl bg-emerald-50 p-5 text-emerald-950"><div className="text-3xl font-black text-emerald-600">{startedCount}</div><div className="mt-1 text-sm font-semibold">Applications started</div><div className="mt-1 text-xs text-emerald-700">with versioned task tracking</div></div></div>
-      <div className="mb-6 flex flex-wrap gap-2">{categories.map(category => <button key={category} onClick={() => setFilterCategory(category)} className={`rounded-full px-3 py-1.5 text-xs font-bold transition ${filterCategory === category ? 'bg-indigo-600 text-white' : 'border border-slate-200 bg-white text-slate-500 hover:border-indigo-200 hover:text-indigo-700'}`}>{category === 'all' ? `All (${matched.length})` : `${CATEGORY_LABELS[category] ?? category} (${matched.filter(item => item.category === category).length})`}</button>)}</div>
+      {typeFilter ? <div className="mb-3 flex items-center gap-2 text-xs text-slate-500">Showing <span className="rounded-full bg-indigo-50 px-2.5 py-1 font-bold text-indigo-700">{TYPE_FILTERS[typeFilter].label}</span><button type="button" onClick={() => { setTypeFilter(''); setFilterCategory('all'); window.history.replaceState(null, '', '/dashboard/schemes') }} className="font-semibold text-indigo-600 hover:underline">Show all</button></div> : null}
+      <div className="mb-6 flex flex-wrap gap-2">{categories.map(category => <button key={category} onClick={() => setFilterCategory(category)} className={`rounded-full px-3 py-1.5 text-xs font-bold transition ${filterCategory === category ? 'bg-indigo-600 text-white' : 'border border-slate-200 bg-white text-slate-500 hover:border-indigo-200 hover:text-indigo-700'}`}>{category === 'all' ? `All (${typed.length})` : `${CATEGORY_LABELS[category] ?? category} (${typed.filter(item => item.category === category).length})`}</button>)}</div>
       {displayed.length === 0 ? <div className={`rounded-2xl border p-6 text-sm ${catalogAvailability === 'unavailable' ? 'border-rose-200 bg-rose-50 text-rose-900' : 'border-indigo-200 bg-indigo-50 text-indigo-900'}`}><p className="font-semibold">{catalogAvailability === 'unavailable' ? 'Government opportunities are temporarily unavailable.' : searchQuery ? 'No approved opportunities match this search.' : 'No approved opportunities are available yet.'}</p><p className="mt-2 leading-6">{catalogAvailability === 'unavailable' ? 'This is a connection state, not an eligibility result. Try again once the catalog service is reachable.' : searchQuery ? 'Try a broader term or clear the search. Only approved official records are shown here.' : 'UdyamVeda is completing official-source review before showing Government opportunities as actionable recommendations.'}</p></div> : <div className="space-y-4">{displayed.map(scheme => {
         const isExpanded = expanded === scheme.id
         const isSaved = Boolean(saved[scheme.id])
