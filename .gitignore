@@ -54,3 +54,6 @@ next-env.d.ts
 
 # Local notes that must not be published
 Twitter OAuth Dashboard.txt
+
+# Generated overview pages and other local deliverables
+/outputs/
