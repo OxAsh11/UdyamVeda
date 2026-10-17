@@ -36,7 +36,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
               <p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-indigo-100">{opportunity.authority} · {opportunity.coverage} coverage</p>
               <h1 className="text-3xl font-black tracking-tight sm:text-5xl">{opportunity.name}</h1>
               <p className="mt-4 text-sm leading-6 text-indigo-100">{opportunity.description}</p>
-              <div className="mt-5 flex flex-wrap gap-2 text-xs font-semibold"><span className="rounded-full bg-white/15 px-3 py-2">{opportunity.benefitType}</span><span className="rounded-full bg-white/15 px-3 py-2">{opportunity.status}</span><span className="rounded-full bg-white/15 px-3 py-2">Verified {opportunity.lastVerifiedAt ? new Date(opportunity.lastVerifiedAt).toLocaleDateString('en-IN') : 'date unavailable'}</span></div>
+              <div className="mt-5 flex flex-wrap gap-2 text-xs font-semibold"><span className="rounded-full bg-white/15 px-3 py-2">{opportunity.benefitType}</span><span className="rounded-full bg-white/15 px-3 py-2">{opportunity.status}</span><span className="rounded-full bg-white/15 px-3 py-2">Last checked {opportunity.lastVerifiedAt ? new Date(opportunity.lastVerifiedAt).toLocaleDateString('en-IN') : 'date unavailable'}</span></div>
             </div>
             <a href={opportunity.officialUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-bold text-indigo-700">Open official portal <ExternalLink size={14} /></a>
           </div>

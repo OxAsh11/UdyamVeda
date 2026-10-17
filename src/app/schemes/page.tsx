@@ -9,7 +9,7 @@ export const revalidate = 300
 
 export const metadata = {
   title: 'Schemes & support',
-  description: 'Every Central Government scheme, grant, loan, and compliance route — source-linked, verified, and explained in plain language.',
+  description: 'Every Central Government scheme, grant, loan, and compliance route — source-linked and explained in plain language.',
 }
 
 const TRACKS: Array<{ key: string; label: string; blurb: string }> = [
@@ -42,17 +42,17 @@ export default async function SchemesPage() {
     <section className="vv-page-hero vv-collection-blue">
       <div className="vv-container vv-page-hero-inner">
         <div>
-          <SectionEyebrow icon={Landmark}>The verified catalog</SectionEyebrow>
+          <SectionEyebrow icon={Landmark}>The source-linked catalog</SectionEyebrow>
           <h1>Every scheme, <span>source-linked.</span></h1>
           <p>
             {available && total > 0
-              ? `${total} Central Government schemes, grants, loans, and compliance routes — each one traced to its official source, reviewed, and explained in plain language.`
+              ? `${total} Central Government schemes, grants, loans, and compliance routes — each one linked to its official source and explained in plain language.`
               : 'A source-linked catalog of Central Government schemes, built record by record and published only after review.'}
           </p>
         </div>
         <div className="vv-page-stat">
           <strong>{available ? String(total).padStart(2, '0') : '—'}</strong>
-          <span><CheckCircle2 size={14} /> reviewed records</span>
+          <span><CheckCircle2 size={14} /> source-linked records</span>
           <span><ShieldCheck size={14} /> official sources only</span>
         </div>
       </div>

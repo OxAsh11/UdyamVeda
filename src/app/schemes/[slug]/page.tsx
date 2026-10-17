@@ -149,7 +149,7 @@ export default async function SchemeDetailPage({ params }: { params: Promise<{ s
             ))}
             <div className="vv-evidence-meta">
               <span><CheckCircle2 size={13} /> {record.sourceLabel}</span>
-              {record.lastVerifiedAt && <span><Clock3 size={13} /> Last verified {new Date(record.lastVerifiedAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</span>}
+              {record.lastVerifiedAt && <span><Clock3 size={13} /> Last checked {new Date(record.lastVerifiedAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</span>}
             </div>
           </div>
 
