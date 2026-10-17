@@ -1,3 +1,4 @@
+import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import { getBusinessForUser } from '@/lib/businesses/dal'
 import Sidebar from '@/components/layout/Sidebar'
@@ -19,7 +20,10 @@ export default async function DashboardLayout({ children }: { children: React.Re
       supabase.from('profiles').select('full_name').eq('id', user.id).single(),
       supabase.from('module_selections').select('setup_schemes, gtm_platform').eq('user_id', user.id).single(),
     ])
-    const { business: workspace } = await getBusinessForUser(supabase, user.id)
+    const { business: workspace, error: workspaceError } = await getBusinessForUser(supabase, user.id)
+    // A signed-in user without a business has nothing to match against yet.
+    // Only redirect on a clean "no business" answer, never on a lookup error.
+    if (!workspace && !workspaceError) redirect('/onboarding')
     profile = profileData
     modules = modulesData
     business = workspace ? { business_name: workspace.name, state: workspace.state } : null

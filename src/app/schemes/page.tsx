@@ -28,7 +28,8 @@ function statusBadge(status: OpportunitySummary['status']) {
 }
 
 export default async function SchemesPage() {
-  const result = await searchPublishedOpportunities(undefined, undefined, undefined, 100)
+  // No limit: the overview counts and groups the whole published catalog.
+  const result = await searchPublishedOpportunities()
   const records = result.items
   const available = result.availability === 'available'
   const total = records.length

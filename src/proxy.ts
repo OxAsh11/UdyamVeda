@@ -9,8 +9,9 @@ import { AUTH_REQUIRED } from '@/lib/auth/mode'
 const SITE_HOST = process.env.NEXT_PUBLIC_SITE_HOST || 'udyamveda.in'
 const APP_HOST = process.env.NEXT_PUBLIC_APP_HOST || `app.${SITE_HOST}`
 
-// Onboarding runs right after signup and needs the app-host session.
-const PRODUCT_PATH_PREFIXES = ['/dashboard', '/admin', '/onboarding']
+// Onboarding runs right after signup and needs the app-host session; /auth
+// holds the email-link callback, which must set its cookie on the app host.
+const PRODUCT_PATH_PREFIXES = ['/dashboard', '/admin', '/onboarding', '/auth']
 const AUTH_PATHS = ['/login', '/signup', '/forgot-password', '/reset-password']
 
 function isProductPath(pathname: string) {

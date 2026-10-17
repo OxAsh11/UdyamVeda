@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/client'
@@ -10,6 +10,12 @@ export default function LoginPage() {
   const router = useRouter()
   const [loading, setLoading] = useState(false)
   const [form, setForm] = useState({ email: '', password: '' })
+
+  // Failed email-link confirmations land here with a readable reason.
+  useEffect(() => {
+    const message = new URLSearchParams(window.location.search).get('error')
+    if (message) toast.error(message)
+  }, [])
 
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault()
