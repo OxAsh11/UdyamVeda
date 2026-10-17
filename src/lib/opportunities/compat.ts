@@ -1,5 +1,6 @@
 import type { Scheme } from '@/lib/data/schemes'
 import type { OpportunitySummary } from './types'
+import { opportunityGroup, type OpportunityGroup } from './taxonomy'
 
 export type CatalogScheme = Scheme & {
   verificationStatus?: OpportunitySummary['verificationStatus']
@@ -8,6 +9,7 @@ export type CatalogScheme = Scheme & {
   lastVerifiedAt?: string
   // Raw catalog type (e.g. `concessional_loan`), kept for keyword filters.
   opportunityType?: string
+  group: OpportunityGroup
 }
 
 // The live catalog uses many specific types (`innovation_grant`,
@@ -45,11 +47,11 @@ function benefitTypeFor(opportunity: OpportunitySummary): Scheme['benefitType'] 
   return 'financial'
 }
 
-// Keyword groups behind the dashboard's `?type=` shortcuts.
-export const TYPE_FILTERS: Record<string, { label: string; pattern: RegExp }> = {
-  grant: { label: 'Grants', pattern: /grant|award|challenge|innovation/ },
-  loan: { label: 'Loans & subsidies', pattern: /loan|credit|guarantee|microfinance|finance|subsid|reimburse/ },
-  accelerator: { label: 'Accelerators & incubators', pattern: /accelerat|incubat|mentor|startup_support/ },
+// Group sets behind the dashboard's `?type=` shortcuts.
+export const TYPE_FILTERS: Record<string, { label: string; groups: OpportunityGroup[] }> = {
+  grant: { label: 'Grants & awards', groups: ['grant'] },
+  loan: { label: 'Loans & subsidies', groups: ['loan_credit', 'subsidy_incentive'] },
+  accelerator: { label: 'Incubation & mentoring', groups: ['incubation'] },
 }
 
 export function opportunityToScheme(opportunity: OpportunitySummary): CatalogScheme {
@@ -75,5 +77,6 @@ export function opportunityToScheme(opportunity: OpportunitySummary): CatalogSch
     completeness: opportunity.completeness,
     lastVerifiedAt: opportunity.lastVerifiedAt,
     opportunityType: opportunity.category,
+    group: opportunityGroup(opportunity.category),
   }
 }

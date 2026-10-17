@@ -3,7 +3,8 @@ import { notFound } from 'next/navigation'
 import { ArrowLeft, ArrowUpRight, CheckCircle2, Clock3, FileText, Landmark, ShieldCheck } from 'lucide-react'
 import { SectionEyebrow, SiteShell } from '@/components/marketing/site-shell'
 import { getPublishedOpportunity } from '@/lib/opportunities/published'
-import { CATEGORY_LABELS, BENEFIT_TYPE_LABELS } from '@/lib/opportunities/taxonomy'
+import { BENEFIT_TYPE_LABELS, OPPORTUNITY_GROUPS, opportunityGroup } from '@/lib/opportunities/taxonomy'
+import { eligibilityView, humanize, isInternalNote } from '@/lib/opportunities/display'
 
 export const revalidate = 300
 
@@ -28,10 +29,12 @@ export default async function SchemeDetailPage({ params }: { params: Promise<{ s
   if (!record) notFound()
 
   const primarySource = record.sources.find(s => s.isPrimary) ?? record.sources[0]
-  const eligibilityNotes = asTextArray(record.eligibility?.notes).length
-    ? asTextArray(record.eligibility.notes)
-    : Object.values(record.eligibility ?? {}).slice(0, 6).map(String)
-  const applicationSteps = Array.isArray(record.steps) ? record.steps : []
+  const eligibility = eligibilityView(record.eligibility)
+  const eligibilityNotes = asTextArray(record.eligibility?.notes).filter(note => !isInternalNote(note)).length
+    ? asTextArray(record.eligibility.notes).filter(note => !isInternalNote(note))
+    : eligibility.conditions
+  const objective = record.objective && !isInternalNote(record.objective) ? record.objective : null
+  const applicationSteps = (Array.isArray(record.steps) ? record.steps : []).filter(step => !isInternalNote(step.title))
   const benefits = Array.isArray(record.benefits) ? record.benefits : []
   const requirements = Array.isArray(record.requirements) ? record.requirements : []
 
@@ -52,8 +55,8 @@ export default async function SchemeDetailPage({ params }: { params: Promise<{ s
             <h1>{record.shortName ?? record.name}</h1>
             <p>{record.benefitLabel || record.description}</p>
             <div className="vv-hero-proof">
-              <span><CheckCircle2 size={15} /> {CATEGORY_LABELS[record.category] ?? record.category}</span>
-              <span><ShieldCheck size={15} /> {BENEFIT_TYPE_LABELS[record.benefitType] ?? record.benefitType}</span>
+              <span><CheckCircle2 size={15} /> {OPPORTUNITY_GROUPS[opportunityGroup(record.category)]}</span>
+              <span><ShieldCheck size={15} /> {BENEFIT_TYPE_LABELS[record.benefitType] ?? humanize(record.benefitType)}</span>
               {record.deadline && <span><Clock3 size={15} /> {record.deadline}</span>}
             </div>
           </div>
@@ -70,10 +73,10 @@ export default async function SchemeDetailPage({ params }: { params: Promise<{ s
       <div className="vv-container vv-scheme-detail-layout">
 
         <div className="vv-scheme-main">
-          {record.objective && (
+          {objective && (
             <div className="vv-scheme-block">
               <SectionEyebrow>What it is</SectionEyebrow>
-              <p className="vv-scheme-lead">{record.objective}</p>
+              <p className="vv-scheme-lead">{objective}</p>
             </div>
           )}
 
@@ -83,7 +86,7 @@ export default async function SchemeDetailPage({ params }: { params: Promise<{ s
               <ul className="vv-scheme-list">
                 {benefits.map((benefit, index) => (
                   <li key={index}>
-                    <strong>{benefit.label}</strong>
+                    <strong>{isInternalNote(benefit.label) ? humanize(benefit.type) : benefit.label}</strong>
                     {amount(benefit) && <span>{amount(benefit)}</span>}
                   </li>
                 ))}
@@ -97,6 +100,20 @@ export default async function SchemeDetailPage({ params }: { params: Promise<{ s
               <ul className="vv-scheme-checklist">
                 {eligibilityNotes.map((note, index) => <li key={index}>{note}</li>)}
               </ul>
+              {eligibility.chips.length > 0 && (
+                <div className="vv-card-tags vv-scheme-reqs">
+                  {eligibility.chips.flatMap(group => group.values.map(value => <span key={`${group.label}-${value}`}>{value}</span>))}
+                </div>
+              )}
+            </div>
+          )}
+
+          {eligibility.exclusions.length > 0 && (
+            <div className="vv-scheme-block">
+              <SectionEyebrow>Not eligible if</SectionEyebrow>
+              <ul className="vv-scheme-checklist">
+                {eligibility.exclusions.map((note, index) => <li key={index}>{note}</li>)}
+              </ul>
             </div>
           )}
 
@@ -109,7 +126,7 @@ export default async function SchemeDetailPage({ params }: { params: Promise<{ s
                     <span className="vv-step-num">{step.number}</span>
                     <div>
                       <strong>{step.title}</strong>
-                      {step.description && <p>{step.description}</p>}
+                      {step.description && !isInternalNote(step.description) && <p>{step.description}</p>}
                       {step.officialUrl && <a href={step.officialUrl} target="_blank" rel="noopener noreferrer">Official step <ArrowUpRight size={13} /></a>}
                     </div>
                   </li>

@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { createAdminClient } from '@/lib/supabase/admin'
 import { verificationStatusFor } from './freshness'
+import { isInternalNote, windowLabel } from './display'
 import type { OpportunityDetail, OpportunitySummary, OpportunityType } from './types'
 
 type DatabaseOpportunity = {
@@ -90,7 +91,7 @@ function researchBetaEnabled() {
 function catalogStatuses() {
   return researchBetaEnabled()
     ? ['in_review', 'active', 'upcoming', 'paused', 'closed', 'superseded', 'archived']
-    : ['active', 'upcoming', 'closed', 'superseded', 'archived']
+    : ['active', 'upcoming', 'paused', 'closed', 'superseded', 'archived']
 }
 
 async function createCatalogReadClient() {
@@ -159,13 +160,6 @@ function typeFor(value: string): OpportunityType {
   return known.includes(value as OpportunityType) ? value as OpportunityType : 'scheme'
 }
 
-function dateLabel(window: DatabaseWindow | undefined) {
-  if (!window) return 'See official source'
-  if (window.closes_at) return window.closes_at.slice(0, 10)
-  if (window.window_type === 'rolling') return 'Rolling'
-  return window.label ?? 'See official source'
-}
-
 function cadenceFor(windows: DatabaseWindow[]) {
   const deadlineWindow = windows.find(window => ['fixed', 'call_for_applications'].includes(window.window_type))
   return deadlineWindow ? 'deadline_sensitive' as const : 'rolling' as const
@@ -184,7 +178,8 @@ function mapPublishedOpportunity(
   const benefit = benefits[0]
   const coverage = geography.coverage === 'state' || geography.coverage === 'local' ? geography.coverage : 'central'
   const locations = Array.isArray(geography.locations) ? geography.locations.filter((item): item is string => typeof item === 'string') : []
-  const benefitLabel = benefit?.label ?? asText(benefitSummary.summary, 'See official source for benefit details')
+  const benefitCandidates = [benefit?.label, asText(benefitSummary.summary, ''), version.summary ?? '']
+  const benefitLabel = benefitCandidates.find(text => text && !isInternalNote(text)) ?? 'See official source for benefit details'
   const summaryTypes = Array.isArray(benefitSummary.types) ? benefitSummary.types : []
   const benefitType = benefit?.benefit_type ?? asText(summaryTypes[0], opportunity.opportunity_type)
   const processingTime = asText(application.processing_time, 'Varies by implementing agency')
@@ -199,7 +194,8 @@ function mapPublishedOpportunity(
     benefitType,
     description: version.summary ?? 'Official opportunity details are available in the source record.',
     officialUrl: opportunity.canonical_url ?? asText(application.portal, '#'),
-    deadline: dateLabel(windows[0]),
+    // Window labels hold reviewer prose; applicants get a short derived label.
+    deadline: windowLabel(windows[0], opportunity.status),
     processingTime,
     tags: [opportunity.opportunity_type, ...locations].filter(Boolean),
     status: opportunity.status as OpportunitySummary['status'],

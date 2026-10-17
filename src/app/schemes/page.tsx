@@ -2,8 +2,9 @@ import Link from 'next/link'
 import { ArrowRight, CheckCircle2, Clock3, Landmark, ShieldCheck } from 'lucide-react'
 import { SectionEyebrow, SiteShell } from '@/components/marketing/site-shell'
 import { searchPublishedOpportunities } from '@/lib/opportunities/published'
-import { CATEGORY_LABELS, BENEFIT_TYPE_LABELS } from '@/lib/opportunities/taxonomy'
+import { BENEFIT_TYPE_LABELS, OPPORTUNITY_GROUPS, opportunityGroup, type OpportunityGroup } from '@/lib/opportunities/taxonomy'
 import type { OpportunitySummary } from '@/lib/opportunities/types'
+import { humanize } from '@/lib/opportunities/display'
 
 export const revalidate = 300
 
@@ -12,17 +13,23 @@ export const metadata = {
   description: 'Every Central Government scheme, grant, loan, and compliance route — source-linked and explained in plain language.',
 }
 
-const TRACKS: Array<{ key: string; label: string; blurb: string }> = [
-  { key: 'finance', label: 'Finance', blurb: 'Grants, credit, guarantees, subsidies' },
-  { key: 'startup', label: 'Startup', blurb: 'Recognition, incubation, equity' },
-  { key: 'compliance', label: 'Compliance', blurb: 'Registrations, licences, standards' },
-  { key: 'sector', label: 'Sector', blurb: 'Agriculture, defence, fisheries' },
-  { key: 'market_access', label: 'Market access', blurb: 'Exports, procurement, exhibitions' },
+const TRACKS: Array<{ key: OpportunityGroup; blurb: string }> = [
+  { key: 'grant', blurb: 'Grants, research funding, awards and challenges' },
+  { key: 'loan_credit', blurb: 'Loans, guarantees and credit support' },
+  { key: 'subsidy_incentive', blurb: 'Capital subsidies, PLI and other incentives' },
+  { key: 'equity', blurb: 'Fund-of-funds and venture capital' },
+  { key: 'tax', blurb: 'Income-tax and duty benefits' },
+  { key: 'incubation', blurb: 'Incubators, accelerators and mentoring' },
+  { key: 'market_access', blurb: 'Exports, procurement, fairs and exhibitions' },
+  { key: 'registration_compliance', blurb: 'Registrations, licences, certification, standards' },
+  { key: 'skills', blurb: 'Training, apprenticeships and skill programmes' },
+  { key: 'enterprise_support', blurb: 'Technology, clusters, infrastructure and sector programmes' },
 ]
 
 function statusBadge(status: OpportunitySummary['status']) {
   if (status === 'active') return { label: 'Open', tone: 'open' }
   if (status === 'upcoming') return { label: 'Upcoming', tone: 'upcoming' }
+  if (status === 'paused') return { label: 'Paused', tone: 'upcoming' }
   if (status === 'closed') return { label: 'Closed', tone: 'closed' }
   return { label: status.replace('_', ' '), tone: 'other' }
 }
@@ -35,8 +42,17 @@ export default async function SchemesPage() {
   const total = records.length
 
   const open = records.filter(r => r.status === 'active').length
-  const categories = Array.from(new Set(records.map(r => r.category))).sort()
+  const categories = Array.from(new Set(records.map(r => opportunityGroup(r.category))))
   const authorities = Array.from(new Set(records.map(r => r.authority)))
+  // Open schemes first within each group, then alphabetical.
+  const tracks = TRACKS
+    .map(track => ({
+      track,
+      items: records
+        .filter(r => opportunityGroup(r.category) === track.key)
+        .sort((a, b) => Number(b.status === 'active') - Number(a.status === 'active') || a.name.localeCompare(b.name)),
+    }))
+    .filter(({ items }) => items.length > 0)
 
   return <SiteShell>
     <section className="vv-page-hero vv-collection-blue">
@@ -63,33 +79,33 @@ export default async function SchemesPage() {
         {available && total > 0 ? (
           <>
             <div className="vv-track-row" aria-label="Browse by track">
-              {TRACKS.map(track => (
-                <a key={track.key} href={`#track-${track.key}`}>{track.label}</a>
+              {tracks.map(({ track }) => (
+                <a key={track.key} href={`#track-${track.key}`}>{OPPORTUNITY_GROUPS[track.key]}</a>
               ))}
             </div>
 
-            {TRACKS.map(track => {
-              const items = records.filter(r => r.category === track.key || (r.tags ?? []).some(t => t.toLowerCase().includes(track.key.split('_')[0])))
-              if (!items.length) return null
-              return <div key={track.key} id={`track-${track.key}`} className="vv-scheme-track" style={{ marginBottom: 56 }}>
+            {tracks.map(({ track, items }) => (
+              <div key={track.key} id={`track-${track.key}`} className="vv-scheme-track" style={{ marginBottom: 56 }}>
                 <div className="vv-section-heading">
                   <div>
                     <SectionEyebrow icon={ShieldCheck}>{track.blurb}</SectionEyebrow>
-                    <h2>{track.label}</h2>
+                    <h2>{OPPORTUNITY_GROUPS[track.key]}</h2>
                   </div>
-                  <span className="vv-track-count">{items.length} records</span>
+                  <span className="vv-track-count">{items.length} {items.length === 1 ? 'scheme' : 'schemes'}</span>
                 </div>
                 <div className="vv-featured-grid">
                   {items.slice(0, 6).map(record => <SchemeCard key={record.id} record={record} />)}
                 </div>
                 {items.length > 6 && (
-                  <p className="vv-track-more">
-                    + {items.length - 6} more {track.label.toLowerCase()} records —{' '}
-                    <Link className="vv-text-link" href="/resources">browse the full library</Link>
-                  </p>
+                  <details className="vv-track-more">
+                    <summary className="vv-text-link" style={{ cursor: 'pointer' }}>Show {items.length - 6} more</summary>
+                    <div className="vv-featured-grid" style={{ marginTop: 24 }}>
+                      {items.slice(6).map(record => <SchemeCard key={record.id} record={record} />)}
+                    </div>
+                  </details>
                 )}
               </div>
-            })}
+            ))}
 
             <div className="vv-catalog-footnote">
               <ShieldCheck size={16} />
@@ -133,13 +149,13 @@ function SchemeCard({ record }: { record: OpportunitySummary }) {
   return (
     <article className={`vv-resource-card vv-scheme-card vv-scheme-${badge.tone}`}>
       <div className="vv-resource-card-top">
-        <span className="vv-card-type">{CATEGORY_LABELS[record.category] ?? record.category}</span>
+        <span className="vv-card-type">{OPPORTUNITY_GROUPS[opportunityGroup(record.category)]}</span>
         <span className={`vv-scheme-badge vv-scheme-badge-${badge.tone}`}>{badge.label}</span>
       </div>
       <Link href={`/schemes/${record.id}`} className="vv-card-title">{record.shortName ?? record.name}</Link>
       <p className="vv-card-summary">{record.benefitLabel || record.description}</p>
       <div className="vv-card-tags">
-        <span>{BENEFIT_TYPE_LABELS[record.benefitType] ?? record.benefitType}</span>
+        <span>{BENEFIT_TYPE_LABELS[record.benefitType] ?? humanize(record.benefitType)}</span>
         {record.deadline && record.status === 'active' && <span title={record.deadline}><Clock3 size={11} style={{ display: 'inline', marginRight: 4 }} />{shortDeadline(record.deadline)}</span>}
       </div>
       <div className="vv-card-meta">
