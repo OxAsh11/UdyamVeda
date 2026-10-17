@@ -34,7 +34,10 @@ export function windowLabel(window: WindowInput | undefined, status: string, now
   if (!window) return 'See official portal'
   if (window.closes_at) {
     const closes = new Date(window.closes_at)
-    return closes < now ? `Closed on ${DATE_FORMAT.format(closes)}` : `Apply by ${DATE_FORMAT.format(closes)}`
+    if (closes >= now) return `Apply by ${DATE_FORMAT.format(closes)}`
+    // An active record with a past date usually means an extension we have
+    // not recorded yet, so never tell applicants it is closed.
+    return status === 'active' ? 'Check official portal for current dates' : `Closed on ${DATE_FORMAT.format(closes)}`
   }
   if (window.opens_at && new Date(window.opens_at) > now) return `Opens ${DATE_FORMAT.format(new Date(window.opens_at))}`
   switch (window.window_type) {
