@@ -100,7 +100,7 @@ export default async function DashboardPage() {
         </div>
         <div className="absolute -right-10 -top-16 hidden h-72 w-72 rounded-full bg-indigo-300/30 blur-3xl md:block" />
         <div className="absolute -bottom-20 right-20 hidden h-56 w-56 rounded-full bg-orange-300/30 blur-3xl md:block" />
-        <div className="absolute right-12 top-8 hidden text-[9rem] font-black leading-none text-white/70 md:block">✦</div>
+        <div className="absolute right-12 top-8 hidden text-[9rem] font-black leading-none text-indigo-300/50 md:block" aria-hidden="true">✦</div>
       </section>
 
       <section className="mb-6 grid gap-4 lg:grid-cols-2">

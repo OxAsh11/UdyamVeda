@@ -122,6 +122,12 @@ export default async function SchemesPage() {
   </SiteShell>
 }
 
+// Some records hold a full sentence in `deadline`; a card tag needs a short label.
+function shortDeadline(deadline: string) {
+  if (deadline === 'rolling') return 'Rolling'
+  return deadline.length > 36 ? 'See window details' : deadline
+}
+
 function SchemeCard({ record }: { record: OpportunitySummary }) {
   const badge = statusBadge(record.status)
   return (
@@ -134,7 +140,7 @@ function SchemeCard({ record }: { record: OpportunitySummary }) {
       <p className="vv-card-summary">{record.benefitLabel || record.description}</p>
       <div className="vv-card-tags">
         <span>{BENEFIT_TYPE_LABELS[record.benefitType] ?? record.benefitType}</span>
-        {record.deadline && record.status === 'active' && <span><Clock3 size={11} style={{ display: 'inline', marginRight: 4 }} />{record.deadline}</span>}
+        {record.deadline && record.status === 'active' && <span title={record.deadline}><Clock3 size={11} style={{ display: 'inline', marginRight: 4 }} />{shortDeadline(record.deadline)}</span>}
       </div>
       <div className="vv-card-meta">
         <span><Landmark size={13} /> {record.authority}</span>

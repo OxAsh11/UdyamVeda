@@ -44,7 +44,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
 
         <section className="mt-5 grid gap-4 sm:grid-cols-3">
           <div className="rounded-2xl border border-orange-100 bg-orange-50 p-5"><p className="text-xs font-bold uppercase tracking-wide text-orange-700">Benefit headline</p><p className="mt-2 text-lg font-black text-orange-950">{opportunity.benefitLabel}</p><p className="mt-2 text-xs text-orange-800">Values are shown separately by benefit type.</p></div>
-          <div className="rounded-2xl border border-cyan-100 bg-cyan-50 p-5"><p className="text-xs font-bold uppercase tracking-wide text-cyan-700">Application window</p><p className="mt-2 text-lg font-black text-cyan-950">{opportunity.deadline}</p><p className="mt-2 text-xs text-cyan-800">Processing: {opportunity.processingTime}</p></div>
+          <div className="rounded-2xl border border-cyan-100 bg-cyan-50 p-5"><p className="text-xs font-bold uppercase tracking-wide text-cyan-700">Application window</p><p className={`mt-2 font-black text-cyan-950 ${opportunity.deadline.length > 40 ? "text-sm leading-6" : "text-lg"}`}>{opportunity.deadline}</p><p className="mt-2 text-xs text-cyan-800">Processing: {opportunity.processingTime}</p></div>
           <div className="rounded-2xl border border-emerald-100 bg-emerald-50 p-5"><p className="text-xs font-bold uppercase tracking-wide text-emerald-700">Verification</p><p className="mt-2 text-lg font-black text-emerald-950">{opportunity.completeness}% complete</p><p className="mt-2 text-xs text-emerald-800">{opportunity.sourceLabel}</p></div>
         </section>
 
