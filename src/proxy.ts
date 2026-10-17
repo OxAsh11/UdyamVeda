@@ -9,7 +9,8 @@ import { AUTH_REQUIRED } from '@/lib/auth/mode'
 const SITE_HOST = process.env.NEXT_PUBLIC_SITE_HOST || 'udyamveda.in'
 const APP_HOST = process.env.NEXT_PUBLIC_APP_HOST || `app.${SITE_HOST}`
 
-const PRODUCT_PATH_PREFIXES = ['/dashboard', '/admin']
+// Onboarding runs right after signup and needs the app-host session.
+const PRODUCT_PATH_PREFIXES = ['/dashboard', '/admin', '/onboarding']
 const AUTH_PATHS = ['/login', '/signup', '/forgot-password', '/reset-password']
 
 function isProductPath(pathname: string) {
@@ -53,6 +54,11 @@ export async function proxy(request: NextRequest) {
     const url = new URL(`https://${APP_HOST}${pathname}`)
     url.search = request.nextUrl.search
     return NextResponse.redirect(url)
+  }
+
+  // The app host's root opens the product; signed-out users then land on login.
+  if (onAppHost && enforceSplit && pathname === '/') {
+    return NextResponse.redirect(new URL('/dashboard', request.url))
   }
 
   // The app host serves only the product (login, dashboard, admin) and APIs;
