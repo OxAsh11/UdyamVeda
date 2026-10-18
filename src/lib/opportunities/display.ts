@@ -3,7 +3,10 @@
 // "recheck before recommendation", portal caveats); those stay in the
 // database for reviewers but are filtered out of every public surface.
 
-const INTERNAL_NOTE = /\b(do not|don't|re-?check|before recommendation|reviewer|codex|seed(ed)? record|dossier|evidence packet|must be (re)?verified|requires? (re)?verification|not (yet )?(established|asserted)|is asserted)\b/i
+// Matches instructions addressed to reviewers ("do not infer an open call",
+// "no current call is asserted"), not ordinary applicant rules such as
+// "OCI holdings do not satisfy this condition" or "prepare the dossier".
+const INTERNAL_NOTE = /\b(do not (infer|treat|recommend|present|rely|merge|combine)|don't (infer|treat|recommend|present|rely)|re-?check (before|the next)|before recommend(ation|ing)?|reviewers?|codex|seed(ed)? record|evidence packet|(is|are|was|were) (not )?(yet )?asserted|not (yet )?established|do(es)? not establish)\b/i
 
 export function isInternalNote(text: string) {
   return INTERNAL_NOTE.test(text)

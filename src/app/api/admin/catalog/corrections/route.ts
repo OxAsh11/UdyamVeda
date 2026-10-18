@@ -7,7 +7,7 @@ import { getCatalogReviewer } from '@/lib/catalog/reviewer'
 // publication contract, audit trail).
 const ALLOWED_KEYS = new Set([
   'status', 'official_url', 'title', 'summary', 'objective', 'legal_basis',
-  'eligibility', 'application', 'fine_print', 'benefit_summary', 'window',
+  'eligibility', 'application', 'fine_print', 'benefit_summary', 'window', 'steps', 'requirements',
 ])
 
 function errorResponse(message: string, status: number) {
