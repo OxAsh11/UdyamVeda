@@ -178,7 +178,8 @@ function mapPublishedOpportunity(
   const benefit = benefits[0]
   const coverage = geography.coverage === 'state' || geography.coverage === 'local' ? geography.coverage : 'central'
   const locations = Array.isArray(geography.locations) ? geography.locations.filter((item): item is string => typeof item === 'string') : []
-  const benefitCandidates = [benefit?.label, asText(benefitSummary.summary, ''), version.summary ?? '']
+  // `headline` is set by the admin editor and takes precedence.
+  const benefitCandidates = [asText(benefitSummary.headline, ''), benefit?.label, asText(benefitSummary.summary, ''), version.summary ?? '']
   const benefitLabel = benefitCandidates.find(text => text && !isInternalNote(text)) ?? 'See official source for benefit details'
   const summaryTypes = Array.isArray(benefitSummary.types) ? benefitSummary.types : []
   const benefitType = benefit?.benefit_type ?? asText(summaryTypes[0], opportunity.opportunity_type)
@@ -196,6 +197,9 @@ function mapPublishedOpportunity(
     officialUrl: opportunity.canonical_url ?? asText(application.portal, '#'),
     // Window labels hold reviewer prose; applicants get a short derived label.
     deadline: windowLabel(windows[0], opportunity.status),
+    // Window labels stay reviewer-only; the public note is a separate field
+    // that only the admin editor writes.
+    windowNote: asText(application.window_note, '') || undefined,
     processingTime,
     tags: [opportunity.opportunity_type, ...locations].filter(Boolean),
     status: opportunity.status as OpportunitySummary['status'],

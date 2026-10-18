@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { useCallback, useEffect, useState } from 'react'
 
 type ReviewTask = {
@@ -195,6 +196,10 @@ export default function CatalogReviewPage() {
   return (
     <main className="min-h-screen bg-[#f8f7f3] px-6 py-10 text-[#111827] md:px-10">
       <div className="mx-auto max-w-6xl">
+        <Link href="/admin/catalog/edit" className="mb-8 flex items-center justify-between gap-4 rounded-2xl bg-indigo-600 px-6 py-5 text-white shadow-lg shadow-indigo-200 hover:bg-indigo-700">
+          <span><span className="block text-lg font-black">Edit a published scheme</span><span className="block text-sm text-indigo-100">Fix a status, date, link or wording in one form. Each save becomes a new version with full history.</span></span>
+          <span className="text-2xl" aria-hidden="true">→</span>
+        </Link>
         <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="mb-2 text-xs font-bold uppercase tracking-[0.18em] text-[#3f46e8]">UdyamVeda catalog operations</p>

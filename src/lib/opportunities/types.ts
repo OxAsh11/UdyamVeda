@@ -63,6 +63,8 @@ export interface OpportunitySummary {
   description: string
   officialUrl: string
   deadline: string
+  // Plain-language window detail written by an editor; never reviewer notes.
+  windowNote?: string
   processingTime: string
   tags: string[]
   status: 'in_review' | 'active' | 'upcoming' | 'paused' | 'closed' | 'superseded' | 'archived'

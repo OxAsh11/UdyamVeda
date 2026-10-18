@@ -80,6 +80,13 @@ export default async function SchemeDetailPage({ params }: { params: Promise<{ s
             </div>
           )}
 
+          {record.windowNote && (
+            <div className="vv-scheme-block">
+              <SectionEyebrow>Application window</SectionEyebrow>
+              <p className="vv-scheme-lead">{record.windowNote}</p>
+            </div>
+          )}
+
           {benefits.length > 0 && (
             <div className="vv-scheme-block">
               <SectionEyebrow>What you get</SectionEyebrow>

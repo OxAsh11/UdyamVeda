@@ -56,7 +56,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
 
         <section className="mt-5 grid gap-4 sm:grid-cols-3">
           <div className="rounded-2xl border border-orange-100 bg-orange-50 p-5"><p className="text-xs font-bold uppercase tracking-wide text-orange-700">What you get</p><p className="mt-2 text-lg font-black text-orange-950">{opportunity.benefitLabel}</p></div>
-          <div className="rounded-2xl border border-cyan-100 bg-cyan-50 p-5"><p className="text-xs font-bold uppercase tracking-wide text-cyan-700">Application window</p><p className="mt-2 text-lg font-black text-cyan-950">{opportunity.deadline}</p><p className="mt-2 text-xs text-cyan-800">Processing: {opportunity.processingTime}</p></div>
+          <div className="rounded-2xl border border-cyan-100 bg-cyan-50 p-5"><p className="text-xs font-bold uppercase tracking-wide text-cyan-700">Application window</p><p className="mt-2 text-lg font-black text-cyan-950">{opportunity.deadline}</p>{opportunity.windowNote && <p className="mt-2 text-xs leading-5 text-cyan-900">{opportunity.windowNote}</p>}<p className="mt-2 text-xs text-cyan-800">Processing: {opportunity.processingTime}</p></div>
           <div className="rounded-2xl border border-emerald-100 bg-emerald-50 p-5"><p className="text-xs font-bold uppercase tracking-wide text-emerald-700">Source</p><p className="mt-2 text-sm font-bold text-emerald-950">{opportunity.sourceLabel}</p><p className="mt-2 text-xs text-emerald-800">Always confirm current terms on the official portal before applying.</p></div>
         </section>
 
