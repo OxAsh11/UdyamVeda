@@ -57,3 +57,6 @@ Twitter OAuth Dashboard.txt
 
 # Generated overview pages and other local deliverables
 /outputs/
+
+# Keep the template of required settings (values stay empty).
+!.env.example
