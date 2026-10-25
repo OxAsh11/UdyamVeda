@@ -68,7 +68,8 @@ export const BAND_RANGES: Record<string, Record<string, NumberRange>> = {
     above_10l: { min: 10 * LAKH, max: Number.POSITIVE_INFINITY },
   },
   annual_family_income_band: {
-    up_to_1l: { min: 0, max: LAKH },
+    up_to_72k: { min: 0, max: 72_000 },
+    '72k_1l': { min: 72_000, max: LAKH },
     '1l_2l': { min: LAKH, max: 2 * LAKH },
     '2l_3l': { min: 2 * LAKH, max: 3 * LAKH },
     '3l_6l': { min: 3 * LAKH, max: 6 * LAKH },

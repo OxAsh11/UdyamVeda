@@ -67,7 +67,7 @@ export interface OpportunitySummary {
   windowNote?: string
   processingTime: string
   tags: string[]
-  status: 'in_review' | 'active' | 'upcoming' | 'paused' | 'closed' | 'superseded' | 'archived'
+  status: 'in_review' | 'active' | 'upcoming' | 'paused' | 'pending_renewal' | 'closed' | 'superseded' | 'archived'
   coverage: 'central' | 'state' | 'local'
   sourceLabel: string
   verificationStatus: VerificationStatus

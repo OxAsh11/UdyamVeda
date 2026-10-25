@@ -34,6 +34,7 @@ export type WindowInput = { window_type: string; opens_at: string | null; closes
 export function windowLabel(window: WindowInput | undefined, status: string, now = new Date()): string {
   if (status === 'closed') return 'Closed to new applications'
   if (status === 'paused') return 'Paused: no open call right now'
+  if (status === 'pending_renewal') return 'Renewal awaited: scheme period has ended'
   if (!window) return 'See official portal'
   if (window.closes_at) {
     const closes = new Date(window.closes_at)

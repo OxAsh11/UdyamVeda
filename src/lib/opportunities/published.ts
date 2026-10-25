@@ -90,8 +90,8 @@ function researchBetaEnabled() {
 
 function catalogStatuses() {
   return researchBetaEnabled()
-    ? ['in_review', 'active', 'upcoming', 'paused', 'closed', 'superseded', 'archived']
-    : ['active', 'upcoming', 'paused', 'closed', 'superseded', 'archived']
+    ? ['in_review', 'active', 'upcoming', 'paused', 'pending_renewal', 'closed', 'superseded', 'archived']
+    : ['active', 'upcoming', 'paused', 'pending_renewal', 'closed', 'superseded', 'archived']
 }
 
 async function createCatalogReadClient() {

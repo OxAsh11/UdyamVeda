@@ -134,6 +134,7 @@ export default function CorrectionForm({ slug, initial }: { slug: string; initia
             <option value="active">Active: open to applicants</option>
             <option value="upcoming">Upcoming: announced, not open yet</option>
             <option value="paused">Paused: no open call right now</option>
+            <option value="pending_renewal">Pending renewal: scheme period ended</option>
             <option value="closed">Closed: no new applications</option>
           </select>
         </label>

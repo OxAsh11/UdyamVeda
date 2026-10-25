@@ -30,6 +30,7 @@ function statusBadge(status: OpportunitySummary['status']) {
   if (status === 'active') return { label: 'Open', tone: 'open' }
   if (status === 'upcoming') return { label: 'Upcoming', tone: 'upcoming' }
   if (status === 'paused') return { label: 'Paused', tone: 'upcoming' }
+  if (status === 'pending_renewal') return { label: 'Renewal awaited', tone: 'upcoming' }
   if (status === 'closed') return { label: 'Closed', tone: 'closed' }
   return { label: status.replace('_', ' '), tone: 'other' }
 }

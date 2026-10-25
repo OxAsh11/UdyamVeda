@@ -17,8 +17,11 @@ const STATUS_STYLES: Record<string, string> = {
   active: 'bg-emerald-50 text-emerald-700',
   upcoming: 'bg-sky-50 text-sky-700',
   paused: 'bg-amber-50 text-amber-800',
+  pending_renewal: 'bg-orange-50 text-orange-800',
   closed: 'bg-slate-100 text-slate-600',
 }
+
+const STATUS_LABELS: Record<string, string> = { active: 'Active', upcoming: 'Upcoming', paused: 'Paused', pending_renewal: 'Pending renewal', closed: 'Closed' }
 
 export default function SchemePicker({ rows }: { rows: PickerRow[] }) {
   const [query, setQuery] = useState('')
@@ -39,7 +42,7 @@ export default function SchemePicker({ rows }: { rows: PickerRow[] }) {
         <label className="sr-only" htmlFor="scheme-status">Filter by status</label>
         <select id="scheme-status" value={status} onChange={event => setStatus(event.target.value)} className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-sm">
           <option value="all">All statuses ({rows.length})</option>
-          {['active', 'upcoming', 'paused', 'closed'].map(value => <option key={value} value={value}>{value[0].toUpperCase() + value.slice(1)} ({rows.filter(row => row.status === value).length})</option>)}
+          {['active', 'upcoming', 'paused', 'pending_renewal', 'closed'].map(value => <option key={value} value={value}>{STATUS_LABELS[value] ?? value} ({rows.filter(row => row.status === value).length})</option>)}
         </select>
       </div>
       <p className="mt-3 text-xs text-slate-500">{visible.length} of {rows.length} schemes</p>
@@ -51,7 +54,7 @@ export default function SchemePicker({ rows }: { rows: PickerRow[] }) {
                 <p className="truncate text-sm font-bold text-slate-900">{row.name}</p>
                 <p className="truncate text-xs text-slate-500">{row.authority} · {row.group}</p>
               </div>
-              <span className={`rounded-full px-2.5 py-1 text-[11px] font-bold ${STATUS_STYLES[row.status] ?? 'bg-slate-100 text-slate-600'}`}>{row.status}</span>
+              <span className={`rounded-full px-2.5 py-1 text-[11px] font-bold ${STATUS_STYLES[row.status] ?? 'bg-slate-100 text-slate-600'}`}>{STATUS_LABELS[row.status] ?? row.status}</span>
               <span className="w-28 text-right text-[11px] text-slate-400">v{row.versionNumber}{row.lastCheckedAt ? ` · ${new Date(row.lastCheckedAt).toLocaleDateString('en-IN')}` : ''}</span>
             </Link>
           </li>

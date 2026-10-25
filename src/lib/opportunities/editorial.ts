@@ -30,7 +30,7 @@ export const REQUIRED_OPPORTUNITY_FIELDS = [
   'effective_dates',
 ] as const
 
-export const PUBLISHING_STATUSES = ['draft', 'in_review', 'active', 'upcoming', 'paused', 'closed', 'superseded', 'archived'] as const
+export const PUBLISHING_STATUSES = ['draft', 'in_review', 'active', 'upcoming', 'paused', 'pending_renewal', 'closed', 'superseded', 'archived'] as const
 
 export type PublishingStatus = typeof PUBLISHING_STATUSES[number]
 

@@ -1,0 +1,463 @@
+{
+  "_note": "MVP PRD P0.4, approved by the owner on 25 Oct 2026. Applied with scripts/mvp-p04-apply-sql.mjs through publish_catalog_record() / publish_catalog_correction(). New-record rules use fact_definitions keys only.",
+  "reason": "MVP PRD P0.4 (25 Oct 2026): researched from official sources, approved by owner.",
+  "new_records": [
+    {
+      "slug": "cmegp-maharashtra",
+      "name": "Chief Minister Employment Generation Programme (CMEGP), Maharashtra",
+      "opportunity_type": "subsidy",
+      "status": "active",
+      "coverage": "state",
+      "locations": ["maharashtra"],
+      "canonical_url": "https://maha-cmegp.gov.in",
+      "authority": {"name": "Directorate of Industries, Government of Maharashtra", "level": "state", "department": "Industries, Energy and Labour Department", "official_url": "https://maitri.maharashtra.gov.in"},
+      "version": {
+        "title": "Chief Minister Employment Generation Programme (CMEGP)",
+        "summary": "Back-ended capital subsidy of 15% to 35% on a bank loan for a new manufacturing, service or agro-based micro or small enterprise in Maharashtra.",
+        "objective": "Create self-employment for young people in rural and urban Maharashtra by helping them set up new micro and small enterprises.",
+        "legal_basis": "Government of Maharashtra scheme implemented by the Directorate of Industries through District Industries Centres and the Khadi and Village Industries Board.",
+        "eligibility": {
+          "conditions": [
+            "Permanent resident (domicile) of Maharashtra",
+            "Aged 18 or above",
+            "Only new projects; existing units are not eligible",
+            "Only one person per family (self and spouse)",
+            "Must not have taken PMEGP or any other subsidy-linked government scheme",
+            "Class 8 pass needed for projects above ₹10 lakh (manufacturing) or ₹5 lakh (service)",
+            "Proprietorship, partnership or registered self-help group"
+          ],
+          "exclusions": ["Units that already received a government subsidy under any central or state scheme"]
+        },
+        "application": {"route": "Apply online on maha-cmegp.gov.in; the District Industries Centre (urban) or the Khadi and Village Industries Board (rural) checks the application and sends it to a bank.", "selection": "District-level committee with the bank; the bank sanctions the loan and the subsidy is released after the stipulated period.", "fees": "No application fee is stated.", "portal": "https://maha-cmegp.gov.in"},
+        "fine_print": {"review_note": "Limits from the MAITRI page (revised ₹1 crore / ₹50 lakh). The original 2019 guideline used ₹50 lakh / ₹10 lakh and age 18–45 (+5 special); some banks may still apply the older limits.", "subsidy_rates": "General: 15% urban, 25% rural, own share 10%. Special category (SC/ST, women, ex-servicemen, disabled): 25% urban, 35% rural, own share 5%.", "subsidy_caps": "Subsidy capped at ₹17.5 lakh (manufacturing) and ₹7 lakh (service and agro)."},
+        "benefit_summary": {"summary": "15–35% back-ended subsidy on projects up to ₹1 crore (manufacturing) or ₹50 lakh (service and agro).", "headline": "15–35% subsidy on a bank loan for a new unit", "types": ["capital_subsidy"]},
+        "completeness": 0.97
+      },
+      "benefits": [{"benefit_type": "capital_subsidy", "label": "Back-ended capital subsidy of 15% to 35% of project cost", "amount_max": 1750000, "percentage": 35}],
+      "requirements": [
+        {"requirement_type": "identity", "name": "Aadhaar and PAN", "required": true},
+        {"requirement_type": "document", "name": "Maharashtra domicile certificate", "required": true},
+        {"requirement_type": "document", "name": "Caste, validity or disability certificate (for special-category rates)", "required": false},
+        {"requirement_type": "project_readiness", "name": "Project report and quotations", "required": true}
+      ],
+      "steps": [
+        {"step_number": 1, "title": "Check eligibility and prepare a project report", "description": "Confirm the project is new, within the cost limit, and that you have not taken PMEGP or another subsidy before."},
+        {"step_number": 2, "title": "Apply online", "description": "Fill the application on maha-cmegp.gov.in with your documents and project report.", "official_url": "https://maha-cmegp.gov.in"},
+        {"step_number": 3, "title": "Committee review and bank sanction", "description": "The DIC or KVIB forwards your application to a bank, which appraises and sanctions the loan."},
+        {"step_number": 4, "title": "Set up the unit and receive the subsidy", "description": "The subsidy is credited by the Directorate of Industries through the bank after the stipulated period."}
+      ],
+      "windows": [{"window_type": "rolling", "label": "Applications are accepted on the portal through the year against district targets."}],
+      "sources": [
+        {"url": "https://maitri.maharashtra.gov.in/about-us/department-initiative/cmegpchief-minister-employment-generation-programme-cmegp/", "kind": "agency", "title": "MAITRI: CMEGP (Government of Maharashtra)", "anchor": "For projects in manufacturing sectors the maximum project cost limit is Rs. 1 Cr and for service and agro-based sector it is Rs.50 Lakhs", "is_primary": true},
+        {"url": "https://bankofmaharashtra.bank.in/cmegp", "kind": "other", "title": "Bank of Maharashtra: CMEGP", "anchor": "Categories of beneficiaries under CMEGP: rate of subsidy table"}
+      ],
+      "rules": {"all": [
+        {"field": "state", "operator": "equals", "value": "maharashtra"},
+        {"field": "applicant_age_years", "operator": "greater_than_or_equal", "value": 18},
+        {"field": "stage", "operator": "in", "value": ["idea", "setting_up"]},
+        {"field": "received_govt_subsidy_before", "operator": "equals", "value": false},
+        {"field": "project_cost_band", "operator": "in", "value": ["up_to_1l", "1l_2l", "2l_5l", "5l_10l", "10l_25l", "25l_50l", "50l_1cr"]}
+      ], "unknown_handling": "needs_information"}
+    },
+    {
+      "slug": "cm-yuva-uttar-pradesh",
+      "name": "Mukhyamantri Yuva Udyami Vikas Abhiyan (CM-YUVA), Uttar Pradesh",
+      "opportunity_type": "concessional_loan",
+      "status": "active",
+      "coverage": "state",
+      "locations": ["uttar_pradesh"],
+      "canonical_url": "https://msme1connect.up.gov.in/scheme-list/-mukhyamantri-yuva-udyami-vikas-abhiyan-yojana-(cm-yuva)",
+      "authority": {"name": "Department of MSME and Export Promotion, Government of Uttar Pradesh", "level": "state", "official_url": "https://msme1connect.up.gov.in"},
+      "version": {
+        "title": "Mukhyamantri Yuva Udyami Vikas Abhiyan (CM-YUVA)",
+        "summary": "Interest-free, collateral-free loan of up to ₹5 lakh with a 10% margin-money subsidy for young first-time entrepreneurs in Uttar Pradesh.",
+        "objective": "Promote self-employment among educated and trained youth in Uttar Pradesh, aiming to create 10 lakh entrepreneurs in 10 years.",
+        "legal_basis": "Government of Uttar Pradesh scheme implemented by the Directorate of Industries.",
+        "eligibility": {
+          "conditions": ["Resident of Uttar Pradesh", "Aged 21 to 40", "Class 8 pass, or a certified training, diploma or degree", "Manufacturing, service or trade units"],
+          "exclusions": ["Anyone availing another central or state loan-subsidy scheme"]
+        },
+        "application": {"route": "Register and apply on the UP MSME portal, uploading identity, age proof, training certificate and project report.", "fees": "No application fee is stated.", "portal": "https://msme1connect.up.gov.in"},
+        "fine_print": {"review_note": "Benefit text from the UP MSME 1-Connect scheme page; trained candidates under ODOP and Vishwakarma Shram Samman get preference."},
+        "benefit_summary": {"summary": "Interest-free, collateral-free loan up to ₹5 lakh plus 10% margin-money subsidy.", "headline": "Interest-free loan up to ₹5 lakh + 10% margin money", "types": ["loan", "subsidy"]},
+        "completeness": 0.96
+      },
+      "benefits": [
+        {"benefit_type": "loan", "label": "Interest-free, collateral-free loan up to ₹5 lakh", "amount_max": 500000},
+        {"benefit_type": "subsidy", "label": "Margin-money subsidy of 10% of project cost", "percentage": 10}
+      ],
+      "requirements": [
+        {"requirement_type": "identity", "name": "Aadhaar and age proof", "required": true},
+        {"requirement_type": "document", "name": "Class 8 marksheet or training certificate", "required": true},
+        {"requirement_type": "project_readiness", "name": "Project report", "required": true}
+      ],
+      "steps": [
+        {"step_number": 1, "title": "Register on the UP MSME portal", "official_url": "https://msme1connect.up.gov.in"},
+        {"step_number": 2, "title": "Apply with documents", "description": "Upload identity, age proof, training certificate and project report."},
+        {"step_number": 3, "title": "Bank appraisal and loan sanction"}
+      ],
+      "windows": [{"window_type": "rolling", "label": "Applications through the year on the UP MSME portal."}],
+      "sources": [
+        {"url": "https://msme1connect.up.gov.in/scheme-list/-mukhyamantri-yuva-udyami-vikas-abhiyan-yojana-(cm-yuva)", "kind": "agency", "title": "UP MSME 1-Connect: CM-YUVA", "anchor": "interest-free loans of up to ₹5 lakh without the need for collateral, along with a 10% margin-money subsidy", "is_primary": true}
+      ],
+      "rules": {"all": [
+        {"field": "state", "operator": "equals", "value": "uttar_pradesh"},
+        {"field": "applicant_age_years", "operator": "greater_than_or_equal", "value": 21},
+        {"field": "applicant_age_years", "operator": "less_than_or_equal", "value": 40},
+        {"any": [
+          {"field": "education_level", "operator": "in", "value": ["class_8", "class_10", "class_12", "iti_diploma", "graduate", "postgraduate"]},
+          {"field": "training_certificate", "operator": "equals", "value": true}
+        ]},
+        {"field": "received_govt_subsidy_before", "operator": "equals", "value": false}
+      ], "unknown_handling": "needs_information"}
+    },
+    {
+      "slug": "odop-margin-money-uttar-pradesh",
+      "name": "ODOP Financial Assistance (Margin Money) Scheme, Uttar Pradesh",
+      "opportunity_type": "subsidy",
+      "status": "active",
+      "coverage": "state",
+      "locations": ["uttar_pradesh"],
+      "canonical_url": "https://msme1connect.up.gov.in/GovernmentScheme/GovernmentScheme638769672699910844.pdf",
+      "authority": {"name": "Department of MSME and Export Promotion, Government of Uttar Pradesh", "level": "state", "official_url": "https://msme1connect.up.gov.in"},
+      "version": {
+        "title": "One District One Product (ODOP) Financial Assistance Scheme",
+        "summary": "Margin money of up to 25% of project cost for units making their district's One District One Product item in Uttar Pradesh.",
+        "objective": "Help units that make each district's identified ODOP product get bank finance by paying part of the project cost as margin money.",
+        "legal_basis": "Government of Uttar Pradesh ODOP Financial Assistance (Margin Money) Scheme.",
+        "eligibility": {
+          "conditions": ["Unit must make the ODOP product identified for its own district (for example woodcraft in Saharanpur)", "No minimum education is required", "Industry, service and business sectors are covered"],
+          "exclusions": ["Products that are not the district's identified ODOP product"]
+        },
+        "application": {"route": "Apply on the UP MSME portal; the District Industries Centre forwards applications to banks for loan sanction.", "fees": "No application fee is stated.", "portal": "https://msme1connect.up.gov.in"},
+        "fine_print": {"slabs": "Project up to ₹25 lakh: 25%, max ₹6.25 lakh. ₹25–50 lakh: ₹6.25 lakh or 20%, whichever is higher. ₹50–150 lakh: ₹10 lakh or 10%, whichever is higher. Above ₹150 lakh: 10%, max ₹20 lakh."},
+        "benefit_summary": {"summary": "Margin money from 25% (max ₹6.25 lakh) down to 10% (max ₹20 lakh) depending on project size.", "headline": "Up to 25% margin money for your district's ODOP product", "types": ["capital_subsidy"]},
+        "completeness": 0.96
+      },
+      "benefits": [{"benefit_type": "capital_subsidy", "label": "Margin money of up to 25% of project cost (max ₹20 lakh for large projects)", "amount_max": 2000000, "percentage": 25}],
+      "requirements": [
+        {"requirement_type": "identity", "name": "Aadhaar and proof of age", "required": true},
+        {"requirement_type": "project_readiness", "name": "Project report for the ODOP product", "required": true}
+      ],
+      "steps": [
+        {"step_number": 1, "title": "Check your district's ODOP product", "description": "The unit must make the product identified for your district."},
+        {"step_number": 2, "title": "Apply on the UP MSME portal", "official_url": "https://msme1connect.up.gov.in"},
+        {"step_number": 3, "title": "Bank loan sanction and margin money release"}
+      ],
+      "windows": [{"window_type": "rolling", "label": "Applications through the year."}],
+      "sources": [
+        {"url": "https://msme1connect.up.gov.in/GovernmentScheme/GovernmentScheme638769672699910844.pdf", "kind": "guideline", "title": "Financial Assistance Scheme for One District One Product (ODOP)", "anchor": "25 per cent of the total project cost subject to a maximum of Rs.6.25 lakh", "is_primary": true}
+      ],
+      "rules": {"all": [{"field": "state", "operator": "equals", "value": "uttar_pradesh"}], "unknown_handling": "needs_information"}
+    },
+    {
+      "slug": "mukhyamantri-udyami-yojana-bihar",
+      "name": "Mukhyamantri Udyami Yojana, Bihar",
+      "opportunity_type": "grant",
+      "status": "paused",
+      "coverage": "state",
+      "locations": ["bihar"],
+      "canonical_url": "https://udyami.bihar.gov.in",
+      "authority": {"name": "Industries Department, Government of Bihar", "level": "state", "official_url": "https://udyami.bihar.gov.in"},
+      "version": {
+        "title": "Mukhyamantri Udyami Yojana",
+        "summary": "Up to ₹10 lakh for a new unit in Bihar: 50% as a grant (max ₹5 lakh) and 50% as an interest-free loan (max ₹5 lakh), selected by lottery.",
+        "objective": "Bring unemployed young men and women of Bihar into self-employment through six components for SC/ST, EBC, women, youth, minority and divyang applicants.",
+        "legal_basis": "Industries Department, Government of Bihar; guideline for 2025-26 (Annexure-II).",
+        "eligibility": {
+          "conditions": ["Permanent resident of Bihar", "Passed 10+2, intermediate, ITI, polytechnic diploma or equivalent", "Aged 18 to 50", "Unit set up as a proprietorship, partnership, LLP or private limited company", "The unit must be in your home district", "Only projects from the approved list"],
+          "exclusions": ["Bihar Laghu Udyami Yojana beneficiaries"]
+        },
+        "application": {"route": "Apply online on udyami.bihar.gov.in during the annual window, choosing a project from the approved list.", "selection": "Computerised lottery against district targets, then document scrutiny.", "fees": "No application fee is stated.", "portal": "https://udyami.bihar.gov.in", "window_note": "The 2025-26 window ran from 25 February to 23 March 2026; the lottery was held on 20 May 2026. The next call has not been announced."},
+        "fine_print": {"components": "SC/ST; EBC (BC-01, minorities excluded); women (all categories); youth (General and BC-02 men; 1% interest); minority; divyang (40%+ disability with UDID).", "release": "6-day training before the first instalment, paid into a current account in the unit's name.", "review_note": "From the official 2025-26 guideline (Annexure-II)."},
+        "benefit_summary": {"summary": "Up to ₹10 lakh: 50% grant (max ₹5 lakh) and 50% interest-free loan (max ₹5 lakh).", "headline": "Up to ₹10 lakh: ₹5 lakh grant + ₹5 lakh interest-free loan", "types": ["grant", "loan"]},
+        "completeness": 0.97
+      },
+      "benefits": [
+        {"benefit_type": "grant", "label": "Grant of 50% of project cost, max ₹5 lakh", "amount_max": 500000, "percentage": 50},
+        {"benefit_type": "loan", "label": "Interest-free loan for the other 50%, max ₹5 lakh (1% interest for the youth component)", "amount_max": 500000}
+      ],
+      "requirements": [
+        {"requirement_type": "document", "name": "Matriculation certificate with date of birth", "required": true},
+        {"requirement_type": "document", "name": "Intermediate or equivalent certificate", "required": true},
+        {"requirement_type": "document", "name": "Caste certificate", "required": false},
+        {"requirement_type": "document", "name": "Permanent residence certificate", "required": true},
+        {"requirement_type": "identity", "name": "Live photograph and signature", "required": true}
+      ],
+      "steps": [
+        {"step_number": 1, "title": "Apply online in the annual window", "official_url": "https://udyami.bihar.gov.in"},
+        {"step_number": 2, "title": "Computerised lottery and document scrutiny"},
+        {"step_number": 3, "title": "6-day training", "description": "Attend the non-residential training; two chances are given."},
+        {"step_number": 4, "title": "Receive instalments", "description": "Paid by RTGS/NEFT into a current account in the unit's name."}
+      ],
+      "windows": [{"window_type": "annual", "opens_at": "2026-02-25T15:00:00+05:30", "closes_at": "2026-03-23T17:00:00+05:30", "label": "2025-26 window (extended to 23 March 2026)."}],
+      "sources": [
+        {"url": "https://udyami.bihar.gov.in/pdf/MMUY-2025/Annexture%20-%20II%20-%20Guideline%20for%20MMUY%202025-26.pdf", "kind": "guideline", "title": "Mukhyamantri Udyami Yojana 2025-26: application and selection guideline", "anchor": "अधिकतम रु0 10.00 लाख तक का वित्तीय सहायता ... 50 प्रतिशत अधिकतम रु0 5.00 लाख तक अनुदान", "is_primary": true},
+        {"url": "https://udyami.bihar.gov.in/", "kind": "other", "title": "Udyami portal notices", "anchor": "आवेदन की अंतिम तिथि को दिनांक 23.03.2026 के अपराह्न 5:00 बजे तक विस्तारित"}
+      ],
+      "rules": {"all": [
+        {"field": "state", "operator": "equals", "value": "bihar"},
+        {"field": "applicant_age_years", "operator": "greater_than_or_equal", "value": 18},
+        {"field": "applicant_age_years", "operator": "less_than_or_equal", "value": 50},
+        {"field": "education_level", "operator": "in", "value": ["class_12", "iti_diploma", "graduate", "postgraduate"]}
+      ], "unknown_handling": "needs_information"}
+    },
+    {
+      "slug": "bihar-laghu-udyami-yojana",
+      "name": "Bihar Laghu Udyami Yojana",
+      "opportunity_type": "grant",
+      "status": "paused",
+      "coverage": "state",
+      "locations": ["bihar"],
+      "canonical_url": "https://udyami.bihar.gov.in/bluy",
+      "authority": {"name": "Industries Department, Government of Bihar", "level": "state", "official_url": "https://udyami.bihar.gov.in"},
+      "version": {
+        "title": "Bihar Laghu Udyami Yojana",
+        "summary": "Grant of up to ₹2 lakh, paid in three instalments, for a member of an economically poor family in Bihar to start a small business.",
+        "objective": "Give at least one member of each economically poor family identified in Bihar's caste-based survey a means of self-employment.",
+        "legal_basis": "Industries Department, Government of Bihar, Resolution No. 256 dated 16 January 2024 (cabinet approval of the same date).",
+        "eligibility": {
+          "conditions": ["Aged 18 to 50 on the date of application", "Resident of Bihar with a Bihar address on Aadhaar", "Family income below ₹6,000 a month, with an income certificate", "One person per family (husband, wife and unmarried children)"],
+          "exclusions": ["Beneficiaries of Mukhyamantri Udyami Yojana"]
+        },
+        "application": {"route": "Apply online when the annual call opens on the Laghu Udyami portal.", "selection": "Computerised lottery in proportion to poor families by category; 20% kept on a waiting list.", "fees": "No application fee is stated.", "portal": "https://laghuudyami.bihar.gov.in", "window_note": "Applications are invited once a year; the next call has not been announced."},
+        "fine_print": {"instalments": "25% of project cost, then 50%, then 25%; each released only after the previous one is properly used."},
+        "benefit_summary": {"summary": "Grant up to ₹2 lakh in three instalments.", "headline": "Grant up to ₹2 lakh for a small business", "types": ["grant"]},
+        "completeness": 0.96
+      },
+      "benefits": [{"benefit_type": "grant", "label": "Grant up to ₹2 lakh in three instalments (25% / 50% / 25%)", "amount_max": 200000}],
+      "requirements": [
+        {"requirement_type": "identity", "name": "Aadhaar with Bihar address", "required": true},
+        {"requirement_type": "document", "name": "Family income certificate (below ₹6,000 a month)", "required": true}
+      ],
+      "steps": [
+        {"step_number": 1, "title": "Register when the annual call opens", "official_url": "https://laghuudyami.bihar.gov.in/new-registration/register"},
+        {"step_number": 2, "title": "Computerised lottery"},
+        {"step_number": 3, "title": "Receive three instalments", "description": "Each instalment follows proper use of the previous one."}
+      ],
+      "windows": [{"window_type": "annual", "label": "Annual call; next call not yet announced."}],
+      "sources": [
+        {"url": "https://udyami.bihar.gov.in/pdf/docs/bihar%20laghu%20udyami%20yojna%20(1).pdf", "kind": "guideline", "title": "Bihar Laghu Udyami Yojana: Resolution 256 and guideline", "anchor": "लाभुक की पारिवारिक आय प्रतिमाह 6000 रु0 से कम होनी चाहिए", "is_primary": true}
+      ],
+      "rules": {"all": [
+        {"field": "state", "operator": "equals", "value": "bihar"},
+        {"field": "applicant_age_years", "operator": "greater_than_or_equal", "value": 18},
+        {"field": "applicant_age_years", "operator": "less_than_or_equal", "value": 50},
+        {"field": "annual_family_income_band", "operator": "in", "value": ["up_to_72k"]}
+      ], "unknown_handling": "needs_information"}
+    },
+    {
+      "slug": "mukhyamantri-rojgar-srijan-yojana-jharkhand",
+      "name": "Mukhyamantri Rojgar Srijan Yojana, Jharkhand",
+      "opportunity_type": "subsidy",
+      "status": "active",
+      "coverage": "state",
+      "locations": ["jharkhand"],
+      "canonical_url": "https://jstcdc.org.in/stsponsscheme",
+      "authority": {"name": "Jharkhand State Tribal Cooperative Development Corporation", "level": "state", "official_url": "https://jstcdc.org.in"},
+      "version": {
+        "title": "Mukhyamantri Rojgar Srijan Yojana",
+        "summary": "Loan of ₹50,000 to ₹25 lakh at 6% with a 40% subsidy (max ₹5 lakh) for ST, SC, BC, minority and divyang youth in Jharkhand.",
+        "objective": "Help Scheduled Tribe, Scheduled Caste, Backward Class, minority and differently abled youth of Jharkhand start their own enterprise with a subsidised loan.",
+        "legal_basis": "Government of Jharkhand Departmental Resolution No. 2563 dated 26 August 2022.",
+        "eligibility": {
+          "conditions": ["Permanent resident of Jharkhand", "From the ST, SC, BC, minority or divyang category", "Aged 18 to 50", "Annual family income up to ₹5 lakh", "Not in government or semi-government service"],
+          "exclusions": ["Anyone who earlier took a government loan subsidy", "Loan defaulters"]
+        },
+        "application": {"route": "Apply to the Jharkhand State Tribal Cooperative Development Corporation with online caste, residence and income certificates and a project proposal (above ₹50,000).", "fees": "No application fee is stated.", "portal": "https://jstcdc.org.in"},
+        "fine_print": {"subsidy_table": "40% of the loan at every slab; capped at ₹5 lakh for loans of ₹10–25 lakh.", "own_share": "Nil up to ₹50,000; 10% above.", "guarantor": "One guarantor above ₹50,000; hypothecation is accepted for machinery and vehicles.", "interest": "6% a year on the loan after deducting the subsidy."},
+        "benefit_summary": {"summary": "40% subsidy on loans of ₹50,000 to ₹25 lakh (max ₹5 lakh) at 6% interest.", "headline": "40% subsidy (up to ₹5 lakh) on a loan at 6%", "types": ["subsidy", "loan"]},
+        "completeness": 0.97
+      },
+      "benefits": [
+        {"benefit_type": "subsidy", "label": "Loan subsidy of 40% of the loan, max ₹5 lakh", "amount_max": 500000, "percentage": 40},
+        {"benefit_type": "loan", "label": "Term loan of ₹50,000 to ₹25 lakh at 6%", "amount_min": 50000, "amount_max": 2500000}
+      ],
+      "requirements": [
+        {"requirement_type": "document", "name": "Online permanent residence, caste and income certificates (Jharkhand)", "required": true},
+        {"requirement_type": "identity", "name": "Aadhaar, age proof and bank passbook", "required": true},
+        {"requirement_type": "declaration", "name": "Self-declaration: not in government service, no earlier loan subsidy, not a defaulter", "required": true},
+        {"requirement_type": "project_readiness", "name": "Project proposal (loans above ₹50,000)", "required": false}
+      ],
+      "steps": [
+        {"step_number": 1, "title": "Collect online certificates", "description": "Residence, caste and income certificates issued online by Jharkhand."},
+        {"step_number": 2, "title": "Apply to JSTCDC with a project proposal", "official_url": "https://jstcdc.org.in/stsponsscheme"},
+        {"step_number": 3, "title": "Arrange a guarantor (above ₹50,000)"},
+        {"step_number": 4, "title": "Loan sanction with subsidy"}
+      ],
+      "windows": [{"window_type": "rolling", "label": "Applications are accepted through the year."}],
+      "sources": [
+        {"url": "https://jstcdc.org.in/stsponsscheme", "kind": "agency", "title": "JSTCDC: Mukhyamantri Rojgar Srijan Yojana", "anchor": "Loan Subsidy by State Govt.– 40% of loan amount", "is_primary": true}
+      ],
+      "rules": {"all": [
+        {"field": "state", "operator": "equals", "value": "jharkhand"},
+        {"field": "applicant_age_years", "operator": "greater_than_or_equal", "value": 18},
+        {"field": "applicant_age_years", "operator": "less_than_or_equal", "value": 50},
+        {"field": "annual_family_income_band", "operator": "not_in", "value": ["6l_8l", "above_8l"]},
+        {"any": [
+          {"field": "social_category", "operator": "in", "value": ["sc", "st", "obc", "ebc"]},
+          {"field": "minority_community", "operator": "equals", "value": "yes"},
+          {"field": "has_disability", "operator": "equals", "value": true}
+        ]},
+        {"field": "received_govt_subsidy_before", "operator": "equals", "value": false}
+      ], "unknown_handling": "needs_information"}
+    },
+    {
+      "slug": "pmmsy-beneficiary-oriented-subsidy",
+      "name": "Pradhan Mantri Matsya Sampada Yojana (PMMSY): beneficiary-oriented projects",
+      "opportunity_type": "subsidy",
+      "status": "pending_renewal",
+      "coverage": "central",
+      "locations": ["India"],
+      "canonical_url": "https://pmmsy.dof.gov.in",
+      "authority": {"name": "Department of Fisheries - PMMSY", "level": "central", "ministry": "Ministry of Fisheries, Animal Husbandry and Dairying", "official_url": "https://pmmsy.dof.gov.in"},
+      "version": {
+        "title": "PMMSY beneficiary-oriented subsidy",
+        "summary": "Capital subsidy of 40% (general) or 60% (SC/ST and women) on approved fisheries projects such as ponds, biofloc, RAS and hatcheries, through the State Fisheries Department.",
+        "objective": "Develop fisheries and aquaculture and raise fish farmers' incomes through subsidised projects.",
+        "legal_basis": "Pradhan Mantri Matsya Sampada Yojana, Department of Fisheries; extended to FY 2025-26 on the existing design and funding pattern.",
+        "eligibility": {
+          "conditions": ["Fish farmers, fishers and entrepreneurs with an approved fisheries project", "Pond or land ownership or a registered lease for pond-based projects", "Apply through the State Fisheries Department"],
+          "exclusions": []
+        },
+        "application": {"route": "Prepare a project and apply through your district or State Fisheries Department under the PMMSY beneficiary-oriented component.", "fees": "No application fee is stated.", "portal": "https://pmmsy.dof.gov.in", "window_note": "PMMSY is officially extended up to FY 2025-26. A 2026-27 budget allocation is reported, but no formal extension order was found."},
+        "fine_print": {"rates": "40% of unit cost for general beneficiaries; 60% for SC/ST and women. Women: up to ₹1.5 crore per project."},
+        "benefit_summary": {"summary": "40% subsidy (60% for SC/ST and women) on approved fisheries projects.", "headline": "40–60% subsidy on fish-farming projects", "types": ["capital_subsidy"]},
+        "completeness": 0.95
+      },
+      "benefits": [{"benefit_type": "capital_subsidy", "label": "Subsidy of 40% of project cost (60% for SC/ST and women)", "percentage": 60}],
+      "requirements": [
+        {"requirement_type": "document", "name": "Pond or land ownership papers or a registered lease", "required": true},
+        {"requirement_type": "project_readiness", "name": "Project estimate approved by the State Fisheries Department", "required": true},
+        {"requirement_type": "document", "name": "Caste certificate (for the 60% rate)", "required": false}
+      ],
+      "steps": [
+        {"step_number": 1, "title": "Contact the district fisheries office"},
+        {"step_number": 2, "title": "Prepare the project estimate and land papers"},
+        {"step_number": 3, "title": "Apply under the state's PMMSY plan"}
+      ],
+      "windows": [{"window_type": "programme_route", "label": "Approved up to FY 2025-26; renewal awaited."}],
+      "sources": [
+        {"url": "https://www.pib.gov.in/PressNoteDetails.aspx?NoteId=155173&ModuleId=3&reg=3&lang=2", "kind": "ministry", "title": "PIB: 5 years of PMMSY", "anchor": "Ministry of Finance, Department of Expenditure has agreed to the extension of PMMSY up to financial year 2025-26", "is_primary": true}
+      ],
+      "rules": {"any": [
+        {"field": "activity_codes", "operator": "contains", "value": "pond_fish"},
+        {"field": "activity_codes", "operator": "contains", "value": "biofloc_ras"},
+        {"field": "activity_codes", "operator": "contains", "value": "fish_seed_hatchery"},
+        {"field": "activity_codes", "operator": "contains", "value": "ornamental_fish"},
+        {"field": "activity_codes", "operator": "contains", "value": "shrimp_coastal"}
+      ], "unknown_handling": "needs_information"}
+    },
+    {
+      "slug": "kisan-credit-card-animal-husbandry-fisheries",
+      "name": "Kisan Credit Card for animal husbandry and fisheries",
+      "opportunity_type": "loan",
+      "status": "active",
+      "coverage": "central",
+      "locations": ["India"],
+      "canonical_url": "https://indianbank.bank.in/en/kisan-credit-card-kcc-animal-husbandry-and-fisheries",
+      "authority": {"name": "Department of Financial Services", "level": "central"},
+      "version": {
+        "title": "Kisan Credit Card (animal husbandry and fisheries)",
+        "summary": "Short-term working-capital credit for dairy, poultry, goat, piggery and fish farmers at 7%, effectively 4% with prompt repayment.",
+        "objective": "Give livestock and fish farmers easy working capital through the Kisan Credit Card.",
+        "legal_basis": "Kisan Credit Card scheme with the Modified Interest Subvention Scheme, continued by RBI for FY 2025-26.",
+        "eligibility": {
+          "conditions": ["Farmers, tenant farmers and groups engaged in animal husbandry or fisheries", "Apply at a bank branch"],
+          "exclusions": []
+        },
+        "application": {"route": "Apply at any bank branch with identity, address and land or activity details.", "fees": "Processing charges, if any, are set by the bank."},
+        "fine_print": {"limits": "Interest subvention up to ₹3 lakh in total, with the allied-activity benefit up to ₹2 lakh. A ₹5 lakh limit is reported for Budget 2025-26 but not confirmed in force, so it is not shown."},
+        "benefit_summary": {"summary": "Working-capital credit at 7%, effectively 4% with prompt repayment.", "headline": "Working capital at an effective 4% interest", "types": ["loan", "interest_subsidy"]},
+        "completeness": 0.95
+      },
+      "benefits": [
+        {"benefit_type": "loan", "label": "Short-term credit for animal husbandry and fisheries", "amount_max": 200000},
+        {"benefit_type": "interest_subsidy", "label": "Interest at 7%, effectively 4% with prompt repayment"}
+      ],
+      "requirements": [
+        {"requirement_type": "identity", "name": "Aadhaar and address proof", "required": true},
+        {"requirement_type": "document", "name": "Land, pond or activity details", "required": true}
+      ],
+      "steps": [
+        {"step_number": 1, "title": "Visit a bank branch"},
+        {"step_number": 2, "title": "Submit the KCC application", "description": "With identity, address and activity details."},
+        {"step_number": 3, "title": "Receive the card and credit limit"}
+      ],
+      "windows": [{"window_type": "rolling", "label": "Available through the year at banks."}],
+      "sources": [
+        {"url": "https://indianbank.bank.in/en/kisan-credit-card-kcc-animal-husbandry-and-fisheries", "kind": "agency", "title": "Indian Bank: KCC for animal husbandry and fisheries", "anchor": "7% for loans up to Rs. 2.00 Lakhs (wherever Interest Subvention is available)", "is_primary": true},
+        {"url": "https://www.outlookmoney.com/news/rbi-extends-kisan-credit-card-interest-subvention-scheme-for-fy26-here-are-the-key-features", "kind": "other", "title": "RBI continues MISS for FY 2025-26", "anchor": "continuation of the Modified Interest Subvention Scheme (MISS)"}
+      ],
+      "rules": {"any": [
+        {"field": "activity_codes", "operator": "contains", "value": "dairy_farm"},
+        {"field": "activity_codes", "operator": "contains", "value": "poultry_broiler"},
+        {"field": "activity_codes", "operator": "contains", "value": "poultry_layer"},
+        {"field": "activity_codes", "operator": "contains", "value": "poultry_backyard"},
+        {"field": "activity_codes", "operator": "contains", "value": "poultry_breeding_hatchery"},
+        {"field": "activity_codes", "operator": "contains", "value": "goat_sheep"},
+        {"field": "activity_codes", "operator": "contains", "value": "piggery"},
+        {"field": "activity_codes", "operator": "contains", "value": "pond_fish"},
+        {"field": "activity_codes", "operator": "contains", "value": "biofloc_ras"},
+        {"field": "activity_codes", "operator": "contains", "value": "fish_seed_hatchery"},
+        {"field": "activity_codes", "operator": "contains", "value": "shrimp_coastal"}
+      ], "unknown_handling": "needs_information"}
+    }
+  ],
+  "shop_act": [
+    {"state": "maharashtra", "state_name": "Maharashtra", "authority": "Labour Department, Government of Maharashtra", "portal": "https://mahakamgar.maharashtra.gov.in", "law": "Maharashtra Shops and Establishments (Regulation of Employment and Conditions of Service) Act, 2017, as amended by Ordinance VIII of 2025", "rule_text": "Fewer than 20 workers: a one-time intimation of commencing business is enough. From 20 workers: full registration.", "headline": "Intimation only below 20 workers", "source": {"url": "https://lexplosion.in/maharashtra-govt-notifies-maharashtra-shops-and-establishments-regulation-of-employment-and-conditions-of-service-amendment-ordinance-2025/", "kind": "other", "title": "Lexplosion: Maharashtra Shops and Establishments (Amendment) Ordinance, 2025", "anchor": "employee threshold ... increased to 20 workers instead of 10"}},
+    {"state": "bihar", "state_name": "Bihar", "authority": "Labour Resources Department, Government of Bihar", "portal": "https://serviceonline.bihar.gov.in", "law": "Bihar Shops and Establishments Act, 2025, repealed by Ordinance No. 01 of 2026 (1 June 2026); now the Occupational Safety, Health and Working Conditions Code, 2020", "rule_text": "The state Shop Act was repealed on 1 June 2026. Registration now falls under the national OSH Code and is needed from 10 workers.", "headline": "Registration from 10 workers (OSH Code)", "source": {"url": "https://www.scconline.com/blog/post/2026/06/04/bihar-repeals-shops-establishments-act-2025/", "kind": "other", "title": "SCC Online: Bihar repeals Shops and Establishments Act, 2025", "anchor": "Repeal Ordinance, 2026 ... published in the Bihar Extraordinary Gazette on June 1, 2026"}},
+    {"state": "delhi", "state_name": "Delhi", "authority": "Labour Department, Government of NCT of Delhi", "portal": "https://labour.delhi.gov.in", "law": "Delhi Shops and Establishments Act, 1954", "rule_text": "Registration is required for shops and establishments; check the renewal period on the Labour Department portal.", "headline": "Registration for shops and establishments", "source": {"url": "https://labour.delhi.gov.in", "kind": "other", "title": "Labour Department, Government of NCT of Delhi", "anchor": "Delhi Shops and Establishments Act, 1954 registration"}},
+    {"state": "uttar_pradesh", "state_name": "Uttar Pradesh", "authority": "Labour Department, Government of Uttar Pradesh", "portal": "https://uplabour.gov.in", "law": "Uttar Pradesh Dookan Aur Vanijya Adhishthan Adhiniyam, 1962", "rule_text": "Registration is required for shops and commercial establishments; the fee depends on the previous year's turnover.", "headline": "Registration for shops and establishments", "source": {"url": "https://uplabour.gov.in", "kind": "other", "title": "Labour Department, Government of Uttar Pradesh", "anchor": "Uttar Pradesh Dookan Aur Vanijya Adhishthan Adhiniyam, 1962 registration"}},
+    {"state": "jharkhand", "state_name": "Jharkhand", "authority": "Labour, Employment, Training and Skill Development Department, Government of Jharkhand", "portal": "https://shramadhan.jharkhand.gov.in", "law": "Bihar Shops and Establishments Act, 1953 as adapted by Jharkhand, with the 2015 amendment rules", "rule_text": "Register on the Shramadhan portal. Whether shops with fewer than 10 workers are exempt is not clear, so check on the portal before opening.", "headline": "Register on the Shramadhan portal", "source": {"url": "https://shramadhan.jharkhand.gov.in/shopRegistrationAmendmentFeeStructure.action", "kind": "other", "title": "Shramadhan: shop registration fee structure", "anchor": "Shop registration fee structure"}}
+  ],
+  "corrections": [
+    {
+      "slug": "national-livestock-mission-entrepreneurship-development",
+      "reason": "NLM portal: minimum unit sizes added (poultry ≥1,000 parent layers; sheep/goat ≥500 females + 25 males; piggery ≥100 sows + 25 boars). Approved by owner (P0.4).",
+      "changes": {
+        "rules": {"all": [
+          {"field": "nlm_component_eligible", "operator": "equals", "value": true},
+          {"field": "project_appraisal_ready", "operator": "equals", "value": true},
+          {"any": [
+            {"all": [
+              {"field": "project_sector", "operator": "in", "value": ["rural_poultry"]},
+              {"field": "poultry_unit_type", "operator": "in", "value": ["parent_breeding", "hatchery"]},
+              {"field": "poultry_bird_count", "operator": "greater_than_or_equal", "value": 1000}
+            ]},
+            {"all": [
+              {"field": "project_sector", "operator": "in", "value": ["sheep_goat"]},
+              {"field": "small_ruminant_females", "operator": "greater_than_or_equal", "value": 500},
+              {"field": "small_ruminant_males", "operator": "greater_than_or_equal", "value": 25}
+            ]},
+            {"all": [
+              {"field": "project_sector", "operator": "in", "value": ["piggery"]},
+              {"field": "sow_count", "operator": "greater_than_or_equal", "value": 100},
+              {"field": "boar_count", "operator": "greater_than_or_equal", "value": 25}
+            ]},
+            {"field": "project_sector", "operator": "in", "value": ["feed_fodder"]}
+          ]}
+        ], "unknown_handling": "needs_information"},
+        "benefit_summary": {"headline": "50% capital subsidy: up to ₹25 lakh (poultry), ₹50 lakh (sheep-goat), ₹30 lakh (piggery)"},
+        "eligibility": {"conditions": [
+          "Individuals, SHGs, FPOs, farmer cooperatives, JLGs and Section 8 companies",
+          "Poultry: parent farm, rural hatchery or mother unit with at least 1,000 parent layers",
+          "Sheep and goat: breeding unit with at least 500 females and 25 males",
+          "Piggery: breeder farm with at least 100 sows and 25 boars",
+          "Subsidy released in two instalments through SIDBI after 25% of the infrastructure cost is spent and verified"
+        ]}
+      }
+    },
+    {"slug": "prime-ministers-employment-generation-programme", "reason": "Approved for 2021-22 to 2025-26 (KVIC guidelines); no continuation order found. Approved by owner (P0.4).", "changes": {"status": "pending_renewal", "application": {"window_note": "PMEGP was approved for the 15th Finance Commission cycle (2021-22 to 2025-26). Renewal for 2026-27 is awaited; terms shown are the last approved ones."}}},
+    {"slug": "pm-formalisation-micro-food-processing-enterprises", "reason": "Extended to 30 Sep 2026; 2026-31 proposal pending. Approved by owner (P0.4).", "changes": {"status": "pending_renewal", "application": {"window_note": "PMFME was extended to 30 September 2026. MoFPI has proposed continuing it for 2026-31; approval is awaited."}}},
+    {"slug": "animal-husbandry-infrastructure-development-fund-ahidf", "reason": "Approved to 31 Mar 2026; 2026-27 allocation reported, no extension order. Approved by owner (P0.4).", "changes": {"status": "pending_renewal", "application": {"window_note": "AHIDF was approved up to 31 March 2026. A 2026-27 budget allocation is reported, but no extension order was found."}}}
+  ],
+  "relationships": [
+    {"a": "cmegp-maharashtra", "b": "prime-ministers-employment-generation-programme", "relation": "exclusive", "note_en": "CMEGP is not available to anyone who has taken PMEGP.", "source_url": "https://maitri.maharashtra.gov.in/about-us/department-initiative/cmegpchief-minister-employment-generation-programme-cmegp/", "quote": "The applicant should not have availed the benefit of Prime Minister Employment Generation Program (PMEGP) or any similar self-employment scheme based on subsidy"},
+    {"a": "cmegp-maharashtra", "b": "pm-formalisation-micro-food-processing-enterprises", "relation": "exclusive", "note_en": "CMEGP excludes any other subsidy-linked central scheme.", "source_url": "https://maitri.maharashtra.gov.in/about-us/department-initiative/cmegpchief-minister-employment-generation-programme-cmegp/", "quote": "or any similar self-employment scheme based on subsidy from the Central Government"},
+    {"a": "cm-yuva-uttar-pradesh", "b": "prime-ministers-employment-generation-programme", "relation": "exclusive", "note_en": "CM-YUVA is not for anyone availing another loan-subsidy scheme.", "source_url": "https://msme1connect.up.gov.in/scheme-list/-mukhyamantri-yuva-udyami-vikas-abhiyan-yojana-(cm-yuva)", "quote": "Applicant should not be availing benefits of other central/state loan subsidy schemes."},
+    {"a": "cm-yuva-uttar-pradesh", "b": "pm-formalisation-micro-food-processing-enterprises", "relation": "exclusive", "note_en": "CM-YUVA is not for anyone availing another loan-subsidy scheme.", "source_url": "https://msme1connect.up.gov.in/scheme-list/-mukhyamantri-yuva-udyami-vikas-abhiyan-yojana-(cm-yuva)", "quote": "Applicant should not be availing benefits of other central/state loan subsidy schemes."},
+    {"a": "bihar-laghu-udyami-yojana", "b": "mukhyamantri-udyami-yojana-bihar", "relation": "exclusive", "note_en": "A family can benefit from only one of these two Bihar schemes.", "source_url": "https://udyami.bihar.gov.in/pdf/docs/bihar%20laghu%20udyami%20yojna%20(1).pdf", "quote": "दोनों में से एक ही योजना में लाभ प्राप्त किया जा सकेगा"},
+    {"a": "mukhyamantri-rojgar-srijan-yojana-jharkhand", "b": "prime-ministers-employment-generation-programme", "relation": "exclusive", "note_en": "Not for anyone who earlier took a government loan subsidy.", "source_url": "https://jstcdc.org.in/stsponsscheme", "quote": "The applicant must not have availed the benefit of loan subsidy from any Government / Semi-government Institutions in the past"}
+  ]
+}
