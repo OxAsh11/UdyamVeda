@@ -35,13 +35,23 @@ type WindowRow = {
 type RequirementRow = { opportunity_version_id: string; required: boolean }
 type StepRow = { opportunity_version_id: string }
 
+// Rules compare codes such as `food_processing`; the current onboarding saves
+// display labels such as "Agriculture & Food". Passing a label makes a
+// matching founder fail the rule, so only code-shaped values are used and a
+// label is treated as unknown until onboarding stores activity codes.
+function sectorCode(value: string | null | undefined) {
+  return value && /^[a-z][a-z0-9_]*$/.test(value) ? value : null
+}
+
 function factsFromProfile(profile: BusinessProfileForMatching): RuleFactMap {
+  const sector = sectorCode(profile.sector)
   return {
     ...profile,
+    sector,
     lifecycle_stage: profile.stage,
     enterprise_stage: profile.stage,
     founder_category: profile.founder_type,
-    industry: profile.sector,
+    industry: sector,
     udyam_registered: profile.has_udyam,
     dpiit_recognized: profile.has_dpiit,
   }

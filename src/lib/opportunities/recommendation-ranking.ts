@@ -22,7 +22,9 @@ export function statusFor(
   hasReviewedRules: boolean,
 ): RecommendationStatus {
   if (result === true) return 'eligible'
-  if (result === false && missingFacts.length === 0) return 'not_eligible'
+  // A failed hard rule (wrong state, age, activity…) cannot be rescued by
+  // answering other questions, so unknown facts must not soften it.
+  if (result === false) return 'not_eligible'
   if (!hasReviewedRules) return 'needs_information'
   if (missingFacts.length <= 1 && blockers.length === 0) return 'likely'
   if (missingFacts.length > 0 || blockers.length > 0) return 'possible'
@@ -41,6 +43,14 @@ export function eligibilityConfidence(status: RecommendationStatus) {
 
 export function urgencyFor(windows: RecommendationWindow[], now = new Date()): { urgency: RecommendationUrgency; score: number } {
   if (windows.some(window => window.windowType === 'rolling')) return { urgency: 'rolling', score: 0.45 }
+
+  // Every dated window has passed: the record is closed until a new call,
+  // not merely "unknown".
+  const datedWindows = windows.filter(window => window.closesAt && !Number.isNaN(new Date(window.closesAt).getTime()))
+  if (datedWindows.length > 0 && datedWindows.length === windows.length
+    && datedWindows.every(window => new Date(window.closesAt!).getTime() < now.getTime())) {
+    return { urgency: 'closed', score: 0 }
+  }
 
   const closingDates = windows
     .map(window => window.closesAt ? new Date(window.closesAt) : null)

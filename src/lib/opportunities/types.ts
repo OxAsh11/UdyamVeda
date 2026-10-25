@@ -21,7 +21,7 @@ export const OPPORTUNITY_TYPES = [
 
 export type OpportunityType = typeof OPPORTUNITY_TYPES[number]
 export type RecommendationStatus = 'eligible' | 'likely' | 'possible' | 'needs_information' | 'not_eligible'
-export type RecommendationUrgency = 'urgent' | 'soon' | 'routine' | 'rolling' | 'unknown'
+export type RecommendationUrgency = 'urgent' | 'soon' | 'routine' | 'rolling' | 'closed' | 'unknown'
 export type VerificationStatus = 'legacy_draft' | 'in_review' | 'verified' | 'stale'
 
 export type RecommendationFact = {
