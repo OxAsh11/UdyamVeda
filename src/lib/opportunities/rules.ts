@@ -1,11 +1,38 @@
 export type RuleFactMap = Record<string, unknown>
 
+// A founder's money answers are bands ("₹2–5 lakh"), so a fact can be a
+// numeric range. A comparison is true or false only when the whole range
+// agrees; a range straddling the limit stays unknown.
+export type NumberRange = { min: number; max: number }
+
+export function isNumberRange(value: unknown): value is NumberRange {
+  return Boolean(value) && typeof value === 'object' && !Array.isArray(value)
+    && typeof (value as NumberRange).min === 'number' && typeof (value as NumberRange).max === 'number'
+}
+
+// One founder answer can match several vocabularies used by different rule
+// sets ("private_limited_company", "private_company", "company"). A fact
+// holding AnyOf matches a rule when any of its values would.
+export type AnyOf = { anyOf: unknown[] }
+
+export function isAnyOf(value: unknown): value is AnyOf {
+  return Boolean(value) && typeof value === 'object' && !Array.isArray(value) && Array.isArray((value as AnyOf).anyOf)
+}
+
 export type RuleEvaluation = {
   result: boolean | null
   reasons: string[]
   missingFacts: string[]
   blockers: string[]
   usedFacts: string[]
+  // Conditions only the bank, DIC or department can confirm; they never
+  // decide a founder's result but are listed as "they will check".
+  bankChecks?: string[]
+}
+
+export type RuleEvaluationOptions = {
+  // Rule fields handled as bank/DIC checks, with the note to show.
+  reviewerChecks?: ReadonlyMap<string, string>
 }
 
 const comparisonOperators = new Set([
@@ -45,6 +72,23 @@ function compare(actual: unknown, operator: string, expected: unknown): boolean 
   if (operator === 'not_exists') return isMissing(actual)
   if (isMissing(actual)) return null
 
+  if (isAnyOf(actual)) {
+    if (operator === 'not_equals' || operator === 'not_in') {
+      const positive = compare(actual, operator === 'not_equals' ? 'equals' : 'in', expected)
+      return positive === null ? null : !positive
+    }
+    const results = actual.anyOf.map(item => compare(item, operator, expected))
+    if (results.includes(true)) return true
+    return results.every(result => result === false) ? false : null
+  }
+
+  if (isNumberRange(actual)) {
+    if (typeof expected !== 'number' || !['greater_than', 'greater_than_or_equal', 'less_than', 'less_than_or_equal'].includes(operator)) return null
+    const low = compare(actual.min, operator, expected)
+    const high = compare(actual.max, operator, expected)
+    return low === high ? low : null
+  }
+
   switch (operator) {
     case 'equals': return Object.is(actual, expected)
     case 'not_equals': return !Object.is(actual, expected)
@@ -60,42 +104,45 @@ function compare(actual: unknown, operator: string, expected: unknown): boolean 
   }
 }
 
-function combineAll(children: RuleEvaluation[]): RuleEvaluation {
-  const failures = children.filter(child => child.result === false)
-  const unknown = children.filter(child => child.result === null)
+function merged(children: RuleEvaluation[]) {
   return {
-    result: failures.length > 0 ? false : unknown.length > 0 ? null : true,
     reasons: children.flatMap(child => child.reasons),
     missingFacts: [...new Set(children.flatMap(child => child.missingFacts))],
     blockers: [...new Set(children.flatMap(child => child.blockers))],
     usedFacts: [...new Set(children.flatMap(child => child.usedFacts))],
+    bankChecks: [...new Set(children.flatMap(child => child.bankChecks ?? []))],
   }
+}
+
+function combineAll(children: RuleEvaluation[]): RuleEvaluation {
+  const failures = children.filter(child => child.result === false)
+  const unknown = children.filter(child => child.result === null)
+  return { result: failures.length > 0 ? false : unknown.length > 0 ? null : true, ...merged(children) }
 }
 
 function combineAny(children: RuleEvaluation[]): RuleEvaluation {
   const passing = children.filter(child => child.result === true)
   const unknown = children.filter(child => child.result === null)
-  return {
-    result: passing.length > 0 ? true : unknown.length > 0 ? null : false,
-    reasons: children.flatMap(child => child.reasons),
-    missingFacts: [...new Set(children.flatMap(child => child.missingFacts))],
-    blockers: [...new Set(children.flatMap(child => child.blockers))],
-    usedFacts: [...new Set(children.flatMap(child => child.usedFacts))],
-  }
+  return { result: passing.length > 0 ? true : unknown.length > 0 ? null : false, ...merged(children) }
 }
 
-function evaluateNode(node: unknown, facts: RuleFactMap): RuleEvaluation {
+function evaluateNode(node: unknown, facts: RuleFactMap, options: RuleEvaluationOptions): RuleEvaluation {
   if (!isRecord(node)) return { result: null, reasons: [], missingFacts: [], blockers: ['Malformed eligibility rule'], usedFacts: [] }
   if ('all' in node) {
-    return combineAll(Array.isArray(node.all) ? node.all.map(child => evaluateNode(child, facts)) : [{ result: null, reasons: [], missingFacts: [], blockers: ['Malformed all rule'], usedFacts: [] }])
+    return combineAll(Array.isArray(node.all) ? node.all.map(child => evaluateNode(child, facts, options)) : [{ result: null, reasons: [], missingFacts: [], blockers: ['Malformed all rule'], usedFacts: [] }])
   }
   if ('any' in node) {
-    return combineAny(Array.isArray(node.any) ? node.any.map(child => evaluateNode(child, facts)) : [{ result: null, reasons: [], missingFacts: [], blockers: ['Malformed any rule'], usedFacts: [] }])
+    return combineAny(Array.isArray(node.any) ? node.any.map(child => evaluateNode(child, facts, options)) : [{ result: null, reasons: [], missingFacts: [], blockers: ['Malformed any rule'], usedFacts: [] }])
   }
 
   const field = typeof node.field === 'string' ? node.field : ''
   const operator = typeof node.operator === 'string' ? node.operator : ''
   if (!field || !operator) return { result: null, reasons: [], missingFacts: [], blockers: ['Malformed eligibility rule'], usedFacts: [] }
+
+  const reviewerCheck = options.reviewerChecks?.get(field)
+  if (reviewerCheck !== undefined) {
+    return { result: true, reasons: [], missingFacts: [], blockers: [], usedFacts: [], bankChecks: [reviewerCheck] }
+  }
 
   const result = compare(facts[field], operator, node.value)
   if (result === null) return { result: null, reasons: [], missingFacts: [field], blockers: [], usedFacts: [] }
@@ -109,9 +156,9 @@ function evaluateNode(node: unknown, facts: RuleFactMap): RuleEvaluation {
   }
 }
 
-export function evaluateEligibilityRules(rules: unknown, facts: RuleFactMap): RuleEvaluation {
+export function evaluateEligibilityRules(rules: unknown, facts: RuleFactMap, options: RuleEvaluationOptions = {}): RuleEvaluation {
   const root = isRecord(rules) ? rules : {}
-  const evaluation = evaluateNode(root, facts)
+  const evaluation = evaluateNode(root, facts, options)
   if (evaluation.result === null && root.unknown_handling === 'fail_closed') {
     return { ...evaluation, result: false, blockers: [...evaluation.blockers, 'Required eligibility information is missing'] }
   }

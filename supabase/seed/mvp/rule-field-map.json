@@ -1,0 +1,2840 @@
+[
+ {
+  "legacy_field": "enterprise_size",
+  "treatment": "derived",
+  "derive": "enterprise_size_by_turnover"
+ },
+ {
+  "legacy_field": "applicant_role",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: applicant role"
+ },
+ {
+  "legacy_field": "annual_family_income_inr",
+  "treatment": "derived",
+  "derive": "annual_family_income_inr"
+ },
+ {
+  "legacy_field": "entity_type",
+  "treatment": "derived",
+  "derive": "entity_type_legacy"
+ },
+ {
+  "legacy_field": "dpiit_recognized",
+  "treatment": "fact",
+  "fact_key": "dpiit_recognized",
+  "value_map": null
+ },
+ {
+  "legacy_field": "viable_business_plan",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: viable business plan"
+ },
+ {
+  "legacy_field": "matching_share_plan_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: matching share plan"
+ },
+ {
+  "legacy_field": "udyam_registered",
+  "treatment": "fact",
+  "fact_key": "udyam_registered",
+  "value_map": null
+ },
+ {
+  "legacy_field": "business_operates_in_india",
+  "treatment": "derived",
+  "derive": "operates_in_india"
+ },
+ {
+  "legacy_field": "current_smdi_call_confirmed",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current smdi call"
+ },
+ {
+  "legacy_field": "notified_minority_status_verified",
+  "treatment": "derived",
+  "derive": "is_minority"
+ },
+ {
+  "legacy_field": "age_years",
+  "treatment": "fact",
+  "fact_key": "applicant_age_years",
+  "value_map": null
+ },
+ {
+  "legacy_field": "registration_age_years",
+  "treatment": "derived",
+  "derive": "business_age_years"
+ },
+ {
+  "legacy_field": "incorporation_age_years",
+  "treatment": "derived",
+  "derive": "incorporation_age_years"
+ },
+ {
+  "legacy_field": "entity_form_eligible",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: entity form"
+ },
+ {
+  "legacy_field": "indian_citizen_shareholding_percent",
+  "treatment": "bank_check",
+  "check_note_en": "Indian citizens hold the required share of the business"
+ },
+ {
+  "legacy_field": "biotech_or_life_science_fit_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: biotech or life science fit"
+ },
+ {
+  "legacy_field": "participating_r_abi_current_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: participating r abi current route"
+ },
+ {
+  "legacy_field": "current_cohort_window_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current cohort window"
+ },
+ {
+  "legacy_field": "is_registered_indian_manufacturer",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: is registered indian manufacturer"
+ },
+ {
+  "legacy_field": "greenfield_project_confirmed",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: greenfield project"
+ },
+ {
+  "legacy_field": "is_registered_indian_company",
+  "treatment": "derived",
+  "derive": "is_indian_company"
+ },
+ {
+  "legacy_field": "eligible_project_loan_inr",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible project loan (₹)"
+ },
+ {
+  "legacy_field": "enterprise_status",
+  "treatment": "derived",
+  "derive": "enterprise_size_by_turnover"
+ },
+ {
+  "legacy_field": "startup_definition_under_apeda_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: startup definition under apeda"
+ },
+ {
+  "legacy_field": "eligible_birac_company_or_llp",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible birac company or llp"
+ },
+ {
+  "legacy_field": "technology_innovation_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: technology innovation"
+ },
+ {
+  "legacy_field": "applicant_or_entity_form_eligible",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: applicant or entity form"
+ },
+ {
+  "legacy_field": "applicant_age_years",
+  "treatment": "fact",
+  "fact_key": "applicant_age_years",
+  "value_map": null
+ },
+ {
+  "legacy_field": "postal_division_route_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: postal division route"
+ },
+ {
+  "legacy_field": "serving_postal_employee_family_same_division",
+  "treatment": "bank_check",
+  "check_note_en": "No serving postal employee in your family in the same postal division"
+ },
+ {
+  "legacy_field": "applicable_indian_standard_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: applicable indian standard"
+ },
+ {
+  "legacy_field": "registered_not_for_profit_cultural_organization",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: registered not for profit cultural organization"
+ },
+ {
+  "legacy_field": "technology_or_knowledge_based_startup_or_innovator",
+  "treatment": "derived",
+  "derive": "is_tech_startup"
+ },
+ {
+  "legacy_field": "activity",
+  "treatment": "derived",
+  "derive": "activity_nature"
+ },
+ {
+  "legacy_field": "establishment_epfo_covered",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: establishment epfo covered"
+ },
+ {
+  "legacy_field": "turnover_inr",
+  "treatment": "derived",
+  "derive": "annual_turnover_inr"
+ },
+ {
+  "legacy_field": "employee_compliance_assessed",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: employee compliance"
+ },
+ {
+  "legacy_field": "startup_exists",
+  "treatment": "derived",
+  "derive": "is_existing_business"
+ },
+ {
+  "legacy_field": "room_count",
+  "treatment": "fact",
+  "fact_key": "rooms_count",
+  "value_map": null
+ },
+ {
+  "legacy_field": "sc_ownership_percent",
+  "treatment": "derived",
+  "derive": "sc_ownership_percent"
+ },
+ {
+  "legacy_field": "sc_management_control_months",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: sc management control months"
+ },
+ {
+  "legacy_field": "member_lending_institution_route",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: member lending institution route"
+ },
+ {
+  "legacy_field": "facility_type_covered",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: facility type covered"
+ },
+ {
+  "legacy_field": "tribal_group_or_vdvk_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: tribal group or vdvk"
+ },
+ {
+  "legacy_field": "activity_in_tribal_value_chain",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: activity in tribal value chain"
+ },
+ {
+  "legacy_field": "state_or_trifed_route_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: state or trifed route"
+ },
+ {
+  "legacy_field": "biotech_medtech_or_life_science_fit_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: biotech medtech or life science fit"
+ },
+ {
+  "legacy_field": "post_poc_or_pilot_stage_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: post poc or pilot stage"
+ },
+ {
+  "legacy_field": "selected_leap_partner_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: selected leap partner route"
+ },
+ {
+  "legacy_field": "seed_nonconcurrency_status_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: seed nonconcurrency status"
+ },
+ {
+  "legacy_field": "eligible_academic_primary_applicant_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible academic primary applicant"
+ },
+ {
+  "legacy_field": "current_pace_call_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current pace call"
+ },
+ {
+  "legacy_field": "air_or_crs_component_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: air or crs component"
+ },
+ {
+  "legacy_field": "proof_of_principle_or_poc_evidence_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: proof of principle or poc evidence"
+ },
+ {
+  "legacy_field": "indian_company_manufacturing_qualifying_drone_or_component",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: indian company manufacturing qualifying drone or component"
+ },
+ {
+  "legacy_field": "turnover_threshold_met_for_applicant_category",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: turnover threshold met for applicant category"
+ },
+ {
+  "legacy_field": "eligible_value_addition_percent",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible value addition percent"
+ },
+ {
+  "legacy_field": "claim_period_and_scheme_status_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: claim period and scheme status"
+ },
+ {
+  "legacy_field": "indian_student_or_researcher_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: indian student or researcher route"
+ },
+ {
+  "legacy_field": "current_eyuva_call_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current eyuva call"
+ },
+ {
+  "legacy_field": "eligible_eyuva_component_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible eyuva component"
+ },
+ {
+  "legacy_field": "institution_mentor_or_ecell_support_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: institution mentor or ecell support"
+ },
+ {
+  "legacy_field": "post_poc_stage_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: post poc stage"
+ },
+ {
+  "legacy_field": "selected_seed_partner_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: selected seed partner route"
+ },
+ {
+  "legacy_field": "indian_student_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: indian student route"
+ },
+ {
+  "legacy_field": "current_sitare_call_or_biis_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current sitare call or biis route"
+ },
+ {
+  "legacy_field": "biotechnology_or_applicable_sitare_scope",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: biotechnology or applicable sitare scope"
+ },
+ {
+  "legacy_field": "institution_id_and_required_noc_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: institution id and required noc"
+ },
+ {
+  "legacy_field": "aditi_call_currently_open",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: aditi call currently open"
+ },
+ {
+  "legacy_field": "critical_defence_technology_fit_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: critical defence technology fit"
+ },
+ {
+  "legacy_field": "eligible_applicant_type_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible applicant type"
+ },
+ {
+  "legacy_field": "matching_contribution_plan_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: matching contribution plan"
+ },
+ {
+  "legacy_field": "tdf_project_currently_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: tdf project currently"
+ },
+ {
+  "legacy_field": "indian_entity_and_control_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: indian entity and control"
+ },
+ {
+  "legacy_field": "defence_or_dual_use_project_fit_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: defence or dual use project fit"
+ },
+ {
+  "legacy_field": "startup_or_msme_recognition_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: startup or msme recognition"
+ },
+ {
+  "legacy_field": "pharmaceutical_manufacturing_unit_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: pharmaceutical manufacturing unit"
+ },
+ {
+  "legacy_field": "preceding_three_year_average_turnover_inr",
+  "treatment": "derived",
+  "derive": "annual_turnover_inr"
+ },
+ {
+  "legacy_field": "eligible_investment_after_2024_01_01_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible investment after 2024 01 01"
+ },
+ {
+  "legacy_field": "schedule_m_or_who_gmp_upgrade_scope_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: schedule m or who gmp upgrade scope"
+ },
+ {
+  "legacy_field": "current_rptuas_intake_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current rptuas intake"
+ },
+ {
+  "legacy_field": "innovative_agriculture_or_allied_idea_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: innovative agriculture or allied idea"
+ },
+ {
+  "legacy_field": "applicant_and_startup_conditions_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: applicant and startup conditions"
+ },
+ {
+  "legacy_field": "eligible_bulk_drug_product_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible bulk drug product"
+ },
+ {
+  "legacy_field": "target_segment_investment_threshold_met",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: target segment investment threshold"
+ },
+ {
+  "legacy_field": "current_application_or_claim_route_confirmed",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current application or claim route"
+ },
+ {
+  "legacy_field": "eligible_medical_device_target_segment_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible medical device target segment"
+ },
+ {
+  "legacy_field": "current_pma_or_claim_route_confirmed",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current pma or claim route"
+ },
+ {
+  "legacy_field": "venture_commercially_viable",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: venture commercially viable"
+ },
+ {
+  "legacy_field": "sca_or_banking_partner_route",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: sca or banking partner route"
+ },
+ {
+  "legacy_field": "scheduled_caste_status_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: scheduled caste status"
+ },
+ {
+  "legacy_field": "income_generating_activity_viable",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: income generating activity viable"
+ },
+ {
+  "legacy_field": "authorized_channel_partner_route",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: authorized channel partner route"
+ },
+ {
+  "legacy_field": "handicraft_sector_activity",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: handicraft sector activity"
+ },
+ {
+  "legacy_field": "eligible_nhdp_mss_organization_or_group",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible nhdp mss organization or group"
+ },
+ {
+  "legacy_field": "current_mss_notice_or_event_route_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current mss notice or event route"
+ },
+ {
+  "legacy_field": "mahir_research_or_disruptive_energy_fit_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: mahir research or disruptive energy fit"
+ },
+ {
+  "legacy_field": "substantial_research_and_innovation_content_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: substantial research and innovation content"
+ },
+ {
+  "legacy_field": "current_mahir_call_or_rfp_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current mahir call or rfp"
+ },
+ {
+  "legacy_field": "technical_and_financial_proposal_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: technical and financial proposal"
+ },
+ {
+  "legacy_field": "current_c2s_call_or_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current c2s call or route"
+ },
+ {
+  "legacy_field": "applicant_fits_current_c2s_category",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: applicant fits current c2s category"
+ },
+ {
+  "legacy_field": "project_is_relevant_to_semiconductor_design_or_c2s_scope",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: project is relevant to semiconductor design or c2s scope"
+ },
+ {
+  "legacy_field": "required_infrastructure_and_team_evidence_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: required infrastructure and team evidence"
+ },
+ {
+  "legacy_field": "kgvy_component_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: kgvy component"
+ },
+ {
+  "legacy_field": "applicant_or_institution_type_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: applicant or institution type"
+ },
+ {
+  "legacy_field": "activity_category_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: activity category"
+ },
+ {
+  "legacy_field": "current_component_call_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current component call"
+ },
+ {
+  "legacy_field": "technical_textiles_fit_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: technical textiles fit"
+ },
+ {
+  "legacy_field": "current_great_call_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current great call"
+ },
+ {
+  "legacy_field": "applicant_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: applicant route"
+ },
+ {
+  "legacy_field": "incubator_or_functional_rd_capability_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: incubator or functional rd capability"
+ },
+ {
+  "legacy_field": "eligible_bionest_host",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible bionest host"
+ },
+ {
+  "legacy_field": "bionest_category_selected",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: bionest category"
+ },
+ {
+  "legacy_field": "existing_pli_textiles_participant",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: existing pli textiles participant"
+ },
+ {
+  "legacy_field": "additional_product_or_fresh_investment_route_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: additional product or fresh investment route"
+ },
+ {
+  "legacy_field": "current_notified_hsn_code_match",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current notified hsn code match"
+ },
+ {
+  "legacy_field": "fresh_investment_threshold_met",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: fresh investment threshold"
+ },
+ {
+  "legacy_field": "udyam_id_operational",
+  "treatment": "fact",
+  "fact_key": "udyam_registered",
+  "value_map": null
+ },
+ {
+  "legacy_field": "adeetie_cluster_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: adeetie cluster"
+ },
+ {
+  "legacy_field": "adeetie_sector_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: adeetie sector"
+ },
+ {
+  "legacy_field": "debt_funding_percent",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: debt funding percent"
+ },
+ {
+  "legacy_field": "project_energy_savings_percent",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: project energy savings percent"
+ },
+ {
+  "legacy_field": "bank_or_financial_institution_loan_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: bank or financial institution loan"
+ },
+ {
+  "legacy_field": "eligible_shg_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible shg"
+ },
+ {
+  "legacy_field": "sca_microfinance_route_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: sca microfinance route"
+ },
+ {
+  "legacy_field": "direct_scheme_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: direct scheme route"
+ },
+ {
+  "legacy_field": "agriculture_or_rural_focus_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: agriculture or rural focus"
+ },
+ {
+  "legacy_field": "early_stage_status_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: early stage status"
+ },
+ {
+  "legacy_field": "fof_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: fof route"
+ },
+ {
+  "legacy_field": "sebi_registered_category_i_or_ii_aif",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: sebi registered category i or ii aif"
+ },
+ {
+  "legacy_field": "aif_incorporated_in_india",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: aif incorporated in india"
+ },
+ {
+  "legacy_field": "indian_company_verified",
+  "treatment": "derived",
+  "derive": "is_indian_company"
+ },
+ {
+  "legacy_field": "space_sector_activity_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: space sector activity"
+ },
+ {
+  "legacy_field": "unlisted_status_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: unlisted status"
+ },
+ {
+  "legacy_field": "technology_readiness_level",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: technology readiness level"
+ },
+ {
+  "legacy_field": "current_avcf_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current avcf route"
+ },
+ {
+  "legacy_field": "traditional_trade",
+  "treatment": "fact",
+  "fact_key": "artisan_trade",
+  "value_map": {
+   "other": null
+  }
+ },
+ {
+  "legacy_field": "self_employed_artisan",
+  "treatment": "derived",
+  "derive": "is_traditional_artisan"
+ },
+ {
+  "legacy_field": "is_eligible_automotive_manufacturer",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: is eligible automotive manufacturer"
+ },
+ {
+  "legacy_field": "aat_product_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: aat product"
+ },
+ {
+  "legacy_field": "investment_sales_localization_evidence_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: investment sales localization evidence"
+ },
+ {
+  "legacy_field": "sector",
+  "treatment": "derived",
+  "derive": "activity_sector"
+ },
+ {
+  "legacy_field": "is_existing_unit_in_operation",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: is existing unit in operation"
+ },
+ {
+  "legacy_field": "is_unincorporated",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: is unincorporated"
+ },
+ {
+  "legacy_field": "employees",
+  "treatment": "fact",
+  "fact_key": "workers_count",
+  "value_map": null
+ },
+ {
+  "legacy_field": "has_udyam",
+  "treatment": "fact",
+  "fact_key": "udyam_registered",
+  "value_map": null
+ },
+ {
+  "legacy_field": "delayed_payment_claim_present",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: delayed payment claim present"
+ },
+ {
+  "legacy_field": "high_value_agri_food_startup_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: high value agri food startup"
+ },
+ {
+  "legacy_field": "mvp_or_commercialized_product_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: mvp or commercialized product"
+ },
+ {
+  "legacy_field": "export_enabling_technology_startup_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: export enabling technology startup"
+ },
+ {
+  "legacy_field": "mvp_or_commercialized_solution_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: mvp or commercialized solution"
+ },
+ {
+  "legacy_field": "sps_solution_provider_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: sps solution provider"
+ },
+ {
+  "legacy_field": "sps_idea_research_mvp_or_validated_solution_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: sps idea research mvp or validated solution"
+ },
+ {
+  "legacy_field": "biotechnology_rd_project",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: biotechnology rd project"
+ },
+ {
+  "legacy_field": "sbiri_applicant_track_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: sbiri applicant track"
+ },
+ {
+  "legacy_field": "milestone_and_contribution_plan_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: milestone and contribution plan"
+ },
+ {
+  "legacy_field": "is_new_surface_coal_lignite_gasification_project",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: is new surface coal lignite gasification project"
+ },
+ {
+  "legacy_field": "clean_syngas_capacity_mtpa",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: clean syngas capacity mtpa"
+ },
+ {
+  "legacy_field": "applicant_net_worth_percent_of_project_cost",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: applicant net worth percent of project cost"
+ },
+ {
+  "legacy_field": "eligible_product_and_rfp_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible product and rfp route"
+ },
+ {
+  "legacy_field": "current_application_window_open",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current application window open"
+ },
+ {
+  "legacy_field": "eligible_ties_implementing_agency",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible ties implementing agency"
+ },
+ {
+  "legacy_field": "overwhelming_export_linkage_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: overwhelming export linkage"
+ },
+ {
+  "legacy_field": "dpr_finance_land_and_statutory_documents_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: dpr finance land and statutory documents"
+ },
+ {
+  "legacy_field": "eligible_organiser_or_participant_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible organiser or participant route"
+ },
+ {
+  "legacy_field": "current_ddp_event_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current ddp event route"
+ },
+ {
+  "legacy_field": "event_or_defence_market_access_fit_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: event or defence market access fit"
+ },
+ {
+  "legacy_field": "covered_plastic_packaging_role_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: covered plastic packaging role"
+ },
+ {
+  "legacy_field": "applicable_state_or_ut_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: applicable state or ut"
+ },
+ {
+  "legacy_field": "cpcb_epr_portal_route_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: cpcb epr portal route"
+ },
+ {
+  "legacy_field": "eligible_export_promotion_agency",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible export promotion agency"
+ },
+ {
+  "legacy_field": "mai_project_proposal_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: mai project proposal"
+ },
+ {
+  "legacy_field": "current_mai_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current mai route"
+ },
+ {
+  "legacy_field": "innovation_readiness_level",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: innovation readiness level"
+ },
+ {
+  "legacy_field": "supported_tide_centre_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: supported tide centre"
+ },
+ {
+  "legacy_field": "institutional_eligibility_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: institutional eligibility"
+ },
+ {
+  "legacy_field": "appointed_nodal_agency_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: appointed nodal agency"
+ },
+ {
+  "legacy_field": "ev_pcs_feasibility_study_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: ev pcs feasibility study"
+ },
+ {
+  "legacy_field": "public_access_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: public access"
+ },
+ {
+  "legacy_field": "mhi_proposal_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: mhi proposal route"
+ },
+ {
+  "legacy_field": "eligible_foreign_or_official_coproduction_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible foreign or official coproduction"
+ },
+ {
+  "legacy_field": "india_qualifying_production_expenditure_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: india qualifying production expenditure"
+ },
+ {
+  "legacy_field": "current_ich_guideline_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current ich guideline"
+ },
+ {
+  "legacy_field": "required_permission_documents_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: required permission documents"
+ },
+ {
+  "legacy_field": "current_eligible_city_or_tender_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current eligible city or tender route"
+ },
+ {
+  "legacy_field": "business_role_matches_live_tender",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: business role matches live tender"
+ },
+ {
+  "legacy_field": "technical_and_financial_qualification_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: technical and financial qualification"
+ },
+ {
+  "legacy_field": "depot_power_and_operations_evidence_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: depot power and operations evidence"
+ },
+ {
+  "legacy_field": "current_submission_deadline_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current submission deadline"
+ },
+ {
+  "legacy_field": "eligible_apprenticeship_establishment",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible apprenticeship establishment"
+ },
+ {
+  "legacy_field": "approved_trade_or_apprenticeship_route",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: approved trade or apprenticeship route"
+ },
+ {
+  "legacy_field": "apprenticeship_contract_and_stipend_plan_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: apprenticeship contract and stipend plan"
+ },
+ {
+  "legacy_field": "current_skill_india_route_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current skill india route"
+ },
+ {
+  "legacy_field": "beneficiary_or_provider_route_eligible",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: beneficiary or provider route"
+ },
+ {
+  "legacy_field": "course_job_role_or_project_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: course job role or project"
+ },
+ {
+  "legacy_field": "indian_citizenship_verified",
+  "treatment": "bank_check",
+  "check_note_en": "Indian citizenship"
+ },
+ {
+  "legacy_field": "education_or_experience_criteria_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: education or experience criteria"
+ },
+ {
+  "legacy_field": "technology_business_idea_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: technology business idea"
+ },
+ {
+  "legacy_field": "selected_nidhi_eir_tbi_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: selected nidhi eir tbi route"
+ },
+ {
+  "legacy_field": "full_time_and_no_concurrent_fellowship_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: full time and no concurrent fellowship"
+ },
+ {
+  "legacy_field": "indian_company_and_ip_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: indian company and ip"
+ },
+ {
+  "legacy_field": "quantum_technology_fit_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: quantum technology fit"
+ },
+ {
+  "legacy_field": "current_nqm_hub_call_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current nqm hub call"
+ },
+ {
+  "legacy_field": "application_submitted_to_only_one_hub",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: application submitted to only one hub"
+ },
+ {
+  "legacy_field": "country",
+  "treatment": "derived",
+  "derive": "country_india"
+ },
+ {
+  "legacy_field": "pharmaceutical_target_product_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: pharmaceutical target product"
+ },
+ {
+  "legacy_field": "scheme_evidence_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: scheme evidence"
+ },
+ {
+  "legacy_field": "eligible_prip_priority_area_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible prip priority area"
+ },
+ {
+  "legacy_field": "trl_stage_and_route_confirmed",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: trl stage and route"
+ },
+ {
+  "legacy_field": "official_prip_portal_application_route_confirmed",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: official prip portal application route"
+ },
+ {
+  "legacy_field": "cofunding_or_financial_closure_plan_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: cofunding or financial closure plan"
+ },
+ {
+  "legacy_field": "location_type",
+  "treatment": "fact",
+  "fact_key": "area_type",
+  "value_map": null
+ },
+ {
+  "legacy_field": "svep_block_covered",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: svep block covered"
+ },
+ {
+  "legacy_field": "enterprise_profile_present",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: enterprise profile present"
+ },
+ {
+  "legacy_field": "eligible_tdb_legal_form",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible tdb legal form"
+ },
+ {
+  "legacy_field": "technology_development_or_commercialisation_project",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: technology development or commercialisation project"
+ },
+ {
+  "legacy_field": "tdb_proposal_evidence_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: tdb proposal evidence"
+ },
+ {
+  "legacy_field": "remaining_project_funding_evidence_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: remaining project funding evidence"
+ },
+ {
+  "legacy_field": "telecom_target_segment_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: telecom target segment"
+ },
+ {
+  "legacy_field": "investment_sales_evidence_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: investment sales evidence"
+ },
+ {
+  "legacy_field": "export_transaction_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: export transaction"
+ },
+ {
+  "legacy_field": "current_rodtep_tariff_line_covered",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current rodtep tariff line covered"
+ },
+ {
+  "legacy_field": "same_duty_or_tax_not_already_remitted",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: same duty or tax not already remitted"
+ },
+ {
+  "legacy_field": "early_or_growth_stage_fit_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: early or growth stage fit"
+ },
+ {
+  "legacy_field": "current_ace_partner_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current ace partner route"
+ },
+ {
+  "legacy_field": "aif_diligence_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: aif diligence"
+ },
+ {
+  "legacy_field": "business_or_founder_identity_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: business or founder identity"
+ },
+ {
+  "legacy_field": "iec_active_and_dgft_profile_linked",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: iec active and dgft profile linked"
+ },
+ {
+  "legacy_field": "applicant_is_covered_exporter_or_service_provider",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: applicant is covered exporter or service provider"
+ },
+ {
+  "legacy_field": "qualifying_capital_goods_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: qualifying capital goods"
+ },
+ {
+  "legacy_field": "export_obligation_plan_feasible",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: export obligation plan"
+ },
+ {
+  "legacy_field": "current_ftp_hbp_and_customs_treatment_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current ftp hbp and customs treatment"
+ },
+ {
+  "legacy_field": "applicant_proposes_authorized_operation_in_notified_sez",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: applicant proposes authorized operation in notified sez"
+ },
+ {
+  "legacy_field": "entity_and_iec_pan_details_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: entity and iec pan details"
+ },
+ {
+  "legacy_field": "positive_nfe_plan_feasible",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: positive nfe plan"
+ },
+ {
+  "legacy_field": "current_sez_rules_and_igst_customs_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current sez rules and igst customs route"
+ },
+ {
+  "legacy_field": "dpiit_startup_recognition_verified",
+  "treatment": "fact",
+  "fact_key": "dpiit_recognized",
+  "value_map": null
+ },
+ {
+  "legacy_field": "startup_age_years",
+  "treatment": "derived",
+  "derive": "incorporation_age_years"
+ },
+ {
+  "legacy_field": "turnover_since_incorporation_inr",
+  "treatment": "derived",
+  "derive": "annual_turnover_inr"
+ },
+ {
+  "legacy_field": "quality_and_technical_requirements_met_or_reviewed",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: quality and technical requirements met or reviewed"
+ },
+ {
+  "legacy_field": "current_tender_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current tender route"
+ },
+ {
+  "legacy_field": "premises_and_location_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: premises and location"
+ },
+ {
+  "legacy_field": "security_deposit_inr",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: security deposit (₹)"
+ },
+ {
+  "legacy_field": "premises_and_stock_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: premises and stock route"
+ },
+ {
+  "legacy_field": "udyam_registration_valid_as_of",
+  "treatment": "bank_check",
+  "check_note_en": "Your Udyam registration was valid on the scheme cut-off date"
+ },
+ {
+  "legacy_field": "pms_event_application_open",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: pms event application open"
+ },
+ {
+  "legacy_field": "eligible_artisan_activity_verified",
+  "treatment": "derived",
+  "derive": "has_artisan_activity"
+ },
+ {
+  "legacy_field": "sca_or_partner_route_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: sca or partner route"
+ },
+ {
+  "legacy_field": "st_founder_status_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: st founder status"
+ },
+ {
+  "legacy_field": "startup_or_innovative_venture_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: startup or innovative venture"
+ },
+ {
+  "legacy_field": "ifci_vcf_application_route_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: ifci vcf application route"
+ },
+ {
+  "legacy_field": "scheduled_tribe_status_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: scheduled tribe status"
+ },
+ {
+  "legacy_field": "viable_income_generating_project_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: viable income generating project"
+ },
+ {
+  "legacy_field": "nstfdc_sca_route_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: nstfdc sca route"
+ },
+ {
+  "legacy_field": "agriculture_infrastructure_project",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: agriculture infrastructure project"
+ },
+ {
+  "legacy_field": "eligible_lending_institution_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible lending institution"
+ },
+ {
+  "legacy_field": "project_category_in_aif_guidelines",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: project category in aif guidelines"
+ },
+ {
+  "legacy_field": "pm_kusum_component_selected",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: pm kusum component"
+ },
+ {
+  "legacy_field": "state_implementing_route_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: state implementing route"
+ },
+ {
+  "legacy_field": "current_pm_kusum_period_or_extension_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current pm kusum period or extension"
+ },
+ {
+  "legacy_field": "nlm_component_eligible",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: nlm component"
+ },
+ {
+  "legacy_field": "project_sector",
+  "treatment": "derived",
+  "derive": "nlm_project_sector"
+ },
+ {
+  "legacy_field": "project_appraisal_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: project appraisal"
+ },
+ {
+  "legacy_field": "ahidf_activity_eligible",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: ahidf activity"
+ },
+ {
+  "legacy_field": "viable_project_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: viable project"
+ },
+ {
+  "legacy_field": "lender_appraisal_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: lender appraisal"
+ },
+ {
+  "legacy_field": "is_eligible_healthcare_organization_or_investor",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: is eligible healthcare organization or investor"
+ },
+ {
+  "legacy_field": "ayush_infrastructure_project_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: ayush infrastructure project"
+ },
+ {
+  "legacy_field": "project_proposal_evidence_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: project proposal evidence"
+ },
+ {
+  "legacy_field": "eligible_healthcare_cooperative",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible healthcare cooperative"
+ },
+ {
+  "legacy_field": "healthcare_or_health_education_bye_law_provision",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: healthcare or health education bye law provision"
+ },
+ {
+  "legacy_field": "eligible_ayushman_sahakar_activity",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible ayushman sahakar activity"
+ },
+ {
+  "legacy_field": "required_statutory_permissions_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: required statutory permissions"
+ },
+ {
+  "legacy_field": "pms_event_or_component_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: pms event or component"
+ },
+ {
+  "legacy_field": "ic_component_selected",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: ic component"
+ },
+ {
+  "legacy_field": "ic_call_open",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: ic call open"
+ },
+ {
+  "legacy_field": "innovative_component_selected",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: innovative component"
+ },
+ {
+  "legacy_field": "current_component_call_or_route_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current component call or route"
+ },
+ {
+  "legacy_field": "traditional_industry_cluster_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: traditional industry cluster"
+ },
+ {
+  "legacy_field": "sfurti_proposal_route_open",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: sfurti proposal route open"
+ },
+ {
+  "legacy_field": "sc_st_ownership_percent",
+  "treatment": "derived",
+  "derive": "sc_st_ownership_percent"
+ },
+ {
+  "legacy_field": "nssh_current_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: nssh current route"
+ },
+ {
+  "legacy_field": "sc_st_owned",
+  "treatment": "derived",
+  "derive": "is_sc_st"
+ },
+ {
+  "legacy_field": "new_plant_machinery_or_equipment",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: new plant machinery or equipment"
+ },
+ {
+  "legacy_field": "term_loan_from_prime_lending_institution",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: term loan from prime lending institution"
+ },
+ {
+  "legacy_field": "eligible_host_institute",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible host institute"
+ },
+ {
+  "legacy_field": "aspire_current_route_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: aspire current route"
+ },
+ {
+  "legacy_field": "is_startup_or_msme",
+  "treatment": "derived",
+  "derive": "is_startup_or_msme"
+ },
+ {
+  "legacy_field": "digital_communication_project_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: digital communication project"
+ },
+ {
+  "legacy_field": "technical_application_evidence_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: technical application evidence"
+ },
+ {
+  "legacy_field": "food_business_activity",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: food business activity"
+ },
+ {
+  "legacy_field": "food_business_operates_in_india",
+  "treatment": "derived",
+  "derive": "operates_in_india"
+ },
+ {
+  "legacy_field": "transformational_biotech_project",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: transformational biotech project"
+ },
+ {
+  "legacy_field": "target_end_trl_at_least_7",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: target end trl at least 7"
+ },
+ {
+  "legacy_field": "bipp_cost_sharing_and_regulatory_plan_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: bipp cost sharing and regulatory plan"
+ },
+ {
+  "legacy_field": "foreign_factory_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: foreign factory"
+ },
+ {
+  "legacy_field": "authorized_indian_representative_confirmed",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: authorized indian representative"
+ },
+ {
+  "legacy_field": "required_factory_testing_capability_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: required factory testing capability"
+ },
+ {
+  "legacy_field": "jeweller_identity_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: jeweller identity"
+ },
+ {
+  "legacy_field": "articles_and_hallmarking_scope_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: articles and hallmarking scope"
+ },
+ {
+  "legacy_field": "current_bis_registration_route_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current bis registration route"
+ },
+ {
+  "legacy_field": "electronics_or_it_product_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: electronics or it product"
+ },
+ {
+  "legacy_field": "current_meity_notification_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current meity notification"
+ },
+ {
+  "legacy_field": "recognized_lab_evidence_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: recognized lab evidence"
+ },
+ {
+  "legacy_field": "is_registered_sector_association",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: is registered sector association"
+ },
+ {
+  "legacy_field": "chemical_sector_development_activity_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: chemical sector development activity"
+ },
+ {
+  "legacy_field": "association_proposal_evidence_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: association proposal evidence"
+ },
+ {
+  "legacy_field": "institutional_applicant_eligible",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: institutional applicant"
+ },
+ {
+  "legacy_field": "allied_cultural_activity_history_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: allied cultural activity history"
+ },
+ {
+  "legacy_field": "district_authority_recommendation_obtained",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: district authority recommendation obtained"
+ },
+ {
+  "legacy_field": "current_notification_and_cutoff_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current notification and cutoff"
+ },
+ {
+  "legacy_field": "eligible_incubator_host",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible incubator host"
+ },
+ {
+  "legacy_field": "incubator_proposal_route_open",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: incubator proposal route open"
+ },
+ {
+  "legacy_field": "eligible_cultural_organization_or_performing_arts_institution",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible cultural organization or performing arts institution"
+ },
+ {
+  "legacy_field": "performing_arts_cultural_profile_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: performing arts cultural profile"
+ },
+ {
+  "legacy_field": "project_and_title_documents_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: project and title documents"
+ },
+ {
+  "legacy_field": "current_cutoff_and_wzcc_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current cutoff and wzcc route"
+ },
+ {
+  "legacy_field": "matching_resources_percent",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: matching resources percent"
+ },
+ {
+  "legacy_field": "recommendation_obtained",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: recommendation obtained"
+ },
+ {
+  "legacy_field": "complete_project_dossier",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: complete project dossier"
+ },
+ {
+  "legacy_field": "national_presence_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: national presence"
+ },
+ {
+  "legacy_field": "cultural_spend_inr_last_three_of_five_years",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: cultural spend inr last three of five years"
+ },
+ {
+  "legacy_field": "cultural_programme_capacity_per_year",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: cultural programme capacity per year"
+ },
+ {
+  "legacy_field": "current_cultural_call_open",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current cultural call open"
+ },
+ {
+  "legacy_field": "eligible_tcc_institutional_applicant",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible tcc institutional applicant"
+ },
+ {
+  "legacy_field": "tagore_cultural_complex_project_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: tagore cultural complex project"
+ },
+ {
+  "legacy_field": "land_and_civic_plan_readiness_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: land and civic plan readiness"
+ },
+ {
+  "legacy_field": "dpr_and_feasibility_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: dpr and feasibility"
+ },
+ {
+  "legacy_field": "operation_maintenance_plan_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: operation maintenance plan"
+ },
+ {
+  "legacy_field": "current_submission_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current submission route"
+ },
+ {
+  "legacy_field": "eligible_dairy_cooperative",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible dairy cooperative"
+ },
+ {
+  "legacy_field": "dairy_or_supporting_activity",
+  "treatment": "derived",
+  "derive": "has_dairy_activity"
+ },
+ {
+  "legacy_field": "suitable_cooperative_bye_laws",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: suitable cooperative bye laws"
+ },
+ {
+  "legacy_field": "required_dairy_statutory_permissions_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: required dairy statutory permissions"
+ },
+ {
+  "legacy_field": "applicant_type",
+  "treatment": "derived",
+  "derive": "applicant_type"
+ },
+ {
+  "legacy_field": "challenge_fit_confirmed",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: challenge fit"
+ },
+ {
+  "legacy_field": "proposal_submitted_before_deadline",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: proposal submitted before deadline"
+ },
+ {
+  "legacy_field": "domestic_semiconductor_design_entity_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: domestic semiconductor design entity"
+ },
+ {
+  "legacy_field": "eligible_dli_component_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible dli component"
+ },
+ {
+  "legacy_field": "dli_dpr_and_milestone_evidence_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: dli dpr and milestone evidence"
+ },
+ {
+  "legacy_field": "is_individual_startup_msme_or_eligible_rd_institution",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: is individual startup msme or eligible rd institution"
+ },
+ {
+  "legacy_field": "qualifying_technology_innovation_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: qualifying technology innovation"
+ },
+ {
+  "legacy_field": "prism_track_evidence_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: prism track evidence"
+ },
+ {
+  "legacy_field": "listed_nidhi_seed_supported_tbi_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: listed nidhi seed supported tbi route"
+ },
+ {
+  "legacy_field": "current_tbi_call_open_or_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current tbi call open or route"
+ },
+ {
+  "legacy_field": "coe_or_supported_incubator_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: coe or supported incubator route"
+ },
+ {
+  "legacy_field": "current_coe_call_open_or_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current coe call open or route"
+ },
+ {
+  "legacy_field": "covered_electrical_electronic_role_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: covered electrical electronic role"
+ },
+ {
+  "legacy_field": "schedule_i_product_coverage_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: schedule i product coverage"
+ },
+ {
+  "legacy_field": "cpcb_e_waste_route_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: cpcb e waste route"
+ },
+ {
+  "legacy_field": "project_requires_environmental_clearance",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: project requires environmental clearance"
+ },
+ {
+  "legacy_field": "project_site_and_category_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: project site and category"
+ },
+ {
+  "legacy_field": "parivesh_application_route_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: parivesh application route"
+ },
+ {
+  "legacy_field": "export_intent_or_existing_export_activity",
+  "treatment": "fact",
+  "fact_key": "exports",
+  "value_map": null
+ },
+ {
+  "legacy_field": "iec_or_applicable_export_registration_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: iec or applicable export registration"
+ },
+ {
+  "legacy_field": "current_epm_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current epm route"
+ },
+ {
+  "legacy_field": "is_new_project",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: is new project"
+ },
+ {
+  "legacy_field": "eligible_lending_institution",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible lending institution"
+ },
+ {
+  "legacy_field": "citizenship",
+  "treatment": "bank_check",
+  "check_note_en": "Indian citizenship"
+ },
+ {
+  "legacy_field": "business_plan_present",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: business plan present"
+ },
+ {
+  "legacy_field": "founder_category",
+  "treatment": "derived",
+  "derive": "founder_category_legacy"
+ },
+ {
+  "legacy_field": "is_greenfield",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: is greenfield"
+ },
+ {
+  "legacy_field": "bank_default",
+  "treatment": "bank_check",
+  "check_note_en": "No loan default on your record (the bank checks your credit history)"
+ },
+ {
+  "legacy_field": "enterprise_activity",
+  "treatment": "derived",
+  "derive": "activity_nature"
+ },
+ {
+  "legacy_field": "fisheries_value_chain_activity",
+  "treatment": "derived",
+  "derive": "has_fisheries_activity"
+ },
+ {
+  "legacy_field": "nfdp_registration_completed",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: nfdp registration"
+ },
+ {
+  "legacy_field": "pm_mkssy_component_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: pm mkssy component"
+ },
+ {
+  "legacy_field": "government_sales_intent",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: government sales intent"
+ },
+ {
+  "legacy_field": "gem_seller_route_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: gem seller route"
+ },
+ {
+  "legacy_field": "innovative_product_or_service_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: innovative product or service"
+ },
+ {
+  "legacy_field": "relevant_handicraft_craft_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: relevant handicraft craft"
+ },
+ {
+  "legacy_field": "artisan_or_handicraft_participant",
+  "treatment": "derived",
+  "derive": "has_artisan_activity"
+ },
+ {
+  "legacy_field": "current_nhdp_skill_programme_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current nhdp skill programme"
+ },
+ {
+  "legacy_field": "intends_import_or_export",
+  "treatment": "fact",
+  "fact_key": "exports",
+  "value_map": null
+ },
+ {
+  "legacy_field": "intends_company_incorporation",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: intends company incorporation"
+ },
+ {
+  "legacy_field": "promoter_and_director_information_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: promoter and director information"
+ },
+ {
+  "legacy_field": "eligible_aic_host",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible aic host"
+ },
+ {
+  "legacy_field": "aic_call_open",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: aic call open"
+ },
+ {
+  "legacy_field": "eligible_tide_host",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible tide host"
+ },
+ {
+  "legacy_field": "tide_category_selected",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: tide category"
+ },
+ {
+  "legacy_field": "tide_call_open",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: tide call open"
+ },
+ {
+  "legacy_field": "technology_product_startup",
+  "treatment": "derived",
+  "derive": "is_tech_startup"
+ },
+ {
+  "legacy_field": "samridh_accelerator_selection",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: samridh accelerator selection"
+ },
+ {
+  "legacy_field": "prototype_or_poc_need",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: prototype or poc need"
+ },
+ {
+  "legacy_field": "current_prayas_centre_route_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current prayas centre route"
+ },
+ {
+  "legacy_field": "biotechnology_innovation",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: biotechnology innovation"
+ },
+ {
+  "legacy_field": "proof_of_concept_stage",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: proof of concept stage"
+ },
+ {
+  "legacy_field": "current_big_call_open",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current big call open"
+ },
+ {
+  "legacy_field": "prior_big_award",
+  "treatment": "bank_check",
+  "check_note_en": "No earlier BIRAC BIG award"
+ },
+ {
+  "legacy_field": "eligible_startup_or_micro_small_enterprise",
+  "treatment": "derived",
+  "derive": "is_startup_or_msme"
+ },
+ {
+  "legacy_field": "space_technology_is_core_to_product_or_service",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: space technology is core to product or service"
+ },
+ {
+  "legacy_field": "indian_shareholding_percent",
+  "treatment": "bank_check",
+  "check_note_en": "Indian shareholders hold the required share of the business"
+ },
+ {
+  "legacy_field": "promoter_and_angel_investment_matches_requested_grant",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: promoter and angel investment matches requested grant"
+ },
+ {
+  "legacy_field": "prior_government_support_within_limit",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: prior government support within limit"
+ },
+ {
+  "legacy_field": "current_inspace_call_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current inspace call"
+ },
+ {
+  "legacy_field": "startup_profile_complete",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: startup profile"
+ },
+ {
+  "legacy_field": "investor_data_sharing_consent",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: investor data sharing consent"
+ },
+ {
+  "legacy_field": "manufactures_packs_or_imports_packaged_commodity",
+  "treatment": "fact",
+  "fact_key": "sells_packaged",
+  "value_map": null
+ },
+ {
+  "legacy_field": "rule_27_route_applicable",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: rule 27 route applicable"
+ },
+ {
+  "legacy_field": "packaged_commodity_documents_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: packaged commodity documents"
+ },
+ {
+  "legacy_field": "imports_weights_or_measures",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: imports weights or measures"
+ },
+ {
+  "legacy_field": "section_19_route_applicable",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: section 19 route applicable"
+ },
+ {
+  "legacy_field": "importer_and_instrument_documents_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: importer and instrument documents"
+ },
+ {
+  "legacy_field": "covered_weights_or_measures_model",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: covered weights or measures model"
+ },
+ {
+  "legacy_field": "section_22_route_applicable",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: section 22 route applicable"
+ },
+ {
+  "legacy_field": "model_technical_evidence_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: model technical evidence"
+ },
+ {
+  "legacy_field": "mentorship_intent",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: mentorship intent"
+ },
+ {
+  "legacy_field": "startup_profile_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: startup profile"
+ },
+ {
+  "legacy_field": "maarg_route_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: maarg route"
+ },
+ {
+  "legacy_field": "cluster_or_collective_proposal",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: cluster or collective proposal"
+ },
+ {
+  "legacy_field": "eligible_implementing_body",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible implementing body"
+ },
+ {
+  "legacy_field": "lean_pledge_completed",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: lean pledge"
+ },
+ {
+  "legacy_field": "tender_or_bulk_order_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: tender or bulk order"
+ },
+ {
+  "legacy_field": "tender_documents_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: tender documents"
+ },
+ {
+  "legacy_field": "technology_startup_or_eligible_ecosystem_entity",
+  "treatment": "derived",
+  "derive": "is_tech_startup"
+ },
+ {
+  "legacy_field": "tier_two_or_tier_three_or_component_fit_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: tier two or tier three or component fit"
+ },
+ {
+  "legacy_field": "genesis_component_and_agency_call_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: genesis component and agency call"
+ },
+ {
+  "legacy_field": "eligible_telecom_startup_or_mse",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible telecom startup or mse"
+ },
+ {
+  "legacy_field": "eligible_lab_and_certification_expense",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible lab and certification expense"
+ },
+ {
+  "legacy_field": "testing_reimbursement_documents_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: testing reimbursement documents"
+ },
+ {
+  "legacy_field": "same_expense_not_reimbursed_elsewhere",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: same expense not reimbursed elsewhere"
+ },
+ {
+  "legacy_field": "eligible_food_chain_entity",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible food chain entity"
+ },
+ {
+  "legacy_field": "cold_chain_or_value_addition_project_fit_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: cold chain or value addition project fit"
+ },
+ {
+  "legacy_field": "current_mofpi_eoi_open_or_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current mofpi eoi open or route"
+ },
+ {
+  "legacy_field": "project_finance_and_statutory_documents_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: project finance and statutory documents"
+ },
+ {
+  "legacy_field": "eligible_food_processing_entity",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible food processing entity"
+ },
+ {
+  "legacy_field": "new_or_expansion_unit_project",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: new or expansion unit project"
+ },
+ {
+  "legacy_field": "current_cefppc_eoi_open_or_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current cefppc eoi open or route"
+ },
+ {
+  "legacy_field": "project_and_finance_documents_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: project and finance documents"
+ },
+ {
+  "legacy_field": "eligible_cluster_entity_or_project_structure",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible cluster entity or project structure"
+ },
+ {
+  "legacy_field": "agro_processing_cluster_fit_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: agro processing cluster fit"
+ },
+ {
+  "legacy_field": "current_apc_eoi_open_or_route_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current apc eoi open or route"
+ },
+ {
+  "legacy_field": "cluster_finance_and_statutory_documents_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: cluster finance and statutory documents"
+ },
+ {
+  "legacy_field": "cbg_capacity_tpd",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: cbg capacity tpd"
+ },
+ {
+  "legacy_field": "agri_residue_feedstock_percent",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: agri residue feedstock percent"
+ },
+ {
+  "legacy_field": "gobardhan_registration_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: gobardhan registration"
+ },
+ {
+  "legacy_field": "bam_not_yet_purchased",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: bam not yet purchased"
+ },
+ {
+  "legacy_field": "duplicate_subsidy_on_same_machinery",
+  "treatment": "bank_check",
+  "check_note_en": "No earlier subsidy on the same machinery"
+ },
+ {
+  "legacy_field": "current_bam_application_window_open_or_extension_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current bam application window open or extension"
+ },
+ {
+  "legacy_field": "state_or_state_agency_applicant_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: state or state agency applicant"
+ },
+ {
+  "legacy_field": "ner_or_sikkim_project_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: ner or sikkim project"
+ },
+ {
+  "legacy_field": "dpr_and_geo_tagging_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: dpr and geo tagging"
+ },
+ {
+  "legacy_field": "state_contribution_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: state contribution"
+ },
+ {
+  "legacy_field": "selected_official_technology_centre",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: selected official technology centre"
+ },
+ {
+  "legacy_field": "requested_centre_service_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: requested centre service"
+ },
+ {
+  "legacy_field": "centre_specific_documents_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: centre specific documents"
+ },
+ {
+  "legacy_field": "registered_as_women_cooperative",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: registered as women cooperative"
+ },
+ {
+  "legacy_field": "women_primary_members_percent",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: women primary members percent"
+ },
+ {
+  "legacy_field": "ncdc_credit_linkage_activity",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: ncdc credit linkage activity"
+ },
+ {
+  "legacy_field": "urban_housing_activity",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: urban housing activity"
+ },
+ {
+  "legacy_field": "government_support_received_inr",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: government support received (₹)"
+ },
+ {
+  "legacy_field": "indian_promoter_shareholding_percent",
+  "treatment": "bank_check",
+  "check_note_en": "Indian promoters hold the required share of the business"
+ },
+ {
+  "legacy_field": "medical_device_business_or_project_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: medical device business or project"
+ },
+ {
+  "legacy_field": "selected_medical_device_park_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: selected medical device park"
+ },
+ {
+  "legacy_field": "current_park_access_route_confirmed",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current park access route"
+ },
+ {
+  "legacy_field": "relevant_prip_niper_coe_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: relevant prip niper coe"
+ },
+ {
+  "legacy_field": "priority_area_research_project_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: priority area research project"
+ },
+ {
+  "legacy_field": "approved_collaboration_route_confirmed",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: approved collaboration route"
+ },
+ {
+  "legacy_field": "eligible_medical_device_cluster_or_testing_entity",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible medical device cluster or testing entity"
+ },
+ {
+  "legacy_field": "common_or_testing_facility_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: common or testing facility"
+ },
+ {
+  "legacy_field": "eligible_medical_device_component_or_accessory_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible medical device component or accessory"
+ },
+ {
+  "legacy_field": "domestic_manufacturing_project_confirmed",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: domestic manufacturing project"
+ },
+ {
+  "legacy_field": "eligible_medical_device_training_institution",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible medical device training institution"
+ },
+ {
+  "legacy_field": "eligible_course_and_industry_linkage_confirmed",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible course and industry linkage"
+ },
+ {
+  "legacy_field": "eligible_medical_device_study_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible medical device study"
+ },
+ {
+  "legacy_field": "protocol_and_regulatory_readiness_confirmed",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: protocol and regulatory readiness"
+ },
+ {
+  "legacy_field": "current_smdi_clinical_guideline_confirmed",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current smdi clinical guideline"
+ },
+ {
+  "legacy_field": "eligible_medical_device_promotion_body",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible medical device promotion body"
+ },
+ {
+  "legacy_field": "eligible_promotion_activity_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible promotion activity"
+ },
+ {
+  "legacy_field": "country_of_registration",
+  "treatment": "derived",
+  "derive": "country_india"
+ },
+ {
+  "legacy_field": "manufactures_in_india",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: manufactures in india"
+ },
+ {
+  "legacy_field": "it_hardware_target_segment",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: it hardware target segment"
+ },
+ {
+  "legacy_field": "current_qualification_criteria_met",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current qualification criteria"
+ },
+ {
+  "legacy_field": "is_first_time_epfo_employee",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: is first time epfo employee"
+ },
+ {
+  "legacy_field": "gross_wage_at_joining_inr",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: gross wage at joining (₹)"
+ },
+ {
+  "legacy_field": "joining_date_in_scheme_period",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: joining date in scheme period"
+ },
+ {
+  "legacy_field": "uan_face_authenticated_on_umang",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: uan face authenticated on umang"
+ },
+ {
+  "legacy_field": "new_employment_created_during_scheme_period",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: new employment created during scheme period"
+ },
+ {
+  "legacy_field": "new_employee_gross_wage_at_joining_inr",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: new employee gross wage at joining (₹)"
+ },
+ {
+  "legacy_field": "ecr_filed_with_contributions",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: ecr filed with contributions"
+ },
+ {
+  "legacy_field": "additional_employment_threshold_met",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: additional employment threshold"
+ },
+ {
+  "legacy_field": "procurement_opportunity_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: procurement opportunity"
+ },
+ {
+  "legacy_field": "procurement_documents_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: procurement documents"
+ },
+ {
+  "legacy_field": "rating_agency_route_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: rating agency route"
+ },
+ {
+  "legacy_field": "rating_information_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: rating information"
+ },
+ {
+  "legacy_field": "udyam_or_uap_registered",
+  "treatment": "fact",
+  "fact_key": "udyam_registered",
+  "value_map": null
+ },
+ {
+  "legacy_field": "delayed_payment_matter",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: delayed payment matter"
+ },
+ {
+  "legacy_field": "green_project_category",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: green project category"
+ },
+ {
+  "legacy_field": "participating_lender",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: participating lender"
+ },
+ {
+  "legacy_field": "is_brownfield_project",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: is brownfield project"
+ },
+ {
+  "legacy_field": "circular_economy_project",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: circular economy project"
+ },
+ {
+  "legacy_field": "team_onboarding_route_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: team onboarding route"
+ },
+ {
+  "legacy_field": "product_catalogue_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: product catalogue"
+ },
+ {
+  "legacy_field": "innovation_or_improvement_case",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: innovation or improvement case"
+ },
+ {
+  "legacy_field": "not_split_or_reconstructed_entity",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: not split or reconstructed entity"
+ },
+ {
+  "legacy_field": "deeptech_startup",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: deeptech startup"
+ },
+ {
+  "legacy_field": "gst_applicability_assessed",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: gst applicability"
+ },
+ {
+  "legacy_field": "registered_indian_legal_entity_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: registered indian legal entity"
+ },
+ {
+  "legacy_field": "dpiit_startup_definition_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: dpiit startup definition"
+ },
+ {
+  "legacy_field": "mvp_ready_for_commercialisation_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: mvp ready for commercialisation"
+ },
+ {
+  "legacy_field": "street_vendor",
+  "treatment": "derived",
+  "derive": "is_street_vendor"
+ },
+ {
+  "legacy_field": "vendor_identification_route",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: vendor identification route"
+ },
+ {
+  "legacy_field": "current_local_body_or_portal_route_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current local body or portal route"
+ },
+ {
+  "legacy_field": "eligible_greenfield_cluster_entity",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible greenfield cluster entity"
+ },
+ {
+  "legacy_field": "greenfield_cluster_dpr_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: greenfield cluster dpr"
+ },
+ {
+  "legacy_field": "nsbm_or_ia_route_confirmed",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: nsbm or ia route"
+ },
+ {
+  "legacy_field": "eligible_cluster_infrastructure_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible cluster infrastructure"
+ },
+ {
+  "legacy_field": "existing_indian_shipyard",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: existing indian shipyard"
+ },
+ {
+  "legacy_field": "shipyard_operational_three_years_before_2025_09_24",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: shipyard operational three years before 2025 09 24"
+ },
+ {
+  "legacy_field": "brownfield_expansion_dpr_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: brownfield expansion dpr"
+ },
+ {
+  "legacy_field": "complete_financial_closure_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: complete financial closure"
+ },
+ {
+  "legacy_field": "shipbuilding_project_or_contract_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: shipbuilding project or contract"
+ },
+ {
+  "legacy_field": "sbds_risk_type_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: sbds risk type"
+ },
+ {
+  "legacy_field": "approved_credit_risk_product_confirmed",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: approved credit risk product"
+ },
+ {
+  "legacy_field": "eligible_indian_shipyard",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible indian shipyard"
+ },
+ {
+  "legacy_field": "qualifying_vessel_contract_signed",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: qualifying vessel contract signed"
+ },
+ {
+  "legacy_field": "major_hull_construction_in_india",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: major hull construction in india"
+ },
+ {
+  "legacy_field": "domestic_content_percent",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: domestic content percent"
+ },
+ {
+  "legacy_field": "sbfas_application_within_deadline",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: sbfas application within deadline"
+ },
+ {
+  "legacy_field": "eligible_indian_steel_company",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible indian steel company"
+ },
+ {
+  "legacy_field": "specialty_steel_target_category_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: specialty steel target category"
+ },
+ {
+  "legacy_field": "investment_and_production_commitment_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: investment and production commitment"
+ },
+ {
+  "legacy_field": "selected_under_pli_round",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: selected under pli round"
+ },
+ {
+  "legacy_field": "current_pli_application_window_open",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current pli application window open"
+ },
+ {
+  "legacy_field": "msme_status_verified",
+  "treatment": "fact",
+  "fact_key": "udyam_registered",
+  "value_map": null
+ },
+ {
+  "legacy_field": "viable_or_high_growth_case_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: viable or high growth case"
+ },
+ {
+  "legacy_field": "empanelled_daughter_fund_mandate_fit_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: empanelled daughter fund mandate fit"
+ },
+ {
+  "legacy_field": "lending_default",
+  "treatment": "bank_check",
+  "check_note_en": "No loan default on your record (the bank checks your credit history)"
+ },
+ {
+  "legacy_field": "npa_classification",
+  "treatment": "bank_check",
+  "check_note_en": "Your loan accounts are not classified as NPA"
+ },
+ {
+  "legacy_field": "member_institution_certifies_eligibility",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: member institution certifies eligibility"
+ },
+ {
+  "legacy_field": "selected_scheme_aif_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: selected scheme aif"
+ },
+ {
+  "legacy_field": "aif_category",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: aif category"
+ },
+ {
+  "legacy_field": "sebi_registered",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: sebi registered"
+ },
+ {
+  "legacy_field": "active_challenge_problem_match",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: active challenge problem match"
+ },
+ {
+  "legacy_field": "current_nsa_category_eligibility",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: current nsa category eligibility"
+ },
+ {
+  "legacy_field": "application_window_open",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: application window open"
+ },
+ {
+  "legacy_field": "technology_or_training_need",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: technology or training need"
+ },
+ {
+  "legacy_field": "eligible_centre_route_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible centre route"
+ },
+ {
+  "legacy_field": "industry",
+  "treatment": "derived",
+  "derive": "activity_sector"
+ },
+ {
+  "legacy_field": "coir_component_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: coir component"
+ },
+ {
+  "legacy_field": "manufactures_notified_textile_products",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: manufactures notified textile products"
+ },
+ {
+  "legacy_field": "pli_textiles_investment_threshold_met",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: pli textiles investment threshold"
+ },
+ {
+  "legacy_field": "pli_textiles_turnover_threshold_met",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: pli textiles turnover threshold"
+ },
+ {
+  "legacy_field": "notified_product_gst_hsn_evidence_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: notified product gst hsn evidence"
+ },
+ {
+  "legacy_field": "statutory_auditor_certificate_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: statutory auditor certificate"
+ },
+ {
+  "legacy_field": "hospitality_unit_type",
+  "treatment": "derived",
+  "derive": "hospitality_unit_type"
+ },
+ {
+  "legacy_field": "bed_count",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: bed count"
+ },
+ {
+  "legacy_field": "applicable_state_or_ut_route_confirmed",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: applicable state or ut route"
+ },
+ {
+  "legacy_field": "inspection_readiness",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: inspection readiness"
+ },
+ {
+  "legacy_field": "eligible_training_institution",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible training institution"
+ },
+ {
+  "legacy_field": "ati_proposal_ready",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: ati proposal"
+ },
+ {
+  "legacy_field": "esdp_component_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: esdp component"
+ },
+ {
+  "legacy_field": "participant_or_institution_eligible",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: participant or institution"
+ },
+ {
+  "legacy_field": "scheduled_tribe_artisan_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: scheduled tribe artisan"
+ },
+ {
+  "legacy_field": "trifed_empanelment_verified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: trifed empanelment"
+ },
+ {
+  "legacy_field": "artisan_credit_route_available",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: artisan credit route"
+ },
+ {
+  "legacy_field": "is_woman_entrepreneur_or_women_led_collective",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: is woman entrepreneur or women led collective"
+ },
+ {
+  "legacy_field": "ecosystem_support_need_identified",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: ecosystem support need"
+ },
+ {
+  "legacy_field": "eligible_cooperative_society",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: eligible cooperative society"
+ },
+ {
+  "legacy_field": "cooperative_operation_months",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: cooperative operation months"
+ },
+ {
+  "legacy_field": "positive_net_worth",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: positive net worth"
+ },
+ {
+  "legacy_field": "new_innovative_or_value_chain_project",
+  "treatment": "bank_check",
+  "check_note_en": "The bank or department will check: new innovative or value chain project"
+ }
+]
