@@ -1,0 +1,56 @@
+[
+  {
+    "id": "food",
+    "sort_order": 1,
+    "name_en": "Food processing and home food",
+    "name_hi": "खाद्य प्रसंस्करण और घरेलू खाना",
+    "name_mr": "अन्न प्रक्रिया आणि घरगुती खाद्यपदार्थ",
+    "description_en": "Pickles, papad, spices, bakery, mills, dairy products, beverages and small food service. FSSAI tier, labelling and home-kitchen premises decide most of the journey.",
+    "is_lite": false
+  },
+  {
+    "id": "livestock_fisheries",
+    "sort_order": 2,
+    "name_en": "Livestock and fisheries",
+    "name_hi": "पशुपालन और मत्स्य पालन",
+    "name_mr": "पशुपालन आणि मत्स्यव्यवसाय",
+    "description_en": "Dairy, poultry, goat and sheep, piggery, pond and biofloc fish farming, hatcheries and fish retail. Unit size, land or pond papers and category rates decide most results.",
+    "is_lite": false
+  },
+  {
+    "id": "agri",
+    "sort_order": 3,
+    "name_en": "Agri enterprise and value addition",
+    "name_hi": "कृषि उद्यम और मूल्य संवर्धन",
+    "name_mr": "कृषी उद्योग आणि मूल्यवर्धन",
+    "description_en": "Nurseries, mushrooms, protected cultivation, custom hiring, cold storage, warehouses, grading, beekeeping, sericulture, bamboo and producer collectives.",
+    "is_lite": false
+  },
+  {
+    "id": "manufacturing",
+    "sort_order": 4,
+    "name_en": "Small manufacturing, artisans and textiles",
+    "name_hi": "लघु उद्योग, कारीगर और वस्त्र",
+    "name_mr": "लघु उद्योग, कारागीर आणि वस्त्रोद्योग",
+    "description_en": "Tailoring, handloom, embroidery, carpentry, pottery, metalwork, leather, jewellery, soap and cosmetics, fabrication, printing, packaging, plastics and building materials.",
+    "is_lite": false
+  },
+  {
+    "id": "services_retail",
+    "sort_order": 5,
+    "name_en": "Local services and retail",
+    "name_hi": "स्थानीय सेवाएँ और खुदरा व्यापार",
+    "name_mr": "स्थानिक सेवा आणि किरकोळ व्यापार",
+    "description_en": "Shops, wholesale, online selling, street vending, salons, laundry, repairs, transport, homestays, clinics, coaching, contracting and other local services.",
+    "is_lite": false
+  },
+  {
+    "id": "tech_lite",
+    "sort_order": 6,
+    "name_en": "Tech and digital startups",
+    "name_hi": "टेक और डिजिटल स्टार्टअप",
+    "name_mr": "टेक आणि डिजिटल स्टार्टअप",
+    "description_en": "Software, apps, platforms, digital marketing, design and professional services. A thin path: DPIIT recognition, GENESIS, credit guarantee and the tax-exemption entity test.",
+    "is_lite": true
+  }
+]
