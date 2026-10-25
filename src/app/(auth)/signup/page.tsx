@@ -64,7 +64,13 @@ export default function SignupPage() {
         </div>
 
         <h1 className="text-xl font-semibold text-neutral-900 mb-1">Create your account</h1>
-        <p className="text-neutral-500 text-sm mb-8">Free to start. No credit card needed.</p>
+        <p className="text-neutral-500 text-sm mb-6">Free to start. No credit card needed.</p>
+
+        <Link href="/login" className="mb-6 flex items-center justify-between rounded-xl border border-indigo-100 bg-indigo-50 px-4 py-3 text-sm font-semibold text-indigo-800 hover:bg-indigo-100">
+          <span>Sign up with your mobile number instead</span>
+          <span aria-hidden="true">→</span>
+        </Link>
+        <p className="mb-4 text-xs font-medium uppercase tracking-wide text-neutral-400">Or create an account with email</p>
 
         {accountHint && (
           <div className="mb-5 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
