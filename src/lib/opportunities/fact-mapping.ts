@@ -141,7 +141,9 @@ const NLM_SECTORS: Record<string, string> = {
 // Named derivations referenced by rule_field_mappings.derive.
 export const DERIVATIONS: Record<string, Derivation> = {
   annual_turnover_inr: facts => bandRange(facts, 'annual_turnover_band'),
-  project_cost_inr: facts => bandRange(facts, 'project_cost_band'),
+  project_cost_inr: facts => (typeof facts.project_cost_exact_inr === 'number'
+    ? { min: facts.project_cost_exact_inr, max: facts.project_cost_exact_inr }
+    : bandRange(facts, 'project_cost_band')),
   own_contribution_inr: facts => bandRange(facts, 'own_contribution_band'),
   annual_family_income_inr: facts => bandRange(facts, 'annual_family_income_band'),
   // MSME class by turnover (micro ≤ ₹10 Cr, small ≤ ₹100 Cr). Investment also
@@ -251,6 +253,52 @@ export const DERIVATIONS: Record<string, Derivation> = {
   },
   is_new_unit: facts => (facts.stage === 'idea' || facts.stage === 'setting_up' ? true : facts.stage === 'running' ? false : undefined),
   is_existing_business: facts => (facts.stage === 'running' || facts.stage === 'setting_up' ? true : facts.stage === 'idea' ? false : undefined),
+}
+
+// The founder facts each derivation reads, so an unknown rule field can be
+// traced back to the question that would decide it.
+export const DERIVATION_INPUTS: Record<string, readonly string[]> = {
+  annual_turnover_inr: ['annual_turnover_band'],
+  project_cost_inr: ['project_cost_exact_inr', 'project_cost_band'],
+  own_contribution_inr: ['own_contribution_band'],
+  annual_family_income_inr: ['annual_family_income_band'],
+  enterprise_size_by_turnover: ['annual_turnover_band'],
+  business_age_years: ['operating_since'],
+  incorporation_age_years: ['incorporation_date', 'operating_since'],
+  operates_in_india: ['state'],
+  country_india: ['state'],
+  entity_type_legacy: ['entity_type'],
+  is_indian_company: ['entity_type'],
+  is_registered_entity: ['entity_type'],
+  is_woman: ['gender'],
+  is_sc_st: ['social_category'],
+  sc_st_ownership_percent: ['entity_type', 'social_category'],
+  sc_ownership_percent: ['entity_type', 'social_category'],
+  founder_category_legacy: ['gender', 'social_category'],
+  is_minority: ['minority_community'],
+  is_traditional_artisan: ['artisan_trade'],
+  is_street_vendor: ['activity_codes'],
+  has_fisheries_activity: ['activity_codes'],
+  has_dairy_activity: ['activity_codes'],
+  has_artisan_activity: ['activity_codes'],
+  has_food_activity: ['activity_codes'],
+  activity_nature: ['activity_codes'],
+  activity_sector: ['activity_codes'],
+  nlm_project_sector: ['activity_codes'],
+  hospitality_unit_type: ['activity_codes'],
+  applicant_type: ['dpiit_recognized', 'udyam_registered', 'entity_type'],
+  is_startup_or_msme: ['dpiit_recognized', 'udyam_registered'],
+  is_tech_startup: ['activity_codes', 'has_innovative_product'],
+  is_new_unit: ['stage'],
+  is_existing_business: ['stage'],
+}
+
+/** The founder facts that decide a rule field; empty for bank checks and unmapped fields. */
+export function factKeysForRuleField(field: string, mappings: RuleFieldMapping[]): string[] {
+  const mapping = mappings.find(candidate => candidate.legacy_field === field)
+  if (mapping?.treatment === 'fact' && mapping.fact_key) return [mapping.fact_key]
+  if (mapping?.treatment === 'derived' && mapping.derive) return [...(DERIVATION_INPUTS[mapping.derive] ?? [])]
+  return []
 }
 
 /** Facts keyed by legacy rule field, ready for evaluateEligibilityRules(). */

@@ -68,7 +68,9 @@ function includesValue(actual: unknown, expected: unknown) {
 
 function compare(actual: unknown, operator: string, expected: unknown): boolean | null {
   if (!comparisonOperators.has(operator)) return null
-  if (operator === 'exists') return !isMissing(actual)
+  // A founder who has not answered yet has not said "no", so a missing fact
+  // leaves an exists rule unknown rather than failing it.
+  if (operator === 'exists') return isMissing(actual) ? null : true
   if (operator === 'not_exists') return isMissing(actual)
   if (isMissing(actual)) return null
 
