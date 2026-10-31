@@ -35,7 +35,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:16:16.400508+00",
+   "lastCheckedAt": "2026-09-09T05:16:16.400508+00:00",
    "packIds": [
     "agri"
    ],
@@ -114,7 +114,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -158,7 +158,7 @@
      "windowType": "closed"
     }
    ],
-   "lastCheckedAt": "2026-10-25 10:32:46.127872+00",
+   "lastCheckedAt": "2026-10-25T10:32:46.127872+00:00",
    "packIds": [
     "livestock_fisheries",
     "food"
@@ -215,7 +215,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -296,7 +296,7 @@
      "windowType": "closed"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -335,7 +335,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:19:53.005911+00",
+   "lastCheckedAt": "2026-09-09T05:19:53.005911+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -374,7 +374,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:34:44.307664+00",
+   "lastCheckedAt": "2026-09-09T05:34:44.307664+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -413,7 +413,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:28:05.679309+00",
+   "lastCheckedAt": "2026-09-09T05:28:05.679309+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -457,7 +457,7 @@
      "windowType": "closed"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:18:18.218835+00",
+   "lastCheckedAt": "2026-09-09T05:18:18.218835+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -511,7 +511,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:18:22.375269+00",
+   "lastCheckedAt": "2026-09-09T05:18:22.375269+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -550,7 +550,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:34:18.847217+00",
+   "lastCheckedAt": "2026-09-09T05:34:18.847217+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -601,7 +601,7 @@
      "windowType": "annual"
     }
    ],
-   "lastCheckedAt": "2026-10-25 10:32:46.127872+00",
+   "lastCheckedAt": "2026-10-25T10:32:46.127872+00:00",
    "packIds": [
     "food",
     "livestock_fisheries",
@@ -671,7 +671,7 @@
      "windowType": "recurring"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:28:10.233167+00",
+   "lastCheckedAt": "2026-09-09T05:28:10.233167+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -720,7 +720,7 @@
      "windowType": "partner_intake"
     }
    ],
-   "lastCheckedAt": "2026-10-24 09:11:56.564128+00",
+   "lastCheckedAt": "2026-10-24T09:11:56.564128+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -758,7 +758,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:28:05.679309+00",
+   "lastCheckedAt": "2026-09-09T05:28:05.679309+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -807,7 +807,7 @@
      "windowType": "recurring"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:20:18.313259+00",
+   "lastCheckedAt": "2026-09-09T05:20:18.313259+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -856,7 +856,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -911,7 +911,7 @@
      "windowType": "partner_intake"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -960,7 +960,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -1009,7 +1009,7 @@
      "windowType": "recurring"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -1059,7 +1059,7 @@
      "windowType": "partner_intake"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -1108,7 +1108,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -1157,7 +1157,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:21:22.554886+00",
+   "lastCheckedAt": "2026-09-09T05:21:22.554886+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -1206,7 +1206,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:21:22.554886+00",
+   "lastCheckedAt": "2026-09-09T05:21:22.554886+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -1250,7 +1250,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:21:22.554886+00",
+   "lastCheckedAt": "2026-09-09T05:21:22.554886+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -1294,7 +1294,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:21:26.986369+00",
+   "lastCheckedAt": "2026-09-09T05:21:26.986369+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -1343,7 +1343,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -1413,7 +1413,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-25 10:32:46.127872+00",
+   "lastCheckedAt": "2026-10-25T10:32:46.127872+00:00",
    "packIds": [
     "food",
     "manufacturing",
@@ -1508,7 +1508,7 @@
    "title": "Chief Minister Employment Generation Programme (CMEGP)",
    "type": "subsidy",
    "status": "active",
-   "versionId": "91a226e5-3124-4324-ada6-78de93dd0f5a",
+   "versionId": "6d6c9e27-0182-4ba3-a58b-9f9b78f365cb",
    "rules": {
     "all": [
      {
@@ -1546,6 +1546,74 @@
        "25l_50l",
        "50l_1cr"
       ]
+     },
+     {
+      "field": "activity",
+      "operator": "in",
+      "value": [
+       "manufacturing",
+       "processing",
+       "service",
+       "services",
+       "agri_allied",
+       "activities allied to agriculture"
+      ]
+     },
+     {
+      "field": "entity_type",
+      "operator": "in",
+      "value": [
+       "individual",
+       "proprietorship",
+       "sole_proprietorship",
+       "partnership",
+       "partnership_firm",
+       "registered_partnership_firm",
+       "shg",
+       "self_help_group"
+      ]
+     },
+     {
+      "any": [
+       {
+        "field": "education_level",
+        "operator": "in",
+        "value": [
+         "class_8",
+         "class_10",
+         "class_12",
+         "iti_diploma",
+         "graduate",
+         "postgraduate"
+        ]
+       },
+       {
+        "field": "project_cost_band",
+        "operator": "in",
+        "value": [
+         "up_to_1l",
+         "1l_2l",
+         "2l_5l"
+        ]
+       },
+       {
+        "all": [
+         {
+          "field": "activity",
+          "operator": "in",
+          "value": [
+           "manufacturing",
+           "processing"
+          ]
+         },
+         {
+          "field": "project_cost_band",
+          "operator": "equals",
+          "value": "5l_10l"
+         }
+        ]
+       }
+      ]
      }
     ],
     "unknown_handling": "needs_information"
@@ -1557,7 +1625,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-25 10:32:46.127872+00",
+   "lastCheckedAt": "2026-10-31T10:46:33.526768+00:00",
    "packIds": [
     "food",
     "agri",
@@ -1850,7 +1918,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:34:27.560726+00",
+   "lastCheckedAt": "2026-09-09T05:34:27.560726+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -1899,7 +1967,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-08 22:05:20.58099+00",
+   "lastCheckedAt": "2026-09-08T22:05:20.58099+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -1938,7 +2006,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:28:00.793029+00",
+   "lastCheckedAt": "2026-09-09T05:28:00.793029+00:00",
    "packIds": [
     "tech_lite"
    ],
@@ -1984,7 +2052,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:24:44.780832+00",
+   "lastCheckedAt": "2026-09-09T05:24:44.780832+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -2028,7 +2096,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -2082,7 +2150,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-08 22:05:23.149018+00",
+   "lastCheckedAt": "2026-09-08T22:05:23.149018+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -2132,7 +2200,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:26:11.163985+00",
+   "lastCheckedAt": "2026-09-09T05:26:11.163985+00:00",
    "packIds": [
     "food",
     "livestock_fisheries",
@@ -2188,7 +2256,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:34:09.388857+00",
+   "lastCheckedAt": "2026-09-09T05:34:09.388857+00:00",
    "packIds": [
     "tech_lite"
    ],
@@ -2244,7 +2312,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:21:52.166682+00",
+   "lastCheckedAt": "2026-09-09T05:21:52.166682+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -2298,7 +2366,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:22:07.347085+00",
+   "lastCheckedAt": "2026-09-09T05:22:07.347085+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -2342,7 +2410,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:24:30.522812+00",
+   "lastCheckedAt": "2026-09-09T05:24:30.522812+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -2396,7 +2464,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-08 22:05:20.072792+00",
+   "lastCheckedAt": "2026-09-08T22:05:20.072792+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -2440,7 +2508,7 @@
      "windowType": "closed"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:22:11.555199+00",
+   "lastCheckedAt": "2026-09-09T05:22:11.555199+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -2489,7 +2557,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:30:08.710853+00",
+   "lastCheckedAt": "2026-09-09T05:30:08.710853+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -2575,7 +2643,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:33:26.491482+00",
+   "lastCheckedAt": "2026-09-09T05:33:26.491482+00:00",
    "packIds": [
     "tech_lite"
    ],
@@ -2626,7 +2694,7 @@
      "windowType": "static"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -2670,7 +2738,7 @@
      "windowType": "closed"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:24:34.807058+00",
+   "lastCheckedAt": "2026-09-09T05:24:34.807058+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -2714,7 +2782,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:24:40.403083+00",
+   "lastCheckedAt": "2026-09-09T05:24:40.403083+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -2768,7 +2836,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -2812,7 +2880,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:24:40.403083+00",
+   "lastCheckedAt": "2026-09-09T05:24:40.403083+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -2851,7 +2919,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:28:05.679309+00",
+   "lastCheckedAt": "2026-09-09T05:28:05.679309+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -2890,7 +2958,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:34:44.307664+00",
+   "lastCheckedAt": "2026-09-09T05:34:44.307664+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -2929,7 +2997,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:33:56.801612+00",
+   "lastCheckedAt": "2026-09-09T05:33:56.801612+00:00",
    "packIds": [
     "food",
     "livestock_fisheries",
@@ -2975,7 +3043,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:33:56.801612+00",
+   "lastCheckedAt": "2026-09-09T05:33:56.801612+00:00",
    "packIds": [
     "food",
     "livestock_fisheries",
@@ -3026,7 +3094,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:26:06.721997+00",
+   "lastCheckedAt": "2026-09-09T05:26:06.721997+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -3085,7 +3153,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:21:43.866082+00",
+   "lastCheckedAt": "2026-09-09T05:21:43.866082+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -3144,7 +3212,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:21:48.090369+00",
+   "lastCheckedAt": "2026-09-09T05:21:48.090369+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -3203,7 +3271,7 @@
      "windowType": "closed"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:21:56.62452+00",
+   "lastCheckedAt": "2026-09-09T05:21:56.62452+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -3267,7 +3335,7 @@
      "windowType": "recurring"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:22:03.176003+00",
+   "lastCheckedAt": "2026-09-09T05:22:03.176003+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -3305,7 +3373,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:28:00.793029+00",
+   "lastCheckedAt": "2026-09-09T05:28:00.793029+00:00",
    "packIds": [
     "food",
     "livestock_fisheries",
@@ -3353,7 +3421,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:27:40.397707+00",
+   "lastCheckedAt": "2026-09-09T05:27:40.397707+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -3402,7 +3470,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -3441,7 +3509,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:33:26.491482+00",
+   "lastCheckedAt": "2026-09-09T05:33:26.491482+00:00",
    "packIds": [
     "food",
     "livestock_fisheries",
@@ -3497,7 +3565,7 @@
      "windowType": "static"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -3545,7 +3613,7 @@
      "windowType": "fixed"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:22:53.765744+00",
+   "lastCheckedAt": "2026-09-09T05:22:53.765744+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -3592,7 +3660,7 @@
      "windowType": "fixed"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:18:30.755057+00",
+   "lastCheckedAt": "2026-09-09T05:18:30.755057+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -3631,7 +3699,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:27:56.36037+00",
+   "lastCheckedAt": "2026-09-09T05:27:56.36037+00:00",
    "packIds": [
     "food",
     "livestock_fisheries",
@@ -3697,7 +3765,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:29:29.028324+00",
+   "lastCheckedAt": "2026-09-09T05:29:29.028324+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -3746,7 +3814,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -3808,7 +3876,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:34:40.3172+00",
+   "lastCheckedAt": "2026-09-09T05:34:40.3172+00:00",
    "packIds": [
     "services_retail"
    ],
@@ -3869,7 +3937,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-08 22:05:22.794064+00",
+   "lastCheckedAt": "2026-09-08T22:05:22.794064+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -3923,7 +3991,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-08 22:05:22.794064+00",
+   "lastCheckedAt": "2026-09-08T22:05:22.794064+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -3972,7 +4040,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [
     "manufacturing"
    ],
@@ -4058,7 +4126,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-25 10:32:46.127872+00",
+   "lastCheckedAt": "2026-10-25T10:32:46.127872+00:00",
    "packIds": [
     "livestock_fisheries",
     "agri"
@@ -4121,7 +4189,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:29:44.432408+00",
+   "lastCheckedAt": "2026-09-09T05:29:44.432408+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -4165,7 +4233,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:29:44.432408+00",
+   "lastCheckedAt": "2026-09-09T05:29:44.432408+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -4209,7 +4277,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:29:44.432408+00",
+   "lastCheckedAt": "2026-09-09T05:29:44.432408+00:00",
    "packIds": [
     "food"
    ],
@@ -4260,7 +4328,7 @@
      "windowType": "closed"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -4304,7 +4372,7 @@
      "windowType": "closed"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -4348,7 +4416,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:30:08.710853+00",
+   "lastCheckedAt": "2026-09-09T05:30:08.710853+00:00",
    "packIds": [
     "tech_lite"
    ],
@@ -4398,7 +4466,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:28:05.679309+00",
+   "lastCheckedAt": "2026-09-09T05:28:05.679309+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -4452,7 +4520,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -4491,7 +4559,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:29:59.487394+00",
+   "lastCheckedAt": "2026-09-09T05:29:59.487394+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -4555,7 +4623,7 @@
      "windowType": "fixed"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -4604,7 +4672,7 @@
      "windowType": "fixed"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -4648,7 +4716,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:24:44.780832+00",
+   "lastCheckedAt": "2026-09-09T05:24:44.780832+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -4697,7 +4765,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:30:30.716761+00",
+   "lastCheckedAt": "2026-09-09T05:30:30.716761+00:00",
    "packIds": [
     "food",
     "agri"
@@ -4749,7 +4817,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:30:30.716761+00",
+   "lastCheckedAt": "2026-09-09T05:30:30.716761+00:00",
    "packIds": [
     "food",
     "agri"
@@ -4801,7 +4869,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:30:30.716761+00",
+   "lastCheckedAt": "2026-09-09T05:30:30.716761+00:00",
    "packIds": [
     "food",
     "agri"
@@ -4858,7 +4926,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -4927,7 +4995,7 @@
      "windowType": "fixed"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -4986,7 +5054,7 @@
      "windowType": "fixed"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:30:39.261638+00",
+   "lastCheckedAt": "2026-09-09T05:30:39.261638+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -5030,7 +5098,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -5074,7 +5142,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [
     "services_retail"
    ],
@@ -5127,7 +5195,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:33:22.142266+00",
+   "lastCheckedAt": "2026-09-09T05:33:22.142266+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -5174,7 +5242,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:33:22.142266+00",
+   "lastCheckedAt": "2026-09-09T05:33:22.142266+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -5226,7 +5294,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:33:22.142266+00",
+   "lastCheckedAt": "2026-09-09T05:33:22.142266+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -5265,7 +5333,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:29:59.487394+00",
+   "lastCheckedAt": "2026-09-09T05:29:59.487394+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -5303,7 +5371,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:19:53.005911+00",
+   "lastCheckedAt": "2026-09-09T05:19:53.005911+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -5341,7 +5409,7 @@
      "windowType": "closed"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:18:30.755057+00",
+   "lastCheckedAt": "2026-09-09T05:18:30.755057+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -5391,7 +5459,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:30:48.002886+00",
+   "lastCheckedAt": "2026-09-09T05:30:48.002886+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -5440,7 +5508,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -5479,7 +5547,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:27:30.932306+00",
+   "lastCheckedAt": "2026-09-09T05:27:30.932306+00:00",
    "packIds": [
     "manufacturing"
    ],
@@ -5525,7 +5593,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:30:51.960907+00",
+   "lastCheckedAt": "2026-09-09T05:30:51.960907+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -5564,7 +5632,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:34:27.560726+00",
+   "lastCheckedAt": "2026-09-09T05:34:27.560726+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -5611,7 +5679,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:33:22.142266+00",
+   "lastCheckedAt": "2026-09-09T05:33:22.142266+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -5627,7 +5695,7 @@
    "title": "Mukhyamantri Rojgar Srijan Yojana",
    "type": "subsidy",
    "status": "active",
-   "versionId": "08d83d3d-0022-41a9-a14b-54cb88a9fa28",
+   "versionId": "53d0fb93-81ff-4d06-802e-1d0c73dad820",
    "rules": {
     "all": [
      {
@@ -5649,6 +5717,7 @@
       "field": "annual_family_income_band",
       "operator": "not_in",
       "value": [
+       "5l_6l",
        "6l_8l",
        "above_8l"
       ]
@@ -5692,7 +5761,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-25 10:32:46.127872+00",
+   "lastCheckedAt": "2026-10-31T10:46:33.526768+00:00",
    "packIds": [
     "food",
     "livestock_fisheries",
@@ -5785,7 +5854,7 @@
      "windowType": "annual"
     }
    ],
-   "lastCheckedAt": "2026-10-25 10:32:46.127872+00",
+   "lastCheckedAt": "2026-10-25T10:32:46.127872+00:00",
    "packIds": [
     "food",
     "livestock_fisheries",
@@ -5910,7 +5979,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:30:56.861797+00",
+   "lastCheckedAt": "2026-09-09T05:30:56.861797+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -6026,7 +6095,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-10-25 10:32:46.127872+00",
+   "lastCheckedAt": "2026-10-25T10:32:46.127872+00:00",
    "packIds": [
     "livestock_fisheries"
    ],
@@ -6196,7 +6265,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -6243,7 +6312,7 @@
      "windowType": "closed"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:19:53.005911+00",
+   "lastCheckedAt": "2026-09-09T05:19:53.005911+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -6287,7 +6356,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:34:18.847217+00",
+   "lastCheckedAt": "2026-09-09T05:34:18.847217+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -6331,7 +6400,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [
     "manufacturing"
    ],
@@ -6377,7 +6446,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:27:51.963257+00",
+   "lastCheckedAt": "2026-09-09T05:27:51.963257+00:00",
    "packIds": [
     "manufacturing"
    ],
@@ -6423,7 +6492,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:28:10.233167+00",
+   "lastCheckedAt": "2026-09-09T05:28:10.233167+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -6472,7 +6541,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -6521,7 +6590,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -6570,7 +6639,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:11:43.376658+00",
+   "lastCheckedAt": "2026-09-09T05:11:43.376658+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -6619,7 +6688,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -6666,7 +6735,7 @@
      "windowType": "event"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:29:59.487394+00",
+   "lastCheckedAt": "2026-09-09T05:29:59.487394+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -6710,7 +6779,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:11:44.274487+00",
+   "lastCheckedAt": "2026-09-09T05:11:44.274487+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -6754,7 +6823,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:11:44.570609+00",
+   "lastCheckedAt": "2026-09-09T05:11:44.570609+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -6770,13 +6839,18 @@
    "title": "One District One Product (ODOP) Financial Assistance Scheme",
    "type": "subsidy",
    "status": "active",
-   "versionId": "20ba611e-f159-4547-97f6-ad5ee6c83da9",
+   "versionId": "90723557-ab0a-417f-ba8d-d500b3967a8e",
    "rules": {
     "all": [
      {
       "field": "state",
       "operator": "equals",
       "value": "uttar_pradesh"
+     },
+     {
+      "field": "matches_district_odop",
+      "operator": "equals",
+      "value": true
      }
     ],
     "unknown_handling": "needs_information"
@@ -6788,7 +6862,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-25 10:32:46.127872+00",
+   "lastCheckedAt": "2026-10-31T10:46:33.526768+00:00",
    "packIds": [
     "food",
     "agri",
@@ -6885,7 +6959,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:27:56.36037+00",
+   "lastCheckedAt": "2026-09-09T05:27:56.36037+00:00",
    "packIds": [
     "food",
     "livestock_fisheries",
@@ -6939,7 +7013,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:33:13.701287+00",
+   "lastCheckedAt": "2026-09-09T05:33:13.701287+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -6993,7 +7067,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-10-25 10:32:46.127872+00",
+   "lastCheckedAt": "2026-10-25T10:32:46.127872+00:00",
    "packIds": [
     "food"
    ],
@@ -7044,7 +7118,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [
     "agri"
    ],
@@ -7100,7 +7174,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:33:31.348166+00",
+   "lastCheckedAt": "2026-09-09T05:33:31.348166+00:00",
    "packIds": [
     "agri"
    ],
@@ -7152,7 +7226,7 @@
      "windowType": "fixed"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:33:39.895184+00",
+   "lastCheckedAt": "2026-09-09T05:33:39.895184+00:00",
    "packIds": [
     "services_retail"
    ],
@@ -7208,7 +7282,7 @@
      "windowType": "fixed"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:33:01.052931+00",
+   "lastCheckedAt": "2026-09-09T05:33:01.052931+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -7262,7 +7336,7 @@
      "windowType": "fixed"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:33:01.052931+00",
+   "lastCheckedAt": "2026-09-09T05:33:01.052931+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -7305,7 +7379,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [
     "manufacturing",
     "services_retail"
@@ -7352,7 +7426,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-08 22:07:48.794966+00",
+   "lastCheckedAt": "2026-09-08T22:07:48.794966+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -7406,7 +7480,7 @@
      "windowType": "programme_route"
     }
    ],
-   "lastCheckedAt": "2026-10-25 10:32:46.127872+00",
+   "lastCheckedAt": "2026-10-25T10:32:46.127872+00:00",
    "packIds": [
     "livestock_fisheries"
    ],
@@ -7496,7 +7570,7 @@
      "windowType": "closed"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:16:16.400508+00",
+   "lastCheckedAt": "2026-09-09T05:16:16.400508+00:00",
    "packIds": [
     "agri"
    ],
@@ -7542,7 +7616,7 @@
      "windowType": "fixed"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:27:36.041708+00",
+   "lastCheckedAt": "2026-09-09T05:27:36.041708+00:00",
    "packIds": [
     "livestock_fisheries"
    ],
@@ -7594,7 +7668,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:27:30.932306+00",
+   "lastCheckedAt": "2026-09-09T05:27:30.932306+00:00",
    "packIds": [
     "food",
     "livestock_fisheries",
@@ -7640,7 +7714,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-25 10:32:46.127872+00",
+   "lastCheckedAt": "2026-10-25T10:32:46.127872+00:00",
    "packIds": [
     "food",
     "manufacturing",
@@ -7688,7 +7762,7 @@
      "windowType": "programme_route"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:32:42.711649+00",
+   "lastCheckedAt": "2026-09-09T05:32:42.711649+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -7737,7 +7811,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -7779,7 +7853,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:18:30.755057+00",
+   "lastCheckedAt": "2026-09-09T05:18:30.755057+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -7839,7 +7913,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:32:55.612974+00",
+   "lastCheckedAt": "2026-09-09T05:32:55.612974+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -7883,7 +7957,7 @@
      "windowType": "closed"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -7937,7 +8011,7 @@
      "windowType": "closed_or_claim_only"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -7986,7 +8060,7 @@
      "windowType": "closed_or_claim_only"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -8030,7 +8104,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -8088,7 +8162,7 @@
      "windowType": "closed"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:34:00.958781+00",
+   "lastCheckedAt": "2026-09-09T05:34:00.958781+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -8132,7 +8206,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -8181,7 +8255,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -8235,7 +8309,7 @@
      "windowType": "closed"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:34:36.068732+00",
+   "lastCheckedAt": "2026-09-09T05:34:36.068732+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -8279,7 +8353,7 @@
      "windowType": "closed"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:32:27.511015+00",
+   "lastCheckedAt": "2026-09-09T05:32:27.511015+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -8326,7 +8400,7 @@
      "windowType": "event"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:33:13.701287+00",
+   "lastCheckedAt": "2026-09-09T05:33:13.701287+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -8385,7 +8459,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-08 22:05:21.788311+00",
+   "lastCheckedAt": "2026-09-08T22:05:21.788311+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -8429,7 +8503,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -8483,7 +8557,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -8522,7 +8596,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:19:53.005911+00",
+   "lastCheckedAt": "2026-09-09T05:19:53.005911+00:00",
    "packIds": [
     "manufacturing"
    ],
@@ -8568,7 +8642,7 @@
      "windowType": "event"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -8612,7 +8686,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:34:05.072209+00",
+   "lastCheckedAt": "2026-09-09T05:34:05.072209+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -8661,7 +8735,7 @@
      "windowType": "fixed"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:33:44.306009+00",
+   "lastCheckedAt": "2026-09-09T05:33:44.306009+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -8710,7 +8784,7 @@
      "windowType": "fixed"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:33:44.306009+00",
+   "lastCheckedAt": "2026-09-09T05:33:44.306009+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -8758,7 +8832,7 @@
      "windowType": "fixed"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:33:44.306009+00",
+   "lastCheckedAt": "2026-09-09T05:33:44.306009+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -8812,7 +8886,7 @@
      "windowType": "fixed"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:33:48.354528+00",
+   "lastCheckedAt": "2026-09-09T05:33:48.354528+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -8846,7 +8920,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-25 10:32:46.127872+00",
+   "lastCheckedAt": "2026-10-25T10:32:46.127872+00:00",
    "packIds": [
     "food",
     "manufacturing",
@@ -8884,7 +8958,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-25 10:32:46.127872+00",
+   "lastCheckedAt": "2026-10-25T10:32:46.127872+00:00",
    "packIds": [
     "food",
     "manufacturing",
@@ -8922,7 +8996,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-25 10:32:46.127872+00",
+   "lastCheckedAt": "2026-10-25T10:32:46.127872+00:00",
    "packIds": [
     "food",
     "manufacturing",
@@ -8960,7 +9034,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-25 10:32:46.127872+00",
+   "lastCheckedAt": "2026-10-25T10:32:46.127872+00:00",
    "packIds": [
     "food",
     "manufacturing",
@@ -8998,7 +9072,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-25 10:32:46.127872+00",
+   "lastCheckedAt": "2026-10-25T10:32:46.127872+00:00",
    "packIds": [
     "food",
     "manufacturing",
@@ -9046,7 +9120,7 @@
      "windowType": "call_for_proposals"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:32:49.020456+00",
+   "lastCheckedAt": "2026-09-09T05:32:49.020456+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -9090,7 +9164,7 @@
      "windowType": "call_for_proposals"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:32:49.020456+00",
+   "lastCheckedAt": "2026-09-09T05:32:49.020456+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -9134,7 +9208,7 @@
      "windowType": "call_for_proposals"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:32:49.020456+00",
+   "lastCheckedAt": "2026-09-09T05:32:49.020456+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -9178,7 +9252,7 @@
      "windowType": "call_for_proposals"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:32:49.020456+00",
+   "lastCheckedAt": "2026-09-09T05:32:49.020456+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -9222,7 +9296,7 @@
      "windowType": "call_for_proposals"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:32:49.020456+00",
+   "lastCheckedAt": "2026-09-09T05:32:49.020456+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -9274,7 +9348,7 @@
      "windowType": "closed"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:19:53.005911+00",
+   "lastCheckedAt": "2026-09-09T05:19:53.005911+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -9327,7 +9401,7 @@
      "windowType": "closed"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:27:30.932306+00",
+   "lastCheckedAt": "2026-09-09T05:27:30.932306+00:00",
    "packIds": [
     "food",
     "livestock_fisheries",
@@ -9373,7 +9447,7 @@
      "windowType": "call_for_applications"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:28:10.233167+00",
+   "lastCheckedAt": "2026-09-09T05:28:10.233167+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -9443,7 +9517,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:34:13.999499+00",
+   "lastCheckedAt": "2026-09-09T05:34:13.999499+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -9487,7 +9561,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:29:34.591568+00",
+   "lastCheckedAt": "2026-09-09T05:29:34.591568+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -9531,7 +9605,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:29:50.987952+00",
+   "lastCheckedAt": "2026-09-09T05:29:50.987952+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -9583,7 +9657,7 @@
      "windowType": "closed"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:31:09.831303+00",
+   "lastCheckedAt": "2026-09-09T05:31:09.831303+00:00",
    "packIds": [
     "tech_lite"
    ],
@@ -9629,7 +9703,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [
     "agri"
    ],
@@ -9680,7 +9754,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -9724,7 +9798,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -9768,7 +9842,7 @@
      "windowType": "closed"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -9806,7 +9880,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-10-18 13:04:21.573559+00",
+   "lastCheckedAt": "2026-10-18T13:04:21.573559+00:00",
    "packIds": [
     "food",
     "livestock_fisheries",
@@ -9857,7 +9931,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-08 22:07:48.794966+00",
+   "lastCheckedAt": "2026-09-08T22:07:48.794966+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -9896,7 +9970,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:34:54.137056+00",
+   "lastCheckedAt": "2026-09-09T05:34:54.137056+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -9950,7 +10024,7 @@
      "windowType": "rolling"
     }
    ],
-   "lastCheckedAt": "2026-09-09 05:34:59.620096+00",
+   "lastCheckedAt": "2026-09-09T05:34:59.620096+00:00",
    "packIds": [],
    "coverage": "central",
    "locations": [
@@ -13216,7 +13290,8 @@
     "72k_1l",
     "1l_2l",
     "2l_3l",
-    "3l_6l",
+    "3l_5l",
+    "5l_6l",
     "6l_8l",
     "above_8l",
     "prefer_not"
@@ -13254,6 +13329,11 @@
   },
   {
    "key": "sells_packaged",
+   "type": "boolean",
+   "fixable": false
+  },
+  {
+   "key": "matches_district_odop",
    "type": "boolean",
    "fixable": false
   },

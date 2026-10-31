@@ -50,6 +50,8 @@ const pooja = {
   area_type: 'urban',
   gender: 'woman',
   applicant_age_years: 32,
+  education_level: 'class_12',
+  entity_type: 'not_registered',
   stage: 'setting_up',
   received_govt_subsidy_before: false,
   project_cost_exact_inr: 800000,
