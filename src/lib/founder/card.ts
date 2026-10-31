@@ -1,4 +1,4 @@
-import type { BenefitLines } from '@/lib/opportunities/engine/calculator'
+import type { BenefitLines, InrRange } from '@/lib/opportunities/engine/calculator'
 import type { Combination } from '@/lib/opportunities/engine/combination'
 import type { RecordResult } from '@/lib/opportunities/engine/results'
 import { formatDate, formatInr, formatRange } from '@/lib/start/format'
@@ -10,7 +10,7 @@ export type CardMoney = {
   label: string
   value: string
   note: string | null
-  // go: free money. plain: money you must pay back. step: something to do first.
+  // go: free money. plain: money you must pay back, or a plain figure. step: still to arrange.
   tone: 'go' | 'plain' | 'step'
 }
 
@@ -19,13 +19,20 @@ export type CardContent = {
   // Both only for a scheme the founder can apply to now.
   why: string | null
   nextStep: string | null
+  // The one amount the card leads with.
   money: CardMoney | null
+  // Every line behind it, so a founder never has to trust one headline figure.
+  moneyLines: CardMoney[]
   // A scheme the founder can apply to now, with no amount worked out for it.
   noAmount: boolean
-  // The questions that would settle it, by name.
+  // The questions that would settle it, by name. Only for a scheme that is one step away.
   toAnswer: string[]
+  // What to get first, as sentences. Leaves out the one the verdict already says.
+  toObtain: string[]
   // What the scheme says it gives, for a scheme that is one step away.
   couldMean: string | null
+  // When the scheme takes applications. Not for a scheme that is not for the founder.
+  windowLine: string | null
   ifRenewed: boolean
   bankChecks: string[]
   checkedOn: string | null
@@ -47,6 +54,11 @@ function interestNote(lines: BenefitLines, lang: Lang) {
   return relief ? t(lang, 'interestAfter', { rate, net: roundedRate(rate - relief) }) : t(lang, 'interest', { rate })
 }
 
+// With no own share stated, the loan figure is the most the scheme lends, not a worked-out amount.
+function loanValue(lines: BenefitLines, loan: InrRange, lang: Lang) {
+  return lines.own === null && loan.max !== null ? t(lang, 'upTo', { amount: formatInr(loan.max) }) : formatRange(loan, lang)
+}
+
 /**
  * The one amount a card leads with: free money if there is any, else the loan.
  * Each line stands alone, so nothing is added into one "benefit" figure.
@@ -59,13 +71,43 @@ function moneyOf(lines: BenefitLines | null, lang: Lang): CardMoney | null {
     return { label: t(lang, renewed ? 'moneyFreeRenewed' : 'moneyFree'), value: formatRange(lines.subsidy, lang), note: null, tone: 'go' }
   }
   if (lines.loan && hasAmount(lines.loan)) {
-    // With no own share stated, the loan figure is the most the scheme lends, not a worked-out amount.
-    const value = lines.own === null && lines.loan.max !== null
-      ? t(lang, 'upTo', { amount: formatInr(lines.loan.max) })
-      : formatRange(lines.loan, lang)
-    return { label: t(lang, renewed ? 'moneyLoanRenewed' : 'moneyLoan'), value, note: interestNote(lines, lang), tone: 'plain' }
+    return { label: t(lang, renewed ? 'moneyLoanRenewed' : 'moneyLoan'), value: loanValue(lines, lines.loan, lang), note: interestNote(lines, lang), tone: 'plain' }
   }
   return null
+}
+
+/** Each line the calculator worked out, in the order a founder reads a budget. */
+function moneyLinesOf(lines: BenefitLines | null, lang: Lang): CardMoney[] {
+  if (!lines) return []
+  const list: CardMoney[] = [
+    { label: t(lang, 'projectCost'), value: formatRange(lines.projectCost, lang), note: null, tone: 'plain' },
+    { label: t(lang, 'ownMoney'), value: lines.own ? formatRange(lines.own, lang) : t(lang, 'ownNotStated'), note: null, tone: 'plain' },
+    { label: t(lang, 'subsidy'), value: formatRange(lines.subsidy, lang), note: null, tone: hasAmount(lines.subsidy) ? 'go' : 'plain' },
+  ]
+  if (lines.loan) {
+    list.push({ label: t(lang, 'loan'), value: loanValue(lines, lines.loan, lang), note: interestNote(lines, lang), tone: 'plain' })
+  }
+  if (hasAmount(lines.uncovered)) {
+    list.push({ label: t(lang, 'toArrange'), value: formatRange(lines.uncovered, lang), note: lines.own ? null : t(lang, 'toArrangeNote'), tone: 'step' })
+  }
+  return list
+}
+
+function windowLineOf(item: RecordResult, lang: Lang): string | null {
+  if (item.bucket === 'D') return null
+  const dated = item.windows.filter(window => window.closesAt || window.opensAt)
+
+  if (item.windowState === 'not_yet_open') {
+    const opens = dated.map(window => window.opensAt).find(Boolean)
+    return opens ? t(lang, 'windowOpens', { from: formatDate(opens, lang) }) : null
+  }
+  if (item.windowState === 'closed') {
+    const closes = dated.map(window => window.closesAt).filter(Boolean).sort().at(-1)
+    return closes ? t(lang, 'windowUntil', { to: formatDate(closes, lang) }) : null
+  }
+  const current = dated.find(window => window.closesAt)
+  if (current?.closesAt && current.opensAt) return t(lang, 'windowDates', { from: formatDate(current.opensAt, lang), to: formatDate(current.closesAt, lang) })
+  return item.windows.some(window => window.windowType === 'rolling') ? null : t(lang, 'checkPortal')
 }
 
 function whyItFits(item: RecordResult, lang: Lang, answerWords: Record<string, Text>) {
@@ -79,6 +121,9 @@ function nextStepOf(item: RecordResult, lang: Lang) {
   // An older stored catalog has no route at all, so this reads as missing, not as null.
   return item.applyRoute ? t(lang, 'nextStepRoute', { route: item.applyRoute }) : t(lang, 'nextStepSource')
 }
+
+const distinctKeys = (item: RecordResult, kind: 'answer' | 'obtain') =>
+  [...new Set(item.steps.filter(step => step.kind === kind).map(step => step.factKey))]
 
 /**
  * Everything one scheme card says, as words in the founder's language. The page
@@ -95,19 +140,25 @@ export function cardContent(
 ): CardContent {
   const labelOf = (factKey: string) => (Object.hasOwn(labels, factKey) ? labels[factKey][lang] : factKey.replace(/_/g, ' '))
   const lines = item.lines
-  const checkedOn = formatDate(item.lastCheckedAt, lang) || null
+  const verdict = verdictFor(item, combination, lang, labelOf, now)
+  const windowLine = windowLineOf(item, lang)
 
   return {
-    verdict: verdictFor(item, combination, lang, labelOf, now),
+    verdict,
     why: whyItFits(item, lang, answerWords),
     nextStep: nextStepOf(item, lang),
     money: moneyOf(lines, lang),
+    moneyLines: moneyLinesOf(lines, lang),
     noAmount: item.bucket === 'A' && !lines,
-    toAnswer: [...new Set(item.steps.filter(step => step.kind === 'answer').map(step => step.factKey))].map(labelOf),
+    toAnswer: item.bucket === 'B' ? distinctKeys(item, 'answer').map(labelOf) : [],
+    // The verdict names the first of these when there is no question to answer; saying it twice adds nothing.
+    toObtain: distinctKeys(item, 'obtain').map(key => t(lang, 'stepObtain', { label: labelOf(key) })).filter(text => text !== verdict.text),
     couldMean: item.bucket === 'B' ? item.benefitHeadline ?? null : null,
+    // A verdict that already says when it opens needs no second line saying the same.
+    windowLine: windowLine === verdict.text ? null : windowLine,
     ifRenewed: lines?.ifRenewed ?? false,
     bankChecks: item.bucket === 'D' ? [] : item.bankChecks,
-    checkedOn,
+    checkedOn: formatDate(item.lastCheckedAt, lang) || null,
     checkedStale: item.freshness !== 'fresh',
     ownShortfall: lines?.ownShortfall ? t(lang, 'ownShortfall') : null,
     betterRate: lines?.betterIfAnswered.length ? t(lang, 'betterRate', { labels: lines.betterIfAnswered.map(labelOf).join(', ') }) : null,

@@ -207,7 +207,7 @@ describe('cardContent, one step away', () => {
   const stepItem = (overrides: Partial<RecordResult> = {}) => result({
     bucket: 'B',
     decidedBy: [],
-    steps: [answer('applicant_age_years'), answer('social_category'), answer('applicant_age_years'), obtain('udyam')],
+    steps: [answer('applicant_age_years'), answer('social_category'), answer('applicant_age_years'), obtain('udyam_registered')],
     benefitHeadline: '40% subsidy on a loan at 6%',
     ...overrides,
   })
@@ -223,7 +223,7 @@ describe('cardContent, one step away', () => {
   })
 
   it('leaves out steps that are about getting something, not answering', () => {
-    expect(content(stepItem({ steps: [obtain('udyam')] })).toAnswer).toEqual([])
+    expect(content(stepItem({ steps: [obtain('udyam_registered')] })).toAnswer).toEqual([])
   })
 
   it('shows what it could mean for one step away only, and not when none is stored', () => {
@@ -234,18 +234,184 @@ describe('cardContent, one step away', () => {
     }
   })
 
-  it('lists the questions of a waiting scheme too, since answering still sharpens its amounts', () => {
-    expect(content(result({ bucket: 'C', steps: [answer('social_category')] })).toAnswer).toEqual([labels.social_category.en])
+  it('lists questions for one step away only, not for a waiting scheme', () => {
+    expect(content(result({ bucket: 'C', steps: [answer('social_category')] })).toAnswer).toEqual([])
+    expect(content(stepItem()).toAnswer).toHaveLength(2)
   })
 
   it('lists no questions for a scheme with none left', () => {
     expect(content(result()).toAnswer).toEqual([])
   })
 
+  it('lists what to get first next to the questions, when a scheme needs both', () => {
+    const found = content(stepItem())
+    expect(found.toAnswer).toEqual([labels.applicant_age_years.en, labels.social_category.en])
+    expect(found.verdict.text).toBe('Answer 2 questions to find out.')
+    expect(found.toObtain).toEqual([`Get this first: ${labels.udyam_registered.en}`])
+  })
+
+  it('names what to get first in the chosen language, once each', () => {
+    const item = stepItem({ steps: [answer('social_category'), obtain('udyam_registered'), obtain('udyam_registered')] })
+    expect(content(item, 'hi').toObtain).toEqual([TEXT.hi.stepObtain.replace('{label}', labels.udyam_registered.hi)])
+  })
+
+  it('does not repeat in the list the one thing the verdict already says to get first', () => {
+    const item = stepItem({ steps: [obtain('udyam_registered'), obtain('social_category')] })
+    const found = content(item)
+    expect(found.verdict.text).toBe(`Get this first: ${labels.udyam_registered.en}`)
+    expect(found.toObtain).toEqual([`Get this first: ${labels.social_category.en}`])
+    expect(content(stepItem({ steps: [obtain('udyam_registered')] })).toObtain).toEqual([])
+  })
+
+  it('lists what to get first for a waiting scheme too', () => {
+    const found = content(result({ bucket: 'C', status: 'pending_renewal', steps: [obtain('udyam_registered')] }))
+    expect(found.toObtain).toEqual([`Get this first: ${labels.udyam_registered.en}`])
+  })
+
+  it('lists nothing to get first when nothing is needed', () => {
+    expect(content(result()).toObtain).toEqual([])
+    expect(content(stepItem({ steps: [answer('social_category')] })).toObtain).toEqual([])
+  })
+
   it('says it cannot check a scheme where nothing about the founder was tested', () => {
     const found = content(stepItem({ steps: [], decidedBy: [] }))
     expect(found.verdict.text).toBe('We cannot check this for you yet.')
     expect(found.toAnswer).toEqual([])
+  })
+})
+
+describe('cardContent, the application window', () => {
+  const window = (windowType: string, opensAt: string | null, closesAt: string | null) => ({ windowType, opensAt, closesAt })
+
+  it('gives the dates of an open window', () => {
+    const item = result({ windows: [window('fixed', '2026-10-01T00:00:00Z', '2026-12-31T00:00:00Z')] })
+    expect(content(item).windowLine).toBe('Window: 1 Oct 2026 to 31 Dec 2026')
+  })
+
+  it('says the dates in the chosen language', () => {
+    const item = result({ windows: [window('fixed', '2026-10-01T00:00:00Z', '2026-12-31T00:00:00Z')] })
+    expect(content(item, 'hi').windowLine).toBe(
+      TEXT.hi.windowDates.replace('{from}', formatDate('2026-10-01T00:00:00Z', 'hi')).replace('{to}', formatDate('2026-12-31T00:00:00Z', 'hi')),
+    )
+  })
+
+  it('sends the founder to the official portal when the dates are not stored', () => {
+    expect(content(result({ windows: [] })).windowLine).toBe('Check the official portal for dates')
+    expect(content(result({ windows: [window('fixed', null, null)] })).windowLine).toBe('Check the official portal for dates')
+    expect(content(result({ windows: [window('fixed', null, '2026-12-31T00:00:00Z')] })).windowLine).toBe('Check the official portal for dates')
+  })
+
+  it('says nothing for a scheme that is always open', () => {
+    expect(content(result({ windows: [window('rolling', null, null)] })).windowLine).toBeNull()
+  })
+
+  it('says when a closed window ended', () => {
+    const item = result({ bucket: 'C', status: 'closed', windowState: 'closed', windows: [window('fixed', '2026-01-01T00:00:00Z', '2026-03-31T00:00:00Z')] })
+    expect(content(item).windowLine).toBe('Window closed on 31 Mar 2026')
+  })
+
+  it('says nothing when a closed scheme has no end date', () => {
+    expect(content(result({ bucket: 'C', status: 'closed', windowState: 'closed', windows: [] })).windowLine).toBeNull()
+  })
+
+  it('does not say the opening date twice when the verdict already says it', () => {
+    const item = result({
+      bucket: 'C',
+      status: 'upcoming',
+      windowState: 'not_yet_open',
+      windows: [window('fixed', '2026-11-05T00:00:00Z', '2026-12-31T00:00:00Z')],
+    })
+    const found = content(item)
+    expect(found.verdict.text).toBe('Opens on 5 Nov 2026')
+    expect(found.windowLine).toBeNull()
+  })
+
+  it('says nothing for a scheme that is not for the founder', () => {
+    const item = result({ bucket: 'D', windows: [window('fixed', '2026-10-01T00:00:00Z', '2026-12-31T00:00:00Z')] })
+    expect(content(item).windowLine).toBeNull()
+  })
+
+  it('gives the window for one step away and a waiting scheme', () => {
+    const windows = [window('fixed', '2026-10-01T00:00:00Z', '2026-12-31T00:00:00Z')]
+    expect(content(result({ bucket: 'B', windows })).windowLine).toBe('Window: 1 Oct 2026 to 31 Dec 2026')
+    expect(content(result({ bucket: 'C', status: 'pending_renewal', windows })).windowLine).toBe('Window: 1 Oct 2026 to 31 Dec 2026')
+  })
+})
+
+describe('cardContent, every money line', () => {
+  it('lists each line of a scheme with a subsidy, free money in green and what is left in amber', () => {
+    const item = result({
+      lines: lines({
+        projectCost: { min: 500000, max: 1000000 },
+        own: { min: 50000, max: 100000 },
+        subsidy: { min: 300000, max: 800000 },
+        loan: { min: 100000, max: 100000 },
+        uncovered: { min: 10000, max: 20000 },
+        interestRatePct: 7,
+        interestSubventionPct: 3,
+      }),
+    })
+    expect(content(item).moneyLines).toEqual([
+      { label: 'Project cost', value: '₹5,00,000 – ₹10,00,000', note: null, tone: 'plain' },
+      { label: 'Your own money', value: '₹50,000 – ₹1,00,000', note: null, tone: 'plain' },
+      { label: 'Subsidy or grant', value: '₹3,00,000 – ₹8,00,000', note: null, tone: 'go' },
+      { label: 'Loan', value: '₹1,00,000', note: '7% interest, effectively 4% if repaid on time', tone: 'plain' },
+      { label: 'Still to arrange', value: '₹10,000 – ₹20,000', note: null, tone: 'step' },
+    ])
+  })
+
+  it('lists each line of a credit-only scheme: own money not stated, no free money, the loan as a limit', () => {
+    const item = result({
+      lines: lines({
+        projectCost: { min: 500000, max: 1000000 },
+        own: null,
+        subsidy: { min: 0, max: 0 },
+        loan: { min: 150000, max: 200000 },
+        uncovered: { min: 300000, max: 800000 },
+        interestRatePct: 7,
+      }),
+    })
+    expect(content(item).moneyLines).toEqual([
+      { label: 'Project cost', value: '₹5,00,000 – ₹10,00,000', note: null, tone: 'plain' },
+      { label: 'Your own money', value: 'Not stated by the scheme', note: null, tone: 'plain' },
+      { label: 'Subsidy or grant', value: '₹0', note: null, tone: 'plain' },
+      { label: 'Loan', value: 'Up to ₹2,00,000', note: '7% interest', tone: 'plain' },
+      {
+        label: 'Still to arrange',
+        value: '₹3,00,000 – ₹8,00,000',
+        note: 'From your own money or a bank. The scheme does not say how to split it.',
+        tone: 'step',
+      },
+    ])
+  })
+
+  it('leaves out the loan when the scheme gives none to show', () => {
+    const labelsShown = content(result({ lines: lines({ subsidy: { min: 1, max: 2 }, loan: null }) })).moneyLines.map(line => line.label)
+    expect(labelsShown).not.toContain('Loan')
+  })
+
+  it('leaves out what is still to arrange when it is nothing, and keeps it when it has no top', () => {
+    const none = content(result({ lines: lines({ uncovered: { min: 0, max: 0 } }) })).moneyLines.map(line => line.label)
+    expect(none).not.toContain('Still to arrange')
+    const open = content(result({ lines: lines({ uncovered: { min: 100000, max: null } }) })).moneyLines
+    expect(open.find(line => line.label === 'Still to arrange')?.value).toBe('₹1,00,000 or more')
+  })
+
+  it('explains the split only when the scheme states no own share', () => {
+    const stated = content(result({ lines: lines({ own: { min: 1, max: 2 }, uncovered: { min: 5, max: 6 } }) })).moneyLines
+    expect(stated.find(line => line.label === 'Still to arrange')?.note).toBeNull()
+  })
+
+  it('has no lines when no amount was worked out', () => {
+    expect(content(result({ lines: null })).moneyLines).toEqual([])
+    expect(content(result({ bucket: 'B', lines: null })).moneyLines).toEqual([])
+  })
+
+  it('words the lines in the chosen language', () => {
+    const item = result({ lines: lines({ subsidy: { min: 100000, max: 100000 }, uncovered: { min: 5, max: 6 } }) })
+    expect(content(item, 'hi').moneyLines.map(line => line.label)).toEqual([
+      TEXT.hi.projectCost, TEXT.hi.ownMoney, TEXT.hi.subsidy, TEXT.hi.toArrange,
+    ])
   })
 })
 
