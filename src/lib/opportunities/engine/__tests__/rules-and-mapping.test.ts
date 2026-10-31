@@ -124,3 +124,56 @@ describe('exact project cost', () => {
     expect(fact).toMatchObject({ type: 'number', fixable: false, stage: 4 })
   })
 })
+
+describe('the facts an "any" rule reports using', () => {
+  const category = { field: 'social_category', operator: 'in', value: ['sc', 'st'] }
+  const minority = { field: 'minority_community', operator: 'equals', value: 'yes' }
+  const disability = { field: 'has_disability', operator: 'equals', value: true }
+  const used = (rules: unknown, facts: Record<string, unknown>) => evaluateEligibilityRules(rules, facts).usedFacts
+
+  it('are only those of the branches that passed, when it passes', () => {
+    const evaluation = evaluateEligibilityRules({ any: [category, minority] }, { social_category: 'general', minority_community: 'yes' })
+    expect(evaluation.result).toBe(true)
+    // "General" did not match, so it is not why the rule passed.
+    expect(evaluation.usedFacts).toEqual(['minority_community'])
+  })
+
+  it('are those of every branch that passed', () => {
+    const facts = { social_category: 'sc', minority_community: 'yes', has_disability: false }
+    const evaluation = evaluateEligibilityRules({ any: [category, minority, disability] }, facts)
+    expect(evaluation.result).toBe(true)
+    expect(evaluation.usedFacts).toEqual(['social_category', 'minority_community'])
+  })
+
+  it('include everything a passing branch read, when that branch is a whole rule of its own', () => {
+    const branch = { all: [{ field: 'state', operator: 'equals', value: 'jharkhand' }, minority] }
+    const evaluation = evaluateEligibilityRules({ any: [category, branch] }, { social_category: 'general', state: 'jharkhand', minority_community: 'yes' })
+    expect(evaluation.usedFacts).toEqual(['state', 'minority_community'])
+  })
+
+  it('are all of them when the rule fails', () => {
+    const evaluation = evaluateEligibilityRules({ any: [category, minority] }, { social_category: 'general', minority_community: 'no' })
+    expect(evaluation.result).toBe(false)
+    expect(evaluation.usedFacts).toEqual(['social_category', 'minority_community'])
+    expect(evaluation.failedFields).toEqual(['social_category', 'minority_community'])
+  })
+
+  it('are all of them when the rule is still unknown', () => {
+    // One branch failed, the other cannot be told yet: neither is what decided it, so both stay.
+    const undecided = { all: [{ field: 'state', operator: 'equals', value: 'jharkhand' }, minority] }
+    const evaluation = evaluateEligibilityRules({ any: [category, undecided] }, { social_category: 'general', state: 'jharkhand' })
+    expect(evaluation.result).toBeNull()
+    expect(evaluation.usedFacts).toEqual(['social_category', 'state'])
+  })
+
+  it('leave a rule that passes without any "any" exactly as they were', () => {
+    expect(used({ all: [category, minority] }, { social_category: 'sc', minority_community: 'yes' })).toEqual(['social_category', 'minority_community'])
+  })
+
+  it('keep what the bank will check, whichever branch passed', () => {
+    const evaluation = evaluateEligibilityRules({ any: [category, { field: 'bank_only', operator: 'equals', value: true }] }, { social_category: 'general' }, { reviewerChecks: new Map([['bank_only', 'The bank checks this']]) })
+    expect(evaluation.result).toBe(true)
+    expect(evaluation.bankChecks).toEqual(['The bank checks this'])
+    expect(evaluation.usedFacts).toEqual([])
+  })
+})

@@ -131,8 +131,16 @@ function combineAny(children: RuleEvaluation[]): RuleEvaluation {
   const passing = children.filter(child => child.result === true)
   const unknown = children.filter(child => child.result === null)
   const result = passing.length > 0 ? true : unknown.length > 0 ? null : false
-  // A branch another branch rescued is not why the rule failed.
-  return { result, ...merged(children), failedFields: result === false ? merged(children).failedFields : [] }
+  const all = merged(children)
+  // A branch another branch rescued is not why the rule failed, and not why it passed: when the rule
+  // passes, only the branches that passed say which facts it used. Failed or still unknown, every
+  // branch counts.
+  return {
+    result,
+    ...all,
+    failedFields: result === false ? all.failedFields : [],
+    usedFacts: passing.length > 0 ? merged(passing).usedFacts : all.usedFacts,
+  }
 }
 
 function evaluateNode(node: unknown, facts: RuleFactMap, options: RuleEvaluationOptions): RuleEvaluation {

@@ -265,6 +265,32 @@ describe('project cost against a scheme limit', () => {
   })
 })
 
+describe('what decided a scheme with a choice of conditions', () => {
+  const MRSY = 'mukhyamantri-rojgar-srijan-yojana-jharkhand'
+  // Open to a person from a scheduled or backward category, a minority or a person with a disability, and every other condition met.
+  const person = {
+    activity_codes: ['pond_fish'],
+    state: 'jharkhand',
+    applicant_age_years: 30,
+    annual_family_income_band: '1l_2l',
+    received_govt_subsidy_before: false,
+  }
+
+  it('does not name an answer that did not match, when another one did', () => {
+    const item = find(resultsFor({ ...person, social_category: 'general', minority_community: 'yes' }), MRSY)
+    expect(item.bucket).toBe('A')
+    expect(item.decidedBy).toContain('minority_community')
+    expect(item.decidedBy).not.toContain('social_category')
+  })
+
+  it('names the answer that did match, whichever it is', () => {
+    const item = find(resultsFor({ ...person, social_category: 'sc', minority_community: 'no' }), MRSY)
+    expect(item.bucket).toBe('A')
+    expect(item.decidedBy).toContain('social_category')
+    expect(item.decidedBy).not.toContain('minority_community')
+  })
+})
+
 describe('honest buckets', () => {
   it('a home pickle maker is not told an agro-cluster grant is open to them because nothing was tested', () => {
     const payload = resultsFor({ activity_codes: ['pickles_chutney'], state: 'maharashtra', project_cost_band: '2l_5l' })
