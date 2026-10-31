@@ -17,14 +17,32 @@ export function humanize(token: string) {
   return text.charAt(0).toUpperCase() + text.slice(1)
 }
 
-function textList(value: unknown): string[] {
-  if (!Array.isArray(value)) return []
-  return value.filter((item): item is string => typeof item === 'string' && item.trim().length > 0)
+// A code written into a sentence ("self_help_group"). A web address, a file name or an e-mail address
+// holds underscores too, so a code must not follow or run into any of the characters they are built from.
+const CODE_IN_TEXT = /(?<![\w/.:=@#?&-])(?=[a-z0-9_]*[a-z])[a-z0-9]+(?:_[a-z0-9]+)+(?![\w/@-]|\.\w)/g
+
+/**
+ * Record text an applicant can read. Records keep some answers as codes ("self_help_group",
+ * "once_per_year") and a lone lowercase word ("agriculture", "free"); a code must never reach a
+ * founder, so each becomes words, and a code inside a sentence is spelled out where it stands.
+ */
+export function readableText(text: string): string {
+  const trimmed = text.trim()
+  if (/^[a-z][a-z0-9_]*$/.test(trimmed)) return humanize(trimmed)
+  return trimmed === text ? text.replace(CODE_IN_TEXT, code => code.replace(/_/g, ' ')) : readableText(trimmed)
 }
 
-/** Text for an applicant: trimmed, and nothing at all when it is empty or a reviewer's working note. */
+function textList(value: unknown): string[] {
+  if (!Array.isArray(value)) return []
+  return value.filter((item): item is string => typeof item === 'string' && item.trim().length > 0).map(readableText)
+}
+
+/** Text for an applicant: in words, trimmed, and nothing at all when it is empty or a reviewer's working note. */
 export function publicText(value: unknown): string | null {
-  return typeof value === 'string' && value.trim() && !isInternalNote(value) ? value.trim() : null
+  if (typeof value !== 'string' || !value.trim()) return null
+  // Read after the codes are spelled out: a working note written as a code is still a working note.
+  const text = readableText(value)
+  return isInternalNote(text) ? null : text
 }
 
 const DATE_FORMAT = new Intl.DateTimeFormat('en-IN', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'Asia/Kolkata' })

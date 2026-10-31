@@ -95,6 +95,17 @@ describe('the scheme page for a record that says almost nothing', () => {
   })
 })
 
+describe('the words on the scheme page', () => {
+  it('never show a code from the record, such as the groups the Credit Guarantee Scheme leaves out', async () => {
+    const html = await pageFor(record({
+      eligibility: { exclusions: ['agriculture', 'self_help_group', 'joint_liability_group'], entity_types: ['private_limited_company'] },
+      application: { fees: 'free' },
+    }))
+    for (const words of ['Agriculture', 'Self help group', 'Joint liability group', 'Private limited company']) expect(html, words).toContain(words)
+    expect(html).not.toMatch(/\b[a-z]+_[a-z_]+\b/)
+  })
+})
+
 describe('the scheme page for a record that has its say', () => {
   it('shows what the record says, once each', async () => {
     const html = await pageFor(record())
