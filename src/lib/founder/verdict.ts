@@ -13,7 +13,7 @@ const REGISTRATION_TYPES = new Set(['registration', 'licence'])
 const plain = (tone: Tone, text: string): Verdict => ({ tone, text, detail: null })
 
 // The earliest opening still ahead of us. Earlier rows may be past windows.
-function nextOpening(item: RecordResult, now: Date) {
+export function nextOpening(item: RecordResult, now: Date) {
   const ahead = item.windows
     .map(window => window.opensAt)
     .filter((opensAt): opensAt is string => !!opensAt)
@@ -27,11 +27,21 @@ function openingText(item: RecordResult, lang: Lang, now: Date) {
   return date ? t(lang, 'verdictOpens', { date }) : t(lang, 'verdictNotOpen')
 }
 
+/**
+ * Whether the verdict for this scheme says when it opens. A renewal or a pause is said first,
+ * and an upcoming scheme with no dated window has not opened yet, whatever the window state says.
+ */
+export function verdictStatesOpening(item: RecordResult) {
+  return item.bucket === 'C'
+    && item.status !== 'pending_renewal'
+    && item.status !== 'paused'
+    && (item.status === 'upcoming' || item.windowState === 'not_yet_open')
+}
+
 function waitingText(item: RecordResult, lang: Lang, now: Date) {
   if (item.status === 'pending_renewal') return t(lang, 'statusRenewal')
   if (item.status === 'paused') return t(lang, 'statusPaused')
-  // An upcoming scheme with no dated window has not opened yet, whatever the window state says.
-  if (item.status === 'upcoming' || item.windowState === 'not_yet_open') return openingText(item, lang, now)
+  if (verdictStatesOpening(item)) return openingText(item, lang, now)
   if (item.status === 'active' && item.freshness === 'stale') return t(lang, 'statusUnconfirmed')
   return t(lang, 'statusClosed')
 }

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Card, MoneyTile, VerdictBand } from '@/components/ui/founder'
+import { Card, MoneyTile, StatusChip, VerdictBand } from '@/components/ui/founder'
 import { cardContent } from '@/lib/founder/card'
 import { toneClasses } from '@/lib/design/tones'
 import type { Combination } from '@/lib/opportunities/engine/combination'
@@ -58,7 +58,7 @@ export default function VerdictCard({ item, combination, lang, labels, answerWor
                   {card.toObtain.map(text => <li key={text} className={cn('text-sm font-semibold', toneClasses('step').ink)}>{text}</li>)}
                 </ul>
               ) : null}
-              {card.ownShortfall ? <p className="text-sm font-semibold text-urgent-ink">{card.ownShortfall}</p> : null}
+              {card.ownShortfall ? <div><StatusChip tone="step" text={card.ownShortfall} /></div> : null}
               {card.betterRate ? <p className="text-sm text-ink-2">{card.betterRate}</p> : null}
               {card.bankChecks.length > 0 ? (
                 <details className="text-sm text-ink-2">

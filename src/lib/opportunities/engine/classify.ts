@@ -6,7 +6,7 @@ import type { Bucket, CanonicalFacts, EngineContext, EngineRecord, FounderStep, 
 const DAY_MS = 86_400_000
 const AMBER_AFTER_DAYS = 30
 const STALE_AFTER_DAYS = 60
-const CLOSED_WINDOW_TYPES = new Set(['closed', 'closed_or_claim_only'])
+export const CLOSED_WINDOW_TYPES = new Set(['closed', 'closed_or_claim_only'])
 
 function timeOf(value: string | null): number | null {
   if (!value) return null
@@ -22,7 +22,7 @@ export function freshnessOf(lastCheckedAt: string | null, now: Date): Freshness 
   return ageDays <= STALE_AFTER_DAYS ? 'amber' : 'stale'
 }
 
-function singleWindowState(window: RecommendationWindow, now: number): WindowState {
+export function singleWindowState(window: RecommendationWindow, now: number): WindowState {
   if (window.windowType === 'rolling') return 'open'
   const closes = timeOf(window.closesAt)
   if (closes !== null && closes < now) return 'closed'

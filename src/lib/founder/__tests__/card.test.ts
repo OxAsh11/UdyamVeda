@@ -1,3 +1,5 @@
+import fs from 'node:fs'
+import path from 'node:path'
 import { describe, expect, it } from 'vitest'
 import type { BenefitLines } from '@/lib/opportunities/engine/calculator'
 import type { Combination } from '@/lib/opportunities/engine/combination'
@@ -326,6 +328,59 @@ describe('cardContent, the application window', () => {
     expect(found.windowLine).toBeNull()
   })
 
+  describe('with a past window and a later one', () => {
+    // Rows can come oldest first: a call that has ended, then the next one.
+    const ended = window('fixed', '2026-04-01T00:00:00Z', '2026-06-30T00:00:00Z')
+    const ahead = window('fixed', '2026-11-05T00:00:00Z', '2026-12-31T00:00:00Z')
+    const current = window('fixed', '2026-10-01T00:00:00Z', '2026-12-31T00:00:00Z')
+
+    it('never gives the opening date of the past window next to a verdict that gives the next one', () => {
+      for (const windows of [[ended, ahead], [ahead, ended]]) {
+        const found = content(result({ bucket: 'C', status: 'upcoming', windowState: 'not_yet_open', windows }))
+        expect(found.verdict.text).toBe('Opens on 5 Nov 2026')
+        expect(found.windowLine).toBeNull()
+      }
+    })
+
+    it('gives the next opening, not a past one, when the verdict is about something else', () => {
+      for (const windows of [[ended, ahead], [ahead, ended]]) {
+        const found = content(result({ bucket: 'C', status: 'pending_renewal', windowState: 'not_yet_open', windows }))
+        expect(found.verdict.text).toBe('Renewal awaited')
+        expect(found.windowLine).toBe('Opens on 5 Nov 2026')
+      }
+    })
+
+    it('gives no opening date when none is ahead', () => {
+      const found = content(result({ bucket: 'C', status: 'pending_renewal', windowState: 'not_yet_open', windows: [ended] }))
+      expect(found.windowLine).toBeNull()
+    })
+
+    it('gives the dates of the window that is open now, not of an earlier one', () => {
+      for (const windows of [[ended, current], [current, ended], [ended, current, ahead]]) {
+        expect(content(result({ windows })).windowLine).toBe('Window: 1 Oct 2026 to 31 Dec 2026')
+      }
+    })
+
+    it('sends the founder to the official portal when no window with dates is open now', () => {
+      expect(content(result({ windows: [ended, ahead] })).windowLine).toBe('Check the official portal for dates')
+    })
+  })
+
+  it('does not take a window of a closed kind for the window that is open', () => {
+    const windows = [window('closed', '2026-10-01T00:00:00Z', '2026-12-31T00:00:00Z'), window('fixed', '2026-10-15T00:00:00Z', '2027-01-15T00:00:00Z')]
+    expect(content(result({ windows })).windowLine).toBe('Window: 15 Oct 2026 to 15 Jan 2027')
+  })
+
+  it('does not say a window closed on a date that has not come', () => {
+    const item = result({ bucket: 'C', status: 'closed', windowState: 'closed', windows: [window('fixed', '2026-01-01T00:00:00Z', '2026-12-31T00:00:00Z')] })
+    expect(content(item).windowLine).toBeNull()
+  })
+
+  it('says the latest end that has passed for a closed scheme', () => {
+    const windows = [window('fixed', '2026-01-01T00:00:00Z', '2026-03-31T00:00:00Z'), window('fixed', '2026-05-01T00:00:00Z', '2026-06-30T00:00:00Z')]
+    expect(content(result({ bucket: 'C', status: 'closed', windowState: 'closed', windows })).windowLine).toBe('Window closed on 30 Jun 2026')
+  })
+
   it('says nothing for a scheme that is not for the founder', () => {
     const item = result({ bucket: 'D', windows: [window('fixed', '2026-10-01T00:00:00Z', '2026-12-31T00:00:00Z')] })
     expect(content(item).windowLine).toBeNull()
@@ -388,6 +443,20 @@ describe('cardContent, every money line', () => {
   it('leaves out the loan when the scheme gives none to show', () => {
     const labelsShown = content(result({ lines: lines({ subsidy: { min: 1, max: 2 }, loan: null }) })).moneyLines.map(line => line.label)
     expect(labelsShown).not.toContain('Loan')
+  })
+
+  it('leaves out a loan of nothing, which the main tile also hides', () => {
+    for (const own of [null, { min: 1, max: 2 }]) {
+      const item = result({ lines: lines({ own, subsidy: { min: 1, max: 2 }, loan: { min: 0, max: 0 } }) })
+      expect(content(item).moneyLines.map(line => line.label), String(own)).not.toContain('Loan')
+    }
+  })
+
+  it('keeps a loan that has no top, and one that starts at nothing', () => {
+    const open = content(result({ lines: lines({ own: { min: 1, max: 2 }, loan: { min: 100000, max: null } }) })).moneyLines
+    expect(open.find(line => line.label === 'Loan')?.value).toBe('₹1,00,000 or more')
+    const wide = content(result({ lines: lines({ own: { min: 1, max: 2 }, loan: { min: 0, max: 100000 } }) })).moneyLines
+    expect(wide.find(line => line.label === 'Loan')?.value).toBe('₹0 – ₹1,00,000')
   })
 
   it('leaves out what is still to arrange when it is nothing, and keeps it when it has no top', () => {
@@ -500,5 +569,17 @@ describe('cardContent, the date and the checks', () => {
   it('falls back to a plain phrase for a question that has no name', () => {
     const found = content(result({ bucket: 'B', steps: [answer('some_new_fact')] }))
     expect(found.toAnswer).toEqual(['some new fact'])
+  })
+})
+
+describe('the scheme card colours', () => {
+  const source = fs.readFileSync(path.join(process.cwd(), 'src/components/founder/VerdictCard.tsx'), 'utf8')
+
+  it('never uses red: nothing on a scheme card is a deadline or a penalty, a shortfall is one thing needed', () => {
+    expect(source).not.toMatch(/urgent/i)
+  })
+
+  it('shows the own-money shortfall as an amber chip, with its icon and words', () => {
+    expect(source).toMatch(/<StatusChip tone="step" text=\{card\.ownShortfall\}/)
   })
 })

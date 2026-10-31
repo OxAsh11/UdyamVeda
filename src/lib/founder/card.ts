@@ -1,10 +1,11 @@
 import type { BenefitLines, InrRange } from '@/lib/opportunities/engine/calculator'
+import { CLOSED_WINDOW_TYPES, singleWindowState } from '@/lib/opportunities/engine/classify'
 import type { Combination } from '@/lib/opportunities/engine/combination'
 import type { RecordResult } from '@/lib/opportunities/engine/results'
 import { formatDate, formatInr, formatRange } from '@/lib/start/format'
 import { t } from '@/lib/start/i18n'
 import type { Lang, Text } from '@/lib/start/types'
-import { verdictFor, type Verdict } from './verdict'
+import { nextOpening, verdictFor, verdictStatesOpening, type Verdict } from './verdict'
 
 export type CardMoney = {
   label: string
@@ -84,7 +85,7 @@ function moneyLinesOf(lines: BenefitLines | null, lang: Lang): CardMoney[] {
     { label: t(lang, 'ownMoney'), value: lines.own ? formatRange(lines.own, lang) : t(lang, 'ownNotStated'), note: null, tone: 'plain' },
     { label: t(lang, 'subsidy'), value: formatRange(lines.subsidy, lang), note: null, tone: hasAmount(lines.subsidy) ? 'go' : 'plain' },
   ]
-  if (lines.loan) {
+  if (lines.loan && hasAmount(lines.loan)) {
     list.push({ label: t(lang, 'loan'), value: loanValue(lines, lines.loan, lang), note: interestNote(lines, lang), tone: 'plain' })
   }
   if (hasAmount(lines.uncovered)) {
@@ -93,20 +94,29 @@ function moneyLinesOf(lines: BenefitLines | null, lang: Lang): CardMoney[] {
   return list
 }
 
-function windowLineOf(item: RecordResult, lang: Lang): string | null {
+// Rows can be past or still to come, so every date here is read against `now`, never taken from the first row.
+function windowLineOf(item: RecordResult, lang: Lang, now: Date): string | null {
   if (item.bucket === 'D') return null
-  const dated = item.windows.filter(window => window.closesAt || window.opensAt)
 
   if (item.windowState === 'not_yet_open') {
-    const opens = dated.map(window => window.opensAt).find(Boolean)
+    // A verdict that already says when it opens needs no second line saying it.
+    if (verdictStatesOpening(item)) return null
+    const opens = nextOpening(item, now)
     return opens ? t(lang, 'windowOpens', { from: formatDate(opens, lang) }) : null
   }
   if (item.windowState === 'closed') {
-    const closes = dated.map(window => window.closesAt).filter(Boolean).sort().at(-1)
+    const closes = item.windows
+      .map(window => window.closesAt)
+      .filter((closesAt): closesAt is string => !!closesAt && new Date(closesAt).getTime() <= now.getTime())
+      .sort((left, right) => new Date(left).getTime() - new Date(right).getTime())
+      .at(-1)
     return closes ? t(lang, 'windowUntil', { to: formatDate(closes, lang) }) : null
   }
-  const current = dated.find(window => window.closesAt)
-  if (current?.closesAt && current.opensAt) return t(lang, 'windowDates', { from: formatDate(current.opensAt, lang), to: formatDate(current.closesAt, lang) })
+  const current = item.windows.find(window =>
+    window.opensAt && window.closesAt
+    && !CLOSED_WINDOW_TYPES.has(window.windowType)
+    && singleWindowState(window, now.getTime()) === 'open')
+  if (current?.opensAt && current.closesAt) return t(lang, 'windowDates', { from: formatDate(current.opensAt, lang), to: formatDate(current.closesAt, lang) })
   return item.windows.some(window => window.windowType === 'rolling') ? null : t(lang, 'checkPortal')
 }
 
@@ -141,7 +151,6 @@ export function cardContent(
   const labelOf = (factKey: string) => (Object.hasOwn(labels, factKey) ? labels[factKey][lang] : factKey.replace(/_/g, ' '))
   const lines = item.lines
   const verdict = verdictFor(item, combination, lang, labelOf, now)
-  const windowLine = windowLineOf(item, lang)
 
   return {
     verdict,
@@ -154,8 +163,7 @@ export function cardContent(
     // The verdict names the first of these when there is no question to answer; saying it twice adds nothing.
     toObtain: distinctKeys(item, 'obtain').map(key => t(lang, 'stepObtain', { label: labelOf(key) })).filter(text => text !== verdict.text),
     couldMean: item.bucket === 'B' ? item.benefitHeadline ?? null : null,
-    // A verdict that already says when it opens needs no second line saying the same.
-    windowLine: windowLine === verdict.text ? null : windowLine,
+    windowLine: windowLineOf(item, lang, now),
     ifRenewed: lines?.ifRenewed ?? false,
     bankChecks: item.bucket === 'D' ? [] : item.bankChecks,
     checkedOn: formatDate(item.lastCheckedAt, lang) || null,
