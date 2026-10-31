@@ -6,6 +6,7 @@ export type StepResponse = {
   step: NextStep
   preview: Record<'A' | 'B' | 'C' | 'D', number>
   factLabels: Record<string, Text>
+  answerWords: Record<string, Text>
 }
 
 export type ActivityItem = Pick<FlowActivity, 'id' | 'label' | 'icon' | 'packIds'>

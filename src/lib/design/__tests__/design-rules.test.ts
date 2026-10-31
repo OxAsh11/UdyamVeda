@@ -8,6 +8,7 @@ import { TEXT } from '@/lib/start/i18n'
 // Files that follow the colour rules. Later tasks add each page they migrate.
 const MIGRATED_FILES: string[] = [
   'src/components/ui/founder.tsx',
+  'src/components/founder/VerdictCard.tsx',
   'src/lib/design/tones.ts',
 ]
 

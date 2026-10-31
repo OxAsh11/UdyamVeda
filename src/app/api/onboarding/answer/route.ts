@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { answerWordsFor, factLabelsOf, withNonAnswers } from '@/lib/founder/answers'
 import { cleanFacts } from '@/lib/opportunities/engine/facts'
 import { loadEngineCatalog } from '@/lib/opportunities/engine/load-catalog'
 import { buildResults } from '@/lib/opportunities/engine/results'
@@ -36,6 +37,8 @@ export async function POST(request: Request) {
   return NextResponse.json({
     step: nextStep({ facts, nonAnswers, asked }, bundle, catalog, now),
     preview: buildResults(facts, nonAnswers, catalog, now).counts,
-    factLabels: Object.fromEntries(Object.values(bundle.facts).map(fact => [fact.key, fact.label])),
+    factLabels: factLabelsOf(bundle),
+    // The founder's own answers in words, so a card can say "because you said..." in any language.
+    answerWords: answerWordsFor(withNonAnswers(facts, nonAnswers), bundle),
   })
 }

@@ -1,0 +1,338 @@
+import { describe, expect, it } from 'vitest'
+import type { BenefitLines } from '@/lib/opportunities/engine/calculator'
+import type { Combination } from '@/lib/opportunities/engine/combination'
+import type { RecordResult } from '@/lib/opportunities/engine/results'
+import { formatDate, formatRange } from '@/lib/start/format'
+import { TEXT } from '@/lib/start/i18n'
+import { seedBundle } from '@/lib/start/__tests__/seed-bundle'
+import type { Lang, Text } from '@/lib/start/types'
+import { answerWordsFor, factLabelsOf } from '../answers'
+import { cardContent } from '../card'
+
+const NOW = new Date('2026-10-31T00:00:00Z')
+const bundle = seedBundle()
+const labels = factLabelsOf(bundle)
+const words: Record<string, Text> = answerWordsFor({ activity_codes: ['pond_fish'], state: 'jharkhand', area_type: 'rural' }, bundle)
+
+function result(overrides: Partial<RecordResult> = {}): RecordResult {
+  return {
+    bucket: 'A',
+    windowState: 'open',
+    freshness: 'fresh',
+    steps: [],
+    bankChecks: [],
+    blockers: [],
+    decidedBy: ['activity_codes'],
+    failedFacts: [],
+    id: 'rec-1',
+    slug: 'a-scheme',
+    title: 'A scheme',
+    type: 'subsidy',
+    status: 'active',
+    lastCheckedAt: '2026-10-20T00:00:00Z',
+    windows: [],
+    applyRoute: null,
+    benefitHeadline: null,
+    aboveLimitInr: null,
+    lines: null,
+    ...overrides,
+  }
+}
+
+function lines(overrides: Partial<BenefitLines> = {}): BenefitLines {
+  return {
+    projectCost: { min: 500000, max: 1000000 },
+    own: null,
+    subsidy: { min: 0, max: 0 },
+    loan: null,
+    uncovered: { min: 0, max: 0 },
+    interestRatePct: null,
+    interestSubventionPct: null,
+    rateLabel: 'Standard rate',
+    sourceUrl: 'https://example.gov.in',
+    betterIfAnswered: [],
+    ownShortfall: false,
+    ceilingInr: null,
+    aboveCeiling: false,
+    straddlesCeiling: false,
+    ifRenewed: false,
+    ...overrides,
+  }
+}
+
+const combination: Combination = { recommended: [], alternatives: [], sequences: [] }
+const content = (item: RecordResult, lang: Lang = 'en', answerWords: Record<string, Text> = words) =>
+  cardContent(item, combination, lang, labels, answerWords, NOW)
+const answer = (factKey: string) => ({ kind: 'answer' as const, factKey })
+const obtain = (factKey: string) => ({ kind: 'obtain' as const, factKey })
+
+describe('cardContent, the verdict', () => {
+  it('leads with the verdict the rules engine gave', () => {
+    expect(content(result()).verdict).toEqual({ tone: 'go', text: 'You qualify. Apply now.', detail: null })
+    expect(content(result({ bucket: 'D', failedFacts: ['state'] })).verdict).toMatchObject({ tone: 'wait', text: 'Not for you' })
+  })
+})
+
+describe('cardContent, why it fits and the next step', () => {
+  it("says why it fits using the founder's own answer", () => {
+    expect(content(result()).why).toBe('Why it fits you: you said Pond fish farming.')
+  })
+
+  it('joins several answers in the order the rule read them, and skips what the founder did not give', () => {
+    const item = result({ decidedBy: ['state', 'applicant_age_years', 'activity_codes'] })
+    expect(content(item).why).toBe('Why it fits you: you said Jharkhand, Pond fish farming.')
+  })
+
+  it('says it in the chosen language', () => {
+    expect(content(result(), 'hi').why).toContain('तालाब में मछली पालन')
+    expect(content(result(), 'mr').why).toContain('तलावातील मत्स्यपालन')
+  })
+
+  it('says nothing when no answer sits behind the rule', () => {
+    expect(content(result({ decidedBy: [] })).why).toBeNull()
+    expect(content(result({ decidedBy: ['applicant_age_years'] })).why).toBeNull()
+    expect(content(result(), 'en', {}).why).toBeNull()
+  })
+
+  it('does not read an inherited property as an answer', () => {
+    expect(content(result({ decidedBy: ['constructor', 'toString'] })).why).toBeNull()
+  })
+
+  it('gives the application route as the next step', () => {
+    const item = result({ applyRoute: 'Go to any bank branch with your pond details.' })
+    expect(content(item).nextStep).toBe('Your next step: Go to any bank branch with your pond details.')
+  })
+
+  it('falls back to the official source when no route is stored', () => {
+    const official = 'Your next step: open the official source and follow how to apply.'
+    expect(content(result({ applyRoute: null })).nextStep).toBe(official)
+    // An older stored catalog has no such field at all.
+    expect(content(result({ applyRoute: undefined as unknown as null })).nextStep).toBe(official)
+    expect(content(result({ applyRoute: '' })).nextStep).toBe(official)
+  })
+
+  it('gives a why and a next step only for a scheme the founder can apply to now', () => {
+    for (const bucket of ['B', 'C', 'D'] as const) {
+      const item = result({ bucket, applyRoute: 'Go to the bank', decidedBy: ['activity_codes'] })
+      expect(content(item).why, bucket).toBeNull()
+      expect(content(item).nextStep, bucket).toBeNull()
+    }
+  })
+})
+
+describe('cardContent, the money tile', () => {
+  it('shows free money in green when there is a subsidy', () => {
+    const subsidy = { min: 300000, max: 800000 }
+    const money = content(result({ lines: lines({ subsidy, loan: { min: 1, max: 2 } }) })).money
+    expect(money).toEqual({ label: 'Free money you can get', value: formatRange(subsidy, 'en'), note: null, tone: 'go' })
+    expect(money?.value).toBe('₹3,00,000 – ₹8,00,000')
+  })
+
+  it('counts an open-ended subsidy as above zero', () => {
+    expect(content(result({ lines: lines({ subsidy: { min: 0, max: null } }) })).money?.tone).toBe('go')
+  })
+
+  it('shows a loan as a plain tile with the interest note', () => {
+    const item = result({ lines: lines({ loan: { min: 150000, max: 200000 }, interestRatePct: 7, interestSubventionPct: 3 }) })
+    expect(content(item).money).toEqual({
+      label: 'Loan you can get',
+      value: 'Up to ₹2,00,000',
+      note: '7% interest, effectively 4% if repaid on time',
+      tone: 'plain',
+    })
+  })
+
+  it('gives the plain interest rate when there is no interest relief', () => {
+    const item = result({ lines: lines({ loan: { min: 200000, max: 200000 }, interestRatePct: 7 }) })
+    expect(content(item).money?.note).toBe('7% interest')
+  })
+
+  it('gives no note when the interest rate is not stated', () => {
+    expect(content(result({ lines: lines({ loan: { min: 200000, max: 200000 } }) })).money?.note).toBeNull()
+  })
+
+  it('says "Up to" only when the scheme states no own share, because then the loan is a limit', () => {
+    const loan = { min: 150000, max: 200000 }
+    expect(content(result({ lines: lines({ loan, own: null }) })).money?.value).toBe('Up to ₹2,00,000')
+    const worked = content(result({ lines: lines({ loan, own: { min: 50000, max: 100000 } }) })).money
+    expect(worked?.value).toBe(formatRange(loan, 'en'))
+    expect(worked?.value).not.toContain('Up to')
+  })
+
+  it('never writes "Up to" before an amount that has no top', () => {
+    const loan = { min: 150000, max: null }
+    expect(content(result({ lines: lines({ loan, own: null }) })).money?.value).toBe(formatRange(loan, 'en'))
+  })
+
+  it('shows free money before a loan when a scheme has both', () => {
+    const item = result({ lines: lines({ subsidy: { min: 100000, max: 100000 }, loan: { min: 200000, max: 200000 } }) })
+    expect(content(item).money?.label).toBe('Free money you can get')
+  })
+
+  it('shows no tile for a loan of nothing', () => {
+    expect(content(result({ lines: lines({ loan: { min: 0, max: 0 } }) })).money).toBeNull()
+  })
+
+  it('writes interest relief without floating-point noise', () => {
+    const item = result({ lines: lines({ loan: { min: 1, max: 2 }, interestRatePct: 8.4, interestSubventionPct: 3.5 }) })
+    expect(content(item).money?.note).toBe('8.4% interest, effectively 4.9% if repaid on time')
+  })
+
+  it('shows no tile when there is neither a subsidy nor a loan', () => {
+    expect(content(result({ lines: lines() })).money).toBeNull()
+    expect(content(result({ lines: null })).money).toBeNull()
+  })
+
+  it('does not ask for a project cost the founder gave', () => {
+    const item = result({ lines: null })
+    expect(content(item).noAmount).toBe(true)
+    expect(TEXT.en.noAmount).toBe('We have not worked out an amount yet.')
+    expect(TEXT.en.noAmount).not.toMatch(/project cost/i)
+  })
+
+  it('says an amount is missing only for a scheme the founder can apply to now', () => {
+    expect(content(result({ lines: lines() })).noAmount).toBe(false)
+    expect(content(result({ bucket: 'B', lines: null })).noAmount).toBe(false)
+    expect(content(result({ bucket: 'C', lines: null })).noAmount).toBe(false)
+  })
+
+  it('words the money in the chosen language', () => {
+    const item = result({ lines: lines({ subsidy: { min: 100000, max: 100000 } }) })
+    expect(content(item, 'hi').money?.label).toBe(TEXT.hi.moneyFree)
+    expect(content(item, 'mr').money?.label).toBe(TEXT.mr.moneyFree)
+  })
+})
+
+describe('cardContent, one step away', () => {
+  const stepItem = (overrides: Partial<RecordResult> = {}) => result({
+    bucket: 'B',
+    decidedBy: [],
+    steps: [answer('applicant_age_years'), answer('social_category'), answer('applicant_age_years'), obtain('udyam')],
+    benefitHeadline: '40% subsidy on a loan at 6%',
+    ...overrides,
+  })
+
+  it('lists what to answer, and what it could mean', () => {
+    const found = content(stepItem())
+    expect(found.toAnswer).toEqual([labels.applicant_age_years.en, labels.social_category.en])
+    expect(found.couldMean).toBe('40% subsidy on a loan at 6%')
+  })
+
+  it('names the questions in the chosen language', () => {
+    expect(content(stepItem(), 'hi').toAnswer).toEqual([labels.applicant_age_years.hi, labels.social_category.hi])
+  })
+
+  it('leaves out steps that are about getting something, not answering', () => {
+    expect(content(stepItem({ steps: [obtain('udyam')] })).toAnswer).toEqual([])
+  })
+
+  it('shows what it could mean for one step away only, and not when none is stored', () => {
+    expect(content(stepItem({ benefitHeadline: null })).couldMean).toBeNull()
+    expect(content(stepItem({ benefitHeadline: undefined as unknown as null })).couldMean).toBeNull()
+    for (const bucket of ['A', 'C', 'D'] as const) {
+      expect(content(result({ bucket, benefitHeadline: '25% subsidy' })).couldMean, bucket).toBeNull()
+    }
+  })
+
+  it('lists the questions of a waiting scheme too, since answering still sharpens its amounts', () => {
+    expect(content(result({ bucket: 'C', steps: [answer('social_category')] })).toAnswer).toEqual([labels.social_category.en])
+  })
+
+  it('lists no questions for a scheme with none left', () => {
+    expect(content(result()).toAnswer).toEqual([])
+  })
+
+  it('says it cannot check a scheme where nothing about the founder was tested', () => {
+    const found = content(stepItem({ steps: [], decidedBy: [] }))
+    expect(found.verdict.text).toBe('We cannot check this for you yet.')
+    expect(found.toAnswer).toEqual([])
+  })
+})
+
+describe('cardContent, a scheme that has closed or is waiting', () => {
+  const waiting = (overrides: Partial<BenefitLines> = {}) => result({
+    bucket: 'C',
+    status: 'pending_renewal',
+    lines: lines({ subsidy: { min: 200000, max: 400000 }, ifRenewed: true, ...overrides }),
+  })
+
+  it('shows what a renewed scheme could be worth, and that it depends on the scheme returning', () => {
+    const found = content(waiting())
+    expect(found.ifRenewed).toBe(true)
+    expect(found.money).toEqual({
+      label: 'Free money, if it returns on the same terms',
+      value: '₹2,00,000 – ₹4,00,000',
+      note: null,
+      tone: 'go',
+    })
+  })
+
+  it('says the same of a loan', () => {
+    const found = content(waiting({ subsidy: { min: 0, max: 0 }, loan: { min: 100000, max: 100000 }, own: { min: 1, max: 1 } }))
+    expect(found.money?.label).toBe('Loan, if it returns on the same terms')
+    expect(found.money?.tone).toBe('plain')
+  })
+
+  it('does not promise anything for a scheme that is open', () => {
+    expect(content(result({ lines: lines({ subsidy: { min: 1, max: 2 } }) })).ifRenewed).toBe(false)
+    expect(content(result({ lines: null })).ifRenewed).toBe(false)
+  })
+
+  it('says the scheme is waiting, in the verdict', () => {
+    expect(content(waiting()).verdict).toEqual({ tone: 'wait', text: 'Renewal awaited', detail: null })
+  })
+})
+
+describe('cardContent, the date and the checks', () => {
+  it('gives the date the scheme was last checked', () => {
+    const found = content(result({ lastCheckedAt: '2026-10-25T08:00:00Z' }))
+    expect(found.checkedOn).toBe('25 Oct 2026')
+    expect(found.checkedStale).toBe(false)
+  })
+
+  it('marks a stale date for the card', () => {
+    const found = content(result({ lastCheckedAt: '2026-08-01T00:00:00Z', freshness: 'stale' }))
+    expect(found.checkedOn).toBe('1 Aug 2026')
+    expect(found.checkedStale).toBe(true)
+  })
+
+  it('marks a date that is getting old, too', () => {
+    expect(content(result({ freshness: 'amber' })).checkedStale).toBe(true)
+  })
+
+  it('gives no date when the scheme was never checked, and marks that as stale', () => {
+    const found = content(result({ lastCheckedAt: null, freshness: 'stale' }))
+    expect(found.checkedOn).toBeNull()
+    expect(found.checkedStale).toBe(true)
+  })
+
+  it('writes the date in the chosen language', () => {
+    const hindi = content(result({ lastCheckedAt: '2026-10-25T08:00:00Z' }), 'hi').checkedOn
+    expect(hindi).toBe(formatDate('2026-10-25T08:00:00Z', 'hi'))
+    expect(hindi).not.toBe('25 Oct 2026')
+  })
+
+  it('keeps what the bank or department will check', () => {
+    expect(content(result({ bankChecks: ['Income proof'] })).bankChecks).toEqual(['Income proof'])
+    expect(content(result({ bucket: 'D', bankChecks: ['Income proof'] })).bankChecks).toEqual([])
+  })
+
+  it('keeps the warning that the own share is more than the founder can put in', () => {
+    const short = content(result({ lines: lines({ ownShortfall: true }) }))
+    expect(short.ownShortfall).toBe('This is more than you said you can put in.')
+    expect(content(result({ lines: lines() })).ownShortfall).toBeNull()
+    expect(content(result({ lines: null })).ownShortfall).toBeNull()
+  })
+
+  it('keeps the questions that could get a better rate, in the founder\'s language', () => {
+    const better = content(result({ lines: lines({ betterIfAnswered: ['social_category', 'applicant_age_years'] }) }), 'hi')
+    expect(better.betterRate).toBe(TEXT.hi.betterRate.replace('{labels}', `${labels.social_category.hi}, ${labels.applicant_age_years.hi}`))
+    expect(content(result({ lines: lines() })).betterRate).toBeNull()
+    expect(content(result({ lines: null })).betterRate).toBeNull()
+  })
+
+  it('falls back to a plain phrase for a question that has no name', () => {
+    const found = content(result({ bucket: 'B', steps: [answer('some_new_fact')] }))
+    expect(found.toAnswer).toEqual(['some new fact'])
+  })
+})

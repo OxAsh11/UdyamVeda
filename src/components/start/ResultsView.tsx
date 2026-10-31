@@ -2,11 +2,11 @@
 
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useState, type ReactNode } from 'react'
 import LanguageSwitch from './LanguageSwitch'
 import QuestionField from './QuestionField'
-import SchemeCard from './SchemeCard'
 import { TryAgain } from './StartFlow'
+import VerdictCard from '@/components/founder/VerdictCard'
 import type { RecordResult, ResultsPayload } from '@/lib/opportunities/engine/results'
 import { fetchFounder, fetchResults, fetchStep, saveFounderFacts, type StepResponse } from '@/lib/start/api'
 import { clearDraft, emptyDraft, loadDraft, saveDraft, type Draft } from '@/lib/start/draft'
@@ -14,18 +14,18 @@ import { t, type TextKey } from '@/lib/start/i18n'
 import type { ScreenQuestion } from '@/lib/start/next-screen'
 import { answersMissing, applyAnswers, numberProblem, withScreenAnswers } from '@/lib/start/screen'
 import { draftFromAccount, resolveDraft, shouldSaveDraft } from '@/lib/start/sync'
-import type { Lang, Text } from '@/lib/start/types'
+import type { Lang } from '@/lib/start/types'
 
 type Loaded = { results: ResultsPayload; flow: StepResponse }
 
-function Bucket({ title, description, items, lang, labels }: { title: TextKey; description: TextKey; items: RecordResult[]; lang: Lang; labels: Record<string, Text> }) {
+function Bucket({ title, description, items, lang, card }: { title: TextKey; description: TextKey; items: RecordResult[]; lang: Lang; card: (item: RecordResult) => ReactNode }) {
   return (
     <section>
       <h2 className="text-base font-extrabold text-slate-900">{t(lang, title)} <span className="text-slate-400">({items.length})</span></h2>
       <p className="mb-3 text-xs text-slate-500">{t(lang, description)}</p>
       {items.length === 0 && <p className="rounded-xl border border-dashed border-slate-200 p-4 text-sm text-slate-400">{t(lang, 'nothingHere')}</p>}
       <div className="flex flex-col gap-3">
-        {items.map(item => <SchemeCard key={item.id} item={item} lang={lang} labels={labels} />)}
+        {items.map(item => card(item))}
       </div>
     </section>
   )
@@ -211,6 +211,20 @@ export default function ResultsView() {
   }
   const twoActivities = Array.isArray(draft.facts.activity_codes) && draft.facts.activity_codes.length > 1
 
+  // The questions are answered in the box above, so the card gets no link to answer them.
+  const card = (item: RecordResult) => loaded && (
+    <VerdictCard
+      key={item.id}
+      item={item}
+      combination={loaded.results.combination}
+      lang={lang}
+      labels={loaded.flow.factLabels}
+      answerWords={loaded.flow.answerWords}
+      detailHref={signedIn ? `/dashboard/schemes/${item.slug}` : `/schemes/${item.slug}`}
+      newTab={!signedIn}
+    />
+  )
+
   return (
     <div className="mx-auto flex w-full max-w-xl flex-col gap-5 px-4 py-6">
       <header className="flex items-center justify-between gap-3">
@@ -258,9 +272,9 @@ export default function ResultsView() {
             </section>
           )}
 
-          <Bucket title="bucketA" description="bucketADesc" items={loaded.results.buckets.A} lang={lang} labels={loaded.flow.factLabels} />
-          <Bucket title="bucketB" description="bucketBDesc" items={loaded.results.buckets.B} lang={lang} labels={loaded.flow.factLabels} />
-          <Bucket title="bucketC" description="bucketCDesc" items={loaded.results.buckets.C} lang={lang} labels={loaded.flow.factLabels} />
+          <Bucket title="bucketA" description="bucketADesc" items={loaded.results.buckets.A} lang={lang} card={card} />
+          <Bucket title="bucketB" description="bucketBDesc" items={loaded.results.buckets.B} lang={lang} card={card} />
+          <Bucket title="bucketC" description="bucketCDesc" items={loaded.results.buckets.C} lang={lang} card={card} />
 
           <section>
             <h2 className="text-base font-extrabold text-slate-900">{t(lang, 'bucketD')} <span className="text-slate-400">({loaded.results.counts.D})</span></h2>
@@ -272,7 +286,7 @@ export default function ResultsView() {
             )}
             {showD && (
               <div className="flex flex-col gap-3">
-                {loaded.results.buckets.D.map(item => <SchemeCard key={item.id} item={item} lang={lang} labels={loaded.flow.factLabels} />)}
+                {loaded.results.buckets.D.map(item => card(item))}
               </div>
             )}
           </section>

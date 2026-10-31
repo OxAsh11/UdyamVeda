@@ -67,6 +67,20 @@ describe('POST /api/onboarding/answer', () => {
     expect((await notList.json()).step.questions[0].id).toBe('q_activity')
   })
 
+  it("returns the founder's answers in words", async () => {
+    const payload = await (await post({ facts: { activity_codes: ['pond_fish'], state: 'jharkhand', gender: 'dont_know', social_category: 'prefer_not' }, asked: [] })).json()
+    expect(payload.answerWords.activity_codes).toMatchObject({ en: 'Pond fish farming', hi: 'तालाब में मछली पालन' })
+    expect(payload.answerWords.activity_codes.mr).toBeTruthy()
+    expect(payload.answerWords.state).toEqual({ en: 'Jharkhand', hi: 'झारखंड', mr: 'झारखंड' })
+    // A non-answer is an answer too: it is shown as what the founder said, not left out.
+    expect(payload.answerWords.gender.en).toBe("Don't know")
+    expect(payload.answerWords.social_category.en).toBe('Prefer not to say')
+  })
+
+  it('has no answers in words for a founder who has given none', async () => {
+    expect((await (await post({ facts: {}, asked: [] })).json()).answerWords).toEqual({})
+  })
+
   it('never returns what the caller sent as identity numbers', async () => {
     const text = await (await post({ facts: { pan_number: 'ABCDE1234F' }, asked: [] })).text()
     expect(text).not.toContain('ABCDE1234F')
