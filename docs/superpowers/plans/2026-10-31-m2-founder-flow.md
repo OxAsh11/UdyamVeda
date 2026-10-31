@@ -109,7 +109,7 @@ Data decisions:
   - Search: "achaar", "pickle", "लोणचे" → `pickles_chutney`; "murgi palan" → a poultry activity; "silai" → tailoring; "pikle" (typo) → pickles; empty gives a starter list; nonsense gives nothing.
   - Suggest route: ids outside the list are dropped; no API key gives an empty list; a 121-character text gets 400; the 11th call from one address in an hour gets 429.
 - [ ] **Step 2: Run to confirm they fail.**
-- [ ] **Step 3: Write `questions.json`, the generator and the search.** Search ranks exact, then prefix, then contains, then trigram similarity above 0.34 across labels and synonyms.
+- [ ] **Step 3: Write `questions.json`, the generator and the search.** Search ranks exact, then prefix, then contains, then trigram similarity above 0.3 across labels and synonyms.
 - [ ] **Step 4: Run, then generate migrations** `20261031130000_mvp_foundation_seed_v4.sql` and `20261031140000_questions_seed.sql`.
 - [ ] **Step 5: Dry-run in a rolled-back transaction, then apply.** Nothing reads these tables on the live site yet.
 - [ ] **Step 6: Commit** "Add the question set and activity search".
