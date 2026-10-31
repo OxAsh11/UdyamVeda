@@ -1,15 +1,12 @@
 import type { EmailOtpType } from '@supabase/supabase-js'
 import { NextResponse, type NextRequest } from 'next/server'
+import { safeNextPath } from '@/lib/auth/next-path'
 import { createClient } from '@/lib/supabase/server'
 
 // Landing point for links in Supabase auth emails (signup confirmation,
 // magic link, email change). Supabase sends either a PKCE `code` or a
 // `token_hash` + `type`; both are exchanged here for a session cookie on
 // the app host before the user continues to `next`.
-function safeNextPath(value: string | null) {
-  return value && value.startsWith('/') && !value.startsWith('//') ? value : '/dashboard'
-}
-
 export async function GET(request: NextRequest) {
   const { searchParams } = request.nextUrl
   const next = safeNextPath(searchParams.get('next'))

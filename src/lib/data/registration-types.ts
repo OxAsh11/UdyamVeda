@@ -118,7 +118,7 @@ export function recommendRegistrationType(
   sector: string,
   numFounders?: number,
 ): { primary: RegistrationType; alternatives: RegistrationType[]; reasoning: string } {
-  const isPreLaunch = stage === 'pre-launch' || stage === 'just-started'
+  const isPreLaunch = ['pre-launch', 'just-started', 'idea', 'setting_up'].includes(stage)
   const isLowCapital = capital === 'Under ₹1 lakh' || capital === '₹1–5 lakh'
   const isSolo = numFounders === 1 || founderType === 'general'
   const isProfessional = ['Professional Services', 'Finance & FinTech', 'IT & Software'].includes(sector)

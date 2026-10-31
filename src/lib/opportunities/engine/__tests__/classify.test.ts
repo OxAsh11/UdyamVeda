@@ -234,6 +234,12 @@ describe('cleaning what a caller sends', () => {
     expect(clean({ project_cost_exact_inr: 50000000 }).project_cost_band).toBe('above_2cr')
   })
 
+  it('does not report the band as unanswered when an exact cost has set it', () => {
+    const result = cleanFacts({ project_cost_exact_inr: 800000, project_cost_band: 'dont_know' }, definitions, knownActivities)
+    expect(result.facts.project_cost_band).toBe('5l_10l')
+    expect(result.nonAnswers).toEqual({})
+  })
+
   it('keeps good answers as they are', () => {
     expect(clean({ state: 'bihar', applicant_age_years: 34, udyam_registered: false, project_cost_band: '5l_10l' }))
       .toEqual({ state: 'bihar', applicant_age_years: 34, udyam_registered: false, project_cost_band: '5l_10l' })

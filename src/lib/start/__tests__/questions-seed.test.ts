@@ -104,8 +104,8 @@ describe('the money bands', () => {
   })
 
   it('cut the income band at Jharkhand\'s ₹5 lakh limit', () => {
-    expect(BAND_RANGES.annual_family_income_band['3l_5l']).toEqual({ min: 300000, max: 500000 })
-    expect(BAND_RANGES.annual_family_income_band['5l_6l']).toEqual({ min: 500000, max: 600000 })
+    expect(BAND_RANGES.annual_family_income_band['3l_5l']).toEqual({ min: 300001, max: 500000 })
+    expect(BAND_RANGES.annual_family_income_band['5l_6l']).toEqual({ min: 500001, max: 600000 })
     expect(BAND_RANGES.annual_family_income_band['3l_6l']).toBeUndefined()
   })
 

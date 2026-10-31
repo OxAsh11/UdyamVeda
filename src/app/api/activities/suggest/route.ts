@@ -1,11 +1,12 @@
 import OpenAI from 'openai'
 import { NextResponse } from 'next/server'
-import { OPENAI_MODEL } from '@/lib/ai/config'
 import { loadStartBundle } from '@/lib/start/load-bundle'
 import { allowSuggestCall } from '@/lib/start/suggest-limit'
 
 const MAX_TEXT_LENGTH = 120
 const MAX_SUGGESTIONS = 3
+const MAX_REPLY_TOKENS = 200
+const TIMEOUT_MS = 8000
 
 function parseIds(content: string | null | undefined) {
   try {
@@ -17,13 +18,15 @@ function parseIds(content: string | null | undefined) {
 }
 
 // Used only when search finds nothing. The founder confirms any suggestion, so
-// the AI never decides what their business is.
+// the AI never decides what their business is. It stays off until a low-cost
+// model is named in OPENAI_ACTIVITY_MODEL, so it can never bill the strong model.
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null) as { text?: unknown } | null
   const text = typeof body?.text === 'string' ? body.text.trim() : ''
   if (!text || text.length > MAX_TEXT_LENGTH) return NextResponse.json({ error: 'invalid_text' }, { status: 400 })
 
-  if (!process.env.OPENAI_API_KEY) return NextResponse.json({ items: [] })
+  const model = process.env.OPENAI_ACTIVITY_MODEL
+  if (!process.env.OPENAI_API_KEY || !model) return NextResponse.json({ items: [] })
 
   const address = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown'
   if (!allowSuggestCall(address)) return NextResponse.json({ error: 'too_many_requests' }, { status: 429 })
@@ -32,10 +35,10 @@ export async function POST(request: Request) {
   if (!bundle) return NextResponse.json({ error: 'unavailable' }, { status: 503 })
 
   try {
-    const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
+    const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY, timeout: TIMEOUT_MS, maxRetries: 0 })
     const completion = await openai.chat.completions.create({
-      model: OPENAI_MODEL,
-      reasoning_effort: 'low',
+      model,
+      max_completion_tokens: MAX_REPLY_TOKENS,
       response_format: { type: 'json_object' },
       messages: [
         {

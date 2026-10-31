@@ -6,9 +6,17 @@ import { resetSuggestLimits } from '../suggest-limit'
 import { seedBundle } from './seed-bundle'
 
 const create = vi.hoisted(() => vi.fn())
+const clientOptions = vi.hoisted(() => ({ last: null as unknown }))
 
 vi.mock('../load-bundle', () => ({ loadStartBundle: vi.fn() }))
-vi.mock('openai', () => ({ default: class { chat = { completions: { create } } } }))
+vi.mock('openai', () => ({
+  default: class {
+    chat = { completions: { create } }
+    constructor(options: unknown) {
+      clientOptions.last = options
+    }
+  },
+}))
 const load = vi.mocked(loadStartBundle)
 
 const suggest = (text: unknown, address = '1.2.3.4') => POST(new Request('https://app.udyamveda.in/api/activities/suggest', {
@@ -24,6 +32,7 @@ beforeEach(() => {
   create.mockReset()
   resetSuggestLimits()
   vi.stubEnv('OPENAI_API_KEY', 'test-key')
+  vi.stubEnv('OPENAI_ACTIVITY_MODEL', 'cheap-model')
   vi.spyOn(console, 'error').mockImplementation(() => undefined)
 })
 
@@ -59,6 +68,21 @@ describe('POST /api/activities/suggest', () => {
     expect(response.status).toBe(200)
     expect((await response.json()).items).toEqual([])
     expect(create).not.toHaveBeenCalled()
+  })
+
+  it('stays off, costing nothing, until a cheap model is chosen on purpose', async () => {
+    vi.stubEnv('OPENAI_ACTIVITY_MODEL', '')
+    const response = await suggest('anything')
+    expect(response.status).toBe(200)
+    expect((await response.json()).items).toEqual([])
+    expect(create).not.toHaveBeenCalled()
+  })
+
+  it('limits each call: its own model, a short reply, a time limit and no retries', async () => {
+    aiReplies(['bakery'])
+    await suggest('bread')
+    expect(create.mock.calls[0][0]).toMatchObject({ model: 'cheap-model', max_completion_tokens: 200 })
+    expect(clientOptions.last).toMatchObject({ timeout: 8000, maxRetries: 0 })
   })
 
   it('returns nothing when the AI fails, so the founder can still browse', async () => {

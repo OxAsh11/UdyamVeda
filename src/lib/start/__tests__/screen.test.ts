@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { emptyDraft } from '../draft'
 import type { ScreenQuestion } from '../next-screen'
-import { answersMissing, withScreenAnswers } from '../screen'
+import { answersMissing, applyAnswers, numberProblem, pickerState, withScreenAnswers } from '../screen'
 
 const fact = (key: string) => ({ key, type: 'boolean', label: { en: key, hi: key, mr: key }, packIds: [], sensitive: false, options: [] })
 const question = (id: string, kind: string, keys: string[], dependsOn: unknown = null): ScreenQuestion => ({
@@ -11,6 +11,65 @@ const question = (id: string, kind: string, keys: string[], dependsOn: unknown =
 const stage = question('q_stage', 'single', ['stage'])
 const since = question('q_since', 'date', ['operating_since'], { all: [{ field: 'stage', operator: 'equals', value: 'running' }] })
 const have = question('q_have', 'multi', ['has_pan', 'udyam_registered'])
+
+describe('applyAnswers', () => {
+  it('forgets an old exact cost when the founder picks a new cost band', () => {
+    expect(applyAnswers({ project_cost_exact_inr: 1200000, project_cost_band: '10l_25l' }, { project_cost_band: '1l_2l' })).toEqual({ project_cost_band: '1l_2l' })
+    expect(applyAnswers({ project_cost_exact_inr: 1200000 }, { project_cost_band: 'dont_know' })).toEqual({ project_cost_band: 'dont_know' })
+  })
+
+  it('keeps the band when the founder gives an exact cost', () => {
+    expect(applyAnswers({ project_cost_band: '10l_25l' }, { project_cost_exact_inr: 1200000 })).toEqual({ project_cost_band: '10l_25l', project_cost_exact_inr: 1200000 })
+  })
+
+  it('leaves other answers alone', () => {
+    expect(applyAnswers({ state: 'bihar', project_cost_exact_inr: 5 }, { district: 'Gaya' })).toEqual({ state: 'bihar', project_cost_exact_inr: 5, district: 'Gaya' })
+  })
+})
+
+describe('numberProblem', () => {
+  const age = question('q_age', 'number', ['applicant_age_years'])
+  const cost = question('q_exact_cost', 'number', ['project_cost_exact_inr'])
+  const workers = question('q_workers', 'number', ['workers_count'])
+
+  it.each([[4], [150], [13]])('questions an age of %i', value => {
+    expect(numberProblem(age, { applicant_age_years: value })).toBe('checkAge')
+  })
+
+  it.each([[14], [34], [100]])('accepts an age of %i', value => {
+    expect(numberProblem(age, { applicant_age_years: value })).toBeNull()
+  })
+
+  it('questions a project cost that looks like it was typed in lakhs', () => {
+    expect(numberProblem(cost, { project_cost_exact_inr: 8 })).toBe('checkCost')
+    expect(numberProblem(cost, { project_cost_exact_inr: 800000 })).toBeNull()
+  })
+
+  it('has nothing to say about other numbers, or about "don\'t know"', () => {
+    expect(numberProblem(workers, { workers_count: 0 })).toBeNull()
+    expect(numberProblem(age, { applicant_age_years: 'dont_know' })).toBeNull()
+    expect(numberProblem(age, {})).toBeNull()
+  })
+})
+
+describe('pickerState', () => {
+  it('waits while searching', () => {
+    expect(pickerState('fish', undefined)).toBe('loading')
+  })
+
+  it('says it could not search during an outage, not that nothing matched', () => {
+    expect(pickerState('fish', null)).toBe('failed')
+  })
+
+  it('says nothing matched only when the search really ran', () => {
+    expect(pickerState('zzz', [])).toBe('none')
+  })
+
+  it('shows the list', () => {
+    expect(pickerState('fish', [{ id: 'a' } as never])).toBe('list')
+    expect(pickerState('', [])).toBe('list')
+  })
+})
 
 describe('answersMissing', () => {
   it('flags a shown question with no answer', () => {

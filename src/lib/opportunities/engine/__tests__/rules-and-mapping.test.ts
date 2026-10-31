@@ -86,6 +86,30 @@ describe('answers that are only partly known', () => {
   })
 })
 
+describe('what kind of work an activity is', () => {
+  it('counts a fish shop as trading only, even though it sits in the fisheries pack', () => {
+    expect(DERIVATIONS.activity_nature({ activity_codes: ['fish_retail'] }, context)).toEqual({ anyOf: ['trading'] })
+  })
+
+  it('still counts a fish farm as agro', () => {
+    expect((DERIVATIONS.activity_nature({ activity_codes: ['pond_fish'] }, context) as { anyOf: string[] }).anyOf).toContain('agri_allied')
+  })
+})
+
+describe('family income limits', () => {
+  const limit = (value: number) => ({ all: [{ field: 'annual_family_income_inr', operator: 'less_than_or_equal', value }] })
+  const income = (band: string) => ({ annual_family_income_inr: DERIVATIONS.annual_family_income_inr({ annual_family_income_band: band }, context) })
+
+  it('gives a clear no for a band just above a limit, not "unknown" forever', () => {
+    expect(evaluateEligibilityRules(limit(500000), income('5l_6l')).result).toBe(false)
+    expect(evaluateEligibilityRules(limit(800000), income('above_8l')).result).toBe(false)
+  })
+
+  it('gives a clear yes for the band ending at the limit', () => {
+    expect(evaluateEligibilityRules(limit(500000), income('3l_5l')).result).toBe(true)
+  })
+})
+
 describe('exact project cost', () => {
   it('wins over the band', () => {
     expect(DERIVATIONS.project_cost_inr({ project_cost_exact_inr: 800000, project_cost_band: '5l_10l' }, context)).toEqual({ min: 800000, max: 800000 })

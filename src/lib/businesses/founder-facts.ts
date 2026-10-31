@@ -8,6 +8,9 @@ const LEGACY_STAGES: Record<string, string> = {
   'just-started': 'running',
   '1-2-years': 'running',
   '2-plus': 'running',
+  'Just an idea': 'idea',
+  'Setting it up now': 'setting_up',
+  'Already running': 'running',
 }
 
 const LEGACY_STATES: Record<string, string> = {
@@ -15,6 +18,9 @@ const LEGACY_STATES: Record<string, string> = {
   'andaman & nicobar': 'andaman_nicobar',
   'dadra & nagar haveli': 'dadra_nagar_haveli_daman_diu',
   'daman & diu': 'dadra_nagar_haveli_daman_diu',
+  'jammu and kashmir': 'jammu_kashmir',
+  'andaman and nicobar islands': 'andaman_nicobar',
+  'dadra and nagar haveli and daman and diu': 'dadra_nagar_haveli_daman_diu',
 }
 
 const NON_ANSWER_VALUES: Record<string, string> = { declined: 'prefer_not', dont_know: 'dont_know' }
@@ -40,13 +46,13 @@ export function founderFactsFromRows(rows: FactRow[]): Record<string, unknown> {
   let legacy: Record<string, unknown> = {}
 
   for (const row of rows) {
-    const nonAnswer = row.answer_state ? NON_ANSWER_VALUES[row.answer_state] : undefined
-    if (nonAnswer) {
-      facts[row.fact_key] = nonAnswer
+    const value = storedValue(row.fact_value)
+    if (value === undefined || value === null || value === '') {
+      // A value saved later (from Settings) outranks an earlier "don't know".
+      const nonAnswer = row.answer_state ? NON_ANSWER_VALUES[row.answer_state] : undefined
+      if (nonAnswer) facts[row.fact_key] = nonAnswer
       continue
     }
-    const value = storedValue(row.fact_value)
-    if (value === undefined || value === null || value === '') continue
 
     if (row.fact_key === 'founder_type') legacy = fromLegacyFounderType(value)
     else if (row.fact_key === 'sector' || row.fact_key === 'business_name' || row.fact_key === 'initial_capital') continue

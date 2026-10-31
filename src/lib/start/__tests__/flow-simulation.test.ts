@@ -142,6 +142,30 @@ describe('follow-up questions', () => {
   })
 })
 
+describe('changing an answer given while sharpening', () => {
+  const first = { activity_codes: ['beauty_parlour_salon'], state: 'maharashtra', applicant_age_years: 4, social_category: 'prefer_not' }
+  const firstIds = bundle.questions.filter(question => question.stage <= 7).map(question => question.id)
+
+  it('lists the sharpening questions already answered, whichever way', () => {
+    const { facts, nonAnswers } = cleanFacts(first, catalog.definitions, catalog.activityIds)
+    const step = nextStep({ facts, nonAnswers, asked: [...firstIds, 'q_age', 'q_category'] }, bundle, catalog, now)
+    expect(step.answered.map(question => question.id)).toEqual(['q_age', 'q_category'])
+  })
+
+  it('offers none before any are answered', () => {
+    const { facts, nonAnswers } = cleanFacts(first, catalog.definitions, catalog.activityIds)
+    expect(nextStep({ facts, nonAnswers, asked: firstIds }, bundle, catalog, now).answered).toEqual([])
+  })
+
+  it('still offers them once the limit is reached', () => {
+    const { facts, nonAnswers } = cleanFacts(first, catalog.definitions, catalog.activityIds)
+    const refine = bundle.questions.filter(question => question.stage >= 8).slice(0, MAX_REFINE_QUESTIONS).map(question => question.id)
+    const step = nextStep({ facts, nonAnswers, asked: [...firstIds, ...refine] }, bundle, catalog, now)
+    expect(step.phase).toBe('done')
+    expect(step.answered.length).toBeGreaterThan(0)
+  })
+})
+
 describe('a founder who answers nothing', () => {
   it('still reaches the end, with nothing repeated', () => {
     const session = play({})

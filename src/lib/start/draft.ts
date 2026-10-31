@@ -6,6 +6,8 @@ import type { Lang } from './types'
 // memory keeps the flow working for this visit either way.
 const KEY = 'uv.start.draft.v1'
 const LANGS: readonly Lang[] = ['en', 'hi', 'mr']
+// Answers can include category or income, and phones are shared.
+const KEEP_FOR_MS = 7 * 24 * 60 * 60 * 1000
 
 export type Draft = {
   facts: Record<string, unknown>
@@ -15,10 +17,13 @@ export type Draft = {
   // The chosen activities with their labels, so coming back shows them by name.
   activityItems: ActivityItem[]
   lang: Lang
+  // The account this draft was saved to or loaded from; null while anonymous.
+  ownerId: string | null
+  updatedAt: number
 }
 
 export function emptyDraft(): Draft {
-  return { facts: {}, asked: [], history: [], activityItems: [], lang: 'en' }
+  return { facts: {}, asked: [], history: [], activityItems: [], lang: 'en', ownerId: null, updatedAt: 0 }
 }
 
 let memory: Draft | null = null
@@ -38,26 +43,32 @@ function parse(stored: string | null): Draft | null {
       history: value.history.filter((screen): screen is string[] => Array.isArray(screen) && screen.every(id => typeof id === 'string')),
       activityItems: Array.isArray(value.activityItems) ? value.activityItems.filter((item): item is ActivityItem => isObject(item) && typeof item.id === 'string' && isObject(item.label)) : [],
       lang: LANGS.includes(value.lang as Lang) ? (value.lang as Lang) : 'en',
+      ownerId: typeof value.ownerId === 'string' ? value.ownerId : null,
+      updatedAt: typeof value.updatedAt === 'number' ? value.updatedAt : 0,
     }
   } catch {
     return null
   }
 }
 
+const isFresh = (draft: Draft) => Date.now() - draft.updatedAt <= KEEP_FOR_MS
+
 export function loadDraft(): Draft {
+  let found = memory
   try {
-    const stored = parse(localStorage.getItem(KEY))
-    if (stored) return stored
+    found = parse(localStorage.getItem(KEY)) ?? memory
   } catch {
-    // Blocked storage: fall through to the copy in memory.
+    // Blocked storage: use the copy in memory.
   }
-  return memory ?? emptyDraft()
+  if (found && isFresh(found)) return found
+  if (found) clearDraft()
+  return emptyDraft()
 }
 
 export function saveDraft(draft: Draft) {
-  memory = draft
+  memory = { ...draft, updatedAt: Date.now() }
   try {
-    localStorage.setItem(KEY, JSON.stringify(draft))
+    localStorage.setItem(KEY, JSON.stringify(memory))
   } catch {
     // Blocked or full storage: the copy in memory still serves this visit.
   }

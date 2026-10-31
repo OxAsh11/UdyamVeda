@@ -94,6 +94,10 @@ describe('CMEGP', () => {
     expect(bucketOf(CMEGP, { ...base, activity_codes: ['kirana_store'], project_cost_band: '2l_5l' })).toBe('D')
   })
 
+  it('is not for a fish shop either', () => {
+    expect(bucketOf(CMEGP, { ...base, activity_codes: ['fish_retail'], project_cost_band: '2l_5l' })).toBe('D')
+  })
+
   it('accepts proprietorship, partnership, SHG, and someone not yet registered', () => {
     for (const entity_type of ['proprietorship', 'partnership', 'shg', 'not_registered']) {
       expect(bucketOf(CMEGP, { ...parlour, entity_type, education_level: 'class_10' }), entity_type).toBe('A')

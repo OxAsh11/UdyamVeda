@@ -54,7 +54,7 @@ The adaptive questions and the results page, usable without an account.
 | `GET /api/activities?q=` | Served from cached rows with a tested in-memory trigram scorer. Handles "achaar", "pickle", "लोणचे". LLM fallback only for free text, confirmed by the founder |
 | `POST /api/onboarding/answer` returns the next screen and a live preview | Facts travel in the request until the founder saves. Next question is the one deciding the most candidate records, using `factKeysForRuleField` from M1 |
 | `/start` and `/start/results` | On the app host: add `/start` to `PRODUCT_PATH_PREFIXES` in `src/proxy.ts`, no login check. Website buttons link there. Drafts stay in `localStorage`, which is per host, which is why the flow cannot live on the website host |
-| Save on login | Draft moves to `business_facts` with `answer_state`. Dashboard shows results with the existing soft prompt. `/onboarding` redirects to `/start` |
+| Save on login | Draft moves to `business_facts` with `answer_state`. Dashboard shows results with the existing soft prompt. Nobody is sent into the questions: sign-in, signup and `/onboarding` all land on the dashboard |
 | Existing 14 accounts | Convert old state and stage answers to fact codes; old sector labels are ignored and re-asked |
 | Hide GTM tools | `NEXT_PUBLIC_SHOW_GTM_TOOLS=false` hides the sidebar "Grow" section and redirects those routes. Nothing is deleted |
 
@@ -142,4 +142,4 @@ The ordered registrations, the score and the document checklist.
 
 Section 16.4's long-term ideas (marketplace, AI planning, assisted filing) are out of the MVP by the PRD's own terms. GTM tools stay in the repo, hidden.
 
-**Known limit to settle in M2:** A founder with two activities (poultry and fish) gives one project cost, but schemes may fund each unit separately, and "same project" exclusions may not apply across units. M2 decides whether to ask project cost per activity.
+**Known limit, kept for now:** A founder with two activities (poultry and fish) gives one project cost, but schemes may fund each unit separately, and "same project" exclusions may not apply across units. M2 keeps one cost, to stay within 8 screens, and tells the founder so on the results page. Revisit with real founders in round 3.

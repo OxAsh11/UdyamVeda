@@ -191,7 +191,7 @@ export async function ensureBusiness(supabase: SupabaseClient, userId: string): 
   - `answer_state` becomes `dont_know` / `prefer_not`.
   - Route: anonymous gets 401; PUT drops junk; a founder with no business gets one; a phone-only user with no email works.
 - [ ] **Step 2: Run to confirm they fail.**
-- [ ] **Step 3: Implement.** `/onboarding` redirects to `/start`. Signup and login carry `next`. The results page saves the draft after sign-in. The dashboard shows counts and top results from `buildResults`, with a soft prompt when there are no answers.
+- [ ] **Step 3: Implement.** `/onboarding` redirects to `/dashboard`, and so does signup unless the founder chose to save results. Signup and login carry `next`. The results page saves the draft after sign-in. The dashboard shows counts and top results from `buildResults`, with a soft prompt when there are no answers.
 - [ ] **Step 4: Run.** `npm test && npm run build:next`. Commit "Save results on sign-in and show them on the dashboard".
 
 ### Task 7: "Checked today" and the sweep view

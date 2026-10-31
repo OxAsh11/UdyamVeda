@@ -61,6 +61,27 @@ describe('the browser draft', () => {
     expect(loadDraft().lang).toBe('en')
   })
 
+  it('keeps a draft for a week, then forgets it, so answers do not sit on a shared phone', () => {
+    vi.useFakeTimers()
+    vi.setSystemTime(new Date('2026-10-01T00:00:00Z'))
+    saveDraft({ ...emptyDraft(), facts: { social_category: 'sc' } })
+    vi.setSystemTime(new Date('2026-10-07T23:00:00Z'))
+    expect(loadDraft().facts).toEqual({ social_category: 'sc' })
+    vi.setSystemTime(new Date('2026-10-08T01:00:00Z'))
+    expect(loadDraft()).toEqual(emptyDraft())
+    vi.useRealTimers()
+  })
+
+  it('keeps who the draft belongs to', () => {
+    saveDraft({ ...emptyDraft(), facts: { state: 'bihar' }, ownerId: 'user-1' })
+    expect(loadDraft().ownerId).toBe('user-1')
+  })
+
+  it('treats a draft from before owners existed as anonymous', () => {
+    localStorage.setItem('uv.start.draft.v1', JSON.stringify({ facts: { state: 'bihar' }, asked: [], history: [], lang: 'hi', updatedAt: Date.now() }))
+    expect(loadDraft()).toMatchObject({ facts: { state: 'bihar' }, ownerId: null })
+  })
+
   it('clears', () => {
     saveDraft({ ...emptyDraft(), facts: { state: 'bihar' } })
     clearDraft()

@@ -3,7 +3,7 @@
 import { Suspense, useEffect, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-import { safeNextPath } from '@/lib/auth/next-path'
+import { authLink, safeNextPath } from '@/lib/auth/next-path'
 import { createClient } from '@/lib/supabase/client'
 import { toast } from 'sonner'
 
@@ -254,7 +254,7 @@ function EmailLogin({ onSignedIn, next }: { onSignedIn: () => void; next: string
 
       <p className="text-neutral-400 text-sm text-center mt-6">
         Don&apos;t have an account?{' '}
-        <Link href={next ? `/signup?next=${encodeURIComponent(safeNextPath(next))}` : '/signup'} className="text-neutral-700 underline hover:underline">Get started free</Link>
+        <Link href={authLink('/signup', next)} className="text-neutral-700 underline hover:underline">Get started free</Link>
       </p>
     </>
   )

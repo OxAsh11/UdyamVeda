@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   other: { 'mobile-web-app-capable': 'yes' },
 }
 
-export const viewport: Viewport = { themeColor: '#102a43', width: 'device-width', initialScale: 1, maximumScale: 1, userScalable: false }
+export const viewport: Viewport = { themeColor: '#102a43', width: 'device-width', initialScale: 1 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return <html lang="en" className="h-full antialiased"><body className="min-h-full">{children}<Toaster /><Script id="service-worker" strategy="afterInteractive">{`if ('serviceWorker' in navigator) { window.addEventListener('load', async function() { const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1'; if (isLocal) { const registrations = await navigator.serviceWorker.getRegistrations(); await Promise.all(registrations.map(function(registration) { return registration.unregister(); })); const cacheKeys = await caches.keys(); await Promise.all(cacheKeys.map(function(key) { return caches.delete(key); })); return; } navigator.serviceWorker.register('/sw.js').catch(function() {}); }); }`}</Script></body></html>

@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useMemo, useState } from 'react'
+import { stageLabel } from '@/lib/businesses/display'
 import Link from 'next/link'
 import {
   ArrowRight,
@@ -59,7 +60,7 @@ const CATEGORY_META: Record<RegistrationJourney['category'], { label: string; co
 }
 
 function displayStage(stage: string) {
-  return stage.replace(/-/g, ' ')
+  return stageLabel(stage).replace(/-/g, ' ')
 }
 
 export default function RegistrationPage() {

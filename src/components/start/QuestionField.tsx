@@ -149,7 +149,7 @@ export default function QuestionField({ question, lang, facts, activityItems, on
             type="button"
             aria-pressed={allDontKnow}
             onClick={() => onChange(Object.fromEntries(question.facts.map(item => [item.key, DONT_KNOW])))}
-            className={`chip ${allDontKnow ? 'selected' : ''}`}
+            className={`chip min-h-11 px-4 ${allDontKnow ? 'selected' : ''}`}
           >
             {t(lang, 'dontKnow')}
           </button>
@@ -158,13 +158,13 @@ export default function QuestionField({ question, lang, facts, activityItems, on
             type="button"
             aria-pressed={value === DONT_KNOW}
             onClick={() => (question.kind === 'activity_search' ? onActivities([], DONT_KNOW) : set(DONT_KNOW))}
-            className={`chip ${value === DONT_KNOW ? 'selected' : ''}`}
+            className={`chip min-h-11 px-4 ${value === DONT_KNOW ? 'selected' : ''}`}
           >
             {t(lang, 'dontKnow')}
           </button>
         )}
         {fact.sensitive && (
-          <button type="button" aria-pressed={value === PREFER_NOT} onClick={() => set(PREFER_NOT)} className={`chip ${value === PREFER_NOT ? 'selected' : ''}`}>
+          <button type="button" aria-pressed={value === PREFER_NOT} onClick={() => set(PREFER_NOT)} className={`chip min-h-11 px-4 ${value === PREFER_NOT ? 'selected' : ''}`}>
             {t(lang, 'preferNot')}
           </button>
         )}

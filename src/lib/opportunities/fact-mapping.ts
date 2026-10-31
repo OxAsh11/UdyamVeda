@@ -69,13 +69,15 @@ export const BAND_RANGES: Record<string, Record<string, NumberRange>> = {
   },
   annual_family_income_band: {
     up_to_72k: { min: 0, max: 72_000 },
-    '72k_1l': { min: 72_000, max: LAKH },
-    '1l_2l': { min: LAKH, max: 2 * LAKH },
-    '2l_3l': { min: 2 * LAKH, max: 3 * LAKH },
-    '3l_5l': { min: 3 * LAKH, max: 5 * LAKH },
-    '5l_6l': { min: 5 * LAKH, max: 6 * LAKH },
-    '6l_8l': { min: 6 * LAKH, max: 8 * LAKH },
-    above_8l: { min: 8 * LAKH, max: Number.POSITIVE_INFINITY },
+    // Income limits are "up to and including", so each band starts just above the
+    // last. Otherwise a band above a limit could never be a clear no.
+    '72k_1l': { min: 72_001, max: LAKH },
+    '1l_2l': { min: LAKH + 1, max: 2 * LAKH },
+    '2l_3l': { min: 2 * LAKH + 1, max: 3 * LAKH },
+    '3l_5l': { min: 3 * LAKH + 1, max: 5 * LAKH },
+    '5l_6l': { min: 5 * LAKH + 1, max: 6 * LAKH },
+    '6l_8l': { min: 6 * LAKH + 1, max: 8 * LAKH },
+    above_8l: { min: 8 * LAKH + 1, max: Number.POSITIVE_INFINITY },
   },
 }
 
@@ -207,8 +209,11 @@ export const DERIVATIONS: Record<string, Derivation> = {
     const values: string[] = []
     for (const id of chosen) {
       const packs = context.activityPacks[id] ?? []
-      if (TRADING_ACTIVITIES.includes(id)) values.push('trading')
-      else if (SERVICE_IN_GOODS_PACKS.includes(id) || packs.includes('services_retail') || packs.includes('tech_lite')) values.push('service', 'services')
+      if (TRADING_ACTIVITIES.includes(id)) {
+        values.push('trading')
+        continue
+      }
+      if (SERVICE_IN_GOODS_PACKS.includes(id) || packs.includes('services_retail') || packs.includes('tech_lite')) values.push('service', 'services')
       if (packs.includes('food') || packs.includes('manufacturing')) if (!SERVICE_IN_GOODS_PACKS.includes(id)) values.push('manufacturing', 'processing')
       if (packs.includes('livestock_fisheries') || packs.includes('agri')) values.push('activities allied to agriculture', 'agri_allied')
     }

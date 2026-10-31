@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useCallback, useEffect, useState } from 'react'
 import LanguageSwitch from './LanguageSwitch'
@@ -8,8 +7,8 @@ import QuestionField from './QuestionField'
 import { evaluateEligibilityRules } from '@/lib/opportunities/rules'
 import { fetchStep, type StepResponse } from '@/lib/start/api'
 import { loadDraft, saveDraft, type Draft } from '@/lib/start/draft'
-import { t } from '@/lib/start/i18n'
-import { answersMissing, withScreenAnswers } from '@/lib/start/screen'
+import { t, type TextKey } from '@/lib/start/i18n'
+import { answersMissing, applyAnswers, numberProblem, withScreenAnswers } from '@/lib/start/screen'
 import type { NextStep, ScreenQuestion } from '@/lib/start/next-screen'
 import type { Lang } from '@/lib/start/types'
 
@@ -34,7 +33,7 @@ export default function StartFlow() {
   const [draft, setDraft] = useState<Draft>(loadDraft)
   const [step, setStep] = useState<NextStep | null>(null)
   const [failed, setFailed] = useState(false)
-  const [missing, setMissing] = useState(false)
+  const [problem, setProblem] = useState<TextKey | null>(null)
   const lang = draft.lang
 
   const apply = useCallback((response: StepResponse | null) => {
@@ -48,7 +47,7 @@ export default function StartFlow() {
     }
     setStep(response.step)
     setFailed(false)
-    setMissing(false)
+    setProblem(null)
     window.scrollTo(0, 0)
   }, [router])
 
@@ -77,7 +76,12 @@ export default function StartFlow() {
     if (!step) return
     const visible = step.questions.filter(question => isVisible(question, draft.facts))
     if (answersMissing(visible, draft.facts)) {
-      setMissing(true)
+      setProblem('pleaseAnswer')
+      return
+    }
+    const wrongNumber = visible.map(question => numberProblem(question, draft.facts)).find(Boolean)
+    if (wrongNumber) {
+      setProblem(wrongNumber)
       return
     }
     const updated = withScreenAnswers(draft, step.questions, visible)
@@ -101,7 +105,7 @@ export default function StartFlow() {
   return (
     <div className="mx-auto flex w-full max-w-xl flex-col gap-5 px-4 py-6">
       <header className="flex items-center justify-between gap-3">
-        <Link href="/" className="text-lg font-extrabold tracking-tight text-slate-900">{t(lang, 'brand')}</Link>
+        <span className="text-lg font-extrabold tracking-tight text-slate-900">{t(lang, 'brand')}</span>
         <LanguageSwitch lang={lang} onChange={value => update({ ...draft, lang: value })} />
       </header>
 
@@ -128,16 +132,16 @@ export default function StartFlow() {
               facts={draft.facts}
               activityItems={draft.activityItems}
               onActivities={(items, value) => {
-                setMissing(false)
+                setProblem(null)
                 update({ ...draft, activityItems: items, facts: { ...draft.facts, activity_codes: value } })
               }}
               onChange={changes => {
-                setMissing(false)
-                update({ ...draft, facts: { ...draft.facts, ...changes } })
+                setProblem(null)
+                update({ ...draft, facts: applyAnswers(draft.facts, changes) })
               }}
             />
           ))}
-          {missing && <p role="alert" className="text-sm font-semibold text-rose-700">{t(lang, 'pleaseAnswer')}</p>}
+          {problem && <p role="alert" className="text-sm font-semibold text-rose-700">{t(lang, problem)}</p>}
           <div className="flex items-center gap-3">
             {draft.history.length > 0 && (
               <button type="button" onClick={back} className="rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-600 hover:bg-slate-50">{t(lang, 'back')}</button>

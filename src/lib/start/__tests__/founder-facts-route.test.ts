@@ -93,6 +93,23 @@ describe('/api/founder/facts', () => {
     vi.mocked(loadStartBundle).mockResolvedValue(seedBundle())
   })
 
+  it('refuses a save with nothing in it, rather than deleting everything', async () => {
+    db.memberships = [{ business_id: 'business-1', user_id: 'user-1' }]
+    db.businesses = [{ id: 'business-1', active: true }]
+    db.facts = [{ business_id: 'business-1', fact_key: 'state', fact_value: { value: 'bihar' }, answer_state: 'answered' }]
+    for (const body of [{}, { facts: {} }, { facts: { state: 'atlantis', pan_number: 'x' } }]) {
+      expect((await put(body)).status).toBe(400)
+    }
+    expect(saved('state')).toBeDefined()
+    expect(db.deleted).toEqual([])
+  })
+
+  it('saves an exact cost next to a "don\'t know" on the band without writing the band twice', async () => {
+    const response = await put({ facts: { project_cost_exact_inr: 800000, project_cost_band: 'dont_know' } })
+    expect(response.status).toBe(200)
+    expect(saved('project_cost_band')).toMatchObject({ fact_value: { value: '5l_10l' }, answer_state: 'answered' })
+  })
+
   it('tells an anonymous visitor they are not signed in', async () => {
     db.user = null
     expect((await GET()).status).toBe(401)
@@ -153,6 +170,35 @@ describe('/api/founder/facts', () => {
     expect(db.deleted).not.toContain('business_name')
   })
 
+  it('says who is signed in, and never lets a browser cache the answers', async () => {
+    const response = await GET()
+    expect((await response.json()).userId).toBe('user-1')
+    expect(response.headers.get('cache-control')).toContain('no-store')
+  })
+
+  it('does not count an answer it cannot use as answered, so the question comes back', async () => {
+    db.memberships = [{ business_id: 'business-1', user_id: 'user-1' }]
+    db.businesses = [{ id: 'business-1', active: true }]
+    db.facts = [{ business_id: 'business-1', fact_key: 'state', fact_value: { value: 'Mumbai' }, answer_state: 'answered' }]
+    const payload = await (await GET()).json()
+    expect(payload.facts).toEqual({})
+    expect(payload.asked).not.toContain('q_state')
+  })
+
+  it('names the saved activities, so a new device shows them', async () => {
+    db.memberships = [{ business_id: 'business-1', user_id: 'user-1' }]
+    db.businesses = [{ id: 'business-1', active: true }]
+    db.facts = [{ business_id: 'business-1', fact_key: 'activity_codes', fact_value: { value: ['pond_fish'] }, answer_state: 'answered' }]
+    const payload = await (await GET()).json()
+    expect(payload.activityItems.map((item: { id: string }) => item.id)).toEqual(['pond_fish'])
+    expect(payload.activityItems[0].label.hi).toBeTruthy()
+  })
+
+  it('says "try again" rather than an empty answer when the reference data is down', async () => {
+    vi.mocked(loadStartBundle).mockResolvedValue(null)
+    expect((await GET()).status).toBe(503)
+  })
+
   it('reads saved answers back, with the questions they answer', async () => {
     db.memberships = [{ business_id: 'business-1', user_id: 'user-1' }]
     db.businesses = [{ id: 'business-1', active: true }]
@@ -167,7 +213,7 @@ describe('/api/founder/facts', () => {
   })
 
   it('gives an empty answer to a signed-in founder with nothing saved', async () => {
-    expect(await (await GET()).json()).toEqual({ facts: {}, asked: [] })
+    expect(await (await GET()).json()).toEqual({ userId: 'user-1', facts: {}, asked: [], activityItems: [] })
     expect(db.businesses).toEqual([])
   })
 

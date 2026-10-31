@@ -10,6 +10,11 @@ export type StepResponse = {
 
 export type ActivityItem = Pick<FlowActivity, 'id' | 'label' | 'icon' | 'packIds'>
 
+// Every reply is read to the end: an unread one can keep its connection waiting.
+async function discardReply(response: Response) {
+  await response.text()
+}
+
 async function postJson<T>(url: string, body: unknown): Promise<T | null> {
   try {
     const response = await fetch(url, {
@@ -17,7 +22,9 @@ async function postJson<T>(url: string, body: unknown): Promise<T | null> {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body),
     })
-    return response.ok ? await response.json() as T : null
+    if (response.ok) return await response.json() as T
+    await discardReply(response)
+    return null
   } catch {
     return null
   }
@@ -32,17 +39,25 @@ export function fetchResults(facts: Record<string, unknown>) {
   return postJson<ResultsPayload>('/api/results', { facts })
 }
 
-export type FounderState = { signedIn: boolean; facts: Record<string, unknown>; asked: string[] }
+export type FounderState = {
+  // unknown: the check itself failed, so nothing is saved or forgotten.
+  status: 'signed_in' | 'anonymous' | 'unknown'
+  userId: string | null
+  facts: Record<string, unknown>
+  asked: string[]
+  activityItems: ActivityItem[]
+}
 
-/** What the account holds. Anything but a clear answer counts as not signed in. */
+const founderWithoutAccount = (status: FounderState['status']): FounderState => ({ status, userId: null, facts: {}, asked: [], activityItems: [] })
+
 export async function fetchFounder(): Promise<FounderState> {
   try {
     const response = await fetch('/api/founder/facts')
-    if (!response.ok) return { signedIn: false, facts: {}, asked: [] }
-    const { facts, asked } = await response.json() as { facts: Record<string, unknown>; asked: string[] }
-    return { signedIn: true, facts, asked }
+    if (response.ok) return { status: 'signed_in', ...await response.json() as Omit<FounderState, 'status'> }
+    await discardReply(response)
+    return founderWithoutAccount(response.status === 401 ? 'anonymous' : 'unknown')
   } catch {
-    return { signedIn: false, facts: {}, asked: [] }
+    return founderWithoutAccount('unknown')
   }
 }
 
@@ -53,6 +68,7 @@ export async function saveFounderFacts(facts: Record<string, unknown>) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ facts }),
     })
+    await discardReply(response)
     return response.ok
   } catch {
     return false
@@ -62,8 +78,9 @@ export async function saveFounderFacts(facts: Record<string, unknown>) {
 export async function searchActivityItems(query: string): Promise<ActivityItem[] | null> {
   try {
     const response = await fetch(`/api/activities?q=${encodeURIComponent(query)}`)
-    if (!response.ok) return null
-    return (await response.json() as { items: ActivityItem[] }).items
+    if (response.ok) return (await response.json() as { items: ActivityItem[] }).items
+    await discardReply(response)
+    return null
   } catch {
     return null
   }

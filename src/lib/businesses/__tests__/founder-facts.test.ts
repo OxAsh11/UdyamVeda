@@ -62,6 +62,26 @@ describe('founderFactsFromRows', () => {
     })
   })
 
+  it('lets a value saved later in Settings win over an earlier "don\'t know"', () => {
+    expect(founderFactsFromRows([{ fact_key: 'state', fact_value: { value: 'Bihar' }, answer_state: 'dont_know' }])).toEqual({ state: 'bihar' })
+  })
+
+  it.each([
+    ['Just an idea', 'idea'],
+    ['Setting it up now', 'setting_up'],
+    ['Already running', 'running'],
+  ])('reads back the stage shown in Settings: %s', (label, code) => {
+    expect(founderFactsFromRows([row('stage', label)]).stage).toBe(code)
+  })
+
+  it.each([
+    ['Jammu and Kashmir', 'jammu_kashmir'],
+    ['Andaman and Nicobar Islands', 'andaman_nicobar'],
+    ['Dadra and Nagar Haveli and Daman and Diu', 'dadra_nagar_haveli_daman_diu'],
+  ])('reads back the state shown in Settings: %s', (label, code) => {
+    expect(founderFactsFromRows([row('state', label)]).state).toBe(code)
+  })
+
   it('copes with a bare value, or a missing one', () => {
     expect(founderFactsFromRows([{ fact_key: 'state', fact_value: 'bihar' }])).toEqual({ state: 'bihar' })
     expect(founderFactsFromRows([{ fact_key: 'state', fact_value: {} }, { fact_key: 'stage', fact_value: null }])).toEqual({})

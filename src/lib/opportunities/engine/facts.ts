@@ -67,7 +67,10 @@ export function cleanFacts(
   if (typeof facts.project_cost_exact_inr === 'number') {
     const cost = facts.project_cost_exact_inr
     const band = Object.entries(BAND_RANGES.project_cost_band).find(([, range]) => cost >= range.min && cost <= range.max)
-    if (band) facts.project_cost_band = band[0]
+    if (band) {
+      facts.project_cost_band = band[0]
+      delete nonAnswers.project_cost_band
+    }
   }
   return { facts, nonAnswers }
 }

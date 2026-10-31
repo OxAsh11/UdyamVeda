@@ -1,4 +1,5 @@
 import { createClient } from '@/lib/supabase/server'
+import { stateLabel } from '@/lib/businesses/display'
 import { getBusinessForUser } from '@/lib/businesses/dal'
 import Sidebar from '@/components/layout/Sidebar'
 import { MapPin, Search } from 'lucide-react'
@@ -39,7 +40,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
             <input name="q" type="search" className="glass-input h-10 w-full pl-10 pr-4 text-sm" placeholder="Search schemes, grants, loans…" aria-label="Search opportunities" />
           </form>
           <div className="flex items-center gap-5 text-sm">
-            <div className="flex items-center gap-1.5 text-slate-500" title="State from your business profile"><MapPin size={15} className="text-indigo-500" />{business?.state || 'India'}</div>
+            <div className="flex items-center gap-1.5 text-slate-500" title="State from your business profile"><MapPin size={15} className="text-indigo-500" />{stateLabel(business?.state) || 'India'}</div>
             <NotificationCenter />
             <div className="flex items-center gap-2 border-l border-slate-200 pl-5">
               <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-indigo-100 to-orange-100 text-sm font-bold text-indigo-700">{(profile?.full_name ?? 'Y').charAt(0).toUpperCase()}</div>

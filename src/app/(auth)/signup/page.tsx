@@ -1,14 +1,22 @@
 'use client'
 
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { Suspense, useState } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-import { safeNextPath } from '@/lib/auth/next-path'
+import { authLink, safeNextPath } from '@/lib/auth/next-path'
 import { createClient } from '@/lib/supabase/client'
 import { toast } from 'sonner'
 
-export default function SignupPage() {
+// The return page comes from the address, so that part renders on the client
+// inside a Suspense boundary while the page shell stays prerendered.
+export default function SignupPageShell() {
+  return <Suspense fallback={<div className="min-h-screen" />}><SignupPage /></Suspense>
+}
+
+function SignupPage() {
   const router = useRouter()
+  const requestedNext = useSearchParams().get('next')
+  const loginHref = authLink('/login', requestedNext)
   const [loading, setLoading] = useState(false)
   const [accountHint, setAccountHint] = useState(false)
   const [form, setForm] = useState({ name: '', email: '', password: '' })
@@ -17,7 +25,7 @@ export default function SignupPage() {
     e.preventDefault()
     setLoading(true)
 
-    const next = safeNextPath(new URLSearchParams(window.location.search).get('next'))
+    const next = safeNextPath(requestedNext)
     const supabase = createClient()
     const { data, error } = await supabase.auth.signUp({
       email: form.email,
@@ -49,7 +57,7 @@ export default function SignupPage() {
 
     if (!data.session) {
       toast.success('Account created. Check your email to confirm it, then sign in.')
-      router.replace('/login')
+      router.replace(loginHref)
       return
     }
 
@@ -68,7 +76,7 @@ export default function SignupPage() {
         <h1 className="text-xl font-semibold text-neutral-900 mb-1">Create your account</h1>
         <p className="text-neutral-500 text-sm mb-6">Free to start. No credit card needed.</p>
 
-        <Link href="/login" className="mb-6 flex items-center justify-between rounded-xl border border-indigo-100 bg-indigo-50 px-4 py-3 text-sm font-semibold text-indigo-800 hover:bg-indigo-100">
+        <Link href={loginHref} className="mb-6 flex items-center justify-between rounded-xl border border-indigo-100 bg-indigo-50 px-4 py-3 text-sm font-semibold text-indigo-800 hover:bg-indigo-100">
           <span>Sign up with your mobile number instead</span>
           <span aria-hidden="true">→</span>
         </Link>
@@ -77,7 +85,7 @@ export default function SignupPage() {
         {accountHint && (
           <div className="mb-5 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
             This email may already have an account.{' '}
-            <Link href="/login" className="font-semibold underline">Sign in</Link>{' '}
+            <Link href={loginHref} className="font-semibold underline">Sign in</Link>{' '}
             or <Link href="/forgot-password" className="font-semibold underline">reset your password</Link>.
           </div>
         )}
@@ -134,7 +142,7 @@ export default function SignupPage() {
 
         <p className="text-neutral-400 text-sm text-center mt-6">
           Already have an account?{' '}
-          <Link href="/login" className="text-neutral-700 underline hover:underline">Sign in</Link>
+          <Link href={loginHref} className="text-neutral-700 underline hover:underline">Sign in</Link>
         </p>
       </div>
     </div>

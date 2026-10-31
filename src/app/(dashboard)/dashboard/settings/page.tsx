@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { stageLabel, stateLabel } from '@/lib/businesses/display'
 import { createClient } from '@/lib/supabase/client'
 import { toast } from 'sonner'
 import { User, LayoutGrid, Plug, ExternalLink, Save, Loader2 } from 'lucide-react'
@@ -45,8 +46,8 @@ export default function SettingsPage() {
       if (businessProfile) setBusiness({
         business_name: String(businessProfile.business_name ?? businessPayload.data?.business?.name ?? ''),
         sector: String(businessProfile.sector ?? ''),
-        stage: String(businessProfile.stage ?? ''),
-        state: String(businessProfile.state ?? ''),
+        stage: stageLabel(String(businessProfile.stage ?? '')),
+        state: stateLabel(String(businessProfile.state ?? '')),
         district: String(businessPayload.data?.business?.district ?? ''),
       })
       if (moduleResult.data) setModules({ setup_schemes: moduleResult.data.setup_schemes, gtm_platform: moduleResult.data.gtm_platform })

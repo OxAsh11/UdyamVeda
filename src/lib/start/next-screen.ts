@@ -18,6 +18,8 @@ export type NextStep = {
   // How many schemes the refinement question would settle or re-price.
   decides: number
   refineLeft: number
+  // Sharpening questions already answered, so a slip can still be corrected.
+  answered: ScreenQuestion[]
 }
 
 type FlowInput = {
@@ -71,6 +73,9 @@ export function nextStep(input: FlowInput, bundle: StartBundle, catalog: EngineC
   const packs = founderPacks(input.facts, bundle)
   const isOpen = (question: FlowQuestion) => !asked.has(question.id)
   const shown = (question: FlowQuestion) => screenQuestion(question, input.facts, packs, bundle)
+  const answered = bundle.questions
+    .filter(question => question.stage > LAST_FIRST_RESULT_STAGE && asked.has(question.id))
+    .flatMap(question => shown({ ...question, dependsOn: null }) ?? [])
 
   const stages = [...new Set(bundle.questions.filter(question => question.stage <= LAST_FIRST_RESULT_STAGE).map(question => question.stage))].sort((left, right) => left - right)
   for (const stage of stages) {
@@ -83,12 +88,12 @@ export function nextStep(input: FlowInput, bundle: StartBundle, catalog: EngineC
       const followUp = shown({ ...question, dependsOn: null })
       return followUp ? [{ ...followUp, dependsOn: question.dependsOn }] : []
     })
-    if (questions.length) return { phase: 'first', stage, questions, decides: 0, refineLeft: MAX_REFINE_QUESTIONS }
+    if (questions.length) return { phase: 'first', stage, questions, decides: 0, refineLeft: MAX_REFINE_QUESTIONS, answered }
   }
 
   const refineAsked = bundle.questions.filter(question => question.stage > LAST_FIRST_RESULT_STAGE && asked.has(question.id)).length
   const refineLeft = Math.max(0, MAX_REFINE_QUESTIONS - refineAsked)
-  const finished: NextStep = { phase: 'done', stage: null, questions: [], decides: 0, refineLeft }
+  const finished: NextStep = { phase: 'done', stage: null, questions: [], decides: 0, refineLeft, answered }
   if (!refineLeft) return finished
 
   const { buckets } = buildResults(input.facts, input.nonAnswers, catalog, now)
@@ -105,5 +110,5 @@ export function nextStep(input: FlowInput, bundle: StartBundle, catalog: EngineC
       bestDecides = decides
     }
   }
-  return best ? { phase: 'refine', stage: best.stage, questions: [best], decides: bestDecides, refineLeft } : finished
+  return best ? { phase: 'refine', stage: best.stage, questions: [best], decides: bestDecides, refineLeft, answered } : finished
 }

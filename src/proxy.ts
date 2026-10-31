@@ -1,6 +1,7 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 import { AUTH_REQUIRED } from '@/lib/auth/mode'
+import { safeNextPath } from '@/lib/auth/next-path'
 import { GTM_TOOLS_ENABLED, isGtmToolPath } from '@/lib/features/gtm'
 
 // Host separation: udyamveda.in (and www) is the public website.
@@ -98,7 +99,7 @@ export async function proxy(request: NextRequest) {
   }
 
   if (AUTH_PATHS.includes(pathname) && user) {
-    return NextResponse.redirect(new URL('/dashboard', request.url))
+    return NextResponse.redirect(new URL(safeNextPath(request.nextUrl.searchParams.get('next')), request.url))
   }
 
   return supabaseResponse
