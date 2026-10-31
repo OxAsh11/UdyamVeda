@@ -30,7 +30,14 @@ const RAW_COLOUR_CLASS =
   /\b(bg|text|border|from|to|via|ring|fill|stroke|divide|shadow)-(slate|neutral|gray|zinc|stone|indigo|violet|purple|blue|sky|cyan|teal|emerald|green|lime|yellow|amber|orange|red|rose|pink|fuchsia)-\d{2,3}\b/g
 const HEX_VALUE = /#[0-9a-fA-F]{3,8}\b/g
 
-const VISIBLE_ATTRIBUTES = new Set(['placeholder', 'aria-label', 'title'])
+// Props that never show as words. Every other string prop is read as text a person sees, so a
+// new shared-part prop (text, sub, label, note, value, ...) is covered with no list to update.
+const HIDDEN_ATTRIBUTES = new Set([
+  'className', 'class', 'style', 'href', 'src', 'id', 'key', 'ref', 'type', 'name', 'role', 'tone',
+  'htmlFor', 'target', 'rel',
+])
+const isHiddenAttribute = (name: string) =>
+  HIDDEN_ATTRIBUTES.has(name) || name.startsWith('data-') || (name.startsWith('aria-') && name !== 'aria-label')
 
 const TONES: Tone[] = ['go', 'step', 'wait', 'urgent']
 
@@ -82,17 +89,27 @@ function parse(source: string, file: string): ts.SourceFile {
   return ts.createSourceFile(file, source, ts.ScriptTarget.Latest, true, kind)
 }
 
-// String literals an expression can show: itself, or either side of ?: && || ??.
+// String literals an expression can show: itself, a template's text, either branch of ?:,
+// the shown side of && || ??, and both sides of +. A condition such as a === 'x' shows nothing.
 function literalsIn(node: ts.Expression | undefined): string[] {
   if (!node) return []
   if (ts.isStringLiteral(node) || ts.isNoSubstitutionTemplateLiteral(node)) return [node.text]
+  if (ts.isTemplateExpression(node)) {
+    return [node.head.text, ...node.templateSpans.flatMap((span) => [...literalsIn(span.expression), span.literal.text])]
+  }
   if (ts.isParenthesizedExpression(node)) return literalsIn(node.expression)
   if (ts.isConditionalExpression(node)) return [...literalsIn(node.whenTrue), ...literalsIn(node.whenFalse)]
-  if (ts.isBinaryExpression(node)) return [...literalsIn(node.left), ...literalsIn(node.right)]
+  if (ts.isBinaryExpression(node)) {
+    const op = node.operatorToken.kind
+    if (op === ts.SyntaxKind.AmpersandAmpersandToken) return literalsIn(node.right)
+    if (op === ts.SyntaxKind.BarBarToken || op === ts.SyntaxKind.QuestionQuestionToken || op === ts.SyntaxKind.PlusToken) {
+      return [...literalsIn(node.left), ...literalsIn(node.right)]
+    }
+  }
   return []
 }
 
-// Text a person reads: between tags, and placeholder / aria-label / title values.
+// Text a person reads: between tags, and the value of every prop that is not on the hidden list.
 function visibleText(source: string, file: string): string[] {
   const found: string[] = []
   const visit = (node: ts.Node) => {
@@ -100,7 +117,7 @@ function visibleText(source: string, file: string): string[] {
       found.push(node.text)
     } else if (ts.isJsxExpression(node) && (ts.isJsxElement(node.parent) || ts.isJsxFragment(node.parent))) {
       found.push(...literalsIn(node.expression))
-    } else if (ts.isJsxAttribute(node) && VISIBLE_ATTRIBUTES.has(node.name.getText())) {
+    } else if (ts.isJsxAttribute(node) && !isHiddenAttribute(node.name.getText())) {
       const value = node.initializer
       if (value && ts.isStringLiteral(value)) found.push(value.text)
       else if (value && ts.isJsxExpression(value)) found.push(...literalsIn(value.expression))
@@ -195,6 +212,32 @@ describe('the rule checks themselves', () => {
     expect(found).toContain('Review required')
     expect(found).not.toContain('provenance')
     expect(found).not.toContain('catalog')
+  })
+
+  it('read the props of the shared parts, and skip class names, links, ids and data attributes', () => {
+    const sample = [
+      'export const page = (amount: string, later: boolean) => (',
+      '  <>',
+      '    {amount === "catalog" && <i>Done</i>}',
+      '    <VerdictBand tone="go" text="Your evidence pack is ready" aside={<StatusChip tone="wait" text="Seeded" />} />',
+      '    <MoneyTile label="Handoff" value={`Up to ${amount} catalog`} note={later ? "Versioned" : ""} />',
+      '    <PageHeader title="Research beta" sub={`Preparation workspace ${later ? "now" : ""}`}',
+      '      action={<a href="/catalog/start" className="bg-go-soft" id="evidence" key="seeded" role="catalog"',
+      '        data-note="provenance" aria-describedby="provenance">Open</a>} />',
+      '  </>',
+      ')',
+    ].join('\n')
+    const found = visibleText(sample, 'sample.tsx')
+    expect(found).toEqual(expect.arrayContaining([
+      'Your evidence pack is ready', 'Seeded', 'Handoff', 'Up to ', ' catalog', 'Versioned',
+      'Research beta', 'Preparation workspace ', 'now', 'Open', 'Done',
+    ]))
+    for (const skipped of ['go', 'wait', '/catalog/start', 'bg-go-soft', 'evidence', 'seeded', 'catalog', 'provenance']) {
+      expect(found, skipped).not.toContain(skipped)
+    }
+    expect(bannedIn(found.join('\n'))).toEqual([
+      'evidence', 'handoff', 'research beta', 'preparation workspace', 'versioned', 'seeded', 'catalog',
+    ])
   })
 
   it('match banned words in any case, across a line break, and not a word that merely contains none', () => {
