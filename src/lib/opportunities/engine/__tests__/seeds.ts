@@ -21,7 +21,12 @@ type SeedRecord = { slug: string; rules: unknown }
 type SeedCorrection = { slug?: string; changes: { rules?: unknown } }
 
 export const mappings = seed<RuleFieldMapping[]>('rule-field-map.json')
-export const factDefinitions = seed<{ facts: SeedFact[] }>('facts.json').facts
+const factsFile = seed<{ states: unknown[][]; facts: (Omit<SeedFact, 'values'> & { values?: unknown[][] | string })[] }>('facts.json')
+// facts.json lists the states once; the state fact refers to that list by name.
+export const factDefinitions: SeedFact[] = factsFile.facts.map(fact => ({
+  ...fact,
+  values: typeof fact.values === 'string' ? factsFile.states : fact.values,
+}))
 export const packs = seed<SeedPack[]>('packs.json')
 const activities = seed<SeedActivity[]>('activities.json')
 export const activityIds = activities.map(activity => activity.id)
