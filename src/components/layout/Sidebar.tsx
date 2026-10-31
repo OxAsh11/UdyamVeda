@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
+import { GTM_TOOLS_ENABLED } from '@/lib/features/gtm'
 import { BarChart2, Bell, Building2, Calendar, ClipboardCheck, Files, Landmark, LayoutDashboard, LogOut, Menu, Search, Settings, ShieldCheck, Target, User, X, Play } from 'lucide-react'
 
 interface SidebarProps { userName: string; setupSchemes: boolean; gtmPlatform: boolean }
@@ -37,11 +38,13 @@ export default function Sidebar({ userName }: SidebarProps) {
       {nav('/dashboard/applications', ClipboardCheck, 'Applications')}
       {nav('/dashboard/compliance', ShieldCheck, 'Compliance')}
       {nav('/dashboard/documents', Files, 'Document Vault')}
-      <div className="section-label">Grow</div>
-      {nav('/dashboard/strategy', Target, 'Strategy')}
-      {nav('/dashboard/plays', Play, 'Plays')}
-      {nav('/dashboard/calendar', Calendar, 'Calendar')}
-      {nav('/dashboard/track', BarChart2, 'Track')}
+      {GTM_TOOLS_ENABLED && <>
+        <div className="section-label">Grow</div>
+        {nav('/dashboard/strategy', Target, 'Strategy')}
+        {nav('/dashboard/plays', Play, 'Plays')}
+        {nav('/dashboard/calendar', Calendar, 'Calendar')}
+        {nav('/dashboard/track', BarChart2, 'Track')}
+      </>}
     </nav>
     <div className="mt-auto flex flex-col gap-1"><div className="mb-3 mt-5 border-t border-slate-200" />{nav('/dashboard/settings', Settings, 'Settings')}<div className="nav-item mt-1 cursor-default hover:bg-transparent hover:text-slate-500"><div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-orange-200 to-rose-200"><User size={13} className="text-rose-700" /></div><span className="truncate text-xs text-slate-600">{userName}</span><Bell size={14} className="ml-auto text-slate-300" /></div><button onClick={handleSignOut} className="nav-item text-slate-400 hover:text-rose-500"><LogOut size={16} /><span>Sign out</span></button></div>
   </>

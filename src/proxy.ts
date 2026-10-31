@@ -1,6 +1,7 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 import { AUTH_REQUIRED } from '@/lib/auth/mode'
+import { GTM_TOOLS_ENABLED, isGtmToolPath } from '@/lib/features/gtm'
 
 // Host separation: udyamveda.in (and www) is the public website.
 // app.udyamveda.in is the product: login, dashboard, admin, workspace.
@@ -11,7 +12,8 @@ const APP_HOST = process.env.NEXT_PUBLIC_APP_HOST || `app.${SITE_HOST}`
 
 // Onboarding runs right after signup and needs the app-host session; /auth
 // holds the email-link callback, which must set its cookie on the app host.
-const PRODUCT_PATH_PREFIXES = ['/dashboard', '/admin', '/onboarding', '/auth']
+// The /start flow needs no login, but its draft and session live on the app host.
+const PRODUCT_PATH_PREFIXES = ['/dashboard', '/admin', '/onboarding', '/auth', '/start']
 const AUTH_PATHS = ['/login', '/signup', '/forgot-password', '/reset-password']
 
 function isProductPath(pathname: string) {
@@ -68,6 +70,10 @@ export async function proxy(request: NextRequest) {
     const url = new URL(`https://${SITE_HOST}${pathname}`)
     url.search = request.nextUrl.search
     return NextResponse.redirect(url)
+  }
+
+  if (!GTM_TOOLS_ENABLED && isGtmToolPath(pathname)) {
+    return NextResponse.redirect(new URL('/dashboard', request.url))
   }
 
   const isAdminPage = pathname === '/admin' || pathname.startsWith('/admin/')
