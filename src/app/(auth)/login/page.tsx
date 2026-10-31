@@ -38,7 +38,7 @@ function LoginPage() {
   }, [searchParams])
 
   function signedIn() {
-    router.replace(safeNextPath(new URLSearchParams(window.location.search).get('next'), '/dashboard'))
+    router.replace(safeNextPath(new URLSearchParams(window.location.search).get('next')))
     router.refresh()
   }
 
@@ -254,7 +254,7 @@ function EmailLogin({ onSignedIn, next }: { onSignedIn: () => void; next: string
 
       <p className="text-neutral-400 text-sm text-center mt-6">
         Don&apos;t have an account?{' '}
-        <Link href={next ? `/signup?next=${encodeURIComponent(safeNextPath(next, '/start'))}` : '/signup'} className="text-neutral-700 underline hover:underline">Get started free</Link>
+        <Link href={next ? `/signup?next=${encodeURIComponent(safeNextPath(next))}` : '/signup'} className="text-neutral-700 underline hover:underline">Get started free</Link>
       </p>
     </>
   )

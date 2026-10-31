@@ -17,7 +17,7 @@ export default function SignupPage() {
     e.preventDefault()
     setLoading(true)
 
-    const next = safeNextPath(new URLSearchParams(window.location.search).get('next'), '/start')
+    const next = safeNextPath(new URLSearchParams(window.location.search).get('next'))
     const supabase = createClient()
     const { data, error } = await supabase.auth.signUp({
       email: form.email,

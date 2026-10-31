@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation'
 
-// The question flow replaced the old one-page form. Anyone with an old link or
-// a fresh signup lands there; the dashboard itself never requires it.
+// The old one-page form is gone. Onboarding is not required, so an old link goes
+// to the dashboard, which offers the questions without forcing them.
 export default function OnboardingPage() {
-  redirect('/start')
+  redirect('/dashboard')
 }
