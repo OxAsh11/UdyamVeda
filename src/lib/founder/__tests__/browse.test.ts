@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import type { OpportunitySummary } from '@/lib/opportunities/types'
 import { seedBundle } from '@/lib/start/__tests__/seed-bundle'
-import { answersLine, browseHref, browseView, chipFor, cleanQuery, forYouCount, savedSchemes } from '../browse'
+import { answersLine, browseHref, browseTabCount, browseView, chipFor, cleanQuery, forYouCount, listNeeded, savedSchemes } from '../browse'
 import { ft } from '../text'
 import { verdictFor } from '../verdict'
 import { fisher as fisherFounder, NOW } from './ready-founder'
@@ -102,6 +102,39 @@ describe('forYouCount', () => {
     expect(forYouCount(fisher.results)).toBe(counts.A + counts.B + counts.C + counts.D)
     expect(forYouCount(fisher.results)).toBe(9)
     expect(fisher.results.registrations.length).toBeGreaterThan(0)
+  })
+})
+
+describe('listNeeded', () => {
+  it('skips the list for a ready founder on For you, where it is not shown', () => {
+    expect(listNeeded(fisher, false)).toBe(false)
+  })
+
+  it('reads the list when it is shown: browsing, or the states that show it under their message', () => {
+    expect(listNeeded(fisher, true)).toBe(true)
+    expect(listNeeded({ status: 'no_answers', bundle: null }, false)).toBe(true)
+    expect(listNeeded({ status: 'unavailable' }, false)).toBe(true)
+    expect(listNeeded({ status: 'unavailable' }, true)).toBe(true)
+  })
+})
+
+describe('browseTabCount', () => {
+  const list = (count: number, availability: 'available' | 'unavailable' = 'available') => ({ items: Array.from({ length: count }, () => summary()), availability })
+
+  it('takes the count from the catalog the results came from when the list was not read', () => {
+    expect(browseTabCount(fisher, null, '')).toBe(fisher.catalog.records.length)
+    expect(fisher.catalog.records.length).toBeGreaterThan(100)
+  })
+
+  it('takes the count from the list when it was read, but not for a search, which counts matches', () => {
+    expect(browseTabCount(fisher, list(12), '')).toBe(12)
+    expect(browseTabCount(fisher, list(3), 'fish')).toBeNull()
+  })
+
+  it('gives no count when the list could not be read, or when there is no tab to count', () => {
+    expect(browseTabCount(fisher, list(0, 'unavailable'), '')).toBeNull()
+    expect(browseTabCount({ status: 'no_answers', bundle: null }, null, '')).toBeNull()
+    expect(browseTabCount({ status: 'unavailable' }, null, '')).toBeNull()
   })
 })
 

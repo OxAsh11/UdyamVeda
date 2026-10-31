@@ -4,7 +4,7 @@ import SchemesForYou from '@/components/founder/SchemesForYou'
 import { PageHeader } from '@/components/ui/founder'
 import { AUTH_REQUIRED } from '@/lib/auth/mode'
 import { getBusinessForUser } from '@/lib/businesses/dal'
-import { browseHref, browseView, cleanQuery, forYouCount, knownGroup, knownType, savedSchemes, SCHEMES_PATH, type SavedScheme } from '@/lib/founder/browse'
+import { browseHref, browseTabCount, browseView, cleanQuery, forYouCount, knownGroup, knownType, listNeeded, savedSchemes, SCHEMES_PATH, type SavedScheme } from '@/lib/founder/browse'
 import { loadFounderResults, type FounderResults } from '@/lib/founder/load-results'
 import { ft } from '@/lib/founder/text'
 import { searchPublishedOpportunities } from '@/lib/opportunities/published'
@@ -13,10 +13,9 @@ import type { Lang } from '@/lib/start/types'
 
 // The page is English for now; the words are translated in M5.
 const LANG: Lang = 'en'
-// Where a card sends someone to answer what it still needs. Task 10 gives these questions their own page.
+// Where a founder answers what a card still needs and changes the answers the list is sorted by.
+// Task 10 gives this its own page; until then it is where the answers live.
 const ANSWER_HREF = '/start/results'
-// Where a founder changes the answers the list is sorted by.
-const CHANGE_HREF = '/dashboard/settings'
 
 type Query = Record<'view' | 'q' | 'type' | 'group', string | string[] | undefined>
 
@@ -57,18 +56,19 @@ export default async function SchemesPage({ searchParams }: { searchParams: Prom
   // A search or a shortcut from Home is a request to browse.
   const browsing = params.view === 'all' || query !== '' || type !== ''
 
-  // The type and the kind are narrowed here, not by the database, so only a search needs its own request.
-  const [{ founder, saved }, catalog] = await Promise.all([
-    loadFounder(),
-    searchPublishedOpportunities(query || undefined, undefined, undefined, 500),
-  ])
+  // The type and the kind are narrowed here, not by the database, so only a search is sent to it.
+  const readList = () => searchPublishedOpportunities(query || undefined, undefined, undefined, 500)
+  // Browse all needs the list whoever is looking, so it is read alongside the founder; otherwise
+  // it is read only for a founder with nothing to sort, once that is known.
+  const earlyList = browsing ? readList() : null
+  const { founder, saved } = await loadFounder()
+  const list = earlyList ? await earlyList : listNeeded(founder, browsing) ? await readList() : null
 
   const ready = founder.status === 'ready' ? founder : null
   // Someone with nothing to sort sees their prompt first and the whole list under it; no tabs, as there is nothing to switch to.
   const showForYou = !ready || !browsing
   const showBrowse = !ready || browsing
-  // The whole list is counted only when it was fetched whole; with a search typed, its length is the number of matches.
-  const total = query === '' && catalog.availability === 'available' ? catalog.items.length : null
+  const total = browseTabCount(founder, list, query)
 
   return (
     <div className="mx-auto flex max-w-5xl flex-col gap-6 p-5 md:p-8">
@@ -96,15 +96,14 @@ export default async function SchemesPage({ searchParams }: { searchParams: Prom
           founder={founder}
           lang={LANG}
           answerHref={ANSWER_HREF}
-          changeHref={CHANGE_HREF}
           retryHref={browseHref({ q: query, type, group })}
           saved={saved}
         />
       ) : null}
 
-      {showBrowse ? (
+      {showBrowse && list ? (
         <BrowseAll
-          view={browseView({ rows: catalog.items, availability: catalog.availability, query, type, group })}
+          view={browseView({ rows: list.items, availability: list.availability, query, type, group })}
           founder={founder}
           lang={LANG}
           type={type}

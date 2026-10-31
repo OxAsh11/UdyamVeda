@@ -68,6 +68,28 @@ export function chipFor(slug: string, founder: FounderResults, lang: Lang, now: 
   return outsideVerdict(catalog.records.find(record => record.slug === slug), facts, lang, stateLabel)
 }
 
+/**
+ * Whether the whole list has to be read. Only a view that shows it needs it: Browse all, or the
+ * states with nothing to sort, which show it under their message. A ready founder on For you does not.
+ */
+export function listNeeded(founder: FounderResults, browsing: boolean): boolean {
+  return browsing || founder.status !== 'ready'
+}
+
+/**
+ * The number on the Browse all tab, which only a ready founder has. Without the list it is the
+ * size of the catalog their results came from; with it, the length of the list, but not for a
+ * search, where the length is the number of matches and not the number of schemes.
+ */
+export function browseTabCount(
+  founder: FounderResults,
+  list: { items: readonly unknown[]; availability: CatalogAvailability } | null,
+  query: string,
+): number | null {
+  if (list === null) return founder.status === 'ready' ? founder.catalog.records.length : null
+  return query === '' && list.availability === 'available' ? list.items.length : null
+}
+
 /** The number of cards on For you: the four buckets, not the registrations. */
 export function forYouCount(results: ResultsPayload): number {
   const { A, B, C, D } = results.counts

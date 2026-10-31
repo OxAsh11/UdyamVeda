@@ -25,10 +25,8 @@ const SECTIONS: { bucket: Exclude<Bucket, 'D'>; tone: 'go' | 'step' | 'wait' }[]
 type Props = {
   founder: FounderResults
   lang: Lang
-  // Where a card sends someone to answer what it still needs.
+  // Where a founder answers what a card still needs, and changes the answers the list is sorted by.
   answerHref: string
-  // Where a founder changes the answers the list is sorted by.
-  changeHref: string
   // The page this one reloads to, for when results could not load.
   retryHref: string
   saved: SavedScheme[]
@@ -59,7 +57,7 @@ function SavedList({ saved }: { saved: SavedScheme[] }) {
   )
 }
 
-function Sorted({ founder, lang, answerHref, changeHref, saved }: Omit<Props, 'founder' | 'retryHref'> & { founder: Ready }) {
+function Sorted({ founder, lang, answerHref, saved }: Omit<Props, 'founder' | 'retryHref'> & { founder: Ready }) {
   const { results, bundle, answers } = founder
   const labels = factLabelsOf(bundle)
   const answerWords = answerWordsFor(answers, bundle)
@@ -84,7 +82,7 @@ function Sorted({ founder, lang, answerHref, changeHref, saved }: Omit<Props, 'f
       {line ? (
         <div className="flex flex-col items-start gap-x-3 sm:flex-row sm:flex-wrap sm:items-center">
           <p className="min-w-0 text-sm text-ink-2">{ft('sortedUsing', { answers: line })}</p>
-          <Link href={changeHref} className={LINK}>{ft('changeDetails')}</Link>
+          <Link href={answerHref} className={LINK}>{ft('changeDetails')}</Link>
         </div>
       ) : null}
 
@@ -120,10 +118,10 @@ function Sorted({ founder, lang, answerHref, changeHref, saved }: Omit<Props, 'f
 
 /** The For you view: the founder's own schemes sorted by verdict, or what to do when there is nothing to sort. */
 export default function SchemesForYou(props: Props) {
-  const { founder, lang, answerHref, changeHref, retryHref, saved } = props
+  const { founder, lang, answerHref, retryHref, saved } = props
 
   if (founder.status === 'ready') {
-    return <div className="flex flex-col gap-6"><Sorted founder={founder} lang={lang} answerHref={answerHref} changeHref={changeHref} saved={saved} /></div>
+    return <div className="flex flex-col gap-6"><Sorted founder={founder} lang={lang} answerHref={answerHref} saved={saved} /></div>
   }
 
   return (
@@ -133,7 +131,7 @@ export default function SchemesForYou(props: Props) {
           <div className="flex flex-col gap-3">
             <h2 className="text-xl font-bold text-ink">{ft('tellTitle')}</h2>
             <p className="text-sm text-ink-2">{ft('tellBody')}</p>
-            <div><Link href="/start" className={cn(BUTTON, FILLED)}>{ft('tellCta')}</Link></div>
+            <div><Link href={answerHref} className={cn(BUTTON, FILLED)}>{ft('tellCta')}</Link></div>
           </div>
         </Card>
       ) : (

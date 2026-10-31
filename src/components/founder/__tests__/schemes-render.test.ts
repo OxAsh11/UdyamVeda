@@ -7,7 +7,9 @@ import type { OpportunitySummary } from '@/lib/opportunities/types'
 import BrowseAll from '../BrowseAll'
 import SchemesForYou from '../SchemesForYou'
 
-const props = { lang: 'en' as const, answerHref: '/start/results', changeHref: '/dashboard/settings', retryHref: '/dashboard/schemes?view=all', saved: [] }
+// A made-up address, so a test shows the page uses the one it is given.
+const ANSWER_HREF = '/answers-here'
+const props = { lang: 'en' as const, answerHref: ANSWER_HREF, retryHref: '/dashboard/schemes?view=all', saved: [] }
 
 describe('SchemesForYou', () => {
   it('sorts the schemes for a founder by verdict, with the ones that are not for them folded away', () => {
@@ -20,7 +22,10 @@ describe('SchemesForYou', () => {
     expect(html).toMatch(/<details class="group[^>]*>s*<summary/)
     expect(html).not.toMatch(/<details[^>]* open/)
     expect(html).toContain('href="/dashboard/schemes/kisan-credit-card-animal-husbandry-fisheries"')
-    expect(html).toContain('href="/start/results"')
+    // Both the card's question button and "Change my details" go where answers are changed.
+    expect(html.match(new RegExp(`href="${ANSWER_HREF}"`, 'g'))!.length).toBeGreaterThanOrEqual(2)
+    expect(html).toContain('Change my details')
+    expect(html).not.toContain('/dashboard/settings')
   })
 
   it('hides a section with nothing in it, and says so when nothing fits at all', () => {
@@ -35,7 +40,8 @@ describe('SchemesForYou', () => {
   it('offers the questions, and no verdict, to someone with no answers', () => {
     const html = renderToStaticMarkup(createElement(SchemesForYou, { ...props, founder: { status: 'no_answers', bundle: null } }))
     expect(html).toContain('Tell us about you')
-    expect(html).toContain('href="/start"')
+    expect(html).toContain(`href="${ANSWER_HREF}"`)
+    expect(html).not.toContain('href="/start"')
     expect(html).not.toContain('Saved for later')
   })
 

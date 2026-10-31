@@ -394,7 +394,7 @@ describe('cardContent, the application window', () => {
 })
 
 describe('cardContent, every money line', () => {
-  it('lists each line of a scheme with a subsidy, free money in green and what is left in amber', () => {
+  it('lists each line of a scheme with a subsidy, except the free money the main tile already shows', () => {
     const item = result({
       lines: lines({
         projectCost: { min: 500000, max: 1000000 },
@@ -406,16 +406,16 @@ describe('cardContent, every money line', () => {
         interestSubventionPct: 3,
       }),
     })
+    expect(content(item).money).toMatchObject({ label: 'Free money you can get', value: '₹3,00,000 – ₹8,00,000', tone: 'go' })
     expect(content(item).moneyLines).toEqual([
       { label: 'Project cost', value: '₹5,00,000 – ₹10,00,000', note: null, tone: 'plain' },
       { label: 'Your own money', value: '₹50,000 – ₹1,00,000', note: null, tone: 'plain' },
-      { label: 'Subsidy or grant', value: '₹3,00,000 – ₹8,00,000', note: null, tone: 'go' },
       { label: 'Loan', value: '₹1,00,000', note: '7% interest, effectively 4% if repaid on time', tone: 'plain' },
       { label: 'Still to arrange', value: '₹10,000 – ₹20,000', note: null, tone: 'step' },
     ])
   })
 
-  it('lists each line of a credit-only scheme: own money not stated, no free money, the loan as a limit', () => {
+  it('lists each line of a credit-only scheme, except the loan and its interest the main tile already shows', () => {
     const item = result({
       lines: lines({
         projectCost: { min: 500000, max: 1000000 },
@@ -426,11 +426,11 @@ describe('cardContent, every money line', () => {
         interestRatePct: 7,
       }),
     })
+    expect(content(item).money).toEqual({ label: 'Loan you can get', value: 'Up to ₹2,00,000', note: '7% interest', tone: 'plain' })
     expect(content(item).moneyLines).toEqual([
       { label: 'Project cost', value: '₹5,00,000 – ₹10,00,000', note: null, tone: 'plain' },
       { label: 'Your own money', value: 'Not stated by the scheme', note: null, tone: 'plain' },
       { label: 'Subsidy or grant', value: '₹0', note: null, tone: 'plain' },
-      { label: 'Loan', value: 'Up to ₹2,00,000', note: '7% interest', tone: 'plain' },
       {
         label: 'Still to arrange',
         value: '₹3,00,000 – ₹8,00,000',
@@ -438,6 +438,25 @@ describe('cardContent, every money line', () => {
         tone: 'step',
       },
     ])
+  })
+
+  it('never shows the same amount or interest note twice on one card', () => {
+    const credit = content(result({ lines: lines({ own: null, loan: { min: 150000, max: 200000 }, interestRatePct: 7, interestSubventionPct: 3 }) }))
+    const subsidy = content(result({ lines: lines({ subsidy: { min: 300000, max: 800000 }, loan: { min: 100000, max: 100000 }, interestRatePct: 7 }) }))
+    for (const card of [credit, subsidy]) {
+      const shown = [card.money, ...card.moneyLines].filter((entry): entry is NonNullable<typeof entry> => entry !== null)
+      const notes = shown.map(entry => entry.note).filter(note => note !== null)
+      expect(new Set(notes).size, JSON.stringify(shown)).toBe(notes.length)
+    }
+    expect(credit.money?.note).toBe('7% interest, effectively 4% if repaid on time')
+    expect(credit.moneyLines.map(line => line.note)).not.toContain(credit.money?.note)
+  })
+
+  it('shows every line when there is no main tile', () => {
+    // No free money and no loan: the tile has nothing to lead with, so nothing is left out.
+    const item = result({ lines: lines({ own: { min: 50000, max: 100000 }, subsidy: { min: 0, max: 0 }, loan: null, uncovered: { min: 10000, max: 20000 } }) })
+    expect(content(item).money).toBeNull()
+    expect(content(item).moneyLines.map(line => line.label)).toEqual(['Project cost', 'Your own money', 'Subsidy or grant', 'Still to arrange'])
   })
 
   it('leaves out the loan when the scheme gives none to show', () => {
@@ -453,9 +472,11 @@ describe('cardContent, every money line', () => {
   })
 
   it('keeps a loan that has no top, and one that starts at nothing', () => {
-    const open = content(result({ lines: lines({ own: { min: 1, max: 2 }, loan: { min: 100000, max: null } }) })).moneyLines
+    // Free money leads the tile, so the loan is the line that has to say it.
+    const free = { min: 1, max: 2 }
+    const open = content(result({ lines: lines({ own: { min: 1, max: 2 }, subsidy: free, loan: { min: 100000, max: null } }) })).moneyLines
     expect(open.find(line => line.label === 'Loan')?.value).toBe('₹1,00,000 or more')
-    const wide = content(result({ lines: lines({ own: { min: 1, max: 2 }, loan: { min: 0, max: 100000 } }) })).moneyLines
+    const wide = content(result({ lines: lines({ own: { min: 1, max: 2 }, subsidy: free, loan: { min: 0, max: 100000 } }) })).moneyLines
     expect(wide.find(line => line.label === 'Loan')?.value).toBe('₹0 – ₹1,00,000')
   })
 
@@ -479,7 +500,7 @@ describe('cardContent, every money line', () => {
   it('words the lines in the chosen language', () => {
     const item = result({ lines: lines({ subsidy: { min: 100000, max: 100000 }, uncovered: { min: 5, max: 6 } }) })
     expect(content(item, 'hi').moneyLines.map(line => line.label)).toEqual([
-      TEXT.hi.projectCost, TEXT.hi.ownMoney, TEXT.hi.subsidy, TEXT.hi.toArrange,
+      TEXT.hi.projectCost, TEXT.hi.ownMoney, TEXT.hi.toArrange,
     ])
   })
 })

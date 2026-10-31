@@ -60,6 +60,13 @@ function loanValue(lines: BenefitLines, loan: InrRange, lang: Lang) {
   return lines.own === null && loan.max !== null ? t(lang, 'upTo', { amount: formatInr(loan.max) }) : formatRange(loan, lang)
 }
 
+// The line the main tile leads with: free money if there is any, else the loan.
+function leadOf(lines: BenefitLines | null): 'subsidy' | 'loan' | null {
+  if (!lines) return null
+  if (hasAmount(lines.subsidy)) return 'subsidy'
+  return lines.loan && hasAmount(lines.loan) ? 'loan' : null
+}
+
 /**
  * The one amount a card leads with: free money if there is any, else the loan.
  * Each line stands alone, so nothing is added into one "benefit" figure.
@@ -68,24 +75,32 @@ function moneyOf(lines: BenefitLines | null, lang: Lang): CardMoney | null {
   if (!lines) return null
   const renewed = lines.ifRenewed
 
-  if (hasAmount(lines.subsidy)) {
+  const lead = leadOf(lines)
+  if (lead === 'subsidy') {
     return { label: t(lang, renewed ? 'moneyFreeRenewed' : 'moneyFree'), value: formatRange(lines.subsidy, lang), note: null, tone: 'go' }
   }
-  if (lines.loan && hasAmount(lines.loan)) {
+  if (lead === 'loan' && lines.loan) {
     return { label: t(lang, renewed ? 'moneyLoanRenewed' : 'moneyLoan'), value: loanValue(lines, lines.loan, lang), note: interestNote(lines, lang), tone: 'plain' }
   }
   return null
 }
 
-/** Each line the calculator worked out, in the order a founder reads a budget. */
+/**
+ * Each line the calculator worked out, in the order a founder reads a budget, except the one
+ * the main tile already shows: the same amount and interest note twice would read as two loans.
+ * With no main tile every line stays.
+ */
 function moneyLinesOf(lines: BenefitLines | null, lang: Lang): CardMoney[] {
   if (!lines) return []
+  const lead = leadOf(lines)
   const list: CardMoney[] = [
     { label: t(lang, 'projectCost'), value: formatRange(lines.projectCost, lang), note: null, tone: 'plain' },
     { label: t(lang, 'ownMoney'), value: lines.own ? formatRange(lines.own, lang) : t(lang, 'ownNotStated'), note: null, tone: 'plain' },
-    { label: t(lang, 'subsidy'), value: formatRange(lines.subsidy, lang), note: null, tone: hasAmount(lines.subsidy) ? 'go' : 'plain' },
   ]
-  if (lines.loan && hasAmount(lines.loan)) {
+  if (lead !== 'subsidy') {
+    list.push({ label: t(lang, 'subsidy'), value: formatRange(lines.subsidy, lang), note: null, tone: 'plain' })
+  }
+  if (lead !== 'loan' && lines.loan && hasAmount(lines.loan)) {
     list.push({ label: t(lang, 'loan'), value: loanValue(lines, lines.loan, lang), note: interestNote(lines, lang), tone: 'plain' })
   }
   if (hasAmount(lines.uncovered)) {
