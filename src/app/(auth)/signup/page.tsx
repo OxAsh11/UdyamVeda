@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import { safeNextPath } from '@/lib/auth/next-path'
 import { createClient } from '@/lib/supabase/client'
 import { toast } from 'sonner'
 
@@ -16,13 +17,14 @@ export default function SignupPage() {
     e.preventDefault()
     setLoading(true)
 
+    const next = safeNextPath(new URLSearchParams(window.location.search).get('next'), '/start')
     const supabase = createClient()
     const { data, error } = await supabase.auth.signUp({
       email: form.email,
       password: form.password,
       options: {
         data: { full_name: form.name },
-        emailRedirectTo: `${window.location.origin}/auth/callback?next=/onboarding`,
+        emailRedirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`,
       },
     })
 
@@ -51,7 +53,7 @@ export default function SignupPage() {
       return
     }
 
-    router.replace('/onboarding')
+    router.replace(next)
   }
 
   return (

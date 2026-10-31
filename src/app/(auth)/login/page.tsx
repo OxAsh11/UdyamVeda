@@ -3,6 +3,7 @@
 import { Suspense, useEffect, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
+import { safeNextPath } from '@/lib/auth/next-path'
 import { createClient } from '@/lib/supabase/client'
 import { toast } from 'sonner'
 
@@ -12,11 +13,6 @@ type Method = 'phone' | 'email'
 // Mobile tab explains that and points to email.
 const PHONE_LOGIN_ENABLED = process.env.NEXT_PUBLIC_PHONE_LOGIN_ENABLED === 'true'
 const RESEND_SECONDS = 30
-
-function safeNextPath() {
-  const requested = new URLSearchParams(window.location.search).get('next')
-  return requested && requested.startsWith('/') && !requested.startsWith('//') ? requested : '/dashboard'
-}
 
 // Accepts "98765 43210", "+91 98765 43210" or "098765..."; returns +91XXXXXXXXXX.
 function indianMobile(input: string) {
@@ -42,7 +38,7 @@ function LoginPage() {
   }, [searchParams])
 
   function signedIn() {
-    router.replace(safeNextPath())
+    router.replace(safeNextPath(new URLSearchParams(window.location.search).get('next'), '/dashboard'))
     router.refresh()
   }
 
@@ -77,7 +73,7 @@ function LoginPage() {
         <div id={`panel-${method}`} role="tabpanel" aria-labelledby={`tab-${method}`}>
           {method === 'phone'
             ? <PhoneLogin onSignedIn={signedIn} onUseEmail={() => setMethod('email')} />
-            : <EmailLogin onSignedIn={signedIn} />}
+            : <EmailLogin onSignedIn={signedIn} next={searchParams.get('next')} />}
         </div>
       </div>
     </div>
@@ -200,7 +196,7 @@ function PhoneLogin({ onSignedIn, onUseEmail }: { onSignedIn: () => void; onUseE
   )
 }
 
-function EmailLogin({ onSignedIn }: { onSignedIn: () => void }) {
+function EmailLogin({ onSignedIn, next }: { onSignedIn: () => void; next: string | null }) {
   const [loading, setLoading] = useState(false)
   const [form, setForm] = useState({ email: '', password: '' })
 
@@ -258,7 +254,7 @@ function EmailLogin({ onSignedIn }: { onSignedIn: () => void }) {
 
       <p className="text-neutral-400 text-sm text-center mt-6">
         Don&apos;t have an account?{' '}
-        <Link href="/signup" className="text-neutral-700 underline hover:underline">Get started free</Link>
+        <Link href={next ? `/signup?next=${encodeURIComponent(safeNextPath(next, '/start'))}` : '/signup'} className="text-neutral-700 underline hover:underline">Get started free</Link>
       </p>
     </>
   )

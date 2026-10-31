@@ -5,6 +5,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { GTM_TOOLS_ENABLED } from '@/lib/features/gtm'
+import { clearDraft } from '@/lib/start/draft'
 import { BarChart2, Bell, Building2, Calendar, ClipboardCheck, Files, Landmark, LayoutDashboard, LogOut, Menu, Search, Settings, ShieldCheck, Target, User, X, Play } from 'lucide-react'
 
 interface SidebarProps { userName: string; setupSchemes: boolean; gtmPlatform: boolean }
@@ -23,6 +24,7 @@ export default function Sidebar({ userName }: SidebarProps) {
   async function handleSignOut() {
     const supabase = createClient()
     await supabase.auth.signOut()
+    clearDraft()
     router.push('/login')
   }
 

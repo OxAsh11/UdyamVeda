@@ -8,7 +8,7 @@ import QuestionField from './QuestionField'
 import SchemeCard from './SchemeCard'
 import { TryAgain } from './StartFlow'
 import type { RecordResult, ResultsPayload } from '@/lib/opportunities/engine/results'
-import { fetchResults, fetchStep, type StepResponse } from '@/lib/start/api'
+import { fetchFounder, fetchResults, fetchStep, saveFounderFacts, type StepResponse } from '@/lib/start/api'
 import { clearDraft, loadDraft, saveDraft, type Draft } from '@/lib/start/draft'
 import { t, type TextKey } from '@/lib/start/i18n'
 import { answersMissing, withScreenAnswers } from '@/lib/start/screen'
@@ -27,6 +27,24 @@ function Bucket({ title, description, items, lang, labels }: { title: TextKey; d
       <div className="flex flex-col gap-3">
         {items.map(item => <SchemeCard key={item.id} item={item} lang={lang} labels={labels} />)}
       </div>
+    </section>
+  )
+}
+
+function SaveCard({ lang, signedIn, saved }: { lang: Lang; signedIn: boolean; saved: boolean }) {
+  if (signedIn) {
+    return (
+      <section className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-emerald-200 bg-emerald-50 p-4">
+        <p className="text-sm font-semibold text-emerald-900">{saved ? t(lang, 'savedNote') : t(lang, 'notSavedYet')}</p>
+        <Link href="/dashboard" className="text-sm font-bold text-emerald-900 underline underline-offset-2">{t(lang, 'goDashboard')}</Link>
+      </section>
+    )
+  }
+  return (
+    <section className="rounded-xl border border-slate-200 bg-white p-4">
+      <h2 className="text-base font-extrabold text-slate-900">{t(lang, 'saveTitle')}</h2>
+      <p className="mt-1 text-sm leading-6 text-slate-600">{t(lang, 'saveBody')}</p>
+      <Link href="/login?next=/start/results" className="btn-accent mt-3 px-4 py-2.5 text-sm">{t(lang, 'saveCta')}</Link>
     </section>
   )
 }
@@ -73,6 +91,8 @@ export default function ResultsView() {
   const [failed, setFailed] = useState(false)
   const [missing, setMissing] = useState(false)
   const [showD, setShowD] = useState(false)
+  const [signedIn, setSignedIn] = useState(false)
+  const [saved, setSaved] = useState(false)
   const lang = draft.lang
 
   const apply = useCallback(([results, flow]: [ResultsPayload | null, StepResponse | null]) => {
@@ -95,13 +115,27 @@ export default function ResultsView() {
 
   const [initialDraft] = useState(draft)
   useEffect(() => {
-    if (!hasAnswers(initialDraft)) {
-      router.replace('/start')
-      return
-    }
     let active = true
-    void Promise.all([fetchResults(initialDraft.facts), fetchStep(initialDraft.facts, initialDraft.asked)]).then(loadedPair => {
-      if (active) apply(loadedPair)
+    void fetchFounder().then(async founder => {
+      if (!active) return
+      setSignedIn(founder.signedIn)
+
+      // A draft is what the founder just did, so it wins. With no draft, pick up
+      // what the account holds, as on a new device.
+      let current = initialDraft
+      if (!hasAnswers(current)) {
+        if (!Object.keys(founder.facts).length) {
+          router.replace('/start')
+          return
+        }
+        current = { ...current, facts: founder.facts, asked: founder.asked }
+        setDraft(current)
+        saveDraft(current)
+      } else if (founder.signedIn) {
+        setSaved(await saveFounderFacts(current.facts))
+      }
+      const pair = await Promise.all([fetchResults(current.facts), fetchStep(current.facts, current.asked)])
+      if (active) apply(pair)
     })
     return () => {
       active = false
@@ -124,6 +158,7 @@ export default function ResultsView() {
     const updated = withScreenAnswers(draft, refine.questions, refine.questions)
     update(updated)
     void load(updated)
+    if (signedIn) void saveFounderFacts(updated.facts).then(setSaved)
   }
 
   return (
@@ -144,6 +179,7 @@ export default function ResultsView() {
       {!failed && loaded && (
         <>
           <BestRoute results={loaded.results} lang={lang} />
+          <SaveCard lang={lang} signedIn={signedIn} saved={saved} />
 
           {refine && (
             <section className="glass flex flex-col gap-4 p-5">

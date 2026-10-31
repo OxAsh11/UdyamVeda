@@ -39,6 +39,6 @@ export async function getBusinessForUser(
 export async function getBusinessFacts(supabase: SupabaseClient, businessId: string) {
   return supabase
     .from('business_facts')
-    .select('fact_key, fact_value, verified_at')
+    .select('fact_key, fact_value, verified_at, answer_state')
     .eq('business_id', businessId)
 }

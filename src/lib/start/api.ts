@@ -32,6 +32,33 @@ export function fetchResults(facts: Record<string, unknown>) {
   return postJson<ResultsPayload>('/api/results', { facts })
 }
 
+export type FounderState = { signedIn: boolean; facts: Record<string, unknown>; asked: string[] }
+
+/** What the account holds. Anything but a clear answer counts as not signed in. */
+export async function fetchFounder(): Promise<FounderState> {
+  try {
+    const response = await fetch('/api/founder/facts')
+    if (!response.ok) return { signedIn: false, facts: {}, asked: [] }
+    const { facts, asked } = await response.json() as { facts: Record<string, unknown>; asked: string[] }
+    return { signedIn: true, facts, asked }
+  } catch {
+    return { signedIn: false, facts: {}, asked: [] }
+  }
+}
+
+export async function saveFounderFacts(facts: Record<string, unknown>) {
+  try {
+    const response = await fetch('/api/founder/facts', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ facts }),
+    })
+    return response.ok
+  } catch {
+    return false
+  }
+}
+
 export async function searchActivityItems(query: string): Promise<ActivityItem[] | null> {
   try {
     const response = await fetch(`/api/activities?q=${encodeURIComponent(query)}`)
