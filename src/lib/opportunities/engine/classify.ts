@@ -2,17 +2,11 @@ import { factKeysForRuleField, ruleFactsFromCanonical } from '../fact-mapping'
 import type { RecommendationWindow } from '../recommendation-ranking'
 import { evaluateEligibilityRules } from '../rules'
 import type { Bucket, CanonicalFacts, EngineContext, EngineRecord, FounderStep, Freshness, RecordVerdict, WindowState } from './types'
+import { CLOSED_WINDOW_TYPES, singleWindowState, timeOf } from './windows'
 
 const DAY_MS = 86_400_000
 const AMBER_AFTER_DAYS = 30
 const STALE_AFTER_DAYS = 60
-export const CLOSED_WINDOW_TYPES = new Set(['closed', 'closed_or_claim_only'])
-
-function timeOf(value: string | null): number | null {
-  if (!value) return null
-  const time = new Date(value).getTime()
-  return Number.isNaN(time) ? null : time
-}
 
 export function freshnessOf(lastCheckedAt: string | null, now: Date): Freshness {
   const checkedAt = timeOf(lastCheckedAt)
@@ -20,15 +14,6 @@ export function freshnessOf(lastCheckedAt: string | null, now: Date): Freshness 
   const ageDays = (now.getTime() - checkedAt) / DAY_MS
   if (ageDays <= AMBER_AFTER_DAYS) return 'fresh'
   return ageDays <= STALE_AFTER_DAYS ? 'amber' : 'stale'
-}
-
-export function singleWindowState(window: RecommendationWindow, now: number): WindowState {
-  if (window.windowType === 'rolling') return 'open'
-  const closes = timeOf(window.closesAt)
-  if (closes !== null && closes < now) return 'closed'
-  const opens = timeOf(window.opensAt)
-  if (opens !== null && opens > now) return 'not_yet_open'
-  return 'open'
 }
 
 // An undated window or no window at all counts as open: the page sends the

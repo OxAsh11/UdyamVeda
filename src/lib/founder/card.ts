@@ -1,7 +1,7 @@
 import type { BenefitLines, InrRange } from '@/lib/opportunities/engine/calculator'
-import { CLOSED_WINDOW_TYPES, singleWindowState } from '@/lib/opportunities/engine/classify'
 import type { Combination } from '@/lib/opportunities/engine/combination'
 import type { RecordResult } from '@/lib/opportunities/engine/results'
+import { CLOSED_WINDOW_TYPES, singleWindowState } from '@/lib/opportunities/engine/windows'
 import { formatDate, formatInr, formatRange } from '@/lib/start/format'
 import { t } from '@/lib/start/i18n'
 import type { Lang, Text } from '@/lib/start/types'
