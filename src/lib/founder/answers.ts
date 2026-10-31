@@ -19,6 +19,11 @@ export function factLabelsOf(bundle: StartBundle): Record<string, Text> {
   return Object.fromEntries(Object.values(bundle.facts).map(fact => [fact.key, fact.label]))
 }
 
+/** The founder-facing name of a question; a question with no label is named by its key put into words. */
+export function labelReader(labels: Record<string, Text>, lang: Lang): (factKey: string) => string {
+  return factKey => (Object.hasOwn(labels, factKey) ? labels[factKey][lang] : factKey.replace(/_/g, ' '))
+}
+
 function namesOf(factKey: string, values: unknown[], bundle: StartBundle, lang: Lang) {
   const labels = new Map<string, string>(factKey === 'activity_codes'
     ? bundle.activities.map(activity => [activity.id, activity.label[lang]])

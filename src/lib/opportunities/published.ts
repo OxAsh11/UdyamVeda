@@ -204,7 +204,7 @@ function mapPublishedOpportunity(
     tags: [opportunity.opportunity_type, ...locations].filter(Boolean),
     status: opportunity.status as OpportunitySummary['status'],
     coverage,
-    sourceLabel: `${researchBetaEnabled() ? 'Research Beta source' : 'Official source'} · ${authority?.name ?? 'Government authority'}`,
+    sourceLabel: `Official source · ${authority?.name ?? 'Government authority'}`,
     verificationStatus: verificationStatusFor(version.review_status, version.last_verified_at, cadenceFor(windows)),
     lastVerifiedAt: version.last_verified_at ?? undefined,
     completeness: Number(version.completeness ?? 0),

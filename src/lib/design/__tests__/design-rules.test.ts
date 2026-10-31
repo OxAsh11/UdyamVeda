@@ -16,6 +16,9 @@ const MIGRATED_FILES: string[] = [
   'src/components/founder/BrowseAll.tsx',
   'src/lib/founder/browse.ts',
   'src/lib/founder/text.ts',
+  'src/app/(dashboard)/dashboard/schemes/[slug]/page.tsx',
+  'src/components/founder/SchemeActions.tsx',
+  'src/lib/founder/detail.ts',
 ]
 
 // Words a first-time founder should never see. Matched case-insensitively.

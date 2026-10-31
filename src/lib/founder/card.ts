@@ -5,6 +5,7 @@ import { CLOSED_WINDOW_TYPES, singleWindowState } from '@/lib/opportunities/engi
 import { formatDate, formatInr, formatRange } from '@/lib/start/format'
 import { t } from '@/lib/start/i18n'
 import type { Lang, Text } from '@/lib/start/types'
+import { labelReader } from './answers'
 import { nextOpening, verdictFor, verdictStatesOpening, type Verdict } from './verdict'
 
 export type CardMoney = {
@@ -43,10 +44,10 @@ export type CardContent = {
   betterRate: string | null
 }
 
-const hasAmount = (range: { max: number | null }) => range.max === null || range.max > 0
+export const hasAmount = (range: { max: number | null }) => range.max === null || range.max > 0
 
 // Rates are whole numbers or halves; rounding only hides floating-point noise such as 4.9000000000000004.
-const roundedRate = (rate: number) => Math.round(rate * 100) / 100
+export const roundedRate = (rate: number) => Math.round(rate * 100) / 100
 
 function interestNote(lines: BenefitLines, lang: Lang) {
   const rate = lines.interestRatePct
@@ -56,7 +57,7 @@ function interestNote(lines: BenefitLines, lang: Lang) {
 }
 
 // With no own share stated, the loan figure is the most the scheme lends, not a worked-out amount.
-function loanValue(lines: BenefitLines, loan: InrRange, lang: Lang) {
+export function loanValue(lines: BenefitLines, loan: InrRange, lang: Lang) {
   return lines.own === null && loan.max !== null ? t(lang, 'upTo', { amount: formatInr(loan.max) }) : formatRange(loan, lang)
 }
 
@@ -163,7 +164,7 @@ export function cardContent(
   answerWords: Record<string, Text>,
   now: Date = new Date(),
 ): CardContent {
-  const labelOf = (factKey: string) => (Object.hasOwn(labels, factKey) ? labels[factKey][lang] : factKey.replace(/_/g, ' '))
+  const labelOf = labelReader(labels, lang)
   const lines = item.lines
   const verdict = verdictFor(item, combination, lang, labelOf, now)
 

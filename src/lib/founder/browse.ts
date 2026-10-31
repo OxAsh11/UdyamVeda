@@ -4,17 +4,21 @@
 // from the same wording as the cards.
 import { stateLabel } from '@/lib/businesses/display'
 import { TYPE_FILTERS } from '@/lib/opportunities/compat'
-import type { ResultsPayload } from '@/lib/opportunities/engine/results'
+import type { RecordResult, ResultsPayload } from '@/lib/opportunities/engine/results'
 import type { CatalogAvailability } from '@/lib/opportunities/published'
 import { OPPORTUNITY_GROUPS, opportunityGroup, type OpportunityGroup } from '@/lib/opportunities/taxonomy'
 import type { OpportunitySummary } from '@/lib/opportunities/types'
 import type { Lang, StartBundle } from '@/lib/start/types'
-import { answerText, factLabelsOf } from './answers'
+import { answerText, factLabelsOf, labelReader } from './answers'
 import type { FounderResults } from './load-results'
 import { ft } from './text'
 import { outsideVerdict, verdictFor, type Verdict } from './verdict'
 
 export const SCHEMES_PATH = '/dashboard/schemes'
+
+// Where a founder answers what a card still needs and changes the answers the list is sorted by.
+// Task 10 gives this its own page; until then it is where the answers live.
+export const ANSWER_HREF = '/start/results'
 
 const MAX_QUERY_LENGTH = 100
 
@@ -50,6 +54,11 @@ export function browseHref({ q, type, group }: { q?: string; type?: string; grou
   return `${SCHEMES_PATH}?${params}`
 }
 
+/** A scheme in the founder's four buckets, by its slug. Registrations are kept apart and are not found here. */
+export function findResult(results: ResultsPayload, slug: string): RecordResult | undefined {
+  return Object.values(results.buckets).flat().find(result => result.slug === slug)
+}
+
 /**
  * The short verdict beside a scheme in Browse all. A scheme in the founder's results
  * says what the card says; one outside them says why, in grey. Nothing is guessed for
@@ -59,12 +68,8 @@ export function chipFor(slug: string, founder: FounderResults, lang: Lang, now: 
   if (founder.status !== 'ready') return null
   const { results, catalog, facts, bundle } = founder
 
-  const item = Object.values(results.buckets).flat().find(result => result.slug === slug)
-  if (item) {
-    const labels = factLabelsOf(bundle)
-    const labelOf = (factKey: string) => (Object.hasOwn(labels, factKey) ? labels[factKey][lang] : factKey.replace(/_/g, ' '))
-    return verdictFor(item, results.combination, lang, labelOf, now)
-  }
+  const item = findResult(results, slug)
+  if (item) return verdictFor(item, results.combination, lang, labelReader(factLabelsOf(bundle), lang), now)
   return outsideVerdict(catalog.records.find(record => record.slug === slug), facts, lang, stateLabel)
 }
 

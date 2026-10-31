@@ -22,7 +22,8 @@ function textList(value: unknown): string[] {
   return value.filter((item): item is string => typeof item === 'string' && item.trim().length > 0)
 }
 
-function publicText(value: unknown): string | null {
+/** Text for an applicant: trimmed, and nothing at all when it is empty or a reviewer's working note. */
+export function publicText(value: unknown): string | null {
   return typeof value === 'string' && value.trim() && !isInternalNote(value) ? value.trim() : null
 }
 

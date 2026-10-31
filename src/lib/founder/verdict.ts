@@ -94,6 +94,9 @@ const outsideFounderState = (record: EngineRecord, facts: CanonicalFacts) =>
   && typeof facts.state === 'string'
   && !record.locations.includes(facts.state)
 
+/** A registration or licence is not a scheme to qualify for: it is on the founder's path. */
+export const onPathVerdict = (lang: Lang): Verdict => plain('wait', t(lang, 'verdictOnPath'))
+
 /**
  * Words for a scheme the engine left out of this founder's results, for a page
  * that was opened on it anyway. It is never "go": the engine did not qualify them.
@@ -105,7 +108,7 @@ export function outsideVerdict(
   stateName: (code: string) => string,
 ): Verdict {
   if (!record) return plain('wait', t(lang, 'verdictCannotCheck'))
-  if (REGISTRATION_TYPES.has(record.type)) return plain('wait', t(lang, 'verdictOnPath'))
+  if (REGISTRATION_TYPES.has(record.type)) return onPathVerdict(lang)
   if (outsideFounderState(record, facts)) {
     return plain('wait', t(lang, 'verdictStateOnly', { states: record.locations.map(stateName).join(', ') }))
   }
