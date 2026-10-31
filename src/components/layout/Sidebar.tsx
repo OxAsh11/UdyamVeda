@@ -36,7 +36,7 @@ export default function Sidebar({ userName }: SidebarProps) {
       {nav('/dashboard', LayoutDashboard, 'Home')}
       <div className="section-label">Start & Operate</div>
       {nav('/dashboard/registration', Building2, 'Registration & Licences')}
-      {nav('/dashboard/schemes', Landmark, 'Opportunities')}
+      {nav('/dashboard/schemes', Landmark, 'Schemes for you')}
       {nav('/dashboard/applications', ClipboardCheck, 'Applications')}
       {nav('/dashboard/compliance', ShieldCheck, 'Compliance')}
       {nav('/dashboard/documents', Files, 'Document Vault')}

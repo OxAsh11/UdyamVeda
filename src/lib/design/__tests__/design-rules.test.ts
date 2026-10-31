@@ -3,6 +3,7 @@ import path from 'node:path'
 import ts from 'typescript'
 import { describe, expect, it } from 'vitest'
 import { toneClasses, type Tone } from '@/lib/design/tones'
+import { FOUNDER_TEXT_EN } from '@/lib/founder/text'
 import { TEXT } from '@/lib/start/i18n'
 
 // Files that follow the colour rules. Later tasks add each page they migrate.
@@ -10,6 +11,11 @@ const MIGRATED_FILES: string[] = [
   'src/components/ui/founder.tsx',
   'src/components/founder/VerdictCard.tsx',
   'src/lib/design/tones.ts',
+  'src/app/(dashboard)/dashboard/schemes/page.tsx',
+  'src/components/founder/SchemesForYou.tsx',
+  'src/components/founder/BrowseAll.tsx',
+  'src/lib/founder/browse.ts',
+  'src/lib/founder/text.ts',
 ]
 
 // Words a first-time founder should never see. Matched case-insensitively.
@@ -265,6 +271,13 @@ describe('migrated files', () => {
 describe('founder text', () => {
   it('uses none of the banned words in the English start text', () => {
     const values = Object.values(TEXT.en)
+    expect(values.length).toBeGreaterThan(0)
+    for (const value of values) expect(bannedIn(value), value).toEqual([])
+  })
+
+  // The page scanner reads JSX, not ft('...') calls, so the dashboard's own words are read here.
+  it('uses none of the banned words in the English dashboard text', () => {
+    const values = Object.values(FOUNDER_TEXT_EN)
     expect(values.length).toBeGreaterThan(0)
     for (const value of values) expect(bannedIn(value), value).toEqual([])
   })
