@@ -30,6 +30,38 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) * 1.4);
   --radius-2xl: calc(var(--radius) * 1.8);
+
+  /* One meaning per colour: go = green, step = amber, wait = grey, urgent = red, act = indigo. */
+  --color-go: var(--uv-go);
+  --color-on-go: var(--uv-on-go);
+  --color-go-soft: var(--uv-go-soft);
+  --color-go-ink: var(--uv-go-ink);
+  --color-go-line: var(--uv-go-line);
+  --color-go-fade: var(--uv-go-fade);
+  --color-go-fade-end: var(--uv-go-fade-end);
+  --color-go-deep: var(--uv-go-deep);
+  --color-step: var(--uv-step);
+  --color-step-soft: var(--uv-step-soft);
+  --color-step-ink: var(--uv-step-ink);
+  --color-step-line: var(--uv-step-line);
+  --color-step-fade: var(--uv-step-fade);
+  --color-step-fade-end: var(--uv-step-fade-end);
+  --color-step-deep: var(--uv-step-deep);
+  --color-wait: var(--uv-wait);
+  --color-wait-soft: var(--uv-wait-soft);
+  --color-wait-ink: var(--uv-wait-ink);
+  --color-urgent: var(--uv-urgent);
+  --color-on-urgent: var(--uv-on-urgent);
+  --color-urgent-soft: var(--uv-urgent-soft);
+  --color-urgent-ink: var(--uv-urgent-ink);
+  --color-act: var(--uv-act);
+  --color-on-act: var(--uv-on-act);
+  --color-act-soft: var(--uv-act-soft);
+  --color-act-ink: var(--uv-act-ink);
+  --color-paper: var(--uv-paper);
+  --color-line: var(--uv-line);
+  --color-ink: var(--uv-ink);
+  --color-ink-2: var(--uv-ink-2);
 }
 
 :root {
@@ -63,6 +95,13 @@
   --uv-coral: #e95454;
   --uv-warm: #f8f7f3;
   --uv-ink: #111827;
+
+  --uv-go: #0B7A4B; --uv-on-go: #FFFFFF; --uv-go-soft: #E3F5EB; --uv-go-ink: #0B6B43; --uv-go-line: #BFE5CF; --uv-go-fade: #CDEEDB; --uv-go-fade-end: #F1FAF5; --uv-go-deep: #0B4F33;
+  --uv-step: #F2B233; --uv-step-soft: #FFF1CC; --uv-step-ink: #6E4200; --uv-step-line: #F5D98B; --uv-step-fade: #FFE7A8; --uv-step-fade-end: #FFF9E8; --uv-step-deep: #5C3700;
+  --uv-wait: #8A929E; --uv-wait-soft: #EBEDF1; --uv-wait-ink: #4A5361;
+  --uv-urgent: #C62F26; --uv-on-urgent: #FFFFFF; --uv-urgent-soft: #FDE9E7; --uv-urgent-ink: #A8201A;
+  --uv-act: #3F46E8; --uv-on-act: #FFFFFF; --uv-act-soft: #EEF0FF; --uv-act-ink: #2A2FB5;
+  --uv-paper: #F7F7F4; --uv-card: #FFFFFF; --uv-line: #E2E4E8; --uv-ink-2: #4A5361;
 }
 
 html { color-scheme: light; }
@@ -151,6 +190,12 @@ body {
 
 .uv-gradient { background: linear-gradient(115deg, #eef2ff 0%, #e0e7ff 48%, #fff7ed 100%); }
 .uv-hero-grid { background-image: linear-gradient(rgba(99,102,241,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(99,102,241,.07) 1px, transparent 1px); background-size: 28px 28px; }
+
+/* Verdict bands: green and amber fade left to right, grey is flat. The Home hero is the only indigo block. */
+.uv-band-go { background: linear-gradient(90deg, var(--uv-go-fade), var(--uv-go-fade-end)); color: var(--uv-go-deep); }
+.uv-band-step { background: linear-gradient(90deg, var(--uv-step-fade), var(--uv-step-fade-end)); color: var(--uv-step-deep); }
+.uv-band-wait { background: var(--uv-wait-soft); color: var(--uv-wait-ink); }
+.uv-hero { background: linear-gradient(120deg, #2A2FB5, #3F46E8); color: var(--uv-on-act); }
 
 @media (max-width: 767px) {
   body { background: var(--uv-warm); }
