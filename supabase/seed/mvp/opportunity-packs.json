@@ -1,0 +1,61 @@
+{
+  "udyam-registration": ["food", "livestock_fisheries", "agri", "manufacturing", "services_retail", "tech_lite"],
+  "pan-tan-allocation-readiness": ["food", "livestock_fisheries", "agri", "manufacturing", "services_retail", "tech_lite"],
+  "gst-registration": ["food", "livestock_fisheries", "agri", "manufacturing", "services_retail", "tech_lite"],
+  "epfo-establishment-registration": ["food", "livestock_fisheries", "agri", "manufacturing", "services_retail", "tech_lite"],
+  "esic-employer-registration": ["food", "livestock_fisheries", "agri", "manufacturing", "services_retail", "tech_lite"],
+  "importer-exporter-code-iec": ["food", "livestock_fisheries", "agri", "manufacturing", "services_retail", "tech_lite"],
+  "pradhan-mantri-mudra-yojana": ["food", "livestock_fisheries", "agri", "manufacturing", "services_retail", "tech_lite"],
+  "credit-guarantee-scheme-cgtmse": ["food", "livestock_fisheries", "agri", "manufacturing", "services_retail", "tech_lite"],
+  "stand-up-india-scheme": ["food", "livestock_fisheries", "agri", "manufacturing", "services_retail", "tech_lite"],
+
+  "shop-establishment-bihar": ["food", "manufacturing", "services_retail"],
+  "shop-establishment-delhi": ["food", "manufacturing", "services_retail"],
+  "shop-establishment-jharkhand": ["food", "manufacturing", "services_retail"],
+  "shop-establishment-maharashtra": ["food", "manufacturing", "services_retail"],
+  "shop-establishment-uttar-pradesh": ["food", "manufacturing", "services_retail"],
+
+  "fssai-food-business-registration-licensing": ["food", "livestock_fisheries", "agri"],
+  "legal-metrology-packaged-commodities-registration-rule-27": ["food"],
+  "pm-formalisation-micro-food-processing-enterprises": ["food"],
+  "mofpi-agro-processing-cluster-pmksy": ["food", "agri"],
+  "mofpi-cefppc-food-processing-preservation-capacities-pmksy": ["food", "agri"],
+  "mofpi-integrated-cold-chain-value-addition-pmksy": ["food", "agri"],
+  "prime-ministers-employment-generation-programme": ["food", "manufacturing", "services_retail"],
+
+  "national-livestock-mission-entrepreneurship-development": ["livestock_fisheries"],
+  "animal-husbandry-infrastructure-development-fund-ahidf": ["livestock_fisheries", "food"],
+  "pmmsy-beneficiary-oriented-subsidy": ["livestock_fisheries"],
+  "pradhan-mantri-matsya-kisan-samridhi-sah-yojana": ["livestock_fisheries"],
+  "kisan-credit-card-animal-husbandry-fisheries": ["livestock_fisheries", "agri"],
+
+  "agriculture-infrastructure-fund": ["agri"],
+  "pm-rkvy-raftaar-navodaya-agripreneurship-orientation": ["agri"],
+  "pm-rkvy-raftaar-samriddhi-startup-incubation": ["agri"],
+  "pradhan-mantri-kisan-urja-suraksha-evam-utthaan-mahabhiyaan-pm-kusum": ["agri"],
+  "startup-village-entrepreneurship-programme": ["agri"],
+
+  "pm-vishwakarma": ["manufacturing", "services_retail"],
+  "scheme-for-fund-for-regeneration-of-traditional-industries-sfurti": ["manufacturing"],
+  "khadi-gramodyog-vikas-yojana": ["manufacturing"],
+  "nhdp-marketing-support-services-handicrafts": ["manufacturing"],
+  "nhdp-skill-development-handicraft-sector": ["manufacturing"],
+  "msme-sustainable-zed-certification": ["manufacturing"],
+
+  "pm-street-vendors-atmanirbhar-nidhi-pm-svanidhi": ["services_retail"],
+  "msde-pradhan-mantri-kaushal-vikas-yojana-4": ["services_retail"],
+  "incredible-india-bed-breakfast-homestay-classification": ["services_retail"],
+
+  "dpiit-startup-recognition": ["tech_lite"],
+  "company-incorporation-spice-plus": ["tech_lite"],
+  "meity-genesis-gen-next-support-for-innovative-startups": ["tech_lite"],
+  "credit-guarantee-scheme-for-startups": ["tech_lite"],
+  "startup-india-seed-fund-scheme": ["tech_lite"],
+
+  "cmegp-maharashtra": ["food", "agri", "manufacturing", "services_retail"],
+  "cm-yuva-uttar-pradesh": ["food", "manufacturing", "services_retail"],
+  "odop-margin-money-uttar-pradesh": ["food", "agri", "manufacturing"],
+  "mukhyamantri-udyami-yojana-bihar": ["food", "livestock_fisheries", "agri", "manufacturing", "services_retail"],
+  "bihar-laghu-udyami-yojana": ["food", "livestock_fisheries", "agri", "manufacturing", "services_retail"],
+  "mukhyamantri-rojgar-srijan-yojana-jharkhand": ["food", "livestock_fisheries", "agri", "manufacturing", "services_retail"]
+}

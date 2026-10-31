@@ -3,7 +3,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import type { RuleFieldMapping } from '../../fact-mapping'
 
-function seed<T>(name: string): T {
+export function seed<T>(name: string): T {
   return JSON.parse(fs.readFileSync(path.join(process.cwd(), 'supabase', 'seed', 'mvp', name), 'utf8')) as T
 }
 
