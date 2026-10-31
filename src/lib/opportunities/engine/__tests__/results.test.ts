@@ -1,0 +1,304 @@
+import { describe, expect, it } from 'vitest'
+import { catalogVersion, hydrateCatalog } from '../catalog'
+import { cleanFacts } from '../facts'
+import { buildResults, type ResultsPayload } from '../results'
+import type { Bucket, EngineRecord } from '../types'
+import { seed } from './seeds'
+import { snapshotCatalog, snapshotData } from './snapshot'
+
+const now = new Date('2026-10-31T00:00:00Z')
+const catalog = snapshotCatalog()
+
+function resultsFor(raw: Record<string, unknown>, from = catalog): ResultsPayload {
+  const { facts, nonAnswers } = cleanFacts(raw, from.definitions, from.activityIds)
+  return buildResults(facts, nonAnswers, from, now)
+}
+
+function bucketOf(payload: ResultsPayload, slug: string): Bucket | null {
+  for (const bucket of ['A', 'B', 'C', 'D'] as const) {
+    if (payload.buckets[bucket].some(item => item.slug === slug)) return bucket
+  }
+  return null
+}
+
+const all = (payload: ResultsPayload) => (['A', 'B', 'C', 'D'] as const).flatMap(bucket => payload.buckets[bucket])
+const find = (payload: ResultsPayload, slug: string) => all(payload).find(item => item.slug === slug)!
+
+const NLM = 'national-livestock-mission-entrepreneurship-development'
+const PMMSY = 'pmmsy-beneficiary-oriented-subsidy'
+const KCC = 'kisan-credit-card-animal-husbandry-fisheries'
+const MMUY = 'mukhyamantri-udyami-yojana-bihar'
+const CMEGP = 'cmegp-maharashtra'
+const CM_YUVA = 'cm-yuva-uttar-pradesh'
+const PMEGP = 'prime-ministers-employment-generation-programme'
+const SISFS = 'startup-india-seed-fund-scheme'
+
+const rakesh = {
+  activity_codes: ['poultry_broiler', 'pond_fish'],
+  state: 'bihar',
+  applicant_age_years: 34,
+  education_level: 'class_12',
+  social_category: 'sc',
+  poultry_unit_type: 'broiler',
+  poultry_bird_count: 500,
+}
+const pooja = {
+  activity_codes: ['beauty_parlour_salon'],
+  state: 'maharashtra',
+  area_type: 'urban',
+  gender: 'woman',
+  applicant_age_years: 32,
+  stage: 'setting_up',
+  received_govt_subsidy_before: false,
+  project_cost_exact_inr: 800000,
+}
+const imran = {
+  activity_codes: ['carpentry_furniture'],
+  state: 'uttar_pradesh',
+  applicant_age_years: 31,
+  education_level: 'class_10',
+  received_govt_subsidy_before: false,
+}
+
+describe('PRD personas on the real catalog', () => {
+  it('Rakesh: told plainly NLM is not for a 500-bird shed', () => {
+    expect(bucketOf(resultsFor(rakesh), NLM)).toBe('D')
+  })
+
+  it('Rakesh: PMMSY waits on renewal', () => {
+    expect(bucketOf(resultsFor(rakesh), PMMSY)).toBe('C')
+  })
+
+  it('Rakesh: Bihar MMUY window is closed', () => {
+    expect(bucketOf(resultsFor(rakesh), MMUY)).toBe('C')
+  })
+
+  it('Rakesh: KCC is open now', () => {
+    expect(bucketOf(resultsFor(rakesh), KCC)).toBe('A')
+  })
+
+  it('Rakesh: never sees a Maharashtra scheme', () => {
+    expect(bucketOf(resultsFor(rakesh), CMEGP)).toBeNull()
+  })
+
+  it('Pooja: CMEGP is open, with ₹2 lakh subsidy on ₹8 lakh', () => {
+    const payload = resultsFor(pooja)
+    expect(bucketOf(payload, CMEGP)).toBe('A')
+    expect(find(payload, CMEGP).lines?.subsidy).toEqual({ min: 200000, max: 200000 })
+    expect(find(payload, CMEGP).lines?.own).toEqual({ min: 40000, max: 40000 })
+    expect(find(payload, CMEGP).lines?.loan).toEqual({ min: 560000, max: 560000 })
+  })
+
+  it('Pooja: no other state schemes', () => {
+    const slugs = all(resultsFor(pooja)).map(item => item.slug)
+    for (const slug of [MMUY, CM_YUVA, 'bihar-laghu-udyami-yojana', 'shop-establishment-bihar']) expect(slugs).not.toContain(slug)
+  })
+
+  it('Imran: CM-YUVA is open and PMEGP is not offered as open', () => {
+    const payload = resultsFor(imran)
+    expect(bucketOf(payload, CM_YUVA)).toBe('A')
+    expect(bucketOf(payload, PMEGP)).not.toBe('A')
+  })
+})
+
+describe('owner test personas on the real catalog', () => {
+  it('fisheries founder: PMMSY shows 60% marked "if renewed"', () => {
+    const payload = resultsFor({ activity_codes: ['pond_fish'], state: 'bihar', social_category: 'sc', project_cost_exact_inr: 1000000 })
+    expect(bucketOf(payload, PMMSY)).toBe('C')
+    expect(find(payload, PMMSY).lines).toMatchObject({ ifRenewed: true, subsidy: { min: 600000, max: 600000 } })
+  })
+
+  it('poultry founder: a 1,200 parent-layer hatchery qualifies for NLM', () => {
+    const payload = resultsFor({ activity_codes: ['poultry_breeding_hatchery'], state: 'jharkhand', poultry_unit_type: 'hatchery', poultry_bird_count: 1200 })
+    expect(bucketOf(payload, NLM)).toBe('A')
+  })
+
+  it('tech founder: sees the closed seed fund, and nothing about fisheries', () => {
+    const payload = resultsFor({ activity_codes: ['software_it_services'], state: 'delhi', dpiit_recognized: false })
+    expect(bucketOf(payload, SISFS)).toBe('C')
+    expect(bucketOf(payload, PMMSY)).toBeNull()
+    expect(bucketOf(payload, NLM)).toBeNull()
+  })
+})
+
+describe('registrations and schemes (PRD §1)', () => {
+  it('keeps registrations out of the scheme buckets', () => {
+    const payload = resultsFor(pooja)
+    for (const slug of ['udyam-registration', 'gst-registration', 'epfo-establishment-registration', 'shop-establishment-maharashtra']) {
+      expect(bucketOf(payload, slug), slug).toBeNull()
+    }
+  })
+
+  it('returns them separately for the roadmap, with their own verdict', () => {
+    const payload = resultsFor(pooja)
+    const slugs = payload.registrations.map(item => item.slug)
+    expect(slugs).toContain('udyam-registration')
+    expect(slugs).toContain('shop-establishment-maharashtra')
+    expect(slugs).not.toContain('shop-establishment-bihar')
+  })
+
+  it('does not count registrations in the bucket totals', () => {
+    const payload = resultsFor(pooja)
+    expect(payload.counts.A).toBe(payload.buckets.A.length)
+    expect(payload.buckets.A.every(item => !['registration', 'licence'].includes(item.type))).toBe(true)
+  })
+
+  it('asks Rakesh about family income for the Bihar Laghu scheme', () => {
+    const steps = find(resultsFor(rakesh), 'bihar-laghu-udyami-yojana').steps
+    expect(steps).toContainEqual({ kind: 'answer', factKey: 'annual_family_income_band' })
+  })
+})
+
+describe('what is in the list', () => {
+  it('drops other states once the state is known', () => {
+    expect(bucketOf(resultsFor({ state: 'bihar' }), CMEGP)).toBeNull()
+  })
+
+  it('keeps state schemes while the state is unknown', () => {
+    expect(bucketOf(resultsFor({ activity_codes: ['beauty_parlour_salon'] }), CMEGP)).not.toBeNull()
+  })
+
+  it('drops other packs once the activity is known', () => {
+    expect(bucketOf(resultsFor({ activity_codes: ['beauty_parlour_salon'] }), PMMSY)).toBeNull()
+  })
+
+  it('merges two packs: poultry + pickles sees both', () => {
+    const payload = resultsFor({ activity_codes: ['poultry_broiler', 'pickles_chutney'] })
+    expect(bucketOf(payload, NLM)).not.toBeNull()
+    expect(bucketOf(payload, 'pm-formalisation-micro-food-processing-enterprises')).not.toBeNull()
+  })
+
+  it('every tagged record exists in the catalog', () => {
+    const slugs = new Set(catalog.records.map(record => record.slug))
+    for (const slug of Object.keys(seed<Record<string, string[]>>('opportunity-packs.json'))) expect(slugs.has(slug), slug).toBe(true)
+  })
+})
+
+describe('untagged records such as PLI and shipbuilding (PRD §4)', () => {
+  const data = snapshotData()
+  const untagged = (rules: unknown): EngineRecord => ({
+    ...data.records[0],
+    id: 'untagged',
+    slug: 'untagged-scheme',
+    status: 'active',
+    packIds: [],
+    coverage: 'central',
+    locations: ['India'],
+    windows: [{ windowType: 'rolling', opensAt: null, closesAt: null }],
+    lastCheckedAt: '2026-10-30T00:00:00Z',
+    rates: [],
+    rules,
+  })
+  const withRecord = (record: EngineRecord) => {
+    const next = { ...data, records: [record] }
+    return hydrateCatalog({ ...next, version: catalogVersion(next) })
+  }
+
+  it('stay hidden when only bank checks passed', () => {
+    const bankField = data.mappings.find(mapping => mapping.treatment === 'bank_check')!.legacy_field
+    const payload = resultsFor({ state: 'bihar' }, withRecord(untagged({ all: [{ field: bankField, operator: 'equals', value: true }] })))
+    expect(all(payload)).toHaveLength(0)
+  })
+
+  it('stay hidden when the founder only partly qualifies', () => {
+    const payload = resultsFor({ state: 'bihar' }, withRecord(untagged({ all: [{ field: 'state', operator: 'equals', value: 'bihar' }] })))
+    expect(all(payload)).toHaveLength(0)
+  })
+
+  it('appear in A once entity type and project size both qualify', () => {
+    const rules = { all: [
+      { field: 'entity_type', operator: 'equals', value: 'llp' },
+      { field: 'project_cost_band', operator: 'equals', value: 'above_2cr' },
+    ] }
+    const record = withRecord(untagged(rules))
+    expect(all(resultsFor({ entity_type: 'llp', project_cost_exact_inr: 500000 }, record))).toHaveLength(0)
+    expect(bucketOf(resultsFor({ entity_type: 'llp', project_cost_exact_inr: 200000000 }, record), 'untagged-scheme')).toBe('A')
+  })
+})
+
+describe('combination', () => {
+  it('comes only from bucket A with amounts, so PMEGP in C is not a candidate', () => {
+    const payload = resultsFor(pooja)
+    expect(payload.combination.recommended).toContain(find(payload, CMEGP).id)
+    expect(payload.combination.recommended).not.toContain(find(payload, PMEGP).id)
+  })
+
+  it('leaves out a scheme priced above its ceiling', () => {
+    const payload = resultsFor({ ...pooja, project_cost_exact_inr: 90000000 })
+    const cmegp = find(payload, CMEGP)
+    if (cmegp.bucket === 'A') {
+      expect(cmegp.lines?.aboveCeiling).toBe(true)
+      expect(payload.combination.recommended).not.toContain(cmegp.id)
+    }
+  })
+})
+
+describe('ranking inside a bucket', () => {
+  it('puts the larger subsidy first in A', () => {
+    const amounts = resultsFor(pooja).buckets.A.map(item => item.lines?.subsidy.max ?? -1)
+    const rated = amounts.filter(amount => amount >= 0)
+    expect(rated).toEqual([...rated].sort((left, right) => right - left))
+    expect(amounts.indexOf(-1) === -1 || amounts.slice(amounts.indexOf(-1)).every(amount => amount === -1)).toBe(true)
+  })
+
+  it('puts the fewest steps first in B', () => {
+    const steps = resultsFor(imran).buckets.B.map(item => item.steps.length)
+    expect(steps).toEqual([...steps].sort((left, right) => left - right))
+  })
+
+  it('lists D by name', () => {
+    const slugs = resultsFor(rakesh).buckets.D.map(item => item.slug)
+    expect(slugs).toEqual([...slugs].sort((left, right) => left.localeCompare(right)))
+  })
+})
+
+describe('non-answers', () => {
+  it('never nags about an answer the founder declined', () => {
+    const payload = resultsFor({ activity_codes: ['pond_fish'], state: 'jharkhand', social_category: 'prefer_not' })
+    expect(payload.nonAnswers).toEqual({ social_category: 'declined' })
+    const asked = all(payload).flatMap(item => item.steps).filter(step => step.factKey === 'social_category')
+    expect(asked).toEqual([])
+  })
+
+  it('does not rule a founder out for declining', () => {
+    const declined = resultsFor({ activity_codes: ['pond_fish'], state: 'jharkhand', social_category: 'prefer_not' })
+    expect(bucketOf(declined, 'mukhyamantri-rojgar-srijan-yojana-jharkhand')).not.toBe('D')
+  })
+})
+
+describe('reliability', () => {
+  it('gives the same result for the same facts and catalog', () => {
+    expect(resultsFor(rakesh)).toEqual(resultsFor(rakesh))
+  })
+
+  it('survives a JSON round trip', () => {
+    const payload = resultsFor({ ...pooja, project_cost_exact_inr: undefined, project_cost_band: 'above_2cr' })
+    expect(JSON.parse(JSON.stringify(payload))).toEqual(payload)
+  })
+
+  it('works with no answers at all', () => {
+    const payload = resultsFor({})
+    expect(payload.counts.D).toBe(0)
+    expect(payload.counts.A + payload.counts.B + payload.counts.C).toBeGreaterThan(0)
+  })
+
+  it('counts match the lists', () => {
+    const payload = resultsFor(rakesh)
+    for (const bucket of ['A', 'B', 'C', 'D'] as const) expect(payload.counts[bucket]).toBe(payload.buckets[bucket].length)
+  })
+
+  it('uses the request date, not the date the catalog was cached', () => {
+    const { facts } = cleanFacts({ operating_since: '2024-10-31' }, catalog.definitions, catalog.activityIds)
+    const later = buildResults(facts, {}, catalog, new Date('2030-01-01T00:00:00Z'))
+    expect(later.counts.A).toBe(0)
+  })
+
+  it('reports a new catalog version when a rate changes', () => {
+    const data = snapshotData()
+    const changed = {
+      ...data,
+      records: data.records.map(record => (record.slug === CMEGP ? { ...record, rates: [] } : record)),
+    }
+    expect(catalogVersion(changed)).not.toBe(catalogVersion(data))
+  })
+})

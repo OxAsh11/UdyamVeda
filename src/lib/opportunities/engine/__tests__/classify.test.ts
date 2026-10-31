@@ -12,6 +12,7 @@ const daysAhead = (days: number) => new Date(now.getTime() + days * 86_400_000).
 const context: EngineContext = {
   mappings,
   reviewerChecks: reviewerChecksFrom(mappings),
+  factKeys: new Set(factDefinitions.map(fact => fact.key)),
   fixableKeys: new Set(factDefinitions.filter(fact => fact.fixable).map(fact => fact.key)),
   derivation: { now, activityPacks },
 }
@@ -91,6 +92,19 @@ describe('hard and fixable answers', () => {
     expect(verdict.steps).toEqual([{ kind: 'answer', factKey: 'applicant_age_years' }])
   })
 
+  it('asks about a dictionary fact that a rule reads directly', () => {
+    const rule = { all: [{ field: 'annual_family_income_band', operator: 'in', value: ['up_to_72k'] }] }
+    const verdict = classifyRecord(record(rule), {}, context, now)
+    expect(verdict.bucket).toBe('B')
+    expect(verdict.steps).toEqual([{ kind: 'answer', factKey: 'annual_family_income_band' }])
+  })
+
+  it('has no question to ask for a rule field outside the dictionary', () => {
+    const verdict = classifyRecord(record({ all: [{ field: 'not_a_real_rule_field', operator: 'equals', value: true }] }), {}, context, now)
+    expect(verdict.bucket).toBe('B')
+    expect(verdict.steps).toEqual([])
+  })
+
   it('traces an unanswered derived rule to the question behind it', () => {
     const verdict = classifyRecord(record({ all: [{ field: 'sc_st_owned', operator: 'equals', value: true }] }), {}, context, now)
     expect(verdict.bucket).toBe('B')
@@ -160,6 +174,18 @@ describe('cleaning what a caller sends', () => {
     expect(clean('state=bihar')).toEqual({})
     expect(clean(null)).toEqual({})
     expect(clean(['bihar'])).toEqual({})
+  })
+
+  it('fills the project band from an exact cost, because rules read the band', () => {
+    expect(clean({ project_cost_exact_inr: 800000 })).toEqual({ project_cost_exact_inr: 800000, project_cost_band: '5l_10l' })
+  })
+
+  it('lets an exact cost correct a band that disagrees with it', () => {
+    expect(clean({ project_cost_exact_inr: 1200000, project_cost_band: '5l_10l' })).toEqual({ project_cost_exact_inr: 1200000, project_cost_band: '10l_25l' })
+  })
+
+  it('puts a very large exact cost in the open-ended band', () => {
+    expect(clean({ project_cost_exact_inr: 50000000 }).project_cost_band).toBe('above_2cr')
   })
 
   it('keeps good answers as they are', () => {

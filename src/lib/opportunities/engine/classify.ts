@@ -64,8 +64,12 @@ export function classifyRecord(record: EngineRecord, facts: CanonicalFacts, cont
   const window = windowState(record.windows, record.status, now)
   const freshness = freshnessOf(record.lastCheckedAt, now)
   const bankChecks = evaluation.bankChecks ?? []
+  const decidedBy = [...new Set(evaluation.usedFacts.flatMap(field => {
+    const keys = factKeysForRuleField(field, context.mappings)
+    return keys.length ? keys : [field]
+  }))]
   const verdict = (bucket: Bucket, steps: FounderStep[]): RecordVerdict => ({
-    bucket, windowState: window, freshness, steps, bankChecks, blockers: evaluation.blockers,
+    bucket, windowState: window, freshness, steps, bankChecks, blockers: evaluation.blockers, decidedBy,
   })
 
   const obtain: FounderStep[] = []
@@ -83,8 +87,12 @@ export function classifyRecord(record: EngineRecord, facts: CanonicalFacts, cont
     }
   }
 
+  // Newer rules read dictionary facts directly, without a mapping row.
   const unanswered = evaluation.missingFacts
-    .flatMap(field => factKeysForRuleField(field, context.mappings))
+    .flatMap(field => {
+      const keys = factKeysForRuleField(field, context.mappings)
+      return keys.length || !context.factKeys.has(field) ? keys : [field]
+    })
     .filter(key => facts[key] === undefined)
   const answer: FounderStep[] = [...new Set(unanswered)].map(factKey => ({ kind: 'answer', factKey }))
   const steps = [...obtain, ...answer]

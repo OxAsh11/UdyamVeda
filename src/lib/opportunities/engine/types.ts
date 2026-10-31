@@ -58,6 +58,7 @@ export type EngineRecord = {
 export type EngineContext = {
   mappings: RuleFieldMapping[]
   reviewerChecks: ReadonlyMap<string, string>
+  factKeys: ReadonlySet<string>
   fixableKeys: ReadonlySet<string>
   derivation: DerivationContext
 }
@@ -69,4 +70,6 @@ export type RecordVerdict = {
   steps: FounderStep[]
   bankChecks: string[]
   blockers: string[]
+  // Founder facts this record's rules actually read to reach the result.
+  decidedBy: string[]
 }

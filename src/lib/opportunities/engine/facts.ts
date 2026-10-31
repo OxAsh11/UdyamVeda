@@ -1,3 +1,4 @@
+import { BAND_RANGES } from '../fact-mapping'
 import type { CanonicalFacts, FactDefinition, NonAnswer } from './types'
 
 const NON_ANSWERS: Readonly<Record<string, NonAnswer>> = { prefer_not: 'declined', dont_know: 'dont_know' }
@@ -58,6 +59,13 @@ export function cleanFacts(
     }
     const cleaned = cleanValue(value, definition, activityIds)
     if (cleaned !== undefined) facts[definition.key] = cleaned
+  }
+
+  // Eligibility rules read the band, so an exact cost has to set it too.
+  if (typeof facts.project_cost_exact_inr === 'number') {
+    const cost = facts.project_cost_exact_inr
+    const band = Object.entries(BAND_RANGES.project_cost_band).find(([, range]) => cost >= range.min && cost <= range.max)
+    if (band) facts.project_cost_band = band[0]
   }
   return { facts, nonAnswers }
 }
