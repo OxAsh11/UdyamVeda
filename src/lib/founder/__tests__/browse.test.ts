@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import type { OpportunitySummary } from '@/lib/opportunities/types'
 import { seedBundle } from '@/lib/start/__tests__/seed-bundle'
-import { answersLine, browseHref, browseTabCount, browseView, chipFor, cleanQuery, forYouCount, listNeeded, savedSchemes } from '../browse'
+import { answersLine, browseHref, browseTabCount, browseView, chipFor, cleanQuery, forYouCount, forYouShown, listNeeded, requestHref, savedSchemes } from '../browse'
 import { ft } from '../text'
 import { verdictFor } from '../verdict'
 import { fisher as fisherFounder, NOW } from './ready-founder'
@@ -115,6 +115,41 @@ describe('listNeeded', () => {
     expect(listNeeded({ status: 'no_answers', bundle: null }, false)).toBe(true)
     expect(listNeeded({ status: 'unavailable' }, false)).toBe(true)
     expect(listNeeded({ status: 'unavailable' }, true)).toBe(true)
+  })
+})
+
+describe('forYouShown', () => {
+  const nothing = [{ status: 'no_answers', bundle: null }, { status: 'unavailable' }] as const
+
+  it('shows For you to a ready founder who is not browsing, and not to one who is', () => {
+    expect(forYouShown(fisher, false)).toBe(true)
+    expect(forYouShown(fisher, true)).toBe(false)
+  })
+
+  it('shows it to a founder with nothing to sort, browsing or not, since their message sits above the list', () => {
+    for (const founder of nothing) {
+      expect(forYouShown(founder, false)).toBe(true)
+      expect(forYouShown(founder, true)).toBe(true)
+    }
+  })
+
+  it('never leaves a founder with neither view', () => {
+    for (const founder of [fisher, ...nothing]) {
+      for (const browsing of [false, true]) expect(forYouShown(founder, browsing) || listNeeded(founder, browsing)).toBe(true)
+    }
+  })
+})
+
+describe('requestHref', () => {
+  it('is the plain page when the founder was not browsing, so Try again returns to their own schemes', () => {
+    expect(requestHref({ browsing: false, q: '', type: '', group: '' })).toBe('/dashboard/schemes')
+  })
+
+  it('is Browse all with the same search, type and kind when they were', () => {
+    const link = new URL(requestHref({ browsing: true, q: "fish %'", type: 'loan', group: 'loan_credit' }), 'http://localhost')
+    expect(link.pathname).toBe('/dashboard/schemes')
+    expect(Object.fromEntries(link.searchParams)).toEqual({ view: 'all', q: "fish %'", type: 'loan', group: 'loan_credit' })
+    expect(requestHref({ browsing: true, q: '', type: '', group: '' })).toBe('/dashboard/schemes?view=all')
   })
 })
 

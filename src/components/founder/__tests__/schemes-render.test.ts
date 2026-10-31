@@ -9,7 +9,7 @@ import SchemesForYou from '../SchemesForYou'
 
 // A made-up address, so a test shows the page uses the one it is given.
 const ANSWER_HREF = '/answers-here'
-const props = { lang: 'en' as const, answerHref: ANSWER_HREF, retryHref: '/dashboard/schemes?view=all', saved: [] }
+const props = { lang: 'en' as const, answerHref: ANSWER_HREF, retryHref: '/dashboard/schemes', saved: [] }
 
 describe('SchemesForYou', () => {
   it('sorts the schemes for a founder by verdict, with the ones that are not for them folded away', () => {
@@ -48,7 +48,9 @@ describe('SchemesForYou', () => {
   it('says results could not load, with a way to try again', () => {
     const html = renderToStaticMarkup(createElement(SchemesForYou, { ...props, founder: { status: 'unavailable' } }))
     expect(html).toContain('We could not load this just now')
-    expect(html).toContain('href="/dashboard/schemes?view=all"')
+    // Back to the same page, not to Browse all.
+    expect(html).toContain('href="/dashboard/schemes"')
+    expect(html).not.toContain('view=all')
   })
 
   it('lists saved schemes with a link to each, and leaves the list out when there are none', () => {
@@ -62,6 +64,7 @@ describe('SchemesForYou', () => {
 
 describe('BrowseAll', () => {
   const founder = { status: 'no_answers', bundle: null } as const
+  const browseProps = { lang: 'en' as const, type: '', group: '', retryHref: '/dashboard/schemes' }
   const row = (overrides: Partial<OpportunitySummary>): OpportunitySummary => ({
     id: 'a-scheme', name: 'A scheme', type: 'scheme', category: 'grant', authority: 'A ministry', benefitLabel: 'Up to ₹1,00,000',
     benefitType: 'financial', description: '', officialUrl: '#', deadline: 'Rolling', processingTime: '', tags: [], status: 'active',
@@ -71,7 +74,7 @@ describe('BrowseAll', () => {
   it('shows each scheme as a link with its name, authority, benefit and the verdict for the founder', () => {
     const rows = [row({ id: 'kisan-credit-card-animal-husbandry-fisheries', name: 'Kisan Credit Card' }), row({ id: 'cmegp-maharashtra', name: 'CMEGP' })]
     const view = browseView({ rows, availability: 'available', query: '', type: '', group: '' })
-    const html = renderToStaticMarkup(createElement(BrowseAll, { view, founder: fisher(), lang: 'en', type: '', group: '' }))
+    const html = renderToStaticMarkup(createElement(BrowseAll, { ...browseProps, view, founder: fisher() }))
     expect(html).toContain('href="/dashboard/schemes/kisan-credit-card-animal-husbandry-fisheries"')
     expect(html).toContain('You qualify. We suggest you apply first.')
     expect(html).toContain('For Maharashtra only')
@@ -81,7 +84,7 @@ describe('BrowseAll', () => {
 
   it('shows no verdict beside a scheme when there are no answers to judge by', () => {
     const view = browseView({ rows: [row({})], availability: 'available', query: '', type: '', group: '' })
-    const html = renderToStaticMarkup(createElement(BrowseAll, { view, founder, lang: 'en', type: '', group: '' }))
+    const html = renderToStaticMarkup(createElement(BrowseAll, { ...browseProps, view, founder }))
     expect(html).toContain('A scheme')
     expect(html).not.toContain('You qualify')
     expect(html).not.toContain('Not matched')
@@ -89,7 +92,7 @@ describe('BrowseAll', () => {
 
   it('keeps what was typed in the search box and says nothing matched', () => {
     const view = browseView({ rows: [], availability: 'available', query: "%' <", type: '', group: '' })
-    const html = renderToStaticMarkup(createElement(BrowseAll, { view, founder, lang: 'en', type: '', group: '' }))
+    const html = renderToStaticMarkup(createElement(BrowseAll, { ...browseProps, view, founder }))
     expect(html).toContain('value="%&#x27; &lt;"')
     expect(html).toContain('No scheme matches')
     expect(html).not.toContain('temporarily unavailable')
@@ -97,8 +100,45 @@ describe('BrowseAll', () => {
 
   it('says the schemes are temporarily unavailable when they could not be reached', () => {
     const view = browseView({ rows: [], availability: 'unavailable', query: '', type: '', group: '' })
-    const html = renderToStaticMarkup(createElement(BrowseAll, { view, founder, lang: 'en', type: '', group: '' }))
+    const html = renderToStaticMarkup(createElement(BrowseAll, { ...browseProps, view, founder }))
     expect(html).toContain('Schemes are temporarily unavailable')
     expect(html).not.toContain('No scheme matches')
+  })
+
+  it('sends Try again to the address it was given, not always to Browse all', () => {
+    const view = browseView({ rows: [], availability: 'unavailable', query: '', type: '', group: '' })
+    const html = renderToStaticMarkup(createElement(BrowseAll, { ...browseProps, view, founder, retryHref: '/somewhere-else' }))
+    expect(html).toContain('href="/somewhere-else"')
+    expect(html).not.toContain('view=all')
+  })
+
+  describe('when a filter leaves nothing', () => {
+    const empty = (query: string, type: string, group: string) => {
+      const view = browseView({ rows: [], availability: 'available', query, type, group })
+      return renderToStaticMarkup(createElement(BrowseAll, { ...browseProps, view, founder, type, group }))
+    }
+
+    it('says no scheme matches the filter, not that nothing is listed, and offers a way to clear it', () => {
+      for (const [type, group] of [['grant', ''], ['', 'skills'], ['loan', 'skills']]) {
+        const html = empty('', type, group)
+        expect(html, `${type}/${group}`).toContain('No scheme matches this filter.')
+        expect(html, `${type}/${group}`).not.toContain('listed here yet')
+        expect(html, `${type}/${group}`).toContain('Clear the filter')
+        // The way out drops the type and the kind, and nothing else.
+        expect(html, `${type}/${group}`).toContain('href="/dashboard/schemes?view=all"')
+      }
+    })
+
+    it('keeps the search when it clears the filter, and names the search in the message', () => {
+      const html = empty('fish', 'grant', '')
+      expect(html).toContain('No scheme matches “fish” in this filter.')
+      expect(html).toContain('href="/dashboard/schemes?view=all&amp;q=fish"')
+    })
+
+    it('still says nothing is listed only when there is no filter and no search', () => {
+      expect(empty('', '', '')).toContain('No schemes are listed here yet.')
+      expect(empty('fish', '', '')).toContain('No scheme matches “fish”.')
+      expect(empty('fish', '', '')).not.toContain('Clear the filter')
+    })
   })
 })

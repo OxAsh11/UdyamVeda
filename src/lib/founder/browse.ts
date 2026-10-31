@@ -77,6 +77,19 @@ export function listNeeded(founder: FounderResults, browsing: boolean): boolean 
 }
 
 /**
+ * Whether the For you view is on the page, and with it the saved schemes it shows. A founder with
+ * results sees it only when not browsing; one with nothing to sort sees it above their list either way.
+ */
+export function forYouShown(founder: FounderResults, browsing: boolean): boolean {
+  return !browsing || founder.status !== 'ready'
+}
+
+/** The page as it was asked for, so "Try again" returns to the view that failed and not to another one. */
+export function requestHref({ browsing, q, type, group }: { browsing: boolean; q: string; type: string; group: string }): string {
+  return browsing ? browseHref({ q, type, group }) : SCHEMES_PATH
+}
+
+/**
  * The number on the Browse all tab, which only a ready founder has. Without the list it is the
  * size of the catalog their results came from; with it, the length of the list, but not for a
  * search, where the length is the number of matches and not the number of schemes.

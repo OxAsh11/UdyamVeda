@@ -15,6 +15,12 @@ const LINK = 'inline-flex min-h-11 items-center text-sm font-bold text-act-ink u
 /** A tab or filter: dark when it is the one showing. */
 export const pillClass = (on: boolean) => cn(PILL, on ? 'border-ink bg-ink text-paper' : 'border-line bg-card text-ink-2')
 
+// An empty list is "nothing matches" for a search or a filter, and "nothing listed" only when neither narrowed it.
+function emptyMessage(query: string, filtered: boolean) {
+  if (filtered) return query ? ft('noMatchQueryFilter', { query }) : ft('noMatchFilter')
+  return query ? ft('noMatch', { query }) : ft('noSchemes')
+}
+
 type Props = {
   view: BrowseView
   founder: FounderResults
@@ -22,11 +28,14 @@ type Props = {
   // Both already checked against the ones we have.
   type: string
   group: string
+  // The page as it was asked for, for Try again.
+  retryHref: string
 }
 
 /** Every scheme in the list, with the founder's verdict beside each. Search is a plain form and the filters are links, so none of it needs scripts. */
-export default function BrowseAll({ view, founder, lang, type, group }: Props) {
+export default function BrowseAll({ view, founder, lang, type, group, retryHref }: Props) {
   const { query } = view
+  const filtered = type !== '' || group !== ''
   const total = view.groups.reduce((sum, item) => sum + item.count, 0)
   const current = view.groups.find(item => item.id === group)
 
@@ -64,7 +73,7 @@ export default function BrowseAll({ view, founder, lang, type, group }: Props) {
           <div role="alert" className="flex flex-col gap-3">
             <h3 className="text-lg font-bold text-ink">{ft('browseUnavailableTitle')}</h3>
             <p className="text-sm text-ink-2">{ft('browseUnavailableBody')}</p>
-            <div><Link href={browseHref({ q: query, type, group })} className={LINK}>{t(lang, 'tryAgain')}</Link></div>
+            <div><Link href={retryHref} className={LINK}>{t(lang, 'tryAgain')}</Link></div>
           </div>
         </Card>
       ) : null}
@@ -100,7 +109,12 @@ export default function BrowseAll({ view, founder, lang, type, group }: Props) {
       ) : null}
 
       {view.kind === 'none_found' ? (
-        <Card><p className="text-sm text-ink-2">{query ? ft('noMatch', { query }) : ft('noSchemes')}</p></Card>
+        <Card>
+          <div className="flex flex-col gap-3">
+            <p className="text-sm text-ink-2">{emptyMessage(query, filtered)}</p>
+            {filtered ? <div><Link href={browseHref({ q: query })} className={LINK}>{ft('clearFilter')}</Link></div> : null}
+          </div>
+        </Card>
       ) : null}
 
       {view.kind === 'list' ? (
