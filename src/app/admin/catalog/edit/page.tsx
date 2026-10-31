@@ -15,7 +15,7 @@ export default async function EditSchemesPage() {
 
   const { data } = await supabase
     .from('opportunities')
-    .select('slug, name, status, opportunity_type, updated_at, authority:authorities!opportunities_authority_id_fkey(name), current_version:opportunity_versions!opportunities_current_version_fk(version_number, last_verified_at)')
+    .select('slug, name, status, opportunity_type, updated_at, last_checked_at, authority:authorities!opportunities_authority_id_fkey(name), current_version:opportunity_versions!opportunities_current_version_fk(version_number, last_verified_at)')
     .order('name')
 
   const rows: PickerRow[] = (data ?? []).map(row => {
@@ -28,7 +28,7 @@ export default async function EditSchemesPage() {
       group: OPPORTUNITY_GROUPS[opportunityGroup(row.opportunity_type)],
       authority: authority?.name ?? '',
       versionNumber: version?.version_number ?? 1,
-      lastCheckedAt: version?.last_verified_at ?? null,
+      lastCheckedAt: row.last_checked_at ?? version?.last_verified_at ?? null,
     }
   })
 
