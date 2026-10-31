@@ -13,6 +13,8 @@ export type RecordResult = RecordVerdict & {
   status: string
   lastCheckedAt: string | null
   windows: RecommendationWindow[]
+  // Set when the project is above this scheme's limit.
+  aboveLimitInr: number | null
   lines: BenefitLines | null
 }
 
@@ -57,13 +59,13 @@ function untaggedQualifies(verdict: RecordVerdict) {
 function settleProjectLimit(verdict: RecordVerdict, lines: BenefitLines | null) {
   if (lines?.aboveCeiling) {
     const limit = lines.ceilingInr === null ? '' : ` of ₹${lines.ceilingInr.toLocaleString('en-IN')}`
-    return { ...verdict, bucket: 'D' as const, steps: [], blockers: [...verdict.blockers, `Project cost is above this scheme's limit${limit}`], lines: null }
+    return { ...verdict, bucket: 'D' as const, steps: [], blockers: [...verdict.blockers, `Project cost is above this scheme's limit${limit}`], aboveLimitInr: lines.ceilingInr, lines: null }
   }
   if (lines?.straddlesCeiling) {
     const steps = [...verdict.steps, { kind: 'answer' as const, factKey: 'project_cost_exact_inr' }]
-    return verdict.bucket === 'A' ? { ...verdict, bucket: 'B' as const, steps, lines: null } : { ...verdict, steps, lines }
+    return verdict.bucket === 'A' ? { ...verdict, bucket: 'B' as const, steps, aboveLimitInr: null, lines: null } : { ...verdict, steps, aboveLimitInr: null, lines }
   }
-  return { ...verdict, lines }
+  return { ...verdict, aboveLimitInr: null, lines }
 }
 
 const subsidyOf = (item: RecordResult) => item.lines?.subsidy.max ?? item.lines?.subsidy.min ?? -1

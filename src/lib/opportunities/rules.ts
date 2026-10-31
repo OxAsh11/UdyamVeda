@@ -26,6 +26,8 @@ export type RuleEvaluation = {
   reasons: string[]
   missingFacts: string[]
   blockers: string[]
+  // The fields behind a false result, for saying why in the founder's language.
+  failedFields?: string[]
   usedFacts: string[]
   // Conditions only the bank, DIC or department can confirm; they never
   // decide a founder's result but are listed as "they will check".
@@ -113,6 +115,7 @@ function merged(children: RuleEvaluation[]) {
     reasons: children.flatMap(child => child.reasons),
     missingFacts: [...new Set(children.flatMap(child => child.missingFacts))],
     blockers: [...new Set(children.flatMap(child => child.blockers))],
+    failedFields: [...new Set(children.flatMap(child => child.failedFields ?? []))],
     usedFacts: [...new Set(children.flatMap(child => child.usedFacts))],
     bankChecks: [...new Set(children.flatMap(child => child.bankChecks ?? []))],
   }
@@ -127,7 +130,9 @@ function combineAll(children: RuleEvaluation[]): RuleEvaluation {
 function combineAny(children: RuleEvaluation[]): RuleEvaluation {
   const passing = children.filter(child => child.result === true)
   const unknown = children.filter(child => child.result === null)
-  return { result: passing.length > 0 ? true : unknown.length > 0 ? null : false, ...merged(children) }
+  const result = passing.length > 0 ? true : unknown.length > 0 ? null : false
+  // A branch another branch rescued is not why the rule failed.
+  return { result, ...merged(children), failedFields: result === false ? merged(children).failedFields : [] }
 }
 
 function evaluateNode(node: unknown, facts: RuleFactMap, options: RuleEvaluationOptions): RuleEvaluation {
@@ -156,6 +161,7 @@ function evaluateNode(node: unknown, facts: RuleFactMap, options: RuleEvaluation
     reasons: [],
     missingFacts: [],
     blockers: [`${fieldLabel(field)} does not satisfy the official requirement${operator === 'equals' || operator === 'in' ? ` (${valueLabel(node.value)})` : ''}`],
+    failedFields: [field],
     usedFacts: [field],
   }
 }

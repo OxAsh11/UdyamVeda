@@ -243,6 +243,12 @@ describe('project cost against a scheme limit', () => {
     expect(payload.combination.recommended).not.toContain(cmegp.id)
   })
 
+  it('gives the limit as a number, so the page can say it in the founder\'s language', () => {
+    const cmegp = find(resultsFor({ ...pooja, project_cost_exact_inr: 6000000 }), CMEGP)
+    expect(cmegp.aboveLimitInr).toBe(5000000)
+    expect(find(resultsFor(pooja), CMEGP).aboveLimitInr).toBeNull()
+  })
+
   it('does the same for Jharkhand MRSY at ₹5 crore', () => {
     const payload = resultsFor({ activity_codes: ['pond_fish'], state: 'jharkhand', applicant_age_years: 25, social_category: 'st', annual_family_income_band: '2l_3l', received_govt_subsidy_before: false, project_cost_exact_inr: 50000000 })
     expect(bucketOf(payload, 'mukhyamantri-rojgar-srijan-yojana-jharkhand')).toBe('D')

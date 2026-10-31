@@ -143,6 +143,23 @@ describe('hard and fixable answers', () => {
     expect(verdict.steps).toEqual([])
   })
 
+  it('names the fact that ruled a founder out, in words a founder can read', () => {
+    const verdict = classifyRecord(record({ all: [inMaharashtra, ageLimit] }), { state: 'bihar', applicant_age_years: 60 }, context, now)
+    expect(verdict.bucket).toBe('D')
+    expect(verdict.failedFacts.sort()).toEqual(['applicant_age_years', 'state'])
+  })
+
+  it('traces a failed derived rule to the question behind it', () => {
+    const rule = { all: [{ field: 'sc_st_owned', operator: 'equals', value: true }] }
+    expect(classifyRecord(record(rule), { social_category: 'general' }, context, now).failedFacts).toEqual(['social_category'])
+  })
+
+  it('does not blame a branch of an "any" rule that another branch rescued', () => {
+    const rule = { all: [inMaharashtra, { any: [ageLimit, hasUdyam] }] }
+    const verdict = classifyRecord(record(rule), { state: 'bihar', applicant_age_years: 60, udyam_registered: true }, context, now)
+    expect(verdict.failedFacts).toEqual(['state'])
+  })
+
   it('a malformed rule never reaches A', () => {
     expect(classifyRecord(record({ nonsense: true }), maharashtra, context, now).bucket).toBe('B')
   })

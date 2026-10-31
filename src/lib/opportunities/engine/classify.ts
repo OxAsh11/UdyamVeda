@@ -64,12 +64,14 @@ export function classifyRecord(record: EngineRecord, facts: CanonicalFacts, cont
   const window = windowState(record.windows, record.status, now)
   const freshness = freshnessOf(record.lastCheckedAt, now)
   const bankChecks = evaluation.bankChecks ?? []
-  const decidedBy = [...new Set(evaluation.usedFacts.flatMap(field => {
+  const traced = (fields: readonly string[]) => [...new Set(fields.flatMap(field => {
     const keys = factKeysForRuleField(field, context.mappings)
     return keys.length ? keys : [field]
   }))]
+  const decidedBy = traced(evaluation.usedFacts)
   const verdict = (bucket: Bucket, steps: FounderStep[]): RecordVerdict => ({
     bucket, windowState: window, freshness, steps, bankChecks, blockers: evaluation.blockers, decidedBy,
+    failedFacts: traced(evaluation.failedFields ?? []),
   })
 
   const obtain: FounderStep[] = []

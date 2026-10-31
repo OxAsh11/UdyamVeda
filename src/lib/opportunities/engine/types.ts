@@ -76,4 +76,6 @@ export type RecordVerdict = {
   blockers: string[]
   // Founder facts this record's rules actually read to reach the result.
   decidedBy: string[]
+  // Founder facts behind a "not for you".
+  failedFacts: string[]
 }
