@@ -1,0 +1,56 @@
+[
+  {
+    "slug": "odop-margin-money-uttar-pradesh",
+    "reason": "The scheme is only for a unit making its own district's ODOP product; the rule passed every UP founder.",
+    "rules": {
+      "all": [
+        {"field": "state", "operator": "equals", "value": "uttar_pradesh"},
+        {"field": "matches_district_odop", "operator": "equals", "value": true}
+      ],
+      "unknown_handling": "needs_information"
+    }
+  },
+  {
+    "slug": "mukhyamantri-rojgar-srijan-yojana-jharkhand",
+    "reason": "The family income limit is ₹5 lakh; the rule also passed the new ₹5–6 lakh band.",
+    "rules": {
+      "all": [
+        {"field": "state", "operator": "equals", "value": "jharkhand"},
+        {"field": "applicant_age_years", "operator": "greater_than_or_equal", "value": 18},
+        {"field": "applicant_age_years", "operator": "less_than_or_equal", "value": 50},
+        {"field": "annual_family_income_band", "operator": "not_in", "value": ["5l_6l", "6l_8l", "above_8l"]},
+        {"any": [
+          {"field": "social_category", "operator": "in", "value": ["sc", "st", "obc", "ebc"]},
+          {"field": "minority_community", "operator": "equals", "value": "yes"},
+          {"field": "has_disability", "operator": "equals", "value": true}
+        ]},
+        {"field": "received_govt_subsidy_before", "operator": "equals", "value": false}
+      ],
+      "unknown_handling": "needs_information"
+    }
+  },
+  {
+    "slug": "cmegp-maharashtra",
+    "reason": "The published conditions cover manufacturing, service and agro only; proprietorship, partnership or SHG only; and Class 8 above ₹10 lakh (manufacturing) or ₹5 lakh (service). The rule tested none of these.",
+    "rules": {
+      "all": [
+        {"field": "state", "operator": "equals", "value": "maharashtra"},
+        {"field": "applicant_age_years", "operator": "greater_than_or_equal", "value": 18},
+        {"field": "stage", "operator": "in", "value": ["idea", "setting_up"]},
+        {"field": "received_govt_subsidy_before", "operator": "equals", "value": false},
+        {"field": "project_cost_band", "operator": "in", "value": ["up_to_1l", "1l_2l", "2l_5l", "5l_10l", "10l_25l", "25l_50l", "50l_1cr"]},
+        {"field": "activity", "operator": "in", "value": ["manufacturing", "processing", "service", "services", "agri_allied", "activities allied to agriculture"]},
+        {"field": "entity_type", "operator": "in", "value": ["individual", "proprietorship", "sole_proprietorship", "partnership", "partnership_firm", "registered_partnership_firm", "shg", "self_help_group"]},
+        {"any": [
+          {"field": "education_level", "operator": "in", "value": ["class_8", "class_10", "class_12", "iti_diploma", "graduate", "postgraduate"]},
+          {"field": "project_cost_band", "operator": "in", "value": ["up_to_1l", "1l_2l", "2l_5l"]},
+          {"all": [
+            {"field": "activity", "operator": "in", "value": ["manufacturing", "processing"]},
+            {"field": "project_cost_band", "operator": "equals", "value": "5l_10l"}
+          ]}
+        ]}
+      ],
+      "unknown_handling": "needs_information"
+    }
+  }
+]
