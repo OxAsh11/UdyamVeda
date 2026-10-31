@@ -98,5 +98,7 @@ export function classifyRecord(record: EngineRecord, facts: CanonicalFacts, cont
   const steps = [...obtain, ...answer]
 
   if (record.status !== 'active' || window !== 'open' || freshness === 'stale') return verdict('C', steps)
-  return verdict(evaluation.result === true ? 'A' : 'B', steps)
+  // Rules made only of bank checks pass for everyone, so they say nothing about
+  // this founder: the bank or department decides, not us.
+  return verdict(evaluation.result === true && decidedBy.length > 0 ? 'A' : 'B', steps)
 }

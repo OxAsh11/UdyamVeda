@@ -1,6 +1,7 @@
-import { revalidatePath } from 'next/cache'
+import { revalidatePath, revalidateTag } from 'next/cache'
 import { NextRequest, NextResponse } from 'next/server'
 import { getCatalogReviewer } from '@/lib/catalog/reviewer'
+import { CATALOG_CACHE_TAG } from '@/lib/opportunities/engine/catalog'
 
 // Publishes a correction of one catalog record as a new approved version via
 // the publish_catalog_correction database function (one transaction, full
@@ -41,5 +42,6 @@ export async function POST(request: NextRequest) {
 
   revalidatePath('/schemes')
   revalidatePath(`/schemes/${slug}`)
+  revalidateTag(CATALOG_CACHE_TAG, { expire: 0 })
   return NextResponse.json({ data })
 }

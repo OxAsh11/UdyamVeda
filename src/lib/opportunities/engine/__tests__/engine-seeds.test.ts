@@ -6,7 +6,8 @@ type RateRow = {
   applies_when: unknown
   area: string
   project_types: string[]
-  own_pct: number
+  own_pct?: number
+  label_en: string
   subsidy_pct: number
   source_url: string
   quote: string
@@ -48,15 +49,19 @@ describe('benefit rates', () => {
     }
   })
 
-  it('give every scheme a fallback row for everyone', () => {
-    for (const slug of new Set(rates.map(row => row.slug))) {
-      const fallback = rates.filter(row => row.slug === slug && !row.applies_when && row.area === 'any' && row.project_types.includes('any'))
-      expect(fallback.length, slug).toBeGreaterThan(0)
-    }
+  it('never have own share and subsidy above the whole project', () => {
+    for (const row of rates) expect((row.own_pct ?? 0) + row.subsidy_pct, row.slug).toBeLessThanOrEqual(100)
   })
 
-  it('never have own share and subsidy above the whole project', () => {
-    for (const row of rates) expect(row.own_pct + row.subsidy_pct, row.slug).toBeLessThanOrEqual(100)
+  it('leave own share out, rather than saying nil, unless the source states it', () => {
+    const stated = new Set(rates.filter(row => row.own_pct !== undefined).map(row => row.slug))
+    expect([...stated].sort()).toEqual(['cm-yuva-uttar-pradesh', 'cmegp-maharashtra', 'mukhyamantri-rojgar-srijan-yojana-jharkhand', 'mukhyamantri-udyami-yojana-bihar'])
+  })
+
+  it('test the herd size NLM requires on every row', () => {
+    const nlm = rates.filter(row => row.slug === 'national-livestock-mission-entrepreneurship-development')
+    expect(nlm.length).toBeGreaterThan(0)
+    for (const row of nlm) expect(fieldsIn(row.applies_when).some(field => /count|females|sow/.test(field)), row.label_en).toBe(true)
   })
 
   it('include the PRD worked example: CMEGP special category in a town', () => {

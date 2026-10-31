@@ -117,11 +117,24 @@ describe('hard and fixable answers', () => {
     expect(verdict.bucket).toBe('D')
   })
 
-  it('a bank check never blocks, and is listed', () => {
+  it('a bank check never blocks a founder who qualifies, and is listed', () => {
     const bankCheck = mappings.find(mapping => mapping.treatment === 'bank_check')!
-    const verdict = classifyRecord(record({ all: [{ field: bankCheck.legacy_field, operator: 'equals', value: true }] }), {}, context, now)
+    const rule = { all: [inMaharashtra, { field: bankCheck.legacy_field, operator: 'equals', value: true }] }
+    const verdict = classifyRecord(record(rule), maharashtra, context, now)
     expect(verdict.bucket).toBe('A')
     expect(verdict.bankChecks).toEqual([bankCheck.check_note_en])
+  })
+
+  it('is never "eligible now" when only bank checks passed and nothing about the founder was tested', () => {
+    const bankCheck = mappings.find(mapping => mapping.treatment === 'bank_check')!
+    const verdict = classifyRecord(record({ all: [{ field: bankCheck.legacy_field, operator: 'equals', value: true }] }), maharashtra, context, now)
+    expect(verdict.bucket).toBe('B')
+    expect(verdict.decidedBy).toEqual([])
+    expect(verdict.bankChecks).toEqual([bankCheck.check_note_en])
+  })
+
+  it('an empty rule set is never "eligible now"', () => {
+    expect(classifyRecord(record({ all: [] }), maharashtra, context, now).bucket).toBe('B')
   })
 
   it('a malformed rule never reaches A', () => {

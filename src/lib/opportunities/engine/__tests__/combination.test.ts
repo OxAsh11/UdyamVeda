@@ -20,7 +20,9 @@ function candidate(id: string, subsidy: number, cost = 10 * LAKH): { id: string;
       sourceUrl: 'https://example.gov.in',
       betterIfAnswered: [],
       ownShortfall: false,
+      ceilingInr: null,
       aboveCeiling: false,
+      straddlesCeiling: false,
       ifRenewed: false,
     },
   }
@@ -118,6 +120,23 @@ describe('chooseCombination', () => {
   it('ignores relationships about records not in play', () => {
     const result = chooseCombination([candidate('a', 2 * LAKH)], [relation('a', 'gone', 'exclusive'), relation('x', 'y', 'sequential')])
     expect(result).toEqual({ recommended: ['a'], alternatives: [], sequences: [] })
+  })
+
+  it('lists a scheme with no rates yet as an alternative, not confirmed with the recommendation', () => {
+    const result = chooseCombination([candidate('cmegp', 2 * LAKH), { id: 'mudra', lines: null }], [])
+    expect(result.recommended).toEqual(['cmegp'])
+    expect(result.alternatives).toEqual([{ id: 'mudra', excludedBy: [], notConfirmedWith: ['cmegp'] }])
+  })
+
+  it('keeps an exclusion visible when the excluded scheme has no rates yet', () => {
+    const result = chooseCombination([candidate('cmegp', 2 * LAKH), { id: 'pmegp', lines: null }], [relation('cmegp', 'pmegp', 'exclusive')])
+    expect(result.alternatives).toEqual([{ id: 'pmegp', excludedBy: ['cmegp'], notConfirmedWith: [] }])
+  })
+
+  it('recommends nothing when no scheme has rates, and still lists them', () => {
+    const result = chooseCombination([{ id: 'mudra', lines: null }], [])
+    expect(result.recommended).toEqual([])
+    expect(result.alternatives).toEqual([{ id: 'mudra', excludedBy: [], notConfirmedWith: [] }])
   })
 
   it('has no total or sum field', () => {

@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest'
+import { factKeysForRuleField } from '../../fact-mapping'
 import { catalogVersion, hydrateCatalog } from '../catalog'
+import { classifyRecord } from '../classify'
 import { cleanFacts } from '../facts'
 import { buildResults, type ResultsPayload } from '../results'
 import type { Bucket, EngineRecord } from '../types'
@@ -217,19 +219,126 @@ describe('untagged records such as PLI and shipbuilding (PRD §4)', () => {
 })
 
 describe('combination', () => {
-  it('comes only from bucket A with amounts, so PMEGP in C is not a candidate', () => {
+  it('comes only from bucket A, so PMEGP in C is not a candidate', () => {
     const payload = resultsFor(pooja)
     expect(payload.combination.recommended).toContain(find(payload, CMEGP).id)
     expect(payload.combination.recommended).not.toContain(find(payload, PMEGP).id)
+    expect(payload.combination.alternatives.map(item => item.id)).not.toContain(find(payload, PMEGP).id)
   })
 
-  it('leaves out a scheme priced above its ceiling', () => {
-    const payload = resultsFor({ ...pooja, project_cost_exact_inr: 90000000 })
+  it('shows Mudra beside CMEGP as not confirmed, though Mudra has no rates yet', () => {
+    const payload = resultsFor(pooja)
+    const mudra = payload.combination.alternatives.find(item => item.id === find(payload, 'pradhan-mantri-mudra-yojana').id)
+    expect(mudra?.notConfirmedWith).toEqual([find(payload, CMEGP).id])
+  })
+})
+
+describe('project cost against a scheme limit', () => {
+  it('moves a project above the limit to D and says why', () => {
+    const payload = resultsFor({ ...pooja, project_cost_exact_inr: 6000000 })
     const cmegp = find(payload, CMEGP)
-    if (cmegp.bucket === 'A') {
-      expect(cmegp.lines?.aboveCeiling).toBe(true)
-      expect(payload.combination.recommended).not.toContain(cmegp.id)
+    expect(cmegp.bucket).toBe('D')
+    expect(cmegp.lines).toBeNull()
+    expect(cmegp.blockers.join(' ')).toMatch(/above this scheme's limit/)
+    expect(payload.combination.recommended).not.toContain(cmegp.id)
+  })
+
+  it('does the same for Jharkhand MRSY at ₹5 crore', () => {
+    const payload = resultsFor({ activity_codes: ['pond_fish'], state: 'jharkhand', applicant_age_years: 25, social_category: 'st', annual_family_income_band: '2l_3l', received_govt_subsidy_before: false, project_cost_exact_inr: 50000000 })
+    expect(bucketOf(payload, 'mukhyamantri-rojgar-srijan-yojana-jharkhand')).toBe('D')
+  })
+
+  it('asks the exact cost when the band crosses the limit, rather than saying eligible', () => {
+    const payload = resultsFor({ ...pooja, project_cost_exact_inr: undefined, project_cost_band: '50l_1cr' })
+    const cmegp = find(payload, CMEGP)
+    expect(cmegp.bucket).toBe('B')
+    expect(cmegp.steps).toContainEqual({ kind: 'answer', factKey: 'project_cost_exact_inr' })
+    expect(payload.combination.recommended).not.toContain(cmegp.id)
+  })
+})
+
+describe('honest buckets', () => {
+  it('a home pickle maker is not told an agro-cluster grant is open to them because nothing was tested', () => {
+    const payload = resultsFor({ activity_codes: ['pickles_chutney'], state: 'maharashtra', project_cost_band: '2l_5l' })
+    expect(bucketOf(payload, 'mofpi-agro-processing-cluster-pmksy')).not.toBe('A')
+  })
+
+  it('nothing reaches A without a founder fact behind it', () => {
+    for (const person of [rakesh, pooja, imran, {}]) {
+      for (const item of resultsFor(person).buckets.A) expect(item.decidedBy.length, item.slug).toBeGreaterThan(0)
     }
+  })
+
+  it('marks figures as "if renewed" on an active record that is in C because its date passed', () => {
+    const data = snapshotData()
+    const record = data.records.find(item => item.slug === CMEGP)!
+    const stale = { ...data, records: [{ ...record, lastCheckedAt: '2026-01-01T00:00:00Z' }] }
+    const payload = resultsFor(pooja, hydrateCatalog({ ...stale, version: catalogVersion(stale) }))
+    expect(find(payload, CMEGP).bucket).toBe('C')
+    expect(find(payload, CMEGP).lines?.ifRenewed).toBe(true)
+  })
+})
+
+describe('Stand-Up India and declined answers', () => {
+  const STAND_UP = 'stand-up-india-scheme'
+
+  it.each([
+    ['a man who declined his category', { gender: 'man', social_category: 'prefer_not' }],
+    ['someone who declined gender and said general', { gender: 'prefer_not', social_category: 'general' }],
+    ['a man who does not know his category', { gender: 'man', social_category: 'dont_know' }],
+    ['a man who has not been asked yet', { gender: 'man' }],
+  ])('%s is not told "not for you"', (_who, facts) => {
+    expect(bucketOf(resultsFor(facts), STAND_UP)).not.toBe('D')
+  })
+
+  it('a general-category man is', () => {
+    expect(bucketOf(resultsFor({ gender: 'man', social_category: 'general', applicant_age_years: 30 }), STAND_UP)).toBe('D')
+  })
+})
+
+describe('an unanswered question never rules a founder out (whole catalog)', () => {
+  function fields(node: unknown): string[] {
+    if (!node || typeof node !== 'object') return []
+    const record = node as Record<string, unknown>
+    if (Array.isArray(record.all)) return record.all.flatMap(fields)
+    if (Array.isArray(record.any)) return record.any.flatMap(fields)
+    return typeof record.field === 'string' ? [record.field] : []
+  }
+  const profiles: Record<string, unknown>[] = [
+    {},
+    { gender: 'man' },
+    { gender: 'woman' },
+    { social_category: 'general' },
+    { social_category: 'sc' },
+    { gender: 'man', social_category: 'general' },
+    { entity_type: 'proprietorship' },
+    { udyam_registered: false },
+  ]
+
+  it('if a record is D without an answer, no real answer can rescue it', () => {
+    const { mappings, reviewerChecks } = catalog.context
+    const context = { ...catalog.context, derivation: { ...catalog.context.derivation, now } }
+    const bad: string[] = []
+    for (const record of catalog.records) {
+      const keys = new Set(fields(record.rules).flatMap(field => {
+        const traced = factKeysForRuleField(field, mappings)
+        return traced.length ? traced : reviewerChecks.has(field) ? [] : [field]
+      }))
+      for (const profile of profiles) {
+        for (const key of keys) {
+          const definition = catalog.definitions.find(item => item.key === key)
+          const answers: unknown[] = definition?.type === 'boolean' ? [true, false] : (definition?.values ?? []).filter(value => value !== 'prefer_not')
+          if (!answers.length) continue
+          const unanswered = { ...profile }
+          delete unanswered[key]
+          if (classifyRecord(record, unanswered, context, now).bucket !== 'D') continue
+          for (const answer of answers) {
+            if (classifyRecord(record, { ...unanswered, [key]: answer }, context, now).bucket !== 'D') bad.push(`${record.slug}: ${key}=${String(answer)} with ${JSON.stringify(profile)}`)
+          }
+        }
+      }
+    }
+    expect(bad).toEqual([])
   })
 })
 

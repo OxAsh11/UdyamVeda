@@ -16,21 +16,21 @@ export type Combination = {
   sequences: { before: string; after: string }[]
 }
 
-type Candidate = { id: string; lines: BenefitLines }
+type Candidate = { id: string; lines: BenefitLines | null }
 type PairStatus = 'allowed' | 'excluded' | 'not_confirmed'
 
 // Small enough to try every subset (PRD §10.1).
 const MAX_COMBINED = 10
 
 const pairKey = (left: string, right: string) => (left < right ? `${left}|${right}` : `${right}|${left}`)
-const subsidyOf = (candidate: Candidate) => candidate.lines.subsidy.max ?? candidate.lines.subsidy.min
+const subsidyOf = (candidate: Candidate) => candidate.lines?.subsidy.max ?? candidate.lines?.subsidy.min ?? -1
 
 function withinCap(left: Candidate, right: Candidate, relationship: Relationship) {
   const pct = relationship.capRule?.max_total_subsidy_pct
-  const cost = left.lines.projectCost.max
-  const leftSubsidy = left.lines.subsidy.max
-  const rightSubsidy = right.lines.subsidy.max
-  if (pct === undefined || cost === null || leftSubsidy === null || rightSubsidy === null) return false
+  const cost = left.lines?.projectCost.max
+  const leftSubsidy = left.lines?.subsidy.max
+  const rightSubsidy = right.lines?.subsidy.max
+  if (pct === undefined || cost === undefined || cost === null || leftSubsidy === undefined || leftSubsidy === null || rightSubsidy === undefined || rightSubsidy === null) return false
   return leftSubsidy + rightSubsidy <= (pct / 100) * cost
 }
 
@@ -46,7 +46,8 @@ function pairStatus(left: Candidate, right: Candidate, rows: Relationship[]): Pa
 /** The best set of schemes that can certainly be taken on one project, and why the others are left out. */
 export function chooseCombination(candidates: Candidate[], relationships: Relationship[]): Combination {
   const ranked = [...candidates].sort((left, right) => subsidyOf(right) - subsidyOf(left) || left.id.localeCompare(right.id))
-  const pool = ranked.slice(0, MAX_COMBINED)
+  // Only schemes with amounts can be recommended; the rest stay as alternatives.
+  const pool = ranked.filter(candidate => candidate.lines).slice(0, MAX_COMBINED)
 
   const rowsByPair = new Map<string, Relationship[]>()
   for (const row of relationships) {

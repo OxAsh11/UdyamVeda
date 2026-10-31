@@ -12,8 +12,10 @@ export function isNumberRange(value: unknown): value is NumberRange {
 
 // One founder answer can match several vocabularies used by different rule
 // sets ("private_limited_company", "private_company", "company"). A fact
-// holding AnyOf matches a rule when any of its values would.
-export type AnyOf = { anyOf: unknown[] }
+// holding AnyOf matches a rule when any of its values would. Incomplete means
+// some of the founder's answers behind it are missing, so a value that matches
+// proves a yes, but no match cannot prove a no.
+export type AnyOf = { anyOf: unknown[]; incomplete?: boolean }
 
 export function isAnyOf(value: unknown): value is AnyOf {
   return Boolean(value) && typeof value === 'object' && !Array.isArray(value) && Array.isArray((value as AnyOf).anyOf)
@@ -81,7 +83,7 @@ function compare(actual: unknown, operator: string, expected: unknown): boolean 
     }
     const results = actual.anyOf.map(item => compare(item, operator, expected))
     if (results.includes(true)) return true
-    return results.every(result => result === false) ? false : null
+    return results.every(result => result === false) && !actual.incomplete ? false : null
   }
 
   if (isNumberRange(actual)) {

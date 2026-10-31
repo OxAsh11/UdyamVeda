@@ -78,7 +78,11 @@ export const BAND_RANGES: Record<string, Record<string, NumberRange>> = {
   },
 }
 
-const anyOf = (values: unknown[]): AnyOf => ({ anyOf: [...new Set(values)] })
+const anyOf = (values: unknown[], incomplete = false): AnyOf => ({
+  anyOf: [...new Set(values)],
+  ...(incomplete ? { incomplete: true } : {}),
+})
+const isAnswered = (value: unknown) => value !== undefined && value !== 'prefer_not'
 
 function bandRange(facts: CanonicalFacts, key: string): NumberRange | undefined {
   const band = facts[key]
@@ -183,7 +187,7 @@ export const DERIVATIONS: Record<string, Derivation> = {
     if (facts.social_category === 'sc') values.push('sc')
     if (facts.social_category === 'st') values.push('st')
     if (facts.social_category === 'obc') values.push('obc')
-    return anyOf(values)
+    return anyOf(values, !isAnswered(facts.gender) || !isAnswered(facts.social_category))
   },
   is_minority: facts => (facts.minority_community === 'yes' ? true : facts.minority_community === 'no' ? false : undefined),
   is_traditional_artisan: facts => (typeof facts.artisan_trade === 'string' ? facts.artisan_trade !== 'other' : undefined),
@@ -237,7 +241,7 @@ export const DERIVATIONS: Record<string, Derivation> = {
     if (facts.dpiit_recognized === true) values.push('dpiit_recognized_startup')
     if (facts.udyam_registered === true) values.push('msme')
     if (facts.entity_type === 'not_registered') values.push('individual_innovator')
-    return anyOf(values)
+    return anyOf(values, facts.dpiit_recognized === undefined || facts.udyam_registered === undefined || facts.entity_type === undefined)
   },
   is_startup_or_msme: facts => {
     const dpiit = knownBoolean(facts.dpiit_recognized)

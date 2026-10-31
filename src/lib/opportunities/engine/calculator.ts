@@ -8,10 +8,12 @@ export type InrRange = { min: number; max: number | null }
 // Each line stands alone: nothing here adds them into one "benefit" figure.
 export type BenefitLines = {
   projectCost: InrRange
-  own: InrRange
+  // null: the source does not state an own share, so none is shown.
+  own: InrRange | null
   subsidy: InrRange
-  loan: InrRange
-  // Project cost that own money, subsidy and the loan limit leave unfunded.
+  // null: the source gives no loan to show; the balance is in `uncovered`.
+  loan: InrRange | null
+  // Still to arrange after the lines above.
   uncovered: InrRange
   interestRatePct: number | null
   interestSubventionPct: number | null
@@ -20,7 +22,10 @@ export type BenefitLines = {
   // Answers that could move this founder to a better rate.
   betterIfAnswered: string[]
   ownShortfall: boolean
+  ceilingInr: number | null
   aboveCeiling: boolean
+  // The founder's cost band crosses the ceiling; only the exact cost can decide.
+  straddlesCeiling: boolean
   // Shown as "if the scheme is renewed on the same terms".
   ifRenewed: boolean
 }
@@ -30,7 +35,9 @@ export type BenefitRateRow = {
   applies_when?: unknown
   area: string
   project_types: readonly string[]
-  own_pct: number | string
+  own_pct?: number | string | null
+  includes_loan?: boolean
+  provisional?: boolean
   subsidy_pct: number | string
   subsidy_cap_inr?: number | string | null
   subsidy_floor_inr?: number | string | null
@@ -51,7 +58,9 @@ export function benefitRateFromRow(row: BenefitRateRow): BenefitRate {
     appliesWhen: row.applies_when ?? null,
     area: row.area as BenefitRate['area'],
     projectTypes: row.project_types,
-    ownPct: Number(row.own_pct),
+    ownPct: optional(row.own_pct),
+    includesLoan: row.includes_loan ?? true,
+    provisional: row.provisional ?? false,
     subsidyPct: Number(row.subsidy_pct),
     subsidyCapInr: optional(row.subsidy_cap_inr),
     subsidyFloorInr: optional(row.subsidy_floor_inr),
@@ -96,7 +105,9 @@ const byPriority = (rates: BenefitRate[]) => [...rates].sort((left, right) => le
 /**
  * The first row that certainly fits this founder and this project cost. A more
  * generous row that might fit, but depends on an unanswered fact, is reported
- * as "could be better if answered" and never assumed.
+ * as "could be better if answered" and never assumed. A provisional row only
+ * stands in while such an answer is outstanding: once the facts are known and
+ * no real row fits, there is no amount to show.
  */
 export function pickRate(
   rates: BenefitRate[],
@@ -108,8 +119,9 @@ export function pickRate(
   for (const rate of byPriority(rates)) {
     if (!covers(rate, cost)) continue
     const fit = fitOf(rate, facts, context)
-    if (fit.fit === 'yes') return { rate, betterIfAnswered: [...betterIfAnswered] }
     if (fit.fit === 'unknown') fit.missing.forEach(key => betterIfAnswered.add(key))
+    if (fit.fit !== 'yes' || (rate.provisional && !betterIfAnswered.size)) continue
+    return { rate, betterIfAnswered: [...betterIfAnswered] }
   }
   return null
 }
@@ -117,21 +129,29 @@ export function pickRate(
 const share = (pct: number, cost: number) => (pct === 0 ? 0 : (pct / 100) * cost)
 
 function amountsAt(rate: BenefitRate, cost: number) {
-  const own = share(rate.ownPct, cost)
+  const own = rate.ownPct === null ? null : share(rate.ownPct, cost)
   const floored = Math.max(share(rate.subsidyPct, cost), rate.subsidyFloorInr ?? 0)
   const subsidy = Math.min(floored, rate.subsidyCapInr ?? Number.POSITIVE_INFINITY)
+
+  // Without a stated own share or loan limit, a loan figure would be a guess
+  // at how the founder splits the balance, so it all stays "to arrange".
+  const hasLoanLine = rate.includesLoan && (rate.ownPct !== null || rate.loanCapInr !== null)
   const loanCap = rate.loanCapInr ?? Number.POSITIVE_INFINITY
+
   if (!Number.isFinite(cost)) {
-    return { own, subsidy, loan: loanCap, uncovered: Number.isFinite(loanCap) ? Number.POSITIVE_INFINITY : 0 }
+    const loan = hasLoanLine ? loanCap : null
+    return { own, subsidy, loan, uncovered: loan === Number.POSITIVE_INFINITY ? 0 : Number.POSITIVE_INFINITY }
   }
-  const balance = Math.max(0, cost - own - subsidy)
-  const loan = Math.min(balance, loanCap)
-  return { own, subsidy, loan, uncovered: balance - loan }
+  const balance = Math.max(0, cost - (own ?? 0) - subsidy)
+  const loan = hasLoanLine ? Math.min(balance, loanCap) : null
+  return { own, subsidy, loan, uncovered: balance - (loan ?? 0) }
 }
 
 function range(low: number, high: number): InrRange {
   return { min: Math.round(low), max: Number.isFinite(high) ? Math.round(high) : null }
 }
+
+const optionalRange = (low: number | null, high: number | null) => (low === null || high === null ? null : range(low, high))
 
 /** Own, subsidy and loan lines for this founder's project; null when they cannot be worked out yet. */
 export function computeBenefit(
@@ -141,11 +161,13 @@ export function computeBenefit(
   context: DerivationContext,
 ): BenefitLines | null {
   const cost = DERIVATIONS.project_cost_inr(facts, context)
-  if (!isNumberRange(cost) || !rates.length) return null
+  if (!isNumberRange(cost)) return null
 
   const fitting = rates.filter(rate => fitOf(rate, facts, context).fit !== 'no')
-  if (!fitting.length) return null
+  if (!fitting.some(rate => !rate.provisional)) return null
+
   const ceiling = Math.max(...fitting.map(rate => rate.projectCapInr ?? Number.POSITIVE_INFINITY))
+  const ceilingInr = Number.isFinite(ceiling) ? ceiling : null
   const ifRenewed = status !== 'active'
   const ownMoney = typeof facts.own_contribution_band === 'string' ? BAND_RANGES.own_contribution_band[facts.own_contribution_band] : undefined
 
@@ -156,7 +178,7 @@ export function computeBenefit(
       own: nothing, subsidy: nothing, loan: nothing, uncovered: nothing,
       interestRatePct: null, interestSubventionPct: null,
       rateLabel: fitting[0].labelEn, sourceUrl: fitting[0].sourceUrl,
-      betterIfAnswered: [], ownShortfall: false, aboveCeiling: true, ifRenewed,
+      betterIfAnswered: [], ownShortfall: false, ceilingInr, aboveCeiling: true, straddlesCeiling: false, ifRenewed,
     }
   }
 
@@ -171,17 +193,19 @@ export function computeBenefit(
 
   return {
     projectCost: range(lowCost, highCost),
-    own: range(low.own, high.own),
+    own: optionalRange(low.own, high.own),
     subsidy: range(low.subsidy, high.subsidy),
-    loan: range(low.loan, high.loan),
+    loan: optionalRange(low.loan, high.loan),
     uncovered: range(low.uncovered, high.uncovered),
     interestRatePct: highPick.rate.interestRatePct,
     interestSubventionPct: highPick.rate.interestSubventionPct,
     rateLabel: highPick.rate.labelEn,
     sourceUrl: highPick.rate.sourceUrl,
     betterIfAnswered: [...new Set([...lowPick.betterIfAnswered, ...highPick.betterIfAnswered])],
-    ownShortfall: ownMoney !== undefined && low.own > ownMoney.max,
+    ownShortfall: ownMoney !== undefined && low.own !== null && low.own > ownMoney.max,
+    ceilingInr,
     aboveCeiling: false,
+    straddlesCeiling: cost.max > ceiling,
     ifRenewed,
   }
 }

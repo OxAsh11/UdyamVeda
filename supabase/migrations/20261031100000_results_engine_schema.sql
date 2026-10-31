@@ -29,7 +29,12 @@ create table if not exists public.benefit_rates (
   area text not null default 'any' check (area in ('rural', 'urban', 'any')),
   project_types text[] not null default '{any}'
     check (project_types <@ array['any', 'manufacturing', 'service', 'trading', 'agri_allied'] and cardinality(project_types) > 0),
-  own_pct numeric not null default 0 check (own_pct between 0 and 100),
+  -- Null when the source does not state an own share; zero means it states none.
+  own_pct numeric check (own_pct between 0 and 100),
+  -- False for grant-only schemes, which have no loan line.
+  includes_loan boolean not null default true,
+  -- A stand-in used only while a more specific row is waiting on an answer.
+  provisional boolean not null default false,
   subsidy_pct numeric not null default 0 check (subsidy_pct between 0 and 100),
   subsidy_cap_inr numeric check (subsidy_cap_inr >= 0),
   -- "₹6.25 lakh or 20%, whichever is higher" (UP ODOP).
@@ -99,12 +104,12 @@ begin
      and new.current_version_id is distinct from old.current_version_id
      and not exists (select 1 from public.benefit_rates where opportunity_version_id = new.current_version_id) then
     insert into public.benefit_rates (
-      opportunity_version_id, priority, applies_when, area, project_types, own_pct, subsidy_pct,
+      opportunity_version_id, priority, applies_when, area, project_types, own_pct, includes_loan, provisional, subsidy_pct,
       subsidy_cap_inr, subsidy_floor_inr, loan_cap_inr, project_min_inr, project_cap_inr,
       interest_rate_pct, interest_subvention_pct, label_en, source_url, quote
     )
     select
-      new.current_version_id, priority, applies_when, area, project_types, own_pct, subsidy_pct,
+      new.current_version_id, priority, applies_when, area, project_types, own_pct, includes_loan, provisional, subsidy_pct,
       subsidy_cap_inr, subsidy_floor_inr, loan_cap_inr, project_min_inr, project_cap_inr,
       interest_rate_pct, interest_subvention_pct, label_en, source_url, quote
     from public.benefit_rates

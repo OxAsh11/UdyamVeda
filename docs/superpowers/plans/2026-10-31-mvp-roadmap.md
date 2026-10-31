@@ -84,6 +84,8 @@ The ordered registrations, the score and the document checklist.
 | Relationships | Set for every pair in the same pack, with source and quote; anything else shows "not confirmed" |
 | Records still missing | Local trade licence / gram panchayat NOC, state fisheries licence and pond lease, WDRA, cosmetics and AYUSH pointers, Maharashtra professional tax |
 | Schemes still to research | Annasaheb Patil, UP Vishwakarma Shram Samman, Dilli Swarojgar Yojana, Maharashtra startup and women's schemes. Dropped if no official source confirms them |
+| Rules that test no founder fact | AIF, two PMKSY grants, PMKVY 4, SFURTI, Khadi Gramodyog and NHDP marketing show as "one step away" until their rules test something about the founder. Three of them only check whether a call is open |
+| Approved rules that pass too many founders | UP ODOP needs the district product (today any UP founder passes). Jharkhand's income rule passes the ₹3–6 lakh band against a ₹5 lakh limit. CMEGP does not exclude traders or test entity form and Class 8 |
 | Assumptions in Section 16.2 | Each verified or recorded as open; includes whether Udyam moved to NIC 2025 |
 | Gate and freshness | Six checks in the editor; "mark checked today"; monthly sweep at 30 days (amber) and 60 days (bucket C); public change log; weekly crawl and diff summarised for the reviewer |
 | Rule validation (FR-05) | Database trigger rejects a rule whose field is in neither `fact_definitions` nor `rule_field_mappings`, and rejects `unknown_handling: fail_closed` (0 of 187 use it today; it would wrongly mark unanswered records as not eligible) |

@@ -24,6 +24,20 @@ const rows: CatalogRows = {
   activityPacks: [{ activity_id: 'pond_fish', pack_id: 'livestock_fisheries' }, { activity_id: 'pond_fish', pack_id: 'agri' }],
 }
 
+describe('a catalog with a table missing', () => {
+  it.each([
+    ['rule sets', { ruleSets: [] }],
+    ['versions', { versions: [] }],
+    ['definitions', { definitions: [] }],
+    ['mappings', { mappings: [] }],
+    ['activity packs', { activityPacks: [] }],
+    ['pack tags', { packs: [] }],
+    ['windows', { windows: [] }],
+  ])('with no %s is refused, not served', (_name, change) => {
+    expect(() => catalogDataFromRows({ ...rows, ...change } as CatalogRows)).toThrow(/incomplete/)
+  })
+})
+
 describe('catalogDataFromRows', () => {
   const data = catalogDataFromRows(rows)
 

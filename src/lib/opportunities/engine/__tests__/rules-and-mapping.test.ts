@@ -56,6 +56,36 @@ describe('tracing rule fields back to founder facts', () => {
   })
 })
 
+describe('answers that are only partly known', () => {
+  const category = (facts: Record<string, unknown>) => DERIVATIONS.founder_category_legacy(facts, context)
+  const standUp = { all: [{ field: 'founder_category', operator: 'in', value: ['women', 'woman', 'sc', 'st'] }] }
+  const outcome = (facts: Record<string, unknown>) => evaluateEligibilityRules(standUp, { founder_category: category(facts) }).result
+
+  it('a man who declined his category might still be SC or ST, so it stays unknown', () => {
+    expect(outcome({ gender: 'man' })).toBeNull()
+  })
+
+  it('someone who declined gender and said general might be a woman, so it stays unknown', () => {
+    expect(outcome({ social_category: 'general' })).toBeNull()
+  })
+
+  it('a woman qualifies even if her category is unanswered', () => {
+    expect(outcome({ gender: 'woman' })).toBe(true)
+  })
+
+  it('a general-category man is a certain no', () => {
+    expect(outcome({ gender: 'man', social_category: 'general' })).toBe(false)
+  })
+
+  it('applicant_type stays unknown until all its inputs are answered', () => {
+    const route = { all: [{ field: 'applicant', operator: 'in', value: ['msme'] }] }
+    const result = (facts: Record<string, unknown>) => evaluateEligibilityRules(route, { applicant: DERIVATIONS.applicant_type(facts, context) }).result
+    expect(result({ dpiit_recognized: false })).toBeNull()
+    expect(result({ udyam_registered: true })).toBe(true)
+    expect(result({ dpiit_recognized: false, udyam_registered: false, entity_type: 'llp' })).toBe(false)
+  })
+})
+
 describe('exact project cost', () => {
   it('wins over the band', () => {
     expect(DERIVATIONS.project_cost_inr({ project_cost_exact_inr: 800000, project_cost_band: '5l_10l' }, context)).toEqual({ min: 800000, max: 800000 })

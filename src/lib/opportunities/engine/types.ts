@@ -24,7 +24,11 @@ export type BenefitRate = {
   appliesWhen: unknown
   area: 'rural' | 'urban' | 'any'
   projectTypes: readonly string[]
-  ownPct: number
+  // null: the source does not state an own share.
+  ownPct: number | null
+  includesLoan: boolean
+  // A stand-in used only while a more specific row is waiting on an answer.
+  provisional: boolean
   subsidyPct: number
   subsidyCapInr: number | null
   subsidyFloorInr: number | null

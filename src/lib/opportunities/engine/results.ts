@@ -50,6 +50,21 @@ function untaggedQualifies(verdict: RecordVerdict) {
     && verdict.decidedBy.some(key => PROJECT_SIZE_FACTS.includes(key))
 }
 
+// Rules know the scheme, rates know its project limit, so the limit is settled
+// here. Above it the scheme is not for this project; a band that crosses it can
+// only be decided by the exact cost.
+function settleProjectLimit(verdict: RecordVerdict, lines: BenefitLines | null) {
+  if (lines?.aboveCeiling) {
+    const limit = lines.ceilingInr === null ? '' : ` of ₹${lines.ceilingInr.toLocaleString('en-IN')}`
+    return { ...verdict, bucket: 'D' as const, steps: [], blockers: [...verdict.blockers, `Project cost is above this scheme's limit${limit}`], lines: null }
+  }
+  if (lines?.straddlesCeiling) {
+    const steps = [...verdict.steps, { kind: 'answer' as const, factKey: 'project_cost_exact_inr' }]
+    return verdict.bucket === 'A' ? { ...verdict, bucket: 'B' as const, steps, lines: null } : { ...verdict, steps, lines }
+  }
+  return { ...verdict, lines }
+}
+
 const subsidyOf = (item: RecordResult) => item.lines?.subsidy.max ?? item.lines?.subsidy.min ?? -1
 
 /** Sorts the published catalog into the four buckets for one founder. Same input, same output. */
@@ -70,18 +85,20 @@ export function buildResults(facts: CanonicalFacts, nonAnswers: Record<string, s
 
     const isRegistration = REGISTRATION_TYPES.has(record.type)
     const showsAmount = !isRegistration && (verdict.bucket === 'A' || verdict.bucket === 'C')
-    const list = isRegistration ? registrations : buckets[verdict.bucket]
+    const settled = settleProjectLimit(verdict, showsAmount ? computeBenefit(record.rates, facts, record.status, context.derivation) : null)
+    const list = isRegistration ? registrations : buckets[settled.bucket]
     list.push({
-      ...verdict,
+      ...settled,
       // Someone who chose "prefer not to say" is not asked again.
-      steps: verdict.steps.filter(step => !(step.kind === 'answer' && nonAnswers[step.factKey] === 'declined')),
+      steps: settled.steps.filter(step => !(step.kind === 'answer' && nonAnswers[step.factKey] === 'declined')),
       id: record.id,
       slug: record.slug,
       title: record.title,
       type: record.type,
       status: record.status,
       lastCheckedAt: record.lastCheckedAt,
-      lines: showsAmount ? computeBenefit(record.rates, facts, record.status, context.derivation) : null,
+      // Any figure in C is conditional, including on an active scheme whose date has passed.
+      lines: settled.lines && settled.bucket === 'C' ? { ...settled.lines, ifRenewed: true } : settled.lines,
     })
   }
 
@@ -99,7 +116,7 @@ export function buildResults(facts: CanonicalFacts, nonAnswers: Record<string, s
   buckets.C.sort(byValue)
   buckets.D.sort((left, right) => left.slug.localeCompare(right.slug))
 
-  const candidates = buckets.A.flatMap(item => (item.lines && !item.lines.aboveCeiling ? [{ id: item.id, lines: item.lines }] : []))
+  const candidates = buckets.A.map(item => ({ id: item.id, lines: item.lines }))
 
   return {
     catalogVersion: catalog.version,

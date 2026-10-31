@@ -4,6 +4,9 @@ import { benefitRateFromRow, type BenefitRateRow } from './calculator'
 import type { Relationship } from './combination'
 import type { EngineContext, EngineRecord, FactDefinition } from './types'
 
+// Publishing a correction clears this, so a closed scheme stops showing as open.
+export const CATALOG_CACHE_TAG = 'catalog'
+
 // Plain JSON, so it can sit in the Next.js data cache.
 export type EngineCatalogData = {
   records: EngineRecord[]
@@ -99,6 +102,18 @@ export function catalogDataFromRows(rows: CatalogRows): EngineCatalogData {
       stepCount: steps.get(versionId)?.length ?? 0,
     }]
   }).sort((left, right) => left.slug.localeCompare(right.slug))
+
+  // A table that comes back empty would quietly make every record look open or
+  // eligible, so it counts as an outage rather than as an answer.
+  const empty = Object.entries({
+    records: records.length,
+    definitions: rows.definitions.length,
+    mappings: rows.mappings.length,
+    'activity packs': rows.activityPacks.length,
+    'pack tags': rows.packs.length,
+    windows: rows.windows.length,
+  }).filter(([, count]) => count === 0).map(([name]) => name)
+  if (empty.length) throw new Error(`The catalog is incomplete: no ${empty.join(', ')}.`)
 
   const data = {
     records,

@@ -1,11 +1,14 @@
 import { createClient } from '@supabase/supabase-js'
 import { unstable_cache } from 'next/cache'
-import { catalogDataFromRows, hydrateCatalog, type CatalogRows, type EngineCatalog, type EngineCatalogData } from './catalog'
+import { CATALOG_CACHE_TAG, catalogDataFromRows, hydrateCatalog, type CatalogRows, type EngineCatalog, type EngineCatalogData } from './catalog'
 
 const PAGE_SIZE = 1000
+// All 187 ids in one request make a URL of about 8 KB, near common gateway limits.
+const IDS_PER_REQUEST = 100
 const PUBLISHED_STATUSES = ['active', 'upcoming', 'paused', 'pending_renewal', 'closed']
 
 type Page<T> = PromiseLike<{ data: T[] | null; error: { message: string } | null }>
+type Filtered<T> = { eq(column: string, value: unknown): Filtered<T>; order(column: string): Filtered<T>; range(from: number, to: number): Page<T> }
 
 // Supabase returns at most 1000 rows per request; a silently short list would
 // give founders wrong results, so every table is read to the end.
@@ -32,18 +35,21 @@ async function fetchCatalogData(): Promise<EngineCatalogData> {
   if (!opportunities.length) throw new Error('The catalog returned no records.')
 
   const versionIds = opportunities.map(row => row.current_version_id).filter((id): id is string => Boolean(id))
-  const byVersion = <T>(table: string, columns: string) => readAll<T>((from, to) => supabase.from(table)
-    .select(columns).in('opportunity_version_id', versionIds).order('id').range(from, to) as unknown as Page<T>)
+  const idChunks = Array.from({ length: Math.ceil(versionIds.length / IDS_PER_REQUEST) }, (_, index) => versionIds.slice(index * IDS_PER_REQUEST, (index + 1) * IDS_PER_REQUEST))
+  const byIds = async <T>(table: string, columns: string, idColumn: string, equals: Record<string, unknown> = {}) => (await Promise.all(idChunks.map(chunk => readAll<T>((from, to) => {
+    let query = supabase.from(table).select(columns).in(idColumn, chunk) as unknown as Filtered<T>
+    for (const [column, value] of Object.entries(equals)) query = query.eq(column, value)
+    return query.order('id').range(from, to)
+  })))).flat()
+  const byVersion = <T>(table: string, columns: string) => byIds<T>(table, columns, 'opportunity_version_id')
 
   const [versions, ruleSets, windows, requirements, steps, rates, packs, relationships, mappings, definitions, activityPacks] = await Promise.all([
-    readAll<CatalogRows['versions'][number]>((from, to) => supabase.from('opportunity_versions')
-      .select('id, title').in('id', versionIds).eq('review_status', 'approved').order('id').range(from, to)),
-    readAll<CatalogRows['ruleSets'][number]>((from, to) => supabase.from('eligibility_rule_sets')
-      .select('opportunity_version_id, rules').in('opportunity_version_id', versionIds).eq('reviewed', true).order('id').range(from, to)),
+    byIds<CatalogRows['versions'][number]>('opportunity_versions', 'id, title', 'id', { review_status: 'approved' }),
+    byIds<CatalogRows['ruleSets'][number]>('eligibility_rule_sets', 'opportunity_version_id, rules', 'opportunity_version_id', { reviewed: true }),
     byVersion<CatalogRows['windows'][number]>('opportunity_windows', 'opportunity_version_id, window_type, opens_at, closes_at'),
     byVersion<CatalogRows['requirements'][number]>('opportunity_requirements', 'opportunity_version_id'),
     byVersion<CatalogRows['steps'][number]>('opportunity_steps', 'opportunity_version_id'),
-    byVersion<CatalogRows['rates'][number]>('benefit_rates', 'opportunity_version_id, priority, applies_when, area, project_types, own_pct, subsidy_pct, subsidy_cap_inr, subsidy_floor_inr, loan_cap_inr, project_min_inr, project_cap_inr, interest_rate_pct, interest_subvention_pct, label_en, source_url'),
+    byVersion<CatalogRows['rates'][number]>('benefit_rates', 'opportunity_version_id, priority, applies_when, area, project_types, own_pct, includes_loan, provisional, subsidy_pct, subsidy_cap_inr, subsidy_floor_inr, loan_cap_inr, project_min_inr, project_cap_inr, interest_rate_pct, interest_subvention_pct, label_en, source_url'),
     readAll<CatalogRows['packs'][number]>((from, to) => supabase.from('opportunity_packs')
       .select('opportunity_id, pack_id').order('opportunity_id').order('pack_id').range(from, to)),
     readAll<CatalogRows['relationships'][number]>((from, to) => supabase.from('scheme_relationships')
@@ -61,7 +67,7 @@ async function fetchCatalogData(): Promise<EngineCatalogData> {
 
 // A failure throws inside the cached function, so an outage is never cached
 // and the catalog comes back as soon as the database does.
-const cachedCatalogData = unstable_cache(fetchCatalogData, ['engine-catalog'], { revalidate: 300, tags: ['catalog'] })
+const cachedCatalogData = unstable_cache(fetchCatalogData, ['engine-catalog'], { revalidate: 300, tags: [CATALOG_CACHE_TAG] })
 
 /** The published catalog, or null when it cannot be read right now. */
 export async function loadEngineCatalog(): Promise<EngineCatalog | null> {

@@ -18,6 +18,8 @@ function rate(overrides: Partial<BenefitRate>): BenefitRate {
     area: 'any',
     projectTypes: ['any'],
     ownPct: 0,
+    includesLoan: true,
+    provisional: false,
     subsidyPct: 0,
     subsidyCapInr: null,
     subsidyFloorInr: null,
@@ -39,6 +41,7 @@ describe('the PRD worked example', () => {
     const lines = computeBenefit(cmegp, { ...pooja, project_cost_exact_inr: 8 * LAKH }, 'active', context)!
     expect(lines.projectCost).toEqual(exact(8 * LAKH))
     expect(lines.own).toEqual(exact(40_000))
+    expect(lines.straddlesCeiling).toBe(false)
     expect(lines.subsidy).toEqual(exact(2 * LAKH))
     expect(lines.loan).toEqual(exact(5.6 * LAKH))
     expect(lines.uncovered).toEqual(exact(0))
@@ -99,17 +102,86 @@ describe('choosing the rate', () => {
     expect(lines.interestRatePct).toBe(6)
   })
 
-  it('picks the NLM cap by activity', () => {
+  it('picks the NLM cap by activity and qualifying herd', () => {
     const nlm = ratesFor('national-livestock-mission-entrepreneurship-development')
-    expect(computeBenefit(nlm, { activity_codes: ['goat_sheep'], project_cost_exact_inr: 120 * LAKH }, 'active', context)!.subsidy).toEqual(exact(50 * LAKH))
-    expect(computeBenefit(nlm, { activity_codes: ['piggery'], project_cost_exact_inr: 120 * LAKH }, 'active', context)!.subsidy).toEqual(exact(30 * LAKH))
-    expect(computeBenefit(nlm, { activity_codes: ['poultry_breeding_hatchery'], project_cost_exact_inr: 120 * LAKH }, 'active', context)!.subsidy).toEqual(exact(25 * LAKH))
+    const subsidyFor = (facts: Record<string, unknown>) => computeBenefit(nlm, { ...facts, project_cost_exact_inr: 120 * LAKH }, 'active', context)!.subsidy
+    expect(subsidyFor({ activity_codes: ['goat_sheep'], small_ruminant_females: 500, small_ruminant_males: 25 })).toEqual(exact(50 * LAKH))
+    expect(subsidyFor({ activity_codes: ['piggery'], sow_count: 100, boar_count: 25 })).toEqual(exact(30 * LAKH))
+    expect(subsidyFor({ activity_codes: ['poultry_breeding_hatchery'], poultry_bird_count: 1000 })).toEqual(exact(25 * LAKH))
+  })
+
+  it('does not give a hatchery the goat cap because it also keeps 40 goats', () => {
+    const nlm = ratesFor('national-livestock-mission-entrepreneurship-development')
+    const lines = computeBenefit(nlm, { activity_codes: ['poultry_breeding_hatchery', 'goat_sheep'], poultry_bird_count: 1200, small_ruminant_females: 40, small_ruminant_males: 5, project_cost_exact_inr: 80 * LAKH }, 'active', context)!
+    expect(lines.subsidy).toEqual(exact(25 * LAKH))
+  })
+
+  it('shows no NLM amount for an activity the source gives no amount for', () => {
+    const nlm = ratesFor('national-livestock-mission-entrepreneurship-development')
+    expect(computeBenefit(nlm, { activity_codes: ['animal_feed'], project_cost_exact_inr: 80 * LAKH }, 'active', context)).toBeNull()
+  })
+
+  it('shows no CMEGP amount for a trader, because the lowest-rate row is only for while the activity is unknown', () => {
+    expect(computeBenefit(cmegp, { activity_codes: ['kirana_store'], area_type: 'urban', project_cost_exact_inr: 8 * LAKH }, 'active', context)).toBeNull()
+  })
+
+  it('applies CM-YUVA: own share by category, subsidy capped at ₹50,000, loan capped at ₹5 lakh', () => {
+    const yuva = ratesFor('cm-yuva-uttar-pradesh')
+    const at = (facts: Record<string, unknown>, cost: number) => computeBenefit(yuva, { ...facts, project_cost_exact_inr: cost }, 'active', context)!
+    const general = at({ social_category: 'general', has_disability: false }, 4 * LAKH)
+    expect(general.own).toEqual(exact(60_000))
+    expect(general.subsidy).toEqual(exact(40_000))
+    expect(general.loan).toEqual(exact(3 * LAKH))
+    expect(at({ social_category: 'obc', has_disability: false }, 4 * LAKH).own).toEqual(exact(50_000))
+    expect(at({ social_category: 'sc' }, 4 * LAKH).own).toEqual(exact(40_000))
+    const large = at({ social_category: 'general', has_disability: false }, 200 * LAKH)
+    expect(large.subsidy).toEqual(exact(50_000))
+    expect(large.loan).toEqual(exact(5 * LAKH))
+  })
+
+  it('caps the PMMSY subsidy for women at ₹1.5 crore', () => {
+    const pmmsy = ratesFor('pmmsy-beneficiary-oriented-subsidy')
+    expect(computeBenefit(pmmsy, { gender: 'woman', project_cost_exact_inr: 500 * LAKH }, 'pending_renewal', context)!.subsidy).toEqual(exact(150 * LAKH))
   })
 
   it('gives PMMSY 60% to women and 40% to others', () => {
     const pmmsy = ratesFor('pmmsy-beneficiary-oriented-subsidy')
     expect(computeBenefit(pmmsy, { gender: 'woman', project_cost_exact_inr: 10 * LAKH }, 'pending_renewal', context)!.subsidy).toEqual(exact(6 * LAKH))
     expect(computeBenefit(pmmsy, { gender: 'man', social_category: 'general', project_cost_exact_inr: 10 * LAKH }, 'pending_renewal', context)!.subsidy).toEqual(exact(4 * LAKH))
+  })
+})
+
+describe('never inventing a split the source does not state', () => {
+  it('shows own share as not stated, and the balance as still to arrange: UP ODOP', () => {
+    const lines = computeBenefit(ratesFor('odop-margin-money-uttar-pradesh'), { project_cost_exact_inr: 40 * LAKH }, 'active', context)!
+    expect(lines.own).toBeNull()
+    expect(lines.loan).toBeNull()
+    expect(lines.subsidy).toEqual(exact(8 * LAKH))
+    expect(lines.uncovered).toEqual(exact(32 * LAKH))
+  })
+
+  it('claims no loan on a grant-only scheme: Bihar Laghu', () => {
+    const lines = computeBenefit(ratesFor('bihar-laghu-udyami-yojana'), { project_cost_exact_inr: 5 * LAKH }, 'paused', context)!
+    expect(lines.loan).toBeNull()
+    expect(lines.subsidy).toEqual(exact(2 * LAKH))
+    expect(lines.uncovered).toEqual(exact(3 * LAKH))
+  })
+
+  it('still shows a stated loan when the own share is not stated: KCC', () => {
+    const lines = computeBenefit(ratesFor('kisan-credit-card-animal-husbandry-fisheries'), { project_cost_exact_inr: 1 * LAKH }, 'active', context)!
+    expect(lines.own).toBeNull()
+    expect(lines.loan).toEqual(exact(1 * LAKH))
+  })
+
+  it('cannot flag too little own money when the own share is not stated', () => {
+    const lines = computeBenefit(ratesFor('odop-margin-money-uttar-pradesh'), { project_cost_exact_inr: 40 * LAKH, own_contribution_band: 'none' }, 'active', context)!
+    expect(lines.ownShortfall).toBe(false)
+  })
+
+  it('open-ended cost with no stated own share is still valid JSON', () => {
+    const lines = computeBenefit(ratesFor('national-livestock-mission-entrepreneurship-development'), { activity_codes: ['goat_sheep'], small_ruminant_females: 500, small_ruminant_males: 25, project_cost_band: 'above_2cr' }, 'active', context)!
+    expect(lines.uncovered.max).toBeNull()
+    expect(JSON.parse(JSON.stringify(lines))).toEqual(lines)
   })
 })
 
@@ -139,6 +211,7 @@ describe('limits', () => {
   it('shows no amounts above the scheme ceiling', () => {
     const lines = computeBenefit([rate({ subsidyPct: 25, projectCapInr: 50 * LAKH })], { project_cost_exact_inr: 60 * LAKH }, 'active', context)!
     expect(lines.aboveCeiling).toBe(true)
+    expect(lines.ceilingInr).toBe(50 * LAKH)
     expect(lines.subsidy).toEqual(exact(0))
     expect(lines.loan).toEqual(exact(0))
     expect(lines.own).toEqual(exact(0))
@@ -147,6 +220,8 @@ describe('limits', () => {
   it('clips a band that crosses the ceiling', () => {
     const lines = computeBenefit([rate({ subsidyPct: 25, projectCapInr: 50 * LAKH })], { project_cost_band: '50l_1cr' }, 'active', context)!
     expect(lines.aboveCeiling).toBe(false)
+    expect(lines.straddlesCeiling).toBe(true)
+    expect(lines.ceilingInr).toBe(50 * LAKH)
     expect(lines.projectCost.max).toBe(50 * LAKH)
     expect(lines.subsidy.max).toBe(12.5 * LAKH)
   })
@@ -155,7 +230,7 @@ describe('limits', () => {
     const lines = computeBenefit([rate({ ownPct: 10, subsidyPct: 25 })], { project_cost_band: 'above_2cr' }, 'active', context)!
     expect(lines.projectCost).toEqual({ min: 200 * LAKH, max: null })
     expect(lines.subsidy).toEqual({ min: 50 * LAKH, max: null })
-    expect(lines.own.max).toBeNull()
+    expect(lines.own?.max).toBeNull()
     expect(JSON.parse(JSON.stringify(lines))).toEqual(lines)
   })
 
