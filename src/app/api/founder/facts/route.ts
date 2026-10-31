@@ -2,13 +2,13 @@ import { NextResponse } from 'next/server'
 import { getBusinessFacts, getBusinessForUser } from '@/lib/businesses/dal'
 import { founderFactsFromRows } from '@/lib/businesses/founder-facts'
 import { ensureBusiness } from '@/lib/businesses/workspace'
+import { withNonAnswers } from '@/lib/founder/answers'
 import { cleanFacts } from '@/lib/opportunities/engine/facts'
 import { loadEngineCatalog } from '@/lib/opportunities/engine/load-catalog'
 import { loadStartBundle } from '@/lib/start/load-bundle'
 import { createClient } from '@/lib/supabase/server'
 
 const MAX_BODY_BYTES = 16 * 1024
-const NON_ANSWER_VALUES: Record<string, string> = { declined: 'prefer_not', dont_know: 'dont_know' }
 const NO_STORE = { 'Cache-Control': 'no-store' }
 
 /** A signed-in founder's saved answers, so they can pick up on another device. */
@@ -30,8 +30,7 @@ export async function GET() {
   // Only answers the flow can use count as answered, so free text from an older
   // screen ("Mumbai" as a state) brings the question back instead of hiding it.
   const { facts, nonAnswers } = cleanFacts(founderFactsFromRows(data ?? []), catalog.definitions, catalog.activityIds)
-  const answers: Record<string, unknown> = { ...facts }
-  for (const [key, state] of Object.entries(nonAnswers)) answers[key] = NON_ANSWER_VALUES[state]
+  const answers = withNonAnswers(facts, nonAnswers)
 
   const chosen = Array.isArray(facts.activity_codes) ? facts.activity_codes : []
   return NextResponse.json({

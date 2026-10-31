@@ -24,6 +24,8 @@ function result(overrides: Partial<RecordResult> = {}): RecordResult {
     status: 'active',
     lastCheckedAt: '2026-10-20T00:00:00Z',
     windows: [],
+    applyRoute: null,
+    benefitHeadline: null,
     aboveLimitInr: null,
     lines: null,
     ...overrides,
@@ -47,6 +49,8 @@ function record(overrides: Partial<EngineRecord> = {}): EngineRecord {
     rates: [],
     requiredCount: 1,
     stepCount: 1,
+    applyRoute: null,
+    benefitHeadline: null,
     ...overrides,
   }
 }

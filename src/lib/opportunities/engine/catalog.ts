@@ -1,5 +1,6 @@
 import { createHash } from 'node:crypto'
 import { reviewerChecksFrom, type RuleFieldMapping } from '../fact-mapping'
+import { applicationView, isInternalNote } from '../display'
 import { benefitRateFromRow, type BenefitRateRow } from './calculator'
 import type { Relationship } from './combination'
 import type { EngineContext, EngineRecord, FactDefinition } from './types'
@@ -52,7 +53,7 @@ export function hydrateCatalog(data: EngineCatalogData): EngineCatalog {
 
 export type CatalogRows = {
   opportunities: { id: string; slug: string; opportunity_type: string; status: string; geography: { coverage?: string; locations?: string[] } | null; current_version_id: string | null; last_checked_at: string | null }[]
-  versions: { id: string; title: string }[]
+  versions: { id: string; title: string; application: Record<string, unknown> | null; benefit_summary: Record<string, unknown> | null }[]
   ruleSets: { opportunity_version_id: string; rules: unknown }[]
   windows: { opportunity_version_id: string; window_type: string; opens_at: string | null; closes_at: string | null }[]
   requirements: { opportunity_version_id: string }[]
@@ -71,9 +72,15 @@ function grouped<T, K>(rows: T[], keyOf: (row: T) => K) {
   return groups
 }
 
+// The one-line benefit an editor wrote for founders. A reviewer's working note is not one.
+export function headlineOf(summary: Record<string, unknown> | null) {
+  const headline = summary?.headline
+  return typeof headline === 'string' && headline.trim() && !isInternalNote(headline) ? headline.trim() : null
+}
+
 /** Only published records with an approved version and reviewed rules reach founders. */
 export function catalogDataFromRows(rows: CatalogRows): EngineCatalogData {
-  const titles = new Map(rows.versions.map(version => [version.id, version.title]))
+  const versions = new Map(rows.versions.map(version => [version.id, version]))
   const rules = new Map(rows.ruleSets.map(ruleSet => [ruleSet.opportunity_version_id, ruleSet.rules]))
   const windows = grouped(rows.windows, row => row.opportunity_version_id)
   const requirements = grouped(rows.requirements, row => row.opportunity_version_id)
@@ -83,11 +90,12 @@ export function catalogDataFromRows(rows: CatalogRows): EngineCatalogData {
 
   const records: EngineRecord[] = rows.opportunities.flatMap(row => {
     const versionId = row.current_version_id
-    if (!versionId || !titles.has(versionId) || !rules.has(versionId)) return []
+    const version = versionId ? versions.get(versionId) : undefined
+    if (!versionId || !version || !rules.has(versionId)) return []
     return [{
       id: row.id,
       slug: row.slug,
-      title: titles.get(versionId)!,
+      title: version.title,
       type: row.opportunity_type,
       status: row.status,
       versionId,
@@ -100,6 +108,8 @@ export function catalogDataFromRows(rows: CatalogRows): EngineCatalogData {
       rates: (rates.get(versionId) ?? []).map(benefitRateFromRow),
       requiredCount: requirements.get(versionId)?.length ?? 0,
       stepCount: steps.get(versionId)?.length ?? 0,
+      applyRoute: applicationView(version.application).route,
+      benefitHeadline: headlineOf(version.benefit_summary),
     }]
   }).sort((left, right) => left.slug.localeCompare(right.slug))
 

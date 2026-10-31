@@ -2,7 +2,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { benefitRateFromRow, type BenefitRateRow } from '../calculator'
-import { catalogVersion, hydrateCatalog, type EngineCatalogData } from '../catalog'
+import { applicationView } from '../../display'
+import { catalogVersion, headlineOf, hydrateCatalog, type EngineCatalogData } from '../catalog'
 import type { EngineRecord } from '../types'
 
 type SnapshotRecord = Omit<EngineRecord, 'rates'> & { rateRows: BenefitRateRow[] }
@@ -14,7 +15,13 @@ const snapshot = JSON.parse(fs.readFileSync(file, 'utf8')) as Snapshot
 export function snapshotData(): Omit<EngineCatalogData, 'version'> {
   return {
     ...snapshot,
-    records: snapshot.records.map(({ rateRows, ...record }) => ({ ...record, rates: rateRows.map(benefitRateFromRow) })),
+    records: snapshot.records.map(({ rateRows, ...record }) => ({
+      ...record,
+      rates: rateRows.map(benefitRateFromRow),
+      // The snapshot keeps the text as written; the filter that hides working notes is the one production uses.
+      applyRoute: applicationView({ route: record.applyRoute }).route,
+      benefitHeadline: headlineOf({ headline: record.benefitHeadline }),
+    })),
   }
 }
 

@@ -42,6 +42,8 @@ function record(rules: unknown, overrides: Partial<EngineRecord> = {}): EngineRe
     rates: [],
     requiredCount: 0,
     stepCount: 0,
+    applyRoute: null,
+    benefitHeadline: null,
     ...overrides,
   }
 }

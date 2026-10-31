@@ -13,6 +13,8 @@ export type RecordResult = RecordVerdict & {
   status: string
   lastCheckedAt: string | null
   windows: RecommendationWindow[]
+  applyRoute: string | null
+  benefitHeadline: string | null
   // Set when the project is above this scheme's limit.
   aboveLimitInr: number | null
   lines: BenefitLines | null
@@ -101,6 +103,8 @@ export function buildResults(facts: CanonicalFacts, nonAnswers: Record<string, s
       status: record.status,
       lastCheckedAt: record.lastCheckedAt,
       windows: record.windows,
+      applyRoute: record.applyRoute,
+      benefitHeadline: record.benefitHeadline,
       lines: settled.lines && {
         ...settled.lines,
         betterIfAnswered: settled.lines.betterIfAnswered.filter(key => nonAnswers[key] !== 'declined'),

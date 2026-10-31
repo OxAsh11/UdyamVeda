@@ -8,7 +8,11 @@ const rows: CatalogRows = {
     { id: 'o3', slug: 'no-rules', opportunity_type: 'grant', status: 'active', geography: null, current_version_id: 'v3', last_checked_at: null },
     { id: 'o4', slug: 'not-approved', opportunity_type: 'grant', status: 'active', geography: null, current_version_id: 'v4', last_checked_at: null },
   ],
-  versions: [{ id: 'v1', title: 'Alpha' }, { id: 'v2', title: 'Zeta' }, { id: 'v3', title: 'No rules' }],
+  versions: [
+    { id: 'v1', title: 'Alpha', application: null, benefit_summary: null },
+    { id: 'v2', title: 'Zeta', application: { route: ' Apply on the state portal ', fees: 'None' }, benefit_summary: { headline: '25% subsidy, up to ₹7 lakh' } },
+    { id: 'v3', title: 'No rules', application: null, benefit_summary: null },
+  ],
   ruleSets: [{ opportunity_version_id: 'v1', rules: { all: [] } }, { opportunity_version_id: 'v2', rules: { any: [] } }, { opportunity_version_id: 'v4', rules: { all: [] } }],
   windows: [{ opportunity_version_id: 'v2', window_type: 'rolling', opens_at: null, closes_at: null }],
   requirements: [{ opportunity_version_id: 'v2' }, { opportunity_version_id: 'v2' }],
@@ -59,6 +63,25 @@ describe('catalogDataFromRows', () => {
       windows: [{ windowType: 'rolling', opensAt: null, closesAt: null }],
       lastCheckedAt: '2026-10-01T00:00:00Z',
     })
+  })
+
+  it('carries how to apply and the one-line benefit, trimmed', () => {
+    expect(data.records[1]).toMatchObject({ applyRoute: 'Apply on the state portal', benefitHeadline: '25% subsidy, up to ₹7 lakh' })
+  })
+
+  it('has no how-to-apply or headline when the version states none', () => {
+    expect(data.records[0]).toMatchObject({ applyRoute: null, benefitHeadline: null })
+  })
+
+  it('never lets a reviewer working note reach a founder as a headline or route', () => {
+    const noted = catalogDataFromRows({
+      ...rows,
+      versions: [
+        { id: 'v1', title: 'Alpha', application: { route: 'Do not infer an open call' }, benefit_summary: { headline: 'Recheck before recommendation' } },
+        { id: 'v2', title: 'Zeta', application: { route: 7 }, benefit_summary: { headline: '   ' } },
+      ],
+    })
+    expect(noted.records.map(record => [record.applyRoute, record.benefitHeadline])).toEqual([[null, null], [null, null]])
   })
 
   it('turns database numbers into numbers', () => {

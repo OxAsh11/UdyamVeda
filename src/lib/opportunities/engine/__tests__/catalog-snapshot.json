@@ -45,6 +45,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "classify the project under the current AIF guideline, prepare the project and financing dossier, and apply through the official AIF platform and a participating lending institution",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -122,6 +124,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Determine whether the applicant is a Direct Scheme startup or a FoF AIF, review the applicable official fund terms, contact NABVENTURES at agrisure@nabard.org through the official route, and complete the requested investment/contribution and diligence process.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -169,6 +173,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "submit the eligible project through the official AHIDF portal and lender route after confirming current continuation and eligible activity",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -223,6 +229,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Review the current AVCF fund-manager page, use its contact/application form route, submit the company and space-technology dossier, and complete the fund's screening, due-diligence, valuation, investment-committee and documentation process.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -304,6 +312,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Select exactly one BHARATI category, complete the category questionnaire linked by APEDA, submit the supporting documents and corporate/innovation/export dossier, complete screening and any business challenge, and follow the selected-cohort acceleration and reporting requirements.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -343,6 +353,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "eligible institutions follow the current official proposal or approval route for a new Livelihood Business Incubator",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -382,6 +394,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "use the current ATI institutional application route or contact the Ministry/eligible EDI shown by the official portal",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -421,6 +435,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "follow the current AIM call and proposal process",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -465,6 +481,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "review the current Ministry of AYUSH guideline and portal instructions, prepare the project proposal and supporting evidence, and submit through the official grant route if a current call is available",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -519,6 +537,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 5,
+   "applyRoute": "Prepare a viable healthcare or health-education project and apply through the current NCDC direct-funding or State Government/UT route with the required statutory and financial documents.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -558,6 +578,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "review the current ongoing challenges and submit through the designated application process",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -615,6 +637,8 @@
    ],
    "requiredCount": 2,
    "stepCount": 3,
+   "applyRoute": "Apply online when the annual call opens on the Laghu Udyami portal.",
+   "benefitHeadline": "Grant up to ₹2 lakh for a small business",
    "rateRows": [
     {
      "slug": "bihar-laghu-udyami-yojana",
@@ -679,6 +703,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "register and submit online during a current BIG call",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -728,6 +754,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 5,
+   "applyRoute": "Review the current AcE Fund Partner list, identify a relevant SEBI-registered AIF, confirm that the fund is currently sourcing investments in the startup's sector and stage, and apply through that fund's own intake. The official BIRAC application form is for AIFs requesting contribution under AcE, not for individual startups.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -766,6 +794,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "select the applicable BioNEST category and follow the current BIRAC/DBT proposal process",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -815,6 +845,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Register the company or LLP, identify the current BIPP call/category, prepare the technical, IP, regulatory, financial and collaborator dossier, and submit online during the active call",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -864,6 +896,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Check the official E-YUVA page for an active call, create the applicant account on BIRAC, select the applicable Innovation Fellow or E-YUVA Fellow route, and submit through the official online process with the required mentor, institution and proposal details.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -919,6 +953,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 5,
+   "applyRoute": "Review the current BIRAC LEAP Fund partner list, identify a suitable selected BioNEST incubator, confirm partner-level startup intake, complete technical and commercial diligence, and execute the incubator's investment agreement if selected.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -968,6 +1004,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Verify the applicable AIR or CRS call, register the institution as a BIRAC Institution User, prepare the academic and collaborator documents, and submit the proposal online through the official PACE route.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -1017,6 +1055,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Register the company or LLP on the BIRAC portal, check the active SBIRI call, prepare the online proposal and supporting company/institution documents, and submit before the call closes",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -1067,6 +1107,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Review the BIRAC SEED Fund partner list, identify a suitable selected BioNEST incubator, follow that incubator's current startup intake or proposal route, complete technical and commercial diligence, and execute the incubator's legally binding investment agreement if selected.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -1116,6 +1158,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Check the current BIRAC calls and SITARE page, register or log in as the applicant, and submit the prescribed GYTI proposal or BIIS application only during the active call or notified workshop route.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -1165,6 +1209,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Check the notified product list and Indian Standard, arrange testing through the recognized route, prepare manufacturer and product evidence, and submit the current CRS registration.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -1214,6 +1260,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Confirm the Indian Standard and notification, prepare product and factory evidence, nominate an Authorized Indian Representative, complete testing and submit the online FMCS application with applicable fees.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -1258,6 +1306,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Confirm the article, business and mandatory-hallmarking category, submit the jeweller registration through the official route and retain registration details.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -1302,6 +1352,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Review the current CPDS guidelines and notice, register the eligible organization on the official grant portal, prepare the association proposal and submit through the notified route when a call or application process is open",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -1351,6 +1403,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Verify the current C2S call or support route, select the applicable project category, prepare the prescribed technical and financial proposal with supporting documents, register/login on the official portal and submit through the notified route.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -1425,6 +1479,8 @@
    ],
    "requiredCount": 3,
    "stepCount": 3,
+   "applyRoute": "Register and apply on the UP MSME portal, uploading identity, age proof, training certificate and project report.",
+   "benefitHeadline": "Interest-free loan up to ₹5 lakh + 10% margin money",
    "rateRows": [
     {
      "slug": "cm-yuva-uttar-pradesh",
@@ -1638,6 +1694,8 @@
    ],
    "requiredCount": 4,
    "stepCount": 4,
+   "applyRoute": "Apply online on maha-cmegp.gov.in; the District Industries Centre (urban) or the Khadi and Village Industries Board (rural) checks the application and sends it to a bank.",
+   "benefitHeadline": "15–35% subsidy on a bank loan for a new unit",
    "rateRows": [
     {
      "slug": "cmegp-maharashtra",
@@ -1926,6 +1984,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "select the applicable Coir Board component and follow the current application or implementing-office route",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -1975,6 +2035,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Select a suitable notified SEZ, prepare the new-unit proposal and submit it through SEZ Online to the concerned Development Commissioner/Approval Committee; obtain and retain the Letter of Approval before representing the unit as approved.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -2016,6 +2078,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Create or use an MCA account, open MCA Services and start the current SPICe+ application; use Part A for name reservation and Part B for incorporation and linked services as applicable",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -2060,6 +2124,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Confirm Schedule-I coverage and role, prepare product, entity and recycler records, use the current CPCB EPR portal route and retain registration evidence.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -2104,6 +2170,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Classify the entity and packaging, assemble PAN/GST/CIN/authorized-person and unit information, register in each applicable category/state and maintain EPR records.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -2158,6 +2226,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Prepare the business, SC ownership/control, financial and facility information; approach a participating member lending institution for the eligible credit facility; the MLI submits the guarantee request/required information to IFCI under the scheme route.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -2215,6 +2285,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "The borrower approaches an eligible lending institution; the lender lodges the guarantee application after sanction or disbursement.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -2266,6 +2338,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "The startup approaches an eligible Member Institution through the current Jan Samarth startup route or directly; the institution evaluates the proposal and seeks guarantee cover from NCGTC.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -2320,6 +2394,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Complete the prescribed CFPG form and supporting dossier, obtain the required recommendation, and send the application to the Director, North Central Zone Cultural Centre, or the current route stated by the Ministry.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -2374,6 +2450,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 5,
+   "applyRoute": "Prepare a viable dairy or supporting-service project and apply through the current NCDC direct-funding or State Government/UT route with the required cooperative, technical and financial documents.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -2418,6 +2496,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Register on the official DLI portal, prepare the detailed project report and submit the applicable component application after confirming the current call, fee and guideline version.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -2472,6 +2552,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Link the applicant profile to IEC, complete the current DGFT EPCG/Post Export EPCG authorisation route, attach current certificates and declarations, and retain the authorisation, customs and export records.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -2516,6 +2598,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "monitor the official DCIS portal and current call, complete the online application with the required project and entity evidence, and use the applicant dashboard for official status tracking",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -2565,6 +2649,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Submit the online reimbursement application with the incorporation, DPIIT/Udyam, financial, laboratory, test report, product certificate, invoice, payment, bank and declaration documents",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -2653,6 +2739,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Create or use an NSWS account, add the Central Approval named Registration as a Startup, complete the official application and submit using the startup's own details",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -2702,6 +2790,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Register as an industry, monitor the live project list/DefProc route, review the project definition and terms, submit the required EOI/DPR and complete technical and financial evaluation steps.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -2746,6 +2836,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "check the current DSIR PRISM or successor call, select the correct individual/start-up/MSME or cluster-support track, and submit through the notified TOCIC/DSIR route",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -2790,6 +2882,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Institutions apply through the DST e-PMS route when an institutional call is open. Startups and innovators apply to one of the supported CoEs through its periodic call.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -2844,6 +2938,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Identify a selected NIDHI-EIR centre/TBI with a current call, prepare the technology idea and education/experience evidence, apply through the centre’s prescribed route, and complete its selection, pre-incubation and review process.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -2888,6 +2984,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Startups and entrepreneurs apply to listed NIDHI Seed Supported TBIs when those TBIs announce calls. Incubator applications are accepted through the official online route once per year when a call is announced.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -2927,6 +3025,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "eligible host institutions follow the current DST proposal route",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -2966,6 +3066,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "find the current ESDP/EAP/MDP programme through the Ministry, MSME-DI, Technology Centre or listed implementing institution",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -3012,6 +3114,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Use the current EPFO employer registration or common EPFO/ESIC registration route shown from the official EPFO employer services page; create and use the employer's own account and complete the official declarations",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -3058,6 +3162,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Use the current ESIC employer registration or Unified Shram Suvidha route, select the applicable Act where requested, complete the official registration form and retain the employer code or registration letter",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -3102,6 +3208,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "follow the current Department of Commerce, DGFT, lender or implementing-agency notice for the applicable sub-scheme",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -3161,6 +3269,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Check the current Ministry or National Science Centre notification, complete the prescribed application and checklist, obtain the required District Authority recommendation, and submit to the Director, National Science Centre, New Delhi through the notified channel.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -3220,6 +3330,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Verify the current cut-off, complete the prescribed form and enclosures, obtain the required recommendation, and send the application by the prescribed postal route to the Director, West Zone Cultural Centre, Udaipur.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -3279,6 +3391,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Confirm the current call, complete the prescribed application and checklist, obtain the required recommendation or route through the notified Zonal Cultural Centre, National Academy, State/UT cultural department or equivalent body, and submit the signed proposal and two copies by the notified route and deadline.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -3343,6 +3457,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Prepare the prescribed proposal and feasibility/DPR materials, identify the executing agency, provide land/building, matching-share and operation-maintenance evidence, and submit the complete application to the Under Secretary, Performing Arts-II Section, Ministry of Culture, New Delhi through the current notified route.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -3385,6 +3501,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Use the official FoSCoS route to identify the food-business activity, select registration or licence, submit the current form and upload the applicable documents",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -3429,6 +3547,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "create or update the applicable GeM seller profile, complete verification, prepare the catalogue and use the current Startup Runway or seller route for eligible products/services",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -3478,6 +3598,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Monitor the official Ministry of Textiles/NTTM route for the current GREAT call, identify an eligible associated incubator, prepare the technical-textiles innovation and commercialization dossier, complete the individual or startup eligibility declarations, submit through the current official route and retain EPC, grant-agreement, milestone and monitoring records.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -3524,6 +3646,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Use the official GST portal registration workflow and the current state or taxpayer details requested by the form",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -3573,6 +3697,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Monitor the official ADITI challenge page, confirm a live edition and problem statement, create/use an iDEX account, submit technical and financial details, and comply with the current SPARK agreement if selected.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -3621,6 +3747,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Create or use an iDEX account, select the applicable Open Challenge route, complete the applicant and proposal details, and submit before the published deadline.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -3668,6 +3796,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Select IITF 2026 on the official PMS event listing and submit the MSE application before the published deadline.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -3714,6 +3844,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Use the current DGFT portal IEC service, create or use the applicant account, complete the official form, authenticate as required and retain the application reference",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -3773,6 +3905,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Monitor the official IN-SPACe announcement route, prepare the space-technology, ownership, funding, milestone, budget and commercialization dossier, and apply only through the current official call or notified IN-SPACe route.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -3822,6 +3956,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Register on India Cine Hub, submit the international production or official co-production application, pay the non-refundable INR equivalent of USD 225 processing fee, provide the script/synopsis and required production documents, complete permission review, and use the verified incentive claim route through the Indian production services company or other eligible applicant.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -3886,6 +4022,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 5,
+   "applyRoute": "Confirm the applicable State/UT route, register or sign in through the current NIDHI+ unit route, prepare the Ministry checklist and declarations, pay the applicable classification fee through the official route, and retain the inspection and classification communication",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -3945,6 +4083,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Prepare the prescribed application, premises and business plan, submit it with supporting evidence to the concerned Senior/Superintendent of Post Offices or Postal Divisional Office, provide the required NSC security deposit if selected, and execute the Department's Memorandum of Agreement.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -3999,6 +4139,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Complete the prescribed postal-agent application, confirm suitable premises and local route availability, submit to the concerned Postal Divisional Office, obtain the Photo Identity Card and purchase eligible stamps/stationery from the Link Post Office by the specified cash route.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -4050,6 +4192,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 5,
+   "applyRoute": "Identify the applicable KVY or GVY component, confirm the current KVIC/KVIB/KI/DIC or notified implementing route, prepare the component-specific documents and apply through the official notice or portal.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -4137,6 +4281,8 @@
    ],
    "requiredCount": 2,
    "stepCount": 3,
+   "applyRoute": "Apply at any bank branch with identity, address and land or activity details.",
+   "benefitHeadline": "Working capital at an effective 4% interest",
    "rateRows": [
     {
      "slug": "kisan-credit-card-animal-husbandry-fisheries",
@@ -4197,6 +4343,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Use the official Legal Metrology importer registration route and complete the current application with instrument and importer evidence",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -4241,6 +4389,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Use the official Model Approval System or NSWS route, submit the current model application and complete testing and review requirements",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -4287,6 +4437,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Use the Legal Metrology portal or NSWS route identified by the official portal, submit the current Rule 27 application and retain certificate and label evidence",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -4336,6 +4488,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Monitor the official CPRI MAHIR page and any new call or RFP, map the proposal to an approved research area, prepare the prescribed technical and financial proposal, submit through the stated route, and retain committee, agreement, milestone, IP and reporting records.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -4380,6 +4534,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "MAI has no general direct application window. Eligible agencies with continuing project claims follow the Department of Commerce route, and should check for any successor or consolidated export promotion scheme.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -4426,6 +4582,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Identify the current GENESIS component and selected implementing agency, then follow the agency's official call, application and diligence route",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -4474,6 +4632,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "select G1C, G2C or G3C and follow the current MeitY proposal route",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -4528,6 +4688,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "An eligible Government or public-sector entity appoints or acts through a nodal agency, aggregates demand, completes feasibility and location documentation, submits the EV PCS proposal to the Ministry of Heavy Industries, and then follows the approved deployment, commissioning, data and maintenance route.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -4567,6 +4729,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "prepare a cluster proposal and use the current State Government, autonomous body or MSME-DFO route",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -4631,6 +4795,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Submit the online application through the MSTC Coal Gasification Portal and submit physical originals wherever the RFP requires them. UdyamVeda may prepare a checklist and hand off to the official portal, but must not create credentials, sign, submit or impersonate the applicant.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -4680,6 +4846,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Historical route: company application through the IFCI Project Management Agency portal, followed by annual incentive claims and supporting evidence; the portal currently states that FY 2023-24 claim submissions closed on 15 February 2025.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -4724,6 +4892,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Classify the project and site, prepare prescribed forms and reports, complete hearing/appraisal stages where applicable and track the decision.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -4776,6 +4946,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Develop the cluster proposal and submit through SAMPADA when MoFPI invites the current APC EOI.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -4828,6 +5000,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Prepare the unit project and submit through SAMPADA when MoFPI opens the relevant CEFPPC EOI.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -4880,6 +5054,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Identify the applicable PMKSY component and submit a project proposal through the SAMPADA route when MoFPI invites the relevant EOI.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -4934,6 +5110,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Identify a live CESL, PTA, city, State Transport Undertaking or related procurement/concession route; verify the bidder role; prepare technical, financial, fleet, operations, depot, charging, safety, localisation and data evidence; submit through the official tender or contract route.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -5003,6 +5181,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 5,
+   "applyRoute": "Confirm Udyam registration, cluster and sector eligibility, submit the official MSME willingness/EOI route, complete the investment-grade energy audit and DPR process, approach a registered financial institution for the eligible project loan, implement the approved technology and complete monitoring/verification and claim steps.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -5062,6 +5242,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Register the CBG plant on GOBARdhan where required, then apply through the designated EIL BAM portal before procuring machinery. Applications are accepted on a quarterly basis between the 1st and 30th day of the quarter; the guideline states 30 September 2026 as the last date unless extended.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -5106,6 +5288,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Register or update the establishment on the official apprenticeship portal, identify eligible trades and seats, engage apprentices, execute the required contract and complete stipend/DBT and reporting steps",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -5152,6 +5336,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Use the current Skill India Digital discovery and registration route to identify available courses, centres, job roles, RPL or provider pathways; confirm the current PMKVY/SIP status before acting",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -5203,6 +5389,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "approach a participating lending institution and follow the current MSE GIFT route",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -5250,6 +5438,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "use the current official ODR or MSEFC route when available",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -5302,6 +5492,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "follow the current official MSE SPICE and participating-lender route",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -5341,6 +5533,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "register through the official LEAN platform, take the Lean Pledge and apply for the level of handholding required",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -5379,6 +5573,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "select the applicable component and follow the current official portal instructions",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -5418,6 +5614,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "Select the applicable component and submit through the official call or application route.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -5469,6 +5667,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 5,
+   "applyRoute": "State Government or eligible State organization prepares the proposal and DPR, submits through the official scheme portal and follows the MSME-DFO, O/o DC MSME and Project Approval and Monitoring Committee route.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -5516,6 +5716,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "For new delayed-payment cases, use the current MSME ODR claimant/seller route and verify the live Samadhaan handoff; the relevant State MSEFC examines the statutory reference.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -5557,6 +5759,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Apply through the official ZED portal.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -5601,6 +5805,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Identify the relevant Technology Centre or Extension Centre, review its current service/training route, contact or register through that centre, and submit the requested business or participant documents",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -5640,6 +5846,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "select the relevant Tool Room or Technology Centre and use its current training, consultancy, job-work or unit-assistance route",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -5687,6 +5895,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "follow the current TEAM onboarding and ONDC partner route",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -5775,6 +5985,8 @@
    ],
    "requiredCount": 4,
    "stepCount": 4,
+   "applyRoute": "Apply to the Jharkhand State Tribal Cooperative Development Corporation with online caste, residence and income certificates and a project proposal (above ₹50,000).",
+   "benefitHeadline": "40% subsidy (up to ₹5 lakh) on a loan at 6%",
    "rateRows": [
     {
      "slug": "mukhyamantri-rojgar-srijan-yojana-jharkhand",
@@ -5868,6 +6080,8 @@
    ],
    "requiredCount": 5,
    "stepCount": 4,
+   "applyRoute": "Apply online on udyami.bihar.gov.in during the annual window, choosing a project from the approved list.",
+   "benefitHeadline": "Up to ₹10 lakh: ₹5 lakh grant + ₹5 lakh interest-free loan",
    "rateRows": [
     {
      "slug": "mukhyamantri-udyami-yojana-bihar",
@@ -5987,6 +6201,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 5,
+   "applyRoute": "Prepare a viable project and apply through the applicable NCDC direct-funding or State Government/UT Administration route using the current NCDC forms, appraisal and security instructions.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -6105,6 +6321,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "The State Implementing Agency invites eligible entities through the applicable expression-of-interest route; after state appraisal and approval, the project is uploaded through the NLM portal.",
+   "benefitHeadline": "50% capital subsidy: up to ₹25 lakh (poultry), ₹50 lakh (sheep-goat), ₹30 lakh (piggery)",
    "rateRows": [
     {
      "slug": "national-livestock-mission-entrepreneurship-development",
@@ -6273,6 +6491,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Identify the relevant NQM hub and current call, apply to only one hub, submit the team/problem/product/business/funding-use material, complete technical and business evaluation, legal and financial diligence, Board/IEMC approval and the applicable equity agreement.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -6320,6 +6540,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "follow the current NSSH/NSIC implementation and outreach route only after a current continuation or operating notice is verified",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -6364,6 +6586,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "apply through the current National Startup Awards application flow",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -6410,6 +6634,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Monitor the official DC (Handicrafts) schemes and circulars, confirm the applicable MSS advertisement or event calendar, and submit the agency or participation proposal through the prescribed route.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -6456,6 +6682,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Monitor the official NHDP scheme and circular pages for the current SDHS proposal or training route, then apply as an eligible artisan/participant or implementing agency as directed.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -6500,6 +6728,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "apply through a current PRAYAS Centre or Advance PRAYAS Centre when its intake is open",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -6549,6 +6779,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Form or join an eligible Self Help Group, complete thrift/credit and minority/income documentation, and apply through the relevant State Channelizing Agency under its current micro-finance process.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -6598,6 +6830,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Confirm the applicable credit line, prepare minority, income, residence, KYC and project evidence, and apply through the relevant State Channelizing Agency or banking partner.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -6647,6 +6881,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Confirm the eligible craft/activity, prepare minority, income, residence, KYC and equipment/raw-material evidence, and apply through the relevant SCA or current NMDFC partner route.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -6696,6 +6932,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Confirm the appropriate NSFDC credit track, prepare caste/income/KYC/project evidence and apply through the PM-SURAJ route or the relevant authorized State Channelizing Agency/other channel partner.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -6743,6 +6981,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "review the current NSIC tender/consortia route and the specific procurement notice before applying",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -6787,6 +7027,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Contact the relevant State Channelising Agency or approved NSTFDC partner, prepare the viable project and ST/income/KYC evidence, and complete its appraisal route.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -6831,6 +7073,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Confirm TRIFED empanelment, prepare the asset/working-capital plan and apply through the applicable NSTFDC State Channelising Agency or partner.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -6874,6 +7118,8 @@
    ],
    "requiredCount": 2,
    "stepCount": 3,
+   "applyRoute": "Apply on the UP MSME portal; the District Industries Centre forwards applications to banks for loan sanction.",
+   "benefitHeadline": "Up to 25% margin money for your district's ODOP product",
    "rateRows": [
     {
      "slug": "odop-margin-money-uttar-pradesh",
@@ -6974,6 +7220,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "For a new company, review the current SPICe+ linked allocation route; for other cases, use the current official Income Tax or authorised PAN/TAN application route",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -7021,6 +7269,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "select an applicable empanelled rating agency and submit through the NSIC or rating-agency route",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -7077,6 +7327,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Apply through your State or district PMFME implementation route.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -7128,6 +7380,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Find a participating R-ABI or Knowledge Partner with a live NAVODAYA or equivalent RKVY-RAFTAAR orientation notice, submit the prescribed idea/application, complete the training and incubation selection process, and retain the committee, MoU and milestone records.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -7184,6 +7438,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Find a participating R-ABI with a current SAMRIDDHI or equivalent RKVY-RAFTAAR incubation notice, submit the start-up and MVP evidence, complete incubation and committee evaluation, and execute the current grant/MoU route if selected.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -7236,6 +7492,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "prepare and hand off to the official PM SVANidhi portal, Urban Local Body route, Banking Correspondent, Micro Finance Institution agent or participating lender as applicable",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -7290,6 +7548,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 5,
+   "applyRoute": "Use the official PMVBRY/EPFO route for establishment and employee records; UdyamVeda only prepares the eligibility and evidence checklist.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -7344,6 +7604,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 5,
+   "applyRoute": "Confirm the establishment's EPFO code, PAN/GSTN and PAN-linked bank details, baseline and threshold records, then use the official PMVBRY/EPFO route.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -7390,6 +7652,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 5,
+   "applyRoute": "Register through the official PM Vishwakarma portal, normally with CSC assistance, and complete the prescribed Gram Panchayat/ULB, district and committee verification process.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -7434,6 +7698,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Identify the applicable State Tribal Department, VDVK/producer-group or TRIFED route, prepare the value-chain proposal and follow the current State or implementing-agency process.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -7490,6 +7756,8 @@
    ],
    "requiredCount": 3,
    "stepCount": 3,
+   "applyRoute": "Prepare a project and apply through your district or State Fisheries Department under the PMMSY beneficiary-oriented component.",
+   "benefitHeadline": "40–60% subsidy on fish-farming projects",
    "rateRows": [
     {
      "slug": "pmmsy-beneficiary-oriented-subsidy",
@@ -7580,6 +7848,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "apply through the designated State Government department, DISCOM or current PM-KUSUM implementing route",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -7626,6 +7896,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 5,
+   "applyRoute": "Register on NFDP as an individual or organisation through self-registration or assisted registration through a CSC, obtain the provisional certificate where applicable, then submit the component application through the official PM-MKSSY route and coordinate with the State/UT or District Fisheries Officer",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -7683,6 +7955,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Approach an eligible Member Lending Institution.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -7726,6 +8000,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Apply through the current official PMEGP portal and lending process.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -7770,6 +8046,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Identify the relevant NIPER CoE and approved collaboration route, prepare the research/infrastructure and milestone dossier, and follow the Department/CoE process",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -7819,6 +8097,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Create the entity-portal application, choose early-stage or later-stage route, map the project to a priority area and TRL, prepare the technical/financial/IP/academic-collaboration dossier, and submit through the official portal",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -7861,6 +8141,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "Select the applicable event or component on the current PMS portal and follow the current official application or claim process; organizer proposals and MSE applications may use different routes.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -7921,6 +8203,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Follow the current PLI Working Group/MeitY application notice and submit the prescribed application with supporting documents and application fee to the designated Project Management Agency or MeitY route.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -7965,6 +8249,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "review the current MHI guidelines, AAT product list, amendments and official PLI-Auto portal instructions, then use the designated route if applications or claims are available",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -8019,6 +8305,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 5,
+   "applyRoute": "Confirm the current selected-applicant, claim and implementing-agency route with the Department of Pharmaceuticals, map the product to the controlling 41-product list, prepare greenfield investment and production evidence, and use the official route if a permitted application or claim action remains available",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -8068,6 +8356,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 5,
+   "applyRoute": "Confirm the current Department/PMA status, map the medical device to the target segment, verify project and investment conditions, and use the official application or claim route available to approved participants",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -8112,6 +8402,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "review the current Department of Pharmaceuticals notice and implementing-agency instructions, establish eligibility for the relevant target group, then use the current official application or claim route if open",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -8170,6 +8462,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 5,
+   "applyRoute": "Review the current Ministry notices and PLI documents, confirm whether a new invitation exists or the company is already selected, map the product and commitments to the applicable round, and use the notified Ministry or implementing-agency route",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -8214,6 +8508,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "review the current DoT guidelines and eServices route, identify the target segment and submit through the designated Project Management Agency process if the official application window is open",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -8263,6 +8559,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Use the official portal's existing-participant/additional-product route only after the applicant status, current HSN list, fresh investment and window are confirmed.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -8317,6 +8615,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 5,
+   "applyRoute": "The new-applicant route is through the Ministry of Textiles PLI portal in the notified application window; selected participants submit claims and prescribed evidence through the portal and PMA route.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -8361,6 +8661,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "State Government or eligible State Implementing Agency prepares the park proposal, common-infrastructure plan, project cost and implementation documents and follows the Department/Scheme Steering Committee route",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -8408,6 +8710,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "register and participate through the applicable GeM, Central buyer, tender, vendor-development or buyer-seller route",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -8467,6 +8771,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Verify DPIIT recognition, monitor current Railway tenders or RailTech challenges, register as a vendor/contractor through the official IREPS route where required, and submit a tender or challenge response. Claim the applicable bid-security and prior-experience/turnover relief only in the manner permitted by the live tender.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -8511,6 +8817,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "claim through the current Customs/DGFT export documentation and electronic-scrip process",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -8565,6 +8873,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Confirm the current Department/SIDBI intake and prepare the RPTUAS application, eligible-investment evidence, CA-certified expenditure statement, turnover evidence, facility details and applicable Revised Schedule M or WHO-GMP certification route. The official FAQ states that a unit can approach a scheduled commercial bank for a loan and that subsidy processing uses the scheme portal; verify the live portal before handoff.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -8606,6 +8916,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "eligible nodal or implementing agencies submit cluster proposals through the official portal",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -8650,6 +8962,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Download the current official scheme document, prepare the FY 2026-27 event proposal and submit through the DDP/Defence Exhibition Organisation or current authorised route stated by the department.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -8694,6 +9008,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "An MSME should review the current NVCFL scheme guidance and approach an empanelled daughter fund whose mandate fits the enterprise. The NVCFL interest route is for prospective daughter-fund empanelment, not a direct MSME investment application.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -8743,6 +9059,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Confirm the existing-yard eligibility, prepare the prescribed DPR and eligible-item cost plan, demonstrate financial closure, and apply through the current IA/NSbM route",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -8792,6 +9110,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Form the eligible SPV or Central-entity proposal, prepare the prescribed DPR and infrastructure/KPI plan, obtain the required in-principle and final approvals through NSbM/IA, and follow the current DGMA or Ministry route",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -8840,6 +9160,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Identify the approved Credit Risk Cover Agency and current product, confirm the risk and insured party, then apply through the current agency/implementation route with contract, project, vendor and financial evidence",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -8894,6 +9216,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 5,
+   "applyRoute": "Within 45 days of signing the qualifying vessel contract, apply on the SBFAS web portal, obtain the unique application number, submit the prescribed approval documents and complete Ministry/DGS verification and tranche conditions",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -8932,6 +9256,8 @@
    ],
    "requiredCount": 2,
    "stepCount": 3,
+   "applyRoute": "Apply or give intimation online on the Labour Department portal: https://serviceonline.bihar.gov.in.",
+   "benefitHeadline": "Registration from 10 workers (OSH Code)",
    "rateRows": []
   },
   {
@@ -8970,6 +9296,8 @@
    ],
    "requiredCount": 2,
    "stepCount": 3,
+   "applyRoute": "Apply or give intimation online on the Labour Department portal: https://labour.delhi.gov.in.",
+   "benefitHeadline": "Registration for shops and establishments",
    "rateRows": []
   },
   {
@@ -9008,6 +9336,8 @@
    ],
    "requiredCount": 2,
    "stepCount": 3,
+   "applyRoute": "Apply or give intimation online on the Labour Department portal: https://shramadhan.jharkhand.gov.in.",
+   "benefitHeadline": "Register on the Shramadhan portal",
    "rateRows": []
   },
   {
@@ -9046,6 +9376,8 @@
    ],
    "requiredCount": 2,
    "stepCount": 3,
+   "applyRoute": "Apply or give intimation online on the Labour Department portal: https://mahakamgar.maharashtra.gov.in.",
+   "benefitHeadline": "Intimation only below 20 workers",
    "rateRows": []
   },
   {
@@ -9084,6 +9416,8 @@
    ],
    "requiredCount": 2,
    "stepCount": 3,
+   "applyRoute": "Apply or give intimation online on the Labour Department portal: https://uplabour.gov.in.",
+   "benefitHeadline": "Registration for shops and establishments",
    "rateRows": []
   },
   {
@@ -9128,6 +9462,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Eligible institution prepares course, faculty, infrastructure, candidate, industry linkage and budget proposal and submits through the current Department/PMA call",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -9172,6 +9508,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Check the current call, identify the eligible cluster/testing-facility entity, prepare the technical and financial proposal, and submit through the current Department/PMA route",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -9216,6 +9554,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Map the component/raw material/accessory to the current list, prepare project and import-dependence evidence, and submit through the current Department/PMA call",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -9260,6 +9600,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Prepare the device, protocol, regulatory, ethics, site, budget and investigator dossier and submit through the current Department/PMA call",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -9304,6 +9646,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Prepare the activity concept, applicant credentials, participant/market plan, budget, outputs and reporting route and submit through the current Department call",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -9356,6 +9700,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "submit the subsidy application and required documents to the concerned Prime Lending Institution from which the term loan is availed only after current continuation is verified",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -9416,6 +9762,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "Apply through a Scheduled Commercial Bank and use the official handholding portal.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -9455,6 +9803,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "apply through a current participating SAMRIDH accelerator or cohort notice",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -9525,6 +9875,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Use the applicable route: a startup approaches a selected AIF for investment, while an eligible AIF submits a proposal through the current implementing-agency route.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -9569,6 +9921,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Register or sign in through the current Startup India/BHASKAR onboarding, complete the startup profile and use the Investor Connect entry when available.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -9613,6 +9967,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "use the official MAARG startup application or Startup India sign-in, complete the startup profile and mentorship need, then use the current mentor-matching and connection workflow",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -9667,6 +10023,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Apply through the Startup India portal and eligible incubators.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -9713,6 +10071,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Confirm coverage with the relevant State Rural Livelihoods Mission, Block Resource Centre or local SVEP implementation channel; use the official portal for programme context and authorised workflow support.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -9762,6 +10122,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 5,
+   "applyRoute": "Review the current TDB funding mode, download the prescribed proposal or Loan Application Form-A, prepare the technology, IP, project-cost, remaining-funding, milestone and commercialisation evidence, and submit through the live official proposal route",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -9806,6 +10168,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 2,
+   "applyRoute": "identify a currently supported TIDE incubation centre and follow its official intake route",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -9850,6 +10214,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Eligible implementing agencies must follow the Department of Commerce proposal and Empowered Committee route; the claim-monitoring portal is for status visibility and is not treated as a fresh-application portal.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -9895,6 +10261,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 3,
+   "applyRoute": "Use the official portal and complete the self-declaration registration with the applicant's own identity and contact details.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -9939,6 +10307,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Review the current VCF-ST guideline and IFCI VCF route, prepare the startup deck, founder-status evidence, cap table and diligence material, and apply only through the notified channel.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -9978,6 +10348,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 4,
+   "applyRoute": "Register or use the relevant WEP discovery, smart-match, mentorship, access-to-finance or partner route, then follow the underlying official or partner programme instructions.",
+   "benefitHeadline": null,
    "rateRows": []
   },
   {
@@ -10032,6 +10404,8 @@
    ],
    "requiredCount": 1,
    "stepCount": 5,
+   "applyRoute": "Prepare a viable cooperative project and apply through the current NCDC financing/application route, directly or through the applicable State Government/UT channel.",
+   "benefitHeadline": null,
    "rateRows": []
   }
  ],

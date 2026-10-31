@@ -44,7 +44,7 @@ async function fetchCatalogData(): Promise<EngineCatalogData> {
   const byVersion = <T>(table: string, columns: string) => byIds<T>(table, columns, 'opportunity_version_id')
 
   const [versions, ruleSets, windows, requirements, steps, rates, packs, relationships, mappings, definitions, activityPacks] = await Promise.all([
-    byIds<CatalogRows['versions'][number]>('opportunity_versions', 'id, title', 'id', { review_status: 'approved' }),
+    byIds<CatalogRows['versions'][number]>('opportunity_versions', 'id, title, application, benefit_summary', 'id', { review_status: 'approved' }),
     byIds<CatalogRows['ruleSets'][number]>('eligibility_rule_sets', 'opportunity_version_id, rules', 'opportunity_version_id', { reviewed: true }),
     byVersion<CatalogRows['windows'][number]>('opportunity_windows', 'opportunity_version_id, window_type, opens_at, closes_at'),
     byVersion<CatalogRows['requirements'][number]>('opportunity_requirements', 'opportunity_version_id'),

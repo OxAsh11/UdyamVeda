@@ -21,11 +21,9 @@ import { profileFromBusinessFacts } from '@/lib/businesses/profile'
 import type { BusinessProfileForMatching } from '@/lib/opportunities/types'
 import { COMPLIANCE_ITEMS, calculateHealthScore, filterCompliance } from '@/lib/data/compliance-roadmap'
 import { AUTH_REQUIRED } from '@/lib/auth/mode'
-import { founderFactsFromRows } from '@/lib/businesses/founder-facts'
 import { GTM_TOOLS_ENABLED } from '@/lib/features/gtm'
-import { cleanFacts } from '@/lib/opportunities/engine/facts'
-import { loadEngineCatalog } from '@/lib/opportunities/engine/load-catalog'
-import { buildResults, type ResultsPayload } from '@/lib/opportunities/engine/results'
+import { loadFounderResults } from '@/lib/founder/load-results'
+import type { ResultsPayload } from '@/lib/opportunities/engine/results'
 
 const categories = [
   { label: 'Government schemes', count: 'Central catalog', icon: Landmark, color: 'bg-indigo-50 text-indigo-700', href: '/dashboard/schemes' },
@@ -35,17 +33,6 @@ const categories = [
   { label: 'Accelerators', count: 'Incubation & mentors', icon: Sparkles, color: 'bg-violet-50 text-violet-700', href: '/dashboard/schemes?type=accelerator' },
   { label: 'Compliance', count: 'Stay ready', icon: ShieldCheck, color: 'bg-cyan-50 text-cyan-700', href: '/dashboard/compliance' },
 ]
-
-// Founder results, once they have said what they do. Nothing is forced: without
-// answers the dashboard simply offers the questions.
-async function founderResults(rows: { fact_key: string; fact_value: unknown; answer_state?: string | null }[]): Promise<ResultsPayload | 'unavailable' | null> {
-  const founderFacts = founderFactsFromRows(rows)
-  if (!Array.isArray(founderFacts.activity_codes)) return null
-  const catalog = await loadEngineCatalog()
-  if (!catalog) return 'unavailable'
-  const { facts, nonAnswers } = cleanFacts(founderFacts, catalog.definitions, catalog.activityIds)
-  return buildResults(facts, nonAnswers, catalog, new Date())
-}
 
 export default async function DashboardPage() {
   let profile: { full_name?: string | null } | null = null
@@ -72,7 +59,9 @@ export default async function DashboardPage() {
     business = workspace ? profileFromBusinessFacts(workspace, facts ?? []) : null
     complianceRows = complianceData ?? []
     applications = applicationData ?? []
-    results = await founderResults(facts ?? [])
+    const loaded = await loadFounderResults(supabase, user.id)
+    // Nothing is forced: without answers the dashboard simply offers the questions.
+    results = loaded.status === 'ready' ? loaded.results : loaded.status === 'unavailable' ? 'unavailable' : null
   }
 
   const applicable = business ? filterCompliance(COMPLIANCE_ITEMS, { sector: business.sector ?? '', stage: business.stage ?? '' }) : COMPLIANCE_ITEMS

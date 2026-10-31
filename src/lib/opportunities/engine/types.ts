@@ -57,6 +57,9 @@ export type EngineRecord = {
   rates: BenefitRate[]
   requiredCount: number
   stepCount: number
+  // Founder-facing text from the approved version; null when it states none, or only a working note.
+  applyRoute: string | null
+  benefitHeadline: string | null
 }
 
 export type EngineContext = {

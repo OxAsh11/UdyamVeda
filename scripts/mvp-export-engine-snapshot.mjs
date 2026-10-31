@@ -26,6 +26,7 @@ function query(sql) {
 
 const records = query(`
   select o.id, o.slug, v.title, o.opportunity_type, o.status, o.geography, v.id as version_id, r.rules,
+    v.application->>'route' as apply_route, v.benefit_summary->>'headline' as benefit_headline,
     coalesce(to_jsonb(o) ->> 'last_checked_at', v.last_verified_at::text) as last_checked_at,
     coalesce((select json_agg(json_build_object('windowType', w.window_type, 'opensAt', w.opens_at, 'closesAt', w.closes_at) order by w.window_type, w.opens_at)
        from public.opportunity_windows w where w.opportunity_version_id = v.id), '[]'::json) as windows,
@@ -64,6 +65,9 @@ const snapshot = {
     locations: record.geography?.locations ?? [],
     requiredCount: Number(record.required_count),
     stepCount: Number(record.step_count),
+    // As written; the tests run them through the same filter as production.
+    applyRoute: record.apply_route ?? null,
+    benefitHeadline: record.benefit_headline ?? null,
     rateRows: rates.filter(row => row.slug === record.slug),
   })),
   relationships: relationships.map(row => ({

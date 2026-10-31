@@ -429,6 +429,25 @@ describe('reliability', () => {
     expect(later.counts.A).toBe(0)
   })
 
+  it('carries how to apply and the one-line benefit onto each result', () => {
+    const payload = resultsFor(rakesh)
+    const byId = new Map(catalog.records.map(record => [record.id, record]))
+    const listed = [...all(payload), ...payload.registrations]
+    expect(listed.length).toBeGreaterThan(0)
+    for (const item of listed) {
+      expect(item.applyRoute).toBe(byId.get(item.id)!.applyRoute)
+      expect(item.benefitHeadline).toBe(byId.get(item.id)!.benefitHeadline)
+    }
+    expect(find(payload, KCC).applyRoute).toMatch(/bank branch/)
+    expect(find(payload, KCC).benefitHeadline).toBe('Working capital at an effective 4% interest')
+  })
+
+  it('reports a new catalog version when the headline changes', () => {
+    const data = snapshotData()
+    const changed = { ...data, records: data.records.map(record => (record.slug === KCC ? { ...record, benefitHeadline: 'A different headline' } : record)) }
+    expect(catalogVersion(changed)).not.toBe(catalogVersion(data))
+  })
+
   it('reports a new catalog version when a rate changes', () => {
     const data = snapshotData()
     const changed = {
