@@ -12,15 +12,26 @@ const REGISTRATION_TYPES = new Set(['registration', 'licence'])
 
 const plain = (tone: Tone, text: string): Verdict => ({ tone, text, detail: null })
 
-function openingText(item: RecordResult, lang: Lang) {
-  const date = item.windows.map(window => formatDate(window.opensAt, lang)).find(Boolean)
+// The earliest opening still ahead of us. Earlier rows may be past windows.
+function nextOpening(item: RecordResult, now: Date) {
+  const ahead = item.windows
+    .map(window => window.opensAt)
+    .filter((opensAt): opensAt is string => !!opensAt)
+    .filter(opensAt => new Date(opensAt).getTime() > now.getTime())
+    .sort((left, right) => new Date(left).getTime() - new Date(right).getTime())
+  return ahead[0] ?? null
+}
+
+function openingText(item: RecordResult, lang: Lang, now: Date) {
+  const date = formatDate(nextOpening(item, now), lang)
   return date ? t(lang, 'verdictOpens', { date }) : t(lang, 'verdictNotOpen')
 }
 
-function waitingText(item: RecordResult, lang: Lang) {
+function waitingText(item: RecordResult, lang: Lang, now: Date) {
   if (item.status === 'pending_renewal') return t(lang, 'statusRenewal')
   if (item.status === 'paused') return t(lang, 'statusPaused')
-  if (item.windowState === 'not_yet_open') return openingText(item, lang)
+  // An upcoming scheme with no dated window has not opened yet, whatever the window state says.
+  if (item.status === 'upcoming' || item.windowState === 'not_yet_open') return openingText(item, lang, now)
   if (item.status === 'active' && item.freshness === 'stale') return t(lang, 'statusUnconfirmed')
   return t(lang, 'statusClosed')
 }
@@ -34,13 +45,14 @@ function notForYouDetail(item: RecordResult, lang: Lang, labelOf: (factKey: stri
 /**
  * Turns one engine result into the words and colour a founder sees. Every page
  * uses this, so the same scheme never says two different things. It words the
- * engine's decision; it never makes one.
+ * engine's decision; it never makes one. `now` only decides which opening date is still ahead.
  */
 export function verdictFor(
   item: RecordResult,
   combination: Combination,
   lang: Lang,
   labelOf: (factKey: string) => string,
+  now: Date = new Date(),
 ): Verdict {
   switch (item.bucket) {
     case 'A':
@@ -58,7 +70,7 @@ export function verdictFor(
     }
 
     case 'C':
-      return plain('wait', waitingText(item, lang))
+      return plain('wait', waitingText(item, lang, now))
 
     case 'D':
       return { tone: 'wait', text: t(lang, 'verdictNotForYou'), detail: notForYouDetail(item, lang, labelOf) }

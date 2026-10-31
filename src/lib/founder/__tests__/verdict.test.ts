@@ -55,8 +55,9 @@ const combination = (recommended: string[] = []): Combination => ({ recommended,
 const labelOf = (factKey: string) => ({ udyam: 'Udyam', state: 'State', category: 'Category', age: 'Age' })[factKey] ?? factKey
 const stateName = (code: string) => ({ bihar: 'Bihar', jharkhand: 'Jharkhand', odisha: 'Odisha' })[code] ?? code
 const founderFacts = { state: 'odisha' }
-const verdict = (item: RecordResult, recommended: string[] = [], lang: Lang = 'en') =>
-  verdictFor(item, combination(recommended), lang, labelOf)
+const NOW = new Date('2026-10-31T00:00:00Z')
+const verdict = (item: RecordResult, recommended: string[] = [], lang: Lang = 'en', now: Date = NOW) =>
+  verdictFor(item, combination(recommended), lang, labelOf, now)
 const answer = (factKey: string) => ({ kind: 'answer' as const, factKey })
 const obtain = (factKey: string) => ({ kind: 'obtain' as const, factKey })
 
@@ -139,6 +140,66 @@ describe('verdictFor, bucket C', () => {
     expect(found.text).toBe(`Opens on ${formatDate('2026-12-01T00:00:00Z', 'en')}`)
     expect(found.text).toMatch(/2026/)
     expect(found.detail).toBeNull()
+  })
+
+  it('gives the next opening, not a past one, when an earlier window is listed first', () => {
+    const item = inC({
+      status: 'upcoming',
+      windowState: 'not_yet_open',
+      windows: [
+        { windowType: 'fixed', opensAt: '2025-04-01T00:00:00Z', closesAt: '2025-06-30T00:00:00Z' },
+        { windowType: 'fixed', opensAt: '2026-12-01T00:00:00Z', closesAt: '2027-01-31T00:00:00Z' },
+      ],
+    })
+    expect(verdict(item).text).toBe(`Opens on ${formatDate('2026-12-01T00:00:00Z', 'en')}`)
+    expect(verdict(item).text).not.toMatch(/2025/)
+  })
+
+  it('gives the earliest of several coming openings, whatever order they are listed in', () => {
+    const item = inC({
+      status: 'upcoming',
+      windowState: 'not_yet_open',
+      windows: [
+        { windowType: 'fixed', opensAt: '2027-03-01T00:00:00Z', closesAt: null },
+        { windowType: 'fixed', opensAt: '2026-12-01T00:00:00Z', closesAt: null },
+      ],
+    })
+    expect(verdict(item).text).toBe(`Opens on ${formatDate('2026-12-01T00:00:00Z', 'en')}`)
+  })
+
+  it('judges "coming" against the date it is given, and against today when none is given', () => {
+    const item = inC({
+      status: 'upcoming',
+      windowState: 'not_yet_open',
+      windows: [{ windowType: 'fixed', opensAt: '2026-12-01T00:00:00Z', closesAt: null }],
+    })
+    expect(verdict(item, [], 'en', new Date('2026-12-02T00:00:00Z')).text).toBe('Not open yet')
+    const farAway = inC({
+      status: 'upcoming',
+      windowState: 'not_yet_open',
+      windows: [{ windowType: 'fixed', opensAt: '2999-01-01T00:00:00Z', closesAt: null }],
+    })
+    expect(verdictFor(farAway, combination(), 'en', labelOf).text).toBe(`Opens on ${formatDate('2999-01-01T00:00:00Z', 'en')}`)
+  })
+
+  it('says not open yet when every date has already passed', () => {
+    const item = inC({
+      status: 'upcoming',
+      windowState: 'not_yet_open',
+      windows: [{ windowType: 'fixed', opensAt: '2025-04-01T00:00:00Z', closesAt: '2025-06-30T00:00:00Z' }],
+    })
+    expect(verdict(item).text).toBe('Not open yet')
+  })
+
+  it('says not open yet, not closed, for an upcoming scheme with no dated window', () => {
+    expect(verdict(inC({ status: 'upcoming', windowState: 'open', windows: [] }))).toEqual({ tone: 'wait', text: 'Not open yet', detail: null })
+    const undated = inC({ status: 'upcoming', windowState: 'open', windows: [{ windowType: 'fixed', opensAt: null, closesAt: null }] })
+    expect(verdict(undated)).toEqual({ tone: 'wait', text: 'Not open yet', detail: null })
+  })
+
+  it('keeps renewal and paused ahead of an upcoming scheme', () => {
+    expect(verdict(inC({ status: 'pending_renewal', windowState: 'not_yet_open' })).text).toBe('Renewal awaited')
+    expect(verdict(inC({ status: 'paused', windowState: 'not_yet_open' })).text).toBe('Paused')
   })
 
   it('says not open yet when no date is known', () => {
