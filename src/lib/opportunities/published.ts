@@ -75,6 +75,13 @@ type DatabaseSource = {
   is_primary: boolean
 }
 
+// What a record says when it has nothing of its own to say. Pages that show a record to founders
+// hide a line that reads exactly like one of these, so they must import them and never copy them.
+export const BENEFIT_FALLBACK = 'See official source for benefit details'
+export const DESCRIPTION_FALLBACK = 'Official opportunity details are available in the source record.'
+export const PROCESSING_FALLBACK = 'Varies by implementing agency'
+export const AUTHORITY_FALLBACK = 'Government implementing authority'
+
 export type CatalogSource = 'database' | 'research_beta' | 'legacy_draft' | 'empty_unpublished' | 'unavailable'
 export type CatalogAvailability = 'available' | 'unavailable'
 
@@ -180,20 +187,20 @@ function mapPublishedOpportunity(
   const locations = Array.isArray(geography.locations) ? geography.locations.filter((item): item is string => typeof item === 'string') : []
   // `headline` is set by the admin editor and takes precedence.
   const benefitCandidates = [asText(benefitSummary.headline, ''), benefit?.label, asText(benefitSummary.summary, ''), version.summary ?? '']
-  const benefitLabel = benefitCandidates.find(text => text && !isInternalNote(text)) ?? 'See official source for benefit details'
+  const benefitLabel = benefitCandidates.find(text => text && !isInternalNote(text)) ?? BENEFIT_FALLBACK
   const summaryTypes = Array.isArray(benefitSummary.types) ? benefitSummary.types : []
   const benefitType = benefit?.benefit_type ?? asText(summaryTypes[0], opportunity.opportunity_type)
-  const processingTime = asText(application.processing_time, 'Varies by implementing agency')
+  const processingTime = asText(application.processing_time, PROCESSING_FALLBACK)
 
   return {
     id: opportunity.slug,
     name: opportunity.name,
     type: typeFor(opportunity.opportunity_type),
     category: opportunity.opportunity_type,
-    authority: authority?.name ?? 'Government implementing authority',
+    authority: authority?.name ?? AUTHORITY_FALLBACK,
     benefitLabel,
     benefitType,
-    description: version.summary ?? 'Official opportunity details are available in the source record.',
+    description: version.summary ?? DESCRIPTION_FALLBACK,
     officialUrl: opportunity.canonical_url ?? asText(application.portal, '#'),
     // Window labels hold reviewer prose; applicants get a short derived label.
     deadline: windowLabel(windows[0], opportunity.status),

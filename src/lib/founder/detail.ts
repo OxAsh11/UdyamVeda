@@ -7,7 +7,8 @@ import { getBusinessForUser } from '@/lib/businesses/dal'
 import type { BenefitLines } from '@/lib/opportunities/engine/calculator'
 import type { Combination, Relationship } from '@/lib/opportunities/engine/combination'
 import type { RecordResult, ResultsPayload } from '@/lib/opportunities/engine/results'
-import { applicationView, eligibilityView, isInternalNote, publicText, type ApplicationView, type EligibilityView } from '@/lib/opportunities/display'
+import { applicationView, eligibilityView, isInternalNote, publicText, WINDOW_FALLBACK, type ApplicationView, type EligibilityView } from '@/lib/opportunities/display'
+import { AUTHORITY_FALLBACK, BENEFIT_FALLBACK, DESCRIPTION_FALLBACK, PROCESSING_FALLBACK } from '@/lib/opportunities/published'
 import type { OpportunityDetail } from '@/lib/opportunities/types'
 import { formatRange } from '@/lib/start/format'
 import { t } from '@/lib/start/i18n'
@@ -18,11 +19,21 @@ import type { FounderResults } from './load-results'
 import { ft } from './text'
 import { onPathVerdict, verdictFor, type Verdict } from './verdict'
 
-/** The one-paragraph suggestion for a scheme in the best route, or nothing when it would be a guess. */
+const lowerFirst = (text: string) => text.charAt(0).toLowerCase() + text.slice(1)
+
+/**
+ * The paragraph suggesting a scheme in the best route, or nothing when it would be a guess: start
+ * here, what it covers (free money if there is any, otherwise a loan), and what is left to arrange.
+ */
 export function suggestionFor(item: RecordResult, combination: Combination, lang: Lang): string | null {
   if (item.bucket !== 'A' || !item.lines || !combination.recommended.includes(item.id)) return null
-  const left = hasAmount(item.lines.uncovered) ? ft('suggestArrange', { range: formatRange(item.lines.uncovered, lang) }) : null
-  return [ft('suggestStart'), left].filter((part): part is string => part !== null).join(' ')
+  const { subsidy, loan, uncovered } = item.lines
+  const covers = hasAmount(subsidy)
+    ? ft('suggestFree', { amount: formatRange(subsidy, lang) })
+    // The loan reads as its tile does, with "Up to" run into the sentence.
+    : loan && hasAmount(loan) ? ft('suggestLoan', { amount: lowerFirst(loanValue(item.lines, loan, lang)) }) : null
+  const left = hasAmount(uncovered) ? ft('suggestArrange', { range: formatRange(uncovered, lang) }) : null
+  return [ft('suggestStart'), covers, left].filter((part): part is string => part !== null).join(' ')
 }
 
 export type MoneyTileView = {
@@ -67,32 +78,42 @@ export function moneyTiles(lines: BenefitLines, lang: Lang): MoneyTileView[] {
 const isYes = (value: unknown) => value === true
 const isOneOf = (...values: string[]) => (value: unknown) => typeof value === 'string' && values.includes(value)
 
+// What may follow the name of a document: "PAN card", "Udyam registration certificate".
+const PAPER = /(?:\s+(?:registration|card|certificate|copy|number|details|papers?|proof|documents?|records?))*/.source
+// A pattern must match the WHOLE of a name, so "Landlord NOC", "Land use" and "GST returns" are never
+// taken for land papers or a GST registration just because they contain a word from one.
+const whole = (name: RegExp) => new RegExp(`^${name.source}${PAPER}$`, 'i')
+
 // The answers that mean the founder has what a document needs. "No", "don't know" and "prefer not
 // to say" are all missing from these, so none of them can be read as having it.
 const DOCUMENT_FACTS: { factKey: string; named: RegExp; hasIt: (value: unknown) => boolean }[] = [
-  { factKey: 'aadhaar_mobile_linked', named: /aadhaar/i, hasIt: isYes },
-  // Case matters: "pan" is also an ordinary word.
-  { factKey: 'has_pan', named: /\bPAN\b/, hasIt: isYes },
-  { factKey: 'has_bank_account', named: /bank account|passbook/i, hasIt: isYes },
-  { factKey: 'udyam_registered', named: /udyam/i, hasIt: isYes },
-  { factKey: 'gst_registered', named: /\bGST/i, hasIt: isYes },
-  { factKey: 'shop_act_registered', named: /shop act|trade licen[cs]e/i, hasIt: isYes },
-  { factKey: 'training_certificate', named: /training|\bEDP\b/i, hasIt: isYes },
-  { factKey: 'dpiit_recognized', named: /DPIIT|startup recognition/i, hasIt: isYes },
-  { factKey: 'fssai_status', named: /FSSAI/i, hasIt: isOneOf('basic_registration', 'state_licence', 'central_licence') },
+  { factKey: 'aadhaar_mobile_linked', named: whole(/(?:your\s+)?aadhaar/), hasIt: isYes },
+  { factKey: 'has_pan', named: whole(/(?:your\s+)?pan/), hasIt: isYes },
+  { factKey: 'has_bank_account', named: whole(/(?:your\s+)?(?:bank\s+account(?:\s+passbook)?|bank\s+passbook|passbook)/), hasIt: isYes },
+  { factKey: 'udyam_registered', named: whole(/(?:valid\s+)?udyam/), hasIt: isYes },
+  { factKey: 'gst_registered', named: whole(/(?:valid\s+)?(?:gst|gstin)/), hasIt: isYes },
+  { factKey: 'shop_act_registered', named: whole(/(?:shop\s+act|trade\s+licen[cs]e)(?:\s*\/\s*(?:shop\s+act|trade\s+licen[cs]e))?(?:\s+licen[cs]e)?/), hasIt: isYes },
+  { factKey: 'training_certificate', named: whole(/(?:a\s+)?(?:training|edp)(?:\s*\/\s*(?:training|edp))?(?:\s+programme|\s+program)?\s+certificate/), hasIt: isYes },
+  { factKey: 'dpiit_recognized', named: whole(/(?:valid\s+)?dpiit(?:\s+startup)?(?:\s+recognition)?/), hasIt: isYes },
+  { factKey: 'fssai_status', named: whole(/(?:valid\s+)?fssai(?:\s+food\s+business)?(?:\s+licen[cs]e)?/), hasIt: isOneOf('basic_registration', 'state_licence', 'central_licence') },
   // A lease with no registered papers is not papers to hand over.
-  { factKey: 'land_or_pond_status', named: /\b(land|pond|lease)/i, hasIt: isOneOf('owned', 'family_owned', 'registered_lease') },
+  { factKey: 'land_or_pond_status', named: whole(/(?:an?\s+|your\s+)?(?:registered\s+)?(?:land|pond|lease)(?:\s+ownership)?(?:\s+deed|\s+agreement)?/), hasIt: isOneOf('owned', 'family_owned', 'registered_lease') },
 ]
 
-// "Aadhaar and PAN" is two documents: the founder has it only if they have both.
-const PARTS_OF_A_DOCUMENT = /,|&|\band\b/i
+function holds(option: string, answers: Record<string, unknown>): boolean {
+  const name = option.trim().replace(/[.;:]+$/, '')
+  const fact = DOCUMENT_FACTS.find(candidate => candidate.named.test(name))
+  return fact !== undefined && fact.hasIt(answers[fact.factKey])
+}
 
+// "Aadhaar and PAN" is two documents and the founder has it only if they have both; "Udyam or UAP
+// registration" is a choice, so either will do. A part no answer covers (address proof, a project
+// report) is never claimed.
 function hasDocument(name: string, answers: Record<string, unknown>): boolean {
-  return name.split(PARTS_OF_A_DOCUMENT).every(part => {
-    const facts = DOCUMENT_FACTS.filter(fact => fact.named.test(part))
-    // A part no answer covers (address proof, a project report) is never claimed.
-    return facts.length > 0 && facts.every(fact => fact.hasIt(answers[fact.factKey]))
-  })
+  return name
+    .replace(/\([^)]*\)/g, ' ')
+    .split(/,|&|\band\b/i)
+    .every(part => part.split(/\bor\b/i).some(option => holds(option, answers)))
 }
 
 /** What a scheme asks you to keep ready, with a mark on what the founder said they already have. */
@@ -206,6 +227,38 @@ export function recordSections(record: Pick<OpportunityDetail, 'eligibility' | '
     about: objective || legalBasis ? { objective, legalBasis } : null,
     apply: apply.route || apply.selection || apply.fees ? apply : null,
     steps: record.steps.filter(step => !isInternalNote(step.title)),
+  }
+}
+
+export type RecordSummary = {
+  authority: string | null
+  description: string | null
+  window: string | null
+  processing: string | null
+  benefit: string | null
+  source: string | null
+}
+
+/**
+ * The record's own header lines. A line the record fills with a fixed fallback ("See official source
+ * for benefit details", "Varies by implementing agency"...) is left out as null, and so is a benefit
+ * that only repeats the description, so a thin record shows less rather than filler.
+ */
+export function recordSummary(record: Pick<OpportunityDetail, 'authority' | 'description' | 'deadline' | 'processingTime' | 'benefitLabel' | 'sourceLabel'>): RecordSummary {
+  const real = (value: string, fallback: string) => {
+    const text = publicText(value)
+    return text !== null && text !== fallback ? text : null
+  }
+  const authority = real(record.authority, AUTHORITY_FALLBACK)
+  const benefit = real(record.benefitLabel, BENEFIT_FALLBACK)
+  return {
+    authority,
+    description: real(record.description, DESCRIPTION_FALLBACK),
+    window: real(record.deadline, WINDOW_FALLBACK),
+    processing: real(record.processingTime, PROCESSING_FALLBACK),
+    benefit: benefit !== record.description.trim() ? benefit : null,
+    // "Official source · Government authority" says nothing when the authority is not known.
+    source: authority !== null ? record.sourceLabel : null,
   }
 }
 

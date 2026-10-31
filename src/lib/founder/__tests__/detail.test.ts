@@ -3,10 +3,13 @@ import { describe, expect, it } from 'vitest'
 import type { BenefitLines } from '@/lib/opportunities/engine/calculator'
 import type { Combination, Relationship } from '@/lib/opportunities/engine/combination'
 import type { RecordResult } from '@/lib/opportunities/engine/results'
+import { WINDOW_FALLBACK } from '@/lib/opportunities/display'
+import { AUTHORITY_FALLBACK, BENEFIT_FALLBACK, DESCRIPTION_FALLBACK, PROCESSING_FALLBACK } from '@/lib/opportunities/published'
 import { t } from '@/lib/start/i18n'
+import { answerWordsFor, checkedFacts, factLabelsOf } from '../answers'
 import type { FounderResults } from '../load-results'
 import {
-  connectedSchemes, keepReady, loadRateQuote, loadSchemeState, moneyTiles, offersChecklist, recordSections, suggestionFor,
+  connectedSchemes, keepReady, loadRateQuote, loadSchemeState, moneyTiles, offersChecklist, recordSections, recordSummary, suggestionFor,
 } from '../detail'
 import { verdictFor } from '../verdict'
 import { fisher as fisherFounder, NOW } from './ready-founder'
@@ -85,13 +88,34 @@ describe('suggestionFor', () => {
     }
   })
 
-  it('says what is left to arrange in the suggestion', () => {
-    const kcc = itemFor(KCC)
-    expect(suggestionFor(kcc, fisher.results.combination, 'en'))
-      .toBe(`${START} You will still need to arrange ₹3,00,000 – ₹8,00,000 from another route.`)
-    // Nothing left over: the first sentence stands alone.
-    const covered = result({ id: 'a', lines: lines({ uncovered: { min: 0, max: 0 } }) })
-    expect(suggestionFor(covered, combination({ recommended: ['a'] }), 'en')).toBe(START)
+  const ARRANGE = (range: string) => `You will still need to arrange ${range} from another route.`
+  const route = combination({ recommended: ['a'] })
+
+  it('says what it covers, between starting and what is left to arrange', () => {
+    expect(suggestionFor(itemFor(KCC), fisher.results.combination, 'en'))
+      .toBe(`${START} It can lend you up to ₹2,00,000. ${ARRANGE('₹3,00,000 – ₹8,00,000')}`)
+  })
+
+  it('says it lends a plain amount when the scheme works the loan out, not "up to"', () => {
+    const worked = result({ id: 'a', lines: lines({ loan: { min: 200000, max: 200000 }, own: { min: 50000, max: 50000 } }) })
+    expect(suggestionFor(worked, route, 'en')).toBe(`${START} It can lend you ₹2,00,000.`)
+  })
+
+  it('says it gives free money when there is any, and then says nothing of a loan', () => {
+    const grant = result({ id: 'a', lines: lines({ subsidy: { min: 200000, max: 400000 }, loan: { min: 100000, max: 100000 }, uncovered: { min: 300000, max: 600000 } }) })
+    expect(suggestionFor(grant, route, 'en')).toBe(`${START} It gives ₹2,00,000 – ₹4,00,000 in free money. ${ARRANGE('₹3,00,000 – ₹6,00,000')}`)
+  })
+
+  it('leaves the covering sentence out when the scheme gives neither', () => {
+    const none = result({ id: 'a', lines: lines({ uncovered: { min: 100000, max: 200000 } }) })
+    expect(suggestionFor(none, route, 'en')).toBe(`${START} ${ARRANGE('₹1,00,000 – ₹2,00,000')}`)
+  })
+
+  it('leaves out what is left to arrange when nothing is, and keeps what it covers', () => {
+    // Nothing left over: the first sentence stands alone, or with what it covers.
+    expect(suggestionFor(result({ id: 'a', lines: lines() }), route, 'en')).toBe(START)
+    const covered = result({ id: 'a', lines: lines({ loan: { min: 1000000, max: 1000000 }, own: { min: 0, max: 0 } }) })
+    expect(suggestionFor(covered, route, 'en')).toBe(`${START} It can lend you ₹10,00,000.`)
   })
 
   it('makes no suggestion when the amount is unknown', () => {
@@ -168,6 +192,32 @@ describe('keepReady', () => {
     expect(ask('Project report and quotations', { has_pan: true }).have).toBe(false)
   })
 
+  it('does not take a name that only contains a keyword for the document', () => {
+    // A landlord\'s letter and the use of land are not land papers; filed returns are not a registration.
+    const yes = { land_or_pond_status: 'owned', gst_registered: true, has_pan: true, udyam_registered: true, aadhaar_mobile_linked: true }
+    for (const name of ['Landlord NOC', 'Land use', 'Land use permission', 'GST returns', 'GST filing records', 'Aadhaar with Bihar address', 'PAN-linked bank mandate', 'Udyam MSME, identified cluster']) {
+      expect(ask(name, yes).have, name).toBe(false)
+    }
+  })
+
+  it('still reads the documents themselves, in the ways they are written', () => {
+    const yes = { land_or_pond_status: 'registered_lease', gst_registered: true, udyam_registered: true, fssai_status: 'state_licence', has_bank_account: true, shop_act_registered: true, training_certificate: true, dpiit_recognized: true, has_pan: true }
+    for (const name of [
+      'Land, pond or activity details', 'Pond or land ownership papers or a registered lease', 'Land ownership proof', 'Lease agreement',
+      'GST Registration', 'GSTIN', 'Valid Udyam registration', 'Udyam Registration certificate', 'FSSAI Food Business Registration or Licence',
+      'Bank account passbook', 'Shop Act / trade licence', 'Class 8 marksheet or training certificate', 'DPIIT Startup Recognition', 'PAN card (copy)',
+    ]) {
+      expect(ask(name, yes).have, name).toBe(true)
+    }
+  })
+
+  it('needs the rest of a document that says more than the founder has told us', () => {
+    // "or" offers a choice, but "and" asks for more.
+    expect(ask('Udyam or UAP registration and delayed-payment matter', { udyam_registered: true }).have).toBe(false)
+    expect(ask('DPIIT recognition and Indian promoter shareholding', { dpiit_recognized: true }).have).toBe(false)
+    expect(ask('Udyam or UAP registration', { udyam_registered: true }).have).toBe(true)
+  })
+
   it('never marks "no" or "don\'t know" as having it', () => {
     for (const value of [false, 'no', 'dont_know', 'prefer_not', undefined, null]) {
       expect(ask('PAN card', { has_pan: value }).have, String(value)).toBe(false)
@@ -204,6 +254,79 @@ describe('keepReady', () => {
       { name: 'PAN card', required: true, description: 'A copy', have: true },
       { name: 'Photo', required: false, description: null, have: false },
     ])
+  })
+})
+
+describe('the answers behind each of the founder\'s own verdicts', () => {
+  const labels = factLabelsOf(fisher.bundle)
+  const words = answerWordsFor(fisher.answers, fisher.bundle)
+  const every = Object.values(fisher.results.buckets).flat()
+
+  it('count as matched only what neither failed the rule nor has to be changed first', () => {
+    for (const item of every) {
+      const toChange = item.steps.filter(step => step.kind === 'obtain').map(step => step.factKey)
+      for (const fact of checkedFacts(item, words, labels, 'en')) {
+        expect(fact.met, `${item.slug}: ${fact.key}`).toBe(!item.failedFacts.includes(fact.key) && !toChange.includes(fact.key))
+      }
+    }
+  })
+
+  it('include answers that did not match, so the check above is not empty', () => {
+    const unmatched = every.flatMap(item => checkedFacts(item, words, labels, 'en').filter(fact => !fact.met).map(fact => `${item.slug}: ${fact.key}`))
+    expect(unmatched.length).toBeGreaterThan(0)
+  })
+})
+
+describe('recordSummary', () => {
+  const thin = {
+    authority: AUTHORITY_FALLBACK,
+    description: DESCRIPTION_FALLBACK,
+    deadline: WINDOW_FALLBACK,
+    processingTime: PROCESSING_FALLBACK,
+    benefitLabel: BENEFIT_FALLBACK,
+    sourceLabel: 'Official source · Government authority',
+  }
+
+  it('hides every line a thin record fills with a fixed fallback', () => {
+    expect(recordSummary(thin)).toEqual({ authority: null, description: null, window: null, processing: null, benefit: null, source: null })
+  })
+
+  it('keeps what the record really says', () => {
+    expect(recordSummary({
+      authority: 'Department of Financial Services',
+      description: 'Credit for fish farmers.',
+      deadline: 'Open year-round',
+      processingTime: '30 days',
+      benefitLabel: '40% subsidy on a loan',
+      sourceLabel: 'Official source · Department of Financial Services',
+    })).toEqual({
+      authority: 'Department of Financial Services',
+      description: 'Credit for fish farmers.',
+      window: 'Open year-round',
+      processing: '30 days',
+      benefit: '40% subsidy on a loan',
+      source: 'Official source · Department of Financial Services',
+    })
+  })
+
+  it('does not show the benefit as a tile when it only repeats the description', () => {
+    const same = recordSummary({ ...thin, description: 'Credit for fish farmers.', benefitLabel: 'Credit for fish farmers.' })
+    expect(same.description).toBe('Credit for fish farmers.')
+    expect(same.benefit).toBeNull()
+    // Said again with other spacing, it is still the same words.
+    expect(recordSummary({ ...thin, description: 'Credit for fish farmers.', benefitLabel: '  Credit for fish farmers. ' }).benefit).toBeNull()
+  })
+
+  it('hides a description or a processing time that is only a reviewer\'s working note', () => {
+    const note = 'Do not infer an open call from this record.'
+    const summary = recordSummary({ ...thin, description: note, processingTime: note })
+    expect(summary.description).toBeNull()
+    expect(summary.processing).toBeNull()
+  })
+
+  it('hides the source line when the authority is not known, and keeps a real one', () => {
+    expect(recordSummary({ ...thin, authority: 'A ministry', sourceLabel: 'Official source · A ministry' }).source).toBe('Official source · A ministry')
+    expect(recordSummary({ ...thin, authority: AUTHORITY_FALLBACK, sourceLabel: 'Official source · A ministry' }).source).toBeNull()
   })
 })
 

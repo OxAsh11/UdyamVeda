@@ -29,6 +29,9 @@ export function publicText(value: unknown): string | null {
 
 const DATE_FORMAT = new Intl.DateTimeFormat('en-IN', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'Asia/Kolkata' })
 
+// What an application window says when the record gives none. A page showing it to founders hides it.
+export const WINDOW_FALLBACK = 'See official portal'
+
 export type WindowInput = { window_type: string; opens_at: string | null; closes_at: string | null }
 
 /** Short, applicant-facing application-window label. */
@@ -36,7 +39,7 @@ export function windowLabel(window: WindowInput | undefined, status: string, now
   if (status === 'closed') return 'Closed to new applications'
   if (status === 'paused') return 'Paused: no open call right now'
   if (status === 'pending_renewal') return 'Renewal awaited: scheme period has ended'
-  if (!window) return 'See official portal'
+  if (!window) return WINDOW_FALLBACK
   if (window.closes_at) {
     const closes = new Date(window.closes_at)
     if (closes >= now) return `Apply by ${DATE_FORMAT.format(closes)}`
@@ -54,7 +57,7 @@ export function windowLabel(window: WindowInput | undefined, status: string, now
     case 'event': return 'Event-based'
     case 'closed':
     case 'closed_or_claim_only': return 'Closed to new applications'
-    default: return 'See official portal'
+    default: return WINDOW_FALLBACK
   }
 }
 

@@ -141,8 +141,8 @@ describe('checkedFacts', () => {
   it('lists only what the rule read and the founder answered', () => {
     const checked = checkedFacts(result(['udyam_registered', 'social_category', 'state']), words, labels, 'en')
     expect(checked).toEqual([
-      { key: 'udyam_registered', label: 'Has Udyam registration', answer: 'Yes' },
-      { key: 'state', label: 'State', answer: 'Jharkhand' },
+      { key: 'udyam_registered', label: 'Has Udyam registration', answer: 'Yes', met: true },
+      { key: 'state', label: 'State', answer: 'Jharkhand', met: true },
     ])
   })
 
@@ -152,12 +152,41 @@ describe('checkedFacts', () => {
   })
 
   it('speaks the chosen language', () => {
-    expect(checkedFacts(result(['state']), words, labels, 'hi')).toEqual([{ key: 'state', label: 'राज्य', answer: 'झारखंड' }])
+    expect(checkedFacts(result(['state']), words, labels, 'hi')).toEqual([{ key: 'state', label: 'राज्य', answer: 'झारखंड', met: true }])
   })
 
   it('has nothing to list when the rule read nothing the founder answered', () => {
     expect(checkedFacts(result([]), words, labels, 'en')).toEqual([])
     expect(checkedFacts(result(['social_category']), words, labels, 'en')).toEqual([])
+  })
+
+  describe('which of them matched', () => {
+    const mark = (item: RecordResult) => checkedFacts(item, words, labels, 'en').map(fact => [fact.key, fact.met])
+    const read = ['state', 'udyam_registered', 'district']
+
+    it('counts what the rule read as a match, when nothing failed', () => {
+      expect(mark(result(read))).toEqual([['state', true], ['udyam_registered', true], ['district', true]])
+    })
+
+    it('does not count an answer that failed the rule: it is read by the rule, but it did not match', () => {
+      const notForYou: RecordResult = { ...result(read), bucket: 'D', failedFacts: ['state'] }
+      expect(mark(notForYou)).toEqual([['state', false], ['udyam_registered', true], ['district', true]])
+    })
+
+    it('does not count an answer the founder has to change first', () => {
+      const waiting: RecordResult = { ...result(read), bucket: 'C', steps: [{ kind: 'obtain', factKey: 'udyam_registered' }] }
+      expect(mark(waiting)).toEqual([['state', true], ['udyam_registered', false], ['district', true]])
+    })
+
+    it('does not count a fact as failed because the founder still has a question to answer on it', () => {
+      const asked: RecordResult = { ...result(read), bucket: 'B', steps: [{ kind: 'answer', factKey: 'state' }] }
+      expect(mark(asked)).toEqual([['state', true], ['udyam_registered', true], ['district', true]])
+    })
+
+    it('keeps the order the rule read them in, whatever failed', () => {
+      const item: RecordResult = { ...result(['district', 'state']), bucket: 'D', failedFacts: ['state', 'district'] }
+      expect(mark(item)).toEqual([['district', false], ['state', false]])
+    })
   })
 
   it('never shows a fact key as its own name', () => {

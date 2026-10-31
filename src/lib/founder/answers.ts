@@ -60,14 +60,20 @@ export function answerWordsFor(answers: Record<string, unknown>, bundle: StartBu
   return words
 }
 
-/** The answers behind one verdict: what the rule read and the founder gave, in the order the rule read it. */
+/**
+ * The answers behind one verdict: what the rule read and the founder gave, in the order the rule
+ * read them. The rule reads a fact whether it matched or not, so `met` says which it was: false
+ * for an answer that failed the rule, and for one the founder has to change first (a registration
+ * they said they do not have). A page must not tick a fact that is not met.
+ */
 export function checkedFacts(
   item: RecordResult,
   answerWords: Record<string, Text>,
   labels: Record<string, Text>,
   lang: Lang,
-): { key: string; label: string; answer: string }[] {
+): { key: string; label: string; answer: string; met: boolean }[] {
+  const toChange = new Set(item.steps.filter(step => step.kind === 'obtain').map(step => step.factKey))
   return item.decidedBy
     .filter(key => Object.hasOwn(answerWords, key) && Object.hasOwn(labels, key))
-    .map(key => ({ key, label: labels[key][lang], answer: answerWords[key][lang] }))
+    .map(key => ({ key, label: labels[key][lang], answer: answerWords[key][lang], met: !item.failedFacts.includes(key) && !toChange.has(key) }))
 }

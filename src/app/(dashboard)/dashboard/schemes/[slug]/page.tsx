@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Check, ExternalLink } from 'lucide-react'
+import { Check, ExternalLink, Minus } from 'lucide-react'
 import SchemeActions from '@/components/founder/SchemeActions'
 import { Card, MoneyTile, StatusChip, VerdictBand } from '@/components/ui/founder'
 import { AUTH_REQUIRED } from '@/lib/auth/mode'
@@ -10,7 +10,7 @@ import { answerWordsFor, checkedFacts, factLabelsOf, labelReader } from '@/lib/f
 import { ANSWER_HREF, chipFor, findResult, SCHEMES_PATH } from '@/lib/founder/browse'
 import { cardContent } from '@/lib/founder/card'
 import {
-  connectedSchemes, keepReady, loadRateQuote, loadSchemeState, moneyTiles, offersChecklist, recordSections, suggestionFor,
+  connectedSchemes, keepReady, loadRateQuote, loadSchemeState, moneyTiles, offersChecklist, recordSections, recordSummary, suggestionFor,
   type SchemeState,
 } from '@/lib/founder/detail'
 import { loadFounderResults, type FounderResults } from '@/lib/founder/load-results'
@@ -108,9 +108,11 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
 
   const checkedOn = card ? card.checkedOn : formatDate(record?.lastCheckedAt ?? opportunity.lastVerifiedAt, LANG) || null
   const checkedText = checkedOn ? t(LANG, 'checkedOn', { date: checkedOn }) : t(LANG, 'checkDue')
-  const windowText = card?.windowLine ?? opportunity.deadline
+  // A line the record only fills with a fixed fallback is left out, not shown as if it were its own words.
+  const summary = recordSummary(opportunity)
+  const windowText = card?.windowLine ?? summary.window
   const windowNote = publicText(opportunity.windowNote)
-  const processing = publicText(opportunity.processingTime)
+  const hasMoney = tiles.length > 0 || summary.benefit !== null
 
   const hasChecked = checked.length > 0 || (card?.toAnswer.length ?? 0) > 0 || (card?.toObtain.length ?? 0) > 0 || (card?.bankChecks.length ?? 0) > 0
   const sourceLinks = [
@@ -146,15 +148,17 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
           )}
 
           <div className="flex flex-col gap-1">
-            <p className="text-sm text-ink-2">{opportunity.authority}</p>
+            {summary.authority ? <p className="text-sm text-ink-2">{summary.authority}</p> : null}
             <h1 className="text-2xl leading-tight font-bold tracking-tight break-words text-ink">{opportunity.name}</h1>
           </div>
-          <p className="text-base text-ink-2">{opportunity.description}</p>
-          <div className="flex flex-col gap-0.5 text-sm text-ink-2">
-            <p>{ft('windowIs', { value: windowText })}</p>
-            {windowNote ? <p>{windowNote}</p> : null}
-            {processing ? <p>{ft('processingIs', { value: processing })}</p> : null}
-          </div>
+          {summary.description ? <p className="text-base text-ink-2">{summary.description}</p> : null}
+          {windowText || windowNote || summary.processing ? (
+            <div className="flex flex-col gap-0.5 text-sm text-ink-2">
+              {windowText ? <p>{ft('windowIs', { value: windowText })}</p> : null}
+              {windowNote ? <p>{windowNote}</p> : null}
+              {summary.processing ? <p>{ft('processingIs', { value: summary.processing })}</p> : null}
+            </div>
+          ) : null}
 
           {suggestion ? (
             <div className="flex flex-col gap-1 rounded-2xl bg-act-soft p-4">
@@ -180,18 +184,22 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
         </div>
       </Card>
 
-      <section aria-label={ft('tilesLabel')} className="flex flex-col gap-2">
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(13rem,1fr))] gap-3">
-          {tiles.length > 0
-            ? tiles.map(tile => (
-              <MoneyTile key={tile.label} label={tile.label} value={tile.value} note={tile.note ?? undefined} tone={tile.tone === 'plain' ? undefined : tile.tone} />
-            ))
-            : <MoneyTile label={ft('benefitTitle')} value={opportunity.benefitLabel} />}
-        </div>
-        {tiles.length === 0 && card?.noAmount ? <p className="text-sm text-ink-2">{t(LANG, 'noAmount')}</p> : null}
-        {card?.ownShortfall ? <div><StatusChip tone="step" text={card.ownShortfall} /></div> : null}
-        {card?.betterRate ? <p className="text-sm text-ink-2">{card.betterRate}</p> : null}
-      </section>
+      {hasMoney || card?.noAmount || card?.ownShortfall || card?.betterRate ? (
+        <section aria-label={ft('tilesLabel')} className="flex flex-col gap-2">
+          {hasMoney ? (
+            <div className="grid grid-cols-[repeat(auto-fit,minmax(13rem,1fr))] gap-3">
+              {tiles.length > 0
+                ? tiles.map(tile => (
+                  <MoneyTile key={tile.label} label={tile.label} value={tile.value} note={tile.note ?? undefined} tone={tile.tone === 'plain' ? undefined : tile.tone} />
+                ))
+                : <MoneyTile label={ft('benefitTitle')} value={summary.benefit ?? ''} />}
+            </div>
+          ) : null}
+          {tiles.length === 0 && card?.noAmount ? <p className="text-sm text-ink-2">{t(LANG, 'noAmount')}</p> : null}
+          {card?.ownShortfall ? <div><StatusChip tone="step" text={card.ownShortfall} /></div> : null}
+          {card?.betterRate ? <p className="text-sm text-ink-2">{card.betterRate}</p> : null}
+        </section>
+      ) : null}
 
       {hasChecked || keep.length > 0 ? (
         <div className="grid items-start gap-4 lg:grid-cols-2">
@@ -201,10 +209,14 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
                 <ul className="flex flex-col divide-y divide-line">
                   {checked.map(fact => (
                     <li key={fact.key} className="flex gap-2.5 py-2 first:pt-0">
-                      <Check className={cn('mt-0.5 size-4 shrink-0', toneClasses('go').ink)} aria-hidden="true" />
+                      {/* The rule reads an answer whether or not it matched: only one that matched gets the tick. */}
+                      {fact.met
+                        ? <Check className={cn('mt-0.5 size-4 shrink-0', toneClasses('go').ink)} aria-hidden="true" />
+                        : <Minus className={cn('mt-0.5 size-4 shrink-0', toneClasses('wait').ink)} aria-hidden="true" />}
                       <span className="min-w-0 text-sm break-words text-ink-2">
                         {fact.label}
                         <strong className="block text-base text-ink">{ft('youSaid', { answer: fact.answer })}</strong>
+                        {fact.met ? null : <span className={cn('block text-xs font-semibold', toneClasses('wait').ink)}>{ft('factNotMet')}</span>}
                       </span>
                     </li>
                   ))}
@@ -369,7 +381,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
 
       <Block title={ft('sourceTitle')}>
         {quote ? <blockquote className="rounded-xl bg-paper p-3 text-sm break-words text-ink">{`“${quote.quote}”`}</blockquote> : null}
-        <p className="text-sm text-ink-2">{opportunity.sourceLabel}</p>
+        {summary.source ? <p className="text-sm text-ink-2">{summary.source}</p> : null}
         {sourceLinks.length > 0 ? (
           <ul className="flex flex-col">
             {sourceLinks.map(source => (
