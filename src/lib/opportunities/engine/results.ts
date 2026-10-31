@@ -1,4 +1,4 @@
-import { effortFor } from '../recommendation-ranking'
+import { effortFor, type RecommendationWindow } from '../recommendation-ranking'
 import { computeBenefit, type BenefitLines } from './calculator'
 import { classifyRecord } from './classify'
 import { chooseCombination, type Combination } from './combination'
@@ -12,6 +12,7 @@ export type RecordResult = RecordVerdict & {
   type: string
   status: string
   lastCheckedAt: string | null
+  windows: RecommendationWindow[]
   lines: BenefitLines | null
 }
 
@@ -97,8 +98,13 @@ export function buildResults(facts: CanonicalFacts, nonAnswers: Record<string, s
       type: record.type,
       status: record.status,
       lastCheckedAt: record.lastCheckedAt,
-      // Any figure in C is conditional, including on an active scheme whose date has passed.
-      lines: settled.lines && settled.bucket === 'C' ? { ...settled.lines, ifRenewed: true } : settled.lines,
+      windows: record.windows,
+      lines: settled.lines && {
+        ...settled.lines,
+        betterIfAnswered: settled.lines.betterIfAnswered.filter(key => nonAnswers[key] !== 'declined'),
+        // Any figure in C is conditional, including on an active scheme whose date has passed.
+        ifRenewed: settled.lines.ifRenewed || settled.bucket === 'C',
+      },
     })
   }
 

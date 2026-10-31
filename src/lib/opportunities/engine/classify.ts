@@ -100,5 +100,7 @@ export function classifyRecord(record: EngineRecord, facts: CanonicalFacts, cont
   if (record.status !== 'active' || window !== 'open' || freshness === 'stale') return verdict('C', steps)
   // Rules made only of bank checks pass for everyone, so they say nothing about
   // this founder: the bank or department decides, not us.
-  return verdict(evaluation.result === true && decidedBy.length > 0 ? 'A' : 'B', steps)
+  // Once eligible, an unanswered sibling branch of an "any" rule no longer matters.
+  if (evaluation.result === true && decidedBy.length > 0) return verdict('A', [])
+  return verdict('B', steps)
 }

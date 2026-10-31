@@ -137,6 +137,12 @@ describe('hard and fixable answers', () => {
     expect(classifyRecord(record({ all: [] }), maharashtra, context, now).bucket).toBe('B')
   })
 
+  it('asks nothing further once a record is in A, even if an unused branch was unanswered', () => {
+    const verdict = classifyRecord(record({ any: [inMaharashtra, ageLimit] }), maharashtra, context, now)
+    expect(verdict.bucket).toBe('A')
+    expect(verdict.steps).toEqual([])
+  })
+
   it('a malformed rule never reaches A', () => {
     expect(classifyRecord(record({ nonsense: true }), maharashtra, context, now).bucket).toBe('B')
   })
@@ -175,6 +181,16 @@ describe('cleaning what a caller sends', () => {
 
   it('drops negative and non-finite numbers', () => {
     expect(clean({ applicant_age_years: -3, workers_count: 'NaN', poultry_bird_count: Number.POSITIVE_INFINITY })).toEqual({})
+  })
+
+  it('is not fooled by built-in object names', () => {
+    for (const name of ['__proto__', 'constructor', 'toString']) {
+      expect(cleanFacts({ gender: name }, definitions, knownActivities)).toEqual({ facts: {}, nonAnswers: {} })
+    }
+  })
+
+  it('drops an impossibly large number', () => {
+    expect(clean({ project_cost_exact_inr: 1e13, workers_count: 1e300 })).toEqual({})
   })
 
   it('keeps only known activities, at most five', () => {

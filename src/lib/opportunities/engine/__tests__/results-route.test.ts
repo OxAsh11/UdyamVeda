@@ -46,6 +46,17 @@ describe('POST /api/results', () => {
     expect(load).not.toHaveBeenCalled()
   })
 
+  it('refuses by the declared size before reading the body', async () => {
+    const declared = new Request('https://app.udyamveda.in/api/results', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', 'content-length': '20000' },
+      body: '{}',
+    })
+    const response = await POST(declared)
+    expect(response.status).toBe(413)
+    expect(load).not.toHaveBeenCalled()
+  })
+
   it('ignores identity numbers and never echoes them back', async () => {
     const response = await POST(request(JSON.stringify({ facts: { state: 'bihar', pan_number: 'ABCDE1234F', aadhaar: '123412341234' } })))
     expect(response.status).toBe(200)

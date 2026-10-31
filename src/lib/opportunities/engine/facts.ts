@@ -4,6 +4,8 @@ import type { CanonicalFacts, FactDefinition, NonAnswer } from './types'
 const NON_ANSWERS: Readonly<Record<string, NonAnswer>> = { prefer_not: 'declined', dont_know: 'dont_know' }
 const MAX_ACTIVITIES = 5
 const MAX_TEXT_LENGTH = 100
+// Bigger than any project, herd or age a founder could mean.
+const MAX_NUMBER = 1e12
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}/
 
 function cleanValue(value: unknown, definition: FactDefinition, activityIds: ReadonlySet<string>): unknown {
@@ -11,7 +13,7 @@ function cleanValue(value: unknown, definition: FactDefinition, activityIds: Rea
     case 'boolean':
       return typeof value === 'boolean' ? value : undefined
     case 'number':
-      return typeof value === 'number' && Number.isFinite(value) && value >= 0 ? value : undefined
+      return typeof value === 'number' && Number.isFinite(value) && value >= 0 && value <= MAX_NUMBER ? value : undefined
     case 'enum':
     case 'band':
       return typeof value === 'string' && definition.values?.includes(value) ? value : undefined
@@ -53,7 +55,7 @@ export function cleanFacts(
   const input = raw as Record<string, unknown>
   for (const definition of definitions) {
     const value = input[definition.key]
-    if (typeof value === 'string' && value in NON_ANSWERS) {
+    if (typeof value === 'string' && Object.hasOwn(NON_ANSWERS, value)) {
       nonAnswers[definition.key] = NON_ANSWERS[value]
       continue
     }

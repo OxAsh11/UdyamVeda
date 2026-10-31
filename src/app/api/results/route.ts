@@ -8,6 +8,10 @@ const MAX_BODY_BYTES = 16 * 1024
 // Public on purpose: a founder sees results before making an account (FR-15).
 // Nothing a caller sends is stored here or echoed back.
 export async function POST(request: Request) {
+  if (Number(request.headers.get('content-length') ?? 0) > MAX_BODY_BYTES) {
+    return NextResponse.json({ error: 'too_large' }, { status: 413 })
+  }
+
   const body = await request.text()
   if (Buffer.byteLength(body, 'utf8') > MAX_BODY_BYTES) {
     return NextResponse.json({ error: 'too_large' }, { status: 413 })

@@ -279,6 +279,25 @@ describe('honest buckets', () => {
   })
 })
 
+describe('what a results card needs', () => {
+  it('never suggests answering something the founder declined', () => {
+    const payload = resultsFor({ ...pooja, gender: 'prefer_not' })
+    const lines = find(payload, CMEGP).lines
+    expect(lines).not.toBeNull()
+    expect(lines?.betterIfAnswered).not.toContain('gender')
+  })
+
+  it('still suggests something the founder simply has not answered', () => {
+    expect(find(resultsFor({ ...pooja, gender: undefined }), CMEGP).lines?.betterIfAnswered).toContain('gender')
+  })
+
+  it('carries the window dates', () => {
+    const record = catalog.records.find(item => item.slug === MMUY)!
+    expect(find(resultsFor(rakesh), MMUY).windows).toEqual(record.windows)
+    expect(record.windows[0].closesAt).toBeTruthy()
+  })
+})
+
 describe('Stand-Up India and declined answers', () => {
   const STAND_UP = 'stand-up-india-scheme'
 
