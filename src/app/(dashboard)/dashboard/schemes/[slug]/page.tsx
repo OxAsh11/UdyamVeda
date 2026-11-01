@@ -196,7 +196,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
                 ? tiles.map(tile => (
                   <MoneyTile key={tile.label} label={tile.label} value={tile.value} note={tile.note ?? undefined} tone={tile.tone === 'plain' ? undefined : tile.tone} />
                 ))
-                : <MoneyTile label={ft('benefitTitle')} value={summary.benefit ?? ''} />}
+                : <MoneyTile label={ft('benefitShort')} value={summary.benefit ?? ''} />}
             </div>
           ) : null}
           {tiles.length === 0 && card?.noAmount ? <p className="text-sm text-ink-2">{t(LANG, 'noAmount')}</p> : null}

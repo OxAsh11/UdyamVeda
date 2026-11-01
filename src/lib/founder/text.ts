@@ -61,6 +61,7 @@ export const FOUNDER_TEXT_EN = {
   tileOwn: 'Your own money',
   tilesRenewed: 'These figures are for if the scheme returns on the same terms.',
   benefitTitle: 'What the scheme gives',
+  benefitShort: 'In short',
   checkedTitle: 'What we checked',
   youSaid: 'You said: {answer}',
   factNotMet: 'Does not match what the scheme asks',
