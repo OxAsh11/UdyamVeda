@@ -9,7 +9,7 @@ import { t } from '@/lib/start/i18n'
 import { answerWordsFor, checkedFacts, factLabelsOf } from '../answers'
 import type { FounderResults } from '../load-results'
 import {
-  connectedSchemes, keepReady, loadRateQuote, loadSchemeState, moneyTiles, offersChecklist, recordSections, recordSummary, suggestionFor,
+  benefitRows, connectedSchemes, keepReady, loadRateQuote, loadSchemeState, moneyTiles, offersChecklist, recordSections, recordSummary, suggestionFor, tilesNote, windowLineFor,
 } from '../detail'
 import { verdictFor } from '../verdict'
 import { fisher as fisherFounder, NOW } from './ready-founder'
@@ -170,6 +170,83 @@ describe('moneyTiles', () => {
     expect(tiles.map(tile => tile.label)).toEqual([
       'Loan, if it returns on the same terms', 'Free money, if it returns on the same terms',
     ])
+  })
+})
+
+describe('moneyTiles, the own share of the founder', () => {
+  it('shows it between free money and what is still to arrange, so the tiles add up', () => {
+    const tiles = moneyTiles(lines({
+      loan: { min: 500000, max: 500000 }, subsidy: { min: 50000, max: 50000 },
+      own: { min: 312500, max: 625000 }, uncovered: { min: 1637500, max: 3825000 },
+    }), 'en')
+    expect(tiles.map(tile => tile.label)).toEqual(['Loan you can get', 'Free money', 'Your own money', 'Still to arrange'])
+    expect(tiles[2]).toEqual({ label: 'Your own money', value: '₹3,12,500 – ₹6,25,000', note: null, tone: 'plain' })
+  })
+
+  it('has no such tile when the scheme states no own share', () => {
+    expect(moneyTiles(lines({ loan: { min: 100000, max: 100000 } }), 'en').map(tile => tile.label)).not.toContain('Your own money')
+  })
+})
+
+describe('tilesNote', () => {
+  it('says the figures hold only if the scheme returns on the same terms', () => {
+    expect(tilesNote(lines({ ifRenewed: true }))).toBe('These figures are for if the scheme returns on the same terms.')
+  })
+
+  it('says nothing for a scheme that is open on its own terms', () => {
+    expect(tilesNote(lines())).toBeNull()
+    expect(tilesNote(null)).toBeNull()
+  })
+})
+
+describe('benefitRows', () => {
+  const benefit = (overrides: Partial<{ type: string; label: string; amountMin: number | null; amountMax: number | null; percentage: number | null }> = {}) =>
+    ({ type: 'grant', label: 'Seed grant', amountMin: null, amountMax: null, percentage: null, ...overrides })
+
+  it('shows each benefit with its label and amount', () => {
+    expect(benefitRows([
+      benefit({ label: 'Working capital loan', amountMin: 100000, amountMax: 500000 }),
+      benefit({ label: 'Grant', amountMax: 3000000 }),
+      benefit({ label: 'Interest relief', percentage: 3 }),
+    ], null, 'en')).toEqual([
+      { label: 'Working capital loan', amount: '₹1,00,000 – ₹5,00,000' },
+      { label: 'Grant', amount: 'Up to ₹30,00,000' },
+      { label: 'Interest relief', amount: '3%' },
+    ])
+  })
+
+  it('does not repeat the label of the one-line benefit, but keeps its amount', () => {
+    const rows = benefitRows([benefit({ label: 'Up to ₹50 lakh grant', amountMax: 5000000 }), benefit({ label: 'Mentoring' })], 'up to ₹50 lakh grant', 'en')
+    expect(rows).toEqual([{ label: null, amount: 'Up to ₹50,00,000' }, { label: 'Mentoring', amount: null }])
+  })
+
+  it('drops a row that has nothing left to say, and a working note', () => {
+    expect(benefitRows([benefit({ label: 'The grant' })], 'The grant', 'en')).toEqual([])
+    expect(benefitRows([benefit({ label: 'Do not infer an open call', type: 'interest_subvention' })], null, 'en')).toEqual([{ label: 'Interest subvention', amount: null }])
+    expect(benefitRows([], null, 'en')).toEqual([])
+  })
+})
+
+describe('windowLineFor', () => {
+  const portal = 'Check the official portal for dates'
+
+  it('uses the words of the record when the card can only say to check the portal', () => {
+    expect(windowLineFor(portal, 'open', 'Opens in periodic calls', 'en')).toBe('Application window: Opens in periodic calls')
+    expect(windowLineFor(portal, 'open', 'Apply by 31 Mar 2030', 'en')).toBe('Application window: Apply by 31 Mar 2030')
+  })
+
+  it('keeps the dates of the card when it has them', () => {
+    expect(windowLineFor('Open 1 Jan 2027 to 1 Mar 2027', 'open', 'Opens in periodic calls', 'en')).toBe('Application window: Open 1 Jan 2027 to 1 Mar 2027')
+  })
+
+  it('falls back to the check-portal text when the record has none', () => {
+    expect(windowLineFor(portal, 'open', null, 'en')).toBe(`Application window: ${portal}`)
+    expect(windowLineFor(null, 'open', null, 'en')).toBeNull()
+    expect(windowLineFor(null, 'open', 'Recurring intake', 'en')).toBe('Application window: Recurring intake')
+  })
+
+  it('does not say "window" twice for a closed one', () => {
+    expect(windowLineFor('Window closed on 30 Sept 2026', 'closed', null, 'en')).toBe('Window closed on 30 Sept 2026')
   })
 })
 

@@ -56,6 +56,8 @@ export const FOUNDER_TEXT_EN = {
   tileInterestPlain: 'Interest',
   tileFree: 'Free money',
   tileFreeNote: 'This is credit, not a subsidy',
+  tileOwn: 'Your own money',
+  tilesRenewed: 'These figures are for if the scheme returns on the same terms.',
   benefitTitle: 'What the scheme gives',
   checkedTitle: 'What we checked',
   youSaid: 'You said: {answer}',

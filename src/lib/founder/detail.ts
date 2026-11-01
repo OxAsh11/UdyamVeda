@@ -7,10 +7,10 @@ import { getBusinessForUser } from '@/lib/businesses/dal'
 import type { BenefitLines } from '@/lib/opportunities/engine/calculator'
 import type { Combination, Relationship } from '@/lib/opportunities/engine/combination'
 import type { RecordResult, ResultsPayload } from '@/lib/opportunities/engine/results'
-import { applicationView, eligibilityView, isInternalNote, publicText, WINDOW_FALLBACK, type ApplicationView, type EligibilityView } from '@/lib/opportunities/display'
+import { applicationView, eligibilityView, humanize, isInternalNote, publicText, WINDOW_FALLBACK, type ApplicationView, type EligibilityView } from '@/lib/opportunities/display'
 import { AUTHORITY_FALLBACK, BENEFIT_FALLBACK, DESCRIPTION_FALLBACK, PROCESSING_FALLBACK } from '@/lib/opportunities/published'
 import type { OpportunityDetail } from '@/lib/opportunities/types'
-import { formatRange } from '@/lib/start/format'
+import { formatInr, formatRange } from '@/lib/start/format'
 import { t } from '@/lib/start/i18n'
 import type { Lang } from '@/lib/start/types'
 import { hasAmount, loanValue, roundedRate } from './card'
@@ -69,10 +69,50 @@ export function moneyTiles(lines: BenefitLines, lang: Lang): MoneyTileView[] {
     // Only next to a loan is "credit, not a subsidy" true; with nothing else there is nothing to say.
     tiles.push({ label: ft('tileFree'), value: formatRange(lines.subsidy, lang), note: ft('tileFreeNote'), tone: 'plain' })
   }
+  // The founder's own share is part of the sum: without it the tiles do not add up.
+  if (lines.own) {
+    tiles.push({ label: ft('tileOwn'), value: formatRange(lines.own, lang), note: null, tone: 'plain' })
+  }
   if (hasAmount(lines.uncovered)) {
     tiles.push({ label: t(lang, 'toArrange'), value: formatRange(lines.uncovered, lang), note: lines.own ? null : t(lang, 'toArrangeNote'), tone: 'step' })
   }
   return tiles
+}
+
+/** Said over the tiles of a scheme that is paused or between rounds: its figures are for when it returns. */
+export function tilesNote(lines: Pick<BenefitLines, 'ifRenewed'> | null): string | null {
+  return lines?.ifRenewed ? ft('tilesRenewed') : null
+}
+
+export type BenefitRow = { label: string | null; amount: string | null }
+
+/**
+ * What the record says the scheme gives, row by row. A row whose words only repeat the one-line
+ * benefit already shown keeps its amount and loses its label; a row left with neither is dropped.
+ */
+export function benefitRows(benefits: OpportunityDetail['benefits'], oneLine: string | null, lang: Lang): BenefitRow[] {
+  const same = (text: string) => oneLine !== null && text.trim().toLowerCase() === oneLine.trim().toLowerCase()
+  const rows = benefits.map((benefit): BenefitRow => {
+    const amount = benefit.amountMin !== null && benefit.amountMax !== null
+      ? formatRange({ min: benefit.amountMin, max: benefit.amountMax }, lang)
+      : benefit.amountMax !== null ? t(lang, 'upTo', { amount: formatInr(benefit.amountMax) })
+        : benefit.percentage !== null ? `${benefit.percentage}%` : null
+    const label = publicText(benefit.label) ?? humanize(benefit.type)
+    return { label: same(label) ? null : label, amount }
+  })
+  return rows.filter(row => row.label !== null || row.amount !== null)
+}
+
+/**
+ * The application-window line. The card's own dates win; when all it can say is to check the portal,
+ * the record's own words ("Opens in periodic calls", "Apply by 31 Mar 2030") say more. A closed
+ * window's sentence already says "window", so it is not put under the same heading again.
+ */
+export function windowLineFor(cardLine: string | null, windowState: string | undefined, recordWindow: string | null, lang: Lang): string | null {
+  const onlyCheck = cardLine === null || cardLine === t(lang, 'checkPortal')
+  const value = onlyCheck ? recordWindow ?? cardLine : cardLine
+  if (value === null) return null
+  return windowState === 'closed' && value === cardLine ? value : ft('windowIs', { value })
 }
 
 const isYes = (value: unknown) => value === true

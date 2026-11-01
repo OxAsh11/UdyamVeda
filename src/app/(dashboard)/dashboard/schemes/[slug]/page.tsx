@@ -10,7 +10,8 @@ import { answerWordsFor, checkedFacts, factLabelsOf, labelReader } from '@/lib/f
 import { ANSWER_HREF, chipFor, findResult, SCHEMES_PATH } from '@/lib/founder/browse'
 import { cardContent } from '@/lib/founder/card'
 import {
-  connectedSchemes, keepReady, loadRateQuote, loadSchemeState, moneyTiles, offersChecklist, recordSections, recordSummary, suggestionFor,
+  benefitRows, connectedSchemes, keepReady, loadRateQuote, loadSchemeState, moneyTiles, offersChecklist, recordSections, recordSummary, suggestionFor,
+  tilesNote, windowLineFor,
   type SchemeState,
 } from '@/lib/founder/detail'
 import { loadFounderResults, type FounderResults } from '@/lib/founder/load-results'
@@ -110,7 +111,9 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
   const checkedText = checkedOn ? t(LANG, 'checkedOn', { date: checkedOn }) : t(LANG, 'checkDue')
   // A line the record only fills with a fixed fallback is left out, not shown as if it were its own words.
   const summary = recordSummary(opportunity)
-  const windowText = card?.windowLine ?? summary.window
+  const windowText = windowLineFor(card?.windowLine ?? null, item?.windowState, summary.window, LANG)
+  const renewedNote = tilesNote(item?.lines ?? null)
+  const benefits = benefitRows(opportunity.benefits, summary.benefit, LANG)
   const windowNote = publicText(opportunity.windowNote)
   const hasMoney = tiles.length > 0 || summary.benefit !== null
 
@@ -154,7 +157,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
           {summary.description ? <p className="text-base text-ink-2">{summary.description}</p> : null}
           {windowText || windowNote || summary.processing ? (
             <div className="flex flex-col gap-0.5 text-sm text-ink-2">
-              {windowText ? <p>{ft('windowIs', { value: windowText })}</p> : null}
+              {windowText ? <p>{windowText}</p> : null}
               {windowNote ? <p>{windowNote}</p> : null}
               {summary.processing ? <p>{ft('processingIs', { value: summary.processing })}</p> : null}
             </div>
@@ -186,6 +189,7 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
 
       {hasMoney || card?.noAmount || card?.ownShortfall || card?.betterRate ? (
         <section aria-label={ft('tilesLabel')} className="flex flex-col gap-2">
+          {renewedNote && tiles.length > 0 ? <p className="text-sm font-semibold text-ink-2">{renewedNote}</p> : null}
           {hasMoney ? (
             <div className="grid grid-cols-[repeat(auto-fit,minmax(13rem,1fr))] gap-3">
               {tiles.length > 0
@@ -199,6 +203,19 @@ export default async function OpportunityDetailPage({ params }: PageProps) {
           {card?.ownShortfall ? <div><StatusChip tone="step" text={card.ownShortfall} /></div> : null}
           {card?.betterRate ? <p className="text-sm text-ink-2">{card.betterRate}</p> : null}
         </section>
+      ) : null}
+
+      {benefits.length > 0 ? (
+        <Block title={ft('benefitTitle')}>
+          <ul className="flex flex-col divide-y divide-line">
+            {benefits.map((row, index) => (
+              <li key={`${row.label}-${row.amount}-${index}`} className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5 py-2 first:pt-0 last:pb-0">
+                {row.label ? <span className="min-w-0 flex-[1_1_12rem] text-base break-words text-ink">{row.label}</span> : null}
+                {row.amount ? <strong className="text-base break-words text-ink">{row.amount}</strong> : null}
+              </li>
+            ))}
+          </ul>
+        </Block>
       ) : null}
 
       {hasChecked || keep.length > 0 ? (
