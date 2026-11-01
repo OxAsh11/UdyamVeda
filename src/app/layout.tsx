@@ -15,5 +15,23 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { themeColor: '#102a43', width: 'device-width', initialScale: 1 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="en" className="h-full antialiased"><body className="min-h-full">{children}<Toaster /><Script id="service-worker" strategy="afterInteractive">{`if ('serviceWorker' in navigator) { window.addEventListener('load', async function() { const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1'; if (isLocal) { const registrations = await navigator.serviceWorker.getRegistrations(); await Promise.all(registrations.map(function(registration) { return registration.unregister(); })); const cacheKeys = await caches.keys(); await Promise.all(cacheKeys.map(function(key) { return caches.delete(key); })); return; } navigator.serviceWorker.register('/sw.js').catch(function() {}); }); }`}</Script></body></html>
+  return (
+    <html lang="en" className="h-full antialiased">
+      <body className="min-h-full">
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-WJ93JJFV"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
+        {children}
+        <Toaster />
+        <Script id="gtm-init" strategy="afterInteractive">{`window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());`}</Script>
+        <Script src="https://www.googletagmanager.com/gtm.js?id=GTM-WJ93JJFV" strategy="afterInteractive" />
+        <Script id="service-worker" strategy="afterInteractive">{`if ('serviceWorker' in navigator) { window.addEventListener('load', async function() { const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1'; if (isLocal) { const registrations = await navigator.serviceWorker.getRegistrations(); await Promise.all(registrations.map(function(registration) { return registration.unregister(); })); const cacheKeys = await caches.keys(); await Promise.all(cacheKeys.map(function(key) { return caches.delete(key); })); return; } navigator.serviceWorker.register('/sw.js').catch(function() {}); }); }`}</Script>
+      </body>
+    </html>
+  )
 }
