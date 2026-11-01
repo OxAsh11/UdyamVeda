@@ -36,6 +36,8 @@ export const FOUNDER_TEXT_EN = {
   browseUnavailableTitle: 'Schemes are temporarily unavailable',
   browseUnavailableBody: 'This is a connection problem, not an answer about you. Please try again in a moment.',
   backToSchemes: 'Back to schemes for you',
+  loadingSchemes: 'Loading your schemes',
+  loadingScheme: 'Loading this scheme',
   windowIs: 'Application window: {value}',
   processingIs: 'Processing time: {value}',
   suggestionTitle: 'Our suggestion for you',

@@ -109,3 +109,13 @@ describe('SchemeActions, the calls it makes', () => {
     expect(await startApplication('a-scheme', down.send)).toBeNull()
   })
 })
+
+describe('SchemeActions, the saved chip', () => {
+  it('is neutral: green means go, and a saved scheme may be one that is not for the founder', () => {
+    const html = render({ saved: true })
+    expect(html).toContain('Saved for later')
+    expect(html).not.toContain('go-soft')
+    expect(html).not.toContain('go-ink')
+    expect(html).toContain('bg-wait-soft')
+  })
+})

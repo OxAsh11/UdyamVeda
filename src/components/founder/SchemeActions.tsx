@@ -106,7 +106,7 @@ export default function SchemeActions({ slug, applicationId: initialApplication,
       ) : null}
       {canSave && saved ? (
         <span className="inline-flex min-h-11 items-center gap-2">
-          <StatusChip tone="go" text={ft('savedTitle')} />
+          <StatusChip tone="wait" text={ft('savedTitle')} />
           <button type="button" onClick={remove} disabled={busy} autoFocus={focus === 'remove'} className={cn(BUTTON, OUTLINED)}>{ft('removeSaved')}</button>
         </span>
       ) : null}

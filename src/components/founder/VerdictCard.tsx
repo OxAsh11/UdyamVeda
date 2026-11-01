@@ -103,6 +103,8 @@ export default function VerdictCard({ item, combination, lang, labels, answerWor
               {canAnswer ? <Link href={answerHref} className={cn(BUTTON, FILLED)}>{t(lang, 'answerNow')}</Link> : null}
               <Link
                 href={detailHref}
+                // Each prefetch would look the founder up again, and on the start page cross hosts.
+                prefetch={false}
                 {...(newTab ? { target: '_blank', rel: 'noreferrer' } : {})}
                 className={cn(BUTTON, item.bucket === 'A' ? FILLED : OUTLINED)}
               >
