@@ -84,6 +84,23 @@ describe('answerText', () => {
     expect(answerText('district', 'Gaya', bundle, 'en')).toBe('Gaya')
   })
 
+  it('returns null rather than a raw value for a fact it does not know', () => {
+    expect(answerText('not_a_fact', 'abc', bundle, 'en')).toBeNull()
+    expect(answerText('constructor', 'abc', bundle, 'en')).toBeNull()
+  })
+
+  it('returns null for a text answer on a fact that is a number, a yes or no, or has options but none are loaded', () => {
+    expect(answerText('applicant_age_years', 'thirty', bundle, 'en')).toBeNull()
+    expect(answerText('udyam_registered', 'maybe', bundle, 'en')).toBeNull()
+    const noOptions = { ...bundle, facts: { ...bundle.facts, state: { ...bundle.facts.state, options: [] } } }
+    expect(answerText('state', 'jharkhand', noOptions, 'en')).toBeNull()
+  })
+
+  it('writes a date as a date', () => {
+    expect(answerText('operating_since', '2019-05-01', bundle, 'en')).toBe('1 May 2019')
+    expect(answerText('operating_since', 'not a date', bundle, 'en')).toBeNull()
+  })
+
   it('returns null for no answer', () => {
     expect(answerText('state', undefined, bundle, 'en')).toBeNull()
     expect(answerText('state', null, bundle, 'en')).toBeNull()
@@ -187,6 +204,12 @@ describe('checkedFacts', () => {
       const item: RecordResult = { ...result(['district', 'state']), bucket: 'D', failedFacts: ['state', 'district'] }
       expect(mark(item)).toEqual([['district', false], ['state', false]])
     })
+  })
+
+  it('leaves out a non-answer, which is not an answer a rule was met by', () => {
+    const answered = answerWordsFor({ state: 'jharkhand', gender: 'prefer_not', social_category: 'dont_know' }, bundle)
+    expect(checkedFacts(result(['gender', 'state', 'social_category']), answered, labels, 'en').map(item => item.key)).toEqual(['state'])
+    expect(checkedFacts(result(['gender', 'state']), answered, labels, 'hi').map(item => item.key)).toEqual(['state'])
   })
 
   it('never shows a fact key as its own name', () => {

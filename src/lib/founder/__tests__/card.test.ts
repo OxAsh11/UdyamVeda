@@ -100,6 +100,44 @@ describe('cardContent, why it fits and the next step', () => {
     expect(content(result({ decidedBy: ['constructor', 'toString'] })).why).toBeNull()
   })
 
+  describe('for a founder with many answers', () => {
+    const upFounder = answerWordsFor({
+      state: 'uttar_pradesh', applicant_age_years: 30, minority_community: 'no', received_govt_subsidy_before: false, udyam_registered: true,
+    }, bundle)
+    const read = ['state', 'applicant_age_years', 'minority_community', 'received_govt_subsidy_before', 'udyam_registered']
+    const why = (lang: Lang, decidedBy = read) => content(result({ decidedBy }), lang, upFounder).why
+
+    it('puts the label beside an answer that cannot stand alone, in every language', () => {
+      for (const lang of ['en', 'hi', 'mr'] as const) {
+        const text = why(lang, ['state', 'applicant_age_years', 'received_govt_subsidy_before'])
+        expect(text, lang).toContain(upFounder.state[lang])
+        expect(text, lang).toContain(`${labels.applicant_age_years[lang]}: 30`)
+        expect(text, lang).toContain(`${labels.received_govt_subsidy_before[lang]}: ${upFounder.received_govt_subsidy_before[lang]}`)
+        // A named choice reads fine alone.
+        expect(text, lang).not.toContain(`${labels.state[lang]}:`)
+      }
+    })
+
+    it('shows three answers at most and says there is more', () => {
+      expect(why('en')).toBe(`Why it fits you: you said Uttar Pradesh, ${labels.applicant_age_years.en}: 30, ${labels.minority_community.en}: No, and more.`)
+      for (const lang of ['hi', 'mr'] as const) {
+        const text = why(lang)!
+        expect(text, lang).toContain(`${labels.applicant_age_years[lang]}: 30`)
+        expect(text, lang).not.toContain(labels.received_govt_subsidy_before[lang])
+        expect(text, lang).not.toBe(why('en'))
+      }
+    })
+
+    it('does not say "and more" when everything fits', () => {
+      expect(why('en', ['state', 'applicant_age_years', 'minority_community'])).toBe(`Why it fits you: you said Uttar Pradesh, ${labels.applicant_age_years.en}: 30, ${labels.minority_community.en}: No.`)
+    })
+
+    it('leaves out a non-answer', () => {
+      const unsure = answerWordsFor({ state: 'uttar_pradesh', gender: 'prefer_not', social_category: 'dont_know' }, bundle)
+      expect(content(result({ decidedBy: ['gender', 'social_category', 'state'] }), 'en', unsure).why).toBe('Why it fits you: you said Uttar Pradesh.')
+    })
+  })
+
   it('gives the application route as the next step', () => {
     const item = result({ applyRoute: 'Go to any bank branch with your pond details.' })
     expect(content(item).nextStep).toBe('Your next step: Go to any bank branch with your pond details.')

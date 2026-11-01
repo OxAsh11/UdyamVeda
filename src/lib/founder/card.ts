@@ -5,7 +5,7 @@ import { CLOSED_WINDOW_TYPES, singleWindowState } from '@/lib/opportunities/engi
 import { formatDate, formatInr, formatRange } from '@/lib/start/format'
 import { t } from '@/lib/start/i18n'
 import type { Lang, Text } from '@/lib/start/types'
-import { labelReader } from './answers'
+import { isNonAnswer, labelReader } from './answers'
 import { nextOpening, verdictFor, verdictStatesOpening, type Verdict } from './verdict'
 
 export type CardMoney = {
@@ -136,10 +136,24 @@ function windowLineOf(item: RecordResult, lang: Lang, now: Date): string | null 
   return item.windows.some(window => window.windowType === 'rolling') ? null : t(lang, 'checkPortal')
 }
 
-function whyItFits(item: RecordResult, lang: Lang, answerWords: Record<string, Text>) {
+const WHY_LIMIT = 3
+
+// A named choice ("Jharkhand", "Class 10 pass") reads fine alone. Yes, No, a number or a date does not.
+function standsAlone(answer: string, lang: Lang) {
+  return /^\p{L}/u.test(answer) && answer !== t(lang, 'yes') && answer !== t(lang, 'no')
+}
+
+function whyItFits(item: RecordResult, lang: Lang, labels: Record<string, Text>, answerWords: Record<string, Text>) {
   if (item.bucket !== 'A') return null
-  const answers = item.decidedBy.filter(key => Object.hasOwn(answerWords, key)).map(key => answerWords[key][lang])
-  return answers.length ? t(lang, 'whyFits', { answers: answers.join(', ') }) : null
+  const labelOf = labelReader(labels, lang)
+  const answers = item.decidedBy
+    .filter(key => Object.hasOwn(answerWords, key) && !isNonAnswer(answerWords[key]))
+    .map(key => {
+      const answer = answerWords[key][lang]
+      return standsAlone(answer, lang) ? answer : `${labelOf(key)}: ${answer}`
+    })
+  if (!answers.length) return null
+  return t(lang, answers.length > WHY_LIMIT ? 'whyFitsMore' : 'whyFits', { answers: answers.slice(0, WHY_LIMIT).join(', ') })
 }
 
 function nextStepOf(item: RecordResult, lang: Lang) {
@@ -170,7 +184,7 @@ export function cardContent(
 
   return {
     verdict,
-    why: whyItFits(item, lang, answerWords),
+    why: whyItFits(item, lang, labels, answerWords),
     nextStep: nextStepOf(item, lang),
     money: moneyOf(lines, lang),
     moneyLines: moneyLinesOf(lines, lang),

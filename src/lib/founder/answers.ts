@@ -2,7 +2,7 @@
 // next to a verdict ("Because you said: State, Jharkhand"), so a fact key or an
 // option code must never be shown: anything that cannot be named comes back null.
 import type { RecordResult } from '@/lib/opportunities/engine/results'
-import { formatInr } from '@/lib/start/format'
+import { formatDate, formatInr } from '@/lib/start/format'
 import { t } from '@/lib/start/i18n'
 import type { Lang, StartBundle, Text } from '@/lib/start/types'
 
@@ -42,10 +42,19 @@ export function answerText(factKey: string, value: unknown, bundle: StartBundle,
   if (typeof value === 'number') return factKey === 'project_cost_exact_inr' ? formatInr(value) : String(value)
   if (typeof value !== 'string') return null
 
-  const options = bundle.facts[factKey]?.options ?? []
+  const fact = Object.hasOwn(bundle.facts, factKey) ? bundle.facts[factKey] : undefined
+  if (!fact) return null
   // A fact with options only ever holds one of them; a value with no label is a code, not words.
-  if (!options.length) return value
-  return options.find(option => option.value === value)?.label[lang] ?? null
+  if (fact.options.length) return fact.options.find(option => option.value === value)?.label[lang] ?? null
+  // Only text and dates are words of the founder's own; anything else holding a string is a code.
+  if (fact.type === 'text') return value
+  if (fact.type === 'date') return formatDate(value, lang) || null
+  return null
+}
+
+/** "Don't know" and "prefer not to say" are replies, not answers: no rule was met by them. */
+export function isNonAnswer(words: Text): boolean {
+  return (['en', 'hi', 'mr'] as const).some(lang => words[lang] === t(lang, 'dontKnow') || words[lang] === t(lang, 'preferNot'))
 }
 
 /** Every answered key in all three languages, so a page can switch language without asking again. */
@@ -74,6 +83,6 @@ export function checkedFacts(
 ): { key: string; label: string; answer: string; met: boolean }[] {
   const toChange = new Set(item.steps.filter(step => step.kind === 'obtain').map(step => step.factKey))
   return item.decidedBy
-    .filter(key => Object.hasOwn(answerWords, key) && Object.hasOwn(labels, key))
+    .filter(key => Object.hasOwn(answerWords, key) && Object.hasOwn(labels, key) && !isNonAnswer(answerWords[key]))
     .map(key => ({ key, label: labels[key][lang], answer: answerWords[key][lang], met: !item.failedFacts.includes(key) && !toChange.has(key) }))
 }
