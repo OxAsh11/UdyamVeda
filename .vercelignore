@@ -1,0 +1,8 @@
+# Never upload local build notes or secrets from a CLI deploy.
+.superpowers
+.env
+.env.*
+!.env.example
+.next
+dist
+outputs
