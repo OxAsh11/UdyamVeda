@@ -109,7 +109,7 @@ describe('the words on the scheme page', () => {
 describe('the scheme page for a record that has its say', () => {
   it('shows what the record says, once each', async () => {
     const html = await pageFor(record())
-    for (const text of ['Ministry of Fisheries', 'Credit for fish farmers.', 'Application window: Open year-round', 'Processing time: 30 days', 'What the scheme gives', '40% subsidy on a loan']) {
+    for (const text of ['Ministry of Fisheries', 'Credit for fish farmers.', 'Application window: Open year-round', 'Processing time: 30 days', 'In short', '40% subsidy on a loan']) {
       expect(html, text).toContain(text)
     }
     expect(html).toContain('href="https://example.gov.in"')
