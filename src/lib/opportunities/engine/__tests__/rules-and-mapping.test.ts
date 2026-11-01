@@ -158,12 +158,22 @@ describe('the facts an "any" rule reports using', () => {
     expect(evaluation.failedFields).toEqual(['social_category', 'minority_community'])
   })
 
-  it('are all of them when the rule is still unknown', () => {
-    // One branch failed, the other cannot be told yet: neither is what decided it, so both stay.
+  it('leave out a branch that failed when the rule is still unknown', () => {
+    // One branch failed, the other cannot be told yet: only the branch still in play says what was used or is missing.
     const undecided = { all: [{ field: 'state', operator: 'equals', value: 'jharkhand' }, minority] }
     const evaluation = evaluateEligibilityRules({ any: [category, undecided] }, { social_category: 'general', state: 'jharkhand' })
     expect(evaluation.result).toBeNull()
-    expect(evaluation.usedFacts).toEqual(['social_category', 'state'])
+    expect(evaluation.usedFacts).toEqual(['state'])
+    expect(evaluation.missingFacts).toEqual(['minority_community'])
+    expect(evaluation.failedFields).toEqual([])
+  })
+
+  it('do not count facts missing only from a branch that already failed', () => {
+    const deadBranch = { all: [{ field: 'state', operator: 'equals', value: 'bihar' }, minority] }
+    const live = { field: 'has_disability', operator: 'equals', value: true }
+    const evaluation = evaluateEligibilityRules({ any: [deadBranch, live] }, { state: 'jharkhand' })
+    expect(evaluation.result).toBeNull()
+    expect(evaluation.missingFacts).toEqual(['has_disability'])
   })
 
   it('leave a rule that passes without any "any" exactly as they were', () => {
